@@ -1,0 +1,32 @@
+isEnabled: true
+entityType: VINDICATOR
+name: $bossLevel <g:#8B0000:#DC143C>The Debt Collector</g>
+level: dynamic
+healthMultiplier: 5.0
+dropsEliteMobsLoot: false
+dropsVanillaLoot: false
+dropsRandomLoot: false
+dropsSkillXP: false
+powers:
+- attack_push.yml
+- attack_blinding.lua
+- movement_speed.yml
+- attack_gravity.lua
+- spirit_walk.yml
+onDamageMessages:
+- '&c[Debt Collector] &7Consider that... &einterest&7.'
+- '&c[Debt Collector] &7Every hit is a &6payment&7.'
+- '&c[Debt Collector] &7You can''t escape your debts!'
+onDamagedMessages:
+- '&c[Debt Collector] &7That all you got?'
+- '&c[Debt Collector] &7You''ll pay for that... literally.'
+- '&c[Debt Collector] &7Fighting back won''t clear your debt!'
+trails:
+- LARGE_SMOKE
+- SOUL
+- LARGE_SMOKE
+timeout: 600
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+scaledCombat: true
+bossType: NORMAL

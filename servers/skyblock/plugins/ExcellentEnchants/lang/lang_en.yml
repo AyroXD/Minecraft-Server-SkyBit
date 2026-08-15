@@ -1,0 +1,33 @@
+Command:
+  Argument:
+    Name:
+      Level: level
+      Slot: slot
+  List:
+    Desc: List of custom enchantments.
+    DoneOthers: <gray>Opened enchantments GUI for <soft_yellow>%player_name%</soft_yellow>.</gray>
+  Enchant:
+    Desc: Enchant item in specific slot.
+    Done:
+      Self: <gray><soft_yellow>%item%</soft_yellow> enchanted with <soft_yellow>%enchant% %level%</soft_yellow>!</gray>
+      Others: <gray><soft_yellow>%player_display_name%</soft_yellow>'s <soft_yellow>%item%</soft_yellow> enchanted with <soft_yellow>%enchant% %level%</soft_yellow>!</gray>
+    Error:
+      NoItem: <soft_red>There is no item to enchant!</soft_red>
+  Disenchant:
+    Desc: Disenchant item in specific slot.
+    Done:
+      Self: <gray><soft_yellow>%item%</soft_yellow> disenchanted from <soft_yellow>%enchant%</soft_yellow>!</gray>
+      Others: <gray><soft_yellow>%player_display_name%</soft_yellow>'s <soft_yellow>%item%</soft_yellow> disenchanted from <soft_yellow>%enchant%</soft_yellow>!</gray>
+  Book:
+    Desc: Give a book with specific enchantment.
+    Done: <gray>You gave <soft_yellow>%enchant% %level%</soft_yellow> book to <soft_yellow>%player_display_name%</soft_yellow>.</gray>
+  RandomBook:
+    Desc: Give a book with random enchantment.
+  GiveFuel:
+    Desc: Give enchantment fuel item.
+  Syntax:
+    InvalidSlot: <gray><soft_red>%input%</soft_red> is not a valid slot!</gray>
+Charges:
+  Fuel:
+    Gave: <gray>You gave <soft_yellow>x%amount% %name%</soft_yellow> fuel to <soft_yellow>%player_name%</soft_yellow>.</gray>
+    BadEnchantment: <gray>Enchantment <soft_red>%name%</soft_red> can't be charged.</gray>

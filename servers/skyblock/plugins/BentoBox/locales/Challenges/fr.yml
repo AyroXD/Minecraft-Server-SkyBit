@@ -1,0 +1,1400 @@
+meta:
+  authors:
+  - BONNe
+challenges:
+  commands:
+    admin:
+      main:
+        description: Commande principale Admin. Ouverture du menu.
+        parameters: ''
+      reload:
+        description: Recharger les défis de la base de données
+        parameters: ''
+      show:
+        description: Afficher dans le chat tous les défis qui existent dans ce monde.
+        parameters: ''
+      complete:
+        description: Terminer un challenge pour un joueur.
+        parameters: <joueur> <id_du_challenge>
+      reset:
+        description: Réinitialiser un  challenge pour un joueur. Si "challenge_id"
+          est réglé sur "all", alors il réinitialisera tous les challenges.
+        parameters: <joueur> <id_du_challenge>
+      migrate:
+        description: Migrez les données des challenges du monde du jeu actuel au format
+          de stockage 0.8.0.
+        parameters: ''
+    user:
+      main:
+        description: Cette méthode ouvre le menu des Challenges.
+        parameters: ''
+      complete:
+        description: Cette méthode permet de compléter un challenger sans menu.
+        parameters: <challenge_id> [count]
+  gui:
+    titles:
+      player-gui: <black><bold>Menu Challenges
+      gamemode-gui: <black><bold>Sélectionner le mode de jeu
+      multiple-gui: <black><bold>Combien de fois ?
+      admin-gui: <black><bold>Menu d'administration des Challenges
+      edit-challenge: <black><bold>Editer [challenge]
+      edit-level: <black><bold>Editer [level]
+      settings: <black><bold>Paramètres
+      choose-challenge: <black><bold>Choisir le Challenge
+      choose-level: <black><bold>Choisir le niveau
+      choose-player: <black><bold>Choisir un joueur
+      library: <black><bold>Bibliothèque
+      manage-blocks: <black><bold>Gérer les blocs
+      manage-entities: <black><bold>Gérer les entités
+      type-selector: <black><bold>Sélecteur de type de Challenge
+      item-selector: <black><bold>Sélecteur d'item
+      block-selector: <black><bold>Sélecteur de bloc
+      entity-selector: <black><bold>Sélecteur d'entité
+      challenge-selector: <black><bold>Sélecteur de Challenge
+      statistic-selector: <black><bold>Sélecteur de statistiques
+      environment-selector: <black><bold>Sélecteur d'environnement
+      manage-block-groups: <black><bold>Gérer les Groupes de Blocs
+      manage-entity-groups: <black><bold>Gérer les Groupes d'Entités
+      manage-statistics: <black><bold>Gérer les Statistiques
+      manage-advancements: <black><bold>Gérer les Avancées
+      advancement-selector: <black><bold>Sélecteur d'Avancées
+      biome-selector: <black><bold>Sélecteur de biome
+    buttons:
+      free-challenges:
+        name: <white><bold>Challenges gratuits
+        description: |-
+          <gray>Affiche une liste de
+          <gray>Challenges gratuits
+      return:
+        name: <white><bold>Retour
+        description: |-
+          <gray>Revenir au menu précédent
+          <gray>ou quitter l'interface graphique
+      previous:
+        name: <white><bold>Page précédente
+        description: <gray>Passer à <yellow>[number] <gray>page
+      next:
+        name: <white><bold>Page suivante
+        description: <gray>Passer à <yellow>[number] <gray>page
+      reduce:
+        name: <white><bold>Réduire
+        description: <gray>Réduire de <yellow>[number]
+      increase:
+        name: <white><bold>Augmenter
+        description: <gray>Augmenter de <yellow>[number]
+      accept:
+        name: <white><bold>terminé
+        description: |-
+          <gray>Compléter le Challenge <yellow>[number]
+          <gray>fois(-s)
+      quit:
+        name: <white><bold>Quitter
+        description: <gray>Quitter l'interface graphique.
+      complete_user_challenges:
+        name: <white><bold>Challenge(s) utilisateur terminé(s)
+        description: <gray>Permet de choisir l'utilisateur et de lui compléter le
+          ou les challenges
+      reset_user_challenges:
+        name: <white><bold>Réinitialiser les Challenges de l'utilisateur
+        description: |-
+          <gray>Permet de choisir l'utilisateur et
+          <gray>réinitialiser ses Challenges
+      add_challenge:
+        name: <white><bold>Créer un Challenge
+        description: |-
+          <gray>Démarre un processus de
+          <gray>création d'un nouveau Challenge.
+      add_level:
+        name: <white><bold>Créer un niveau
+        description: |-
+          <gray>Démarre un processus de
+          <gray>création d'un nouveau niveau.
+      edit_challenge:
+        name: <white><bold>Modifier le Challenge
+        description: |-
+          <gray>Permet de choisir et de modifier
+          <gray>un Challenge.
+      edit_level:
+        name: <white><bold>Modifier le niveau
+        description: <gray>Permet de choisir et de modifier un niveau.
+      delete_challenge:
+        name: <white><bold>Supprimer le Challenge
+        description: |-
+          <gray>Permet de choisir et de supprimer
+          <gray>un Challenge.
+      delete_level:
+        name: <white><bold>Supprimer le niveau
+        description: |-
+          <gray>Permet de choisir et de supprimer
+          <gray>un niveau.
+      edit_settings:
+        name: <white><bold>Paramètres
+        description: |-
+          <gray>Permet de visualiser et de modifier
+          <gray>un paramètre de module complémentaire.
+      complete_wipe:
+        name: <white><bold>Effacer complètement
+        description: |-
+          <gray>Efface complètement les Challenges
+          <gray>base de données d'extensions, y compris
+          <gray>données utilisateur.
+      challenge_wipe:
+        name: <white><bold>Effacer le challenge
+        description: |-
+          <gray>Efface complètement les défis
+          <gray>et les niveaux de la base de données.
+      user_wipe:
+        name: <white><bold>Suppression utilisateur
+        description: |-
+          <gray>Supprimer les données de l'utilisateur
+          <gray>e la base de données.
+      library:
+        name: <white><bold>Bibliothèque
+        description: |-
+          <gray>Ouvre une bibliothèque
+          <gray>publique de défis.
+        downloading: |-
+          <gray>Téléchargement
+          <gray>de la bibliothèque
+          <gray>demandé...
+      import_database:
+        name: <white><bold>Importer la base de données
+        description: |-
+          <gray>Permet d'importer exporté
+          & 7 la base de données de défis.
+      import_template:
+        name: <white><bold>Importer un modèle
+        description: |-
+          <gray>Permet d'importer un modèle
+          <gray>fichier avec défis.
+      export_challenges:
+        name: <white><bold>Eporter les Challenges
+        description: |-
+          <gray>Permet d'exporter la base de données
+          <gray>dans un fichier local.
+      properties:
+        name: <white><bold>Propriétés
+        description: <gray>Afficher toutes les propriétés principales.
+      requirements:
+        name: <white><bold>Exigences
+        description: <gray>Afficher les propriétés des exigences.
+      rewards:
+        name: <white><bold>Récompenses
+        description: <gray>Afficher les propriétés des récompenses.
+      deployed:
+        name: <white><bold>Déploiement
+        description: |-
+          <gray>Basculer si le défi est
+          <gray>déployé et les utilisateurs peuvent
+          <gray>terminez-le.
+        enabled: <dark_green>Activé
+        disabled: <red>désactivé
+      name:
+        name: <white><bold>Nom
+        description: |-
+          <gray>Permet de modifier
+          <gray>le nom d'affichage.
+        value: '<gray>Actuellement : <reset>[name]'
+      remove_on_complete:
+        name: <white><bold>Masquer après l'achèvement
+        description: |-
+          <gray>Basculer si le défi doit
+          <gray>caché au joueur après
+          <gray>, il est terminé.
+        enabled: <dark_green>Activé
+        disabled: <red>désactivé
+      description:
+        name: <white><bold>Description
+        description: |-
+          <gray>La description spécifique
+          <gray>pour le défi. La couleur
+          Les codes <gray>doivent lui être appliqués.
+        value: '<gray>Descriptif actuel :'
+      environment:
+        name: <white><bold>Dimension
+        description: |-
+          <gray>Permet de limiter dans quels
+          <gray>dimensionne le défi
+          <gray>peut être complété.
+        enabled: <dark_green>
+        disabled: <red>
+      order:
+        name: <white><bold>Commande
+        description: |-
+          <gray>Permet de modifier l'ordre des
+          <gray>objets.
+          <gray>Objets avec des nombres égaux
+          <gray>sera ordonné par leur
+          <gray>noms d'identification uniques.
+        value: '<gray>Commande en cours : <yellow>[number]'
+      icon:
+        name: <white><bold>Icône
+        description: |-
+          <gray>Permet de changer d'icône
+          <gray>pour ce défi.
+      locked_icon:
+        name: <white><bold>Icône verrouillée
+        description: |-
+          <gray>Permet de changer l'icône
+          <gray> du niveau verrouillé.
+      required_permissions:
+        name: <white><bold>Autorisations requises
+        description: |-
+          <gray>Permet de modifier les
+          <gray>autorisations requises pour
+          <gray>que ce défi soit réalisable.
+        title: '<gray>Autorisations :'
+        permission: ' <dark_gray>- [permission]'
+        none: <gray>Les autorisations ne sont pas définies.
+      remove_entities:
+        name: <white><bold>Supprimer des entités
+        description: |-
+          <gray>Permet de basculer si
+          <gray>entités requises
+          <gray>être supprimé du monde
+          <gray>après avoir terminé le
+          <gray>défi.
+        enabled: <dark_green>Activé
+        disabled: <red>désactivé
+      required_entities:
+        name: <white><bold>entités requises
+        description: |-
+          <gray>Permet la modification requise
+          <gray>entités pour cela
+          <gray>défi à réaliser.
+        title: '<gray>Entités :'
+        list: ' <dark_gray>- [number] x [entity]'
+        none: <gray>Les entités ne sont pas ajoutées.
+      remove_blocks:
+        name: <white><bold>Supprimer des blocs
+        description: |-
+          <gray>Permet de basculer si
+          <gray>blocs requis seront
+          <gray>soit supprimé du monde
+          <gray>après avoir terminé le
+          <gray>défi.
+        enabled: <dark_green>Activé
+        disabled: <red>désactivé
+      required_blocks:
+        name: <white><bold>Blocs requis
+        description: |-
+          <gray>Permet la modification requise
+          <gray>blocs pour cela
+          <gray>défi à réaliser.
+        title: '<gray>Blocs :'
+        list: ' <dark_gray>- [number] x [block]'
+        none: <gray>Les blocs ne sont pas ajoutés.
+      search_radius:
+        name: <white><bold>Rayon de recherche
+        description: |-
+          <gray>Permet de modifier le rayon
+          <gray>autour du joueur dont
+          <gray>blocs et/ou entités sont
+          <gray>détecté.
+        value: '<gray>Distance actuelle : <yellow>[number]'
+      remove_items:
+        name: <white><bold>Supprimer des éléments
+        description: |-
+          <gray>Permet de basculer si
+          <gray>éléments requis seront
+          <gray>doit être supprimé du stock
+          <gray>après avoir terminé le
+          <gray>défi.
+        enabled: <dark_green>Activé
+        disabled: <red>désactivé
+      required_items:
+        name: <white><bold>Éléments requis
+        description: |-
+          <gray>Permet la modification requise
+          <gray>articles pour cela
+          <gray>défi à réaliser.
+        title: '<gray>Items:'
+        list: ' <dark_gray>- [number] x [item]'
+        none: <gray>Items ne sont pas ajoutés.
+      add_ignored_meta:
+        name: <white><bold>Ajouter Ignorer les métadonnées
+        description: |-
+          <gray>Permet d'ajouter quel
+          <gray>éléments doivent être ignorés
+          <gray>toutes les métadonnées qui
+          <gray>leur est affecté.
+        title: '<gray>Items: '
+        list: ' <dark_gray>- [number] x [item]'
+        none: <gray>Les éléments ne sont pas ajoutés.
+      remove_ignored_meta:
+        name: <white><bold>Supprimer Ignorer les métadonnées
+        description: |-
+          <gray>Permet de supprimer ce qui
+          <gray>éléments doivent être ignorés
+          <gray>toutes les métadonnées qui
+          <gray>leur est affecté.
+      remove_experience:
+        name: <white><bold>Supprimer l'expérience
+        description: |-
+          <gray>Permet de basculer si
+          <gray>expérience requise
+          <gray>doit être supprimé du lecteur
+          <gray>après avoir terminé le
+          <gray>défi.
+        enabled: <dark_green>Activé
+        disabled: <red>désactivé
+      required_experience:
+        name: <white><bold>Expérience requise
+        description: |-
+          <gray>Permet de modifier le
+          <gray>expérience requise pour
+          <gray>le joueur.
+        value: '<gray>Expérience actuelle : <yellow>[number]'
+      required_level:
+        name: <white><bold>Niveau d'île requis
+        description: |-
+          <gray>Permet de modifier le
+          <gray>niveau d'îlot requis
+          <gray>pour le défi.
+        value: '<gray>Niveau actuel : <yellow>[number]'
+      remove_money:
+        name: <white><bold>Supprimer de l'argent
+        description: |-
+          <gray>Permet de basculer si
+          <gray>l'argent requis sera
+          <gray>être supprimé du lecteur
+          <gray>compte après avoir terminé
+          <gray>le défi.
+        enabled: <dark_green>activé
+        disabled: <red>Désactivé
+      required_money:
+        name: <white><bold>Argent requis
+        description: |-
+          <gray>Permet de modifier le
+          <gray>argent requis sur le joueur
+          <gray>représente le défi.
+        value: '<gray>Valeur actuelle : <yellow>[number]'
+      statistic:
+        name: <white><bold>Statistique
+        description: |-
+          <gray>Permet de modifier le
+          <gray>type de statistique qui est
+          <gray>a vérifié ce défi.
+        value: '<gray>Valeur actuelle : <yellow>[statistic]'
+      statistic_amount:
+        name: <white><bold>Valeur cible
+        description: |-
+          <gray>Permet de modifier le
+          <gray>valeur cible statistique
+          <gray>qui doit être respecté.
+        value: '<gray>Valeur actuelle : <yellow>[number]'
+      remove_statistic:
+        name: <white><bold>Réduire la statistique
+        description: |-
+          <gray>Permet de basculer si
+          La valeur statistique <gray>sera
+          <gray>soit réduit une fois terminé
+          <gray>le défi.
+        enabled: <dark_green>Activé
+        disabled: <red>Désactivé
+      statistic_blocks:
+        name: <white><bold>Bloc cible
+        description: |-
+          <gray>Permet de modifier le
+          <gray>bloc cible statistique.
+        value: '<gray>Bloc actuel : <yellow>[block]'
+      statistic_items:
+        name: <white><bold>Article cible
+        description: |-
+          <gray>Permet de modifier le
+          <gray>poste cible statistique.
+        value: '<gray>Poste actuel : <yellow>[item]'
+      statistic_entities:
+        name: <white><bold>Entité cible
+        description: |-
+          <gray>Permet de modifier le
+          <gray>entité cible statistique.
+        value: '<gray>Entité actuelle : <yellow>[entity]'
+      reward_text:
+        name: <white><bold>Texte de récompense
+        description: |-
+          <gray>Le texte de récompense spécifique.
+          <gray>Les codes couleurs doivent être
+          <gray>lui est appliqué.
+        value: '<gray>Texte actuel :'
+      repeat_reward_text:
+        name: <white><bold>Répéter le texte de récompense
+        description: |-
+          <gray>Le texte de récompense de répétition spécifique
+          <gray>pour le défi. La couleur
+          Les codes <gray>doivent lui être appliqués.
+        value: '<gray>Texte actuel :'
+      reward_items:
+        name: <white><bold>Objets de récompense
+        description: |-
+          <gray>Permet de modifier la récompense
+          <gray>articles.
+        title: '<gray>articles :'
+        list: ' <dark_gray>- [number] x [item]'
+        none: <gray>Les postes ne sont pas ajoutés.
+      repeat_reward_items:
+        name: <white><bold>Répéter les objets de récompense
+        description: |-
+          <gray>Permet de modifier la répétition
+          <gray>objets de récompense pour cela
+          <gray>défi.
+        title: '<gray>articles :'
+        list: ' <dark_gray>- [number] x [item]'
+        none: <gray>Les postes ne sont pas ajoutés.
+      reward_experience:
+        name: <white><bold>Expérience de récompense
+        description: |-
+          <gray>Permet de modifier le
+          <gray>expérience de récompense pour
+          <gray>le joueur.
+        value: '<gray>Expérience de récompense : <yellow>[number]'
+      repeat_reward_experience:
+        name: <white><bold>Répéter l'expérience de récompense
+        description: |-
+          <gray>Permet de modifier le
+          <gray>répéter l'expérience de récompense
+          <gray>pour le joueur.
+        value: '<gray>Expérience de récompense : <yellow>[number]'
+      reward_money:
+        name: <white><bold>Récompense en argent
+        description: |-
+          <gray>Permet de modifier le
+          <gray>récompense en argent.
+        value: '<gray>Valeur actuelle : <yellow>[number]'
+      repeat_reward_money:
+        name: <white><bold>Répéter l'argent de la récompense
+        description: |-
+          <gray>Permet de modifier le
+          <gray>répéter l'argent de la récompense
+          <gray>pour le défi.
+        value: '<gray>Valeur actuelle : <yellow>[number]'
+      reward_chance:
+        name: <white><bold>Chance de récompense
+        description: |-
+          <gray>Pourcentage de chance (1-100) que les récompenses
+          <gray>matérielles soient données à la fin du défi.
+          <dark_gray>Objets, argent et expérience partagent un seul tirage.
+          <dark_gray>Les commandes sont toujours exécutées.
+        value: '<gray>Chance : <yellow>[number]%'
+      reward_commands:
+        name: <white><bold>Commandes de récompense
+        description: |-
+          <gray>Les commandes de récompense spécifiques.
+          <dark_gray>Astuce :
+          <dark_gray>La commande ne nécessite pas
+          <dark_gray>écrivant d'abord `/` comme il le fera
+          <dark_gray>soit appliqué automatiquement.
+          <dark_gray>Par défaut, les commandes seront
+          <dark_gray>exécuté par le serveur. Cependant
+          <dark_gray>en ajoutant `[SELF]` au début
+          <dark_gray>permettra à la commande d'être
+          <dark_gray>exécuté par le joueur. Ça aussi
+          <dark_gray>prend en charge un espace réservé
+          <dark_gray>`[player]` qui sera
+          <dark_gray>remplacé par un nom de joueur
+          <dark_gray>qui ont terminé le défi.
+        value: '<gray>Commandes actuelles :'
+      repeat_reward_commands:
+        name: <white><bold>Répéter les commandes de récompense
+        description: |-
+          <gray>La récompense de répétition spécifique
+          <gray>commandes pour le défi.
+          <dark_gray>Astuce :
+          <dark_gray>La commande ne nécessite pas
+          <dark_gray>écrivant d'abord `/` comme il le fera
+          <dark_gray>soit appliqué automatiquement.
+          <dark_gray>Par défaut, les commandes seront
+          <dark_gray>exécuté par le serveur. Cependant
+          <dark_gray>en ajoutant `[SELF]` au début
+          <dark_gray>permettra à la commande d'être
+          <dark_gray>exécuté par le joueur. Ça aussi
+          <dark_gray>prend en charge un espace réservé
+          <dark_gray>`[player]` qui sera
+          <dark_gray>remplacé par un nom de joueur
+          <dark_gray>qui ont terminé le défi.
+        value: '<gray>Commandes actuelles :'
+      repeatable:
+        name: <white><bold>Répétable
+        description: |-
+          <gray>Permet de basculer si
+          <gray>le défi est
+          <gray>répétable.
+        enabled: <dark_green>Activé
+        disabled: <red>désactivé
+      repeat_count:
+        name: <white><bold>Nombre de répétitions
+        description: |-
+          <gray>Permet de modifier le
+          <gray>nombre de répétitions
+          <gray>pour le défi.
+          <gray>Mettez 0 pour des répétitions illimitées.
+        value: '<gray>Valeur actuelle : <yellow>[number]'
+        value-infinite: '<gray>Valeur actuelle : <yellow>[number] <gray>(illimité)'
+      cool_down:
+        name: <white><bold>Refroidissement
+        description: |-
+          <gray>Permet de modifier le
+          <gray>secondes de refroidissement qui
+          <gray>doit être attendu entre
+          <gray>défi répétable
+          <gray>achèvements.
+        value: '<gray>Valeur actuelle : <yellow>[time]'
+      challenges:
+        name: <white><bold>Défis
+        description: |-
+          <gray>Afficher les défis assignés
+          <gray>au niveau.
+      waiver_amount:
+        name: <white><bold>Montant de la renonciation
+        description: |-
+          <gray>Permet de définir un numéro
+          <gray>de défis qui peuvent
+          <gray>reste inachevé pendant
+          <gray>déverrouillant le niveau suivant.
+        value: '<gray>Valeur actuelle : <yellow>[number]'
+      add_challenges:
+        name: <white><bold>Ajouter des défis
+        description: |-
+          <gray>Permet de sélectionner et
+          <gray>ajoute des défis au
+          Niveau <gray>.
+      remove_challenges:
+        name: <white><bold>Supprimer le(s) défi(s)
+        description: |-
+          <gray>Permet de sélectionner et
+          <gray>supprime les défis du
+          Niveau <gray>.
+      reset_on_new:
+        name: <white><bold>Réinitialiser sur Nouveau
+        description: |-
+          <gray>Permet de basculer si
+          <gray>défis devraient être
+          <gray>réinitialisé lorsque l'utilisateur quitte
+          <gray>ou crée un nouvel îlot
+          <gray>île.
+        enabled: <dark_green>Activé
+        disabled: <red>désactivé
+      broadcast:
+        name: <white><bold>Diffuser
+        description: |-
+          <gray>Défi diffusions et
+          Niveau <gray>terminé pour la première fois
+          <gray>à tout le monde.
+        enabled: <dark_green>Activé
+        disabled: <red>désactivé
+      remove_completed:
+        name: <white><bold>Masquer Terminé
+        description: |-
+          <gray>Masque les défis terminés
+          <gray>dans le menu.
+        enabled: <dark_green>Activé
+        disabled: <red>désactivé
+      glow_completed:
+        name: <white><bold>Glow Terminé
+        description: |-
+          <gray>Ajoute une lueur d'enchantement
+          <gray>aux défis terminés.
+        enabled: <dark_green>Activé
+        disabled: <red>désactivé
+      store_history:
+        name: <white><bold>Historique de la boutique
+        description: |-
+          <gray>Stocke l'historique interne
+          <gray>lorsque chaque défi est
+          <gray>terminé.
+          <gray>Actuellement visible uniquement
+          <gray>dans la base de données.
+        enabled: <dark_green>Activé
+        disabled: <red>désactivé
+      data_per_island:
+        name: <white><bold>Magasin par île
+        description: |-
+          <gray>Stocke le travail terminé
+          <gray>défis par île.
+          <gray>La progression sera partagée
+          <gray>avec tous les joueurs de l'équipe.
+        enabled: <dark_green>Activé
+        disabled: <red>désactivé
+      show_title:
+        name: <white><bold>Afficher le titre
+        description: |-
+          <gray>Affiche le titre lorsqu'un
+          <gray>défi ou niveau
+          <gray>est terminé.
+        enabled: <dark_green>Activé
+        disabled: <red>désactivé
+      gamemode_gui:
+        name: <white><bold>Interface graphique de sélection du mode de jeu
+        description: |-
+          <gray>Active une interface graphique
+          <gray>unique disponible via
+          <gray>la commande /challenges.
+          <red>Nécessite un redémarrage du serveur.
+        enabled: <dark_green>Activé
+        disabled: <red>désactivé
+      locked_level_icon:
+        name: <white><bold>Icône de niveau verrouillé par défaut
+        description: |-
+          <gray>Icône par défaut pour tous les verrouillés
+          <gray>niveaux. Chaque niveau peut changer
+          <gray>cette icône.
+      purge_history:
+        name: <white><bold>Historique à vie
+        description: |-
+          <gray>Nombre de jours combien de temps
+          <gray>données d'historique sont stockées
+          <gray>dans les données utilisateur.
+          <gray>0 signifie que les données seront
+          <gray>ne doit pas être supprimé.
+        value: '<gray>Valeur actuelle : <yellow>[number]'
+      title_showtime:
+        name: <white><bold>Titre Showtime
+        description: |-
+          <gray>Nombre de ticks pour ce titre
+          <gray>sera affiché au joueur.
+        value: '<gray>Valeur actuelle : <yellow>[number]'
+      active_world_list:
+        name: <white><bold>Afficher uniquement le monde actif
+        description: |-
+          <gray>Si interface graphique de sélection du mode jeu
+          <gray>est activé, cela peut changer
+          <gray>si l'interface graphique affiche la sélection GameMode
+          <gray>ou défis pour le monde actuel.
+          <red>Nécessite le redémarrage du serveur.
+        enabled: <dark_green>Activé
+        disabled: <red>désactivé
+      visibility_mode:
+        name: <white><bold>Mode de visibilité
+        description: |-
+          <gray>Mode visibilité pour
+          <gray>défis qui sont
+          <gray>caché.
+        enabled: <dark_green>
+        disabled: <red>
+        visible: Afficher les défis visibles
+        hidden: Afficher tous les défis
+        toggleable: Autoriser le basculement
+      include_undeployed:
+        name: <white><bold>Inclure les défis non déployés
+        description: |-
+          <gray>Indique si non déployé
+          <gray>défis devraient être
+          <gray>comptabilisé pour le niveau
+          <gray>achèvement.
+        enabled: <dark_green>activé
+        disabled: <red>Désactivé
+      download:
+        name: <white><bold>Télécharger les bibliothèques
+        description: |-
+          <gray>Mise à jour manuelle disponible
+          <gray>défie les bibliothèques.
+        enabled: <dark_green>Avec le cache vide
+        disabled: <red>Sans effacer le cache
+      player:
+        name: <white><bold>[name]
+        description: '<gray>Propriétaire de l''île : [owner]'
+        members: '<gray>Membres de l''île :'
+        member: <dark_gray>- [name]
+        no-island: |-
+          <red>Le joueur n'a pas
+          <red>d' île.
+      player_list:
+        name: <white><bold>Choisir la liste des utilisateurs
+        description: |-
+          <gray>Choisissez quelle liste d'utilisateurs
+          <gray>doit être affiché.
+        enabled: <dark_green>
+        disabled: <red>
+        online: Joueurs en ligne
+        with_island: Joueurs avec îles
+        in_world: Joueurs dans le monde
+      add_block:
+        name: <white><bold>Ajouter un bloc
+        description: |-
+          <gray>Permet d'ajouter un nouveau
+          <gray>bloc à la liste.
+      remove_block:
+        name: <white><bold>Supprimer le bloc
+        description: |-
+          <gray>Permet de supprimer
+          <gray>les blocs sélectionnés
+          <gray>des listes.
+        title: '<gray>Matériaux sélectionnés :'
+        material: <dark_gray>- [material]
+      material:
+        name: <white><bold>[material]
+        description: '<gray>Material ID: [id]'
+        selected: <dark_green>sélectionnés
+      add_entity:
+        name: <white><bold>Ajouter une entité
+        description: |-
+          <gray>Permet d'ajouter une nouvelle
+          <gray>entité à la liste.
+      switch_entity:
+        name: <white><bold>Changer d'œufs
+        description: |-
+          <gray>Permet de passer de
+          <gray>œufs aux chefs de la foule.
+      remove_entity:
+        name: <white><bold>Supprimer l'entité
+        description: |-
+          <gray>Permet de supprimer
+          <gray>entités sélectionnées
+          <gray>à partir des listes.
+        title: '<gray>Entités sélectionnées :'
+        entity: <dark_gray>- [entity]
+      entity:
+        name: <white><bold>[entity]
+        description: '<gray>Entity ID: [id]'
+        selected: <dark_green>sélectionnés
+      inventory_type:
+        name: <white><bold>Type d'inventaire
+        description: |-
+          <gray>Défi qui vérifie
+          <gray>objets dans l'inventaire du joueur
+      island_type:
+        name: <white><bold>Type d'île
+        description: |-
+          <gray>Défi qui vérifie
+          <gray>blocs ou entités autour
+          <gray>joueur.
+      other_type:
+        name: <white><bold>Autre Type
+        description: |-
+          <gray>Défi qui utilise
+          <gray>plugins ou addons choses,
+          <gray>comme le niveau et l'argent.
+      statistic_type:
+        name: <white><bold>Type de statistique
+        description: |-
+          <gray>Défi qui vérifie
+          <gray>données statistiques sur les joueurs.
+      save:
+        name: <white><bold>Enregistrer
+        description: |-
+          <gray>Enregistre les modifications et
+          <gray>revenir.
+      cancel:
+        name: <white><bold>Annuler
+        description: |-
+          <gray>Ignore les modifications et
+          <gray>revenir.
+      accept_selected:
+        name: <white><bold>Accepter la sélection
+        description: |-
+          <gray>Renvoie les éléments sélectionnés
+          <gray>et ouvre l'interface graphique précédente.
+        title: '<gray>sélectionné :'
+        element: <dark_gray>- [element]
+      statistic_element:
+        name: <white><bold>[statistic]
+        description: '[description]'
+        amount: '<gray>Valeur Cible : <yellow>[number]'
+        remove:
+          name: '<gray>Réduire la Statistique : [value]'
+          value:
+            enabled: <red>Activé
+            disabled: <dark_green>Désactivé
+        block: '<gray>Bloc Cible : <yellow>[block]'
+        item: '<gray>Objet Cible : <yellow>[item]'
+        entity: '<gray>Entité Cible : <yellow>[entity]'
+        selected: <dark_green>Sélectionné
+      environment_element:
+        name: <white><bold>[environment]
+        description: '[description]'
+      search:
+        name: <white><bold>Rechercher
+        description: |-
+          <gray>Permet de rechercher un
+          <gray>élément avec une valeur
+          <gray>de texte d'entrée.
+        search: '<aqua>valeur: [value]'
+      hide_reward_items:
+        name: <white><bold>Masquer les Objets de Récompense
+        description: |-
+          <gray>Activer/désactiver l'affichage
+          <gray>des objets de récompense dans l'interface.
+        hide: <dark_green>Masquer
+        show: <red>Afficher
+      team_challenge:
+        name: <white><bold>Défi d'Équipe
+        description: |-
+          <gray>Activer/désactiver si c'est un défi d'équipe.
+          <gray>Les défis d'équipe nécessitent une équipe et partagent
+          <gray>l'achèvement et le temps d'attente sur l'île.
+        enabled: <dark_green>Activé
+        disabled: <red>Désactivé
+      team_presence:
+        name: <white><bold>Présence d'Équipe
+        description: |-
+          <gray>Pourcentage de l'équipe qui doit être
+          <gray>en ligne pour compléter ce défi.
+          <gray>0 désactive la vérification de présence.
+        value: '<gray>Actuellement : <yellow>[number]%'
+      aggregate_team:
+        name: <white><bold>Agréger sur l'Équipe
+        description: |-
+          <gray>Somme des objets / statistiques requis sur
+          <gray>tous les membres en ligne (Tribut Commun,
+          <gray>Effort Combiné).
+        enabled: <dark_green>Activé
+        disabled: <red>Désactivé
+      per_member:
+        name: <white><bold>Chaque Membre Paie
+        description: |-
+          <gray>Chaque membre en ligne doit contribuer sa
+          <gray>part (le montant requis est le TOTAL DE
+          <gray>L'ÉQUIPE, divisé entre les membres présents).
+        enabled: <dark_green>Activé
+        disabled: <red>Désactivé
+      hide_if_no_team:
+        name: <white><bold>Masquer si Pas d'Équipe
+        description: |-
+          <gray>Si activé, ce défi est complètement masqué
+          <gray>aux joueurs sans équipe.
+          <gray>Si désactivé, il est affiché mais désactivé.
+        enabled: <dark_green>Activé
+        disabled: <red>Désactivé
+      required_statistics:
+        name: <white><bold>Statistiques Requises
+        description: |-
+          <gray>Permet de modifier les
+          <gray>statistiques requises pour que ce défi soit
+          <gray>complété.
+        title: '<gray>Statistiques : '
+        list: ' <dark_gray>- [name]'
+        none: <gray>Aucune statistique n'a été ajoutée.
+      required_advancements:
+        name: <white><bold>Avancées Requises
+        description: |-
+          <gray>Permet de modifier les
+          <gray>avancées requises pour que ce défi soit
+          <gray>complété.
+        title: '<gray>Avancées : '
+        list: ' <dark_gray>- [name]'
+        none: <gray>Aucune avancée n'a été ajoutée.
+      required_materialtags:
+        name: <white><bold>Groupes de Blocs Requis
+        description: |-
+          <gray>Permet de modifier les
+          <gray>groupes de blocs requis pour que ce défi soit
+          <gray>complété.
+        title: '<gray>Groupe de blocs : '
+        list: ' <dark_gray>- [number] x [tag]'
+        none: <gray>Aucun groupe de blocs n'a été ajouté.
+      required_entitytags:
+        name: <white><bold>Groupes d'Entités Requis
+        description: |-
+          <gray>Permet de modifier les
+          <gray>groupes d'entités requis pour que ce défi soit
+          <gray>complété.
+        title: '<gray>Groupe d''entités : '
+        list: ' <dark_gray>- [number] x [tag]'
+        none: <gray>Aucun groupe d'entités n'a été ajouté.
+      required_papi:
+        name: <white><bold>PAPI Requis
+        description: |-
+          <gray>Vérifie une formule qui peut
+          <gray>inclure des espaces réservés PAPI
+          <gray>et des éléments mathématiques et logiques.
+        value: '<gray>Formule : <yellow>[formula]'
+      add_statistic:
+        name: <white><bold>Ajouter une Statistique
+        description: |-
+          <gray>Permet d'ajouter une nouvelle
+          <gray>statistique à la liste.
+      advancement:
+        name: <white><bold>[name]
+        description: '[description]'
+      add_advancement:
+        name: <white><bold>Ajouter une Avancée
+        description: |-
+          <gray>Permet d'ajouter une nouvelle
+          <gray>avancée à la liste.
+      remove_advancement:
+        name: <white><bold>Supprimer une Avancée
+        description: |-
+          <gray>Permet de supprimer
+          <gray>les avancées sélectionnées
+          <gray>de la liste.
+        enabled: <dark_green>Activé
+        disabled: <red>Désactivé
+      glow_completed_levels:
+        name: <white><bold>Briller pour les Niveaux Complétés
+        description: |-
+          <gray>Applique une lueur d'enchantement
+          <gray>aux niveaux complétés.
+        enabled: <dark_green>Activé
+        disabled: <red>Désactivé
+      language:
+        name: <white><bold>Langue
+        description: |-
+          <gray>Filtrer les bibliothèques de défis
+          <gray>par langue.
+        current: '<gray>Affichage : <yellow>[lang]'
+        all: Tous
+      add_block_group:
+        name: <white><bold>Ajouter un Groupe de Blocs
+        description: |-
+          <gray>Permet d'ajouter un nouveau
+          <gray>groupe de blocs à la liste.
+      remove_block_group:
+        name: <white><bold>Supprimer un Groupe de Blocs
+        description: |-
+          <gray>Permet de supprimer
+          <gray>les groupes de blocs sélectionnés
+          <gray>de la liste.
+        title: '<gray>Groupes de Blocs Sélectionnés :'
+        material: <dark_gray>- [material]
+      block-group:
+        name: <white><bold>[id]
+        description: ''
+        selected: <dark_green>Sélectionné
+      add_entity_group:
+        name: <white><bold>Ajouter un Groupe d'Entités
+        description: |-
+          <gray>Permet d'ajouter un nouveau
+          <gray>groupe d'entités à la liste.
+      remove_entity_group:
+        name: <white><bold>Supprimer un Groupe d'Entités
+        description: |-
+          <gray>Permet de supprimer
+          <gray>les groupes d'entités sélectionnés
+          <gray>de la liste.
+        title: '<gray>Groupes d''Entités Sélectionnés :'
+        entity: <dark_gray>- [tag]
+      entity-group:
+        name: <white><bold>[id]
+        description: ''
+        selected: <dark_green>Sélectionné
+      advancement_element:
+        name: <white><bold>[name]
+        description: '[description]'
+        selected: <dark_green>Sélectionné
+      toggle-undeployed:
+        name: <white><bold>Défis non déployés
+        shown: |-
+          <gray>Les défis non déployés sont
+          <gray>actuellement <green>affichés<gray>.
+        hidden: |-
+          <gray>Les défis non déployés sont
+          <gray>actuellement <red>masqués<gray>.
+      required_biomes:
+        name: <white><bold>Biomes requis
+        description: |-
+          <gray>Le joueur doit se trouver dans l'un
+          <gray>de ces biomes pour terminer ce
+          <gray>défi d'île.
+        title: '<gray>Biomes : '
+        list: ' <dark_gray>- <yellow>[biome]'
+        none: <gray>Aucun biome requis (n'importe quel biome).
+      reward_island_level:
+        name: <white><bold>Niveau d'île en récompense
+        description: |-
+          <gray>Permet de modifier le niveau d'île en récompense.
+          <gray>Nécessite l'addon Level.
+        value: '<gray>Valeur actuelle : <yellow>[number]'
+      repeat_reward_island_level:
+        name: <white><bold>Niveau d'île en récompense répétée
+        description: |-
+          <gray>Permet de modifier la récompense de niveau
+          <gray>d'île pour la répétition du défi.
+          <gray>Nécessite l'addon Level.
+        value: '<gray>Valeur actuelle : <yellow>[number]'
+      open_anywhere:
+        name: <white><bold>Ouvrir le GUI n'importe où
+        description: |-
+          <gray>Permet aux joueurs d'ouvrir le GUI des défis
+          <gray>depuis n'importe où. Terminer un défi nécessite
+          <gray>toujours d'être sur l'île si protégée.
+        enabled: <dark_green>Activé
+        disabled: <red>Désactivé
+      biome:
+        name: <white><bold>[biome]
+        description: '<gray>ID du biome : [id]'
+        selected: <dark_green>sélectionné
+    tips:
+      click-to-select: <yellow>Cliquez <gray>pour sélectionner.
+      click-to-choose: <yellow>Cliquez sur <gray>pour choisir.
+      click-to-complete: <yellow>Cliquez <gray>pour terminer.
+      right-click-multiple-open: <yellow>Cliquez avec le bouton droit <gray>pour choisir
+        le nombre d'achèvements.
+      shift-left-click-to-complete-all: <yellow>Maj Cliquez <gray>pour tout terminer.
+      left-click-to-accept: <yellow>Clic gauche <gray>pour terminer.
+      right-click-to-write: <yellow>Clic droit <gray>pour écrire.
+      click-to-reduce: <yellow>Cliquez <gray>pour réduire.
+      click-to-increase: <yellow>Cliquez <gray>pour augmenter.
+      click-to-return: <yellow>Cliquez <gray>pour revenir.
+      click-to-quit: <yellow>Cliquez  <gray>pour quitter.
+      click-to-wipe: <yellow>Cliquez <gray>pour effacer.
+      left-click-to-wipe: <yellow>Clic gauche <gray>pour effacer.
+      right-click-to-switch: <yellow>Cliquez avec le bouton droit <gray>pour basculer.
+      click-to-open: <yellow>Cliquez <gray>pour ouvrir.
+      click-to-export: <yellow>Cliquez <gray>pour exporter.
+      click-to-create: <yellow>Cliquez <gray>pour créer.
+      left-click-to-open: <yellow>Clic gauche <gray>pour ouvrir.
+      right-click-to-reset-all: <yellow>Clic droit <gray>pour tout effacer.
+      click-to-toggle: <yellow>Cliquez <gray>pour basculer.
+      click-to-change: <yellow>Cliquez  <gray>pour modifier.
+      shift-click-to-reset: <yellow>Maj Cliquer <gray>pour réinitialiser.
+      click-to-add: <yellow>Cliquez <gray>pour ajouter.
+      click-to-remove: <yellow>Cliquez <gray>pour supprimer.
+      left-click-to-cycle: <yellow>Clic gauche <gray>pour faire défiler vers le bas.
+      right-click-to-cycle: <yellow>Clic droit <gray>pour remonter.
+      click-to-edit: <yellow>Cliquez <gray>pour modifier.
+      left-click-to-download: <yellow>Clic gauche <gray>pour télécharger.
+      right-click-to-toggle: <yellow>Cliquez avec le bouton droit <gray>pour basculer.
+      click-to-install: <yellow>Cliquez <gray>pour installer.
+      click-to-reset-all: <yellow>Cliquez <gray>pour tout réinitialiser.
+      right-click-to-select: <yellow>Cliquez avec le bouton droit sur <gray>pour sélectionner.
+      right-click-to-deselect: <yellow>Clic droit <gray>pour désélectionner.
+      left-click-to-choose: <yellow>Clic gauche <gray>pour choisir.
+      click-to-cancel: <yellow>Cliquez <gray>pour annuler.
+      click-to-save: <yellow>Cliquez <gray>pour enregistrer.
+      click-to-deselect: <yellow>Cliquez <gray>pour désélectionner.
+      click-on-item: |-
+        <yellow>Cliquez <gray>sur l'élément dans
+        <gray>votre inventaire.
+      left-click-to-edit: <yellow>Clic gauche <gray>pour éditer.
+      right-click-to-clear: <yellow>Clic droit <gray>pour effacer.
+      click-to-previous: <yellow>Cliquez <gray>pour afficher la page précédente.
+      click-to-next: <yellow>Cliquez <gray>pour afficher la page suivante.
+      right-click-to-reset: <yellow>Clic Droit <gray>pour réinitialiser.
+    descriptions:
+      challenge:
+        lore: |-
+          [description]
+          [status]
+          [cooldown]
+          [requirements]
+          [rewards]
+        status:
+          completed: <dark_green><bold>Terminé
+          completed-times: <dark_green>Terminé <gray><bold>[number] <reset><dark_green>fois(-s)
+          completed-times-of: <dark_green>Terminé <gray><bold>[number] <reset><dark_green>sur
+            <gray><bold>[max] <reset><dark_green>fois
+          completed-times-reached: <dark_green><bold>Terminé tout <gray>[max] <dark_green>fois
+        cooldown:
+          lore: |-
+            [timeout]
+            [wait-time]
+          timeout: '<gray><bold>Temps d''attente: <reset><gray>[time]'
+          wait-time: '<red><bold>Disponible après : <reset><red>[time]'
+          in-days: '[number] d '
+          in-hours: '[number] h '
+          in-minutes: '[number] min '
+          in-seconds: '[number] s'
+        requirements:
+          lore: |-
+            [environment]
+            [type-requirement]
+            [permissions]
+          environment-single: <gray>Limité à [environment]
+          environment-title: '<gray>Limité à :'
+          environment-list: '  <gray>- <yellow>[environment]'
+          permission-single: <red>Nécessite l'autorisation [permission]
+          permissions-title: '<red>Nécessite des autorisations :'
+          permissions-list: '  <red>- [permission]'
+          island:
+            lore: |-
+              [blocks]
+              [entities]
+              [search-radius]
+              [warning-block]
+              [warning-entity]
+            blocks-title: '<gray><bold>Blocs requis :'
+            block-value: '  <gray>- <yellow>[material]'
+            blocks-value: '  <gray>- <yellow>[number] x [material]'
+            entities-title: '<gray><bold>Entités requises :'
+            entity-value: '  <gray>- <yellow>[entity]'
+            entities-value: '  <gray>- <yellow>[number] x [entity]'
+            search-radius: <gray>Pas plus loin que <yellow>[number] <gray>mètres
+            warning-block: <yellow>Les blocs seront <red>supprimés
+            warning-entity: <yellow>Les entités seront <red>supprimées
+            biomes-title: '<gray><bold>Biome(s) requis :'
+            biome-value: '  <gray>- <yellow>[biome]'
+          inventory:
+            lore: |-
+              [items]
+              [warning]
+            item-title: '<gray><bold>Éléments requis :'
+            item-value: '  <gray>- <yellow>[item]'
+            items-value: '  <gray>- <yellow>[number] x [item]'
+            warning: <yellow>Le ou les éléments seront <red>supprimés
+          other:
+            lore: |-
+              [experience]
+              [experience-warning]
+              [money]
+              [money-warning]
+              [level]
+            experience: '<gray><bold>Expérience requise : <reset><yellow>[number]'
+            experience-warning: <yellow>L'expérience sera <red>supprimée
+            money: '<gray><bold>Argent requis : <reset><yellow>[number]'
+            money-warning: <yellow>L'argent sera <red>supprimé
+            level: '<gray><bold>Niveau d''îlot requis : <reset><yellow>[number]'
+          statistic:
+            lore: |-
+              [statistic]
+              [warning]
+            multiple-target: '<gray><bold>[statistic]: <reset><yellow>[number] x [target]'
+            single-target: '<gray><bold>[statistic]: <reset><yellow>[target]'
+            statistic: <gray><bold>[statistic] <reset><yellow>[number]
+            warning: <yellow>Les données statistiques seront <red>réduites
+        rewards:
+          lore: |-
+            <gray><bold>Récompenses:
+            [text]
+            [items]
+            [experience]
+            [money]
+            [commands]
+          item-title: '<gray>Items:'
+          item-value: '  <gray>- <yellow>[item]'
+          items-value: '  <gray>- <yellow>[number] x [item]'
+          experience: '<gray>Experience: <reset><yellow>[number]'
+          money: '<gray>Argent : <reset><yellow>[number]'
+          commands-title: '<gray>Commandes :'
+          command: '  <gray>- <yellow>[command]'
+        team-requirement: '<gold>Équipe : <yellow>[online] <gold>en ligne (<yellow>[number]
+          <gold>requis)'
+        team-required: <red>Équipe requise pour compléter
+      level:
+        lore: |-
+          [text]
+          [status]
+          [waiver]
+          [rewards]
+        status:
+          completed: <dark_green><bold>Terminé
+          completed-challenges-of: |-
+            <dark_green>Terminé <gray><bold>[number] <reset><dark_green>sur
+            <gray><bold>[max] <reset><dark_green>défis.
+          locked: <red><bold>Verrouillé
+          missing-challenges: |-
+            <gray>[number] d'autres défis doivent être relevés
+            <gray>terminé pour débloquer ce niveau.
+        waiver: |-
+          <gray><bold>[number] défi(s) <reset><gray>peut être
+          <gray>ignoré pour débloquer le niveau suivant.
+        rewards:
+          lore: |-
+            <gray><bold>Récompenses:
+            [text]
+            [items]
+            [experience]
+            [money]
+            [commands]
+          item-title: '<gray>Items:'
+          item-value: '  <gray>- <yellow>[item]'
+          items-value: '  <gray>- <yellow>[number] x [item]'
+          experience: '<gray>Experience: <reset><yellow>[number]'
+          money: '<gray>Argent : <reset><yellow>[number]'
+          commands-title: '<gray>Commandes :'
+          command: '  <gray>- <yellow>[command]'
+      library:
+        author: <gray>par <yellow>[author]
+        version: <gray>Fait avec des défis <yellow>[version]
+        lang: '<gray>Langue : <yellow>[lang]'
+        gamemode: <gray>Primaire pour <yellow>[gamemode]
+  conversations:
+    prefix: '<bold><gold>[BentoBox]: <reset>'
+    confirm-string: vrai, activé, oui, confirmer, oui, valide, correct
+    deny-string: faux, désactivé, non, refuser, n, invalide, incorrect
+    cancel-string: annuler
+    exit-string: annuler, sortir, quitter
+    cancelled: <red>Conversation annulée !
+    input-number: <yellow>Veuillez saisir un numéro dans le chat.
+    input-seconds: <yellow>Veuillez entrer une seconde dans le chat.
+    numeric-only: <red>La [value] donnée n'est pas un nombre !
+    not-valid-value: <red>Le nombre donné [value] n'est pas valide. Il doit être compris
+      entre [min] et [max] inclus.
+    user-data-removed: <green>Toutes les données utilisateur pour [gamemode] sont
+      effacées de la base de données.
+    confirm-user-data-deletion: <yellow>Veuillez confirmer que vous souhaitez effacer
+      la base de données utilisateur pour [gamemode].
+    challenge-data-removed: <green>Toutes les données des défis pour [gamemode] sont
+      effacées de la base de données.
+    confirm-challenge-data-deletion: <yellow>Veuillez confirmer que vous souhaitez
+      effacer la base de données des défis pour [gamemode].
+    all-data-removed: <green>Toutes les données du module complémentaire pour [gamemode]
+      sont effacées de la base de données.
+    confirm-all-data-deletion: <yellow>Veuillez confirmer que vous souhaitez effacer
+      les données du module complémentaire pour [gamemode].
+    write-name: <yellow>Veuillez écrire un nom dans le chat.
+    new-object-created: <green>Un nouvel objet pour [gamemode] est créé.
+    object-already-exists: <red>L'objet <gray>[id] <red>existe déjà. Choisissez un
+      nom différent.
+    invalid-challenge: <red>Challenge [challenge] contient des données non valides.
+      Il ne peut pas être déployé !
+    name-changed: <green>Succès, le nom a été mis à jour.
+    write-description: <yellow>Veuillez saisir une nouvelle description dans le chat
+      et « quitter » sur une seule ligne pour terminer.
+    description-changed: <green>Succès, la description a été mise à jour.
+    write-permissions: <yellow>Veuillez saisir les autorisations requises, une par
+      ligne dans le chat, et « quitter » sur une ligne distincte pour terminer.
+    permissions-changed: <green>Succès, les autorisations de défi ont été mises à
+      jour.
+    write-reward-text: <yellow>Veuillez saisir un nouveau texte de récompense dans
+      le chat et « quitter » sur une seule ligne pour terminer.
+    reward-text-changed: <green>Succès, le texte de la récompense a été mis à jour.
+    write-repeat-reward-text: <yellow>Veuillez saisir un nouveau texte de récompense
+      répété dans le chat et « quitter » sur une ligne seule pour terminer.
+    repeat-reward-text-changed: <green>Succès, le texte de la récompense répétée a
+      été mis à jour.
+    write-reward-commands: <yellow>Veuillez saisir une nouvelle commande de récompense
+      par ligne dans le chat et « quitter » sur une ligne distincte pour terminer.
+    reward-commands-changed: <green>Succès, les commandes de récompense ont été mises
+      à jour.
+    write-repeat-reward-commands: <yellow>Veuillez saisir une nouvelle commande de
+      récompense répétée par ligne dans le chat et « quitter » sur une ligne distincte
+      pour terminer.
+    repeat-reward-commands-changed: <green>Succès, les commandes de récompense répétées
+      ont été mises à jour.
+    challenge-removed: <green>Les défis [challenge] pour [gamemode] sont supprimés
+      de la base de données.
+    confirm-challenge-deletion: <yellow>Veuillez confirmer que vous souhaitez supprimer
+      [challenge] pour [gamemode] de la base de données.
+    level-removed: <green>Le niveau [level] pour [gamemode] est supprimé de la base
+      de données.
+    confirm-level-deletion: <yellow>Veuillez confirmer que vous souhaitez supprimer
+      [level] pour [gamemode] de la base de données.
+    start-downloading: <green>Début du téléchargement et de l'importation de la bibliothèque
+      de défis.
+    written-text: '<green>Saisir du texte :'
+    confirm-data-replacement: <yellow>Veuillez confirmer que vous souhaitez remplacer
+      vos défis actuels par de nouveaux.
+    new-challenges-imported: <green>Succès, de nouveaux défis pour [gamemode] ont
+      été importés.
+    exported-file-name: <yellow>Veuillez entrer un nom de fichier pour le fichier
+      de base de données exporté. (écrivez « annuler » pour quitter)
+    database-export-completed: <green>Succès, l'exportation de la base de données
+      pour [world] est terminée. Fichier [file] généré.
+    file-name-exist: <red>Le fichier portant le nom '[id]' existe. Ne peut pas écraser.
+    write-search: <yellow>Veuillez saisir une valeur de recherche. (écrire 'cancel'
+      pour quitter)
+    search-updated: <green>Valeur de recherche mise à jour.
+    enter-formula: |-
+      <green>Entrez une formule qui utilise uniquement des espaces réservés PAPI et des symboles =,<>,<+,>=, ==, !=, AND, OR.
+      <green>Exemple : <gray>%my_lifetime_count% >= 1000 AND %island_level% >= 100
+    confirm-instruction: <gray>Tapez '<green>confirm<gray>' dans le chat pour continuer,
+      ou '<red>cancel<gray>' pour annuler.
+    input-repeat-count: <yellow>Veuillez saisir le nombre de répétitions dans le chat.
+      Saisissez 0 pour des répétitions illimitées.
+  titles:
+    challenge-title: Complété avec succès
+    challenge-subtitle: '[friendlyName]'
+    level-title: Complété avec succès
+    level-subtitle: '[friendlyName]'
+  messages:
+    completed: <dark_green>Vous avez terminé le défi [name] pour [player] !
+    already-completed: <dark_green>Ce défi a déjà été relevé !
+    reset: <dark_green>Vous réinitialisez le défi [name] pour [player] !
+    reset-all: <dark_green>Tous les défis de [player] ont été réinitialisés !
+    not-completed: <dark_green>Ce défi n'est pas encore terminé !
+    migrate-start: <dark_green>Commencer à migrer les données supplémentaires des
+      défis.
+    migrate-end: <dark_green>données d'addon Challenges mises à jour dans un nouveau
+      format.
+    migrate-not: <dark_green>Toutes les données sont valides.
+    start-downloading: <dark_purple>Début du téléchargement et de l'importation de
+      la bibliothèque de défis.
+    you-completed-challenge: '<dark_green>Vous avez complété le challenge: [value]
+      !'
+    you-repeated-challenge: '<dark_green>Vous avez répété le challenge: [value] !'
+    you-repeated-challenge-multiple: '<dark_green>Vous avez répété le challenge: [value]
+      <reset><dark_green> [count] fois !'
+    no-reward-this-time: <gray>La chance n'était pas de votre côté — pas de récompense
+      cette fois !
+    you-completed-level: '<dark_green>Vous avez complété le niveau: [value] !'
+    name-has-completed-challenge: '<dark_purple>[name] a complété le challenge: [value]
+      !'
+    name-has-completed-level: '<dark_purple>[name] a complété le niveau: [value] !'
+    load-skipping: '"[value]" existe déjà - ignoré'
+    load-overwriting: Écrasement "[value]"
+    load-add: 'Ajout d''un nouveau objet: [value]'
+  errors:
+    no-name: <red>Nom du Challenge manquant
+    unknown-challenge: <red>Challenge inconnu
+    not-valid-integer: |-
+      <red>L'entier donné "[value]" n'est pas valide !
+      La valeur doit être comprise entre [min] et [max].
+    not-deployed: <red>Le Challenge ne peut pas être réalisé !
+    not-on-island: <red>Vous devez être sur votre île pour faire le Challenge !
+    challenge-level-not-available: <red>Vous n'avez pas débloqué le niveau requis
+      pour relever ce défi.
+    not-repeatable: <red>Ce Challenge n'est pas répétable !
+    wrong-environment: <red>Vous êtes dans le mauvais environnement !
+    not-enough-items: <red>Vous n'avez pas assez [items] pour relever ce Challenge
+      !
+    not-close-enough: <red>Vous devez vous tenir dans un rayon de [number] blocs autour
+      de tous les éléments requis.
+    you-still-need: <red>Tu as encore besoin [amount] [item]
+    missing-addon: <red>Impossible de terminer le Challenge. L'addon ou le plugin
+      requis est manquant.
+    incorrect: '<red>Impossible de terminer le défi : les exigences sont incorrectes.'
+    not-enough-money: <red>Il est nécéssaire d'avoir [value] sur votre compte pour
+      compléter le challenge.
+    not-enough-experience: <red>Il est nécessaire d'avoir [value] EXP pour relever
+      ce défi.
+    island-level: <red>Votre île doit être de niveau [number] ou plus pour relever
+      ce défi !
+    no-load: '<red>Erreur: Impossible de charger le fichier challenges.yml. [message]'
+    load-error: '<red>Erreur: Impossible de charger [value].'
+    no-rank: <red>Vous n'avez pas un rang assez élevé pour faire cela.
+    cannot-remove-items: <red>Certains objets ne peuvent pas être supprimés de votre
+      inventaire !
+    exist-challenges-or-levels: <red>Dans votre monde il existe déjà des challenges.
+      Impossible de continuer !
+    no-challenges: <red>Les challenges ne sont pas actifs dans le monde actuel !
+    no-challenges-admin: <red>Les Challenges ne sont pas actifs dans le monde actuel
+      ! Vous devez utiliser <dark_purple>/[command] <red>pour ajouter cela !
+    missing-arguments: <red>La commande n'a pas d'arguments.
+    no-multiple-permission: <red>Vous n'avez pas la permission d'accomplir ce challenge
+      plusieurs fois à la fois.
+    invalid-level: <red>Le niveau [level] contient des données non valides. Il ne
+      sera pas chargé à partir de la base de données !
+    invalid-challenge: <red>Challenge [challenge] contient des données non valides.
+      Il ne sera pas chargé à partir de la base de données !
+    no-library-entries: <red>Impossible de trouver des entrées de bibliothèque. Rien
+      à montrer.
+    not-hooked: <red>Challenges Addon n'a trouvé aucun GameMode.
+    timeout: <red>Ce défi nécessite d'attendre [timeout] entre les achèvements. Vous
+      devez attendre [wait-time] pour le terminer à nouveau.
+    requirement-not-met: <red>Ce défi nécessite que [statistic] ait [number]. Vous
+      n'avez que [value].
+    requirement-not-met-entity: <red>Ce défi nécessite que [statistic] [entity] ait
+      [number]. Vous n'avez que [value].
+    requirement-not-met-material: <red>Ce défi nécessite que [statistic] [material]
+      ait [number]. Vous n'avez que [value].
+    import-failed: '<red>Impossible d''importer les défis : [message]. Vérifiez la
+      console du serveur pour plus de détails.'
+    no-team: <red>C'est un défi d'équipe. Vous devez avoir une équipe pour le compléter!
+    insufficient-team: <red>Ce défi d'équipe nécessite [number] membres de l'équipe
+      en ligne. Seul [online] est en ligne.
+    member-missing-share: <red>[name] n'a pas sa part ([amount] x [item]) pour ce
+      défi d'équipe.
+    wrong-biome: <red>Vous devez vous trouver dans le biome [biome] pour terminer
+      ce défi !
+  materials:
+    any: 'Quelconque '
+    all_hanging_signs:
+      name: Tout Panneau Suspendu
+    all_signs:
+      name: Tout Panneau
+protection:
+  flags:
+    CHALLENGES_ISLAND_PROTECTION:
+      description: |-
+        <dark_purple><italic>Change qui peut
+        <dark_purple><italic>compléter les Challenges
+      name: Protection de Challenge
+    CHALLENGES_WORLD_PROTECTION:
+      description: |-
+        <dark_purple><italic>Cela permet d''activer / désactiver
+        <dark_purple><italic>les prérequis pour les joueurs de
+        <dark_purple><italic>qui doivent être sur leur île pour
+        <dark_purple><italic>compléter le Challenge.
+      name: 'Limite de Challenge sur l''''île '
+      hint: Aucun Challenge en dehors de l''île
+version: 12

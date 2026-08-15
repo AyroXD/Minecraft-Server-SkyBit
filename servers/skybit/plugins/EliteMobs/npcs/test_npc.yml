@@ -1,0 +1,22 @@
+isEnabled: true
+name: Test NPC
+role: Testing!
+profession: CraftProfession{holder=Reference{ResourceKey[minecraft:villager_profession
+  / minecraft:nitwit]=VillagerProfession[name=translation{key='entity.minecraft.villager.nitwit',
+  args=[]}, heldJobSite=net.minecraft.world.entity.ai.village.poi.PoiType$$Lambda/0x0000000029b5f4f0@4e9bafbd,
+  acquirableJobSite=net.minecraft.world.entity.ai.village.poi.PoiType$$Lambda/0x0000000029b5f4f0@4e9bafbd,
+  requestedItems=[], secondaryPoi=[], workSound=null]}}
+spawnLocations: []
+greetings:
+- Test Greeting!
+dialog:
+- Test Dialog!
+farewell:
+- Test Farewell!
+canTalk: true
+activationRadius: 3.0
+interactionType: CUSTOM_QUEST_GIVER
+questFileName:
+- test_quest.yml
+syncMovement: true
+scripts: []

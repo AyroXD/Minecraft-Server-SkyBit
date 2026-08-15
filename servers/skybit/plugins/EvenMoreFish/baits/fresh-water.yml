@@ -1,0 +1,16 @@
+id: freshWater
+disabled: false
+silent: false
+
+item:
+  head-64: eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvY2I0YWUzYTM1ZWE4NTQ4ZTMzNGQ2OWZmODc4ZGZlZGIyMDgyMTU0MDJmZTk2NmI3YjhkZmFhMTZiNmE2M2I4OSJ9fX0=
+  displayname: <aqua>Fresh Water
+  lore:
+    - <gray>Boosts Epic & Legendary fish.
+format: <aqua>{name}</aqua>
+rarity-modifiers:
+  Epic: "*2"
+  Legendary: "*2"
+catch-weight: 2
+application-weight: 5
+max-baits: 64

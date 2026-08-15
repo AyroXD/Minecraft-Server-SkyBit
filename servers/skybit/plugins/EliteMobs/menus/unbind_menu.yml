@@ -1,0 +1,28 @@
+isEnabled: true
+shopName: '[EM] Unbind menu!'
+infoButton:
+  material: PLAYER_HEAD
+infoButtonSlot: 4
+eliteItemInputInformationSlot: 20
+eliteItemInputSlot: 29
+eliteItemInputInformationButton:
+  material: GREEN_BANNER
+  customModelID: 31173
+unbindScrollInputInformationSlot: 22
+unbindScrollInputSlot: 31
+unbindScrollInputInformationButton:
+  material: GREEN_BANNER
+  customModelID: 31173
+informationOutputButtonSlot: 24
+outputSlot: 33
+cancelButton:
+  material: BARRIER
+  customModelID: 31173
+outputInformationButton:
+  material: RED_BANNER
+  customModelID: 31173
+cancelButtonSlot: 27
+confirmButton:
+  material: EMERALD
+  customModelID: 31175
+confirmUnbindSlot: 35

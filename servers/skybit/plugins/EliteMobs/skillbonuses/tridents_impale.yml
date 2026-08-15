@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&4Impale'
+description:
+- '&7Chance to impale enemies'
+- '&7for massive bonus damage.'
+skillType: TRIDENTS
+bonusType: PROC
+unlockTier: 1
+baseValue: 0.5
+scalingPerLevel: 0.01
+procChance: 0.2
+displayMaterial: TRIDENT
+loreTemplates:
+- '&7Chance: &f$procChance%'
+- '&7Damage Multiplier: &f$multiplierx'
+formattedBonusTemplate: $multiplierx Damage

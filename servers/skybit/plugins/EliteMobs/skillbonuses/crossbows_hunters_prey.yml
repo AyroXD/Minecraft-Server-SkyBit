@@ -1,0 +1,15 @@
+isEnabled: true
+name: '&4Hunter''s Prey'
+description:
+- '&7Deal bonus damage to enemies'
+- '&7below 50% health.'
+skillType: CROSSBOWS
+bonusType: CONDITIONAL
+unlockTier: 2
+baseValue: 0.4
+scalingPerLevel: 0.008
+displayMaterial: BONE
+loreTemplates:
+- '&7Bonus Damage: &f$value%'
+- '&7Threshold: &fBelow 50% HP'
+formattedBonusTemplate: +$value% to low HP targets

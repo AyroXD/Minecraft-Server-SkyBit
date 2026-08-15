@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&5Leviathan''s Wrath'
+description:
+- '&7Unleash devastating AOE attack'
+- '&7with lightning. 60s CD.'
+skillType: TRIDENTS
+bonusType: COOLDOWN
+unlockTier: 4
+baseValue: 1.5
+scalingPerLevel: 0.03
+cooldownSeconds: 60.0
+displayMaterial: NAUTILUS_SHELL
+loreTemplates:
+- '&7Cooldown: &f$cooldowns'
+- '&7Damage Multiplier: &f$multiplierx'
+- '&7Radius: &f$radius blocks'
+- '&7Lightning strikes + AOE damage'
+formattedBonusTemplate: $multiplierx AOE Damage

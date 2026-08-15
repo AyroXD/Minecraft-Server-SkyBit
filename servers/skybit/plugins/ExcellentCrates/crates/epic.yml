@@ -1,0 +1,187 @@
+_dataver: 600
+Name: <light_purple><b>EPIC SURVIVAL CRATE</b></light_purple>
+Description:
+- <gray>Profesionálne SkyBit odmeny pre SURVIVAL.</gray>
+- <gray>Obsahuje peniaze, predmety, SkyCoiny a custom enchanty.</gray>
+ItemStackable: true
+Permission_Required: false
+Preview:
+  Enabled: true
+  Id: default
+Animation:
+  Enabled: true
+  Id: storm
+OpeningCooldown:
+  Enabled: true
+  Value: 2
+OpeningLimits:
+  Amount: 0
+Block:
+  Positions:
+  - 33,151,16,world
+  Pushback:
+    Enabled: true
+  Hologram:
+    Enabled: true
+    Template: default
+    Y_Offset: 1.35
+  Effect:
+    Enabled: false
+    Model: none
+Post-Open:
+  Commands: []
+Milestones:
+  Repeatable: false
+  List: {}
+Rewards:
+  List:
+    cash_5000:
+      Type: COMMAND
+      Name: <green><b>$5 000</b></green>
+      Description:
+      - <gray>Veľká finančná odmena</gray>
+      Commands:
+      - eco give %player_name% 5000
+      Weight: 40.0
+      Rarity: common
+      Broadcast: false
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    netherite:
+      Type: COMMAND
+      Name: <dark_gray><b>4× Netherite Ingot</b></dark_gray>
+      Description:
+      - <gray>Netherite balík</gray>
+      Commands:
+      - give %player_name% minecraft:netherite_ingot 4
+      Weight: 35.0
+      Rarity: common
+      Broadcast: false
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    xp_2000:
+      Type: COMMAND
+      Name: <yellow><b>2 000 XP</b></yellow>
+      Description:
+      - <gray>Veľký balík skúseností</gray>
+      Commands:
+      - experience add %player_name% 2000 points
+      Weight: 25.0
+      Rarity: common
+      Broadcast: false
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    beacon:
+      Type: COMMAND
+      Name: <aqua><b>Beacon</b></aqua>
+      Description:
+      - <gray>Vzácny beacon</gray>
+      Commands:
+      - give %player_name% minecraft:beacon 1
+      Weight: 55.0
+      Rarity: rare
+      Broadcast: false
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    custom_books:
+      Type: COMMAND
+      Name: <light_purple><b>3× Custom Enchant Book</b></light_purple>
+      Description:
+      - <gray>Tri náhodné ExcellentEnchanty</gray>
+      Commands:
+      - eenchants randombook %player_name% -custom
+      - eenchants randombook %player_name% -custom
+      - eenchants randombook %player_name% -custom
+      Weight: 45.0
+      Rarity: rare
+      Broadcast: false
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    legendary_key:
+      Type: COMMAND
+      Name: <gold><b>Legendary Key</b></gold>
+      Description:
+      - <gray>Najvyšší crate kľúč</gray>
+      Commands:
+      - excellentcrates:crates key give %player_name% legendary 1 -sf
+      Weight: 70.0
+      Rarity: mythic
+      Broadcast: true
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    epic_jackpot:
+      Type: COMMAND
+      Name: <gold><b>Epic Jackpot</b></gold>
+      Description:
+      - <gray>$12 000 a 100 SkyCoinov</gray>
+      Commands:
+      - eco give %player_name% 12000
+      - skybitadmin coins %player_name% 100
+      Weight: 30.0
+      Rarity: mythic
+      Broadcast: true
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+CostOptions:
+  key_epic:
+    Enabled: true
+    Name: epic Key
+    Icon:
+      Provider: vanilla
+      Data:
+        Value: '{count:1,id:"minecraft:trial_key"}'
+        DataVersion: 4671
+    Entries:
+      '0':
+        Type: key
+        Key: epic
+        Amount: 1

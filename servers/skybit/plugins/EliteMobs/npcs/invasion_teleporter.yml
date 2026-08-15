@@ -1,0 +1,22 @@
+isEnabled: true
+name: <g:#2E8B57:#3CB371>Invasion Scout</g>
+role: <g:#228B22:#6B8E23><Invasion></g>
+profession: CraftProfession{holder=Reference{ResourceKey[minecraft:villager_profession
+  / minecraft:armorer]=VillagerProfession[name=translation{key='entity.minecraft.villager.armorer',
+  args=[]}, heldJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x0000000029b60248@7ce28cfc,
+  acquirableJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x0000000029b604a8@71f5387e,
+  requestedItems=[], secondaryPoi=[], workSound=SoundEvent[location=minecraft:entity.villager.work_armorer,
+  fixedRange=Optional.empty]]}}
+spawnLocation: em_adventurers_guild,295.5,92,304.5,90,0
+spawnLocations: []
+greetings:
+- ''
+dialog: []
+farewell: []
+canTalk: true
+activationRadius: 1.0
+interactionType: COMMAND
+customModel: em_ag_invasionscout
+command: em dungeontp invasion_minidungeon.yml
+syncMovement: false
+scripts: []

@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&7Grim Reach'
+description:
+- '&7Deal bonus damage and extend'
+- '&7your scythe attack range.'
+skillType: HOES
+bonusType: PASSIVE
+unlockTier: 1
+baseValue: 0.5
+scalingPerLevel: 0.01
+displayMaterial: IRON_HOE
+loreTemplates:
+- '&7Damage Bonus: &f+$bonusPercent%'
+- '&7Reach Bonus: &f+$reachBlocks blocks'
+- '&7Always active'
+formattedBonusTemplate: +$bonusPercent% Damage, +$reachBlocks Blocks Reach

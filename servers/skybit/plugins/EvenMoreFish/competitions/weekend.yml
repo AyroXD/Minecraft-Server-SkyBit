@@ -1,0 +1,37 @@
+# The default weekend competition.
+# See _example.yml for all options.
+
+id: weekendCompetition
+disabled: false
+type: RANDOM
+random-selection:
+- LARGEST_FISH
+- MOST_FISH
+- LARGEST_TOTAL
+duration: 60
+minimum-players: 5
+days:
+  Saturday:
+  - 03:00
+  - 15:00
+  Sunday:
+  - 03:00
+  - 15:00
+bossbar-colour: PURPLE
+bossbar-prefix: '<bold><light_purple>Weekend Fishing Contest: '
+
+rewards:
+  '1':
+  - MESSAGE:<green>Congratulations for coming 1st! You have received 7500 exp and 6 diamonds!
+  - EXP:7500
+  - ITEM:DIAMOND,6
+  '2':
+  - MESSAGE:<green>Congratulations for coming 2nd! You have received 5000 exp and 4 diamonds!
+  - EXP:5000
+  - ITEM:DIAMOND,4
+  '3':
+  - MESSAGE:<yellow>Congratulations for coming 3rd! You have received 2500 exp and 2 diamonds!
+  - EXP:2500
+  - ITEM:DIAMOND,2
+  participation:
+  - MESSAGE:<yellow>Unfortunately only the top 3 players receive awards for fishing. Better luck next time. :)

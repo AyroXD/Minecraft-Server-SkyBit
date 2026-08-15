@@ -1,0 +1,120 @@
+# Citizens NPC Storage
+last-created-npc-id: 17
+npc:
+  '15':
+    metadata:
+      protected: true
+      always-use-name-hologram: true
+      skybit_lobby_action: server:skybit
+      minecraft-ai: false
+    traits:
+      scoreboardtrait:
+        tags:
+        - CITIZENS_NPC
+      lookclose:
+        perplayer: true
+        randomYawRange:
+        - 0.0
+        - 360.0
+        realisticlooking: true
+        linkedbody: true
+        range: 12.0
+        randomPitchRange:
+        - 0.0
+        - 0.0
+        enabled: true
+      location:
+        world: world
+        worldid: 9824386c-12d0-43df-833b-2c2ccb10ad1f
+        x: -4.5
+        y: 94.0
+        z: -45.5
+        pitch: -8.6026
+        bodyYaw: -6.2034607
+        yaw: -6.2035
+      type: VILLAGER
+    traitnames: scoreboardtrait,spawned,rotationtrait,hologramtrait,leashedtrait,lookclose,location,type,chunktickettrait
+    name: §b§lSURVIVAL §7• Klikni pre pripojenie
+    navigator:
+      usedefaultstuckaction: false
+      speedmodifier: 1.0
+      avoidwater: false
+    uuid: e2d9180d-0505-4b75-aa35-b56498f5c781
+  '16':
+    metadata:
+      protected: true
+      always-use-name-hologram: true
+      skybit_lobby_action: menu
+      minecraft-ai: false
+    traits:
+      scoreboardtrait:
+        tags:
+        - CITIZENS_NPC
+      lookclose:
+        perplayer: true
+        randomYawRange:
+        - 0.0
+        - 360.0
+        realisticlooking: true
+        linkedbody: true
+        range: 12.0
+        randomPitchRange:
+        - 0.0
+        - 0.0
+        enabled: true
+      location:
+        world: world
+        worldid: 9824386c-12d0-43df-833b-2c2ccb10ad1f
+        x: 0.5
+        y: 94.0
+        z: -45.5
+        pitch: -8.6525
+        bodyYaw: 0.0
+        yaw: 0.0
+      type: VILLAGER
+    traitnames: scoreboardtrait,spawned,rotationtrait,hologramtrait,leashedtrait,lookclose,location,type,chunktickettrait
+    name: §f§lSERVER MENU §7• Vyber režim
+    navigator:
+      usedefaultstuckaction: false
+      speedmodifier: 1.0
+      avoidwater: false
+    uuid: cbbac8c2-e76c-45ce-98b9-6fb614995ca3
+  '17':
+    metadata:
+      protected: true
+      always-use-name-hologram: true
+      skybit_lobby_action: server:skyblock
+      minecraft-ai: false
+    traits:
+      scoreboardtrait:
+        tags:
+        - CITIZENS_NPC
+      lookclose:
+        perplayer: true
+        randomYawRange:
+        - 0.0
+        - 360.0
+        realisticlooking: true
+        linkedbody: true
+        range: 12.0
+        randomPitchRange:
+        - 0.0
+        - 0.0
+        enabled: true
+      location:
+        world: world
+        worldid: 9824386c-12d0-43df-833b-2c2ccb10ad1f
+        x: 5.5
+        y: 94.0
+        z: -45.5
+        pitch: -8.6026
+        bodyYaw: 6.203448
+        yaw: 6.2034
+      type: VILLAGER
+    traitnames: scoreboardtrait,spawned,rotationtrait,hologramtrait,leashedtrait,lookclose,location,type,chunktickettrait
+    name: §d§lSKYBLOCK §7• Klikni pre pripojenie
+    navigator:
+      usedefaultstuckaction: false
+      speedmodifier: 1.0
+      avoidwater: false
+    uuid: 6214b41a-0eea-4403-8c26-625d02c84fd6

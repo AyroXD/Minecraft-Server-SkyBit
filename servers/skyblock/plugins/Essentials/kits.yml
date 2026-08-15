@@ -1,0 +1,91 @@
+# EssentialsX kit configuration.
+# If no kits are defined in this file, the plugin will attempt to copy them from 'config.yml'.
+
+# All items MUST be followed by a quantity.
+# Kit names should be in lowercase and will be treated as such in permissions and costs.
+# Syntax: - item[:durability] amount [enchantment:level]... [itemmeta:value]...
+# For detailed information on item meta, visit https://wiki.ess3.net/wiki/Item_Meta
+#
+# To make a kit execute a command, add '/<command>' to the item list. Use {USERNAME} to reference the player receiving the kit.
+# Use {PLAYER} to display the player's display name instead of the username.
+# 'delay' refers to the cooldown between how often you can use each kit, measured in seconds. Set to -1 for a one-time kit.
+#
+# You can also organize kits into separate files within the 'kits' subdirectory.
+# Essentials will treat all '.yml' files in the subdirectory as valid kit files and add them along with those in here.
+# Each file in the 'kits' subdirectory must be formatted the same as this file.
+#
+# For more information, refer to https://wiki.ess3.net/wiki/Kits
+
+kits:
+  starter:
+    delay: -1
+    items:
+      - woodenpickaxe 1
+      - woodenaxe 1
+      - oaksapling 2
+      - bread 12
+      - torch 8
+  daily:
+    delay: 86400
+    items:
+      - cobblestone 32
+      - oaklog 8
+      - bonemeal 8
+      - cookedbeef 8
+  vip:
+    delay: 86400
+    items:
+      - cobblestone 64
+      - dirt 16
+      - ironingot 8
+      - diamond 1
+      - oaksapling 4
+      - cookedbeef 16
+  knight:
+    delay: 86400
+    items:
+      - cobblestone 96
+      - dirt 24
+      - oaklog 24
+      - ironingot 12
+      - diamond 2
+      - oaksapling 6
+      - bonemeal 12
+      - cookedbeef 20
+  baron:
+    delay: 86400
+    items:
+      - cobblestone 128
+      - dirt 32
+      - oaklog 32
+      - ironingot 16
+      - diamond 3
+      - oaksapling 8
+      - bonemeal 16
+      - cookedbeef 24
+  king:
+    delay: 172800
+    items:
+      - cobblestone 192
+      - dirt 48
+      - oaklog 48
+      - ironingot 32
+      - goldingot 16
+      - diamond 6
+      - emerald 8
+      - oaksapling 12
+      - bonemeal 32
+      - cookedbeef 32
+  emperor:
+    delay: 172800
+    items:
+      - cobblestone 256
+      - dirt 64
+      - oaklog 64
+      - ironingot 48
+      - goldingot 24
+      - diamond 10
+      - emerald 16
+      - oaksapling 16
+      - bonemeal 48
+      - cookedbeef 48

@@ -1,0 +1,33 @@
+isEnabled: true
+shopName: '&2&lFletcher''s Arrow Shop'
+insufficientFundsMessage: '&c[EliteMobs] &7You don''t have enough Elite Coins! You
+  need &f%price% &7coins.'
+purchaseSuccessMessage: '&a[EliteMobs] &7Purchased &f%amount%x %item% &7for &f%price%
+  &7Elite Coins!'
+inventoryFullMessage: '&c[EliteMobs] &7Your inventory is full!'
+arrowSmallStackPrice: 10
+arrowSmallStackAmount: 16
+arrowLargeStackPrice: 35
+arrowLargeStackAmount: 64
+spectralArrowPrice: 40
+spectralArrowAmount: 16
+tippedArrowPoisonPrice: 50
+tippedArrowPoisonAmount: 8
+tippedArrowSlownessPrice: 50
+tippedArrowSlownessAmount: 8
+tippedArrowWeaknessPrice: 50
+tippedArrowWeaknessAmount: 8
+tippedArrowHarmingPrice: 75
+tippedArrowHarmingAmount: 8
+tippedArrowHealingPrice: 75
+tippedArrowHealingAmount: 8
+arrowDisplayName: '&fArrows'
+spectralArrowDisplayName: '&eSpectral Arrows'
+arrowOfPoisonDisplayName: '&2Arrow of Poison'
+arrowOfSlownessDisplayName: '&8Arrow of Slowness'
+arrowOfWeaknessDisplayName: '&7Arrow of Weakness'
+arrowOfHarmingDisplayName: '&4Arrow of Harming'
+arrowOfHealingDisplayName: '&dArrow of Healing'
+shopItemAmountFormat: '&7Amount: &f$amount'
+shopItemPriceFormat: '&7Price: &6$price &7Elite Coins'
+shopItemClickToPurchase: '&eClick to purchase!'

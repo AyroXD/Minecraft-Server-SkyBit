@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&eStorm Caller'
+description:
+- '&7Chance to strike enemies'
+- '&7with lightning.'
+skillType: TRIDENTS
+bonusType: PROC
+unlockTier: 2
+baseValue: 0.75
+scalingPerLevel: 0.015
+procChance: 0.15
+displayMaterial: LIGHTNING_ROD
+loreTemplates:
+- '&7Chance: &f$procChance%'
+- '&7Lightning Damage: &f$lightningDamage%'
+- '&7Strikes lightning effect'
+formattedBonusTemplate: +$lightningDamage% Lightning Damage

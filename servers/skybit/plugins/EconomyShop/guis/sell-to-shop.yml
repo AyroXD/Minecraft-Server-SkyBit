@@ -1,0 +1,26 @@
+# Sell to Shop GUI Configuration
+size: 54
+title: "&6&lSell Items"
+listing-slots: "0-44"
+
+filler:
+  enabled: true
+  material: BLACK_STAINED_GLASS_PANE
+  name: " "
+  slots: "45-53"
+
+items:
+  back:
+    slot: 47
+    material: SPECTRAL_ARROW
+    name: "&eBack"
+    lore:
+      - "&7Return to the main shop."
+
+  sell-all:
+    slot: 51
+    material: GOLD_BLOCK
+    name: "&eSell All"
+    lore:
+      - "&7Sell all sellable items"
+      - "&7from your inventory."

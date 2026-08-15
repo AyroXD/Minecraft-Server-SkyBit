@@ -1,0 +1,77 @@
+# Sell Confirmation GUI Configuration
+# Identical layout to buy-confirmation.yml for consistency
+size: 27
+title: "&6&lConfirm Sale"
+
+filler:
+  enabled: true
+  material: BLACK_STAINED_GLASS_PANE
+  name: " "
+  slots: "0-2,6-10,18-20,24-26"
+
+items:
+  decrease-64:
+    slot: 3
+    material: RED_STAINED_GLASS_PANE
+    name: "&c-64"
+    lore:
+      - "&7Remove 64 from quantity."
+
+  decrease-10:
+    slot: 4
+    material: RED_STAINED_GLASS_PANE
+    name: "&c-10"
+    lore:
+      - "&7Remove 10 from quantity."
+
+  decrease-1:
+    slot: 5
+    material: RED_STAINED_GLASS_PANE
+    name: "&c-1"
+    lore:
+      - "&7Remove 1 from quantity."
+
+  price-display:
+    slot: 11
+    material: PAPER
+    name: "&fTotal: &a%price%"
+    lore:
+      - "&7Quantity: &f%quantity%"
+      - "&7Unit Price: &f%unit_price%"
+      - "&7You have: &f%player_has%"
+
+  confirm:
+    slot: 15
+    material: LIME_CONCRETE
+    name: "&a&lConfirm"
+    lore:
+      - "&7Click to sell &f%quantity%x %item%"
+      - "&7for &a%price%&7."
+
+  cancel:
+    slot: 17
+    material: RED_CONCRETE
+    name: "&c&lCancel"
+    lore:
+      - "&7Cancel this sale."
+
+  increase-1:
+    slot: 21
+    material: LIME_STAINED_GLASS_PANE
+    name: "&a+1"
+    lore:
+      - "&7Add 1 to quantity."
+
+  increase-10:
+    slot: 22
+    material: LIME_STAINED_GLASS_PANE
+    name: "&a+10"
+    lore:
+      - "&7Add 10 to quantity."
+
+  increase-64:
+    slot: 23
+    material: LIME_STAINED_GLASS_PANE
+    name: "&a+64"
+    lore:
+      - "&7Add 64 to quantity."

@@ -1,0 +1,31 @@
+isEnabled: true
+name: <g:#2F4F4F:#708090>Vincent</g>
+role: <g:#696969:#A9A9A9><Blackjack Dealer></g>
+profession: CraftProfession{holder=Reference{ResourceKey[minecraft:villager_profession
+  / minecraft:librarian]=VillagerProfession[name=translation{key='entity.minecraft.villager.librarian',
+  args=[]}, heldJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x0000000029b60248@7c1ec8be,
+  acquirableJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x0000000029b604a8@6d48a91e,
+  requestedItems=[], secondaryPoi=[], workSound=SoundEvent[location=minecraft:entity.villager.work_librarian,
+  fixedRange=Optional.empty]]}}
+spawnLocation: em_adventurers_guild,282.5,81,211.5,-45,0
+spawnLocations: []
+greetings:
+- Care to try your luck at the tables?
+- Blackjack! Get 21 to win big!
+- The house always wins... eventually.
+- Step right up, test your fortune!
+dialog:
+- Remember, getting closer to 21 is the goal.
+- Hit or stand? The choice is yours.
+- A blackjack pays extra!
+- Don't go over 21...
+farewell:
+- Good luck at the tables!
+- May the cards be in your favor!
+- Come back when you're feeling lucky!
+- The tables will be waiting...
+canTalk: true
+activationRadius: 3.0
+interactionType: GAMBLING_BLACKJACK
+syncMovement: true
+scripts: []

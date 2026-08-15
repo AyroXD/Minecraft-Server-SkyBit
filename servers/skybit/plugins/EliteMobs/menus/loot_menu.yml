@@ -1,0 +1,14 @@
+isEnabled: true
+greedListTitle: '&2Greed Item List'
+greedListLore1: Click to move to the Need item list!
+greedListLore2: Items in the greed list will only
+greedListLore3: be rolled for if no one needs them!
+needListTitle: '&2Need Item List'
+needListLore1: Click to move to the Greed item list!
+needListLore2: Items in the need list will only
+needListLore3: be rolled for people who needed them!
+noGroupLootMessage: '&4[EliteMobs] &6You don''t currently have any group loot to vote
+  on!'
+previousPageTitle: '&6Previous loot page'
+nextPageTitle: '&6Next loot page'
+pageIndicatorTitle: '&8Loot page &f$current&8/&f$total'

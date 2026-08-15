@@ -1,0 +1,19 @@
+isEnabled: true
+name: '&bReactive Shielding'
+description:
+- '&7Big hits activate a shield'
+- '&7that reduces damage. 30s CD.'
+skillType: ARMOR
+bonusType: COOLDOWN
+unlockTier: 4
+baseValue: 1.0
+scalingPerLevel: 0.02
+cooldownSeconds: 30.0
+displayMaterial: SHIELD
+loreTemplates:
+- '&7Activate damage reduction shield when taking a big hit'
+- '&7Triggers on hits dealing 20%+ of max health'
+- '&7Shield Reduction: $shieldReduction%'
+- '&7Shield Duration: $shieldDuration'
+- '&7Cooldown: $cooldown'
+formattedBonusTemplate: '$shieldReduction% damage reduction shield (CD: $cooldown)'

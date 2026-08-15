@@ -1,0 +1,234 @@
+# Sets the defensive powers natural elites can randomly roll.
+# Both .lua filenames and legacy .yml aliases are accepted.
+defensivePowers:
+- invulnerability_arrow.yml
+- invulnerability_fall_damage.yml
+- invulnerability_fire.yml
+- invulnerability_fireworks.yml
+- invulnerability_knockback.yml
+- shield_wall.yml
+# Sets the offensive powers natural elites can randomly roll.
+# Both .lua filenames and legacy .yml aliases are accepted.
+offensivePowers:
+- arrow_fireworks.yml
+- arrow_rain.yml
+- attack_arrow.yml
+- attack_fire.yml
+- attack_fireball.yml
+- attack_freeze.yml
+- attack_gravity.yml
+- attack_lightning.yml
+- attack_poison.yml
+- attack_push.yml
+- attack_vacuum.yml
+- attack_wither.yml
+- fireworks_barrage.yml
+- lightning_bolts.yml
+- taze.yml
+# Sets the miscellaneous powers natural elites can randomly roll.
+# Both .lua filenames and legacy .yml aliases are accepted.
+miscellaneousPowers:
+- attack_blinding.yml
+- attack_confusing.yml
+- attack_weakness.yml
+- attack_web.yml
+- bonus_coins.yml
+- bonus_loot.yml
+- channel_healing.yml
+- corpse.yml
+- frost_walker.yml
+- ground_pound.yml
+- implosion.yml
+- invisibility.yml
+- moonwalk.yml
+- movement_speed.yml
+- taunt.yml
+majorPowers:
+  # Sets the major powers BEE elites can randomly roll.
+  BEE: []
+  # Sets the major powers BLAZE elites can randomly roll.
+  BLAZE:
+  - tracking_fireball.yml
+  # Sets the major powers BOGGED elites can randomly roll.
+  BOGGED: []
+  # Sets the major powers BREEZE elites can randomly roll.
+  BREEZE: []
+  # Sets the major powers CAVE_SPIDER elites can randomly roll.
+  CAVE_SPIDER: []
+  # Sets the major powers CREEPER elites can randomly roll.
+  CREEPER: []
+  # Sets the major powers DROWNED elites can randomly roll.
+  DROWNED: []
+  # Sets the major powers ELDER_GUARDIAN elites can randomly roll.
+  ELDER_GUARDIAN: []
+  # Sets the major powers ENDER_DRAGON elites can randomly roll.
+  ENDER_DRAGON: []
+  # Sets the major powers ENDERMAN elites can randomly roll.
+  ENDERMAN: []
+  # Sets the major powers ENDERMITE elites can randomly roll.
+  ENDERMITE: []
+  # Sets the major powers EVOKER elites can randomly roll.
+  EVOKER: []
+  # Sets the major powers GHAST elites can randomly roll.
+  GHAST: []
+  # Sets the major powers GOAT elites can randomly roll.
+  GOAT: []
+  # Sets the major powers GUARDIAN elites can randomly roll.
+  GUARDIAN: []
+  # Sets the major powers HOGLIN elites can randomly roll.
+  HOGLIN: []
+  # Sets the major powers HUSK elites can randomly roll.
+  HUSK: []
+  # Sets the major powers ILLUSIONER elites can randomly roll.
+  ILLUSIONER: []
+  # Sets the major powers IRON_GOLEM elites can randomly roll.
+  IRON_GOLEM: []
+  # Sets the major powers LLAMA elites can randomly roll.
+  LLAMA: []
+  # Sets the major powers MAGMA_CUBE elites can randomly roll.
+  MAGMA_CUBE: []
+  # Sets the major powers PHANTOM elites can randomly roll.
+  PHANTOM: []
+  # Sets the major powers PIGLIN elites can randomly roll.
+  PIGLIN: []
+  # Sets the major powers PIGLIN_BRUTE elites can randomly roll.
+  PIGLIN_BRUTE: []
+  # Sets the major powers PILLAGER elites can randomly roll.
+  PILLAGER: []
+  # Sets the major powers POLAR_BEAR elites can randomly roll.
+  POLAR_BEAR: []
+  # Sets the major powers RABBIT elites can randomly roll.
+  RABBIT: []
+  # Sets the major powers RAVAGER elites can randomly roll.
+  RAVAGER: []
+  # Sets the major powers SHULKER elites can randomly roll.
+  SHULKER: []
+  # Sets the major powers SILVERFISH elites can randomly roll.
+  SILVERFISH: []
+  # Sets the major powers SKELETON elites can randomly roll.
+  SKELETON:
+  - skeleton_pillar.yml
+  - skeleton_tracking_arrow.yml
+  # Sets the major powers SLIME elites can randomly roll.
+  SLIME: []
+  # Sets the major powers SPIDER elites can randomly roll.
+  SPIDER: []
+  # Sets the major powers STRAY elites can randomly roll.
+  STRAY: []
+  # Sets the major powers VEX elites can randomly roll.
+  VEX: []
+  # Sets the major powers VINDICATOR elites can randomly roll.
+  VINDICATOR: []
+  # Sets the major powers WARDEN elites can randomly roll.
+  WARDEN: []
+  # Sets the major powers WITCH elites can randomly roll.
+  WITCH: []
+  # Sets the major powers WITHER elites can randomly roll.
+  WITHER: []
+  # Sets the major powers WITHER_SKELETON elites can randomly roll.
+  WITHER_SKELETON: []
+  # Sets the major powers WOLF elites can randomly roll.
+  WOLF: []
+  # Sets the major powers ZOGLIN elites can randomly roll.
+  ZOGLIN: []
+  # Sets the major powers ZOMBIE elites can randomly roll.
+  ZOMBIE:
+  - zombie_bloat.yml
+  - zombie_friends.yml
+  - zombie_necronomicon.yml
+  - zombie_parents.yml
+  # Sets the major powers ZOMBIFIED_PIGLIN elites can randomly roll.
+  ZOMBIFIED_PIGLIN: []
+disabledPowers:
+  # Removes these powers from BEE elites after the shared pools are loaded.
+  BEE: []
+  # Removes these powers from BLAZE elites after the shared pools are loaded.
+  BLAZE: []
+  # Removes these powers from BOGGED elites after the shared pools are loaded.
+  BOGGED: []
+  # Removes these powers from BREEZE elites after the shared pools are loaded.
+  BREEZE: []
+  # Removes these powers from CAVE_SPIDER elites after the shared pools are loaded.
+  CAVE_SPIDER: []
+  # Removes these powers from CREEPER elites after the shared pools are loaded.
+  CREEPER:
+  - invisibility.yml
+  # Removes these powers from DROWNED elites after the shared pools are loaded.
+  DROWNED: []
+  # Removes these powers from ELDER_GUARDIAN elites after the shared pools are loaded.
+  ELDER_GUARDIAN: []
+  # Removes these powers from ENDER_DRAGON elites after the shared pools are loaded.
+  ENDER_DRAGON: []
+  # Removes these powers from ENDERMAN elites after the shared pools are loaded.
+  ENDERMAN: []
+  # Removes these powers from ENDERMITE elites after the shared pools are loaded.
+  ENDERMITE: []
+  # Removes these powers from EVOKER elites after the shared pools are loaded.
+  EVOKER: []
+  # Removes these powers from GHAST elites after the shared pools are loaded.
+  GHAST: []
+  # Removes these powers from GOAT elites after the shared pools are loaded.
+  GOAT: []
+  # Removes these powers from GUARDIAN elites after the shared pools are loaded.
+  GUARDIAN: []
+  # Removes these powers from HOGLIN elites after the shared pools are loaded.
+  HOGLIN: []
+  # Removes these powers from HUSK elites after the shared pools are loaded.
+  HUSK: []
+  # Removes these powers from ILLUSIONER elites after the shared pools are loaded.
+  ILLUSIONER: []
+  # Removes these powers from IRON_GOLEM elites after the shared pools are loaded.
+  IRON_GOLEM: []
+  # Removes these powers from LLAMA elites after the shared pools are loaded.
+  LLAMA: []
+  # Removes these powers from MAGMA_CUBE elites after the shared pools are loaded.
+  MAGMA_CUBE: []
+  # Removes these powers from PHANTOM elites after the shared pools are loaded.
+  PHANTOM:
+  - attack_lightning.yml
+  - ground_pound.yml
+  # Removes these powers from PIGLIN elites after the shared pools are loaded.
+  PIGLIN: []
+  # Removes these powers from PIGLIN_BRUTE elites after the shared pools are loaded.
+  PIGLIN_BRUTE: []
+  # Removes these powers from PILLAGER elites after the shared pools are loaded.
+  PILLAGER: []
+  # Removes these powers from POLAR_BEAR elites after the shared pools are loaded.
+  POLAR_BEAR: []
+  # Removes these powers from RABBIT elites after the shared pools are loaded.
+  RABBIT: []
+  # Removes these powers from RAVAGER elites after the shared pools are loaded.
+  RAVAGER: []
+  # Removes these powers from SHULKER elites after the shared pools are loaded.
+  SHULKER: []
+  # Removes these powers from SILVERFISH elites after the shared pools are loaded.
+  SILVERFISH: []
+  # Removes these powers from SKELETON elites after the shared pools are loaded.
+  SKELETON: []
+  # Removes these powers from SLIME elites after the shared pools are loaded.
+  SLIME: []
+  # Removes these powers from SPIDER elites after the shared pools are loaded.
+  SPIDER: []
+  # Removes these powers from STRAY elites after the shared pools are loaded.
+  STRAY: []
+  # Removes these powers from VEX elites after the shared pools are loaded.
+  VEX:
+  - ground_pound.yml
+  # Removes these powers from VINDICATOR elites after the shared pools are loaded.
+  VINDICATOR: []
+  # Removes these powers from WARDEN elites after the shared pools are loaded.
+  WARDEN: []
+  # Removes these powers from WITCH elites after the shared pools are loaded.
+  WITCH: []
+  # Removes these powers from WITHER elites after the shared pools are loaded.
+  WITHER: []
+  # Removes these powers from WITHER_SKELETON elites after the shared pools are loaded.
+  WITHER_SKELETON: []
+  # Removes these powers from WOLF elites after the shared pools are loaded.
+  WOLF: []
+  # Removes these powers from ZOGLIN elites after the shared pools are loaded.
+  ZOGLIN: []
+  # Removes these powers from ZOMBIE elites after the shared pools are loaded.
+  ZOMBIE: []
+  # Removes these powers from ZOMBIFIED_PIGLIN elites after the shared pools are loaded.
+  ZOMBIFIED_PIGLIN: []

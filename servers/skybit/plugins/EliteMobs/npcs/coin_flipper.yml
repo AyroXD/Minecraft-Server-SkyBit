@@ -1,0 +1,31 @@
+isEnabled: true
+name: <g:#9A7A40:#AA8A50>Lucky Pete</g>
+role: <g:#8A6A30:#9A7A40><Coin Flipper></g>
+profession: CraftProfession{holder=Reference{ResourceKey[minecraft:villager_profession
+  / minecraft:cartographer]=VillagerProfession[name=translation{key='entity.minecraft.villager.cartographer',
+  args=[]}, heldJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x0000000029b60248@3d7a705,
+  acquirableJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x0000000029b604a8@54147732,
+  requestedItems=[], secondaryPoi=[], workSound=SoundEvent[location=minecraft:entity.villager.work_cartographer,
+  fixedRange=Optional.empty]]}}
+spawnLocation: em_adventurers_guild,298.5,81,211.5,45,0
+spawnLocations: []
+greetings:
+- Heads or tails? Simple as that!
+- Flip a coin, double your money!
+- Feeling lucky, adventurer?
+- A simple coin flip can change your fortune!
+dialog:
+- 50/50 chance, pure luck!
+- Pick your side wisely...
+- The coin decides all.
+- Fortune favors the bold!
+farewell:
+- May fortune smile upon you!
+- Better luck next time!
+- The coin awaits your return!
+- Heads... or tails... which will it be?
+canTalk: true
+activationRadius: 3.0
+interactionType: GAMBLING_COINFLIP
+syncMovement: true
+scripts: []

@@ -1,0 +1,15 @@
+isEnabled: true
+name: '&8Heavy Bolts'
+description:
+- '&7Bolts deal bonus damage'
+- '&7and increased knockback.'
+skillType: CROSSBOWS
+bonusType: PASSIVE
+unlockTier: 3
+baseValue: 0.25
+scalingPerLevel: 0.005
+displayMaterial: IRON_INGOT
+loreTemplates:
+- '&7Bonus Damage: &f$damage%'
+- '&7Knockback: &f$knockback'
+formattedBonusTemplate: +$damage% damage + knockback

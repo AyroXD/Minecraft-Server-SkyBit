@@ -1,0 +1,239 @@
+prefix: "&8[&b&lSky&d&lBit&8] "
+server-mode: skyblock
+afk-seconds: 300
+autosave-minutes: 5
+event-interval-minutes: 60
+event-duration-minutes: 10
+network-rank-directory: "../../../../shared-data/ranks"
+
+web-bridge:
+  enabled: true
+  url: "https://skybit-network.frenzzy111777.chatgpt.site"
+  secret: "800c0e6d02299dcc24afd8d03752b086cf1ea460cd35c55f19700f551ffd87a3"
+  site-access-token: "vUyw-BYLvxG67R6kEFTQKQEqXIYz5fVC_UPqQ2W-ZCg"
+  sync-seconds: 15
+
+random-events:
+  minimum-participation-score: 10
+  participation-pass-xp: 50
+
+server-pass:
+  enabled: true
+  data-directory: "../../../../shared-data/serverpass"
+  max-tier: 50
+  xp-per-tier: 500
+  rewards:
+    1: { money: 5000 }
+    5: { key: rare }
+    10: { cosmetic: starlight_trail }
+    25: { key: epic }
+    50: { tag: "✦ PASS MASTER" }
+
+keyshop:
+  basic: 25
+  vote: 50
+  rare: 100
+  epic: 200
+  legendary: 400
+
+vote:
+  data-file: "../../../../shared-data/votes.yml"
+  party-target: 10
+  reward:
+    coins: 20
+    money: 500
+    xp: 50
+  party-reward:
+    coins: 50
+    money: 1000
+    xp: 100
+  llama:
+    world: world
+    x: 28.5
+    y: 150.0
+    z: -29.5
+    duration-seconds: 60
+    reward:
+      coins: 100
+      money: 5000
+      xp: 250
+  sites:
+    minecraft_mp:
+      name: "Minecraft-MP"
+      url: "https://minecraft-mp.com/servers/"
+    minecraftservers:
+      name: "MinecraftServers.org"
+      url: "https://minecraftservers.org/"
+    topg:
+      name: "TopG Minecraft Servers"
+      url: "https://topg.org/minecraft-servers/"
+
+mine-rush:
+  period-hours: 12
+  goal: 5000
+  rewards:
+    500:
+      message: "+$500 a 5 SkyCoins"
+      commands: ["eco give {player} 500", "skybitadmin coins {player} 5"]
+    1500:
+      message: "+$1 500, 15 SkyCoins a Basic Key"
+      commands: ["eco give {player} 1500", "skybitadmin coins {player} 15", "skybitkey give {player} basic 1"]
+    3000:
+      message: "+$3 000, 30 SkyCoins a Rare Key"
+      commands: ["eco give {player} 3000", "skybitadmin coins {player} 30", "skybitkey give {player} rare 1"]
+    5000:
+      message: "+$7 500, 75 SkyCoins, 500 XP a Epic Key"
+      commands: ["eco give {player} 7500", "skybitadmin coins {player} 75", "skybitadmin addxp {player} 500", "skybitkey give {player} epic 1"]
+
+level:
+  max: 100
+  base-xp: 250
+  quadratic-xp: 20
+  rewards:
+    10:
+      - "lp user {player} permission set essentials.sethome.multiple.smile10 true"
+    25:
+      - "eco give {player} 5000"
+    50:
+      - "lp user {player} permission set essentials.sethome.multiple.smile50 true"
+    100:
+      - "eco give {player} 50000"
+
+xp:
+  active-minute: 5
+  mined-block: 1
+  ore-block: 8
+  harvested-crop: 3
+  mob-kill: 5
+  fish-caught: 15
+  distance-per-100-blocks: 2
+
+daily-streak:
+  1: { money: 500, xp: 50, coins: 0 }
+  2: { money: 750, xp: 75, coins: 0 }
+  3: { money: 0, xp: 250, coins: 5 }
+  4: { money: 1500, xp: 100, coins: 0 }
+  5: { money: 1000, xp: 100, coins: 15 }
+  6: { money: 2500, xp: 150, coins: 10 }
+  7: { money: 5000, xp: 500, coins: 30 }
+
+playtime-rewards:
+  30: { money: 0, xp: 250, coins: 0 }
+  60: { money: 1000, xp: 0, coins: 0 }
+  180: { money: 1000, xp: 250, coins: 10 }
+  300: { money: 2500, xp: 500, coins: 20 }
+  600: { money: 5000, xp: 1000, coins: 35 }
+  1440: { money: 10000, xp: 2500, coins: 75 }
+
+daily-quests:
+  stone:
+    title: "Vyťaž 128 Stone"
+    stat: MINE_STONE
+    goal: 128
+    reward: { money: 1500, xp: 200, coins: 5 }
+  iron:
+    title: "Vyťaž 32 Iron Ore"
+    stat: MINE_IRON
+    goal: 32
+    reward: { money: 2500, xp: 300, coins: 7 }
+  zombies:
+    title: "Zabi 25 Zombies"
+    stat: KILL_ZOMBIE
+    goal: 25
+    reward: { money: 1800, xp: 250, coins: 5 }
+  fish:
+    title: "Ulov 15 rýb"
+    stat: FISH
+    goal: 15
+    reward: { money: 2200, xp: 300, coins: 7 }
+  wheat:
+    title: "Zozbieraj 64 Wheat"
+    stat: HARVEST_WHEAT
+    goal: 64
+    reward: { money: 1600, xp: 220, coins: 5 }
+  travel:
+    title: "Prejdi 3 000 blokov"
+    stat: TRAVEL
+    goal: 3000
+    reward: { money: 2000, xp: 300, coins: 6 }
+
+weekly-quests:
+  blocks:
+    title: "Vyťaž 2 500 blokov"
+    stat: MINE_ANY
+    goal: 2500
+    reward: { money: 10000, xp: 1500, coins: 30 }
+  mobs:
+    title: "Zabi 500 mobov"
+    stat: KILL_ANY
+    goal: 500
+    reward: { money: 12000, xp: 1800, coins: 35 }
+  fish:
+    title: "Chyť 150 rýb"
+    stat: FISH
+    goal: 150
+    reward: { money: 10000, xp: 1500, coins: 30 }
+  playtime:
+    title: "Odohraj aktívne 10 hodín"
+    stat: ACTIVE_MINUTE
+    goal: 600
+    reward: { money: 15000, xp: 2500, coins: 50 }
+
+coinshop:
+  smile_tag: { slot: 10, material: SUNFLOWER, name: "&eTag ☀ SMILE", cost: 40, kind: TAG, value: "☀ SMILE" }
+  miner_tag: { slot: 11, material: DIAMOND_PICKAXE, name: "&bTag ⛏ MINER", cost: 75, kind: TAG, value: "⛏ MINER" }
+  heart_trail: { slot: 14, material: POPPY, name: "&cHeart Trail", cost: 100, kind: TRAIL, value: "HEART" }
+  flame_trail: { slot: 15, material: BLAZE_POWDER, name: "&6Flame Trail", cost: 125, kind: TRAIL, value: "FLAME" }
+  cloud_trail: { slot: 16, material: FEATHER, name: "&fCloud Trail", cost: 80, kind: TRAIL, value: "CLOUD" }
+
+rankshop:
+  vip:
+    slot: 10
+    material: GOLD_INGOT
+    name: "&6&lVIP"
+    cost: 500
+    kind: RANK
+    value: vip
+    lore:
+      - "&7Denný VIP kit a 5 domovov"
+      - "&7Farebný nick a príkaz /hat"
+  knight:
+    slot: 12
+    material: IRON_SWORD
+    name: "&f&lKNIGHT"
+    cost: 900
+    kind: RANK
+    value: knight
+    lore:
+      - "&7Všetko z VIP a 6 domovov"
+      - "&7Knight kit a /workbench"
+  baron:
+    slot: 14
+    material: AMETHYST_SHARD
+    name: "&d&lBARON"
+    cost: 1400
+    kind: RANK
+    value: baron
+    lore:
+      - "&7Všetko z VIP a 8 domovov"
+      - "&7Baron kit, /workbench a /enderchest"
+  king:
+    slot: 16
+    material: NETHER_STAR
+    name: "&e&lKING"
+    cost: 2500
+    kind: RANK
+    value: king
+    lore:
+      - "&7Všetko z Barona a 12 domovov"
+      - "&7King kit, /feed, /repair a /fly"
+  emperor:
+    slot: 22
+    material: NETHERITE_CHESTPLATE
+    name: "&5&lEMPEROR"
+    cost: 4500
+    kind: RANK
+    value: emperor
+    lore:
+      - "&7Všetko z Kinga a 15 domovov"
+      - "&7Emperor kit, /heal a všetky VIP výhody"

@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&eQuick Reload'
+description:
+- '&7Gain haste after hitting'
+- '&7for faster reloading.'
+skillType: CROSSBOWS
+bonusType: PASSIVE
+unlockTier: 1
+baseValue: 0.5
+scalingPerLevel: 0.01
+displayMaterial: SUGAR
+loreTemplates:
+- '&7Haste Level: &f$hasteLevel'
+- '&7Duration: &f3 seconds'
+- '&7Triggers on hit'
+formattedBonusTemplate: Haste $hasteLevel on hit

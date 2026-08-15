@@ -1,0 +1,36 @@
+isEnabled: true
+name: '&2[Dynamic] &6The Steamworks'
+customInfo:
+- '&fA steampunk inspired lair!'
+dungeonSizeCategory: LAIR
+worldName: em_steamworks_lair
+environment: NORMAL
+protect: true
+dungeonVersion: 1
+playerInfo: |-
+  &aDynamic Lair
+  $bossCount boss encounters
+  &6A steampunk inspired lair
+  &6with mechanical challenges!
+regionEnterMessage: '&6Reach the top and mind your step!'
+regionLeaveMessage: '&6Now leaving the clockwork dominion!'
+startLocation: em_steamworks_lair,-50.5,-48.8,-99.5,40,0
+teleportLocation: em_steamworks_lair,-46.5,-48.8,-104.5,42,0
+dungeonObjectives:
+- filename=the_steamworks_clk_wrx702_p1.yml
+contentType: DYNAMIC_DUNGEON
+dungeonConfigFolderName: the_steamworks
+contentLevel: -1
+difficulties:
+- name: normal
+  id: 0
+  levelSync: '+5'
+- name: hard
+  id: 1
+  levelSync: '+0'
+- name: mythic
+  id: 2
+  levelSync: '-5'
+setupMenuDescription:
+- '&2A Dynamic Lair where you choose the level!'
+dungeonLockoutMinutes: 4320

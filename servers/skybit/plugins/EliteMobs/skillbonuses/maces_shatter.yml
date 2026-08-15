@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&eShatter'
+description:
+- '&7Slam the ground, damaging'
+- '&7and slowing nearby enemies. 15s CD.'
+skillType: MACES
+bonusType: COOLDOWN
+unlockTier: 2
+baseValue: 1.0
+scalingPerLevel: 0.02
+cooldownSeconds: 15.0
+displayMaterial: CRACKED_STONE_BRICKS
+loreTemplates:
+- '&7Damage: &f$damage% weapon damage'
+- '&7Radius: &f$radius blocks'
+- '&7Slow Duration: &f3 seconds'
+- '&7Cooldown: &f$cooldowns'
+formattedBonusTemplate: 'AoE $damage% (CD: $cooldowns)'

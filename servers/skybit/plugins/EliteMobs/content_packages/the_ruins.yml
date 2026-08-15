@@ -1,0 +1,37 @@
+isEnabled: true
+name: '&2[Dynamic] &6The Ruins'
+customInfo:
+- '&fA fight against a myth from'
+- '&fNorse mythology, be prepared for a smiting!'
+- '&6Credits: 69OzCanOfBepis, MagmaGuy, Dali, Frost'
+dungeonSizeCategory: LAIR
+worldName: em_the_ruins
+environment: NORMAL
+protect: true
+playerInfo: |-
+  Difficulty: &cHard
+  $bossCount level $lowestTier Big Boss!
+  &cA tough fight against a Norse god!
+regionEnterMessage: '&8[EM] &3Those who challenge the myths must be prepared for their
+  downfall!'
+regionLeaveMessage: '&8[EM] &3You now know what it takes to make a legend!'
+startLocation: em_the_ruins,-60.5,190.0,109.5,-132,0
+teleportLocation: em_the_ruins,-63.5,190.0,111.5,-132,0
+dungeonObjectives:
+- filename=ruins_boss_p1.yml
+contentType: DYNAMIC_DUNGEON
+dungeonConfigFolderName: the_ruins
+contentLevel: -1
+difficulties:
+- name: normal
+  id: 0
+  levelSync: '+5'
+- name: hard
+  id: 1
+  levelSync: '+0'
+- name: mythic
+  id: 2
+  levelSync: '-5'
+setupMenuDescription:
+- '&2A dynamic Lair!'
+dungeonLockoutMinutes: 4320

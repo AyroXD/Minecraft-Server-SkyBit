@@ -1,0 +1,19 @@
+isEnabled: true
+name: '&bLegion''s Discipline'
+description:
+- '&7Maintain a steady combat pace'
+- '&7to build stacking damage.'
+skillType: SPEARS
+bonusType: STACKING
+unlockTier: 3
+baseValue: 1.0
+scalingPerLevel: 1.5E-4
+maxStacks: 10
+stackBonus: 0.025
+displayMaterial: IRON_BARS
+loreTemplates:
+- '&7Max Stacks: &f$maxStacks'
+- '&7Damage/Stack: &f+$perStack%'
+- '&7Max Bonus: &f+$maxBonus%'
+- '&7Stacks fade after 2.5s without a hit'
+formattedBonusTemplate: +$maxBonus% Max (Discipline)

@@ -1,0 +1,36 @@
+isEnabled: true
+name: '&2[lvl 000-020] &aPrimis - Gladius Invasion'
+customInfo:
+- '&fIt is time to take Gladius back!'
+- '&6Credits: 69OzCanOfBepis, Frostcone, MagmaGuy'
+dungeonSizeCategory: DUNGEON
+worldName: em_id_primis_gladius
+environment: NETHER
+protect: true
+playerInfo: |-
+  &aDungeon &7- Levels 1-20
+  $bossCount boss encounters
+  &aIt is time to take
+  &aGladius back!
+regionEnterMessage: '&bWelcome to the Gladius Invasion!'
+regionLeaveMessage: 2&bYou have left the Gladius Invasion!
+startLocation: em_id_primis_gladius,-100.5,69.0,40.5,-69.499999,0
+teleportLocation: em_id_primis_gladius,-108.5,69.0,40.5,-90.499999,0
+dungeonObjectives:
+- filename=primis_gladius_bell_id.yml
+contentType: INSTANCED_DUNGEON
+dungeonConfigFolderName: em_id_primis_gladius
+contentLevel: 1
+difficulties:
+- name: normal
+  levelSync: 18
+  id: 0
+- name: hard
+  levelSync: 15
+  id: 1
+- name: mythic
+  levelSync: 12
+  id: 2
+listedInTeleports: false
+setupMenuDescription: []
+dungeonLockoutMinutes: 4320

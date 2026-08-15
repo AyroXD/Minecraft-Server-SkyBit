@@ -1,0 +1,243 @@
+admin:
+  level:
+    parameters: <player>
+    description: vypočítat úroveň ostrova hráče
+    sethandicap:
+      parameters: <player> [+/-]<handicap>
+      description: |
+        Nastavte nebo změňte ostrov *handicap*
+        např. +10 odstraní 10 úrovní,
+        30 nastaví handicap na 30,
+        -20 přidá 20 úrovní
+      changed: <green> Počáteční ostrovní handicap se změnil z [number] na [new_number].
+      invalid-level: <red> Neplatný handicap. Použijte celé číslo.
+  levelstatus:
+    description: Ukažte, kolik ostrovů je ve frontě pro skenování
+    islands-in-queue: '<green> Ostrovy ve frontě: [number]'
+  top:
+    description: ukázat seznam TOP 10
+    unknown-world: <red>Neznámý svět!
+    display: <white>[rank]. <green>[name] <gray>- <aqua>[level]
+    remove:
+      description: odstranit hráče z TOP 10
+      parameters: <player>
+  stats:
+    description: Zobrazit statistiky na ostrovech na tomto serveru
+    title: Statistiky serveru
+    world: <green> [name]
+    no-data: <red> Žádná data pro zpracování.
+    average-level: 'Průměrná úroveň ostrova: [number]'
+    median-level: 'Střední úroveň ostrova: [number]'
+    mode-level: 'Úroveň ostrova režimu: [number]'
+    highest-level: 'Nejvyšší úroveň ostrova: [number]'
+    lowest-level: 'Nejnižší úroveň ostrova: [number]'
+    distribution: 'Distribuce úrovně ostrova:'
+    islands: ostrovy
+island:
+  level:
+    parameters: '[player]'
+    description: spočítat úroveň tvého ostrova nebo ostrova hráče [player]
+    calculating: <green>Počítám úroveň...
+    estimated-wait: '<green> Odhadované čekání: [number] sekundy'
+    in-queue: <green> Jste číslo [number] ve frontě
+    island-level-is: <green>Úroveň ostrova je <aqua>[level]
+    required-points-to-next-level: '<green> Pokrok úrovně: <gold> [progress]<aqua>
+      /<yellow> [levelcost] <green> bodů'
+    deaths: <red>([number] smrtí)
+    cooldown: <red>Musíš čekat <aqua>[time] <red>sekund, než můžeš příkaz znovu použít
+    in-progress: <gold> Probíhá výpočet úrovně ostrova ...
+    time-out: <red> Výpočet úrovně trval příliš dlouho. Zkuste to prosím znovu později.
+  donate:
+    parameters: '[hand [amount]]'
+    description: donate blocks to permanently raise island level
+    must-be-on-island: <red>You must be on your island to donate blocks.
+    no-permission: <red>You do not have permission to donate blocks on this island.
+    no-value: <red>That block has no level value.
+    invalid-amount: <red>Invalid amount. Use a positive number.
+    invalid-item: <red>Darovat lze pouze bloky s nakonfigurovanou hodnotou úrovně.
+    empty: <red>There are no valid blocks to donate.
+    cancelled: <yellow>Donation cancelled. Items returned.
+    success: <green>Donated [number] blocks for <aqua>[points]<green> points! These
+      points are permanent.
+    confirm: <red><bold>Confirm - Items will be DESTROYED!
+    cancel: <green><bold>Cancel - Return Items
+    gui-title: <black><bold>Donate Blocks
+    gui-info: '<gold>Donate blocks to your island|<gray>Currently donated: <gold>[points]<gray>
+      points|<red>Warning: donated items are|<red>destroyed and cannot be returned!'
+    preview: '<yellow>Points to add: <gold>[points]|<red>These items will be destroyed!'
+    limit-reached: <red>Limit darování pro [material] byl dosažen.
+    limit-reached-all: <red>Všechny tyto bloky dosáhly svých limitů darování.
+    limit-notice: <gold>Některé bloky podléhají limitům|<gold>a nebudou darovány
+    hand:
+      keyword: ruka
+      success: <green>Donated [number] x [material] for <aqua>[points]<green> permanent
+        points!
+      not-block: <red>You must be holding a placeable block to donate.
+      confirm-prompt: <red>About to DESTROY <gold>[number] x [material]<red> for <aqua>[points]<red>
+        permanent points.
+    inv:
+      keyword: inv
+      confirm-header: '<red>Tyto bloky budou ZNIČENY z tvého inventáře:'
+      confirm-line: <gold>[number] x [material] <gray>= <aqua>[points]<gray> bodů
+      confirm-total: '<red>Celkem: <aqua>[points]<red> trvalých bodů.'
+  detail:
+    description: zobrazit podrobnosti o blocích vašeho ostrova
+  top:
+    description: ukázat TOP 10
+    gui-title: <green>TOP 10
+    gui-heading: '<gold>[name]: <aqua>[rank]'
+    island-level: <aqua>Úroveň [level]
+    warp-to: <green>Warp na ostrov [name]
+  level-details:
+    above-sea-level-blocks: Nad bloky hladiny moře
+    spawners: Spawners
+    underwater-blocks: Podvodové bloky
+    all-blocks: Všechny bloky
+    no-island: <red> Žádný ostrov!
+    names-island: '[name]''s Island'
+    syntax: '[name] x [number]'
+    hint: <red> Spustit úroveň a zobrazit zprávu bloku
+protection:
+  flags:
+    ISLAND_BLOCK_DONATION:
+      description: |-
+        <green>Toggle who can donate</green>
+        <green>blocks to raise island level.</green>
+      name: Block Donation
+      hint: Block donation not allowed
+
+level:
+  commands:
+    value:
+      parameters: '[hand |<material>]'
+      description: ukazuje hodnotu bloků. Na konci přidejte „ruku“ a zobrazíte hodnotu
+        pro položku v ruce.
+  gui:
+    titles:
+      top: <black><bold> Nejlepší ostrovy
+      detail-panel: <black><bold> [name]'s Island
+      value-panel: <black><bold> Blokové hodnoty
+    buttons:
+      island:
+        empty: <white><bold> [name]. místo
+        name: <white><bold> [name]
+        description: |-
+          [owner]
+          [members]
+          [place]
+          [level]
+        owners-island: '[player]''s Island'
+        owner: '<gray><bold> Majitel: <reset><aqua> [player]'
+        members-title: '<gray><bold> Členové:'
+        member: <aqua> - [player]
+        unknown: neznámý
+        place: <gray><italic> [number]. <reset><gray>  místo
+        level: <gray> Úroveň:<italic> [number]
+      material:
+        name: <white><bold> [number] x [material]
+        description: |-
+          [description]
+          [count]
+          [value]
+          [calculated]
+          [limit]
+          [id]
+        id: '<gray> Blok ID: <yellow> [id]'
+        value: <gray> Hodnota bloku:<yellow>  [number]
+        limit: <gray> Limit bloku:<yellow>  [number]
+        count: <gray> Počet bloků:<yellow>  [number]
+        calculated: <gray> Vypočítaná hodnota:<yellow>  [number]
+      value_blocks:
+        name: <white><bold> Všechny bloky s hodnotou
+        description: |-
+          <gray> Zobrazit všechny bloky
+          <gray> s hodnotou na ostrově.
+      all_blocks:
+        name: <white><bold> Všechny bloky
+        description: |-
+          <gray> Zobrazit všechny bloky
+          <gray> na ostrově.
+      above_sea_level:
+        name: <white><bold> Bloky nad hladinou moře
+        description: |-
+          <gray> Zobrazit pouze bloky
+          <gray> které jsou nad mořem
+          <gray> úroveň.
+      underwater:
+        name: <white><bold> Blocks Under Sea level
+        description: |-
+          <gray> Zobrazit pouze bloky
+          <gray> to je níže moře
+          <gray> úroveň.
+      spawner:
+        name: <white><bold> Spawners
+        description: <gray> Displej pouze tření.
+        block-name: <aqua> Spawner
+      donated:
+        name: <white><bold>Donated Blocks
+        description: |-
+          <gray>Display blocks permanently
+          <gray>donated to island level.
+      filters:
+        name:
+          name: <white><bold> Sort by Name
+          description: <gray> Sort all blocks by name.
+        value:
+          name: <white><bold> Sort by Value
+          description: <gray> Sort all blocks by their value.
+        count:
+          name: <white><bold> Sort by Count
+          description: <gray> Sort all blocks by their amount.
+      value:
+        name: <white><bold> [material]
+        description: |-
+          [description]
+          [value]
+          [underwater]
+          [limit]
+          [id]
+        id: '<gray> Block id: <yellow> [id]'
+        value: '<gray> Hodnota bloku: <yellow> [number]'
+        underwater: '<gray> Hladina moře Below: <yellow> [number]'
+        limit: '<gray> Limit bloku: <yellow> [number]'
+      previous:
+        name: Předchozí stránka
+        description: <gray> Přepněte na stránku [number]
+      next:
+        name: Další stránka
+        description: <gray> Přepněte na stránku [number]
+      search:
+        name: Vyhledávání
+        description: |-
+          <gray> Hledejte konkrétní
+          <gray> hodnota.
+        search: '<aqua> Hodnota: [value]'
+    tips:
+      click-to-view: <yellow> Kliknutím zobrazíte.
+      click-to-previous: <yellow> Kliknutím zobrazíte předchozí stránku.
+      click-to-next: <yellow> Kliknutím zobrazíte další stránku.
+      click-to-select: <yellow> Kliknutím vyberte.
+      left-click-to-cycle-up: <yellow> Levé kliknutí na cyklus nahoru.
+      right-click-to-cycle-down: <yellow> Kliknutím pravým tlačítkem je cyklujte dolů.
+      left-click-to-change: <yellow> Levý kliknutí upravte.
+      right-click-to-clear: <yellow> Kliknutím pravým tlačítkem vymažte.
+      click-to-asc: <yellow> Kliknutím třídíte v zvyšování pořadí.
+      click-to-desc: <yellow> Kliknutím třídíte v klesajícím pořadí.
+      click-to-warp: <yellow> Klikněte na warp.
+      click-to-visit: <yellow> Kliknutím navštívíte.
+      right-click-to-visit: <yellow> Kliknutím na návštěvu.
+  conversations:
+    prefix: '<bold><gold> [BentoBox]: <reset>'
+    no-data: <red> Spusťte úroveň a zobrazí se zpráva o bloku.
+    cancel-string: zrušit
+    exit-string: zrušit, ukončit, přestat
+    write-search: <yellow> Zadejte hodnotu vyhledávání. (Napište „zrušit“ do ukončení)
+    search-updated: Aktualizována hodnota vyhledávání.
+    cancelled: <red> Konverzace zrušena!
+    no-value: <red> Tato položka nemá žádnou hodnotu.
+    unknown-item: <red> „[material]“ ve hře neexistuje.
+    value: '<gray> Hodnota „[material]“ je: <yellow> [value]'
+    value-underwater: '<gray> Hodnota [material] ''pod hladinou moře: <yellow> [value]'
+    empty-hand: <red> V ruce nejsou žádné bloky
+    you-have: <gray> Máte [number] na posledním počtu.
+    you-can-place: <gray> Můžete umístit až [number] a nechat je počítat

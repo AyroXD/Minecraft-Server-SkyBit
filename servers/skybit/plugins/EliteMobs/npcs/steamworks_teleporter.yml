@@ -1,0 +1,22 @@
+isEnabled: true
+name: <g:#8A6A4A:#9A7A5A>Steam Engineer</g>
+role: <g:#7A5A3A:#8A6A4A><Steamworks></g>
+profession: CraftProfession{holder=Reference{ResourceKey[minecraft:villager_profession
+  / minecraft:toolsmith]=VillagerProfession[name=translation{key='entity.minecraft.villager.toolsmith',
+  args=[]}, heldJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x0000000029b60248@5d266a71,
+  acquirableJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x0000000029b604a8@8971684,
+  requestedItems=[], secondaryPoi=[], workSound=SoundEvent[location=minecraft:entity.villager.work_toolsmith,
+  fixedRange=Optional.empty]]}}
+spawnLocation: em_adventurers_guild,297.5,92,267.5,-180,0
+spawnLocations: []
+greetings:
+- ''
+dialog: []
+farewell: []
+canTalk: true
+activationRadius: 1.0
+interactionType: COMMAND
+customModel: em_ag_steamengineer
+command: em dungeontp steamworks_lair.yml
+syncMovement: false
+scripts: []

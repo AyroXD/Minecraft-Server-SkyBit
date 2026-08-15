@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&cBarrage'
+description:
+- '&7Consecutive hits build up'
+- '&7damage. Stacks up to 5x.'
+skillType: BOWS
+bonusType: STACKING
+unlockTier: 3
+baseValue: 0.05
+scalingPerLevel: 0.001
+displayMaterial: ARROW
+loreTemplates:
+- '&7Bonus per Stack: &f$bonusPerStack%'
+- '&7Max Stacks: &f$maxStacks'
+- '&7Stack Decay: &f3 seconds'
+formattedBonusTemplate: +$bonusPerStack% per stack (max $maxStacks)

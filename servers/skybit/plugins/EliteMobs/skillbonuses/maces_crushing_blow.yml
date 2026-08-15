@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&eCrushing Blow'
+description:
+- '&7Chance to land a crushing hit'
+- '&7that deals bonus damage.'
+skillType: MACES
+bonusType: PROC
+unlockTier: 1
+baseValue: 0.25
+scalingPerLevel: 0.003
+procChance: 0.12
+displayMaterial: ANVIL
+loreTemplates:
+- '&7Proc Chance: &f$procChance%'
+- '&7Damage Multiplier: &f$multiplierx'
+formattedBonusTemplate: $multiplierx Damage (proc)

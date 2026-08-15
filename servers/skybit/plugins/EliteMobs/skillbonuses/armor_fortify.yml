@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&9Fortify'
+description:
+- '&7Taking damage builds stacks'
+- '&7that reduce future damage.'
+skillType: ARMOR
+bonusType: STACKING
+unlockTier: 3
+baseValue: 1.0
+scalingPerLevel: 0.02
+displayMaterial: DIAMOND_CHESTPLATE
+loreTemplates:
+- '&7Build damage reduction stacks when taking damage'
+- '&7Max Stacks: $maxStacks'
+- '&7Reduction per Stack: $reductionPerStack%'
+- '&7Stacks decay after 10 seconds without damage'
+formattedBonusTemplate: $reductionPerStack% reduction per stack (max $maxStacks)

@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&eStagger'
+description:
+- '&7Chance to stagger enemies,'
+- '&7slowing and weakening them.'
+skillType: AXES
+bonusType: PROC
+unlockTier: 2
+baseValue: 0.0
+scalingPerLevel: 0.0
+procChance: 0.1
+displayMaterial: SHIELD
+loreTemplates:
+- '&7Proc Chance: &f$procChance%'
+- '&7Effect: &fSlowness + Weakness'
+- '&7Duration: &f2 seconds'
+formattedBonusTemplate: $procChance% Stagger Chance

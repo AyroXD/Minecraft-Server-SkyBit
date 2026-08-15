@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&4Dead Eye'
+description:
+- '&7Critical hits deal massive'
+- '&7bonus damage. 45s cooldown.'
+skillType: BOWS
+bonusType: COOLDOWN
+unlockTier: 4
+baseValue: 1.5
+scalingPerLevel: 0.03
+cooldownSeconds: 45.0
+displayMaterial: ENDER_EYE
+loreTemplates:
+- '&7Damage Multiplier: &f$damageMultiplierx'
+- '&7Cooldown: &f$cooldowns'
+- '&7Triggers on critical hits'
+formattedBonusTemplate: $damageMultiplierx critical damage

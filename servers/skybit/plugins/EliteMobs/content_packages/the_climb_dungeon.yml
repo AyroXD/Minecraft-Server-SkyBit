@@ -1,0 +1,39 @@
+isEnabled: true
+name: '&2[Dynamic] &3The Climb Dungeon'
+customInfo:
+- '&fThe perfect starter instanced dungeon!'
+- '&6Credits: MagmaGuy, Frostcone, 69OzCanOfBepis, Realm of Lotheridon'
+dungeonSizeCategory: DUNGEON
+worldName: em_id_the_climb
+environment: NORMAL
+protect: true
+playerInfo: |-
+  &aDynamic Dungeon
+  $bossCount boss encounters
+  &3Scale the heights of
+  &3this dangerous ascent!
+regionEnterMessage: '&bYou''ve been asked to investigate the path to the caves. Climb
+  your way to the top!'
+regionLeaveMessage: '&bYou have left The Climb!'
+startLocation: em_id_the_climb,379.5,36,352.5,-70,-10
+teleportLocation: em_id_the_climb,371.5,34,350.5,-70.0,-10.0
+dungeonObjectives:
+- filename=the_climb_undead_beastmaster.yml
+- filename=the_climb_skeletal_shadow.yml
+- filename=the_climb_bone_champion.yml
+- filename=the_climb_undead_guardian.yml
+contentType: DYNAMIC_DUNGEON
+dungeonConfigFolderName: em_id_the_climb
+contentLevel: -1
+difficulties:
+- name: normal
+  id: 0
+  levelSync: '+5'
+- name: hard
+  id: 1
+  levelSync: '+0'
+- name: mythic
+  id: 2
+  levelSync: '-5'
+setupMenuDescription: []
+dungeonLockoutMinutes: 4320

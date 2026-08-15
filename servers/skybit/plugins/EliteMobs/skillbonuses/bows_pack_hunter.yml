@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&6Pack Hunter'
+description:
+- '&7Deal bonus damage while'
+- '&7another player is within 10 blocks.'
+skillType: BOWS
+bonusType: CONDITIONAL
+unlockTier: 1
+baseValue: 0.1
+scalingPerLevel: 0.002
+displayMaterial: WOLF_SPAWN_EGG
+loreTemplates:
+- '&7Bonus: &f+$bonusPercent%'
+- '&7Requires: &f1 nearby player'
+- '&7Range: &f$range blocks'
+formattedBonusTemplate: +$bonusPercent% damage near another player

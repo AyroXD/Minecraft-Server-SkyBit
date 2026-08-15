@@ -1,0 +1,404 @@
+# JobsPlus Configuration File
+
+# Storage Settings
+storage:
+  type: JSON
+  mysql:
+    host: localhost
+    port: 3306
+    database: jobsplus
+    username: root
+    password: password
+  auto-save-interval: 5
+
+# General Settings
+settings:
+  max-jobs: 2
+  secondary-job-multiplier: 0.7
+  job-switch-cooldown: 300
+  enable-bossbar: true
+  enable-actionbar: true
+  leaderboard-update-interval: 300
+  max-prestige: 10
+
+# Visual Effects
+visual-effects:
+  enabled: true
+  particles:
+    level-up: true
+    xp-gain: true
+    milestone: true
+    prestige: true
+    job-join: true
+  sounds:
+    level-up: true
+    xp-gain: false
+    milestone: true
+    prestige: true
+
+# XP Settings
+xp:
+  base: 100
+  level-multiplier: 50
+  level-square-multiplier: 10
+  enable-catchup: true
+  catchup-bonus-percent: 25
+
+# Milestone Rewards (Enhanced System)
+milestones:
+  enabled: true
+  levels:
+    - 5
+    - 10
+    - 15
+    - 20
+    - 25
+    - 30
+    - 40
+    - 50
+    - 60
+    - 75
+    - 90
+    - 100
+  money-rewards:
+    5: 250
+    10: 750
+    15: 1200
+    20: 2000
+    25: 3500
+    30: 5000
+    40: 8000
+    50: 12000
+    60: 15000
+    75: 25000
+    90: 35000
+    100: 50000
+
+# Prestige System
+prestige:
+  enabled: true
+  multiplier-per-level: 0.1
+  require-max-level: true
+  reset-on-prestige: true
+
+# Seasonal Events
+seasonal-events:
+  enabled: true
+  auto-activate: true
+
+  events:
+    winter-festival:
+      enabled: true
+      xp-multiplier: 2.0
+      money-multiplier: 2.0
+
+    spring-bloom:
+      enabled: true
+      xp-multiplier: 2.5
+      money-multiplier: 2.5
+
+    summer-adventure:
+      enabled: true
+      xp-multiplier: 3.0
+      money-multiplier: 2.0
+
+    autumn-harvest:
+      enabled: true
+      xp-multiplier: 2.0
+      money-multiplier: 2.5
+
+# Booster System
+boosters:
+  enabled: true
+  max-personal-boosters: 5
+  stack-multipliers: true
+
+# Random Events
+events:
+  enabled: true
+  spawn-chance: 5
+  max-concurrent: 3
+  min-duration: 10
+  max-duration: 20
+  min-multiplier: 1.5
+  max-multiplier: 2.0
+
+# Job Unlock Requirements
+job-unlocks:
+  enabled: false
+  requirements:
+    alchemist:
+      required-job: ENCHANTER
+      required-level: 25
+    excavator:
+      required-job: MINER
+      required-level: 20
+    beast-master:
+      required-job: FARMER
+      required-level: 30
+    assassin:
+      required-job: HUNTER
+      required-level: 40
+
+# Anti-Exploit
+anti-exploit:
+  enabled: true
+  max-actions-per-second: 15
+  reset-after-seconds: 5
+
+# Recommendations
+recommendations:
+  enabled: true
+  recommend-count: 3
+
+# Daily Goals
+daily-goals:
+  enabled: true
+  goals-per-day: 5
+  reset-time: "00:00"
+  reward-multiplier: 1.5
+
+# Skill Trees
+skill-trees:
+  enabled: true
+  max-unlocked-per-tree: 10
+  unlock-cost-multiplier: 1.5
+
+# Leaderboards
+leaderboards:
+  enabled: true
+  show-top: 15
+  update-interval: 300
+  display-prestige: true
+
+# Marketplace
+marketplace:
+  enabled: true
+  listing-duration-hours: 24
+  max-listings-per-player: 5
+  tax-percentage: 5
+
+# Job XP Rewards
+job-xp:
+  miner:
+    coal_ore: 5.0
+    copper_ore: 6.0
+    iron_ore: 8.0
+    gold_ore: 12.0
+    lapis_ore: 10.0
+    redstone_ore: 8.0
+    diamond_ore: 25.0
+    emerald_ore: 30.0
+    ancient_debris: 50.0
+    stone: 1.0
+    deepslate: 1.5
+  farmer:
+    wheat: 3.0
+    carrots: 3.0
+    potatoes: 3.0
+    beetroot: 4.0
+    melon: 2.0
+    pumpkin: 4.0
+    sugar_cane: 2.0
+    cactus: 2.5
+    nether_wart: 5.0
+    sweet_berries: 2.0
+    cocoa: 3.5
+  lumberjack:
+    oak_log: 4.0
+    spruce_log: 4.0
+    birch_log: 4.0
+    jungle_log: 5.0
+    acacia_log: 4.5
+    dark_oak_log: 5.0
+    mangrove_log: 5.5
+    cherry_log: 6.0
+    crimson_stem: 7.0
+    warped_stem: 7.0
+  fisherman:
+    cod: 5.0
+    salmon: 6.0
+    tropical_fish: 10.0
+    pufferfish: 12.0
+    treasure: 25.0
+  hunter:
+    zombie: 8.0
+    skeleton: 8.0
+    spider: 7.0
+    creeper: 12.0
+    enderman: 20.0
+    witch: 15.0
+    blaze: 18.0
+    wither_skeleton: 25.0
+    ender_dragon: 500.0
+    wither: 350.0
+  builder:
+    block_placed: 1.0
+    complex_block: 3.0
+  blacksmith:
+    craft_tool: 10.0
+    craft_armor: 12.0
+    repair_item: 8.0
+  enchanter:
+    enchant_item: 15.0
+    high_level_enchant: 25.0
+    brew_potion: 12.0
+  merchant:
+    villager_trade: 8.0
+    player_trade: 15.0
+  explorer:
+    new_chunk: 2.0
+    new_biome: 50.0
+    structure_found: 100.0
+  alchemist:
+    brew_potion: 10.0
+    splash_potion: 12.0
+    lingering_potion: 15.0
+  excavator:
+    dirt: 1.0
+    gravel: 1.5
+    sand: 1.5
+    clay: 3.0
+    soul_sand: 4.0
+  beast_master:
+    tame_animal: 20.0
+    breed_animal: 10.0
+    ride_distance: 0.1
+  assassin:
+    backstab_kill: 15.0
+    player_kill: 50.0
+    stealth_kill: 25.0
+
+# Perk Settings
+perks:
+  miner:
+    auto_smelt:
+      level: 10
+      chance: 0.15
+    ore_vision:
+      level: 20
+      range: 15
+    double_drop:
+      level: 35
+      chance: 0.20
+    vein_miner:
+      level: 50
+      max_blocks: 16
+    fortune_boost:
+      level: 65
+      bonus: 1
+  farmer:
+    growth_boost:
+      level: 10
+      multiplier: 1.5
+    auto_replant:
+      level: 20
+      enabled: true
+    mega_harvest:
+      level: 35
+      radius: 3
+    green_thumb:
+      level: 50
+      chance: 0.25
+    harvest_halo:
+      level: 65
+      radius: 5
+  lumberjack:
+    tree_feller:
+      level: 15
+      max_logs: 32
+    sapling_plant:
+      level: 25
+      chance: 0.50
+    bonus_wood:
+      level: 40
+      chance: 0.20
+    leaf_shredder:
+      level: 55
+      enabled: true
+    timber_master:
+      level: 70
+      bonus: 0.30
+  hunter:
+    double_loot:
+      level: 10
+      chance: 0.15
+    mob_radar:
+      level: 25
+      range: 25
+    critical_boost:
+      level: 40
+      chance: 0.20
+    headshot:
+      level: 55
+      damage_multiplier: 2.0
+  fisherman:
+    treasure_hunter:
+      level: 10
+      chance: 0.10
+    fast_catch:
+      level: 25
+      speed_multiplier: 1.5
+    lucky_fisher:
+      level: 40
+      bonus_chance: 0.15
+    sea_master:
+      level: 60
+      enabled: true
+
+# Booster Shop Prices
+booster-shop:
+  small:
+    multiplier: 1.25
+    duration: 30
+    price: 500
+  medium:
+    multiplier: 1.5
+    duration: 30
+    price: 1000
+  large:
+    multiplier: 2.0
+    duration: 30
+    price: 2500
+  mega:
+    multiplier: 2.5
+    duration: 30
+    price: 5000
+  ultra:
+    multiplier: 3.0
+    duration: 30
+    price: 10000
+  small_plus:
+    multiplier: 1.25
+    duration: 60
+    price: 900
+  medium_plus:
+    multiplier: 1.5
+    duration: 60
+    price: 1800
+  large_plus:
+    multiplier: 2.0
+    duration: 60
+    price: 4500
+  mega_plus:
+    multiplier: 2.5
+    duration: 60
+    price: 9000
+  ultra_plus:
+    multiplier: 3.0
+    duration: 60
+    price: 18000
+
+# Messages
+messages:
+  prefix: '§6§l✦ §e§lJobsPlus §6§l✦§r'
+  job-joined: '§a§l✔ §7You joined §a{job}§7!'
+  job-quit: '§c§l✖ §7You quit §c{job}§7!'
+  job-max-reached: '§c§lMAX JOBS REACHED! §7Quit a job first.'
+  level-up: '§6§l⚡ LEVEL UP! §e{job} §7is now level §f{level}§7!'
+  milestone-reached: '§6§l★ MILESTONE! §7You reached level §f{level}§7 in §e{job}§7!'
+  prestige-success: '§d§l✦ PRESTIGE {prestige}! §7You prestiged in §d{job}§7!'
+  xp-gain: '§a+{xp} XP'
+  booster-activated: '§6§l⚡ BOOSTER! §e{type} §7multiplier active!'
+  event-started: '§e§l✦ EVENT! §7{event} has begun!'
+  event-ended: '§7The §e{event} §7event ended.'

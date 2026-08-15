@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&bSnare'
+description:
+- '&7Chance to root enemies'
+- '&7in place temporarily.'
+skillType: TRIDENTS
+bonusType: PROC
+unlockTier: 1
+baseValue: 1.0
+scalingPerLevel: 0.02
+procChance: 0.25
+displayMaterial: COBWEB
+loreTemplates:
+- '&7Chance: &f$procChance%'
+- '&7Slowness Level: &f$slownessLevel'
+- '&7Duration: &f3 seconds'
+formattedBonusTemplate: Slowness $slownessLevel

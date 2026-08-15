@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&9Depth Charge'
+description:
+- '&7Bonus damage and AOE against'
+- '&7enemies in water.'
+skillType: TRIDENTS
+bonusType: CONDITIONAL
+unlockTier: 4
+baseValue: 0.3
+scalingPerLevel: 0.0025
+displayMaterial: PRISMARINE_SHARD
+loreTemplates:
+- '&7Active: &fTarget in water'
+- '&7Damage Bonus: &f+$damageBonus%'
+- '&7AOE Damage: &f$aoeDamage%'
+- '&7Radius: &f$radius blocks'
+formattedBonusTemplate: +$damageBonus% (In Water)

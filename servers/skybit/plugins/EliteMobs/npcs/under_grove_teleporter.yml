@@ -1,0 +1,23 @@
+isEnabled: true
+name: <g:#7A5A8A:#8A6A9A>Grove Keeper</g>
+role: <g:#6A4A7A:#7A5A8A><Under Grove></g>
+profession: CraftProfession{holder=Reference{ResourceKey[minecraft:villager_profession
+  / minecraft:farmer]=VillagerProfession[name=translation{key='entity.minecraft.villager.farmer',
+  args=[]}, heldJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x0000000029b60708@38abff84,
+  acquirableJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x0000000029b60968@7e97cd3d,
+  requestedItems=[minecraft:wheat, minecraft:wheat_seeds, minecraft:beetroot_seeds,
+  minecraft:bone_meal], secondaryPoi=[Block{minecraft:farmland}], workSound=SoundEvent[location=minecraft:entity.villager.work_farmer,
+  fixedRange=Optional.empty]]}}
+spawnLocation: em_adventurers_guild,293.5,92,309.5,-180,0
+spawnLocations: []
+greetings:
+- ''
+dialog: []
+farewell: []
+canTalk: true
+activationRadius: 1.0
+interactionType: COMMAND
+customModel: em_ag_grovekeeper
+command: em dungeontp under_grove_lair.yml
+syncMovement: false
+scripts: []

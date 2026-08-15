@@ -1,0 +1,31 @@
+isEnabled: true
+name: <g:#9A7A40:#AA8A50>Spinner Sam</g>
+role: <g:#8A6A30:#9A7A40><Slot Machine></g>
+profession: CraftProfession{holder=Reference{ResourceKey[minecraft:villager_profession
+  / minecraft:cleric]=VillagerProfession[name=translation{key='entity.minecraft.villager.cleric',
+  args=[]}, heldJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x0000000029b60248@3d756db3,
+  acquirableJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x0000000029b604a8@574cb16a,
+  requestedItems=[], secondaryPoi=[], workSound=SoundEvent[location=minecraft:entity.villager.work_cleric,
+  fixedRange=Optional.empty]]}}
+spawnLocation: em_adventurers_guild,298.5,81,227.5,135,0
+spawnLocations: []
+greetings:
+- Spin the reels! Match three to win!
+- JACKPOT waiting for a winner!
+- Lucky 7s pay the most...
+- Give those reels a spin!
+dialog:
+- Three of a kind wins big!
+- Even two matches get you something.
+- The sevens are the key to riches!
+- Cherries, lemons, bells, bars, or sevens...
+farewell:
+- The reels are always spinning!
+- Come back for another spin!
+- Maybe the jackpot is next!
+- Luck be with you!
+canTalk: true
+activationRadius: 3.0
+interactionType: GAMBLING_SLOTS
+syncMovement: true
+scripts: []

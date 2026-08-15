@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&6Riposte'
+description:
+- '&7After blocking an attack, your next'
+- '&7attack deals bonus damage.'
+skillType: SWORDS
+bonusType: COOLDOWN
+unlockTier: 2
+baseValue: 1.5
+scalingPerLevel: 0.01
+cooldownSeconds: 10.0
+displayMaterial: SHIELD
+loreTemplates:
+- '&7Bonus Damage: &f+$damage%'
+- '&7Cooldown: &f$cooldowns'
+- '&7Block to activate, then attack within 3s'
+formattedBonusTemplate: +$damage% Riposte Damage

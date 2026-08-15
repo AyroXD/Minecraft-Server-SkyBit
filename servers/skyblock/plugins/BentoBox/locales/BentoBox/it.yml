@@ -1,0 +1,2226 @@
+meta:
+  authors:
+  - tastybento
+  - Poslovitch
+  banner: WHITE_BANNER:1:STRIPE_TOP:GREEN:STRIPE_BOTTOM:RED
+prefixes:
+  bentobox: <gold>BentoBox </gold><gray><bold>> </bold></gray>
+  island: isola
+  Island: Isola
+  Islands: Isole
+  an-island: un'isola
+  islands: isole
+general:
+  dialogs:
+    game-mode-selection:
+      title: <green>Scegli il tuo gioco</green>
+  did-you-mean:
+    suggestion: '<gray>Intendevi </gray><yellow>[command]</yellow><gray>? Clicca qui
+      o scrivi </gray><green>yes</green><gray> per eseguirlo.</gray>[run_command:
+      [command]][hover: Clicca per eseguire [command]]'
+    header: <gray>Intendevi uno di questi? Cliccane uno per eseguirlo:</gray>
+    option: '<yellow>  [command]</yellow>[run_command: [command]][hover: Clicca per
+      eseguire [command]]'
+  success: <green>Successo!</green>
+  invalid: Non valido
+  beta: <light_purple><bold>Questo comando è in beta. Assicurati di avere backup!</bold></light_purple>
+  errors:
+    command-cancelled: <red>Comando annullato.</red>
+    no-permission: <red>Non hai il permesso per eseguire questo comando (</red><gray>[permission]</gray><red>).</red>
+    insufficient-rank: <red>Il tuo rango non è abbastanza alto per farlo! (</red><gray>[rank]</gray><red>)</red>
+    use-in-game: <red>Questo comando è disponibile esclusivamente in gioco.</red>
+    use-in-console: <red>Questo comando è disponibile solo nella console.</red>
+    no-team: <red>Non possiedi un team!</red>
+    no-island: <red>Non possiedi un'isola!</red>
+    player-has-island: <red>Il giocatore possiede già un'isola!</red>
+    player-has-no-island: <red>Quel giocatore non possiede un'isola!</red>
+    already-have-island: <red>Possiedi già un'isola!</red>
+    no-safe-location-found: <red>Non è stato possibile trovare un luogo sicuro per
+      teletrasportarti</red> nell'isola.
+    not-owner: <red>Non sei il proprietario della tua isola!</red>
+    player-is-not-owner: <aqua>[name] </aqua><red>non è il proprietario di nessuna
+      isola!</red>
+    not-in-team: <red>Quel giocatore non è nel tuo team!</red>
+    offline-player: <red>Quel giocatore è offline o non esiste.</red>
+    unknown-player: <red>[name] è un giocatore sconosciuto!</red>
+    general: <red>Quel comando non è ancora pronto - contatta un'admin</red>
+    unknown-command: <red>Comando sconosciuto. Scrivi </red><aqua>/[label] help </aqua><red>per
+      ricevere aiuto.</red>
+    wrong-world: <red>Non sei nel giusto mondo per fare questo!</red>
+    you-must-wait: <red>Devi aspettare [number]s prima di comporre di nuovo quel comando.</red>
+    must-be-positive-number: <red>[number] non è un numero positivo valido.</red>
+    not-on-island: <red>Non sei su [prefix_island]!</red>
+    slow-down: <red>Rallenta. Clicca più lentamente.</red>
+  worlds:
+    overworld: Sopravvivenza
+    nether: Nether
+    the-end: L'End
+commands:
+  help:
+    header: <gray>=========== </gray><red>[label] help </red><gray>===========</gray>
+    syntax: '<aqua>[usage] </aqua><green>[parameters]</green><gray>: </gray><yellow>[description]</yellow>'
+    syntax-no-parameters: '<aqua>[usage]</aqua><gray>: </gray><yellow>[description]</yellow>'
+    end: <gray>=================================</gray>
+    page: <gray>Pagina </gray><yellow>[page]</yellow><gray> di </gray><yellow>[total]</yellow>
+    parameters: '[command]'
+    description: comando di aiuto
+    console: Console
+  admin:
+    help:
+      description: comando admin
+    maxhomes:
+      description: cambia il numero di case consentite su questa [prefix_island] o
+        sulla [prefix_island] del giocatore
+      parameters: <number / player> <number> [[prefix_island] nome]
+      max-homes-set: <green>[name] - Imposta [prefix_island] case massime a [number]</green>
+      errors:
+        unknown-island: Sconosciuto [prefix_island]! [name]
+    resethome:
+      description: Ripristina la casa del giocatore ai valori predefiniti
+      parameters: <player> [[prefix_island] nome]
+      cleared: <aqua>Ripristino della home. [name]</aqua>
+    resets:
+      description: modifica i reset dei players
+      set:
+        description: imposta i reset di questo player
+        parameters: <giocatore> <azzera>
+        success: <green>Settato con successo i reset di </green><aqua>[name]</aqua><green>a
+          </green><aqua>[number]</aqua><green>.</green>
+      reset:
+        description: reimposta i reset di questo player a 0
+        parameters: <giocatore>
+        success-everyone: <green>Settato con successo i reset di </green><aqua>tutti</aqua><green>s</green><aqua>0</aqua><green>.</green>
+        success: <green>Settato con successo i reset di </green><aqua>[name]</aqua><green>a
+          </green><aqua>0</aqua><green>.</green>
+      add:
+        description: aggiungi quante volte questo giocatore può ancora resettare la
+          sua isola
+        parameters: <giocatore> <ripristina>
+        success: <green>Aumentato con successo </green><aqua>[number] </aqua><green>reset
+          da </green><aqua>[name],</aqua> aumentando il totale a <aqua>[total]</aqua><green>reset.</green>
+      remove:
+        description: sottrai quante volte questo giocatore può ancora resettare la
+          sua isola
+        parameters: <giocatore> <ripristina>
+        success: <green>Rimosso con successo </green><aqua>[number] </aqua><green>reset
+          da </green><aqua>[name], diminuendo</aqua> il totale a <aqua>[total]</aqua><green>reset.</green>
+    purge:
+      parameters: '[days]'
+      description: elimina le isole abbandonate da più di [days]
+      days-one-or-more: Deve essere almeno 1 giorno o più
+      purgable-islands: Trovate  [number] isole purgabili.
+      too-many: "<aqua>Questo è un sacco e potrebbe richiedere molto tempo per essere</aqua>\
+        \ eliminato.  \n<aqua>Considera di usare il plugin Regionerator per eliminare\
+        \ chunk del</aqua> mondo  \n<aqua>e impostare keep-previous-island-on-reset:\
+        \ true nel config.yml di</aqua> BentoBox.  \n<aqua>Poi esegui un purge.</aqua>"
+      purge-in-progress: <red>Purga in corso. Usa purge stop per fermarla</red>
+      scanning: <green>Scansione delle isole nel database. Questo potrebbe richiedere
+        del</green> tempo a seconda di quante ne hai...
+      scanning-in-progress: <red>Scansione in corso, attendere per favore</red>
+      none-found: <red>Nessuna isola trovata da eliminare.</red>
+      total-islands: <green>Hai [number] isole nel tuo database in tutti i mondi.</green>
+      number-error: <red>L'Argomento deve essere un numero di giorni</red>
+      confirm: <light_purple>Digita [label] purge confirm per iniziare la purga</light_purple>
+      completed: <green>Purga completata</green>
+      see-console-for-status: Purga iniziata. Controlla la console per maggiori informazioni
+      no-purge-in-progress: <red>Attualmente non c'è alcuna purga in corso.</red>
+      regions:
+        parameters: '[days]'
+        description: purge Isole eliminando i vecchi file della regione
+        confirm: <light_purple>Tipo </light_purple><aqua>/[label] purge regions confirm
+          </aqua><light_purple>di iniziare lo spurgo</light_purple>
+      failed: <red>Pulizia completata con errori. Alcuni file di regione non possono
+        essere eliminati. Controlla il log del server per i dettagli.</red>
+      age-regions:
+        parameters: '[days]'
+        description: 'debug/test: riscrivi i timestamp dei file di regione per renderli
+          eliminabili'
+        done: <green>Invecchiati </green><aqua>[number]</aqua><green> file di regione
+          nel mondo attuale.</green>
+      deleted:
+        parameters: ''
+        description: pulisci i file di regione per qualsiasi [prefix_island] già contrassegnata
+          come eliminata
+        confirm: <light_purple>Digita </light_purple><aqua>/[label] purge deleted
+          confirm </aqua><light_purple>per eliminare i file di regione</light_purple>
+        deferred: <green>File di regione eliminati. Le voci del database delle isole
+          verranno rimosse al prossimo riavvio del server.</green>
+      protect:
+        description: Abilita o disabilita la protezione isola dalla purga
+        move-to-island: <red>Spostati su una isola prima!</red>
+        protecting: <green>Isola protetta dalla Purga</green>
+        unprotecting: <green>Rimossa la protezione dalla Purga</green>
+      stop:
+        description: Ferma una purga in corso
+        stopping: Fermando la purga
+      unowned:
+        description: Purga le isole senza proprietario - richiede conferma
+        unowned-islands: <light_purple>Trovate [number] isole</light_purple>
+        parameters: ''
+        flagged: <green>Contrassegnate </green><aqua>[number] </aqua><green>[prefix_island](s)
+          come eliminabili. Esegui </green><aqua>/[label] purge deleted</aqua><green>
+          per rimuovere i file di regione.</green>
+      status:
+        description: visualizza lo stato della purga
+        status: <aqua>[purged] </aqua><green>isole eliminate da </green><aqua>[purgeable]
+          </aqua><gray>(</gray><aqua>[percentage]</aqua> %<gray>)</gray><green>.</green>
+    team:
+      description: gestire i team
+      add:
+        parameters: <proprietario> <giocatore>
+        description: aggiungi questo player al team di owner
+        name-not-owner: <red>[name] non è il proprietario.</red>
+        name-has-island: <red>[name] possiede un'isola. Deregistrale o eliminale prima!</red>
+        success: <aqua>[name]</aqua><green>è stato aggiunto al team di </green><aqua>[owner].</aqua>
+      disband:
+        parameters: <owner>
+        description: sciogli il team di owner
+        use-disband-owner: <red>Non è un proprietario! Scrivi disband [owner].</red>
+        disbanded: <red>Un amministratore ha sciolto il tuo team!</red>
+        success: <green>Il team di </green><aqua>[name]</aqua><green>è stato sciolto.</green>
+      disbandall:
+        description: rimuove ogni membro e sub-proprietario da ogni [prefix_island]
+          in questo mondo
+        confirmation: <red>Questo rimuoverà ogni membro e sub-proprietario da ogni
+          [prefix_island] in questo mondo. I giocatori trust e coop non saranno influenzati.
+          Digita il comando di conferma per procedere.</red>
+        success: <green>Rimossi </green><aqua>[number]</aqua><green> membri da </green><aqua>[islands]</aqua><green>
+          [prefix_islands].</green>
+      fix:
+        description: scansiona e corregge l'appartenenza a [prefix_island] nel database
+        scanning: Scansione del database...
+        duplicate-owner: <red>Il giocatore possiede più di un [prefix_island] nel
+          database:</red> [name]
+        player-has: <red>Giocatore [name] ha [number] isole</red>
+        duplicate-member: <red>Il giocatore [name] è un membro di più di un [prefix_island]
+          nel</red> database
+        rank-on-island: <red>[rank] su [prefix_island] a [xyz]</red>
+        fixed: <green>Risolto</green>
+        done: <green>Scansione</green>
+      kick:
+        parameters: <giocatore di squadra>
+        description: caccia un player da un team
+        cannot-kick-owner: <red>Non puoi cacciare il proprietario. Usa </red><yellow>setowner</yellow><red>
+          per trasferire la proprietà, oppure </red><yellow>disband</yellow><red>
+          per sciogliere la squadra.</red>
+        not-in-team: <red>Questo player non è in un team.</red>
+        admin-kicked: <red>Un amministratore ti ha cacciato dal tuo team.</red>
+        success: <aqua>[name] </aqua><green>è stato cacciato dall'isola di </green><aqua>[owner].</aqua>
+      setowner:
+        specify-island: '<red>Posizionati sulla [prefix_island] ed eseguilo in gioco,
+          oppure indica il proprietario attuale dell’isola: </red><yellow>setowner
+          <player> <island owner></yellow>'
+        parameters: <player>
+        description: trasferisci il possesso di un'isola ad un player
+        already-owner: <red>[name] è già il proprietario dell'isola!</red>
+        must-be-on-island: <red>Devi essere su [prefix_island] per impostare il proprietario</red>
+        confirmation: <green>Sei sicuro di voler impostare [name] come proprietario
+          del</green> [prefix_island] a [xyz]?
+        success: <aqua>[name]</aqua><green>è ora il proprietario dell'isola.</green>
+        errors:
+          at-max: <red>[name] possiede già [number] [prefix_islands] - il massimo
+            consentito dalle impostazioni o dai permessi è [max]. Modifica i suoi
+            permessi per consentirne di più.</red>
+        extra-islands: '<red>Attenzione: questo giocatore possiede ora [number] isole.
+          Questo è</red> più di quanto consentito dalle impostazioni o dai permessi:
+          [max].'
+      maxsize:
+        parameters: <giocatore> <dimensione>
+        description: Imposta la dimensione massima del team per il [prefix_island]
+          di un giocatore (usa 0 per ripristinare il valore predefinito del mondo)
+        success: <green>Impostata la dimensione massima del team di </green><aqua>[name]</aqua><green>
+          per [prefix_island] a </green><aqua>[number]</aqua><green>.</green>
+        reset: <green>Ripristinata la dimensione massima del team di </green><aqua>[name]</aqua><green>
+          per [prefix_island] al valore predefinito del mondo (</green><aqua>[number]</aqua><green>).</green>
+    range:
+      description: Comando admin per il raggio dell'isola
+      invalid-value:
+        too-low: <red>Il raggio di protezione deve essere più grande di </red><aqua>1</aqua><red>!</red>
+        too-high: <red> Il raggio di protezione deve essere uguale o minore di </red><aqua></aqua>
+          [number]<red>!</red>
+        same-as-before: <red>Il raggio di protezione è già settato a </red><aqua>[number]</aqua><red>!</red>
+      display:
+        already-off: <red>Gli indicatori sono già disattivi</red>
+        already-on: <red>Gli indicatori sono già attivi</red>
+        description: mostra/nascondi gli indicatori del raggio dell'isola
+        hiding: <dark_green>Nascondendo gli indicatori del raggio</dark_green>
+        hint: |-
+          <red>Icone di Barriera </red><white>mostrano il raggio di protezione corrente.</white>
+          <gray>Particelle grige </gray><white>mostrano il massimo limite dell'isola.</white>
+          <green>Particelle verdi </green><white>mostrano il raggio di protezione base, se quello</white> attuale differisce da esso.
+        showing: <dark_green>Mostrando gli indicatori del raggio</dark_green>
+      set:
+        parameters: <player> <range>
+        description: imposta il raggio di protezione dell'isola
+        success: <green>Impostato il raggio di protezione a </green><aqua>[number]</aqua><green>.</green>
+      reset:
+        parameters: <giocatore>
+        description: reimposta il raggio di protezione dell'isola al valore di default
+          del mondo
+        success: <green>Reimpostato il raggio di protezione dell'isola a </green><aqua>[number]</aqua><green>.</green>
+      add:
+        description: aumenta il raggio di protezione
+        parameters: <player> <range>
+        success: <green>Aumentato  il raggio di protezione della isola di </green><aqua>[name]</aqua><green>al</green>
+          raggio di <aqua>[total] </aqua><gray>(</gray><aqua>+[number]</aqua><gray>)</gray><green>.</green>
+      remove:
+        description: diminuisce il raggio di protezione
+        parameters: <player> <range>
+        success: <green>Diminuito  il raggio di protezione della isola di </green><aqua>[name]</aqua><green>al</green>
+          raggio di <aqua>[total] </aqua><gray>(</gray><aqua>-[number]</aqua><gray>)</gray><green>.</green>
+      removebonus:
+        parameters: <giocatore> [id]
+        description: rimuove i raggi bonus dall'isola (tutti o uno per id)
+        no-bonus: <red>Quest'isola non ha raggi bonus da rimuovere!</red>
+        unknown-bonus: <red>Non esiste alcun raggio bonus con id </red><aqua>[id]</aqua><red>
+          su quest'isola!</red>
+        success: <green>Rimossi </green><aqua>[number]</aqua><green> di raggio bonus
+          dall'isola di </green><aqua>[name]</aqua><green>.</green>
+        success-id: <green>Raggio bonus </green><aqua>[id]</aqua><green> (</green><aqua>[number]</aqua><green>)
+          rimosso dall'isola di </green><aqua>[name]</aqua><green>.</green>
+      purgebonus:
+        parameters: <id>
+        description: rimuove un raggio bonus con quell'id da tutte le isole (ad es.
+          dopo aver rimosso l'addon che lo ha aggiunto)
+        none: <red>Nessuna isola ha un raggio bonus con id </red><aqua>[id]</aqua><red>!</red>
+        warning: <gold>Questo rimuoverà il raggio bonus </gold><aqua>[id]</aqua><gold>
+          da </gold><aqua>[number]</aqua><gold> isola/e.</gold>
+        success: <green>Raggio bonus </green><aqua>[id]</aqua><green> rimosso da </green><aqua>[number]</aqua><green>
+          isola/e.</green>
+        confirm: <gold>Esegui di nuovo il comando con </gold><aqua>confirm</aqua><gold>
+          per procedere.</gold>
+        in-progress: <red>È già in corso una rimozione dei raggi bonus. Attendi.</red>
+        failed: <red>Scansione delle isole non riuscita. Controlla la console.</red>
+    register:
+      parameters: <giocatore>
+      description: registra il giocatore nell'isola senza proprietario sulla quale
+        sei
+      registered-island: <green>Registrato il giocatore nell'isola a [xyz].</green>
+      reserved-island: <green>Riservata la isola in  [xyz] per un giocatore.</green>
+      already-owned: <red>L'isola è già posseduta da un'altro giocatore!</red>
+      no-island-here: <red>Non ci sono isole qua. Conferma il comando per crearne
+        una.</red>
+      in-deletion: <gold>Quest'isola è in attesa di eliminazione. Registrarla annullerà
+        l'eliminazione. Inserisci di nuovo il comando per confermare.</gold>
+      cannot-make-island: <red>Qui non possono essere piazzate isole. Guarda la console
+        per</red> controllare possibili errori.
+      island-is-spawn: <gold>La isola è uno spawn. Sei sicuro? Rifai il comando per
+        confermare.</gold>
+    undelete:
+      description: rimuove lo stato di eliminazione in sospeso dall'[prefix_island]
+        senza proprietario su cui ti trovi
+      not-in-deletion: <red>Quest'[prefix_island] non è in attesa di eliminazione.</red>
+      undeleted-island: <green>Stato di eliminazione rimosso dall'[prefix_island]
+        a [xyz]. Ora è senza proprietario.</green>
+    unregister:
+      parameters: <proprietario> [x,y,z]
+      description: dissocia un proprietario dall'isola, ma mantenendo i blocchi dell'isola
+      unregistered-island: <green>Disassociato il giocatore dall'isola a [xyz].</green>
+      errors:
+        unknown-island-location: <red>Posizione [prefix_island] sconosciuta</red>
+        specify-island-location: <red>Specifica la posizione di [prefix_island] nel
+          formato x,y,z</red>
+        player-has-more-than-one-island: <red>Il giocatore ha più di un [prefix_island].
+          Specifica quale.</red>
+    info:
+      parameters: <giocatore>
+      description: ottieni informazioni riguardo l'isola del giocatore o riguardo
+        quella in cui sei
+      no-island: <red>Al momento non ti trovi su un'isola...</red>
+      title: ========== Info Isola ============
+      island-uuid: 'UUID: [uuid]'
+      owner: 'Proprietario: [owner] ([uuid])'
+      last-login: 'Ultimo login: [date]'
+      last-login-date-time-format: EEE MMM dd HH:mm:ss zzz yyyy
+      deaths: 'Morti: [number]'
+      resets-left: 'Resets: [number] (Max: [total])'
+      max-homes: 'Max case: [number]'
+      team-members-title: 'Membri del team:'
+      team-owner-format: <green>[name] [rank]</green>
+      team-member-format: <aqua>[name] [rank]</aqua>
+      max-team-size: 'Dimensione massima del team: [number]'
+      max-coop-size: 'Dimensione massima coop: [number]'
+      max-trusted-size: 'Dimensione massima fidata: [number]'
+      island-protection-center: 'Area di protezione centro: [xyz]'
+      island-center: '[prefix_Island] centro: [xyz]'
+      island-coords: 'Coordinate dell''isola: [xz1] to [xz2]'
+      islands-in-trash: <light_purple>Il giocatore ha isole nel cestino.</light_purple>
+      protection-range: 'Raggio di protezione: [range]'
+      protection-range-bonus-title: <aqua>Include questi bonus:</aqua>
+      protection-range-bonus: 'Bonus: [number]'
+      purge-protected: La isola è protetta dalla purga
+      deletable: <red>[prefix_Island] è contrassegnata per l'eliminazione e in attesa
+        di pulizia della regione.</red>
+      max-protection-range: 'Raggio di protezione più grande avuto: [range]'
+      protection-coords: 'Coordinate di protezione: [xz1] to [xz2]'
+      is-spawn: L'isola è un'isola di spawn
+      banned-players: 'Giocatori banditi:'
+      banned-format: <red>[name]</red>
+      unowned: <red>Senza proprietario</red>
+      bundle: '<green>Pacchetto Blueprint utilizzato per creare l''isola: </green><aqua>[name]</aqua>'
+    switch:
+      description: attiva/disattiva il bypass della protezione
+      op: <red>Gli operatori possono sempre bypassare la protezione. Eliminati dalla</red>
+        lista degli operatori per usare il comando.
+      removing: Rimuovendo il bypass delle protezioni...
+      adding: Abilitando il bypass delle protezioni...
+    switchto:
+      parameters: <giocatore> <numero>
+      description: scambia l'isola del player con quella numerata nel cestino
+      out-of-range: <red>Il numero deve essere compreso tra 1 e [number]. Usa <bold>[label]
+        trash</bold></red> [player] <red>per vedere i numeri delle isole</red>
+      cannot-switch: <red>Scambio fallito. Vedi la console per gli errori.</red>
+      success: <green>Scambiata con successo la isola del giocatore con un altro giocatore</green>
+        specificato.
+    trash:
+      no-unowned-in-trash: <red>Non ci sono isole senza proprietario nel cestino</red>
+      no-islands-in-trash: <red>Il giocatore non ha isole nel cestino</red>
+      parameters: '[giocatore]'
+      description: mostra le isole senza proprietario o le isole del giocatore nel
+        cestino
+      title: <light_purple>=========== Isole nel Cestino ===========</light_purple>
+      count: <bold><light_purple>Isola [number]:</light_purple></bold>
+      use-switch: <green>Usa <bold>[label] switchto <player> <number></bold> per scambiare
+        l'isola del</green> giocatore con quella nel cestino
+      use-emptytrash: <green>Usa <bold>[label] emptytrash [player]</bold> per rimuovere
+        permanentemente le</green> isole nel cestino
+    emptytrash:
+      parameters: '[giocatore]'
+      description: Pulisci il cestino del player, o tutte le isole senza proprietario
+        nel cestino
+      success: <green>Cestino svuotato.</green>
+    version:
+      description: mostra le versioni di BentoBox e degli addons
+    setrange:
+      parameters: <giocatore> <raggio>
+      description: imposta il raggio dell'isola del player
+      range-updated: Raggio dell'isola impostato a [number]
+    placeholders:
+      description: aprire il browser dei segnaposto
+    dump-placeholders:
+      description: esportare tutti i segnaposto registrati in un file markdown
+      dumped: <green>Lista dei segnaposto scritta in [file]</green>
+      error: '<red>Impossibile scrivere la lista dei segnaposto: [message]</red>'
+    reload:
+      description: ricarica
+    tp:
+      parameters: <player> [giocatore da teletrasportare]
+      description: teletrasportati sull'isola di un player
+      manual: <red>Nessuna posizione sicura trovata! Teletrasportati manualmente vicino</red>
+        <aqua>[location] </aqua><red>e controlla.</red>
+    tpuser:
+      parameters: <teleporting player> <[prefix_island]'s player> [isola del giocatore]
+      description: teleporta un giocatore all'[prefix_island] di un altro giocatore
+    getrank:
+      parameters: <player>
+      description: ottieni il rango di un giocatore nella sua isola
+      rank-is: <green>Il rango è [rank] nella sua isola.</green>
+    setrank:
+      parameters: <player> <rank>
+      description: imposta il rango di un player nella sua isola
+      unknown-rank: <red>Rango sconosciuto!</red>
+      not-possible: <red>Il rank deve essere maggiore di quello del visitatore</red>
+      rank-set: <green>Rango impostato da [from] a [to].</green>
+    setprotectionlocation:
+      parameters: '[coordinate x y z]'
+      description: imposta la posizione attuale o [x y z] come centro dell'area di
+        protezione di [prefix_island]
+      island: <red>Questo influenzerà il [prefix_island] a [xyz] di proprietà di</red>
+        '[name]'.
+      confirmation: <red>Sei sicuro di voler impostare [xyz] come centro di protezione?</red>
+      success: <green>Impostato con successo [xyz] come centro di protezione.</green>
+      fail: <red>Impossibile impostare [xyz] come centro di protezione.</red>
+      island-location-changed: <green>[user] ha cambiato il centro di protezione di
+        [prefix_island] in</green> [xyz].
+      xyz-error: '<red>Specifica tre coordinate intere: ad esempio, 100 120 100</red>'
+    setspawn:
+      description: imposta un'isola come spawn per questo mondo
+      already-spawn: <red>Quest'isola è già uno spawn!</red>
+      no-island-here: <red>Non ci sono isole quì.</red>
+      confirmation: <red>Sei sicuro di voler impostare quest'isola come spawn del
+        mondo?</red>
+      success: <green>Settato con successo questa isola come spawn di questo mondo.</green>
+    setspawnpoint:
+      description: imposta la posizione corrente come punto di spawn per questa [prefix_island]
+      no-island-here: <red>Non c'è alcun [prefix_island] qui.</red>
+      confirmation: <red>Sei sicuro di voler impostare questa posizione come punto
+        di spawn</red> per questa isola?
+      success: <green>Posizionata con successo questa località come punto di spawn
+        per</green> questa [prefix_island].
+      island-spawnpoint-changed: <green>[user] ha cambiato il punto di spawn dell'isola
+        [prefix_island].</green>
+    settings:
+      parameters: '[player]'
+      description: apre le impostazioni di sistema o della isola di un giocatore
+      unknown-setting: <red>Impostazione sconosciuta</red>
+    blueprint:
+      parameters: <load/copy/paste/pos1/pos2/save>
+      description: manipola le blueprints
+      bedrock-required: <red>Almeno una bedrock deve essere inclusa nel blueprint!</red>
+      copy-first: <red>Prima devi copiare!</red>
+      file-exists: <red>Il file esiste già, sovrascrivere?</red>
+      no-such-file: <red>Non esiste questo file!</red>
+      could-not-load: <red>Non è stato possibile caricare quel file!</red>
+      could-not-save: '<red>Qualcosa è andato storto nel salvataggio del file: [message]</red>'
+      set-pos1: <green>Posizione 1 impostata a [vector]</green>
+      set-pos2: <green>Posizione 2 impostata a [vector]</green>
+      set-different-pos: <red>Imposta una diversa posizione - questa posizione è già
+        stata</red> impostata!
+      need-pos1-pos2: <red>Imposta la posizione 1 e la posizione 2 prima!</red>
+      copying: <aqua>Copiando i blocchi...</aqua>
+      copied-blocks: <green>Copiati [number] blocchi nella clipboard</green>
+      look-at-a-block: <red>Guarda verso un blocco entro 20 blocchi per impostare
+        una posizione</red>
+      mid-copy: <red>Sei in mezzo al processo di copia. Aspetta finchè la copia non
+        è</red> completata.
+      copied-percent: <green>Copiati [number]%</green>
+      copy:
+        parameters: '[air]'
+        description: copia la clipboard impostata dalle posizioni 1 e 2 ed opzionalmente
+          dai blocchi d'aria
+      sink:
+        description: imposta questo blueprint per affondare sul fondo dell'oceano
+          quando incollato
+        status: <green>Un Blueprint sarà [status] </green><green>quando verrà incollato</green>
+        sink: <red>affondare</red>
+        not-sink: <aqua>non affondare</aqua>
+        no-clipboard: <red>Non c'è alcun progetto negli appunti. Carica o copia qualcosa.</red>
+      delete:
+        parameters: <name>
+        description: rimuove il blueprint
+        no-blueprint: <aqua>[name] </aqua><red>non esiste.</red>
+        confirmation: |-
+          <red>Sei sicuro di eliminare questa blueprint?</red>
+          <red>Una volta eliminata, non ci sarà nessun modo per recuperarla.</red>
+        success: <green>Eliminato con successo il blueprint </green><aqua>[name]</aqua><green>.</green>
+      load:
+        parameters: <nome>
+        description: carica la blueprint nella clipboard
+      list:
+        description: elenca le blueprints disponibili
+        no-blueprints: <red>Non ci sono blueprints nella cartella delle blueprints!</red>
+        available-blueprints: <green>Queste blueprints sono disponibili per essere
+          caricate:</green>
+      origin:
+        description: imposta l'origine della blueprint sulla tua posizione
+      paste:
+        description: incolla la clipboard sulla tua posizione
+        pasting: <green>Incollando...</green>
+      pos1:
+        description: imposta il primo angolo della selezione cuboidale
+      pos2:
+        description: imposta il secondo angolo della selezione cuboidale
+      save:
+        parameters: <blueprint nome>
+        description: salva la blueprint copiata
+      rename:
+        parameters: <blueprint name> <nuovo nome>
+        description: rinomina un blueprint
+        success: <green>Blueprint </green><aqua>[old] </aqua><green>è stato rinominato
+          con successo in </green><aqua></aqua> [name]<green>.</green>
+        pick-different-name: <red>Per favore specifica un nome diverso dal nome del
+          blueprint di cui</red> stai cambiando nome.
+      management:
+        back: Indietro
+        instruction: Clicca sulla blueprint, poi clicca qui
+        title: Manager di pacchetti di Blueprint
+        edit: Clicca per modificare
+        rename: Clicca col destro per rinominare
+        edit-description: Clicca per modificare la descrizione
+        world-name-syntax: '[name] mondo'
+        world-instructions: |
+          Piazza la blueprint
+          a destra per impostarla
+        trash: Elimina
+        no-trash: Impossibile Eliminare
+        trash-instructions: Clicca col destro per eliminare
+        no-trash-instructions: Impossibile eliminare il pacchetto predefinito
+        permission: Permesso
+        no-permission: Nessun permesso
+        perm-required: Obbligatorio
+        no-perm-required: Impossibile impostare il perm per il pacchetto predefinito
+        perm-not-required: Non obbligatorio
+        perm-format: <yellow></yellow>
+        remove: Clicca col destro per rimuovere
+        blueprint-instruction: |
+          Clicca per selezionare,
+          poi aggiungi al pacchetto.
+          Clicca col destro per rinominare.
+        select-first: Prima seleziona la blueprint
+        new-bundle: Nuovo pacchetto
+        new-bundle-instructions: Clicca per creare un nuovo pacchetto
+        name:
+          quit: esci
+          prompt: Inserisci un nome, o 'quit' per uscire
+          too-long: <red>Troppo lungo</red>
+          pick-a-unique-name: Scegli un nome unico
+          stripped-char-in-unique-name: <red>Alcuni caratteri sono stati rimossi perché
+            non consentiti. </red><green>Il</green> nuovo ID sarà <aqua>[name]</aqua><green>.</green>
+          success: Successo!
+          conversation-prefix: '>'
+        description:
+          quit: abbandonare
+          instructions: |
+            Inserisci una descrizione a più linee per [name]
+            e 'quit' in una linea da solo per finire.
+          default-color: ''
+          success: Successo!
+          cancelling: Annullando
+        slot: <white>Slot Preferito [number]</white>
+        slot-instructions: |-
+          <green>Click SX per aumentare</green>
+          <green>Click DX per diminuire</green>
+        times: |-
+          <green>Max utilizzi concorrenti per giocatore</green>
+          <green>Clicca sinistro per incrementare</green>
+          <green>Clicca destro per decrementare</green>
+        unlimited-times: Illimitato
+        maximum-times: Massimo [number] volte
+        cost: |
+          <green>Costo [prefix_Island]</green>
+          <green>Clic sinistro +1</green>
+          <green>Clic destro -1</green>
+          <green>Shift per +/-100</green>
+        no-cost: Gratuito
+        cost-amount: 'Costo: [cost]'
+        next-page: <white>Pagina successiva</white>
+        previous-page: <white>Pagina precedente</white>
+        edit-commands: Clicca per modificare i comandi
+        no-commands: Nessun comando impostato
+        commands:
+          quit: esci
+          clear: cancella
+          instructions: |
+            <white>Inserisci i comandi da eseguire quando il progetto [name] viene incollato.</white>
+            <white>Supporta i segnaposto <green>[player]</green> e <green>[owner]</green>.</white>
+            <white>Prefissa con <green>[SUDO]</green> per eseguire come giocatore.</white>
+            <white>Digita 'cancella' per rimuovere tutti i comandi in questa sessione.</white>
+            <white>Digita 'esci' su una riga a sé per terminare.</white>
+          default-color: ''
+          success: Successo!
+          cancelling: Annullamento
+    resetflags:
+      parameters: '[bandiera]'
+      description: Reimposta le impostazioni di tutte le isole a quelle in config.yml
+      confirm: <dark_red>Questo resetterà tutte le flag di tutte le isole ai valori
+        default!</dark_red>
+      success: <green>Resettato con successo le flag di tutte le isole ai valori default.</green>
+      success-one: <green>[name] flag settata nel valore default in tutte le isole.</green>
+    world:
+      description: Gestisci le impostazioni del mondo
+    delete:
+      parameters: '[player]'
+      description: elimina l'isola di un giocatore, o l'isola su cui ti trovi se non
+        viene indicato un giocatore
+      cannot-delete-owner: <red>Tutti i membri di un'isola devono essere cacciati,
+        prima di eliminare</red> l'isola.
+      deleted-island: <green>L'isola a </green><yellow>[xyz] </yellow><green>è stata
+        eliminata con successo.</green>
+    deletehomes:
+      parameters: <player>
+      description: elimina tutte le case nominate da [prefix_an-island]
+      warning: <red>Tutte le case nominate verranno eliminate da [prefix_island]!</red>
+    why:
+      parameters: <giocatore>
+      description: abilita/disabilita i report di debug di protezione nella console
+      turning-on: Abilitando il debug in console per [name].
+      turning-off: Disabilitando il debug in console per [name].
+    deaths:
+      description: modifica le morti di un giocatore
+      reset:
+        description: reimposta le morti di un giocatore
+        parameters: <giocatore>
+        success: <green>Le morti di </green><aqua>[name]</aqua><green>sono state reimpostate
+          a </green><aqua>0</aqua><green>.</green>
+      set:
+        description: imposta le morti di un giocatore
+        parameters: <player> <morti>
+        success: <green>Le morti di </green><aqua>[name]</aqua><green>sono state impostate
+          a </green><aqua>[number]</aqua><green>.</green>
+      add:
+        description: aggiunge le morti a un giocatore
+        parameters: <giocatore> <morti>
+        success: <green>Aggiunto con successo</green><aqua>[number] </aqua><green>morti
+          di </green><aqua>[name], aumentando</aqua> il totale a <aqua>[total]</aqua><green>morti.</green>
+      remove:
+        description: rimuove le morti da un giocatore
+        parameters: <giocatore> <morti>
+        success: <green>Rimosse con successo</green><aqua>[number] </aqua><green>morti
+          di </green><aqua>[name], diminuendo</aqua> il totale a <aqua>[total]</aqua><green>morti.</green>
+    resetname:
+      description: reset player [prefix_island] nome
+      success: <green>Nome di [name] per [prefix_island] resettato con successo.</green>
+  bentobox:
+    description: Comando admin di BentoBox
+    perms:
+      description: mostra i perm efficaci per BentoBox e Addons in un formato YAML
+    about:
+      description: mostra le info riguardo copyright e licenza
+    placeholders:
+      description: aprire il browser dei segnaposto
+    dump-placeholders:
+      description: esportare tutti i segnaposto registrati in un file markdown
+      dumped: <green>Lista dei segnaposto scritta in [file]</green>
+      error: '<red>Impossibile scrivere la lista dei segnaposto: [message]</red>'
+    reload:
+      description: ricarica gli addons, le impostazioni, i locali
+      locales-reloaded: <dark_green>Linguaggi ricaricati.</dark_green>
+      addons-reloaded: <dark_green>Addons ricaricati.</dark_green>
+      settings-reloaded: <dark_green>Impostazioni ricaricate.</dark_green>
+      addon: <gold>Ricaricando </gold><aqua>[name]</aqua><dark_green>.</dark_green>
+      addon-reloaded: <aqua>[name] </aqua><dark_green>ricaricato.</dark_green>
+      warning: '<red>Attenzione: Ricaricando può causare instabilità, se vedi errori
+        dopo</red> di ciò, riavvia il server.'
+      unknown-addon: <dark_green>Addon sconosciuto!</dark_green>
+      locales:
+        description: ricarica le lingue
+    version:
+      plugin-version: '<dark_green>Versione BentoBox: </dark_green><dark_aqua>[version]</dark_aqua>'
+      description: mostra le versioni di BentoBox e degli addons
+      loaded-addons: 'Addons caricati:'
+      loaded-game-worlds: 'Mondi di gioco caricati:'
+      addon-syntax: <dark_green>[name] </dark_green><dark_aqua>[version] </dark_aqua><gray>(</gray><dark_aqua>[state]</dark_aqua><gray>)</gray>
+      game-world: '<dark_green>[name] </dark_green><gray>(</gray><dark_aqua>[addon]</dark_aqua><gray>):
+        </gray><green>Overworld</green><gray>, </gray>Nether<gray>, </gray>End'
+      server: <dark_green>In esecuzione su </dark_green><dark_aqua>[name] [version]</dark_aqua><dark_green>.</dark_green>
+      database: '<dark_green>Database: </dark_green><dark_aqua>[database]</dark_aqua>'
+    manage:
+      description: mostra il pannello di gestione
+    catalog:
+      description: mostra il catalogo di addons
+    locale:
+      description: esegui un'analisi locale
+      see-console: |-
+        <green>Controlla la console per vedere il feedback.</green>
+        <green>Questo comando è così spammoso che l'output non è visibile in chat...</green>
+    migrate:
+      description: sposta i dati da un database verso un'altro
+      players: <gold>Spostando i giocatori</gold>
+      names: <gold>Spostando i nomi</gold>
+      addons: <gold>Spostando gli addons</gold>
+      class: <gold>Spostando[description]</gold>
+      migrated: <green>Dati spostati.</green>
+      completed: '[prefix_bentobox]<green>Completato</green>'
+    rank:
+      description: elenca, aggiungi o rimuovi i ranghi
+      parameters: <green>[list | add | remove] [rank reference] [rank value]</green>
+      add:
+        success: <green>Aggiunto [rank] con valore [number]</green>
+        failure: <red>Impossibile aggiungere [rank] con valore [number]. Forse è un</red>
+          duplicato?
+      remove:
+        success: <green>Rimossa [rank]</green>
+        failure: <red>Impossibile rimuovere [rank]. Grado sconosciuto.</red>
+      list: <green>I ranghi registrati sono i seguenti:</green>
+  confirmation:
+    confirm: <red>Riscrivi il comando entro </red><aqua>[seconds]s</aqua><red>per
+      confermare.</red>
+    previous-request-cancelled: <gold>Richiesta di conferma precedente cancellata.</gold>
+    request-cancelled: <red>Timeout di conferma - </red><aqua>richiesta cancellata.</aqua>
+    title: <red>Sei sicuro?</red>
+    dialog-body: <gray>Conferma per procedere, o annulla.</gray>
+    buttons:
+      confirm: <green>Conferma</green>
+      cancel: <red>Annulla</red>
+  delay:
+    previous-command-cancelled: <red>Comando precedente annullato</red>
+    stand-still: <gold>Non muoverti! Teletrasporto tra [seconds] secondi</gold>
+    moved-so-command-cancelled: <red>Ti sei mosso. Teletrasporto annullato!</red>
+  island:
+    about:
+      description: Riguardo questo addon
+    go:
+      parameters: '[home number]'
+      description: teletrasportati sulla tua isola
+      teleport: <green>Teletrasportandoti sulla tua isola.</green>
+      in-progress: <green>Teletrasporto in corso, attendere prego...</green>
+      teleported: <green>Teletrasportato alla home </green><yellow>#[number].</yellow>
+      failure: <red>Teletrasporto non riuscito per qualche motivo. Per favore riprova
+        più</red> tardi.
+      unknown-home: <red>Nome di casa sconosciuto!</red>
+      picker:
+        title: <green>Dove vuoi andare?</green>
+    help:
+      description: Comando principale dell'isola
+    spawn:
+      description: teletrasportati allo spawn
+      teleporting: <green>Teletrasportandoti allo spawn.</green>
+      no-spawn: <red>Non c'è uno spawn in questo mondo.</red>
+    create:
+      description: crea un'isola, utilizzando una blueprint (opzionale, richiede i
+        permessi adeguati)
+      parameters: <blueprint>
+      too-many-islands: '<red>Ci sono troppe isole in questo mondo: non c''è abbastanza
+        spazio per</red> creare la tua.'
+      cannot-create-island: <red>Uno spazio libero non riesce essere trovato in tempo,
+        riprova di</red> nuovo...
+      unable-create-island: <red>Non è stato possibile generare la tua isola, contatta
+        un</red> amministratore.
+      creating-island: <green>Creando la tua isola, aspetta un attimo...</green>
+      you-cannot-make: <red>Non puoi creare altre isole!</red>
+      max-uses: <red>Non puoi creare ulteriori [prefix_island] di quel tipo!</red>
+      you-cannot-make-team: <red>I membri del team non possono creare isole nello
+        stesso mondo del</red> loro team [prefix_island].
+      pasting:
+        estimated-time: '<green>Tempo stimato: </green><aqua>[number] </aqua><green>secondi.</green>'
+        blocks: '<green>Costruendo blocco per blocco: </green><aqua>[number] </aqua><green>blocchi
+          in tutto...</green>'
+        entities: '<green>Riempendo con entità: </green><aqua>[number] </aqua><green>entità
+          in tutto...</green>'
+        dimension-done: <green>[prefix_Island] in [world] è costruita.</green>
+        done: <green>Fatto! La tua isola è pronta e ti aspetta!</green>
+      pick: <green>Scegli un'isola</green>
+      cannot-afford: '<red>Non puoi permettertelo! Costo: [cost]</red>'
+      unknown-blueprint: <red>Quella blueprint non è stata ancora caricata.</red>
+      on-first-login: <green>Benvenuto! La tua isola personale sarà pronta tra qualche
+        secondo.</green>
+      you-can-teleport-to-your-island: <green>Puoi teletrasportarti alla isola quando
+        puoi.</green>
+    deletehome:
+      description: cancellare una posizione casa
+      parameters: '[nome casa]'
+    homes:
+      description: elenca le tue
+    info:
+      description: mostra info riguardo la tua isola o riguardo quella di un giocatore
+      parameters: <player>
+    near:
+      description: mostra il nome delle isole adiacenti alla tua
+      parameters: ''
+      the-following-islands: <green>Le seguenti isole sono adiacenti:</green>
+      syntax: '<gold>[direction]: </gold><green>[name]</green>'
+      north: Nord
+      south: Sud
+      east: Est
+      west: Ovest
+      no-neighbors: <red>Non ci sono isole adiacenti alla tua!</red>
+    reset:
+      description: ricrea la tua isola ed elimina quella attuale
+      parameters: <blueprint>
+      none-left: <red>Non possiedi più reset!</red>
+      resets-left: <red>Hai ancora a disposizione [number] resets</red>
+      confirmation: |-
+        <red>Sei sicuro di farlo?</red>
+        <red>Tutti i membri di questa isola saranno cacciati, e dovrai</red> riaggiungerli.
+        <red>Non ci sarà nessun modo per tornare indietro: una volta che la tua</red> isola sarà eliminata, <red>non potrai più riaverla.</red>
+      kicked-from-island: <red>Sei stato cacciato dalla isola su  [gamemode] perchè
+        il proprietario</red> la ha resetata.
+    sethome:
+      description: imposta il punto di teletrasporto della tua home
+      must-be-on-your-island: <red>Devi essere sull'isola per impostare una home!</red>
+      too-many-homes: <red>Impossibile impostare - la tua [prefix_island] è al massimo
+        di</red> [number] case.
+      home-set: <gold>La home della tua isola è stata impostata sulla tua posizione</gold>
+        corrente.
+      homes-are: <gold>[prefix_Island] le case sono:</gold>
+      home-list-syntax: <gold>[name]</gold>
+      click-to-teleport: <green>Clicca per teletrasportarti!</green>
+      nether:
+        not-allowed: <red>Non hai il permesso di impostare la tua home nel Nether.</red>
+        confirmation: <red>Sei sicuro di voler impostare la tua home nel Nether?</red>
+      the-end:
+        not-allowed: <red>Non hai il permesso di impostare la tua home nell' End.</red>
+        confirmation: <red>Sei sicuro di voler impostare la tua home nell' End?</red>
+      parameters: '[home number]'
+    setname:
+      description: imposta un nome per la tua isola
+      name-too-short: <red>Troppo corto. La lunghezza minima è di [number] caratteri.</red>
+      name-too-long: <red>Troppo lungo. La lunghezza massima è di [number] caratteri.</red>
+      name-already-exists: <red>Esiste già una isola con quel nome in questa modalità.</red>
+      parameters: <name>
+      success: <green>Cambiato il nome della tua isola in </green><aqua>[name]</aqua><green>.</green>
+    renamehome:
+      description: rinominare una posizione di casa
+      parameters: '[nome casa]'
+      enter-new-name: <gold>Inserisci il nuovo nome</gold>
+      already-exists: <red>Quel nome esiste già, prova con un altro nome.</red>
+    resetname:
+      description: reimposta il nome della tua isola
+      success: <green>Resettato con successo il nome della tua isola.</green>
+    team:
+      description: gestisci il tuo team
+      errors:
+        teams-disabled: <red>I team sono disabilitati in questo mondo. Usa trust o
+          coop al loro posto.</red>
+      gui:
+        titles:
+          team-panel: Gestione del Team
+        buttons:
+          status:
+            name: Stato
+            description: Lo stato del team
+          rank-filter:
+            name: Filtro di Rango
+            description: <green>Clicca per cambiare i ranghi</green>
+          invitation: Invito
+          invite:
+            name: Invita il giocatore
+            description: |-
+              <green>I giocatori devono essere nel</green>
+              <green>stesso mondo di te per essere</green>
+              <green>mostrati nella lista.</green>
+          member:
+            # Name shown on a member's head in the team panel. Placeholders: [name], [display_name], [last_seen].
+            name: '[display_name][last_seen]'
+            # First line of a member's description (their rank). Placeholder: [rank].
+            description: '[rank]'
+            # Suffix appended to an offline member's name. Placeholder: [last_seen]. Blank for online members.
+            last-seen: ' <gray>([last_seen])</gray>'
+        tips:
+          LEFT:
+            name: <aqua>Clic Sinistro</aqua>
+            invite: <green>per invitare un giocatore</green>
+          RIGHT:
+            name: <aqua>Clicca con il tasto destro</aqua>
+          SHIFT_RIGHT:
+            name: <aqua>Shift Destro Click</aqua>
+            reject: <green>per rifiutare</green>
+            kick: <green>per espellere il giocatore</green>
+            leave: <green>per lasciare la squadra</green>
+          SHIFT_LEFT:
+            name: <aqua>Clic Sinistro con Maiuscule</aqua>
+            accept: <green>per accettare</green>
+            setowner: |-
+              <green>per impostare il proprietario</green>
+              <green>su questo giocatore</green>
+      info:
+        description: mostra info dettagliate riguardo il tuo team
+        member-layout:
+          online: <green><bold> o </bold></green><white>[name]</white>
+          offline: <red><bold> o </bold></red><white>[name] </white><gray>([last_seen])</gray>
+          offline-not-last-seen: <red><bold> o </bold></red><white>[name]</white>
+        last-seen:
+          layout: <aqua>[number] </aqua><gray>[unit] fa</gray>
+          days: giorni
+          hours: ore
+          minutes: minuti
+        header: |-
+          <white>--- </white><green>Dettagli Team </green><white>---</white>
+          <green>Membri: </green><aqua>[total]</aqua><gray>/</gray><aqua>[max]</aqua>
+          <green>Membri online: </green><aqua>[online]</aqua>
+        rank-layout:
+          owner: <gold>[rank]:</gold>
+          generic: <gold>[rank] </gold><gray>(</gray><aqua>[number]</aqua><gray>)</gray><gold>:</gold>
+      coop:
+        description: rendi un player coop nella tua isola
+        parameters: <giocatore>
+        cannot-coop-yourself: <red>Non puoi rendere coop te stesso!</red>
+        already-has-rank: <red>Il giocatore ha già un rango!</red>
+        you-are-a-coop-member: <dark_green>Sei stato reso coop da [name]</dark_green>
+        success: <green>Sei in coop con </green><aqua>[name].</aqua>
+        name-has-invited-you: <green>[name] ti ha invitato a giocare in coop nella
+          sua isola.</green>
+      uncoop:
+        description: elimina il rango coop da un player
+        parameters: <giocatore>
+        cannot-uncoop-yourself: <red>Non puoi togliere il rango coop da te stesso!</red>
+        cannot-uncoop-member: <red>Non puoi togliere il rango coop da un compagno
+          del team!</red>
+        player-not-cooped: <red>Il giocatore non possiede il rango coop!</red>
+        you-are-no-longer-a-coop-member: <red>Non possiedi più il rango coop nell'isola
+          di [name]</red>
+        all-members-logged-off: <red>Tutti i membri dell'isola sono offline quindi
+          non possiedi più il</red> rango coop nell'isola di [name]
+        success: <aqua>[name] </aqua><green>non è più un membro coop della tua isola.</green>
+        is-full: <red>Non puoi invitare nessun altro.</red>
+      trust:
+        description: dai ad un player il rango trusted nella tua isola
+        parameters: <giocatore>
+        trust-in-yourself: <red>Abbi fiducia in te stesso!</red>
+        name-has-invited-you: <green>[name] ti ha invitato a essere un membro trusted
+          nella sua isola.</green>
+        player-already-trusted: <red>Il giocatore possiede già il rango trusted!</red>
+        you-are-trusted: <dark_green>Ti è stato dato il rango trusted da [name]!</dark_green>
+        success: <green>Hai trustato </green><aqua>[name]</aqua><green>.</green>
+        is-full: <red>Non puoi fidarti di nessun altro. Fai attenzione!</red>
+      untrust:
+        description: rimuovi il rango trusted da un player
+        parameters: <giocatore>
+        cannot-untrust-yourself: <red>Non puoi togliere il rango trusted da te stesso!</red>
+        cannot-untrust-member: <red>Non puoi togliere il rango trusted ad un membro
+          della tua isola!</red>
+        player-not-trusted: <red>Il giocatore non possiede il rango trusted!</red>
+        you-are-no-longer-trusted: <red>Ti è stato tolto il rango trusted da [name]!</red>
+        success: <aqua>[name] </aqua><green>non è più un membro trusted della tua
+          isola.</green>
+      invite:
+        description: invita un giocatore ad essere membro della tua isola
+        invitation-sent: <green>Invito inviato a [name]</green>
+        dialog:
+          title: <green>Invito al team da [name]</green>
+          body: <gray>[name] ti ha invitato a unirti alla sua isola. Accettare?</gray>
+          accept: <green>Accetta</green>
+          decline: <red>Rifiuta</red>
+        removing-invite: <red>Rimuovendo l'invito</red>
+        name-has-invited-you: <green>[name] ti ha invitato ad essere membro della
+          sua isola.</green>
+        to-accept-or-reject: <green>Digita /[label] team accept per accettare, or
+          /[label] team reject</green> per rifiutare
+        you-will-lose-your-island: <red>ATTENZIONE! Perderai l'isola se accetti!</red>
+        gui:
+          titles:
+            team-invite-panel: Invita Giocatori
+          button:
+            already-invited: <red>Già invitato</red>
+            search: <green>Cerca un giocatore</green>
+            searching: |-
+              <aqua>Ricercando</aqua>
+              <red>[name]</red>
+          enter-name: <green>Inserisci nome:</green>
+          tips:
+            LEFT:
+              name: <aqua>Clic Sinistro</aqua>
+              search: <green>Inserisci il nome del giocatore</green>
+              back: <green>Indietro</green>
+              invite: |-
+                <green>per invitare un giocatore</green>
+                <green>per unirti al tuo team</green>
+            RIGHT:
+              name: <aqua>Fai clic destro</aqua>
+              coop: <green>per cooperare con il giocatore [player]</green>
+            SHIFT_LEFT:
+              name: <aqua>Clicca sinistro mentre tieni premuto Shift</aqua>
+              trust: <green>per fidarti di un giocatore</green>
+          buttons:
+            member:
+              # Name shown on a prospect's head in the invite panel. Placeholders: [name], [display_name].
+              name: '[display_name]'
+              # Optional description line shown above the click tips. Placeholders: [name], [display_name].
+              description: ''
+        errors:
+          cannot-invite-self: <red>Non puoi invitare te stesso!</red>
+          cooldown: <red>Non potrai invitare quella persona per altri [number] secondi</red>
+          island-is-full: <red>La tua isola è piena, non puoi invitare nessun'altro.</red>
+          none-invited-you: <red>Nessuno ti ha invitato :c.</red>
+          you-already-are-in-team: <red>Sei già in un team!</red>
+          already-on-team: <red>Quel player è già in un team!</red>
+          invalid-invite: <red>Mi dispiace, quell'invito non è più valido.</red>
+          you-have-already-invited: <red>Hai già invitato quel giocatore!</red>
+        parameters: <giocatore>
+        you-can-invite: <green>Puoi invitare altri [number] giocatori.</green>
+        accept:
+          description: accetta un invito
+          you-joined-island: <green>Sei entrato in un'isola! Digita /[label] team
+            info per vedere gli</green> altri membri.
+          name-joined-your-island: <green>[name] è entrato nella tua isola!</green>
+          confirmation: |-
+            <red>Sei sicuro di voler accettare questo invito?</red>
+            <red><underlined>Perderai</underlined></red><red><bold>la tua attuale isola!</bold></red>
+        reject:
+          description: rifiuta un invito
+          you-rejected-invite: <green>Hai rifiutato un invito ad entrare in un'isola.</green>
+          name-rejected-your-invite: <red>[name] ha rifiutato il tuo invito!</red>
+        cancel:
+          description: elimina l'invito ad entrare nella tua isola
+      leave:
+        cannot-leave: <red>I proprietari non possono lasciare! Diventa un membro,
+          o caccia</red> tutti gli altri membri.
+        description: lascia la tua isola
+        left-your-island: <red>[name] </red><red>ha lasciato la tua isola.</red>
+        success: <green>Hai abbandonato questa isola.</green>
+      kick:
+        description: rimuovi un membro dalla tua isola
+        parameters: <player>
+        player-kicked: <red>Il [name] ti ha cacciato dall’[prefix_island] in [gamemode]!</red>
+        cannot-kick: <red>Non puoi cacciare te stesso!</red>
+        cannot-kick-rank: <red>Il tuo rango non ti consente di espellere [name]!</red>
+        success: <aqua>[name] </aqua><green>è stato cacciato dalla tua isola.</green>
+      demote:
+        description: abbassa il rango di un player della tua isola
+        parameters: <giocatore>
+        errors:
+          cant-demote-yourself: <red>Non puoi demotare te stesso!</red>
+          cant-demote: <red>Non puoi declassare ranghi superiori!</red>
+          must-be-member: <red>Il giocatore deve essere un membro di [prefix_an-island]!</red>
+        failure: <red>Il rango del giocatore non può essere ulteriormente abbassato!</red>
+        success: <green>Abbassato il rango di [name] a [rank]</green>
+      promote:
+        description: alza il rango di un player della tua isola
+        parameters: <giocatore>
+        errors:
+          cant-promote-yourself: <red>Non puoi promuovere te stesso!</red>
+          cant-promote: <red>Non puoi promuovere oltre il tuo rango!</red>
+          must-be-member: <red>Il giocatore deve essere un membro di [prefix_an-island]!</red>
+        failure: <red>Il rango del giocatore non può essere ulteriormente alzato!</red>
+        success: <green>Alzato il rango di [name] a [rank]</green>
+      setowner:
+        description: passa il possesso dell'isola ad un membro
+        errors:
+          cant-transfer-to-yourself: <red>Non puoi passare il possesso a te stesso!
+            </red><gray>(<italic>In effetti</italic></gray> potresti... Ma non vogliamo
+            che tu la faccia. Perchè è inutile.<gray>)</gray>
+          target-is-not-member: <red>Il giocatore non fa parte del team della tua
+            isola</red>
+          at-max: <red>Quel giocatore ha già il numero massimo di isole che gli è</red>
+            consentito!
+        name-is-the-owner: <green>[name] è ora il proprietario dell'isola!</green>
+        parameters: <player>
+        you-are-the-owner: <green>Ora sei il proprietario dell'isola!</green>
+    ban:
+      description: banna un player dall'isola
+      parameters: <giocatore>
+      cannot-ban-yourself: <red>Non puoi bannare te stesso!</red>
+      cannot-ban: <red>Quel giocatore non può essere bannato.</red>
+      cannot-ban-member: <red>Prima caccia il giocatore, poi bannalo.</red>
+      cannot-ban-more-players: <red>Hai raggiunto il limite di ban, non puoi bannare
+        altri giocatori</red> dall'isola.
+      player-already-banned: <red>Il giocatore è già bannato.</red>
+      player-banned: <aqua>[name]</aqua><red>è ora bannato dalla tua isola.</red>
+      owner-banned-you: <aqua>[name]</aqua><red>ti ha bannato dalla sua isola!</red>
+      you-are-banned: <aqua>Sei stato bannato da questa isola!</aqua>
+    unban:
+      description: Sbanna un giocatore dalla tua isola
+      parameters: <giocatore>
+      cannot-unban-yourself: <red>Non puoi sbannare te stesso!</red>
+      player-not-banned: <red>Il giocatore non è bannato.</red>
+      player-unbanned: <aqua>[name]</aqua><green>è ora sbannato dalla tua isola.</green>
+      you-are-unbanned: <aqua>[name]</aqua><green>ti ha sbannato dalla sua isola!</green>
+    banlist:
+      description: mostra i giocatori bannati
+      noone: <green>Nessuno è stato bannato dalla tua isola.</green>
+      the-following: <aqua>I seguenti giocatori sono stati bannati:</aqua>
+      names: <red>[line]</red>
+      you-can-ban: <aqua>Puoi bannare fino a </aqua><yellow>[number] </yellow><aqua>altri
+        giocatori.</aqua>
+    settings:
+      description: mostra le impostazioni dell'isola
+    language:
+      description: seleziona la lingua
+      parameters: '[lingua]'
+      not-available: <red>Questa lingua non è disponibile.</red>
+      already-selected: <red>Stai già utilizzando questa lingua.</red>
+    expel:
+      description: espelli un giocatore dalla tua isola
+      parameters: <giocatore>
+      cannot-expel-yourself: <red>Non puoi espellere te stesso!</red>
+      cannot-expel: <red>Quel giocatore non può essere espulso.</red>
+      cannot-expel-member: <red>Nono puoi cacciare un membro del team!</red>
+      not-on-island: <red>Quel giocatore non è sulla tua isola!</red>
+      player-expelled-you: <aqua>[name]</aqua><red>ti ha espulso dalla sua isola!</red>
+      success: <green>Hai cacciato </green><aqua>[name] </aqua><green>dalla isola.</green>
+    lock:
+      description: blocca o sblocca la tua [prefix_island]
+      locked: <green>La tua [prefix_island] è ora bloccata.</green>
+      unlocked: <green>La tua [prefix_island] è ora sbloccata.</green>
+      you-are-locked-out: <red>Questa [prefix_island] è ora bloccata. Sei stato/a
+        espulso/a.</red>
+ranks:
+  owner: Proprietario
+  sub-owner: Co-Proprietario
+  member: Membro
+  trusted: Fidato
+  coop: Coop
+  visitor: Visitatore
+  banned: Bannato
+  admin: Amministratore
+  mod: Moderatore
+protection:
+  command-is-banned: Il comando è bannato per i visitatori
+  flags:
+    ALLAY:
+      name: Interazione con Allay e Copper Golem
+      description: Consenti di dare e prendere oggetti da/verso Allay e Copper Golem
+      hint: Interazione con Allay e Copper Golem disabilitata
+    ANIMAL_NATURAL_SPAWN:
+      description: Attiva o disattiva la generazione naturale degli animali
+      name: Animale spawn naturale
+    ANIMAL_SPAWNERS_SPAWN:
+      description: Attiva o disattiva la generazione di animali con i
+      name: <gold>Generatore di animali</gold>
+    ANVIL:
+      description: Abilita/disabilita interazione
+      name: Incudini
+      hint: Utilizzo delle incudini disabilitato
+    ARMOR_STAND:
+      description: Abilita/disabilita interazione
+      name: Supporti per armature
+      hint: Uso degli Armor stand disabilitato
+    AXOLOTL_SCOOPING:
+      name: Raccolta di Axolotli
+      description: Consenti di raccogliere l'axolotl usando un secchio
+      hint: Raccolta di Axolotl disabilitata
+    BEACON:
+      description: Abilita/disabilita interazione
+      name: Fari
+      hint: Uso dei fari disabilitato
+    BELL_RINGING:
+      description: Attiva/disattiva interazione
+      name: Permetti il suono della campana
+      hint: Ringing della campana disabilitato
+    BED:
+      description: Abilita/disabilita interazione
+      name: Letti
+      hint: Uso dei letti disabilitato
+    BED_ANCHOR_RESPAWN:
+      name: Rinascita letto/ancora
+      description: |-
+        <green>I giocatori rinascono in un letto valido o</green>
+        <green>un'ancora di rinascita se si trova su un'isola</green>
+        <green>di cui sono membri.</green>
+    BOAT:
+      name: Barche
+      description: Abilita/disabilita interazione con barche
+      hint: Nessuna interazione con barche permessa
+    BOOKSHELF:
+      name: Librerie
+      description: |-
+        <green>Permetti di posizionare libri</green>
+        <green>o di prendere libri.</green>
+      hint: non posso posizionare un libro o prendere un libro.
+    BREAK_BLOCKS:
+      description: Abilita/disabilita rottura
+      name: Rompi blocchi
+      hint: Rottura dei blocchi disabilitata
+    BREAK_SPAWNERS:
+      description: "Attiva/disattiva la demolizione degli spawner.  \nSovrascrive\
+        \ il flag Rompi Blocchi."
+      name: Rovina gli spawnatori
+      hint: Rottura dello spawner disabilitata
+    BREAK_HOPPERS:
+      description: "Attiva/disattiva la rottura degli hopper.  \nSovrascrive il flag\
+        \ Rottura Blocchi."
+      name: Distruggi hoppers
+      hint: Interruzione della rottura degli hoppers disabilitata
+    BREEDING:
+      description: Abilita/disabilita allevamento
+      name: Alleva animali
+      hint: Allevamento di animali protetto
+    BREWING:
+      description: Abilita/disabilita interazione
+      name: Alambicchi
+      hint: Distillazione disabilitata
+    BUCKET:
+      description: Abilita/disabilita interazione
+      name: Secchi
+      hint: Uso dei secchi non permesso
+    BUTTON:
+      description: Abilita/disabilita uso dei pulsanti
+      name: Pulsanti
+      hint: Uso dei pulsanti non permesso
+    CANDLES:
+      description: Attiva/disattiva l'interazione con la candela
+      name: Candele
+      hint: Interazione con la candela disabilitata
+    CAKE:
+      description: Abilita/Disabilita l'interazione con le torte
+      name: Torte
+      hint: Mangiare le torte non è permesso
+    CARTOGRAPHY:
+      name: Tavoli di cartografia
+      description: Attiva/disattiva l'uso
+      hint: Accesso alla tabella di cartografia disabilitato
+    CONTAINER:
+      name: Contenitori
+      description: <green>Abilita/disabilita interazioni con bauli, </green><green>bauli
+        shulker e vasi.</green> <gray>Gli altri contenitore sono gestiti dalle </gray><gray>dalle
+        flag dedicate.</gray>
+      hint: Accesso ai contenitori disabilitato
+    CHEST:
+      name: Casse e casse per minecart
+      description: |-
+        <green>Attiva interazione con le casse</green>
+        <green>e i carrelli da miniera delle casse.</green>
+        <green>(non include le casse trappola)</green>
+      hint: Accesso alla cassa disabilitato
+    BARREL:
+      name: Barili
+      description: Attiva/disattiva l'interazione con il barile
+      hint: Accesso al barile disabilitato
+    CRAFTER:
+      name: Crafter
+      description: Attiva / disattiva l'uso
+      hint: Accesso al crafter disabilitato
+    BLOCK_EXPLODE_DAMAGE:
+      description: |-
+        <green>Permetti ai letti & agli ancoraggi di respawn</green>
+        <green>di rompere blocchi e danneggiare</green>
+        <green>entità.</green>
+      name: Danno da esplosione del blocco
+    COMPOSTER:
+      name: Compostatori
+      description: Attiva/disattiva l'interazione con il composter
+      hint: Interazione con il composter disabilitata
+    LOOM:
+      name: Tessitura
+      description: Attiva/disattiva uso
+      hint: Accesso al telaio disabilitato
+    FLOWER_POT:
+      name: Vasi di fiori
+      description: Attiva/disattiva l'interazione con il vaso di fiori
+      hint: Interazione con il vaso di fiori disabilitata
+    GRINDSTONE:
+      name: Mola
+      description: Attiva/disattiva l'uso
+      hint: Accesso alla macina disabilitato
+    SHULKER_BOX:
+      name: Scatole Shulker
+      description: Attiva/disattiva l'interazione con la shulker box
+      hint: Accesso alla Shulker Box disabilitato
+    SHULKER_TELEPORT:
+      description: |-
+        <green>Un Shulker può teleportarsi</green>
+        <green>se attivo.</green>
+      name: Shulker teletrasporto
+    SMITHING:
+      name: Fabbro
+      description: Attiva/disattiva uso
+      hint: Accesso alla forgiatura disabilitato
+    STONECUTTING:
+      name: Lavorazione della pietra
+      description: Attiva/disattiva l'uso
+      hint: Accesso alla tagliatrice di pietra disabilitato
+    TRAPPED_CHEST:
+      name: Casse intrappolate
+      description: Attiva/disattiva l'interazione con la cassa trappola
+      hint: Accesso al baul trappola disabilitato
+    DISPENSER:
+      name: Distributori
+      description: Abilita/disabilita interazione con distributori
+      hint: Interazione con distributori disabilitata
+    DROPPER:
+      name: Gettatori
+      description: Abilita/disabilita interazione con gettatori
+      hint: Interazione con gettatori disabilitata
+    ELYTRA:
+      name: Elitre
+      description: Abilita/disabilita uso nell'isola
+      hint: Volo con elitre non permesso
+    HOPPER:
+      name: Tramogge
+      description: Abilita/disabilita interazione con tramogge
+      hint: Interazione con tramogge disabilitata
+    CHEST_DAMAGE:
+      description: Abilita/disabilita danni da esplosione a bauli
+      name: Danni a bauli
+    CHORUS_FRUIT:
+      description: Abilita/disabilita teletrasporto
+      name: Frutti corali
+      hint: Teletrasporto non permesso
+    CLEAN_SUPER_FLAT:
+      description: |-
+        <green>Abilita per pulire</green>
+        <green>ogni chunk super-flat</green>
+        <green>nei mondi delle isole</green>
+      name: Pulisci Super Flat
+    COARSE_DIRT_TILLING:
+      description: |-
+        <green>Abilita aratura della terra</green>
+        <green>brulla e rottura di podzol</green>
+        <green>per ottenere terra</green>
+      name: Aratura di terra brulla
+      hint: No aratura di terra brulla
+    COLLECT_LAVA:
+      description: |-
+        <green>Abilita/disabilita raccolta di lava</green>
+        <green>(sopra a Secchi)</green>
+      name: Raccogli lava
+      hint: Raccolta di lava non permessa
+    COLLECT_WATER:
+      description: |-
+        <green>Abilita/disabilita raccolta di acqua</green>
+        <green>(sopra a Secchi)</green>
+      name: Raccogli acqua
+      hint: Raccolta di acqua non permessa
+    COLLECT_POWDERED_SNOW:
+      description: |-
+        <green>Attiva la raccolta della neve in polvere</green>
+        <green>(sovrascrive i Secchi)</green>
+      name: Raccogli neve in polvere
+      hint: Secchi di neve in polvere disabilitati
+    COMMAND_RANKS:
+      name: <yellow>Comandi dei ranghi</yellow>
+      description: <green>Configura i comandi dei ranghi</green>
+    CRAFTING:
+      description: Abilita/disabilita uso
+      name: Banchi da lavoro
+      hint: Uso di banchi da lavoro vietato
+    CREEPER_DAMAGE:
+      description: Abilita/disabilita danni dei creeper
+      name: Danni dei creeper
+    CREEPER_GRIEFING:
+      description: Abilita/disabilita griefing dei creeper
+      name: Griefing dei creeper
+      hint: Griefing dei creeper non permesso
+    CROP_PLANTING:
+      description: <green>Imposta chi può piantare semi.</green>
+      name: Piantare colture
+      hint: Piantagione delle colture disabilitata
+    CROP_TRAMPLE:
+      description: Abilita/disabilita
+      name: Calpesta coltivazioni
+      hint: Coltivazioni protette
+    DOOR:
+      description: Abilita/disabilita uso delle porte
+      name: Utilizzo delle porte
+      hint: Utilizzo delle porte vietato
+    DRAGON_EGG:
+      name: Uovo di drago
+      description: |-
+        <green>Impedisce l'interazione con le Uova di Drago.</green>
+
+        <red>Non protegge dal piazzamento</red>
+        <red>o dalla rottura.</red>
+      hint: No interazioni con uovo di drago
+    DYE:
+      description: Evita l'uso di coloranti
+      name: Uso di coloranti
+      hint: Uso di coloranti vietato
+    EGGS:
+      description: Abilita/disabilita lancio di uova
+      name: Lancio di uova
+      hint: Lancio di uova disabilitato
+    ENCHANTING:
+      description: Abilita/disabiltia uso
+      name: Tavolo da incantamento
+      hint: Uso del tavolo da incantamento disabilitato
+    ENDER_CHEST:
+      description: Abilita/disabilita uso/fabbricazione
+      name: Cofani di Ender
+      hint: Le Ender chests sono disabilitate in questo mondo
+    ENDERMAN_DEATH_DROP:
+      description: |-
+        <green>Endermen possono rilasciare</green>
+        <green>ogni tipo di blocco che</green>
+        <green>tengono se uccisi.</green>
+      name: Drop di enderman
+    ENDERMAN_GRIEFING:
+      description: |-
+        <green>Endermen possono rimuovere</green>
+        <green>blocchi dalle isole</green>
+      name: Griefing di enderman
+    ENDERMAN_TELEPORT:
+      description: |-
+        <green>Gli Enderman possono teletrasportarsi</green>
+        <green>se attivi.</green>
+      name: Teletrasporto dell'Enderman
+    ENDER_PEARL:
+      description: Abilita/disabilita uso
+      name: Perle dell'end
+      hint: Utilizzo delle perle dell'end disabilitato
+    ENTER_EXIT_MESSAGES:
+      description: Mostra messaggi di entrata ed uscita
+      island: Isola di [name]
+      name: Messaggi di Entrata/Uscita
+      now-entering: <aqua>Stai entrando in [name]</aqua>
+      now-entering-your-island: '<green>Stai entrando nella tua isola: </green><aqua>[name]</aqua>'
+      now-leaving: <aqua>Stai uscendo da [name]</aqua>
+      now-leaving-your-island: '<green>Stai uscendo dalla tua isola: </green><aqua>[name]</aqua>'
+    EXPERIENCE_BOTTLE_THROWING:
+      name: Lancio di boccette di esperienza
+      description: Abilita/disabilita lancio di boccette di esperienza.
+      hint: Lancio di boccette di esperienza disabilitato
+    FIRE_BURNING:
+      name: Danni da fuoco
+      description: |-
+        <green>Scegli se il fuoco può</green>
+        <green>bruciare blocchi oppure no.</green>
+    FIRE_EXTINGUISH:
+      description: Abilita/disabilita spegnimento di fuochi
+      name: Spegni i fuochi
+      hint: Spegnimento di fuochi non permesso
+    FIRE_IGNITE:
+      name: Accensione di fuochi
+      description: |-
+        <green>Scegli se i fuochi possono essere accesi</green>
+        <green>da non giocatori oppure no.</green>
+    FIRE_SPREAD:
+      name: Espansione di fuochi
+      description: |-
+        <green>Scegli se il fuoco può espandersi</green>
+        <green>ai blocchi vicini oppure no.</green>
+    FISHING:
+      name: Pesca
+      description: Permetti la pesca con una canna da pesca
+      hint: Pesca disabilitata
+    FISH_SCOOPING:
+      name: Raccolta di pesci
+      description: Permetti la raccolta dei pesci utilizzando un secchio
+      hint: Raccolta di pesci disabilitata
+    FLINT_AND_STEEL:
+      name: Acciarino
+      description: |-
+        <green>Permette i giocatori di dare  fuoco o</green>
+        <green>fare falò usando acciarini</green>
+        <green>o cariche di fuoco.</green>
+      hint: Uso di acciarino e di cariche di fuoco non permesso
+    FURNACE:
+      description: Abilita/disabilita uso
+      name: Fornaci
+      hint: Uso di fornaci disabilitato
+    GATE:
+      description: Abilita/disabilita uso
+      name: Cancelletti
+      hint: Uso dei cancelletti disabilitato
+    GEO_LIMIT_MOBS:
+      description: |-
+        <green>Rimuovi i mostri che vanno</green>
+        <green>all'infuori dello spazio</green>
+        <green>dell'isola protetto</green>
+      name: <yellow>Limita i mostri nell'isola</yellow>
+    HARVEST:
+      description: |-
+        <green>Imposta chi può raccogliere i raccolti.</green>
+        <green>Non dimenticare di permettere anche il</green>
+        <green>recupero degli oggetti!</green>
+      name: Raccolta delle coltivazioni
+      hint: Raccolta delle coltivazioni disabilitata
+    HIVE:
+      description: <green>Attiva/disattiva la raccolta dell'alveare.</green>
+      name: Raccolta dell'alveare
+      hint: Raccolta disabilitata
+    HURT_TAMED_ANIMALS:
+      description: Attiva/disattiva danno. Abilitato significa che gli animali addomesticati
+        possono subire danni. Disabilitato significa che sono invincibili.
+      name: Fai del male agli animali addomesticati
+      hint: Animale addomesticato ferito disabilitato
+    HURT_ANIMALS:
+      description: Abilita/disabilita danni
+      name: Danneggia animali
+      hint: Danneggiamento di animali non permesso
+    HURT_MONSTERS:
+      description: Abilita/disabilita danni
+      name: Danneggia mostri
+      hint: Danneggiamento di mostri non permesso
+    HURT_VILLAGERS:
+      description: Abilita/disabilita danni
+      name: Danneggia villici
+      hint: Danneggiamento di villici non permesso
+    ITEM_FRAME:
+      name: Cornici
+      description: Abilita/disabilita interazione
+      hint: Uso di cornici disabilitato
+    ITEM_FRAME_DAMAGE:
+      description: |-
+        <green>Mostri possono danneggiare</green>
+        <green>le cornici</green>
+      name: Danneggiamento cornici
+    INVINCIBLE_VISITORS:
+      description: |-
+        <green>Configura l'invincibilità</green>
+        <green>dei visitatori.</green>
+      name: <yellow>Visitatori invincibili</yellow>
+      hint: <red>Visitatori protetti</red>
+    ISLAND_RESPAWN:
+      description: |-
+        <green>I giocatori rinascono</green>
+        <green>sull'isola</green>
+      name: Rinascita sull'isola
+    ITEM_DROP:
+      description: Abilita/disabilita dropping
+      name: Drop di item
+      hint: Gli oggetti non possono essere gettati
+    ITEM_PICKUP:
+      description: Abilita/disabilita raccolta
+      name: Raccolta di oggetti
+      hint: Gli oggetti non possono essere raccolti
+    JUKEBOX:
+      description: Abilita/disabilita uso
+      name: Uso di jukebox
+      hint: Uso di jukebox non permesso
+    LEAF_DECAY:
+      name: Decadimento foglie
+      description: Permetti il decadimento naturale delle foglie
+    LEASH:
+      description: Abilita/disabilita uso
+      name: Uso di guinzagli
+      hint: Uso della museruola disabilitato
+    LECTERN:
+      name: Leggii
+      description: |-
+        <green>Permette di piazzare libri sui leggii</green>
+        <green>o prendere libri da essi.</green>
+
+        <red>Non blocca i giocatori dal leggere i libri</red>
+      hint: non puoi piazzare un libro sul leggio o leggerlo da esso.
+    LEVER:
+      description: Abilita/disabilita uso
+      name: Uso di leve
+      hint: Uso di leve disabilitato
+    LIMIT_MOBS:
+      description: |-
+        <green>Limite entità</green>
+        <green>spawn in questa</green>
+        <green>modalità.</green>
+      name: <yellow>Limite spawn entità</yellow>
+      can: <green>Può spawnare</green>
+      cannot: <red>Non può spawnare</red>
+    LIQUIDS_FLOWING_OUT:
+      name: Liquidi scorrono fuori dall'isola
+      description: |-
+        <green>Scegli se i liquidi possono scorrere fuori</green>
+        <green>dal raggio di protezione dell'isola.</green>
+        <green>Disabilitare questa opzione evita che la lava e l'acqua</green>
+        <green>generino pietrisco nello spazio tra</green>
+        <green>due isole.</green>
+
+        <red>I liquidi potranno scorrere verticalmente.</red>
+        <red>Potranno anche scorrere orizzontalmente se</red>
+        <red>piazzati fuori dal raggio di protezione</red>
+        <red>dell'isola.</red>
+    LOCK:
+      description: Abilita/disabilita blocco
+      name: Blocco dell'isola
+    CHANGE_SETTINGS:
+      name: Cambia Impostazioni
+      description: |-
+        <green>Consenti di cambiare quale membro</green>
+        <green>il ruolo può modificare le impostazioni di [prefix_island].</green>
+    MILKING:
+      description: Abilita/disabilita mungitura delle mucche
+      name: Mungitura
+      hint: Mungitura non permessa
+    MINECART:
+      name: Carrelli
+      description: Abilita/disabilita interazioni con carrelli
+      hint: Interazioni con carrelli disabilitate
+    MONSTER_NATURAL_SPAWN:
+      description: Attiva la generazione naturale dei mostri
+      name: Mostri spawn naturale
+    MONSTER_SPAWNERS_SPAWN:
+      description: Attiva/disattiva la generazione di mostri con gli spawner.
+      name: <gray>Generatori di mostri</gray>
+    MOUNT_INVENTORY:
+      description: |-
+        <green>Abilita/disabilita accesso</green>
+        <green>all'inventario della montatura</green>
+      name: Inventario montatura
+      hint: No accesso all'inventario della montatura
+    NAME_TAG:
+      name: Targhette
+      description: Abilita/disabiltia uso
+      hint: No uso di targhette
+    NATURAL_SPAWNING_OUTSIDE_RANGE:
+      name: Generazione creature fuori dall'isola
+      description: |-
+        <green>Scegli se le creature (animali e</green>
+        <green>mostri) possono essere generate naturalmente</green>
+        <green>fuori dal raggio di protezione dell'isola.</green>
+
+        <red>Questo non impedisce la generazione</red>
+        <red>tramite spawner o uova di</red>
+        <red>mostro.</red>
+    NOTE_BLOCK:
+      description: Abilita/disabilita uso
+      name: Blocchi sonori
+      hint: No uso di blocchi sonori
+    OBSIDIAN_SCOOPING:
+      name: Raccolta di ossidiana
+      description: |-
+        <green>Permette i giocatori di riciclare la ossidiana con</green>
+        <green>un secchio vuoto recuperando la lava.</green>
+
+        <green>Questo aiuta i nuovi giocatori a</green>
+        <green>costruire i loro generatori.</green>
+
+        <green>Nota: la ossidiana non può essere riciclata</green>
+        <green>se ci sono altri blocchi di ossidiana</green>
+        <green>nel raggio di 2 blocchi.</green>
+      scooping: <green>Recuperando la ossidiana in lava. Stai attento la prossima
+        volta!</green>
+      cooldown: <red>Devi aspettare prima di raccogliere un altro blocco di ossidiana.</red>
+      obsidian-nearby: ''
+      lavaTip: |-
+        <gold>Raccoglilo con un secchio</gold>
+        <gold>di nuovo come lava se ne hai bisogno!</gold>
+        <red>Ci sono blocchi di ossidiana vicini, non puoi riciclare questo blocco</red>
+        in lava. ([radius])
+    OFFLINE_GROWTH:
+      description: |-
+        <green>Se disabilitato, le piante</green>
+        <green>non cresceranno su isole</green>
+        <green>aventi tutti i membri offline.</green>
+        <green>Può aiutare a ridurre il lag.</green>
+      name: Crescita piante offline
+    OFFLINE_REDSTONE:
+      description: |-
+        <green>Se disabilitato, la redstone</green>
+        <green>non funzionerà su isole</green>
+        <green>aventi tutti i membri offline.</green>
+        <green>Può aiutare a ridurre il lag.</green>
+      name: Redstone offline
+    PETS_STAY_AT_HOME:
+      description: |-
+        <green>Quando attivi, gli animali domestici addomesticati</green>
+        <green>possono solo andare e</green>
+        <green>non possono lasciare la casa del proprietario</green>
+        <green>[prefix_island].</green>
+      name: Gli animali domestici restano a casa
+    PISTON_PUSH:
+      description: |-
+        <green>Attiva questa opzione per evitare che i</green>
+        <green>pistoni spingano i blocchi fuori dall'isola</green>
+      name: Protezione Spinta Pistoni
+    PLACE_BLOCKS:
+      description: Abilita/disabilita piazzamento
+      name: Piazza blocchi
+      hint: Piazzamento blocchi non permesso
+    PODZOL:
+      name: Produzione di podzol degli alberi
+      description: |-
+        <green>Se disabilitato, impedirà</green>
+        <green>la produzione di podzol</green>
+        <green>quando crescono grandi alberi</green>
+    POTION_THROWING:
+      name: Lancio di pozioni
+      description: |-
+        <green>Abilita/disabilita lancio di pozioni.</green>
+        <green>Include pozioni da lancio e persistenti.</green>
+      hint: Lancio di pozioni non permesso
+    NETHER_PORTAL:
+      description: Abilita/disabilita uso
+      name: Portale del Nether
+      hint: Uso del portale non permesso
+    END_PORTAL:
+      description: Abilita/disabiltia uso
+      name: Portale dell'End
+      hint: Uso del portale non permesso
+    PAUSE_MOB_GROWTH:
+      name: Pausa crescita mob
+      description: |-
+        <green>Attiva/disattiva l'uso del dente di</green>
+        <green>leone dorato per mettere in pausa</green>
+        <green>o riprendere la crescita dei cuccioli</green>
+      hint: Pausa crescita mob disattivata
+    PRESSURE_PLATE:
+      description: Abilita/disabilita uso
+      name: Pedane a pressione
+      hint: Uso di pedane a pressione disabilitato
+    PVP_END:
+      description: |-
+        <red>Abilita/disabilita PvP</red>
+        <red>nell'End.</red>
+      name: Fine PVP
+      hint: PvP disabilitato nell'End
+      enabled: <red>Il PVP nel End è abilitato.</red>
+      disabled: <green>Il PVP nel End è disabilitato.</green>
+    PVP_NETHER:
+      description: |-
+        <red>Abilita/disabilita PvP</red>
+        <red>nel Nether.</red>
+      name: Nether PVP
+      hint: PvP disabilitato nel Nether
+      enabled: <red>Il PVP nel Nether è abilitato.</red>
+      disabled: <green>Il PVP nel Nether è disabilitato.</green>
+    PVP_OVERWORLD:
+      description: |-
+        <red>Abilita/disabilita PvP</red>
+        <red>sull'isola.</red>
+      name: Overworld PVP
+      hint: <red>Il PvP è disabilitato</red>
+      enabled: <red>Il PVP nel Overworld è abilitato.</red>
+      disabled: <green>Il PVP nel Overworld è disabilitato.</green>
+    REDSTONE:
+      description: Abilita/disabilita uso
+      name: Oggetti di redstone
+      hint: Uso di oggetti di redstone disabilitato
+    REMOVE_END_EXIT_ISLAND:
+      description: |-
+        <green>Evita la generazione alle</green>
+        <green>coordinate 0,0 dell'isola di</green>
+        <green>uscita nell'End</green>
+      name: Rimuovi isola di uscita dall'End
+    REMOVE_MOBS:
+      description: |-
+        <green>Rimuovi i mostri durante</green>
+        <green>il teletrasporto all'isola</green>
+      name: Rimuovi i mostri
+    RIDING:
+      description: Abilita/disabilita cavalcatura
+      name: Cavalcatura animali
+      hint: Cavalcatura degli animali non permessa
+    SHEARING:
+      description: Abilita/disabilita tosatura
+      name: Tosatura
+      hint: Tosatura non permessa
+    SPAWN_EGGS:
+      description: Abilita/disabilita uso
+      name: Uova di mostro
+      hint: Lancio di uova di mostro non permesso
+    SPAWNER_SPAWN_EGGS:
+      description: <green>Permette di cambiare il tipo di spawner </green><green>usando
+        le uova.</green>
+      name: Uso uova sugli spawner
+      hint: cambiare il tipo di spawner usando le uova non è permesso
+    SCULK_SENSOR:
+      description: |-
+        <green>Attiva/disattiva il sensore sculk</green>
+        <green>attivazione.</green>
+      name: Sensore Sculk
+      hint: l'attivazione del sensore sculk è disabilitata
+    SCULK_SHRIEKER:
+      description: |-
+        <green>Attiva/disattiva il grido sculk</green>
+        <green>attivazione.</green>
+      name: Sculk Shrieker
+      hint: l'attivazione dello sculk shrieker è disabilitata
+    SIGN_EDITING:
+      description: |-
+        <green>Consente la modifica del testo</green>
+        <green>dei cartelli</green>
+      name: Modifica del Cartello
+      hint: La modifica dei segnali è disabilitata
+    TNT_DAMAGE:
+      description: |-
+        <green>Permetti a TNT e minecart con TNT</green>
+        <green>la distruzione di blocchi o il</green>
+        <green>danneggiamento di entità.</green>
+      name: Danni TNT
+    TNT_PRIMING:
+      description: |-
+        <green>Evita l'accensione di TNT.</green>
+        <green>Non sovrascrive la protezione</green>
+        <green>da acciarino.</green>
+      name: Accensione TNT
+      hint: Accensione TNT disabilitata
+    TRADING:
+      description: Abilita/disabilita scambi con villici
+      name: Scambio con villici
+      hint: Scambio con villici disabilitato
+    TRAPDOOR:
+      description: Abilita/disabilita accesso
+      name: Botole
+      hint: Uso di botole disabilitato
+    TREES_GROWING_OUTSIDE_RANGE:
+      name: Crescita di alberi fuori dal raggio
+      description: |-
+        <green>Scegli se gli alberi possono crescere fuori</green>
+        <green>dal raggio di protezione dell'isola o no.</green>
+        <green>Non eviterà solamente che gli arboscelli</green>
+        <green>fuori dal raggio di protezione crescano, ma</green>
+        <green>bloccherà anche la generazione di</green>
+        <green>foglie/tronchi fuori dall'isola, tagliando</green>
+        <green>l'albero.</green>
+    TURTLE_EGGS:
+      description: Abilita/disabilita schiacciamento
+      name: Uova di tartaruga
+      hint: Uova di tartaruga non schiacciabili!
+    FROST_WALKER:
+      description: Abilita/disabilita Passo Gelato
+      name: Passo Gelato
+      hint: Passo Gelato non può essere usato qui
+    EXPERIENCE_PICKUP:
+      name: Raccolta esperienza
+      description: Abilita/disabilita raccolta esperienza
+      hint: impossibile raccogliere esperienza
+    PREVENT_TELEPORT_WHEN_FALLING:
+      name: Evita teletrasporto durante la caduta
+      description: |-
+        <green>Evita che i giocatori si teletrasportino</green>
+        <green>sulle loro isole tramite comandi</green>
+        <green>se stanno cadendo.</green>
+      hint: <red>Non puoi teletrasportarti sulla tua isola se stai cadendo.</red>
+    VISITOR_KEEP_INVENTORY:
+      name: I visitatori mantengono l'inventario alla morte
+      description: |-
+        <green>Impedire ai giocatori di perdere i loro</green>
+        <green>oggetti e esperienza se muoiono su</green>
+        <green>[prefix_an-island] in cui sono visitatori.</green>
+        <green></green>
+        <green>I membri di [prefix_Island] perdono comunque i loro oggetti</green>
+        <green>se muoiono nella propria [prefix_island]!</green>
+    SPAWN_PROTECTION:
+      name: Protezione dal vuoto nell'isola spawn
+      description: |-
+        <green>Quando attivo, i giocatori che cadono</green>
+        <green>nel vuoto nell'isola spawn</green>
+        <green>verranno teletrasportati al punto</green>
+        <green>di spawn invece di morire.</green>
+    RAID_TRIGGER:
+      name: Attivazione incursione
+      description: Imposta il rango minimo dell'isola richiesto per attivare un'incursione
+      hint: Attivazione dell'incursione non consentita
+    ENTITY_PORTAL_TELEPORT:
+      name: Utilizzo del portale entità
+      description: |-
+        <green>Attiva se le entità (non giocatore) possono</green>
+        <green>utilizzare i portali per teletrasportarsi tra</green>
+        <green>dimensioni</green>
+    WIND_CHARGE:
+      name: Carica di vento
+      description: |-
+        <green>Attiva/disattiva l'uso delle cariche di vento.</green>
+        <green>Se disabilitato, i visitatori non possono</green>
+        <green>usare cariche di vento su questa isola.</green>
+      hint: Uso della carica di vento disabilitato
+    WITHER_DAMAGE:
+      name: Abilita/disabilita i danni dal Wither
+      description: <green>Se attivo, i wither </green><green>danneggeranno  i blocchi
+        e giocatori</green>
+    WORLD_BLOCK_EXPLODE_DAMAGE:
+      description: |-
+        <green>Permetti ai letti & agli ancore di respawn di</green>
+        <green>rompere blocchi e danneggiare</green>
+        <green>entità al di fuori dei limiti di [prefix_island].</green>
+      name: Danno esplosione blocco mondo
+    WORLD_TNT_DAMAGE:
+      description: |-
+        <green>Permetti a TNT e ai carrelli TNT</green>
+        <green>di rompere blocchi e danneggiare</green>
+        <green>entità al di fuori dei limiti di [prefix_island].</green>
+      name: Danno TNT nel mondo
+  locked: <red>Quest'isola è bloccata!</red>
+  locked-island-bypass: <gold>Questa [prefix_island] è bloccata, ma hai il permesso
+    di accedervi.</gold>
+  deletable-island-admin: <red>[Admin] Questa [prefix_island] è contrassegnata per
+    l'eliminazione e in attesa di pulizia della regione.</red>
+  protected: '<red>Isola protetta: [description]</red>'
+  world-protected: '<red>Mondo protetto: [description]</red>'
+  spawn-protected: '<red>Spawn protetto: [description]</red>'
+  panel:
+    next: Prossima Pag.
+    previous: Pag. Precedente
+    mode:
+      advanced:
+        name: <gold>Impostazioni Avanzate</gold>
+        description: <green>Mostra una quantità sensibile di impostazioni.</green>
+      basic:
+        name: <green>Impostazioni Base</green>
+        description: <green>Mostra le impostazioni più utili.</green>
+      expert:
+        name: <red>Impostazioni Esperto</red>
+        description: <green>Mostra tutte le impostazioni disponibili.</green>
+      click-to-switch: <yellow>Clicca </yellow><green>per andare </green>[next]<green>.</green>
+    reset-to-default:
+      name: <red>Reseta ai valori default</red>
+      description: <green>Reseta </green><red><bold>TUTTE </bold></red><green>le impostazioni
+        al loro </green><green>valore default.</green>
+      confirm: conferma
+      instructions: <green>Sei sicuro? Digita </green><red>"conferma" </red><green>per
+        ripristinare tutto.</green>
+    PROTECTION:
+      title: <gold>Protezione</gold>
+      description: |-
+        <green>Impostazioni di protezione</green>
+        <green>per questa isola</green>
+    SETTING:
+      title: <gold>Impostazioni</gold>
+      description: |-
+        <green>Impostazioni generali</green>
+        <green>per questa isola</green>
+    WORLD_SETTING:
+      title: <gold>Impostazioni </gold><aqua>[world_name]</aqua>
+      description: <green>Impostazioni per questo mondo di gioco</green>
+    WORLD_DEFAULTS:
+      title: <aqua>[world_name] </aqua><gold>Protezioni Mondo</gold>
+      description: |-
+        <green>Impostazioni protezione quando un</green>
+        <green>giocatore è fuori dalla propria isola</green>
+    ISLAND_DEFAULTS:
+      title: <aqua>[world_name] </aqua><gold>Impostazioni predefinite isola</gold>
+      description: |
+        <green>Impostazioni di protezione predefinite</green>
+        <green>per le nuove [prefix_island]s</green>
+    flag-item:
+      name-layout: <green>[name]</green>
+      command-instructions:
+        setname: |-
+          <green>Seleziona il rango che può</green>
+          <green>impostare il nome</green>
+        ban: |-
+          <green>Seleziona il rango che può</green>
+          <green>bannare i giocatori</green>
+        unban: |-
+          <green>Seleziona il grado che può</green>
+          <green>sbloccare i giocatori</green>
+        expel: |-
+          <green>Seleziona il rango che può</green>
+          <green>espellere i visitatori</green>
+        team-invite: |-
+          <green>Seleziona il rango che può</green>
+          <green>invitare</green>
+        team-kick: |-
+          <green>Seleziona il rango che può</green>
+          <green>espellere</green>
+        team-coop: |-
+          <green>Seleziona il rango che può</green>
+          <green>cooperare</green>
+        team-trust: |-
+          <green>Seleziona il rango che può</green>
+          <green>fidarsi</green>
+        team-uncoop: |-
+          <green>Seleziona il rango che può</green>
+          <green>disassociare</green>
+        team-untrust: |-
+          <green>Seleziona il rango che può</green>
+          <green>disfidare</green>
+        team-promote: |-
+          <green>Seleziona il rango che può</green>
+          <green>promuovere il rango del giocatore</green>
+        team-demote: |-
+          <green>Seleziona il rango che può</green>
+          <green>declassare il rango del giocatore</green>
+        sethome: |-
+          <green>Seleziona il rango che può</green>
+          <green>impostare le case</green>
+        deletehome: |-
+          <green>Seleziona il rango che può</green>
+          <green>eliminare case</green>
+        renamehome: |-
+          <green>Seleziona il grado che può</green>
+          <green>rinominare le case</green>
+        setcount: |-
+          <green>Seleziona il rango che può</green>
+          <green>cambiare la fase</green>
+        border: |-
+          <green>Seleziona il rango che può</green>
+          <green>usare il comando border</green>
+      description-layout: <green>[description]  </green><gray>Permesso per:</gray>
+      allowed-rank: <dark_aqua>- </dark_aqua><green>[rank]</green>
+      blocked-rank: <dark_aqua>- </dark_aqua><red>[rank]</red>
+      minimal-rank: <dark_aqua>- </dark_aqua><dark_green>[rank]</dark_green>
+      menu-layout: '[description]'
+      setting-cooldown: <red>Impostazioni in cooldown</red>
+      setting-layout: '<green>[description]  </green><gray>Impostazione corrente:
+        [setting]</gray>'
+      setting-active: <green>Attivo</green>
+      setting-disabled: <red>Disabilitato</red>
+management:
+  panel:
+    title: Gestione BentoBox
+    views:
+      gamemodes:
+        name: <gold>Modalità di gioco</gold>
+        description: <yellow>Clicca </yellow><green>per mostrare le modalità di gioco
+          caricate</green>
+        blueprints:
+          name: <gold>Blueprints</gold>
+          description: <green>Apri il menu delle blueprints.</green>
+        gamemode:
+          name: <white>[name]</white>
+          description: |
+            <green>Isole: </green><aqua>[islands]</aqua>
+      addons:
+        name: <gold>Addons</gold>
+        description: <yellow>Clicca </yellow><green>per mostrare gli addons caricati
+          al momento</green>
+      hooks:
+        name: <gold>Hooks</gold>
+        description: <yellow>Clicca </yellow><green>per mostrare gli Hooks caricati
+          al momento</green>
+    actions:
+      reload:
+        name: <red>Ricarica</red>
+        description: <yellow>Clicca </yellow><red><bold>due volte </bold></red><green>per
+          ricaricare BentoBox</green>
+    buttons:
+      catalog:
+        name: <gold>Catalogo Addons</gold>
+        description: <green>Apre il catalogo degli Addons</green>
+      credits:
+        name: <gold>Crediti</gold>
+        description: <green>Mostra i crediti per BentoBox</green>
+      empty-here:
+        name: <aqua>Sembra essere vuoto...</aqua>
+        description: <green>Perchè non dai un'occhiata al nostro catalogo?</green>
+    information:
+      state:
+        name: <gold>Compatibilità</gold>
+        description:
+          COMPATIBLE: |
+            <green>In esecuzione </green><yellow>[name] [version]</yellow><green>.</green>
+
+            <green>BentoBox è in esecuzione su un</green>
+            <green>server software ed una</green>
+            <green>versione </green><green><bold>COMPATIBILE.</bold></green>
+
+            <green>Le sue caratteristiche sono state progettate</green>
+            <green>per essere eseguite su questo ambiente.</green>
+          SUPPORTED: |
+            <green>In esecuzione </green><yellow>[name] [version]</yellow><green>.</green>
+
+            <green>BentoBox è in esecuzione su un</green>
+            <green>server software ed una</green>
+            <green>versione </green><green><bold>SUPPORTATA.</bold></green>
+
+            <green>Gran parte delle sue caratteristiche sarà</green>
+            <green>eseguita bene su questo ambiente.</green>
+          NOT_SUPPORTED: |
+            <green>In esecuzione </green><yellow>[name] [version]</yellow><green>.</green>
+
+            <green>BentoBox è in esecuzione su un</green>
+            <green>server software ed una</green>
+            <green>versione </green><green><bold>NON SUPPORTATA.</bold></green>
+
+            <green>Nonostante gran parte delle caratteristiche funzionerà</green>
+            <green>correttamente, </green><gold>possono presentarsi</gold>
+            <gold>bug o problemi</gold><green>.</green>
+          INCOMPATIBLE: |
+            <green>In esecuzione </green><yellow>[name] [version]</yellow><green>.</green>
+
+            <green>BentoBox è in esecuzione su un</green>
+            <green>server software ed una</green>
+            <green>versione </green><red><bold>NON SUPPORTATA.</bold></red>
+
+            <red>Possono presentarsi strani comportamenti o bug</red>
+            <red>e gran parte delle caratteristiche potrebbe essere instabile.</red>
+catalog:
+  panel:
+    GAMEMODES:
+      title: Catalogo modalità di gioco
+    ADDONS:
+      title: Catalogo Addons
+    views:
+      gamemodes:
+        name: <gold>Modalità di gioco</gold>
+        description: |
+          <yellow>Clicca </yellow><green>per sfogliare le</green>
+          <green>Modalità di gioco ufficiali disponibili.</green>
+      addons:
+        name: <gold>Addons</gold>
+        description: |
+          <yellow>Clicca </yellow><green>per sfogliare gli</green>
+          <green>Addons ufficiali disponibili.</green>
+    icon:
+      description-template: |
+        <dark_gray>[topic]</dark_gray>
+        <green>[install]</green>
+
+        <gray><italic>[description]</italic></gray>
+
+        <yellow>Clicca </yellow><green>per avere il link</green>
+        <green>all'ultima versione.</green>
+      already-installed: Già installata!
+      install-now: Installala ora!
+    empty-here:
+      name: <aqua>Sembra essere vuoto...</aqua>
+      description: |
+        <red>BentoBox non è riuscito a connettersi a GitHub.</red>
+
+        <green>Permetti a BentoBox di connettersi a GitHub</green>
+        <green>nelle configurazioni o riprova più tardi.</green>
+enums:
+  DamageCause:
+    CONTACT: Contatto
+    ENTITY_ATTACK: Attacco Mob
+    ENTITY_SWEEP_ATTACK: Attacco a Fendente
+    PROJECTILE: Proiettile
+    SUFFOCATION: Soffocamento
+    FALL: Caduta
+    FIRE: Fuoco
+    FIRE_TICK: Bruciando
+    MELTING: Fusione
+    LAVA: <dark_red>Lava</dark_red>
+    DROWNING: Annegamento
+    BLOCK_EXPLOSION: Esplosione di Blocchi
+    ENTITY_EXPLOSION: Esplosione dell'Entità
+    VOID: Vuoto
+    LIGHTNING: Fulmine
+    SUICIDE: Suicidio
+    STARVATION: Fame
+    POISON: Veleno
+    MAGIC: Magia
+    WITHER: Wither
+    FALLING_BLOCK: Blocco Cadente
+    THORNS: Spine
+    DRAGON_BREATH: Respiro di Drago
+    CUSTOM: Personalizzato
+    FLY_INTO_WALL: Impatto col Muro
+    HOT_FLOOR: Pavimento Caldo
+    CRAMMING: Cramming
+    DRYOUT: Asciugatura
+    FREEZE: Congelamento
+    KILL: Uccisione
+    SONIC_BOOM: Boom Sonico
+    WORLD_BORDER: Confine del Mondo
+panel:
+  credits:
+    title: <dark_gray>[name] </dark_gray><dark_green>Crediti</dark_green>
+    contributor:
+      name: <green>[name]</green>
+      description: '<green>Commit: </green><aqua>[commits]</aqua>'
+    empty-here:
+      name: <red>Sembra vuoto qui...</red>
+      description: |-
+        <red>BentoBox non riesce a ottenere info sui Contributori </red><red>di questo</red> Addon.
+
+        <green>Permetti Bentobox di collegarsi a GitHub </green><green>nella configurazione o</green> riprova più tardi.
+panels:
+  island_homes:
+    title: <dark_green><bold>Le tue case [prefix_island]</bold></dark_green>
+    buttons:
+      name: <bold>[name]</bold>
+  island_creation:
+    title: <dark_green><bold>Scegli [prefix_an-island]</bold></dark_green>
+    buttons:
+      bundle:
+        name: <bold>[name]</bold>
+        description: '[description]'
+        uses: <green>Usati [number]/[max]</green>
+        unlimited: <green>Utilizzi illimitati consentiti</green>
+        cost: '<yellow>Costo: [cost]</yellow>'
+  language:
+    title: <dark_green><bold>Seleziona la tua lingua</bold></dark_green>
+    edited: <red>Cambiato in [lang]</red>
+    buttons:
+      language:
+        name: <white><bold>[name]</bold></white>
+        description: |-
+          [authors]
+          |[selected]
+        authors: <gray>Autori:</gray>
+        author: <gray>- </gray><aqua>[name]</aqua>
+        selected: <green>Attualmente selezionato.</green>
+  placeholder:
+    title: <dark_aqua><bold>Placeholder Browser</bold></dark_aqua>
+    buttons:
+      bentobox:
+        name: <white><bold>BentoBox</bold></white>
+        description: <gray>[number] segnaposto</gray>
+      addon:
+        name: <white><bold>[name]</bold></white>
+        description: <gray>[number] segnaposto</gray>
+  placeholder-list:
+    title: <dark_aqua><bold>[name]</bold></dark_aqua>
+    buttons:
+      leaf:
+        name: <aqua>[placeholder]</aqua>
+        description: <gray>[description]</gray>
+        disabled: <red><italic>(disattivato)</italic></red>
+        hint: <yellow>Clicca </yellow><gray>per attivare/disattivare.</gray>
+      folder:
+        name: <white><bold>[label]</bold></white>
+        description: <gray>[count] segnaposto</gray>
+        hint: <yellow>Clicca </yellow><gray>per esplorare.</gray>
+      leaf-folder:
+        hint: <yellow>Clic sinistro </yellow><gray>per attivare/disattivare. · </gray><yellow>Clic
+          destro </yellow><gray>per esplorare.</gray>
+      series:
+        name: <aqua>[placeholder]</aqua>
+        description: <gray>[description]</gray>
+        range: '<dark_gray>#[min] – #[max] · [count] elementi</dark_gray>'
+        disabled: <red><italic>(alcuni disattivati)</italic></red>
+        hint: <yellow>Clicca </yellow><gray>per attivare/disattivare tutti.</gray>
+        sample: <dark_gray>#[index] → </dark_gray><white>[value]</white>
+        sample-empty: <dark_gray>#[index] → </dark_gray><dark_gray>(vuoto)</dark_gray>
+      leaf-series:
+        hint: <yellow>Clic sinistro </yellow><gray>per attivare/disattivare. · </gray><yellow>Clic
+          destro </yellow><gray>per attivare/disattivare tutti.</gray>
+      value: <dark_gray>→ </dark_gray><white>[value]</white>
+      value-empty: <dark_gray>→ </dark_gray><dark_gray>(vuoto)</dark_gray>
+      back:
+        name: <white><bold>Indietro</bold></white>
+        description: <gray>Torna alla lista degli addon</gray>
+  buttons:
+    previous:
+      name: <white><bold>Pagina Precedente</bold></white>
+      description: <gray>Passa alla pagina [number]</gray>
+    next:
+      name: <white><bold>Pagina Successiva</bold></white>
+      description: <gray>Passa a [number] pagina</gray>
+  tips:
+    click-to-next: <yellow>Clicca </yellow><gray>per il prossimo.</gray>
+    click-to-previous: <yellow>Clicca </yellow><gray>per precedente.</gray>
+    click-to-choose: <yellow>Clicca </yellow><gray>per selezionare.</gray>
+    click-to-toggle: <yellow>Fai clic </yellow><gray>per attivare/disattivare.</gray>
+    left-click-to-cycle-down: <yellow>Clicca Sinistro </yellow><gray>per scorrere
+      verso il basso.</gray>
+    right-click-to-cycle-up: <yellow>Fai clic destro </yellow><gray>per completare
+      un ciclo in alto.</gray>
+successfully-loaded: |2
+
+  <gold> ____             _        ____</gold>
+  <gold>|  _ \           | |      |  _ \             </gold><gray>by </gray><green>tastybento </green><gray>and</gray> <green>Poslovitch</green>
+  <gold>| |_) | ___ _ __ | |_ ___ | |_) | _____  __  </gold><gray>2017 - 2022</gray>
+  <gold>|  _ < / _ \ '_ \| __/ _ \|  _ < / _ \ \/ /</gold>
+  <gold>| |_) |  __/ | | | || (_) | |_) | (_) >  <   </gold><aqua>v</aqua><yellow>[version]</yellow>
+  <gold>|____/ \___|_| |_|\__\___/|____/ \___/_/\_\  </gold><dark_gray>Caricato in </dark_gray><yellow>[time]</yellow><dark_gray>ms.</dark_gray>

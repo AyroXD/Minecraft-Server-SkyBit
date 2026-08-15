@@ -1,0 +1,26 @@
+id: shrimp
+disabled: false
+silent: false
+
+item:
+  material: NAUTILUS_SHELL
+  # How should this be displayed in game?
+  displayname: <#ff7777>Shrimps
+  glowing: true
+# This can be used in the lore format to create a consistent colour theme.
+format: <#ff7777>{name}</#ff7777>
+fish-modifiers:
+  Common:
+    Carp: "*2"
+    Bluefish: "*2"
+    Haddock: "*2"
+  Rare:
+    Sunfish: "*2"
+    Goldfish: "*2"
+    Nemo: "*2"
+# How likely should it be to find this bait when they're caught.
+catch-weight: 100
+# When more than 1 types of baits are applied, how likely is it that this one should be used?
+application-weight: 150
+# How many of this bait can be applied to a rod at once?
+max-baits: 100

@@ -1,0 +1,31 @@
+join-reminder: false
+language: UNDEFINED
+notify-if-new-version: true
+database:
+  type: sqlite
+  address: localhost
+  name: phoenixcrates_db
+  port: 3306
+  username: phoenixuser
+  password: phoenixpassword
+  table-prefix: pc
+  hikari:
+    maximumPoolSize: 10
+    minimumIdle: 5
+    idleTimeout: 300000
+    maxLifetime: 1700000
+    connectionTimeout: 30000
+    fetch-timeout: 5000
+performance:
+  internal-pool-size: 5
+  crate-render-radius: 15
+  hologram-refresh-rate: 10
+debug: false
+crates:
+  knockback: 0.6
+  quick-open: true
+  disable-confirmation-menus: false
+  broadcast-message: '&ePlayer &a%player% &ejust got &6"%reward%" &ereward from the
+    crate &6%crate%&e!'
+key:
+  mainhand: true

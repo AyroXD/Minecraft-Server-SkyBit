@@ -1,0 +1,8 @@
+hologram:
+  line-gap: 0.3
+  billboard: CENTER
+  text-opacity: 255
+  see-through: false
+  shadow: true
+  background-color: 0,0,0,0
+  scale: 1.0

@@ -1,0 +1,22 @@
+isEnabled: true
+name: <g:#8AB8C8:#A0D0E0>Frosty Guide</g>
+role: <g:#6A98A8:#8AB8C8><North Pole></g>
+profession: CraftProfession{holder=Reference{ResourceKey[minecraft:villager_profession
+  / minecraft:armorer]=VillagerProfession[name=translation{key='entity.minecraft.villager.armorer',
+  args=[]}, heldJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x0000000029b60248@7ce28cfc,
+  acquirableJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x0000000029b604a8@71f5387e,
+  requestedItems=[], secondaryPoi=[], workSound=SoundEvent[location=minecraft:entity.villager.work_armorer,
+  fixedRange=Optional.empty]]}}
+spawnLocation: em_adventurers_guild,289.5,92,277.5,180,0
+spawnLocations: []
+greetings:
+- ''
+dialog: []
+farewell: []
+canTalk: true
+activationRadius: 1.0
+interactionType: COMMAND
+customModel: em_ag_frostyguide
+command: em dungeontp north_pole_minidungeon.yml
+syncMovement: false
+scripts: []

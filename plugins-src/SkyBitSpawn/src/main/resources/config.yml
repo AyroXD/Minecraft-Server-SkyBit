@@ -1,0 +1,21 @@
+mode: survival
+world: world
+spawn-revision: trading-post-v2-menus
+spawn:
+  x: 28.5
+  y: 149.0
+  z: -29.5
+  yaw: 180.0
+  pitch: 0.0
+protection-radius: 95.0
+crate-scan-radius: 55
+crate-scan-height: 14
+crate-stations:
+  basic: {x: 10, y: 151, z: 16, material: LIGHT_BLUE_SHULKER_BOX}
+  vote: {x: 23, y: 151, z: 16, material: LIME_SHULKER_BOX}
+  rare: {x: 28, y: 151, z: 18, material: ORANGE_SHULKER_BOX}
+  epic: {x: 33, y: 151, z: 16, material: CYAN_SHULKER_BOX}
+  legendary: {x: 46, y: 151, z: 16, material: PURPLE_SHULKER_BOX}
+void-rescue-y: -55.0
+teleport-on-revision-change: true
+welcome-display: true

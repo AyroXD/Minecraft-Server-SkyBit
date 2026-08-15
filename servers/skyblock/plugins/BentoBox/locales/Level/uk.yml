@@ -1,0 +1,242 @@
+admin:
+  level:
+    parameters: <player>
+    description: розрахувати рівень острова для гравця
+    sethandicap:
+      parameters: <player> <handicap>
+      description: встановити гандикап острова, як правило, рівень острова стартера
+      changed: <green> Початковий гандикап острова змінено з [number] на [new_number].
+      invalid-level: <red> Недійсний гандикап. Використовуйте ціле число.
+  levelstatus:
+    description: показати, скільки островів у черзі на сканування
+    islands-in-queue: '<green> Острови в черзі: [number]'
+  top:
+    description: показати першу десятку списку
+    unknown-world: <red> Невідомий світ!
+    display: <white>[rank]. <green>[name] <gray>- <aqua>[level]
+    remove:
+      description: видалити гравця з першої десятки
+      parameters: <player>
+  stats:
+    description: показати статистику островів на цьому сервері
+    title: Статистика острова сервера
+    world: <green> [name]
+    no-data: <red> Немає даних для обробки.
+    average-level: 'Середній рівень острова: [number]'
+    median-level: 'Середній рівень острова: [number]'
+    mode-level: 'Рівень острова режиму: [number]'
+    highest-level: 'Найвищий рівень острова: [number]'
+    lowest-level: 'Найнижчий рівень острова: [number]'
+    distribution: 'Розподіл на рівні острова:'
+    islands: острови
+island:
+  level:
+    parameters: '[player]'
+    description: обчисліть свій рівень острова або покажіть рівень [player]
+    calculating: <green> Розрахунок рівня...
+    estimated-wait: '<green> Приблизне очікування: [number] секунд'
+    in-queue: <green> Ви номер [number] у черзі
+    island-level-is: <green> Рівень острова <aqua>[level]
+    required-points-to-next-level: '<green> Прогрес рівня: <gold> [progress]<aqua>
+      /<yellow> [levelcost] <green> балів'
+    deaths: <red>([number] смерті)
+    cooldown: <red> Ви повинні зачекати <aqua>[time] <red> секунд, поки ви зможете
+      зробити це знову
+    in-progress: <gold> Розрахунок рівня острова триває...
+    time-out: <red> Розрахунок рівня тривав занадто довго. Будь-ласка спробуйте пізніше.
+  donate:
+    parameters: '[рука [кількість]]'
+    description: пожертвувати блоки для постійного підвищення рівня острова
+    must-be-on-island: <red>Щоб пожертвувати блоки, ви повинні бути на своєму острові.
+    no-permission: <red>У вас немає дозволу жертвувати блоки на цьому острові.
+    no-value: <red>Цей блок не має значення рівня.
+    invalid-amount: <red>Недійсна кількість. Використовуйте позитивне число.
+    invalid-item: <red>Можна жертвувати лише блоки з налаштованим значенням рівня.
+    empty: <red>Немає дійсних блоків для пожертвування.
+    cancelled: <yellow>Пожертвування скасовано. Предмети повернуто.
+    success: <green>Пожертвовано [number] блоків за <aqua>[points]<green> очок! Ці
+      очки є постійними.
+    confirm: <red><bold>Підтвердити — Предмети будуть ЗНИЩЕНІ!
+    cancel: <green><bold>Скасувати — Повернути предмети
+    gui-title: <black><bold>Пожертвувати блоки
+    gui-info: '<gold>Пожертвуйте блоки своєму острову|<gray>Пожертвовано: <gold>[points]<gray>
+      очок|<red>Увага: пожертвувані предмети|<red>знищуються і не можуть бути повернуті!'
+    preview: '<yellow>Очок буде додано: <gold>[points]|<red>Ці предмети будуть знищені!'
+    limit-reached: <red>Ліміт пожертвування для [material] досягнуто.
+    limit-reached-all: <red>Усі ці блоки досягли своїх лімітів пожертвування.
+    limit-notice: <gold>Деякі блоки підлягають обмеженням|<gold>і не будуть пожертвувані
+    hand:
+      keyword: рука
+      success: <green>Пожертвовано [number] x [material] за <aqua>[points]<green>
+        постійних очок!
+      not-block: <red>Ви повинні тримати блок, який можна розмістити.
+      confirm-prompt: <red>Буде ЗНИЩЕНО <gold>[number] x [material]<red> за <aqua>[points]<red>
+        постійних очок.
+    inv:
+      keyword: inv
+      confirm-header: '<red>Ці блоки будуть ЗНИЩЕНІ з вашого інвентарю:'
+      confirm-line: <gold>[number] x [material] <gray>= <aqua>[points]<gray> очок
+      confirm-total: '<red>Всього: <aqua>[points]<red> постійних очок.'
+  top:
+    description: показати першу десятку
+    gui-title: '& Десятка Кращих'
+    gui-heading: '<gold>[name]: <aqua>[rank]'
+    island-level: <aqua> Рівень [level]
+    warp-to: <green> Варп на острів [name].
+  detail:
+    description: показує деталі блоків вашого острова
+  level-details:
+    above-sea-level-blocks: Блоки над рівнем моря
+    spawners: Спавера
+    underwater-blocks: Підводні блоки
+    all-blocks: Всі блоки
+    no-island: <red> Немає острова!
+    names-island: острів [name].
+    syntax: '[name] x [number]'
+    hint: <red> Запустіть рівень, щоб переглянути звіт про блокування
+protection:
+  flags:
+    ISLAND_BLOCK_DONATION:
+      description: |-
+        <green>Toggle who can donate</green>
+        <green>blocks to raise island level.</green>
+      name: Block Donation
+      hint: Block donation not allowed
+
+level:
+  commands:
+    value:
+      parameters: '[рука|<матеріал>]'
+      description: показує значення блоків. Додайте 'рука' в кінці, щоб відобразити
+        значення предмета в руках.
+  gui:
+    titles:
+      top: <black><bold> Топ островів
+      detail-panel: <black><bold> острів [name].
+      value-panel: <black><bold> Значення блоку
+    buttons:
+      island:
+        empty: <white><bold> [name]. місце
+        name: <white><bold> [name]
+        description: |-
+          [owner]
+          [members]
+          [place]
+          [level]
+        owners-island: Острів [player].
+        owner: '<gray><bold> Власник: <reset><aqua> [player]'
+        members-title: '<gray><bold> Члени:'
+        member: <aqua> - [player]
+        unknown: невідомий
+        place: <gray><italic> [number]. <reset><gray> місце
+        level: '<gray> Рівень: <italic> [number]'
+      material:
+        name: <white><bold> [number] x [material]
+        description: |-
+          [description]
+          [count]
+          [value]
+          [calculated]
+          [limit]
+          [id]
+        id: '<gray> Ідентифікатор блоку: <yellow> [id]'
+        value: '<gray> Значення блоку: <yellow> [number]'
+        limit: '<gray> Обмеження блоку: <yellow> [number]'
+        count: '<gray> Кількість блоків: <yellow> [number]'
+        calculated: '<gray> Розраховане значення: <yellow> [number]'
+      value_blocks:
+        name: <white><bold> Усі Блоки з Цінністю
+        description: |-
+          <gray> Показати всі блоки
+          <gray> з цінністю на острові.
+      all_blocks:
+        name: <white><bold> Усі блоки
+        description: |-
+          <gray> Показати всі блоки
+          <gray> на острові.
+      above_sea_level:
+        name: <white><bold> Блоки над рівнем моря
+        description: |-
+          <gray> Показувати лише блоки
+          <gray>, які знаходяться над морем
+          <gray> рівень.
+      underwater:
+        name: <white><bold> Блоки під рівнем моря
+        description: |-
+          <gray> Показувати лише блоки
+          <gray>, які знаходяться нижче моря
+          <gray> рівень.
+      spawner:
+        name: <white><bold> Спавнери
+        description: <gray> Відображати лише спавнери.
+        block-name: <aqua> Спавнер
+      donated:
+        name: <white><bold>Donated Blocks
+        description: |-
+          <gray>Display blocks permanently
+          <gray>donated to island level.
+      filters:
+        name:
+          name: <white><bold> Сортувати за назвою
+          description: <gray> Сортувати всі блоки за назвою.
+        value:
+          name: <white><bold> Сортувати за значенням
+          description: <gray> Сортувати всі блоки за їх значенням.
+        count:
+          name: <white><bold> Сортувати за кількістю
+          description: <gray> Відсортуйте всі блоки за їх кількістю.
+      value:
+        name: <white><bold> [material]
+        description: |-
+          [description]
+          [value]
+          [underwater]
+          [limit]
+          [id]
+        id: '<gray> Ідентифікатор блоку: <yellow> [id]'
+        value: '<gray> Значення блоку: <yellow> [number]'
+        underwater: '<gray> Нижче рівня моря: <yellow> [number]'
+        limit: '<gray> Обмеження блоку: <yellow> [number]'
+      previous:
+        name: <white><bold> Попередня сторінка
+        description: <gray> Перейти на сторінку [number].
+      next:
+        name: <white><bold> Наступна сторінка
+        description: <gray> Перейти на сторінку [number].
+      search:
+        name: <white><bold> Пошук
+        description: |-
+          <gray> Пошук конкретного
+          <gray> значення.
+        search: '<aqua> Значення: [value]'
+    tips:
+      click-to-view: <yellow> Натисніть <gray>, щоб переглянути.
+      click-to-previous: <yellow> Натисніть <gray>, щоб переглянути попередню сторінку.
+      click-to-next: <yellow> Натисніть <gray>, щоб переглянути наступну сторінку.
+      click-to-select: <yellow> Натисніть <gray>, щоб вибрати.
+      left-click-to-cycle-up: <yellow> Клацніть лівою кнопкою миші <gray>, щоб перейти
+        вгору.
+      right-click-to-cycle-down: <yellow> Клацніть правою кнопкою миші <gray>, щоб
+        перейти вниз.
+      left-click-to-change: <yellow> Клацніть лівою кнопкою миші <gray> для редагування.
+      right-click-to-clear: <yellow> Клацніть правою кнопкою миші <gray>, щоб очистити.
+      click-to-asc: <yellow> Клацніть <gray>, щоб відсортувати в порядку збільшення.
+      click-to-desc: <yellow> Клацніть <gray>, щоб відсортувати в порядку зменшення.
+      click-to-warp: <yellow> Натисніть <gray>, щоб деформувати.
+      click-to-visit: <yellow> Натисніть <gray>, щоб відвідати.
+      right-click-to-visit: <yellow> Клацніть правою кнопкою миші <gray>, щоб відвідати.
+  conversations:
+    prefix: '<bold><gold> [BentoBox]: <reset>'
+    no-data: <red> Запустіть рівень, щоб переглянути звіт про блокування.
+    cancel-string: cancel
+    exit-string: cancel, exit, quit
+    write-search: <yellow> Введіть пошукове значення. (Напишіть 'cancel', щоб вийти)
+    search-updated: <green> Значення пошуку оновлено.
+    cancelled: <red> Розмова скасована!
+    no-value: <red> Цей предмет не має цінності.
+    unknown-item: <red> '[material]' не існує в грі.
+    value: '<gray> Значення ''[material]'' таке: <yellow>[value]'
+    value-underwater: '<gray> Значення ''[material]'' нижче рівня моря: <yellow>[value]'
+    empty-hand: <red> У вашій руці немає блоків
+    you-have: <gray> У вас є [number] за останнім підрахунком.
+    you-can-place: <gray> Ви можете розмістити до [number] і вони будуть враховані

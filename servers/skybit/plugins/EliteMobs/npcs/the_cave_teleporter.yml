@@ -1,0 +1,22 @@
+isEnabled: true
+name: <g:#7A6A5A:#8A7A6A>Village Mother Martha</g>
+role: <g:#6A5A4A:#7A6A5A><The Cave></g>
+profession: CraftProfession{holder=Reference{ResourceKey[minecraft:villager_profession
+  / minecraft:armorer]=VillagerProfession[name=translation{key='entity.minecraft.villager.armorer',
+  args=[]}, heldJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x0000000029b60248@7ce28cfc,
+  acquirableJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x0000000029b604a8@71f5387e,
+  requestedItems=[], secondaryPoi=[], workSound=SoundEvent[location=minecraft:entity.villager.work_armorer,
+  fixedRange=Optional.empty]]}}
+spawnLocation: em_adventurers_guild,308.4,78,206.4,90,0
+spawnLocations: []
+greetings:
+- ''
+dialog: []
+farewell: []
+canTalk: true
+activationRadius: 1.0
+interactionType: COMMAND
+customModel: em_ag_villagemothermartha
+command: em dungeontp the_cave_sanctum.yml
+syncMovement: false
+scripts: []

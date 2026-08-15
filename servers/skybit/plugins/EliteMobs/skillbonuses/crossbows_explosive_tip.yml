@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&cExplosive Tip'
+description:
+- '&7Chance for bolts to explode'
+- '&7on impact, damaging nearby enemies.'
+skillType: CROSSBOWS
+bonusType: PROC
+unlockTier: 2
+baseValue: 0.5
+scalingPerLevel: 0.01
+procChance: 0.15
+displayMaterial: TNT
+loreTemplates:
+- '&7Proc Chance: &f$procChance%'
+- '&7AoE Damage: &f$aoeDamage%'
+- '&7Radius: &f$radius blocks'
+formattedBonusTemplate: $aoeDamage% AoE damage

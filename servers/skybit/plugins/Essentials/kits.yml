@@ -1,0 +1,88 @@
+# EssentialsX kit configuration.
+# If no kits are defined in this file, the plugin will attempt to copy them from 'config.yml'.
+
+# All items MUST be followed by a quantity.
+# Kit names should be in lowercase and will be treated as such in permissions and costs.
+# Syntax: - item[:durability] amount [enchantment:level]... [itemmeta:value]...
+# For detailed information on item meta, visit https://wiki.ess3.net/wiki/Item_Meta
+#
+# To make a kit execute a command, add '/<command>' to the item list. Use {USERNAME} to reference the player receiving the kit.
+# Use {PLAYER} to display the player's display name instead of the username.
+# 'delay' refers to the cooldown between how often you can use each kit, measured in seconds. Set to -1 for a one-time kit.
+#
+# You can also organize kits into separate files within the 'kits' subdirectory.
+# Essentials will treat all '.yml' files in the subdirectory as valid kit files and add them along with those in here.
+# Each file in the 'kits' subdirectory must be formatted the same as this file.
+#
+# For more information, refer to https://wiki.ess3.net/wiki/Kits
+
+kits:
+  starter:
+    delay: -1
+    items:
+      - stonesword 1
+      - stoneshovel 1
+      - stonepickaxe 1
+      - stoneaxe 1
+      - leatherhelmet 1
+      - leatherchestplate 1
+      - leatherleggings 1
+      - leatherboots 1
+      - bread 16
+      - torch 16
+  daily:
+    delay: 86400
+    items:
+      - cookedbeef 12
+      - torch 16
+      - ironore 4
+      - coal 8
+  vip:
+    delay: 86400
+    items:
+      - ironsword 1 durability:1 name:&6VIP_Sword
+      - ironpickaxe 1 durability:1 name:&6VIP_Pickaxe
+      - chainmailchestplate 1 protection:1 name:&6VIP_Chestplate
+      - cookedbeef 16
+      - goldencarrot 4
+      - torch 32
+  knight:
+    delay: 86400
+    items:
+      - ironsword 1 sharpness:1 durability:1 name:&fKnight_Sword
+      - ironpickaxe 1 efficiency:1 durability:1 name:&fKnight_Pickaxe
+      - ironhelmet 1 protection:1 name:&fKnight_Helmet
+      - ironchestplate 1 protection:1 name:&fKnight_Chestplate
+      - cookedbeef 20
+      - goldencarrot 6
+      - torch 40
+  baron:
+    delay: 86400
+    items:
+      - diamondsword 1 sharpness:1 durability:1 name:&dBaron_Sword
+      - diamondpickaxe 1 efficiency:1 durability:1 name:&dBaron_Pickaxe
+      - ironhelmet 1 protection:2 name:&dBaron_Helmet
+      - ironchestplate 1 protection:2 name:&dBaron_Chestplate
+      - cookedbeef 24
+      - goldencarrot 8
+      - torch 48
+  king:
+    delay: 172800
+    items:
+      - diamondsword 1 sharpness:2 durability:2 name:&eKing_Sword
+      - diamondpickaxe 1 efficiency:2 fortune:1 durability:2 name:&eKing_Pickaxe
+      - diamondhelmet 1 protection:2 durability:1 name:&eKing_Helmet
+      - diamondchestplate 1 protection:2 durability:1 name:&eKing_Chestplate
+      - cookedbeef 32
+      - goldencarrot 16
+      - goldenapple 2
+  emperor:
+    delay: 172800
+    items:
+      - netheritesword 1 sharpness:2 durability:2 name:&5Emperor_Sword
+      - netheritepickaxe 1 efficiency:2 fortune:1 durability:2 name:&5Emperor_Pickaxe
+      - diamondhelmet 1 protection:3 durability:2 name:&5Emperor_Helmet
+      - diamondchestplate 1 protection:3 durability:2 name:&5Emperor_Chestplate
+      - cookedbeef 48
+      - goldencarrot 24
+      - goldenapple 4

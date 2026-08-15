@@ -1,0 +1,15 @@
+isEnabled: true
+name: '&4First Blood'
+description:
+- '&7Deal massive bonus damage'
+- '&7with the first hit on an enemy.'
+skillType: CROSSBOWS
+bonusType: CONDITIONAL
+unlockTier: 4
+baseValue: 0.75
+scalingPerLevel: 0.015
+displayMaterial: REDSTONE
+loreTemplates:
+- '&7First Hit Bonus: &f$value%'
+- '&7Triggers on full health targets'
+formattedBonusTemplate: +$value% first hit damage

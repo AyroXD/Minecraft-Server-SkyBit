@@ -1,0 +1,55 @@
+{
+  "minecraftVersion": "1.21.11",
+  "paper": {
+    "common": [
+      { "id": "ayRaM8J7", "name": "VaultUnlocked" },
+      { "id": "Vebnzrzj", "name": "LuckPerms" },
+      { "id": "lKEzGugV", "name": "PlaceholderAPI" },
+      { "id": "hXiIvTyT", "name": "EssentialsX" },
+      { "id": "sYpvDxGJ", "name": "EssentialsXSpawn" },
+      { "id": "gG7VFbG0", "name": "TAB" },
+      { "id": "kG3hVbBX", "name": "TAB-Bridge", "optional": true },
+      { "id": "P1OZGk5p", "name": "ViaVersion" },
+      { "id": "Lu3KuzdV", "name": "CoreProtect" },
+      { "id": "LJNGWSvH", "name": "GrimAC" }
+    ],
+    "lobby": [
+      { "id": "w02MKsTg", "name": "DecentHolograms" },
+      { "id": "EeyAn23L", "name": "FancyNpcs" },
+      { "id": "eCvG237D", "name": "ServerSelector" },
+      { "id": "16vhQOQN", "name": "MiniMOTD" }
+    ],
+    "skybit": [
+      { "id": "1u6JkXh5", "name": "WorldEdit" },
+      { "id": "DKY9btbd", "name": "WorldGuard" },
+      { "id": "fALzjamp", "name": "Chunky" },
+      { "id": "w02MKsTg", "name": "DecentHolograms" },
+      { "id": "EeyAn23L", "name": "FancyNpcs" },
+      { "id": "pqVXF7b5", "name": "GriefPrevention3D" },
+      { "id": "hXruFeqV", "name": "Jobs-Plus" },
+      { "id": "T8iZG3U1", "name": "Quests" },
+      { "id": "zR6c1YxT", "name": "EconomyShop" },
+      { "id": "scEbl04C", "name": "AuctionHouse" },
+      { "id": "vlh7rLCf", "name": "EvenMoreFish" },
+      { "id": "ypMp4OVC", "name": "EliteMobs" },
+      { "id": "bPX4jcVd", "name": "PlayerPoints" },
+      { "id": "KADKsqnh", "name": "AdvancedAchievements" },
+      { "id": "9hyTHJcs", "name": "PhoenixCratesLite" },
+      { "id": "C9BKEl8Y", "name": "ajLeaderboards" },
+      { "id": "Fz9hstnG", "name": "SlimefunCore" }
+    ],
+    "skyblock": [
+      { "id": "aBVLHiAW", "name": "BentoBox" },
+      { "id": "ASGn77Qd", "name": "BSkyBlock", "destination": "plugins/BentoBox/addons" },
+      { "id": "XtkUkQ7A", "name": "BentoBox-Challenges", "destination": "plugins/BentoBox/addons", "optional": true },
+      { "id": "OWzL9XSJ", "name": "BentoBox-Level", "destination": "plugins/BentoBox/addons" }
+    ]
+  },
+  "velocity": [
+    { "id": "Vebnzrzj", "name": "LuckPerms" },
+    { "id": "gG7VFbG0", "name": "TAB" },
+    { "id": "geXu0xsn", "name": "VelocityScoreboardAPI" },
+    { "id": "16vhQOQN", "name": "MiniMOTD" },
+    { "id": "P1OZGk5p", "name": "ViaVersion" }
+  ]
+}

@@ -1,0 +1,37 @@
+isEnabled: true
+name: '&2[Dynamic] &3The Quarry Dungeon'
+customInfo:
+- '&fAn ancient dwarven quarry deep underground.'
+- '&6Credits: Dali_, MagmaGuy, Frostcone'
+dungeonSizeCategory: DUNGEON
+worldName: em_id_the_quarry
+environment: NORMAL
+protect: true
+playerInfo: |-
+  &aDynamic Dungeon
+  $bossCount boss encounters
+  &3An ancient dwarven quarry
+  &3deep underground.
+regionEnterMessage: '&bGo down into the quarry and get that lift working.'
+regionLeaveMessage: '&bYou have left The Quarry!'
+startLocation: em_id_the_quarry,245.5,138,109.5,-90,30
+teleportLocation: em_id_the_quarry,230.5,144,102.5,-67,0
+dungeonObjectives:
+- filename=em_id_the_quarry_quarry_smith.yml
+- filename=em_id_the_quarry_royal_wizard_three.yml
+- filename=LiftStateFinishDungeon.yml
+contentType: DYNAMIC_DUNGEON
+dungeonConfigFolderName: em_id_the_quarry
+contentLevel: -1
+difficulties:
+- name: normal
+  id: 0
+  levelSync: '+5'
+- name: hard
+  id: 1
+  levelSync: '+0'
+- name: mythic
+  id: 2
+  levelSync: '-5'
+setupMenuDescription: []
+dungeonLockoutMinutes: 4320

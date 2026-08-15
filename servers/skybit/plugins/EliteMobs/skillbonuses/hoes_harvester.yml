@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&aHarvester'
+description:
+- '&7Deal more damage and earn'
+- '&7up to 20% more Elite Coins.'
+skillType: HOES
+bonusType: PASSIVE
+unlockTier: 2
+baseValue: 0.1
+scalingPerLevel: 0.001
+displayMaterial: WHEAT
+loreTemplates:
+- '&7Damage Bonus: &f+$damagePercent%'
+- '&7Elite Coin Bonus: &f+$lootPercent%'
+- '&7Passive harvest benefits'
+formattedBonusTemplate: +$damagePercent% Damage, +$lootPercent% Elite Coins

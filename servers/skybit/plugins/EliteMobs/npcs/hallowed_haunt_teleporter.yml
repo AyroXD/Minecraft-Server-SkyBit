@@ -1,0 +1,24 @@
+isEnabled: true
+name: <g:#9A8AAA:#AA9ABA>Alaric Greystone</g>
+role: <g:#8A7A9A:#9A8AAA><Hallowed Haunt></g>
+profession: CraftProfession{holder=Reference{ResourceKey[minecraft:villager_profession
+  / minecraft:armorer]=VillagerProfession[name=translation{key='entity.minecraft.villager.armorer',
+  args=[]}, heldJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x0000000029b60248@7ce28cfc,
+  acquirableJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x0000000029b604a8@71f5387e,
+  requestedItems=[], secondaryPoi=[], workSound=SoundEvent[location=minecraft:entity.villager.work_armorer,
+  fixedRange=Optional.empty]]}}
+spawnLocation: em_adventurers_guild,291.5,92,295.5,180,0
+spawnLocations: []
+greetings:
+- ''
+dialog: []
+farewell: []
+canTalk: true
+activationRadius: 1.0
+interactionType: COMMAND
+disguise: custom:em_the_hallowed_haunt_alaric
+customDisguiseData: player em_the_hallowed_haunt_alaric setskin {"uuid":"899defd5-a0c9-4fa1-ac81-c24d597a2553","name":"Unknown","textureProperties":[{"name":"textures","value":"ewogICJ0aW1lc3RhbXAiIDogMTc1NDg4MjkzOTUzNiwKICAicHJvZmlsZUlkIiA6ICJkYjQwYmNjNWUzMDE0ZmZjOGVlOWQxNDU5MTcyYjdhNCIsCiAgInByb2ZpbGVOYW1lIiA6ICJhWGUxOCIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS8xODQ5NTI1NmZiZWViYjBkY2M3MTI4Mjg2MTljMzBjNTBmNjM1MGZjOWZlM2E4ZGQ4YjI5YWY2YmJkNTEyMDU0IgogICAgfQogIH0KfQ==","signature":"FLLx/2pMyQYHZlHWR33WttxatUO9su4sUJ/NO0xFXLEla"}]}
+customModel: em_ag_alaricgreystone
+command: em dungeontp the_hallowed_haunt_dynamic_dungeon.yml
+syncMovement: true
+scripts: []

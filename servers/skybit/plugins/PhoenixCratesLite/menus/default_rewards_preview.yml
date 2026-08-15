@@ -1,0 +1,148 @@
+items:
+  down-filler:
+    slot: 45-53
+    material: BLACK_STAINED_GLASS_PANE
+    amount: 1
+    custom-model-data: 0
+    item-model: ''
+    glow: false
+    hide-attributes: false
+    display-name: '&e'
+    lore: []
+    actions: []
+    hide-tooltip: true
+  close-menu:
+    slot: '49'
+    material: BARRIER
+    amount: 1
+    custom-model-data: 0
+    item-model: ''
+    glow: false
+    hide-attributes: false
+    display-name: '&aClose Menu'
+    lore:
+    - '&7Click here to close this menu.'
+    - ''
+    - '&6ʟᴇꜰᴛ-ᴄʟɪᴄᴋ: &eᴄʟᴏꜱᴇ ᴍᴇɴᴜ.'
+    actions:
+    - '[CLOSE_INVENTORY]'
+settings:
+  type: REWARDS_PREVIEW
+  title: '%crate% Rewards'
+  rows: 6
+  refresh:
+    enabled: true
+    rate: 20
+  on-open-actions: []
+pagination:
+  direction-items: HORIZONTAL
+  align-items: LEFT
+  slots: 10-16, 19-25, 28-34
+  fill-item:
+    material: AIR
+    custom-model-data: 0
+    item-model: ''
+    glow: false
+    display-name: ''
+    lore: []
+    actions: []
+  previous-item:
+    slot: '18'
+    material: ARROW
+    amount: 1
+    custom-model-data: 0
+    item-model: ''
+    glow: false
+    hide-attributes: false
+    display-name: '&6Previous page - Page %page%'
+    lore:
+    - '&a<&2<&a<&2<&a<&2<&a<&2<&a<&2<&a<&2<&a<&2<&a<&2<&a<&2<'
+    actions: []
+  next-item:
+    slot: '26'
+    material: ARROW
+    amount: 1
+    custom-model-data: 0
+    item-model: ''
+    glow: false
+    hide-attributes: false
+    display-name: '&6Next page - Page %page%'
+    lore:
+    - '&a>&2>&a>&2>&a>&2>&a>&2>&a>&2>&a>&2>&a>&2>&a>&2>&a>&2>'
+    actions: []
+reward:
+  random-mode:
+    name: '&7%reward_name%'
+    lore:
+    - '%reward_lore%'
+    - ''
+    - '&eYour chance: &6%chance%%'
+    - ''
+    - '&7(This lore is configured at the menus folder)'
+  selective-mode:
+    name: '&7%reward_name%'
+    lore:
+    - '%reward_lore%'
+    - ''
+    - '&eRequired Keys: &6%required_keys%'
+    - '&eAmount Limit: &6%amount_limit%'
+    - ''
+    - '&7(This lore is configured at the menus folder)'
+  extra:
+    time-limited-reward:
+      name: '&7%reward_name%'
+      lore:
+      - '%reward_lore%'
+      - ''
+      - '&eTime Left: &6%time%'
+      - ''
+      - '&7(This lore is configured at the menus folder)'
+  locked:
+    item:
+      material: RED_STAINED_GLASS_PANE
+      custom-model-data: 0
+      item-model: ''
+      glow: false
+      display-name: '&7%reward_name% &c(Disabled)'
+      lore:
+      - '&8(This reward is currently disabled.)'
+      - ''
+      - '&7(This lore is configured at the menus folder)'
+      actions: []
+    win-limit:
+    - '&fWin Limit: &e%win_amount%&7/&e%win_limit%'
+    global-win-limit:
+    - '&fGlobal Win Limit: &e%global_win_amount%&7/&e%global_limit%'
+    restricted-permission:
+    - '&cRestricted from obtaining this reward.'
+    required-permission:
+    - '&cNo permission for this reward.'
+    disabled:
+    - '&cThis reward is currently disabled.'
+    win-limit-cooldown:
+    - '&cWin limit cooldown: &e%cooldown%'
+    global-win-limit-cooldown:
+    - '&cGlobal win limit cooldown: &e%global_cooldown%'
+    time-limited-expired:
+    - '&cThis reward has expired.'
+available-keys:
+  slot: '51'
+  material: NETHER_STAR
+  amount: 1
+  custom-model-data: 0
+  item-model: ''
+  glow: false
+  hide-attributes: true
+  display-name: '&aAvailable Keys &ex%available_keys%'
+  lore:
+  - '&7All the available keys, that'
+  - '&7you can use on this crate. '
+  - ''
+  - '&fKeys:'
+  - '%keys%'
+  key-display: '&7%position%. %name% &ex%amount%'
+time-format:
+  days: '%value%D'
+  hours: '%value%H'
+  minutes: '%value%M'
+  seconds: '%value%S'

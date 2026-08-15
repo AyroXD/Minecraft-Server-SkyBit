@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&eHammer of Wrath'
+description:
+- '&7Deal massive damage to'
+- '&7enemies below 30% health. 30s CD.'
+skillType: MACES
+bonusType: COOLDOWN
+unlockTier: 4
+baseValue: 3.0
+scalingPerLevel: 0.05
+cooldownSeconds: 30.0
+displayMaterial: NETHERITE_BLOCK
+loreTemplates:
+- '&7Damage: &f$damage%'
+- '&7Threshold: &f<30% HP'
+- '&7Cooldown: &f$cooldowns'
+formattedBonusTemplate: '$damage% vs Low HP (CD: $cooldowns)'

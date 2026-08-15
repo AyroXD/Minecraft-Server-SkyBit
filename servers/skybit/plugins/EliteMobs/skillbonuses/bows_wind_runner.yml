@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&fWind Runner'
+description:
+- '&7Gain speed boost when'
+- '&7hitting enemies with arrows.'
+skillType: BOWS
+bonusType: PASSIVE
+unlockTier: 3
+baseValue: 0.5
+scalingPerLevel: 0.01
+displayMaterial: FEATHER
+loreTemplates:
+- '&7Speed Level: &f$speedLevel'
+- '&7Duration: &f5 seconds'
+- '&7Triggers on hit'
+formattedBonusTemplate: Speed $speedLevel on hit

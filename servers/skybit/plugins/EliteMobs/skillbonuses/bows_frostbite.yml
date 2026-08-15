@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&bFrostbite'
+description:
+- '&7Arrows can freeze enemies,'
+- '&7slowing their movement.'
+skillType: BOWS
+bonusType: PROC
+unlockTier: 1
+baseValue: 0.15
+scalingPerLevel: 0.003
+procChance: 0.15
+displayMaterial: PACKED_ICE
+loreTemplates:
+- '&7Proc Chance: &f$procChance%'
+- '&7Applies: &bSlowness &7and &8Mining Fatigue'
+formattedBonusTemplate: $procChance% proc chance

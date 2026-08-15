@@ -1,0 +1,30 @@
+trackingSinceVersion: 10.8.0
+lastObservedVersion: 10.8.0
+cache:
+  plugin:
+    targetVersion: 10.8.0
+    releases:
+    - version: 10.8.0
+      changelog: |-
+        EliteMobs 10.8.0:
+        - [New] Added a party system with create, invite, accept, decline, leave and ready-check commands, plus a party menu and live party sidebar
+        - [New] Parties now enter dungeons together behind a shared ready check
+        - [New] Rebuilt the player status screen with overview and gear pages showing offense, defense, crit, health, threat and perk breakdowns
+        - [New] Stats now track Adventure Score ranking, completed dungeons, combat level, elite kills, highest elite level and completed quests
+        - [New] Added an in-game changelog viewer for admins covering unread plugin and DLC release notes
+        - [New] Added `/em forcereinstallcontent <package|all>` for repairing current Nightbreak content without version changes
+        - [New] Redesigned the `/em` menu with a two-column layout and gradient styling
+        - [New] Added `/nightbreaklogout` for clearing the stored Nightbreak account token
+        - [Fix] Boss bars no longer spam or reshuffle when several elites are active; at most four nearest bars show per player in a stable order
+        - [Fix] Creating a party no longer errors on 26.2
+        - [Fix] Invite Player now opens a real player picker
+        - [Fix] Boss tracker buttons no longer overflow their menu
+        - [Fix] Equipped-item potion effects no longer overwrite effects from Minecraft or other plugins, linger after unequipping, or flicker unnecessarily
+        - [Fix] Skill-based gear restrictions now refresh after login, skill or configuration changes instead of using stale eligibility
+        - [Fix] Arena packages no longer fail when installed or reloaded while their world is already loaded
+        - [Fix] Downloaded plugin updates are validated before replacing the installed jar
+        - [Fix] Servers no longer log a command-unregistration error while shutting down on Paper 26.2
+        - [Tweak] Grim Reach and Reaper’s Harvest descriptions now show their actual bonuses
+        - [Tweak] Newly added menu, party, gear, stats, combat, loot, quest and changelog text is configurable and translatable
+      releasedAt: '2026-08-13T01:38:54.365Z'
+    complete: true

@@ -1,0 +1,16 @@
+isEnabled: true
+menuName: ''
+playerItem:
+  material: DIAMOND_SWORD
+  name: §4Challenge the arena!
+  lore:
+  - §2Fight in the arena!
+playerItemSlot: 6
+spectatorItem:
+  material: SPYGLASS
+  name: §aSpectate!
+  lore:
+  - §2Spectate players in the arena!
+spectatorItemSlot: 2
+invalidArenaMessage: '&4[EliteMobs] &cInvalid arena name! The arena you are trying
+  to join is not correctly setup.'

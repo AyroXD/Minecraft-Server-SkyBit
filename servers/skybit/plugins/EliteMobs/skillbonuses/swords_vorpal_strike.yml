@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&4Vorpal Strike'
+description:
+- '&7Critical hits can deal'
+- '&7devastating bonus damage.'
+skillType: SWORDS
+bonusType: COOLDOWN
+unlockTier: 4
+baseValue: 3.0
+scalingPerLevel: 0.02
+cooldownSeconds: 30.0
+displayMaterial: NETHERITE_SWORD
+loreTemplates:
+- '&7Damage Multiplier: &f$multiplierx'
+- '&7Cooldown: &f$cooldowns'
+- '&7Only triggers on critical hits'
+formattedBonusTemplate: $multiplierx Critical Damage

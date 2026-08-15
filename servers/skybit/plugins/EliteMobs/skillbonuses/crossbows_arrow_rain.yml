@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&9Arrow Rain'
+description:
+- '&7Rain arrows on your target.'
+- '&730s cooldown.'
+skillType: CROSSBOWS
+bonusType: COOLDOWN
+unlockTier: 4
+baseValue: 1.0
+scalingPerLevel: 0.02
+cooldownSeconds: 30.0
+displayMaterial: CROSSBOW
+loreTemplates:
+- '&7Arrow Damage: &f$arrowDamage%'
+- '&7Arrows: &f15 total (3x5 waves)'
+- '&7Cooldown: &f$cooldowns'
+formattedBonusTemplate: $arrowDamage% arrow damage

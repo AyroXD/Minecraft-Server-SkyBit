@@ -1,0 +1,185 @@
+_dataver: 600
+Name: <aqua><b>BASIC SURVIVAL CRATE</b></aqua>
+Description:
+- <gray>Profesionálne SkyBit odmeny pre SURVIVAL.</gray>
+- <gray>Obsahuje peniaze, predmety, SkyCoiny a custom enchanty.</gray>
+ItemStackable: true
+Permission_Required: false
+Preview:
+  Enabled: true
+  Id: default
+Animation:
+  Enabled: true
+  Id: simple_roll
+OpeningCooldown:
+  Enabled: true
+  Value: 2
+OpeningLimits:
+  Amount: 0
+Block:
+  Positions:
+  - 10,151,16,world
+  Pushback:
+    Enabled: true
+  Hologram:
+    Enabled: true
+    Template: default
+    Y_Offset: 1.35
+  Effect:
+    Enabled: false
+    Model: none
+Post-Open:
+  Commands: []
+Milestones:
+  Repeatable: false
+  List: {}
+Rewards:
+  List:
+    cash_500:
+      Type: COMMAND
+      Name: <green><b>$500</b></green>
+      Description:
+      - <gray>Základný finančný bonus</gray>
+      Commands:
+      - eco give %player_name% 500
+      Weight: 40.0
+      Rarity: common
+      Broadcast: false
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    iron_bundle:
+      Type: COMMAND
+      Name: <white><b>24× Iron Ingot</b></white>
+      Description:
+      - <gray>Suroviny pre začiatok</gray>
+      Commands:
+      - give %player_name% minecraft:iron_ingot 24
+      Weight: 35.0
+      Rarity: common
+      Broadcast: false
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    xp_250:
+      Type: COMMAND
+      Name: <yellow><b>250 XP</b></yellow>
+      Description:
+      - <gray>Skúsenosti pre enchantovanie</gray>
+      Commands:
+      - experience add %player_name% 250 points
+      Weight: 25.0
+      Rarity: common
+      Broadcast: false
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    diamonds:
+      Type: COMMAND
+      Name: <aqua><b>4× Diamond</b></aqua>
+      Description:
+      - <gray>Vzácnejšia surovina</gray>
+      Commands:
+      - give %player_name% minecraft:diamond 4
+      Weight: 60.0
+      Rarity: rare
+      Broadcast: false
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    custom_book:
+      Type: COMMAND
+      Name: <light_purple><b>Custom Enchant Book</b></light_purple>
+      Description:
+      - <gray>Náhodný ExcellentEnchant</gray>
+      Commands:
+      - eenchants randombook %player_name% -custom
+      Weight: 40.0
+      Rarity: rare
+      Broadcast: false
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    vote_key:
+      Type: COMMAND
+      Name: <green><b>Vote Key</b></green>
+      Description:
+      - <gray>Bonusový kľúč vyššej úrovne</gray>
+      Commands:
+      - excellentcrates:crates key give %player_name% vote 1 -sf
+      Weight: 70.0
+      Rarity: mythic
+      Broadcast: true
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    starter_jackpot:
+      Type: COMMAND
+      Name: <gold><b>Starter Jackpot</b></gold>
+      Description:
+      - <gray>$2 500 a 10 SkyCoinov</gray>
+      Commands:
+      - eco give %player_name% 2500
+      - skybitadmin coins %player_name% 10
+      Weight: 30.0
+      Rarity: mythic
+      Broadcast: true
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+CostOptions:
+  key_basic:
+    Enabled: true
+    Name: basic Key
+    Icon:
+      Provider: vanilla
+      Data:
+        Value: '{count:1,id:"minecraft:trial_key"}'
+        DataVersion: 4671
+    Entries:
+      '0':
+        Type: key
+        Key: basic
+        Amount: 1

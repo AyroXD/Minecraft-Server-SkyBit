@@ -1,0 +1,40 @@
+isEnabled: true
+name: '&2[Dynamic] &3The Mines Dungeon'
+customInfo:
+- '&fReady to step up your dungeon game?'
+- '&6Credits: MagmaGuy, Frostcone, 69OzCanOfBepis, Realm of Lotheridon, Dali_'
+dungeonSizeCategory: DUNGEON
+worldName: em_id_the_mines
+environment: NORMAL
+protect: true
+playerInfo: |-
+  &aDynamic Dungeon
+  $bossCount boss encounters
+  &3Ready to step up your
+  &3dungeon game?
+regionEnterMessage: '&bYou''''ve been asked to investigate what lurks in the mines.
+  Find your way to the depths of the mine!'
+regionLeaveMessage: '&bYou have left The Mines!'
+startLocation: em_id_the_mines,256.5,116,-106.5,-29,8
+teleportLocation: em_id_the_mines,250.5,116,-113.5,-42.0,7.0
+dungeonObjectives:
+- filename=the_mines_soulweaver_daine_p0.yml
+- filename=the_mines_boss_soulfire_p1.yml
+- filename=the_mines_mini_boss_tulpa.yml
+- filename=the_mines_mini_boss_forger.yml
+- filename=the_mines_mini_boss_tusk.yml
+contentType: DYNAMIC_DUNGEON
+dungeonConfigFolderName: em_id_the_mines
+contentLevel: -1
+difficulties:
+- name: normal
+  id: 0
+  levelSync: '+5'
+- name: hard
+  id: 1
+  levelSync: '+0'
+- name: mythic
+  id: 2
+  levelSync: '-5'
+setupMenuDescription: []
+dungeonLockoutMinutes: 4320

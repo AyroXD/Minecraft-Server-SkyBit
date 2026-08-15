@@ -1,0 +1,22 @@
+isEnabled: true
+name: <g:#4A7A9A:#5A8AAA>Sea Dog</g>
+role: <g:#3A6A8A:#4A7A9A><Pirate Ship></g>
+profession: CraftProfession{holder=Reference{ResourceKey[minecraft:villager_profession
+  / minecraft:fisherman]=VillagerProfession[name=translation{key='entity.minecraft.villager.fisherman',
+  args=[]}, heldJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x0000000029b60248@734f0aa0,
+  acquirableJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x0000000029b604a8@6c4bf74c,
+  requestedItems=[], secondaryPoi=[], workSound=SoundEvent[location=minecraft:entity.villager.work_fisherman,
+  fixedRange=Optional.empty]]}}
+spawnLocation: em_adventurers_guild,302.7,92,288.5,-90,0
+spawnLocations: []
+greetings:
+- ''
+dialog: []
+farewell: []
+canTalk: true
+activationRadius: 1.0
+interactionType: COMMAND
+customModel: em_ag_seadog
+command: em dungeontp pirate_ship_minidungeon.yml
+syncMovement: false
+scripts: []

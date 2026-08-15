@@ -1,0 +1,19 @@
+isEnabled: true
+name: '&eFlurry'
+description:
+- '&7Consecutive hits increase your'
+- '&7attack speed. Stacks decay over time.'
+skillType: SWORDS
+bonusType: STACKING
+unlockTier: 2
+baseValue: 1.0
+scalingPerLevel: 0.001
+maxStacks: 5
+stackBonus: 0.05
+displayMaterial: BLAZE_POWDER
+loreTemplates:
+- '&7Max Stacks: &f$maxStacks'
+- '&7Attack Speed per Stack: &f+$perStack%'
+- '&7Max Bonus: &f+$maxBonus%'
+- '&7Stacks decay after 3 seconds'
+formattedBonusTemplate: +$maxBonus% Attack Speed (max)

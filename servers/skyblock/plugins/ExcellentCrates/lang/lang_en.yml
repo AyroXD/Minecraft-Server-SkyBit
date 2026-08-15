@@ -1,0 +1,1109 @@
+Command:
+  Argument:
+    Name:
+      Crate: crate
+      Key: key
+      X: x
+      Y: y
+      Z: z
+  Editor:
+    Desc: Open editor GUI.
+  Drop:
+    Desc: Spawn crate item in the world.
+    Done: <gray>Dropped <soft_yellow>%crate_name%</soft_yellow> at <soft_yellow>%location_x%, %location_y%, %location_z%</soft_yellow> in <soft_yellow>%location_world%</soft_yellow>.</gray>
+  DropKey:
+    Desc: Spawn key item in the world.
+    Done: <gray>Dropped <soft_yellow>%key_name%</soft_yellow> at <soft_yellow>%location_x%, %location_y%, %location_z%</soft_yellow> in <soft_yellow>%location_world%</soft_yellow>.</gray>
+  Open:
+    Desc: Open a crate.
+  OpenFor:
+    Desc: Open crate for a player.
+    Done: <gray>Opened <soft_yellow>%crate_name%</soft_yellow> for <soft_yellow>%player_name%</soft_yellow>.</gray>
+    Notify: <gray>You have been forced to open <soft_yellow>%crate_name%</soft_yellow>.</gray>
+  Give:
+    Desc: Gives crate to a player.
+    Done: <gray>Given <soft_yellow>x%amount%</soft_yellow> of <soft_yellow>%crate_name%</soft_yellow> crate(s) to <soft_yellow>%player_name%</soft_yellow>.</gray>
+    Notify: <gray>You recieved <soft_yellow>x%amount%</soft_yellow> of <soft_yellow>%crate_name%</soft_yellow>.</gray>
+  Key:
+    Desc: Manage player's keys.
+    Give:
+      Desc: Give key to a player.
+      Done: <gray>Given <soft_yellow>x%amount%</soft_yellow> of <soft_yellow>%key_name%</soft_yellow> key(s) to <soft_yellow>%player_name%</soft_yellow>.</gray>
+      Notify: <gray>You recieved <soft_yellow>x%amount%</soft_yellow> of <soft_yellow>%key_name%</soft_yellow>!</gray>
+    Take:
+      Desc: Take key from a player.
+      Done: <gray>Taken <soft_yellow>x%amount%</soft_yellow> of <soft_yellow>%key_name%</soft_yellow> key(s) from <soft_yellow>%player_name%</soft_yellow>.</gray>
+      Notify: <gray>You lost <soft_red>x%amount%</soft_red> <soft_red>%key_name%</soft_red>.</gray>
+    Set:
+      Desc: Set keys amount for a player.
+      Done: <gray>Set <soft_yellow>x%amount%</soft_yellow> of <soft_yellow>%key_name%</soft_yellow> key(s) for <soft_yellow>%player_name%</soft_yellow>.</gray>
+      Notify: <gray>Your <soft_yellow>%key_name%</soft_yellow>'s amount has been changed to <soft_yellow>x%amount%</soft_yellow>.</gray>
+    Show:
+      Desc: Inspect [player's] virtual keys.
+      Format:
+        List:
+        - '[prefix="false"]'
+        - ' '
+        - '<soft_yellow><b>%player_name%''s Virtual Keys: </b></soft_yellow>'
+        - '%entry%'
+        - ' '
+        Entry: '<soft_yellow>▪ <gray>%key_name%: </gray>x%amount%</soft_yellow>'
+    GiveAll:
+      Desc: Give key to all online players.
+      Done: <gray>Given <soft_yellow>x%amount%</soft_yellow> of <soft_yellow>%key_name%</soft_yellow> key(s) to <soft_yellow>All Players</soft_yellow>.</gray>
+  Preview:
+    Desc: Open crate preview.
+    Done:
+      Others: <gray>Opened <soft_yellow>%crate_name%</soft_yellow> preview for <soft_yellow>%player_display_name%</soft_yellow>.</gray>
+  ResetCooldown:
+    Desc: Reset player's crate open cooldown.
+    Done: <gray>Reset <soft_yellow>%player_name%</soft_yellow>'s open cooldown for <soft_yellow>%crate_name%</soft_yellow>.</gray>
+  Menu:
+    Desc: Open crate menu.
+    Done:
+      Others: <gray>Opened crates menu for <soft_yellow>%player_display_name%</soft_yellow>.</gray>
+Error:
+  Command:
+    Argument:
+      InvalidCrate: <gray><soft_red>%value%</soft_red> is not a valid crate!</gray>
+      InvalidKey: <gray><soft_red>%value%</soft_red> is not a valid key!</gray>
+  DataIsLoading: <soft_red>Data is still loading... Please try again later.</soft_red>
+Crate:
+  Open:
+    Error:
+      InventorySpace:
+      - '[title_times="20:60:20",sound="minecraft:entity.villager.no;0.8;1.0",type="title"]'
+      - <soft_red><b>Inventory is Full!</b></soft_red>
+      - <gray>Clean up inventory to open crates.</gray>
+      Cooldown:
+        Temporary:
+        - '[title_times="20:60:20",sound="minecraft:entity.villager.no;0.8;1.0",type="title"]'
+        - <soft_red><b>Crate is on Cooldown!</b></soft_red>
+        - <gray>You can open it again in <soft_red>%time%</soft_red></gray>
+        OneTimed:
+        - '[title_times="20:60:20",sound="minecraft:entity.villager.no;0.8;1.0",type="title"]'
+        - <soft_red><b>Whoops!</b></soft_red>
+        - <gray>You already have opened this one-timed crate!</gray>
+      NoRewards:
+      - '[title_times="20:60:20",sound="minecraft:entity.villager.no;0.8;1.0",type="title"]'
+      - <red><b>Whoops!</b></red>
+      - <gray>There are no rewards for you! Try later.</gray>
+      Already:
+      - '[title_times="20:60:20",sound="minecraft:entity.villager.no;0.8;1.0",type="title"]'
+      - <red><b>Whoops!</b></red>
+      - <gray>You're already opening a crate!</gray>
+    TooExpensive:
+    - '[prefix="false"]'
+    - ' '
+    - <red><b>CRATE NOT OPENED:</b></red>
+    - '<red>» </red><gray>Crate: </gray><white>%crate_name%</white>'
+    - '<red>» </red><gray>You can''t afford the open cost: %costs%</gray>'
+    - ' '
+    Milestone:
+      Completed: '[prefix="false",sound="minecraft:entity.player.levelup;0.8;1.0"]<gray>You completed <green>%milestone_openings% Openings </green>milestone and got <green>%reward_name%</green> as reward!</gray>'
+    Reward:
+      Broadcast:
+      - '[prefix="false",sound="minecraft:block.note_block.bell;0.8;1.0"]'
+      - ' '
+      - <gray><light_purple>%player_display_name%</light_purple> opened <light_purple>%crate_name%</light_purple> and received <light_purple>%reward_name%</light_purple>!</gray>
+      - ' '
+      - '<gray>Purchase keys: <click:open_url:"https://YOUR_LINK_HERE.xyz"><light_purple>[Click to open Store]</light_purple></click></gray>'
+      - ' '
+  Rewards:
+  - '[prefix="false"]'
+  - ' '
+  - <yellow><b>CRATE OPENED:</b></yellow>
+  - '<yellow>» </yellow><gray>Crate: </gray><white>%crate_name%</white>'
+  - '<yellow>» </yellow><gray>Rewards: </gray><white>%rewards%</white>'
+  - ' '
+  Opened:
+    Result:
+      Reward: '%reward_name%'
+  Preview:
+    Error:
+      Cooldown: <gray>You can preview this crate again in <soft_red>%time%</soft_red></gray>
+Other:
+  Cooldown:
+    Ready: <green>Ready to Open!</green>
+  LastOpener:
+    Empty: '-'
+  LastReward:
+    Empty: '-'
+  NextMilestone:
+    Empty: '-'
+  Midnight: Midnight
+  Free: Free
+EffectModel:
+  None: None
+  Helix: Helix
+  Spiral: Spiral
+  Sphere: Sphere
+  Heart: Heart
+  Pulsar: Pulsar
+  Beacon: Beacon
+  Tornado: Tornado
+  Vortex: Vortex
+  Simple: Simple
+Inspections:
+  Generic:
+    Overview:
+      onTrue: No problems detected.
+      onFalse: Problems detected!
+    Item:
+      onTrue: Item is valid.
+      onFalse: Item is invalid!
+    Commands:
+      onTrue: All commands are valid.
+      onFalse: Detected invalid commands!
+  Crate:
+    Preview:
+      onTrue: Preview is valid.
+      onFalse: Preview is invalid!
+    Opening:
+      onTrue: Opening is valid.
+      onFalse: Opening is invalid!
+    Hologram:
+      onTrue: Hologram template is valid.
+      onFalse: Hologram template is invalid!
+  Reward:
+    Preview:
+      onTrue: Preview item is valid.
+      onFalse: Preview item is invalid!
+    Items:
+      onTrue: All items are valid.
+      onFalse: Detected invalid items!
+    NoItems: No items added.
+    NoCommands: No commands defined.
+UI:
+  Costs:
+    Option:
+      Available:
+        Name: <white>%cost_name%</white>
+        Lore:
+        - '%costs%'
+        - '%empty-if-above%'
+        - '<yellow><b>OPENINGS AVAILABLE: </b></yellow><white><u>%available%</u></white>'
+        - ''
+        - <green>→ <u>Click to select</u></green>
+      Unavailable:
+        Name: <white>%cost_name%</white>
+        Lore:
+        - '%costs%'
+        - '%empty-if-above%'
+        - <red><b>YOU CAN'T AFFORD THIS</b></red>
+    Entry0:
+      Available: <white>%entry%</white> <gray>(<green>✔</green>)</gray>
+      Unavailable: <white>%entry%</white> <gray>(<red>✘</red>)</gray>
+  OpenAmount:
+    Single:
+      Name: <yellow><b>Open One</b></yellow>
+      Lore:
+      - <gray>Open a single crate.</gray>
+      - ''
+      - <yellow>→ <u>Click to select</u></yellow>
+    All:
+      Name: <yellow><b>Open All</b></yellow>
+      Lore:
+      - <gray>Open up to <white>%max%</white> crates.</gray>
+      - ''
+      - <yellow>→ <u>Click to select</u></yellow>
+Editor:
+  Title:
+    Main: <black>ExcellentCrates Editor</black>
+    Crates: <black>Crates Editor</black>
+    Crate:
+      Settings: <black>Crate Settings</black>
+      CostOptions: <black>Cost Options</black>
+      CostOption: <black>Cost Option Settings</black>
+      Milestones: <black>Crate Milestones</black>
+    Reward:
+      List: <black>Crate Rewards</black>
+      Content: <black>Reward Items</black>
+      Settings: <black>Reward Settings</black>
+    Keys: <black>Keys Editor</black>
+    Key:
+      Settings: <black>Key Settings</black>
+  Enter:
+    Amount: <gray>Enter <green>[Amount]</green></gray>
+  Reward:
+    Enter:
+      Id: <gray>Enter <green>[Reward Identifier]</green></gray>
+  Button:
+    Main:
+      Crates:
+        Name: <green><b>Crates</b></green>
+        Lore:
+        - <gray>There are <green>%amount%</green> crates created.</gray>
+        - ' '
+        - <green>→ <u>Click to open</u></green>
+      Keys:
+        Name: <gold><b>Keys</b></gold>
+        Lore:
+        - <gray>There are <gold>%amount%</gold> keys created.</gray>
+        - ' '
+        - <gold>→ <u>Click to open</u></gold>
+    Crates:
+      Crate:
+        Name: '%crate_name%'
+        Lore:
+        - '<gray><dark_gray>» </dark_gray>Status: <white>%inspection%</white></gray>'
+        - '<gray><dark_gray>» </dark_gray>ID: <white>%crate_id%</white></gray>'
+        - ' '
+        - <soft_yellow>→ <u>Click to open</u></soft_yellow>
+      Create:
+        Name: <green><b>New Crate</b></green>
+        Lore:
+        - <gray>Use this button to create</gray>
+        - <gray>brand new crates!</gray>
+        - ' '
+        - <green>→ <u>Click to create</u></green>
+    Crate:
+      Delete:
+        Name: <red><b>Delete Crate</b></red>
+        Lore:
+        - <gray>Permanently deletes the crate.</gray>
+        - ' '
+        - <red>→ <u>Press [<key:key.drop>] to delete</u></red>
+      DisplayName:
+        Name: <soft_yellow><b>Name</b></soft_yellow>
+        Lore:
+        - '<gray><dark_gray>» </dark_gray>Current: <white>%crate_name%</white></gray>'
+        - ' '
+        - <gray>Sets crate display name.</gray>
+        - ' '
+        - <soft_yellow>→ <u>Click to change</u></soft_yellow>
+      Description:
+        Name: <soft_yellow><b>Description</b></soft_yellow>
+        Lore:
+        - '%crate_description%'
+        - '%empty-if-above%'
+        - <gray>Sets crate description.</gray>
+        - ' '
+        - <soft_yellow>→ <u>Click to edit</u></soft_yellow>
+      Item:
+        Name: <soft_yellow><b>Crate Item</b></soft_yellow>
+        Lore:
+        - '<gray><dark_gray>» </dark_gray>Status: <white>%inspection%</white></gray>'
+        - '<gray><dark_gray>» </dark_gray>Stackable: <white>%state%</white></gray>'
+        - ' '
+        - <gray>Drop an item on <soft_yellow>this</soft_yellow> button</gray>
+        - <gray>to replace the crate's item.</gray>
+        - ' '
+        - <soft_yellow>→ <u>Click to toggle stacking</u></soft_yellow>
+      Preview:
+        Set:
+          Name: <soft_yellow><b>Preview GUI</b></soft_yellow>
+          Lore:
+          - '<gray><dark_gray>» </dark_gray>Status: <white>%inspection%</white></gray>'
+          - '<gray><dark_gray>» </dark_gray>Preview ID: <white>%value%</white></gray>'
+          - ' '
+          - <gray>Sets preview GUI for the crate.</gray>
+          - ' '
+          - <soft_yellow>→ <u>Click to change</u></soft_yellow>
+        Unset:
+          Name: <soft_yellow><b>Preview GUI</b></soft_yellow>
+          Lore:
+          - '<gray><dark_gray>» </dark_gray>Status: <white><red>Disabled</red></white></gray>'
+          - ' '
+          - <gray>Sets preview GUI for this crate.</gray>
+          - ' '
+          - <soft_yellow>→ <u>Click to change</u></soft_yellow>
+      Opening:
+        Set:
+          Name: <soft_yellow><b>Opening Animation</b></soft_yellow>
+          Lore:
+          - '<gray><dark_gray>» </dark_gray>Status: <white>%inspection%</white></gray>'
+          - '<gray><dark_gray>» </dark_gray>Preview ID: <white>%value%</white></gray>'
+          - ' '
+          - <gray>Sets opening animation for the crate.</gray>
+          - ' '
+          - <soft_yellow>→ <u>Click to change</u></soft_yellow>
+        Unset:
+          Name: <soft_yellow><b>Opening Animation</b></soft_yellow>
+          Lore:
+          - '<gray><dark_gray>» </dark_gray>Status: <white><red>Disabled</red></white></gray>'
+          - ' '
+          - <gray>Sets opening animation for the crate.</gray>
+          - ' '
+          - <soft_yellow>→ <u>Click to change</u></soft_yellow>
+      LinkedBlocks:
+        Name: <soft_yellow><b>Linked Block</b></soft_yellow>
+        Lore:
+        - <dark_gray>Press <gold>[<key:key.drop>]</gold> to unlink.</dark_gray>
+        - ' '
+        - '<gray><dark_gray>» </dark_gray>Linked: <white>%state%</white></gray>'
+        - ' '
+        - <gray>Link the crate to a block by</gray>
+        - <gray>using the link tool.</gray>
+        - ' '
+        - <gray>Interacting with the linked block</gray>
+        - <gray>will preview and open the crate.</gray>
+        - ' '
+        - <soft_yellow>→ <u>Click to get link tool</u></soft_yellow>
+      BlockPushback:
+        Name: <soft_yellow><b>Block Pushback</b></soft_yellow>
+        Lore:
+        - '<gray><dark_gray>» </dark_gray>Status: <white>%state%</white></gray>'
+        - ' '
+        - <gray>Pushes players back from the crate</gray>
+        - <gray>if they don't met the requirements.</gray>
+        - ' '
+        - <soft_yellow>→ <u>Click to toggle</u></soft_yellow>
+      CostOptions:
+        Name: <soft_yellow><b>Cost Options</b></soft_yellow>
+        Lore:
+        - <gray>Here you can set the <soft_yellow>'cost'</soft_yellow></gray>
+        - <gray>required to open the crate - </gray>
+        - <gray>it can be <soft_yellow>keys</soft_yellow>, <soft_yellow>currency</soft_yellow>, or both.</gray>
+        - ' '
+        - <gray>You can add multiple cost options,</gray>
+        - <gray>allowing players to choose how</gray>
+        - <gray>they want to open the crate.</gray>
+        - ' '
+        - <soft_yellow>→ <u>Click to open</u></soft_yellow>
+      Permission:
+        Name: <soft_yellow><b>Permission Requirement</b></soft_yellow>
+        Lore:
+        - '<gray><dark_gray>» </dark_gray>Status: <white>%state%</white></gray>'
+        - '<gray><dark_gray>» </dark_gray>Permission: <white>%value%</white></gray>'
+        - ' '
+        - <gray>Controls whether permission is</gray>
+        - <gray>required to open the crate.</gray>
+        - ' '
+        - <soft_yellow>→ <u>Click to toggle</u></soft_yellow>
+      OpeningCooldown:
+        Name: <soft_yellow><b>Open Limits</b></soft_yellow>
+        Lore:
+        - '<gray><dark_gray>» </dark_gray>Status: <white>%state%</white></gray>'
+        - '<gray><dark_gray>» </dark_gray>Cooldown: <white>%value%</white></gray>'
+        - '<gray><dark_gray>» </dark_gray>Limit Amount: <white>%amount%</white></gray>'
+        - ' '
+        - <gray>Limits amount of crates</gray>
+        - <gray>can be opened per player</gray>
+        - <gray>for a time frame.</gray>
+        - ' '
+        - <soft_yellow>→ <u>Click to edit</u></soft_yellow>
+      Effect:
+        Name: <soft_yellow><b>Crate Effect</b></soft_yellow>
+        Lore:
+        - '<gray><dark_gray>» </dark_gray>Model: <white>%type%</white></gray>'
+        - '<gray><dark_gray>» </dark_gray>Particle: <white>%value%</white></gray>'
+        - ' '
+        - <gray>Sets effect for the crate block(s).</gray>
+        - ' '
+        - <soft_yellow>→ <u>Click to edit</u></soft_yellow>
+      Hologram:
+        Name: <soft_yellow><b>Crate Hologram</b></soft_yellow>
+        Lore:
+        - '<gray><dark_gray>» </dark_gray>Status: <white>%inspection%</white></gray>'
+        - '<gray><dark_gray>» </dark_gray>State: <white>%state%</white></gray>'
+        - '<gray><dark_gray>» </dark_gray>Template: <white>%value%</white></gray>'
+        - ' '
+        - <gray>Auto-manageable hologram above</gray>
+        - <gray>the linked crate block.</gray>
+        - ' '
+        - <soft_yellow>→ <u>Click to edit</u></soft_yellow>
+      Rewards:
+        Name: <soft_yellow><b>Rewards</b></soft_yellow>
+        Lore:
+        - '<gray><dark_gray>» </dark_gray>Status: <white>%inspection%</white></gray>'
+        - '<gray><dark_gray>» </dark_gray>Rewards: <white>%amount%</white></gray>'
+        - ' '
+        - <gray>Add and manage crate's rewards!</gray>
+        - ' '
+        - <soft_yellow>→ <u>Click to open</u></soft_yellow>
+      Milestones:
+        Name: <soft_yellow><b>Milestones</b></soft_yellow>
+        Lore:
+        - '<gray><dark_gray>» </dark_gray>Milestones: <white>%amount%</white></gray>'
+        - ' '
+        - <gray>Create custom milestones with</gray>
+        - <gray>rewards for the crate!</gray>
+        - ' '
+        - <soft_yellow>→ <u>Click to open</u></soft_yellow>
+      Post-Open-Commands:
+        Name: <soft_yellow><b>Post-Open Commands</b></soft_yellow>
+        Lore:
+        - '<gray><dark_gray>» </dark_gray>Status: <white>%inspection%</white></gray>'
+        - '<gray><dark_gray>» </dark_gray>Commands: <white>%amount%</white></gray>'
+        - ' '
+        - <gray>Runs listed commands</gray>
+        - <gray>when the crate is opened.</gray>
+        - ' '
+        - <soft_yellow>→ <u>Click to edit</u></soft_yellow>
+    Milestone:
+      Create:
+        Name: <soft_yellow><b>New Milestone</b></soft_yellow>
+        Lore: []
+      Object:
+        Name: '<soft_yellow><b>Milestone: %milestone_openings%</b></soft_yellow>'
+        Lore:
+        - '<gray><dark_gray>» </dark_gray>Status: <white>%inspection%</white></gray>'
+        - '<gray><dark_gray>» </dark_gray>Openings: <white>%milestone_openings%</white></gray>'
+        - '<gray><dark_gray>» </dark_gray>Reward Id: <white>%milestone_reward_id%</white></gray>'
+        - ' '
+        - <soft_yellow>→ <u>Left-Click to change openings</u></soft_yellow>
+        - <soft_yellow>→ <u>Right-Click tochange reward</u></soft_yellow>
+        - <soft_yellow>→ <u>Shift-Right delete <soft_red>(no undo)</soft_red></u></soft_yellow>
+    Rewards:
+      Reward:
+        Name: '%reward_name%'
+        Lore:
+        - '<gray><dark_gray>» </dark_gray>Status: <white>%inspection%</white></gray>'
+        - '<gray><dark_gray>» </dark_gray>ID: <white>%reward_id%</white></gray>'
+        - '<gray><dark_gray>» </dark_gray>Weight: <white>%reward_weight% → <green>%reward_roll_chance%%</green></white></gray>'
+        - '<gray><dark_gray>» </dark_gray>Rarity: <white>%reward_rarity_name% → <green>%reward_rarity_roll_chance%%</green></white></gray>'
+        - ' '
+        - <soft_yellow>→ <u>Click to edit</u></soft_yellow>
+      Creation:
+        Name: <green><b>Reward Creation</b></green>
+        Lore:
+        - <gray>Drop item on <green>this</green> button</gray>
+        - <gray>to create a new reward of it.</gray>
+      Sorting:
+        Name: <soft_yellow><b>Sort Rewards</b></soft_yellow>
+        Lore:
+        - <gray>Automatically sorts rewards in</gray>
+        - <gray>certain order.</gray>
+        - ' '
+        - <soft_yellow>→ <u>Click to open</u></soft_yellow>
+      MassMode:
+        Name: <soft_yellow><b>Mass Creation Mode</b></soft_yellow>
+        Lore:
+        - '<gray><dark_gray>» </dark_gray>Status: <white>%state%</white></gray>'
+        - '<gray><dark_gray>» </dark_gray>Reward Type: <white>%type%</white></gray>'
+        - ' '
+        - <gray>Allows you to quickly add</gray>
+        - <gray>multiple rewards to the crate</gray>
+        - <gray>by clicking on items in</gray>
+        - <gray>your inventory.</gray>
+        - ' '
+        - <soft_yellow>→ <u>Click to toggle mode</u></soft_yellow>
+        - <soft_yellow>→ <u>Click to toggle type</u></soft_yellow>
+      ArrangeMode:
+        Name: <soft_yellow><b>Arrange Mode</b></soft_yellow>
+        Lore:
+        - '<gray><dark_gray>» </dark_gray>Status: <white>%state%</white></gray>'
+        - ' '
+        - <gray>Allows you to arrange rewards by</gray>
+        - <gray>shifting them left or right.</gray>
+        - ' '
+        - <gray>Use the <soft_yellow>Left-Click</soft_yellow> to shift left,</gray>
+        - <gray>and the <soft_yellow>Right-Click</soft_yellow> to shift right.</gray>
+        - ' '
+        - <soft_yellow>→ <u>Click to toggle</u></soft_yellow>
+    Reward:
+      Items:
+        Name: <soft_yellow><b>Items to Give</b></soft_yellow>
+        Lore:
+        - '<gray><dark_gray>» </dark_gray>Status: <white>%inspection%</white></gray>'
+        - '<gray><dark_gray>» </dark_gray>Items: <white>%amount%</white></gray>'
+        - ' '
+        - <gray>Gives listed items when won.</gray>
+        - ' '
+        - <soft_yellow>→ <u>Click to open</u></soft_yellow>
+      Commands:
+        Name: <soft_yellow><b>Commands to Run</b></soft_yellow>
+        Lore:
+        - '<gray><dark_gray>» </dark_gray>Status: <white>%inspection%</white></gray>'
+        - '<gray><dark_gray>» </dark_gray>Commands: <white>%amount%</white></gray>'
+        - ' '
+        - <gray>Runs listed commands when won.</gray>
+        - ' '
+        - <soft_yellow>→ <u>Click to edit</u></soft_yellow>
+      PreviewNormal:
+        Name: <soft_yellow><b>Preview Item</b></soft_yellow>
+        Lore:
+        - '<gray><dark_gray>» </dark_gray>Status: <white>%inspection%</white></gray>'
+        - ' '
+        - <gray>Drop an item on <soft_yellow>this</soft_yellow> button</gray>
+        - <gray>to replace the reward preview.</gray>
+      PreviewCustom:
+        Name: <soft_yellow><b>Preview Item</b></soft_yellow>
+        Lore:
+        - '<gray><dark_gray>» </dark_gray>Status: <white>%inspection%</white></gray>'
+        - '<gray><dark_gray>» </dark_gray>Use Custom: <white>%state%</white></gray>'
+        - ' '
+        - <gray>Drop an item on <soft_yellow>this</soft_yellow> button</gray>
+        - <gray>to replace the reward preview.</gray>
+        - ' '
+        - <soft_yellow>→ <u>Click to toggle custom usage</u></soft_yellow>
+      RarityWeight:
+        Name: <soft_yellow><b>Rarity & Weight</b></soft_yellow>
+        Lore:
+        - '<gray><dark_gray>» </dark_gray>Rarity: <white>%reward_rarity_name% → <soft_green>%reward_rarity_roll_chance%%</soft_green></white></gray>'
+        - '<gray><dark_gray>» </dark_gray>Weight: <white>%reward_weight% → <soft_green>%reward_roll_chance%%</soft_green></white></gray>'
+        - ' '
+        - <soft_yellow>→ <u>Click to change</u></soft_yellow>
+      Name:
+        Name: <soft_yellow><b>Display Name</b></soft_yellow>
+        Lore:
+        - '<gray><dark_gray>» </dark_gray>Current: <white>%reward_name%</white></gray>'
+        - ' '
+        - <soft_yellow>→ <u>Click to change</u></soft_yellow>
+      Description:
+        Name: <soft_yellow><b>Description</b></soft_yellow>
+        Lore:
+        - '%reward_description%'
+        - '%empty-if-above%'
+        - <soft_yellow>→ <u>Click to change</u></soft_yellow>
+      Broadcast:
+        Name: <soft_yellow><b>Win Broadcast</b></soft_yellow>
+        Lore:
+        - '<gray><dark_gray>» </dark_gray>State: <white>%state%</white></gray>'
+        - ' '
+        - <gray>Restricts player access to the reward</gray>
+        - <gray>based on their permissions.</gray>
+        - ' '
+        - <soft_yellow>→ <u>Click to toggle</u></soft_yellow>
+      Permissions:
+        Name: <soft_yellow><b>Permissions</b></soft_yellow>
+        Lore:
+        - '<gray><dark_gray>» </dark_gray>Total Permissions: <white>%amount%</white></gray>'
+        - ' '
+        - <gray>Restrict reward access based on</gray>
+        - <gray>player's permissions.</gray>
+        - ' '
+        - <soft_yellow>→ <u>Click to edit</u></soft_yellow>
+      Limits:
+        Name: <soft_yellow><b>Limits</b></soft_yellow>
+        Lore:
+        - '<gray><dark_gray>» </dark_gray>State: <white>%state%</white></gray>'
+        - ' '
+        - <gray>Controls how often and how many</gray>
+        - <gray>times this reward can be won.</gray>
+        - ' '
+        - <soft_yellow>→ <u>Click to edit</u></soft_yellow>
+      Delete:
+        Name: <soft_red><b>Delete Reward</b></soft_red>
+        Lore:
+        - <gray>Permanently deletes the reward.</gray>
+        - ' '
+        - <soft_red>→ <u>Press <key:key.drop> to delete</u></soft_red>
+      ItemPlaceholders:
+        Name: <soft_yellow><b>Item Placeholders</b></soft_yellow>
+        Lore:
+        - '<gray><dark_gray>» </dark_gray>State: <white>%state%</white></gray>'
+        - ' '
+        - <gray>Allows to replace item placeholders:</gray>
+        - <gray><soft_yellow>→</soft_yellow> Crate placeholders <dark_gray>(see docs)</dark_gray></gray>
+        - <gray><soft_yellow>→</soft_yellow> Reward placeholders <dark_gray>(see docs)</dark_gray></gray>
+        - <gray><soft_yellow>→</soft_yellow> %player_name% placeholder.</gray>
+        - ' '
+        - <soft_yellow>→ <u>Click to toggle</u></soft_yellow>
+    Keys:
+      Create:
+        Name: <green><b>New Key</b></green>
+        Lore:
+        - <gray>Use this button to create</gray>
+        - <gray>brand new keys!</gray>
+        - ' '
+        - <green>→ <u>Click to create</u></green>
+      Key:
+        Name: '%key_name%'
+        Lore:
+        - '<gray><dark_gray>» </dark_gray>Status: <white>%inspection%</white></gray>'
+        - '<gray><dark_gray>» </dark_gray>ID: <white>%key_id%</white></gray>'
+        - '<gray><dark_gray>» </dark_gray>Virtual: <white>%state%</white></gray>'
+        - ' '
+        - <soft_yellow>→ <u>Click to edit</u></soft_yellow>
+    Key:
+      Delete:
+        Name: <red><b>Delete Key</b></red>
+        Lore:
+        - <gray>Permanently deletes the key.</gray>
+        - ' '
+        - <red>→ <u>Press [<key:key.drop>] to delete</u></red>
+      Name:
+        Name: <soft_yellow><b>Display Name</b></soft_yellow>
+        Lore:
+        - '<gray><dark_gray>» </dark_gray>Current: <white>%key_name%</white></gray>'
+        - ' '
+        - <soft_yellow>→ <u>Click to change</u></soft_yellow>
+      Item:
+        Name: <soft_yellow><b>Key Item</b></soft_yellow>
+        Lore:
+        - '<gray><dark_gray>» </dark_gray>Status: <white>%inspection%</white></gray>'
+        - '<gray><dark_gray>» </dark_gray>Stackable: <white>%state%</white></gray>'
+        - ' '
+        - <gray>Drop an item on <soft_yellow>this</soft_yellow> button</gray>
+        - <gray>to replace the key's item.</gray>
+        - ' '
+        - <soft_yellow>→ <u>Click to toggle stacking</u></soft_yellow>
+      Virtual:
+        Name: <soft_yellow><b>Virtual</b></soft_yellow>
+        Lore:
+        - '<gray><dark_gray>» </dark_gray>State: <white>%state%</white></gray>'
+        - ' '
+        - <gray>Controls whether the key is virtual.</gray>
+        - ' '
+        - <soft_yellow>→ <u>Click to toggle</u></soft_yellow>
+  Costs:
+    Data:
+      Vacant:
+        Name: <soft_aqua><b>Vacant Slot</b></soft_aqua>
+        Lore:
+        - <gray>Add an cost option for your crate!</gray>
+        - ' '
+        - <soft_aqua>→ <u>Click to create</u></soft_aqua>
+      Filled:
+        Name: '<yellow><b>Cost Option: </b></yellow><white>%cost_name%</white> <gray>(ID: <white>%cost_id%</white>)</gray>'
+        Lore:
+        - <i><dark_gray>Press <soft_red><key:key.drop></soft_red> key to delete.</dark_gray></i>
+        - ' '
+        - '%costs%'
+        - ' '
+        - <yellow>→ <u>Click to edit</u></yellow>
+      Empty:
+        Name: '<red><b>Cost Option: </b></red><white>%cost_name%</white> <gray>(ID: <white>%cost_id%</white>)</gray>'
+        Lore:
+        - <i><dark_gray>Press <soft_red><key:key.drop></soft_red> key to delete.</dark_gray></i>
+        - ' '
+        - <soft_red>No costs defined!</soft_red>
+        - ' '
+        - <red>→ <u>Click to edit</u></red>
+    Toggle:
+      Enabled:
+        Name: <green><b>Enabled</b></green>
+        Lore:
+        - <green>→ <u>Click to toggle</u></green>
+      Disabled:
+        Name: <white><b>Disabled</b></white>
+        Lore:
+        - <white>→ <u>Click to toggle</u></white>
+      Nothing:
+        Name: <gray>< No Data ></gray>
+        Lore: []
+    Status:
+      Good:
+        Name: '<green><b>Status: </b></green><white>Good</white>'
+        Lore:
+        - <gray>All entries are valid!</gray>
+      Warn:
+        Name: '<yellow><b>Status: </b></yellow><white>Warning</white>'
+        Lore:
+        - <gray>Some entries are invalid!</gray>
+      Bad:
+        Name: '<red><b>Status: </b></red><white>Invalid</white>'
+        Lore:
+        - <gray>No valid entries!</gray>
+      Nothing:
+        Name: '<gray><b>Status: </b></gray><white>< No Data></white>'
+        Lore: []
+  CostOptions:
+    Name:
+      Name: <soft_yellow><b>Name</b></soft_yellow>
+      Lore:
+      - '<gray><dark_gray>» </dark_gray>Current: <white>%cost_name%</white></gray>'
+      - ' '
+      - <soft_yellow>→ <u>Click to change</u></soft_yellow>
+    Icon:
+      Name: <soft_yellow><b>Icon</b></soft_yellow>
+      Lore:
+      - '<gray><dark_gray>» </dark_gray>Custom Items: <white>%state%</white></gray>'
+      - ' '
+      - <gray>Drag and drop an item here</gray>
+      - <gray>to replace the icon.</gray>
+      - ' '
+      - <soft_yellow>→ <u>Right-Click to toggle</u></soft_yellow>
+    VacantEntry:
+      Name: <green><b>Vacant Slot</b></green>
+      Lore:
+      - <gray>A vacant slot for cost entry.</gray>
+      - ' '
+      - <green>→ <u>Click to create</u></green>
+Dialog:
+  Generic:
+    Creation:
+      Body:
+        Contents:
+        - Enter a <soft_yellow>unique identifier</soft_yellow> (ID) for the new object.
+        - ''
+        - <soft_orange>⚠</soft_orange> You will need to reference this ID in <soft_orange>commands</soft_orange> and <soft_orange>config files</soft_orange>, so it's best to choose one that's <soft_orange>clear</soft_orange> and <soft_orange>easy</soft_orange> for you to remember.
+        - ''
+        - <soft_red>→</soft_red> Only <soft_red>letters</soft_red>, <soft_red>digits</soft_red> and an <soft_red>underscore</soft_red> are allowed.
+        Width: 400
+    Name:
+      Body:
+        Contents: Enter the <soft_yellow>display name</soft_yellow>.
+        Width: 400
+      Input:
+        Name: Name
+        ReplaceName: Replace Item Name
+    Description:
+      Body:
+        Contents: Enter the <soft_yellow>description</soft_yellow>.
+        Width: 400
+      Input:
+        Description: Description
+        ReplaceItemLore: Replace Item Lore
+    Item:
+      Body:
+        Normal:
+          Contents:
+          - Please confirm item replacement.
+          - <gray>Check the additional fields if needed.</gray>
+          Width: 400
+        Custom:
+          Contents:
+          - Please confirm item replacement.
+          - <gray>Check the additional fields if needed.</gray>
+          - ''
+          - <soft_red><b>IMPORTANT NOTE:</b></soft_red>
+          - If the item above doesn't match the one you used, enable the <soft_red>Save as NBT</soft_red> option.
+          - <gray>This ensures the exact item data is saved correctly.</gray>
+          Width: 400
+      Input:
+        NBT: <soft_red>Save as NBT</soft_red>
+        ReplaceName: Inherit Item's Name
+        ReplaceDesc: Inherit Item's Lore
+  Key:
+    Creation:
+      Title: <yellow><b>KEY</b></yellow><dark_gray> » </dark_gray><white>Creation</white>
+    Name:
+      Title: <yellow><b>KEY</b></yellow><dark_gray> » </dark_gray><white>Name</white>
+    Item:
+      Title: <yellow><b>KEY</b></yellow><dark_gray> » </dark_gray><white>Item</white>
+  Crates:
+    Creation:
+      Title: <yellow><b>CRATES</b></yellow><dark_gray> » </dark_gray><white>Creation</white>
+  Crate:
+    Name:
+      Title: <yellow><b>CRATE</b></yellow><dark_gray> » </dark_gray><white>Name</white>
+    Description:
+      Title: <yellow><b>CRATE</b></yellow><dark_gray> » </dark_gray><white>Description</white>
+    Item:
+      Title: <yellow><b>CRATE</b></yellow><dark_gray> » </dark_gray><white>Item</white>
+    Preview:
+      Title: <yellow><b>CRATE</b></yellow><dark_gray> » </dark_gray><white>Preview Template</white>
+      Body:
+        Contents:
+        - Select a preview GUI template for the crate.
+        - You can create and edit previews in the <soft_yellow>/previews/</soft_yellow> directory.
+        - ''
+        - <soft_yellow>→ </soft_yellow>To disable crate preview, uncheck the <soft_yellow>Enabled</soft_yellow> box.
+        Width: 400
+      Input:
+        Enabled: Enabled
+        Preview: <soft_yellow>Preview</soft_yellow>
+    Opening:
+      Title: <yellow><b>CRATE</b></yellow><dark_gray> » </dark_gray><white>Opening Animation</white>
+      Body:
+        Contents:
+        - Select an opening animation for the crate.
+        - You can create and edit animations in the <soft_yellow>/openings/</soft_yellow> directory.
+        - ''
+        - <soft_yellow>→ </soft_yellow>To disable crate opening animation, uncheck the <soft_yellow>Enabled</soft_yellow> box.
+        Width: 400
+      Input:
+        Enabled: Enabled
+        Opening: <soft_yellow>Opening</soft_yellow>
+    OpeningCooldown:
+      Title: <yellow><b>CRATE</b></yellow><dark_gray> » </dark_gray><white>Opening Limits</white>
+      Body:
+        Contents:
+        - Here you can set the crate opening limits per player.
+        - ''
+        - <soft_yellow>Cooldown</soft_yellow> sets the time period (in seconds) during which a player can open the crate the number of times specified in <soft_yellow>Amount</soft_yellow>.
+        - ''
+        - When this time period expires, the player's crate opening counter is reset, making the crate available again.
+        - ''
+        - The cooldown timer is activated with the first crate opened after the counter is reset.
+        - ''
+        - <soft_yellow>→</soft_yellow> To make the crate one-timed (never reset), set <soft_yellow>Cooldown</soft_yellow> to <soft_yellow>-1</soft_yellow>.
+        - ''
+        - <soft_yellow>→</soft_yellow> To disable this feature, uncheck the <soft_yellow>Enabled</soft_yellow> box.
+        Width: 400
+      Input:
+        Cooldown: Cooldown <gray>(in seconds)</gray>
+        Amount: Amount <gray>(min. 1)</gray>
+    Effect:
+      Title: <yellow><b>CRATE</b></yellow><dark_gray> » </dark_gray><white>Block Effect</white>
+      Body:
+        Contents:
+        - Here you can choose the <soft_yellow>effect model</soft_yellow> and <soft_yellow>particle type</soft_yellow> for the crate.
+        - These effects are shown around the blocks linked to the crate.
+        Width: 400
+      Input:
+        Enabled: Enabled
+        Model: <soft_yellow>Effect Model</soft_yellow>
+      Button:
+        Particle:
+          Label: '<soft_yellow>Particle: </soft_yellow>%s'
+          Width: 150
+    Particle:
+      Title: <yellow><b>CRATE</b></yellow><dark_gray> » </dark_gray><white>Particle Type</white>
+      Body:
+        Contents:
+        - Select the desired <soft_yellow>particle type</soft_yellow>.
+        - ''
+        - Particles marked with an asterisk <soft_red>(*)</soft_red> have additional options that must be filled in.
+        Width: 400
+    ParticleData:
+      Title: <yellow><b>CRATE</b></yellow><dark_gray> » </dark_gray><white>Particle Data</white>
+      Body:
+        Color:
+          Contents: This particle type requires a <soft_yellow>color</soft_yellow> specified in RGB format.
+          Width: 400
+        Item:
+          Contents: This particle type requires an <soft_yellow>item name</soft_yellow> specified.
+          Width: 400
+        Block:
+          Contents: This particle type requires a <soft_yellow>block name</soft_yellow> specified.
+          Width: 400
+        Generic:
+          Contents: This particle type requires <soft_yellow>additional options</soft_yellow> specified.
+          Width: 400
+      Input:
+        Red: <soft_red>Red</soft_red>
+        Green: <soft_green>Green</soft_green>
+        Blue: <soft_blue>Blue</soft_blue>
+        Alpha: Alpha
+        Size: Size
+        Power: Power
+        Delay: Delay
+        BlockName: Block Name
+        ItemName: Item Name
+    Hologram:
+      Title: <yellow><b>CRATE</b></yellow><dark_gray> » </dark_gray><white>Hologram Settings</white>
+      Body:
+        Contents:
+        - Here you can select <soft_yellow>hologram template</soft_yellow> for the crate and adjust it's <soft_yellow>Y offset</soft_yellow> to match the block height.
+        - ''
+        - You can create and edit hologram templates in the <soft_yellow>config.yml</soft_yellow>.
+        - ''
+        - <soft_yellow>→ </soft_yellow>To disable crate hologram, uncheck the <soft_yellow>Enabled</soft_yellow> box.
+        Width: 400
+      Input:
+        Enabled: Enabled
+        Template: <soft_yellow>Template</soft_yellow>
+        YOffset: <soft_yellow>Y Offset</soft_yellow>
+    Post-Open-Commands:
+      Title: <yellow><b>CRATE</b></yellow><dark_gray> » </dark_gray><white>Post-Open Commands</white>
+      Body:
+        Contents:
+        - Enter up to <soft_yellow>5 commands</soft_yellow> that will be executed every time a player opens a crate. The commands will be executed in the same order as the fields listed below.
+        - ''
+        - <soft_yellow>→</soft_yellow> Use the <soft_yellow>%player_name%</soft_yellow> placeholder to insert the name of the player who opened the crate.
+        - ''
+        - '<soft_yellow>→</soft_yellow> You can use the internal <soft_yellow>Crate</soft_yellow> placeholders: click <click:open_url:"https://nightexpressdev.com/excellentcrates/placeholders/internal"><soft_green><u>HERE</u></soft_green></click> to view documentation.'
+        - ''
+        - <soft_yellow>→</soft_yellow> You can use any placeholders from the <soft_yellow>PlaceholderAPI</soft_yellow> plugin.
+        Width: 400
+      Input:
+        Command: Command <soft_yellow>#%s</soft_yellow>
+  Rewards:
+    Creation:
+      Title: <yellow><b>REWARD</b></yellow><dark_gray> » </dark_gray><white>Creation</white>
+      Input:
+        Method: Save Item as NBT
+      Button:
+        ItemType:
+          Label: <soft_blue>Item Reward</soft_blue>
+          Tooltip: The <soft_blue>Item</soft_blue> reward type gives the player one or more items when won.<br><br>By default, <soft_yellow>%1$s</soft_yellow> will used as the item, but you can change it at any time.
+          Width: 150
+        CommandType:
+          Label: <soft_orange>Command Reward</soft_orange>
+          Tooltip: The <soft_orange>Command</soft_orange> reward type runs one or more commands when won.<br><br>By default, <soft_yellow>%1$s</soft_yellow> will used as the preview, but you can change it at any time.
+          Width: 150
+      Body:
+        Normal:
+          Contents:
+          - Please select a reward type to create.
+          - <gray>Hover over a button to see a short description of each type.</gray>
+          Width: 400
+        Custom:
+          Contents:
+          - Please select a reward type to create.
+          - <gray>Hover over a button to see a short description of each type.</gray>
+          - ''
+          - <soft_red><b>IMPORTANT NOTE:</b></soft_red>
+          - If the item above doesn't match the one you used, enable the <soft_red>Save Item as NBT</soft_red> option.
+          - <gray>This ensures the exact item data is saved correctly.</gray>
+          Width: 400
+    Sorting:
+      Mode:
+        WEIGHT: Weight
+        RARITY: Rarity
+        CHANCE: Chance
+        NAME: Name
+        ITEM: Item
+      Title: <yellow><b>REWARDS</b></yellow><dark_gray> » </dark_gray><white>Sorting</white>
+      Body:
+        Contents: Please select a sorting mode.
+        Width: 400
+      Input:
+        Reversed: Reversed
+      Button:
+        Mode:
+          Label: '<soft_yellow>→</soft_yellow> Mode: <soft_yellow>%s</soft_yellow>'
+          Width: 150
+  Reward:
+    Preview:
+      Title: <yellow><b>REWARD</b></yellow><dark_gray> » </dark_gray><white>Preview</white>
+      Input:
+        NBT: <soft_red>Save as NBT</soft_red>
+        ReplaceName: Replace Reward Name
+        ReplaceDesc: Replace Reward Description
+      Body:
+        Normal:
+          Contents:
+          - Please confirm reward preview replacement.
+          - <gray>Check the additional fields if needed.</gray>
+          Width: 400
+        Custom:
+          Contents:
+          - Please confirm reward preview replacement.
+          - <gray>Check the additional fields if needed.</gray>
+          - ''
+          - <soft_red><b>IMPORTANT NOTE:</b></soft_red>
+          - If the item above doesn't match the one you used, enable the <soft_red>Save as NBT</soft_red> option.
+          - <gray>This ensures the exact item data is saved correctly.</gray>
+          Width: 400
+    Item:
+      Title: <yellow><b>REWARD</b></yellow><dark_gray> » </dark_gray><white>Item</white>
+      Body:
+        Contents:
+        - Please select item save method.
+        - ''
+        - <soft_red><b>IMPORTANT NOTE:</b></soft_red>
+        - If the item above doesn't match the one you used, use the <soft_red>Save as NBT</soft_red> option.
+        - <gray>This ensures the exact item data is saved correctly.</gray>
+        Width: 400
+      Button:
+        NBT:
+          Label: <sprite:"item/creeper_spawn_egg"> Save as <soft_green>NBT</soft_green>
+          Width: 150
+        Reference:
+          Label: <sprite:"item/knowledge_book"> Save as <soft_green>Reference</soft_green>
+          Width: 150
+    Commands:
+      Title: <yellow><b>REWARD</b></yellow><dark_gray> » </dark_gray><white>Commands</white>
+      Body:
+        Contents:
+        - Enter up to <soft_yellow>5 commands</soft_yellow> that will be executed every time a player receives the reward. The commands will be executed in the same order as the fields listed below.
+        - ''
+        - <soft_yellow>→</soft_yellow> Use the <soft_yellow>%player_name%</soft_yellow> placeholder to insert the name of the player who received the reward.
+        - ''
+        - '<soft_yellow>→</soft_yellow> You can use the internal <soft_yellow>Crate</soft_yellow> and <soft_yellow>Reward</soft_yellow> placeholders: click <click:open_url:"https://nightexpressdev.com/excellentcrates/placeholders/internal"><soft_green><u>HERE</u></soft_green></click> to view documentation.'
+        - ''
+        - <soft_yellow>→</soft_yellow> You can use any placeholders from the <soft_yellow>PlaceholderAPI</soft_yellow> plugin.
+        Width: 400
+      Input:
+        Command: Command <soft_yellow>#%s</soft_yellow>
+    Name:
+      Title: <yellow><b>REWARD</b></yellow><dark_gray> » </dark_gray><white>Name</white>
+    Description:
+      Title: <yellow><b>REWARD</b></yellow><dark_gray> » </dark_gray><white>Description</white>
+    Weight:
+      Title: <yellow><b>REWARD</b></yellow><dark_gray> » </dark_gray><white>Weight & Rariry</white>
+      Body:
+        Contents:
+        - Set the desired <soft_yellow>rarity</soft_yellow> and <soft_yellow>weight</soft_yellow> for the reward.
+        - ''
+        - You can learn more about how rarity and weight work <click:open_url:"https://nightexpressdev.com/excellentcrates/rewards/rarity-weights/"><soft_green><u>HERE</u></soft_green></click>.
+        Width: 400
+      Input:
+        Rarity: <soft_yellow>Rarity</soft_yellow>
+        Weight: <soft_yellow>Weight</soft_yellow>
+    Permissions:
+      Title: <yellow><b>REWARD</b></yellow><dark_gray> » </dark_gray><white>Permissions</white>
+      Body:
+        Contents:
+        - Specify the permissions a player must have or must not have to access this reward.
+        - ''
+        - Use the <green><b>+</b></green> prefix to list permissions the player <green>must have</green>, and the <red><b>-</b></red> prefix for permissions the player <red>must not have</red>.
+        - ''
+        - Player must have any of the <green>'positive'</green> permissions and none of the <red>'negative'</red> ones.
+        Width: 400
+      Input:
+        Permissions: Permissions
+    Limits:
+      Title: <yellow><b>REWARD</b></yellow><dark_gray> » </dark_gray><white>Limits</white>
+      Body:
+        Contents:
+        - Here you can set how often and how many times this reward can be won.
+        - ''
+        - <soft_orange>Global</soft_orange> settings apply to all players at once, while the <soft_blue>Individual</soft_blue> ones apply individually.
+        - ''
+        - <sprite:"item/clock_00"> Use <soft_yellow>Daily</soft_yellow> cooldown mode to reset the cooldown at <soft_yellow>midnight</soft_yellow> after the specified number of days.
+        - <sprite:"item/clock_00"> Use <soft_yellow>Custom</soft_yellow> cooldown mode to set an exact cooldown time in <soft_yellow>seconds</soft_yellow>.
+        - ''
+        - <sprite:"item/barrier"> To disable cooldown, set it's value to <soft_red>0</soft_red>.
+        - <sprite:"item/barrier"> To remove the rolls limit, set it's value to <soft_red>-1</soft_red>.
+        Width: 400
+      Input:
+        Enabled: Enabled
+        CooldownMode: <soft_yellow>Cooldown Mode</soft_yellow>
+        GlobalAmount: <soft_orange>(Global)</soft_orange> Max. Rolls
+        GlobalCooldown: <soft_orange>(Global)</soft_orange> Cooldown
+        PlayerAmount: <soft_blue>(Individual)</soft_blue> Max. Rolls
+        PlayerCooldown: <soft_blue>(Individual)</soft_blue> Cooldown
+  CostOption:
+    Creation:
+      Title: <yellow><b>COST OPTION</b></yellow><dark_gray> » </dark_gray><white>Creation</white>
+    Name:
+      Title: <yellow><b>COST OPTION</b></yellow><dark_gray> » </dark_gray><white>Name</white>
+      Body:
+        Contents:
+        - Sets the <soft_yellow>display name</soft_yellow> for the selected cost option.
+        - It's best to choose a collective name, such as <soft_yellow>"Keys"</soft_yellow> or <soft_yellow>"Coins"</soft_yellow>.
+        Width: 400
+  CostEntry:
+    Creation:
+      Title: <yellow><b>COST ENTRY</b></yellow><dark_gray> » </dark_gray><white>Creation</white>
+      Body:
+        Contents: Select a cost type.
+        Width: 400
+      BodyEmpty:
+        Contents:
+        - <soft_red><u>NO AVAILABLE COST TYPES</u></soft_red>
+        - ''
+        - 'You may see this message for one of the following reasons:'
+        - ''
+        - <soft_red>→</soft_red> The <soft_red>Keys</soft_red> module is unavailable or has no keys created. You can create keys using the ExcellentCrates editor.
+        - ''
+        - <soft_red>→</soft_red> No supported <soft_red>economy</soft_red> or <soft_red>currency</soft_red> plugins are installed, or their integration is disabled in the main <soft_red>nightcore</soft_red> configuration file.
+        Width: 400
+    Key:
+      Title: <yellow><b>COST ENTRY</b></yellow><dark_gray> » </dark_gray><white>Key Options</white>
+      Body:
+        Contents:
+        - Specify which key and how many of it are required to open the crate.
+        - ''
+        - You can create and edit keys in the <soft_yellow>ExcellentCrates Editor</soft_yellow>.
+        Width: 400
+      Input:
+        Key: <soft_yellow>Key</soft_yellow>
+        Amount: Amount
+Enums:
+  RewardType:
+    ITEM: Item
+    COMMAND: Command
+  CooldownMode:
+    DAILY: Daily
+    CUSTOM: Custom
+Costs:
+  Currency:
+    Name: <green>[$]</green> <white>Currency</white>
+    EditButton:
+      Name: <yellow><b>Currency Cost</b></yellow><gray> - </gray><white>%name%</white>
+      Lore:
+      - <i><dark_gray>Press <soft_red><key:key.drop></soft_red> key to delete.</dark_gray></i>
+      - ' '
+      - '<gray><dark_gray>» </dark_gray>Currency ID: <white>%id%</white></gray>'
+      - '<gray><dark_gray>» </dark_gray>Amount: <white>%amount%</white></gray>'
+      - ' '
+      - <soft_yellow>→ <u>Click to edit</u></soft_yellow>
+  Key:
+    Name: <yellow>[🔑]</yellow> <white>Key</white>
+    Format: <gray>x%amount% %name%</gray>
+    EditButton:
+      Name: <yellow><b>Key Cost</b></yellow><gray> - </gray><white>%name%</white>
+      Lore:
+      - <i><dark_gray>Press <soft_red><key:key.drop></soft_red> key to delete.</dark_gray></i>
+      - ' '
+      - '<gray><dark_gray>» </dark_gray>Key ID: <white>%id%</white></gray>'
+      - '<gray><dark_gray>» </dark_gray>Amount: <white>%amount%</white></gray>'
+      - ' '
+      - <yellow>→ <u>Click to edit</u></yellow>

@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&8Death Mark'
+description:
+- '&7Mark enemies for death.'
+- '&7Marked targets take bonus damage.'
+skillType: HOES
+bonusType: PROC
+unlockTier: 2
+baseValue: 0.5
+scalingPerLevel: 0.01
+procChance: 0.25
+displayMaterial: WITHER_ROSE
+loreTemplates:
+- '&7Chance: &f$procChance%'
+- '&7Mark Damage: &f+$damageBonus%'
+- '&7Duration: &f15 seconds'
+- '&7Marked enemies glow'
+formattedBonusTemplate: +$damageBonus% vs Marked

@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&bPrecision Thrust'
+description:
+- '&7Chance to deal'
+- '&7critical damage.'
+skillType: SPEARS
+bonusType: PROC
+unlockTier: 1
+baseValue: 1.5
+scalingPerLevel: 0.01
+procChance: 0.1
+displayMaterial: DIAMOND
+loreTemplates:
+- '&7Proc Chance: &f$chance%'
+- '&7Crit Damage: &f$critDamage%'
+formattedBonusTemplate: $chance% for $critDamage% Crit

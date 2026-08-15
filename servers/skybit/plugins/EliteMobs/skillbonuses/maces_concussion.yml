@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&eConcussion'
+description:
+- '&7Chance to daze enemies,'
+- '&7reducing their damage output.'
+skillType: MACES
+bonusType: PROC
+unlockTier: 1
+baseValue: 0.15
+scalingPerLevel: 0.002
+procChance: 0.15
+displayMaterial: IRON_BLOCK
+loreTemplates:
+- '&7Proc Chance: &f$procChance%'
+- '&7Duration: &f3 seconds'
+- '&7Applies Weakness'
+formattedBonusTemplate: $procChance% Daze Chance

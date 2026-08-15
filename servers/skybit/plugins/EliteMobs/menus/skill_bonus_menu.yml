@@ -1,0 +1,132 @@
+isEnabled: true
+weaponSelectMenuName: '&6Select Weapon Type'
+skillSelectMenuName: '&6%skill_type% Skills'
+swordsItem:
+  material: DIAMOND_SWORD
+  name: §6Swords
+  lore:
+  - §7View sword skills
+  - §7Click to select
+swordsSlot: 11
+axesItem:
+  material: DIAMOND_AXE
+  name: §6Axes
+  lore:
+  - §7View axe skills
+  - §7Click to select
+axesSlot: 12
+bowsItem:
+  material: BOW
+  name: §6Bows
+  lore:
+  - §7View bow skills
+  - §7Click to select
+bowsSlot: 13
+crossbowsItem:
+  material: CROSSBOW
+  name: §6Crossbows
+  lore:
+  - §7View crossbow skills
+  - §7Click to select
+crossbowsSlot: 14
+tridentsItem:
+  material: TRIDENT
+  name: §6Tridents
+  lore:
+  - §7View trident skills
+  - §7Click to select
+tridentsSlot: 15
+hoesItem:
+  material: DIAMOND_HOE
+  name: §6Hoes (Scythes)
+  lore:
+  - §7View hoe/scythe skills
+  - §7Click to select
+hoesSlot: 20
+macesItem:
+  material: MACE
+  name: §6Maces
+  lore:
+  - §7View mace skills
+  - §7Click to select
+macesSlot: 21
+spearsItem:
+  material: IRON_SPEAR
+  name: §6Spears
+  lore:
+  - §7View spear skills
+  - §7Click to select
+spearsSlot: 22
+armorItem:
+  material: DIAMOND_CHESTPLATE
+  name: §6Armor
+  lore:
+  - §7View armor skills
+  - §7Click to select
+armorSlot: 23
+backItem:
+  material: ARROW
+  name: §cBack
+  lore:
+  - §7Return to weapon selection
+backSlot: 45
+infoSlot: 49
+lockedPrefix: '&8[LOCKED] '
+unlockedPrefix: '&a[UNLOCKED] '
+activePrefix: '&6[ACTIVE] '
+lockedLore: '&cRequires level %level%'
+clickToActivate: '&aClick to activate this skill'
+clickToDeactivate: '&eClick to deactivate this skill'
+maxActiveSkillsReached: '&cYou already have 3 active skills! Deactivate one first.'
+# Label for the skill bonus type in the skill item lore.
+skillTypeLabel: '&7Type: &f'
+# Label for the skill tier in the skill item lore.
+skillTierLabel: '&7Tier: &f'
+# Format for the tier level display. %tier% = tier number, %level% = required level.
+skillTierLevelFormat: '%tier% (Level %level%)'
+# Label for the skill value at the player's current level.
+skillValueLabel: '&7Value at your level: &a'
+# Title of the info item in the skill selection menu.
+infoItemTitle: '&eSkill Info'
+# Label for the skill type in the info item lore.
+infoSkillTypeLabel: '&7Skill Type: &f'
+# Label for the player's level in the info item lore.
+infoYourLevelLabel: '&7Your Level: &f'
+# Label for the active skills count in the info item lore. %count% = current count.
+infoActiveSkillsLabel: '&7Active Skills: &f%count%/3'
+# Header for the list of active skills in the info item lore.
+infoActiveSkillsHeader: '&6Active Skills:'
+# Prefix for each active skill name in the info item lore.
+infoActiveSkillPrefix: '&7- '
+# Header for the skill unlock levels section in the info item lore.
+infoUnlockLevelsHeader: '&7Skills unlock at levels:'
+# Tier 1 unlock level display in the info item lore.
+infoTier1Unlock: '&a Tier 1: &fLevel 10'
+# Tier 2 unlock level display in the info item lore.
+infoTier2Unlock: '&e Tier 2: &fLevel 25'
+# Tier 3 unlock level display in the info item lore.
+infoTier3Unlock: '&6 Tier 3: &fLevel 50'
+# Tier 4 unlock level display in the info item lore.
+infoTier4Unlock: '&c Tier 4: &fLevel 75'
+# Message sent when a player tries to activate a skill they haven't unlocked. %level% = required level.
+skillRequiresLevelMessage: '&cThis skill requires level %level%!'
+# Message sent when a player deactivates a skill. %skill% = skill name.
+skillDeactivatedMessage: '&eDeactivated skill: %skill%'
+# Message sent when a player activates a skill. %skill% = skill name.
+skillActivatedMessage: '&aActivated skill: %skill%'
+skillTypeName:
+  armor: Armor
+  swords: Swords
+  axes: Axes
+  bows: Bows
+  crossbows: Crossbows
+  tridents: Tridents
+  hoes: Hoes
+  maces: Maces
+  spears: Spears
+bonusTypeName:
+  proc: Proc
+  passive: Passive
+  conditional: Conditional
+  stacking: Stacking
+  cooldown: Cooldown

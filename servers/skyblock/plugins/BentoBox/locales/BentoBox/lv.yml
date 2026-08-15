@@ -1,0 +1,2263 @@
+meta:
+  authors:
+  - BONNe1704
+  - Poslovitch
+  banner: WHITE_BANNER:1:STRIPE_SMALL:RED:STRIPE_LEFT:RED:STRIPE_RIGHT:RED
+prefixes:
+  bentobox: <gold>BentoBox </gold><gray><bold>> </bold></gray>
+  island: salā
+  Island: Sala
+  Islands: Salas
+  an-island: salā
+  islands: saliņas
+general:
+  dialogs:
+    game-mode-selection:
+      title: <green>Izvēlies savu spēli</green>
+  did-you-mean:
+    suggestion: '<gray>Vai jūs domājāt </gray><yellow>[command]</yellow><gray>? Noklikšķiniet
+      šeit vai ierakstiet </gray><green>yes</green><gray>, lai to palaistu.</gray>[run_command:
+      [command]][hover: Noklikšķiniet, lai palaistu [command]]'
+    header: <gray>Vai jūs domājāt kādu no šiem? Noklikšķiniet, lai palaistu:</gray>
+    option: '<yellow>  [command]</yellow>[run_command: [command]][hover: Noklikšķiniet,
+      lai palaistu [command]]'
+  success: <green>Darīts!</green>
+  invalid: Nederīgs!
+  beta: <light_purple><bold>Šī komanda ir beta versijā. Pārliecinieties, ka jums ir
+    dublējumi!</bold></light_purple>
+  errors:
+    command-cancelled: <red>Komanda atcleta.</red>
+    no-permission: <red>Tev nav atļaujas rīkoties ar šo komandu (</red><gray>[permission]</gray><red>).</red>
+    insufficient-rank: <red>Jūsu ranga līmenis nav pietiekami augsts, lai to izdarītu!
+      (</red><gray>[rank]</gray><red></red> )
+    use-in-game: <red>Šī komanda ir pieejama tikai spēlē.</red>
+    use-in-console: <red>Šī komanda ir pieejama tikai konsolē.</red>
+    no-team: <red>Tev nav komandas!</red>
+    no-island: <red>Tev nav sala!</red>
+    player-has-island: <red>Spēlētājam jau ir sala!</red>
+    player-has-no-island: <red>Spēlētājam nav salas!</red>
+    already-have-island: <red>Tev jau ir sala!</red>
+    no-safe-location-found: <red>Neizdevās atrast drošu vietu teleportācijas uz salas.</red>
+    not-owner: <red>Tu neesi šīs salas īpašnieks!</red>
+    player-is-not-owner: <aqua>[name] </aqua><red>nav salas īpašnieks!</red>
+    not-in-team: <red>Spēlētājs nav tavā komandā!</red>
+    offline-player: <red>Šis spēlētājs nav tiešsaitē vai neeksistē.</red>
+    unknown-player: <red>[name] ir nezināms spēlētājs!</red>
+    general: <red>Šī komanda nav gatava/derīga. Sazinies ar administratoru.</red>
+    unknown-command: <red>Nezināma komanda. Izmanto </red><aqua>/[label] help </aqua><red>lai
+      redzētu komandas.</red>
+    wrong-world: <red>Tu neatrodies pareizajā pasaulē, lai to darītu!</red>
+    you-must-wait: <red>Tev ir jāgaida [number]s pirms vari izmantot komandu vēlreiz.</red>
+    must-be-positive-number: <red>[number] nav derīgs pozitīvs numurs.</red>
+    not-on-island: <red>Tu neesi uz [prefix_island]!</red>
+    slow-down: <red>Palēnini. Klikšķini lēnāk.</red>
+  worlds:
+    overworld: Pasaule
+    nether: Elles
+    the-end: Beigas
+commands:
+  help:
+    header: <gray>=========== </gray><red>[label] palīdzība </red><gray>===========</gray>
+    syntax: '<aqua>[usage] </aqua><green>[parameters]</green><gray>: </gray><yellow>[description]</yellow>'
+    syntax-no-parameters: '<aqua>[usage]</aqua><gray>: </gray><yellow>[description]</yellow>'
+    end: <gray>=================================</gray>
+    page: <gray>Lapa </gray><yellow>[page]</yellow><gray> no </gray><yellow>[total]</yellow>
+    parameters: '[command]'
+    description: Palīdzības komanda
+    console: Konsole
+  admin:
+    help:
+      description: admin komanda
+    maxhomes:
+      description: mainīt atļauto māju skaitu šajā [prefix_island] vai spēlētāja [prefix_island]
+      parameters: <number / player> <number> [[prefix_island] nosaukums]
+      max-homes-set: <green>[name] - Iestatīt [prefix_island] maksimālo māju skaitu
+        uz [number]</green>
+      errors:
+        unknown-island: Nezināms [prefix_island]! [name]
+    resethome:
+      description: Atjaunot spēlētāja māju uz noklusējumu
+      parameters: <spēlētājs> [[prefix_island] vārds]
+      cleared: <aqua>Mājas atiestatīšana. [name]</aqua>
+    resets:
+      description: mainīt spēlētāja 'resetus'
+      set:
+        description: uzstāda 'resetus' spēlētājam
+        parameters: <spēlētājs> <reseti>
+        success: <green>Veiksmīgi uzstādītas </green><aqua>[number]</aqua><green>atssākšanas
+          reizes spēlētājam </green><aqua></aqua> [name]<green>.</green>
+      reset:
+        description: uzstāta spēlētājam 'resetus' uz 0
+        parameters: <spēlētājs>
+        success-everyone: <green>Veiksmīgi uzstādītas  </green><aqua>0</aqua><green>
+          atsākšanas </green><aqua>visiem</aqua><green>spēlētājiem .</green>
+        success: <green>Veiksmīgi uzstādītas  </green><aqua>0</aqua><green> atsākšanas
+          </green><aqua>[name]</aqua><green>spēlētājam .</green>
+      add:
+        description: palielina atsākšanu skaitu spēlētājam
+        parameters: <spēlētājs> <cipars>
+        success: <green>Veiksmīgi palielināts par </green><aqua>[number] </aqua><green>atsākšanu
+          skaits priekš </green><aqua></aqua> [name], šobrīd kopā <aqua>[total]</aqua><green>
+          atsākšanas reizes.</green>
+      remove:
+        description: samazina atsākšanu skaitu spēlētājam
+        parameters: <spēlētājs> <cipars>
+        success: <green>Veiksmīgi samazināts par </green><aqua>[number] </aqua><green>atsākšanu
+          skaits priekš </green><aqua></aqua> [name], šobrīd kopā <aqua>[total]</aqua><green>
+          atsākšanas reizes.</green>
+    purge:
+      parameters: '[days]'
+      description: nodzēst salas kas nav aktīvas vairāk par [days] dienām
+      days-one-or-more: Nevar būt mazāks par 1 dienu
+      purgable-islands: Atrastas [number] dzēšamas salas.
+      too-many: "<aqua>Tas ir liels apjoms un var aizņemt ļoti ilgu laiku, lai izdzē\
+        stu.</aqua>\n<aqua>Apsveriet iespēju izmantot Regionerator spraudni pasaules\
+        \ fragmentu</aqua> dzēšanai  \n<aqua>un iestatīt keep-previous-island-on-reset:\
+        \ true BentoBox</aqua> config.yml.  \n<aqua>Pēc tam veiciet iztīrīšanu.</aqua>"
+      purge-in-progress: <red>Notiek salu dzēšana. Izmanto '</red><yellow>[label]
+        purge stop</yellow><red>', lai atceltu.</red>
+      scanning: <green>Skenēšana salām datubāzē. Tas var aizņemt laiku atkarībā no
+        tā, cik</green> daudz jums ir...
+      scanning-in-progress: <red>Skenēšana notiek, lūdzu, gaidiet</red>
+      none-found: <red>Nav atrastas salas, kuras varētu izdzēst.</red>
+      total-islands: <green>Jums ir [number] salas jūsu datu bāzē visās pasaulēs.</green>
+      number-error: <red>Parametram ir jābūt dienu skaitam.</red>
+      confirm: <light_purple>Raksti </light_purple><yellow>[label] purge confirm</yellow><light_purple>,
+        lai sāktu dzēšanu</light_purple>
+      completed: <green>Dzēšana pabeigta.</green>
+      see-console-for-status: Dzēšana uzsākta. Skati terminālī, lai redzētu statusu.
+      no-purge-in-progress: <red>Šobrīd nav nevienas tīrīšanas procedūras.</red>
+      regions:
+        parameters: '[days]'
+        description: Iztīrīt salas, izdzēšot veco reģiona failus
+        confirm: <light_purple>Ievadi </light_purple><aqua>/[label] purge regions
+          confirm</aqua><light_purple>, lai sāktu attīrīt</light_purple>
+      failed: <red>Tīrīšana pabeigta ar kļūdām. Dažus reģionu failus nevarēja izdzēst.
+        Pārbaudiet servera žurnālu, lai uzzinātu detaļas.</red>
+      age-regions:
+        parameters: '[days]'
+        description: 'atkļūdošana/tests: pārrakstiet reģionu failu laika zīmogus,
+          lai tie būtu notīrāmi'
+        done: <green>Novecināti </green><aqua>[number]</aqua><green> reģionu fails(-i)
+          pašreizējā pasaulē.</green>
+      deleted:
+        parameters: ''
+        description: notīrīt reģionu failus jebkuram [prefix_island], kas jau atzīmēts
+          kā dzēsts
+        confirm: <light_purple>Ierakstiet </light_purple><aqua>/[label] purge deleted
+          confirm </aqua><light_purple>, lai noņemtu reģionu failus</light_purple>
+        deferred: <green>Reģionu faili dzēsti. Salu datu bāzes ieraksti tiks noņemti
+          nākamajā servera restartēšanas reizē.</green>
+      protect:
+        description: Pārslēgt salas aizsargāšanu no dzēšanas
+        move-to-island: <red>Sākumā pārvietojies uz salas!</red>
+        protecting: <green>Dzēšanas aizsardzība aktivizēta</green>
+        unprotecting: <green>Dzēšanas aizsardzība noņemta</green>
+      stop:
+        description: Apturēt uzsāktu dzēšanu.
+        stopping: Apstādina dzēšanu
+      unowned:
+        description: Dzēst bezīpašnieku salas - nepieciešams apstiprinājums
+        unowned-islands: <light_purple>Atrastas [number] salas</light_purple>
+        parameters: ''
+        flagged: <green>Atzīmēti </green><aqua>[number] </aqua><green>[prefix_island](s)
+          kā dzēšami. Palaidiet </green><aqua>/[label] purge deleted</aqua><green>,
+          lai noņemtu reģionu failus.</green>
+      status:
+        description: parāda attīrīšanas statusu
+        status: <aqua>[purged] </aqua><green>salas ir izdzēstas no </green><aqua>[purgeable]
+          </aqua><gray>(</gray><aqua>[percentage]</aqua> %<gray>)</gray><green>.</green>
+    team:
+      description: pārvaldīt komandas
+      add:
+        parameters: <īpašnieks> <spēlētājs>
+        description: pievieno spēlētāju īpašnieka salai
+        name-not-owner: <red>[name] nav salas īpašnieks.</red>
+        name-has-island: <red>[name] jau pieder kāda sala. Atreģistrē vai izdzēs to
+          vispirms!</red>
+        success: <aqua>[name]</aqua><green> ir pievienots </green><aqua>[owner]</aqua><green>
+          salai.</green>
+      disband:
+        parameters: <īpašnieks>
+        description: izformē īpašnieka komandu
+        use-disband-owner: <red>Nav īpašnieks! Lieto /[label] disband [owner].</red>
+        disbanded: <red>Admins izformēja tavu komandu!</red>
+        success: <aqua>[name]</aqua><green>komanda ir izformēta.</green>
+      disbandall:
+        description: noņem visus dalībniekus un apakšīpašniekus no katras [prefix_island]
+          šajā pasaulē
+        confirmation: <red>Tas noņems visus dalībniekus un apakšīpašniekus no katras
+          [prefix_island] šajā pasaulē. Trust un coop spēlētāji netiks ietekmēti.
+          Ieraksti apstiprināšanas komandu, lai turpinātu.</red>
+        success: <green>Noņemts </green><aqua>[number]</aqua><green> dalībnieku no
+          </green><aqua>[islands]</aqua><green> [prefix_islands].</green>
+      fix:
+        description: skanē un labot [prefix_island] biedru attiecības datubāzē
+        scanning: Skenējot datubāzi...
+        duplicate-owner: <red>Spēlētājam pieder vairāk nekā viens [prefix_island]
+          datubāzē:</red> [name]
+        player-has: <red>Spēlētājs [name] ir [number] salas</red>
+        duplicate-member: <red>Spēlētājs [name] ir vairāk nekā viens [prefix_island]
+          datu bāzē.</red>
+        rank-on-island: <red>[rank] uz [prefix_island] pie [xyz]</red>
+        fixed: <green>Salabots</green>
+        done: <green>Skatīt</green>
+      kick:
+        parameters: <komandas spēlētājs>
+        description: izmet spēlētāju no komandas
+        cannot-kick-owner: <red>Nevar izmest īpašnieku. Izmanto </red><yellow>setowner</yellow><red>,
+          lai nodotu īpašumtiesības, vai </red><yellow>disband</yellow><red>, lai
+          izformētu komandu.</red>
+        not-in-team: <red>Šis spēlētājs nav komandā.</red>
+        admin-kicked: <red>Admins tevi izmenta no komandas.</red>
+        success: <aqua>[name] </aqua><green>tika izmests no </green><aqua>[owner]</aqua><green>salas.</green>
+      setowner:
+        specify-island: '<red>Nostājieties uz [prefix_island] un palaidiet to spēlē,
+          vai norādiet salas pašreizējo īpašnieku: </red><yellow>setowner <player>
+          <island owner></yellow>'
+        parameters: <spēlētājs>
+        description: iecelt par salas īpašnieku
+        already-owner: <red>[name] jau ir salas īpašnieks!</red>
+        must-be-on-island: <red>Tev jābūt uz [prefix_island], lai iestatītu īpašnieku.</red>
+        confirmation: <green>Vai tiešām vēlies, lai [name] kļūtu par [prefix_island]
+          īpašnieku</green> vietā [xyz]?
+        success: <aqua>[name]</aqua><green>tagad ir šīs salas īpašnieks.</green>
+        errors:
+          at-max: <red>[name] jau pieder [number] [prefix_islands] - iestatījumos
+            vai atļaujās noteiktais maksimums ir [max]. Pielāgojiet viņa atļauju,
+            lai atļautu vairāk.</red>
+        extra-islands: '<red>Brīdinājums: šim spēlētājam tagad pieder [number] salas.
+          Tas ir</red> vairāk nekā atļautais limits pēc iestatījumiem vai atļaujām:
+          [max].'
+      maxsize:
+        parameters: <spēlētājs> <izmērs>
+        description: Iestatīt maksimālo komandas izmēru spēlētāja [prefix_island]
+          (izmantojiet 0, lai atiestatītu uz pasaules noklusējumu)
+        success: <green>Iestatīts </green><aqua>[name]</aqua><green> [prefix_island]
+          maksimālais komandas izmērs uz </green><aqua>[number]</aqua><green>.</green>
+        reset: <green>Atiestatīts </green><aqua>[name]</aqua><green> [prefix_island]
+          maksimālais komandas izmērs uz pasaules noklusējumu (</green><aqua>[number]</aqua><green>).</green>
+    range:
+      description: Admina salas distances komanda
+      invalid-value:
+        too-low: <red>Aizsardzības rādiusam ir jābūt lielākam par </red><aqua>1</aqua><red>!</red>
+        too-high: <red>Aizsardzības rādiusam ir jābūt mazākam vai vienādam ar </red><aqua></aqua>
+          [number]<red>!</red>
+        same-as-before: <red>Aizsardzības rādiuss ir uzstādīts uz </red><aqua>[number]</aqua><red>!</red>
+      display:
+        already-off: <red>Indikātors ir jau izslēgts</red>
+        already-on: <red>Indikātors ir jau ieslēgts</red>
+        description: rādīt/slēpt salas distances indikātoru
+        hiding: <dark_green>Distances indikātors paslēpts</dark_green>
+        hint: |-
+          <red>Barjeras ikona </red><white>rāda pašreizējo salas aizsardzības distances</white> limitu.
+          <gray>Pelēkās daļiņas </gray><white>rāda maksimālo salas distances lielumu.</white>
+          <green>Zaļās daļiņas </green><white>rāda noklusējuma aizsardzības distanci, ja</white> pašreizējā distance no tās atšķiras.
+        showing: <dark_green>Distances indikātors tiek rādīts</dark_green>
+      set:
+        parameters: <spēlētājs> <distance>
+        description: uzstāda salas aizsardzības rādiusa distanci
+        success: <green>Salas aizsardzības distance nomainīta uz </green><aqua>[number]</aqua><green>.</green>
+      reset:
+        parameters: <spēlētājs>
+        description: atiesta aizsardzības distanci uz pasaules noklusējuma vērtību
+        success: <green>Salas aizsardzības distance atiestīta uz </green><aqua>[number]</aqua><green>.</green>
+      add:
+        description: palielina salas aizsardzības rādiusa distanci
+        parameters: <spēlētājs> <attālums>
+        success: <green>Veiksmīgi palielināts </green><aqua>[name]</aqua><green>salas
+          aizsardzības rādiuss līdz</green> <aqua>[total] </aqua><gray>(</gray><aqua>+[number]</aqua><gray>)</gray><green>.</green>
+      remove:
+        description: samazina salas aizsardzības rādiusa distanci
+        parameters: <spēlētājs> <attālums>
+        success: <green>Veiksmīgi samazināts </green><aqua>[name]</aqua><green>salas
+          aizsardzības rādiuss līdz </green><aqua></aqua> [total] <gray>(</gray><aqua>+[number]</aqua><gray>)</gray><green>.</green>
+      removebonus:
+        parameters: <spēlētājs> [id]
+        description: noņem bonusa diapazonus no salas (visus vai vienu pēc id)
+        no-bonus: <red>Šai salai nav noņemamu bonusa diapazonu!</red>
+        unknown-bonus: <red>Šajā salā nav bonusa diapazona ar id </red><aqua>[id]</aqua><red>!</red>
+        success: <green>Noņemti </green><aqua>[number]</aqua><green> bonusa diapazoni
+          no </green><aqua>[name]</aqua><green> salas.</green>
+        success-id: <green>Noņemts bonusa diapazons </green><aqua>[id]</aqua><green>
+          (</green><aqua>[number]</aqua><green>) no </green><aqua>[name]</aqua><green>
+          salas.</green>
+      purgebonus:
+        parameters: <id>
+        description: noņem bonusa diapazonu ar doto id no visām salām (piem., pēc
+          papildinājuma, kas to pievienoja, noņemšanas)
+        none: <red>Nevienai salai nav bonusa diapazona ar id </red><aqua>[id]</aqua><red>!</red>
+        warning: <gold>Šis noņems bonusa diapazonu </gold><aqua>[id]</aqua><gold>
+          no </gold><aqua>[number]</aqua><gold> salām.</gold>
+        success: <green>Bonusa diapazons </green><aqua>[id]</aqua><green> noņemts
+          no </green><aqua>[number]</aqua><green> salām.</green>
+        confirm: <gold>Lai turpinātu, palaidiet komandu vēlreiz ar </gold><aqua>confirm</aqua><gold>.</gold>
+        in-progress: <red>Bonusa diapazonu tīrīšana jau notiek. Lūdzu, uzgaidiet.</red>
+        failed: <red>Neizdevās skenēt salas. Pārbaudiet konsoli.</red>
+    register:
+      parameters: <spēlētājs>
+      description: piereģistrē spēlētāju pie salas, kurai nav īpašnieka un uz kuras
+        tu stāvi
+      registered-island: <green>Piereģistrē spēlētāju pie salas ar koordinātēm [xyz].</green>
+      reserved-island: <green>Sala ir rezērvēta [xyz] priekš spēlētāja.</green>
+      already-owned: <red>Sala jau pieder citam spēlētājam!</red>
+      no-island-here: <red>Šeit neatrodas neviena sala! Apstiprini, lai izveidotu.</red>
+      in-deletion: <gold>Šī sala gaida dzēšanu. Tās reģistrēšana atcels dzēšanu. Ievadi
+        komandu vēlreiz, lai apstiprinātu.</gold>
+      cannot-make-island: <red>Atvaino, bet neizdevās izveidot šeit salu. Iespējams
+        konsulē ir kļūdas</red> paziņojumi.
+      island-is-spawn: <gold>Šī ir sākuma sala. Vai tiešām vēlies turpināt? Ievadi
+        komandu</gold> vēlreiz, lai apstiprinātu.
+    undelete:
+      description: noņem gaidošo dzēšanas statusu no [prefix_island] bez īpašnieka,
+        uz kuras tu stāvi
+      not-in-deletion: <red>Šī [prefix_island] negaida dzēšanu.</red>
+      undeleted-island: <green>Dzēšanas statuss noņemts no [prefix_island] pie [xyz].
+        Tagad tā ir bez īpašnieka.</green>
+    unregister:
+      parameters: <īpašnieks> [x,y,z]
+      description: atreģistrē īpašnieku no salas paturot salas blokus
+      unregistered-island: <green>Spēlētājs atreģistrēts no salas ar koordinātēm [xyz].</green>
+      errors:
+        unknown-island-location: <red>Nezināms [prefix_island] atrašanās vieta</red>
+        specify-island-location: <red>Norādiet [prefix_island] atrašanās vietu x,y,z
+          formātā</red>
+        player-has-more-than-one-island: <red>Spēlētājam ir vairāk nekā viens [prefix_island].
+          Lūdzu, norādiet,</red> kuru.
+    info:
+      parameters: <spēlētājs>
+      description: atgriež informāciju par spēlētāja salu vai esošo pozīciju
+      no-island: <red>Tu neesi uz salas šobrīd...</red>
+      title: ========== Salas informācija ============
+      island-uuid: 'UUID: [uuid]'
+      owner: 'Īpašnieks: [owner] ([uuid])'
+      last-login: 'Pēdējā pieslēgšanās: [date]'
+      last-login-date-time-format: EEE MMM dd HH:mm:ss zzz yyyy
+      deaths: 'Nāves: [number]'
+      resets-left: 'Sākšanas no jauna: [number] (Maksimālais: [total])'
+      max-homes: 'Maksimālais māju skaits: [number]'
+      team-members-title: 'Komandas biedri:'
+      team-owner-format: <green>[name] [rank]</green>
+      team-member-format: <aqua>[name] [rank]</aqua>
+      max-team-size: 'Maksimālais komandas izmērs: [number]'
+      max-coop-size: 'Maksimālais kopā izmērs: [number]'
+      max-trusted-size: 'Maksimālais uzticamo izmērs: [number]'
+      island-protection-center: 'Aizsardzības zonas centrs: [xyz]'
+      island-center: '[prefix_Island] centrs: [xyz]'
+      island-coords: 'Salas kooridinātes: no [xz1] līdz [xz2]'
+      islands-in-trash: <light_purple>Spēlētājam sala ir atkritnē.</light_purple>
+      protection-range: 'Aizsardzības distance: [range]'
+      protection-range-bonus-title: <aqua>Ietver šos bonusus:</aqua>
+      protection-range-bonus: 'Bonuss: [number]'
+      purge-protected: Sala ir aizsargāta no dzēšanas
+      deletable: <red>[prefix_Island] ir atzīmēts dzēšanai un gaida reģiona notīrīšanu.</red>
+      max-protection-range: 'Lielākā aizsardzības distance salas vēsturē: [range]'
+      protection-coords: 'Aizsardzības koordinātes: no [xz1] līdz [xz2]'
+      is-spawn: Šī ir sākuma sala
+      banned-players: 'Spēlētāji, kam liegts atrasties uz salas:'
+      banned-format: <red>[name]</red>
+      unowned: <red>Bez īpašnieka</red>
+      bundle: '<green>Zīmējumu komplekts, kas izmantots, lai izveidotu salu: </green><aqua>[name]</aqua>'
+    switch:
+      description: Pārslēdz aizsardzības pārkāpšanu
+      op: <red>Servera operātors vienmēr var pārkāpt aizsardzību.</red>
+      removing: Noņem aizsardzības pārkāpšanu...
+      adding: Ieslēdz aizsardzības pārkāpšanu...
+    switchto:
+      parameters: <spēlētājs> <numurs>
+      description: uzstāda spēlētāja salu kā pirmo (vai doto) atkritnē
+      out-of-range: <red>Numuram jābūt starp 1 un [number]. Lieto <bold>[label] trash
+        [player]</bold></red><red>,</red> lai redzētu salas numuru
+      cannot-switch: <red>Pārslēgšana neizdevās! Skaties kļūdu paziņojumu konsulē.</red>
+      success: <green>Spēlētāja sala veiksmīgi pārslēgta uz uzstādīto numuru.</green>
+    trash:
+      no-unowned-in-trash: <red>Nav salas atkritnē bez īpašniekiem</red>
+      no-islands-in-trash: <red>Spēlētājam nav salas atkritnē</red>
+      parameters: '[spēlētājs]'
+      description: attaino salas ar vai bez īpašniekiem, kas atrodas atkritnē
+      title: <light_purple>=========== Salas atkritnē ===========</light_purple>
+      count: <bold><light_purple>Sala [number]:</light_purple></bold>
+      use-switch: <green>Lieto <bold>[label] switchto <spēlētājs> <numurs></bold></green><green>,
+        lai Pārslēdzos uz</green> spēlētāja salu no atkritnes.
+      use-emptytrash: <green>Lieto <bold>[label] emptytrash [spēlētājs]</bold></green><green>,
+        lai iztīrītu atkritni.</green>
+    emptytrash:
+      parameters: '[spēlētājs]'
+      description: iztīra atkritni no spēlētāja salām vai salām bez īpašnieka
+      success: <green>Atkritne ir iztīrīta.</green>
+    version:
+      description: attaino BentoBox un papildinājumu versijas
+    setrange:
+      parameters: <spēlētājs> <distance>
+      description: uzstāda aizsardzības distanci spēlētāja salai
+      range-updated: Aizsardzības distance uzstādīta uz [number]
+    placeholders:
+      description: atvērt vietturžu pārlūku
+    dump-placeholders:
+      description: eksportēt visus reģistrētos vietturžus markdown failā
+      dumped: <green>Vietturžu saraksts ierakstīts [file]</green>
+      error: '<red>Nevarēja ierakstīt vietturžu sarakstu: [message]</red>'
+    reload:
+      description: pārlādēt
+    tp:
+      parameters: <spēlētājs> [cits spēlētājs]
+      description: pārvietoto uz spēlētāja salu
+      manual: <red>Neizdevās atrast drošu nosēšanās vietu! Pārvietojies manuāli ar
+        tp</red> blakus <aqua>[location]</aqua><red>, lai pārbaudītu iemeslu.</red>
+    tpuser:
+      parameters: <teleporting player> <[prefix_island]'s spēlētājs> [spēlētāja sala]
+      description: teleportēt spēlētāju uz otra spēlētāja [prefix_island]
+    getrank:
+      parameters: <spēlētājs>
+      description: atgriež spēlētāja rangu komandā
+      rank-is: <green>Spēlētājam ir [rank] rangs uz viņa salas.</green>
+    setrank:
+      parameters: <spēlētājs> <rangs>
+      description: uzstāda spēlētājam rangu uz viņa salas
+      unknown-rank: <red>Nezināms rangs!</red>
+      not-possible: <red>Rangam ir jābūt lielākam par apmeklētāju</red>
+      rank-set: <green>Spēlētājam nomainīts rangs no [from] uz [to].</green>
+    setprotectionlocation:
+      parameters: '[x y z koordinātas]'
+      description: iestatīt pašreizējo atrašanās vietu vai [x y z] kā [prefix_island]'s
+        aizsardzības zonas centru
+      island: <red>Tas ietekmēs [prefix_island] pie [xyz], ko pieder '[name]'.</red>
+      confirmation: <red>Vai tu esi pārliecināts, ka vēlies iestatīt [xyz] kā aizsardzības</red>
+        centru?
+      success: <green>Veiksmīgi iestatīts [xyz] kā aizsardzības centrs.</green>
+      fail: <red>Neizdevās iestatīt [xyz] kā aizsardzības centru.</red>
+      island-location-changed: <green>[user] mainīja [prefix_island] aizsardzības
+        centru uz [xyz].</green>
+      xyz-error: '<red>Norādiet trīs veselos koordinates: piemēram, 100 120 100</red>'
+    setspawn:
+      description: uzstāda kā sākuma salu šajā pasaulē visiem spēlētājiem
+      already-spawn: <red>Šī sala jau ir uzstādīta kā sākuma sala!</red>
+      no-island-here: <red>Šeit nav nevienas salas.</red>
+      confirmation: <red>Vai tiešām vēlies uzstādīt šo salu kā sākuma salu?</red>
+      success: <green>Šī sala ir veiksmīgi uzstādīta kā sākuma sala šajā pasaulē.</green>
+    setspawnpoint:
+      description: iestatīt pašreizējo atrašanās vietu kā dzimšanas punktu šai [prefix_island]
+      no-island-here: <red>Šeit nav [prefix_island].</red>
+      confirmation: <red>Vai jūs tiešām vēlaties iestatīt šo vietu kā šīs salas piedzimšanas</red>
+        punktu?
+      success: <green>Veiksmīgi iestatīta šī atrašanās vieta kā dzimšanas punkts šai</green>
+        [prefix_island].
+      island-spawnpoint-changed: <green>[user] mainīja [prefix_island] respawn punktu.</green>
+    settings:
+      parameters: '[spēlētājs]'
+      description: atver sistēmas vai spēlētāja salas iestatījumus
+      unknown-setting: <red>Nezināms iestatījums</red>
+    blueprint:
+      parameters: <load/copy/paste/pos1/pos2/save>
+      description: manipulē ar shēmām
+      bedrock-required: <red>Vismaz vienam klintsakmenim ir jābūt shēmā!</red>
+      copy-first: <red>Kopē shēmu sākumā!</red>
+      file-exists: <red>Fails jau eksistē, vai pārrakstīt?</red>
+      no-such-file: <red>Nav šāda faila!</red>
+      could-not-load: <red>Neizdevās ielādēt šo failu!</red>
+      could-not-save: '<red>Hmm, kaut kas nogāja greizi saglabājot failu: [message]</red>'
+      set-pos1: <green>Pozīcija 1 uzstādīta uz [vector]</green>
+      set-pos2: <green>Pozīcija 2 uzstādīta uz [vector]</green>
+      set-different-pos: <red>Uzstādi citu pozīciju - šī jau ir uzstādīta!</red>
+      need-pos1-pos2: <red>Uzstādi pos1 un pos2 sākumā!</red>
+      copying: <aqua>Kopē blokus...</aqua>
+      copied-blocks: <aqua>Nokopēti [number] bloki iekš starpliktuves.</aqua>
+      look-at-a-block: <red>Skaties uz bloku nevariāk kā 20 bloku attālumā, lai uzstādītu.</red>
+      mid-copy: <red>Kopēšana vēl notiek. Pagaidi, kad tā beidzas.</red>
+      copied-percent: <gold>Nokopēti [number]%</gold>
+      copy:
+        parameters: '[air]'
+        description: kopē starpliktuvi no pos1 uz pos2 un arī ar AIR blokiem, ja prasīts
+      sink:
+        description: iestatiet šo plānu, lai tas iegremdētos okeāna dibenā, kad tas
+          tiek ielikt.
+        status: <green>Zīmējums būs [status] </green><green>, kad to ieliks.</green>
+        sink: <red>iegremdēts</red>
+        not-sink: <aqua>neiegremdēts</aqua>
+        no-clipboard: <red>Klipbordā nav nevienas plāna. Ielādējiet vai kopējiet kaut
+          ko.</red>
+      delete:
+        parameters: <nosaukums>
+        description: dzēš salas shēmas plānu
+        no-blueprint: <aqua>[name] </aqua><red>neeksistē.</red>
+        confirmation: |-
+          <red>Vai tiesām vēlies dzēst šo salas shēmas plānu?</red>
+          <red>Tiklīdz dzēsts, to nevarēs vairs atjaunot.</red>
+        success: <green>Veiksmīgi dzēts salas shēmas plāns </green><aqua>[name]</aqua><green>.</green>
+      load:
+        parameters: <shēmas nosaukums>
+        description: ielādē shēmu starpliktuvē
+      list:
+        description: attaino visas pieejamās shēmas
+        no-blueprints: <red>Nav shēmas iekš blueprints mapītes!</red>
+        available-blueprints: <green>Šīs shēmas ir pieejamas ielādei:</green>
+      origin:
+        description: uzstāda shēmas sākuma punktu tavā pozīcijā
+      paste:
+        description: ielīmē starpieliktuvi šajā pozīcijā
+        pasting: <green>Ielīmē...</green>
+      pos1:
+        description: uzstāda pirmo stūri priekš kuboīda iekš starpieliktuves
+      pos2:
+        description: uzstāda otro stūri priekš kuboīda iekš starpieliktuves
+      save:
+        parameters: <shēmas nosaukums>
+        description: saglabā kopēto shēmu no starpieliktuves
+      rename:
+        parameters: <shēmas plāna nosaukums> <jaunais nosaukums>
+        description: pārsaukt shēmas plānu
+        success: <green>Shēmas plāns </green><aqua>[old] </aqua><green>veiksmīgi pārsaukts
+          par </green><aqua>[name]</aqua><green>.</green>
+        pick-different-name: <red>Lūdzu izvēlies citu shēmas plāna nosaukumu.</red>
+      management:
+        back: Atpakaļ
+        instruction: Noklikšķini uz shēmu un tikai tad šeit
+        title: Shēmu saišķu pārvaldnieks
+        edit: Uzspied, lai labotu
+        rename: Labais klikšķis, lai pārdēvētu
+        edit-description: Uzspied, lai labotu aprakstu
+        world-name-syntax: '[name] pasaule'
+        world-instructions: |
+          Novieto shēmas labajā pusē
+          lai tās uzstādītu
+        trash: Atkritne
+        no-trash: Nevar izmest
+        trash-instructions: Labais klikšķis, lai dzēstu
+        no-trash-instructions: Nevar izmest noklusējuma komplektu
+        permission: Atļaujas
+        no-permission: Nav atļauts
+        perm-required: Nepieciešams
+        no-perm-required: Nevar iestatīt atļauju noklusējuma komplektam
+        perm-not-required: Nav nepieciešams
+        perm-format: <yellow></yellow>
+        remove: Labais klikšķis, lai noņemtu
+        blueprint-instruction: |
+          Uzspied, lai izvēlētos,
+          un tad pievieno shēmu.
+          Labais klikšķis, lai
+          pārdēvētu.
+        select-first: Izvēlies shēmu vispirms
+        new-bundle: Jauns shēmu saišķis
+        new-bundle-instructions: Uzspied, lai izveidotu jaunu shēmu saišķi
+        name:
+          quit: iziet
+          prompt: Ieraksti vārdu vai 'iziet', lai izietu
+          too-long: <red>Pārāk garš</red>
+          pick-a-unique-name: Lūdzu izvēlies unikālu nosaukumu
+          stripped-char-in-unique-name: <red>Daži simboli tika noņemti, jo tie nav
+            atļauti. </red><green>Jaunā ID būs </green><aqua></aqua> [name]<green>.</green>
+          success: Izdevās!
+          conversation-prefix: '>'
+        description:
+          quit: iziet
+          instructions: |
+            Ieraksti vairāku rindiņu tekstu priekš
+            [name] un 'iziet' jaunā rindā, lai
+            pabeigtu.
+          default-color: ''
+          success: Izdevās!
+          cancelling: Atceļ
+        slot: <white>Vēlamā vieta [number]</white>
+        slot-instructions: |
+          <green>Krisais klikšķis, lai palielinātu</green>
+          <green>Labais klikšķis, lai samazinātu</green>
+        times: |-
+          <green>Maksimālais vienlaicīgo lietojumu skaits spēlētājam</green>
+          <green>Kreisa peles klikšķis, lai palielinātu</green>
+          <green>Labā peles klikšķis, lai samazinātu</green>
+        unlimited-times: Neierobežots
+        maximum-times: Maks. [number] reizes
+        cost: |
+          <green>[prefix_Island] izmaksas</green>
+          <green>Kreisais klikšķis +1</green>
+          <green>Labais klikšķis -1</green>
+          <green>Shift priekš +/-100</green>
+        no-cost: Bezmaksas
+        cost-amount: 'Izmaksas: [cost]'
+        next-page: <white>Nākamā lapa</white>
+        previous-page: <white>Iepriekšējā lapa</white>
+        edit-commands: Noklikšķiniet, lai rediģētu komandas
+        no-commands: Nav iestatītu komandu
+        commands:
+          quit: iziet
+          clear: notīrīt
+          instructions: |
+            <white>Ievadiet komandas, kas jāizpilda, ielīmējot rasējumu [name].</white>
+            <white>Atbalsta <green>[player]</green> un <green>[owner]</green> vietturžus.</white>
+            <white>Pievienojiet <green>[SUDO]</green> priekšā, lai izpildītu kā spēlētājs.</white>
+            <white>Ierakstiet 'notīrīt', lai noņemtu visas komandas šajā sesijā.</white>
+            <white>Ierakstiet 'iziet' atsevišķā rindā, lai pabeigtu.</white>
+          default-color: ''
+          success: Veiksmīgi!
+          cancelling: Atcelšana
+    resetflags:
+      parameters: '[karogs]'
+      description: Atiestatī visu salu noklusējuma karodziņu iestatījumus no config.yml
+      confirm: <dark_red>Šis atjaunos visus karogus uz sākotnējām vērtībām priekš
+        visām salām!</dark_red>
+      success: <green>Veiksmīgi atiestatīti visi salu iestatījumi uz sākotnējām vērtībām.</green>
+      success-one: <green>[name] karogs ir atjaunots uz sākotnējo vērtību visās salās.</green>
+    world:
+      description: Pārvaldīt pasaules iestatījumus
+    delete:
+      parameters: '[spēlētājs]'
+      description: izdzēš spēlētāja salu vai salu, uz kuras tu stāvi, ja spēlētājs
+        nav norādīts
+      cannot-delete-owner: <red>Visi spēlētāja komandas biedriem ir jābūt izmestiem
+        no komandas pirms</red> salas dzēšanas.
+      deleted-island: <green>Sala ar centru </green><yellow>[xyz] </yellow><green>tika
+        veiksmīgi dzēsta.</green>
+    deletehomes:
+      parameters: <spēlētājs>
+      description: izdzēš visas nosauktās mājas no [prefix_an-island]
+      warning: <red>Visi nosauktie mājokļi tiks izdzēsti no [prefix_island]!</red>
+    why:
+      parameters: <spēlētājs>
+      description: ieslēdz/izslēdz kļūdu atrašanas paziņojumus konsulē
+      turning-on: Ieslēdz kļūdu atrašanas ziņojumus priekš [name].
+      turning-off: Izslēdz kļūdu atrašanas ziņojumus priekš [name].
+    deaths:
+      description: maina nāvju skaitu spēlētājam
+      reset:
+        description: uzstāda nāvju skaitu spēlētājam uz 0
+        parameters: <spēlētājs>
+        success: <green>Spēlētājam </green><aqua>[name]</aqua><green>nāvju skaits
+          uzstādīts uz </green><aqua>0</aqua><green>.</green>
+      set:
+        description: maina nāvju skaitu spēlētājam
+        parameters: <spēlētājs> <nāves>
+        success: <green>Spēlētājam </green><aqua>[name]</aqua><green>nāvju skaits
+          uzstādīts uz </green><aqua>[number]</aqua><green>.</green>
+      add:
+        description: palielina nāvju skaitu spēlētājam
+        parameters: <spēlētājs> <nāvju skaits>
+        success: <green>Veiksmīgi palielināts nāvju skaits par </green><aqua>[number]
+          </aqua><green>priekš </green><aqua></aqua> [name], kopā sasniedzot <aqua>[total]</aqua><green>
+          nāves.</green>
+      remove:
+        description: samazina nāvju skaitu spēlētājam
+        parameters: <spēlētājs> <nāvju skaits>
+        success: <green>Veiksmīgi samazināts nāvju skaits par </green><aqua>[number]
+          </aqua><green>priekš </green><aqua></aqua> [name], kopā sasniedzot <aqua>[total]</aqua><green>
+          nāves.</green>
+    resetname:
+      description: atsākt spēlētāja [prefix_island] vārdu
+      success: <green>Veiksmīgi atiestatīts [name]'s [prefix_island] nosaukums.</green>
+  bentobox:
+    description: BentoBox admina komandas
+    perms:
+      description: rāda efektīvās atļaujas BentoBox un papildinājumiem YAML formātā
+    about:
+      description: parādīt autortiesības un licenses informāciju
+    placeholders:
+      description: atvērt vietturžu pārlūku
+    dump-placeholders:
+      description: eksportēt visus reģistrētos vietturžus markdown failā
+      dumped: <green>Vietturžu saraksts ierakstīts [file]</green>
+      error: '<red>Nevarēja ierakstīt vietturžu sarakstu: [message]</red>'
+    reload:
+      description: parlādēt iestatījumus, papildinājumus (ja atbalstīts) un valodas
+      locales-reloaded: <dark_green>Valodas faili pārlādēti.</dark_green>
+      addons-reloaded: <dark_green>Papildinājumi pārlādēti.</dark_green>
+      settings-reloaded: <dark_green>Iestatījumi pārlādēti.</dark_green>
+      addon: <gold>Pārlādē </gold><aqua>[name]</aqua><dark_green>.</dark_green>
+      addon-reloaded: <aqua>[name] </aqua><dark_green>pārlādēts.</dark_green>
+      warning: '<red>Uzmanību: Pārlādēšana var izraisīt nestabilitāti, tādēļ, ja</red>
+        saskarieties ar problēmām, pārstartējiet serveri.'
+      unknown-addon: <dark_green>Nezināms papildinājums!</dark_green>
+      locales:
+        description: pārlādē vietējās valodas
+    version:
+      plugin-version: '<dark_green>BentoBox versija: </dark_green><dark_aqua>[version]</dark_aqua>'
+      description: parādīt BentoBox un papildinājumu versijas
+      loaded-addons: 'Ielādētie Papildinājumi:'
+      loaded-game-worlds: 'Ielādētās spēles pasaules:'
+      addon-syntax: <dark_green>[name] </dark_green><dark_aqua>[version] </dark_aqua><gray>(</gray><dark_aqua>[state]</dark_aqua><gray>)</gray>
+      game-world: '<dark_green>[name] </dark_green><gray>(</gray><dark_aqua>[addon]</dark_aqua><gray>):
+        </gray><green>Overworld</green><gray>, </gray>Nether<gray>, </gray>End'
+      server: <dark_green>Darbojas uz </dark_green><dark_aqua>[name] [version]</dark_aqua><dark_green>.</dark_green>
+      database: '<dark_green>Databāze: </dark_green><dark_aqua>[database]</dark_aqua>'
+    manage:
+      description: parādīt pārvaldīšanas paneli
+    catalog:
+      description: parādīt papildinājumu katalogu
+    locale:
+      description: veikt valodas faila analīzi
+      see-console: |-
+        <green>Pārbaudi izdrukas, lai redzētu trūkstošos tulkojumus.</green>
+        <green>Šī komanda var atgiezt pārāk daudz teksta, lai to rādītu sarakstē...</green>
+    migrate:
+      description: Migrē no vienas datubāzes uz citu
+      players: <gold>Pārceļ spēlētājus</gold>
+      names: <gold>Pārceļ vārdus</gold>
+      addons: <gold>Pārceļ papildinājumus</gold>
+      class: <gold>Pārceļ [description]</gold>
+      migrated: <green>Migrācija pabeigta!</green>
+      completed: '[prefix_bentobox]<green>Pabeigta</green>'
+    rank:
+      description: saraksts, pievienot vai noņemt rangu
+      parameters: <green>[list | add | remove] [rank reference] [rank value]</green>
+      add:
+        success: <green>Pievienots [rank] ar vērtību [number]</green>
+        failure: <red>Neizdevās pievienot [rank] ar vērtību [number]. Varbūt dublikāts?</red>
+      remove:
+        success: <green>Noņemts [rank]</green>
+        failure: <red>Neizdevās noņemt [rank]. Nezināma ranga.</red>
+      list: <green>Reģistrētās ranga ir šādas:</green>
+  confirmation:
+    confirm: <red>Ievadi komandu atkārtoti </red><aqua>[seconds]s</aqua><red>laikā,
+      lai apstiprinātu.</red>
+    previous-request-cancelled: <gold>Iepriekšējais apstiprinājumu pieprasījums ir
+      apturēts.</gold>
+    request-cancelled: <red>Apstiprinājuma noilgums - </red><aqua>pieprasījums apturēts.</aqua>
+    title: <red>Vai tu esi pārliecināts?</red>
+    dialog-body: <gray>Apstiprini, lai turpinātu, vai atcel.</gray>
+    buttons:
+      confirm: <green>Apstiprināt</green>
+      cancel: <red>Atcelt</red>
+  delay:
+    previous-command-cancelled: <red>Iepriekšēja komanda tika atcelta!</red>
+    stand-still: <gold>Apstājies! Teleportēšana notiks pēc [seconds] sekundēm</gold>
+    moved-so-command-cancelled: <red>Tu pakustējies. Teleportēšana atcelta!</red>
+  island:
+    about:
+      description: Par šo režīmu
+    go:
+      parameters: '[mājas numurs]'
+      description: pārvieto tevi uz tavu salu
+      teleport: <green>Tu tiec pārvietots uz savu salu.</green>
+      in-progress: <green>Teleportēšana notiek, lūdzu, gaidiet...</green>
+      teleported: <green>Esi pārvietots uz savu salu </green><yellow>#[number].</yellow>
+      failure: <red>Teleportācija neizdevās kāda iemesla dēļ. Lūdzu, mēģiniet vēlreiz</red>
+        vēlāk.
+      unknown-home: <red>Nezināms mājas nosaukums!</red>
+      picker:
+        title: <green>Kurp vēlies doties?</green>
+    help:
+      description: Galvenā salas komanda
+    spawn:
+      description: pārvieto tevi uz sākumu
+      teleporting: <green>Tu tiec pārvietots uz sākumu.</green>
+      no-spawn: <red>Šai pasaulei nav sākums.</red>
+    create:
+      description: izveido salu, ar iespēju izmantot shēmas (nepieciešamas atļaujas)
+      parameters: <shēma>
+      too-many-islands: <red>Šajā pasaulē ir sasniegts salu limits. Tavai salai nav
+        vietas.</red>
+      cannot-create-island: <red>Neizdevās atrast brīvu salas vietu laikā, mēģini
+        vēlreiz...</red>
+      unable-create-island: <red>Neizdevās izveidot tavu salu, ziņo par kļūdu administratoram.</red>
+      creating-island: <green>Tiek veidota tava sala. Uzgaidi mirklīti...</green>
+      you-cannot-make: <red>Tu vairs nevari radīt nevienu salu!</red>
+      max-uses: <red>Tu vairs nevari izveidot tādu pašu [prefix_island]!</red>
+      you-cannot-make-team: <red>Komandas dalībnieki nevar izveidot salas tajā pašā
+        pasaulē kā viņu</red> komanda [prefix_island].
+      pasting:
+        estimated-time: '<green>Aptuvenais laiks: </green><aqua>[number] </aqua><green>sekundes.</green>'
+        blocks: '<green>Būvē ik pa blokam: bloku skaits </green><aqua>[number] </aqua><green>...</green>'
+        entities: '<green>Aizpilda ar radībām: kopā </green><aqua>[number] </aqua><green>radības...</green>'
+        dimension-done: <green>[prefix_Island] pasaulē [world] ir uzbūvēta.</green>
+        done: <green>Darīts! Tava sala ir gatava un gaida tevi!</green>
+      pick: <green>Izvēlies salas veidu</green>
+      cannot-afford: '<red>Jūs nevarat to atļauties! Izmaksas: [cost]</red>'
+      unknown-blueprint: <red>Šī shēma nav ielādēta vai tā neeksistē.</red>
+      on-first-login: <green>Sveicināts! Mums ir nepieciešamas pāris sekundes tavas
+        salas</green> sagatavošanai.
+      you-can-teleport-to-your-island: <green>Tu vari pārvietoties uz savu salu, kad
+        vien vēlies.</green>
+    deletehome:
+      description: dzēst mājvietas atrašanās vietu
+      parameters: '[Mājas vārds]'
+    homes:
+      description: uzskaiti savas mājas
+    info:
+      description: parāda informāciju par tavu vai spēlētāja salu
+      parameters: <spēlētājs>
+    near:
+      description: Rāda salas īpašniekus, kas ir tev apkārt
+      parameters: ''
+      the-following-islands: <green>Sekojošās salas ir tev apkārt:</green>
+      syntax: <gold>[direction]- </gold><green>[name]</green>
+      north: Ziemeļos
+      south: Dienvidos
+      east: Austrumos
+      west: Rietumos
+      no-neighbors: <red>Tava salai blakus nav neviena sala ar īpašnieku!</red>
+    reset:
+      description: pārstartē salu vai izdzēš iepriekšējo
+      parameters: <shēma>
+      none-left: <red>Tu esi sasniedzis restartu limitu!</red>
+      resets-left: <red>Tev ir palikušas </red><aqua>[number] </aqua><red>atstatīšanas
+        reizes</red>
+      confirmation: |-
+        <red>Vai esi pārliecināts, ka vēlies to darīt?</red>
+        <red>Visi salas biedri tiks izmesti no komandas, nāksies viņus aicināt</red> vēlreiz.
+        <red>Šai darbībai nav atpakaļceļa. Salu nevarēs atjaunot!</red>
+      kicked-from-island: <red>Tu esi izmests no salas iekš [gamemode], jo tās īpašnieks
+        savu salu</red> atstatīja.
+    sethome:
+      description: uzstāda teleportācijas mājas punktu
+      must-be-on-your-island: <red>Tev nepieciešams būt uz savas salas!</red>
+      too-many-homes: <red>Nevar iestatīt - jūsu [prefix_island] ir maksimāli [number]
+        mājas.</red>
+      home-set: <gold>Tavas salas mājas punkts uzstādīts šajā punktā.</gold>
+      homes-are: <gold>[prefix_Island] mājas ir:</gold>
+      home-list-syntax: <gold>[name]</gold>
+      click-to-teleport: <green>Noklikšķiniet, lai teleportētos!</green>
+      nether:
+        not-allowed: <red>Tev nav atļaujas uzstādīt mājas punktu Ellē.</red>
+        confirmation: <red>Vai tiešām vēlies uzstādīt mājas punktu Ellē?</red>
+      the-end:
+        not-allowed: <red>Tev nav atļaujas uzstādīt mājas punktu Beigās.</red>
+        confirmation: <red>Vai tiešām vēlies uzstādīt mājas punktu Beigās?</red>
+      parameters: '[mājas numurs]'
+    setname:
+      description: uzstāda nosaukumu tavai salai
+      name-too-short: <red>Pārāk īss. Minimālais izmērs ir [number] simboli.</red>
+      name-too-long: <red>Pārāk garšs. Maksimālais izmērs ir [number] simboli.</red>
+      name-already-exists: <red>Sala ar šādu nosaukumu jau eksistē šajā spēles režīmā.</red>
+      parameters: <nosaukums>
+      success: <green>Salas nosaukums veiksmīgi nomainīts uz </green><aqua>[name]</aqua><green>.</green>
+    renamehome:
+      description: pārdēvēt mājas atrašanās vietu
+      parameters: '[Mājas vārds]'
+      enter-new-name: <gold>Ievadiet jauno vārdu</gold>
+      already-exists: <red>Tas nosaukums jau pastāv, mēģini citu nosaukumu.</red>
+    resetname:
+      description: noņemt salas nosaukumu
+      success: <green>Tavas salas nosaukums atjaunots veiksmīgi.</green>
+    team:
+      description: pārvaldīt savu komandu
+      errors:
+        teams-disabled: <red>Komandas šajā pasaulē ir atspējotas. Tā vietā izmanto
+          trust vai coop.</red>
+      gui:
+        titles:
+          team-panel: Komandas vadība
+        buttons:
+          status:
+            name: Status
+            description: Komandas statuss
+          rank-filter:
+            name: Rangu filtrs
+            description: <green>Noklikšķiniet, lai mainītu rangu</green>
+          invitation: Ielūgums
+          invite:
+            name: Aicināt spēlētāju
+            description: |-
+              <green>Spēlētājiem jābūt tajā</green>
+              <green>pašā pasaulē kā jums, lai tiktu</green>
+              <green>parādīti sarakstā.</green>
+          member:
+            # Name shown on a member's head in the team panel. Placeholders: [name], [display_name], [last_seen].
+            name: '[display_name][last_seen]'
+            # First line of a member's description (their rank). Placeholder: [rank].
+            description: '[rank]'
+            # Suffix appended to an offline member's name. Placeholder: [last_seen]. Blank for online members.
+            last-seen: ' <gray>([last_seen])</gray>'
+        tips:
+          LEFT:
+            name: <aqua>Kreiso klikšķi</aqua>
+            invite: <green>, lai uzaicinātu spēlētāju</green>
+          RIGHT:
+            name: <aqua>Ar peles labo pogu klikšķiniet</aqua>
+          SHIFT_RIGHT:
+            name: <aqua>Nospiediet ar labo peles taustiņu</aqua>
+            reject: <green>, lai atteiktos</green>
+            kick: <green>, lai izsistu spēlētāju</green>
+            leave: <green>, lai atstātu komandu</green>
+          SHIFT_LEFT:
+            name: <aqua>Nospiediet kreiso peli, turēdami Shift</aqua>
+            accept: <green>, lai pieņemtu</green>
+            setowner: |-
+              <green>, lai noteiktu īpašnieku</green>
+              <green>šim spēlētājam</green>
+      info:
+        description: parādīt detalizētu informāciju par tavu komandu
+        member-layout:
+          online: <green><bold>o </bold></green><white>[name]</white>
+          offline: <red><bold> o </bold></red><white>[name] </white><gray>([last_seen])</gray>
+          offline-not-last-seen: <red><bold> o </bold></red><white>[name]</white>
+        last-seen:
+          layout: pirms <aqua>[number] </aqua><gray>[unit]</gray>
+          days: dienas
+          hours: stundas
+          minutes: minūtes
+        header: |-
+          <white>--- </white><green>Komandas detaļas </green><white>---</white>
+          <green>Biedri: </green><aqua>[total]</aqua><gray>/</gray><aqua>[max]</aqua>
+          <green>Biedri tiešsaitē: </green><aqua>[online]</aqua>
+        rank-layout:
+          owner: <gold>[rank]:</gold>
+          generic: <gold>[rank] </gold><gray>(</gray><aqua>[number]</aqua><gray>)</gray><gold>:</gold>
+      coop:
+        description: uzstādīt spēlētājam sabiedrotā rangu
+        parameters: <spēlētājs>
+        cannot-coop-yourself: <red>Tu nevari uzlikt sev šo rangu!</red>
+        already-has-rank: <red>Spēlētājam jau ir šis rangs!</red>
+        you-are-a-coop-member: <dark_green>Tu esi uzstādīts kā sabiedrotajs spēlētājam
+          [name]</dark_green>
+        success: <green>Sabiedrotā rangs uzstādīts spēlētājam </green><aqua>[name].</aqua>
+        name-has-invited-you: <green>[name] ielūdza tevi pievienoties savai salai
+          kā sabiedrotais.</green>
+      uncoop:
+        description: noņemt spēlētājam sabiedrotā rangu
+        parameters: <spēlētājs>
+        cannot-uncoop-yourself: <red>Tu nevari noņemt sev sabiedrotā rangu!</red>
+        cannot-uncoop-member: <red>Tu nevari noņemt šo rangu komandas spēlētājam!</red>
+        player-not-cooped: <red>Spēlētājs nav tavs sabiedrotais!</red>
+        you-are-no-longer-a-coop-member: <red>Tu vairs neesi sabiedrotais [name] salā.</red>
+        all-members-logged-off: <red>Visi salas spēlētāji ir izgājuši, tā ka tu vairs
+          neesi sabiedrotais</red> [name] salā.
+        success: <aqua>[name] </aqua><green>vairs nav sabiedrotais uz tavas salas.</green>
+        is-full: <red>Tu nevari pievienot nevienu citu.</red>
+      trust:
+        description: uzstādīt spēlētājam uzticams rangu
+        parameters: <spēlētājs>
+        trust-in-yourself: <red>Tu jau sev esi uzticams!</red>
+        name-has-invited-you: <green>[name] ielūdza tevi pievienoties savai salai
+          kā uzticams.</green>
+        player-already-trusted: <red>Spēlētājam jau ir šis rangs!</red>
+        you-are-trusted: <dark_green>Spēlētājs [name] tev uzticas!</dark_green>
+        success: <green>Uzticamā rangs uzstādīts spēlētājam </green><aqua>[name]</aqua><green>.</green>
+        is-full: <red>Tu nevar uzticēties nevienam citam. Uzmani muguru!</red>
+      untrust:
+        description: noņemt spēlētājam uzticams rangu
+        parameters: <spēlētājs>
+        cannot-untrust-yourself: <red>Tu nevari noņemt sev šo rangu!</red>
+        cannot-untrust-member: <red>Tu nevari noņemt šo rangu komandas spēlētājam!</red>
+        player-not-trusted: <red>Spēlētājam nav šis rangs!</red>
+        you-are-no-longer-trusted: <red>Spēlētājs [name] vairs tev neuzticas!</red>
+        success: <aqua>[name] </aqua><green>vairs nav uzticamais uz tavas salas.</green>
+      invite:
+        description: uzaicini spēlētāju pievienoties tavai salai
+        invitation-sent: <green>Ielūgums nosūtīts [name]</green>
+        dialog:
+          title: <green>Komandas ielūgums no [name]</green>
+          body: <gray>[name] uzaicināja tevi pievienoties savai salai. Pieņemt?</gray>
+          accept: <green>Pieņemt</green>
+          decline: <red>Noraidīt</red>
+        removing-invite: <red>Ielūgumu atsauc</red>
+        name-has-invited-you: <green>[name] ielūdza tevi pievienoties viņa komandai.</green>
+        to-accept-or-reject: <green>Raksti /[label] team accept, lai pievienotos komandai
+          vai /[label]</green> team reject, lai noraidītu ielūgumu
+        you-will-lose-your-island: <red>UZMANĪBU! Tava sala tiks iznīcināta, ja pievienosies
+          komandai!</red>
+        gui:
+          titles:
+            team-invite-panel: Aicināt spēlētājus
+          button:
+            already-invited: <red>Jau uzaicināts</red>
+            search: <green>Meklē spēlētāju</green>
+            searching: |-
+              <aqua>Meklēšana pēc</aqua>
+              <red>[name]</red>
+          enter-name: <green>Ievadi vārdu:</green>
+          tips:
+            LEFT:
+              name: <aqua>Kreisa Klikšķis</aqua>
+              search: <green>Ievadi spēlētāja vārdu</green>
+              back: <green>Atpakaļ</green>
+              invite: |-
+                <green>, lai uzaicinātu spēlētāju</green>
+                <green>, lai pievienotos jūsu komandai</green>
+            RIGHT:
+              name: <aqua>Labais klikšķis</aqua>
+              coop: <green>, lai sadarbotu spēlētāju</green>
+            SHIFT_LEFT:
+              name: <aqua>Nospiediet kreiso peli, turot uz sānu</aqua>
+              trust: <green>, lai uzticētu spēlētāju</green>
+          buttons:
+            member:
+              # Name shown on a prospect's head in the invite panel. Placeholders: [name], [display_name].
+              name: '[display_name]'
+              # Optional description line shown above the click tips. Placeholders: [name], [display_name].
+              description: ''
+        errors:
+          cannot-invite-self: <red>Tu nevari ielūgt pats sevi!</red>
+          cooldown: <red>Tu nevari sūtīt ielūgumu šim spēlētājam vēl [number] sekundes</red>
+          island-is-full: <red>Tava komanda ir pilna, tu vairs nevari ielūgt jaunus
+            spēlētājus.</red>
+          none-invited-you: <red>Neviens tevi nav ielūdzis :c.</red>
+          you-already-are-in-team: <red>Tu jau esi komandā!</red>
+          already-on-team: <red>Šis spēlētājs jau ir tavā komandā!</red>
+          invalid-invite: <red>Atvaino, bet ielūgums vairāk nav derīgs!</red>
+          you-have-already-invited: <red>Tu jau esi uzaicinājis šo spēlētāju!</red>
+        parameters: <spēlētājs>
+        you-can-invite: <green>Tu vari ielūgt vēl [number] spēlētājus.</green>
+        accept:
+          description: akceptēt ielūgumu
+          you-joined-island: <green>Tu pievienojies komandai! Raksti /[label] team
+            info, lai redzētu</green> savus komandas biedrus.
+          name-joined-your-island: <green>[name] pievienojās tavai komandai!</green>
+          confirmation: |-
+            <red>Vai tiešām vēlies akceptēt šo ielūgumu?</red>
+            <red><bold>Tava sala tiks iznīcināta!</bold></red>
+        reject:
+          description: noraidīt ielūgumu
+          you-rejected-invite: <green>Tu noraidīji ielūgumu pievienoties komandai.</green>
+          name-rejected-your-invite: <red>[name] noraidīja ielūgumu pievienoties komandai!</red>
+        cancel:
+          description: atcelt nosūtītos ielūgumus
+      leave:
+        cannot-leave: <red>Īpašnieks nevar pamest komandu! Nodod salu citam vai izmet
+          visus no</red> komandas.
+        description: pamest savu komandu
+        left-your-island: <red>[name] </red><red>pameta tavu komandu!</red>
+        success: <green>Tu pameti šo salu.</green>
+      kick:
+        description: izmest spēlētāju no tavas salas
+        parameters: <spēlētājs>
+        player-kicked: <red>[name] te izsita no [prefix_island] [gamemode] režīmā!</red>
+        cannot-kick: <red>Tu nevari izmest pats sevi!</red>
+        cannot-kick-rank: <red>Jūsu ranga līmenis neļauj izsist [name]!</red>
+        success: <aqua>[name] </aqua><green>tika izmests no šīs salas.</green>
+      demote:
+        description: samazina spēlētāja komandas rangu
+        parameters: <spēlētājs>
+        errors:
+          cant-demote-yourself: <red>Tu nevari pazemināt rangu pats sev!</red>
+          cant-demote: <red>Jūs nevarat samazināt augstāko rangu!</red>
+          must-be-member: <red>Spēlētājam jābūt [prefix_an-island] loceklim!</red>
+        failure: <red>Spēlētājs jau sasniedzis zemāko rangu!</red>
+        success: <green>Spēlētājs [name] tika pazemināts uz [rank]</green>
+      promote:
+        description: paaugstina spēlētāja komandas rangu
+        parameters: <spēlētājs>
+        errors:
+          cant-promote-yourself: <red>Tev nav atļauts veicināt sevi!</red>
+          cant-promote: <red>Tu nevari veicināt savu rangu!</red>
+          must-be-member: <red>Spēlētājam jābūt [prefix_an-island] dalībniekam!</red>
+        failure: <red>Spēlētājs jau sasniedzis augstāko rangu!</red>
+        success: <green>Spēlētājs [name] tika paaugstināts līdz [rank]</green>
+      setowner:
+        description: nodod salu citam komandas spēlētājam
+        errors:
+          cant-transfer-to-yourself: <red>Tu nevari atdot salu sev! </red><gray>(<italic>Pēc
+            idejas, tu vari, bet mēs</italic></gray> nevēlamies darīt nejēdzīgas lietas.<gray>)</gray>
+          target-is-not-member: <red>Šis spēlētājs nav tavā komandā!</red>
+          at-max: <red>Šim spēlētājam jau ir maksimālais salas skaits, kas viņam</red>
+            atļauts!
+        name-is-the-owner: <green>[name] tagad ir salas īpašnieks!</green>
+        parameters: <spēlētājs>
+        you-are-the-owner: <green>Tu tagad esi šīs salas īpašnieks!</green>
+    ban:
+      description: liegt spēlētājam atrasties uz tavas salas
+      parameters: <spēlētājs>
+      cannot-ban-yourself: <red>Tu nevari liegt atrasties uz salas pats sev!</red>
+      cannot-ban: <red>Tu nevari liegt šim spēlētājam atrasties uz salas.</red>
+      cannot-ban-member: <red>Izmet spēlētāju no komandas un tikai tad tu varēsi viņam
+        liegt šeit</red> atrasties.
+      cannot-ban-more-players: <red>Tu esi sasniedzis liegumu skaita limitu. Tu vairs
+        nevienam neko liegt</red> nevari.
+      player-already-banned: <red>Spēlētājam jau ir liegums atrasties uz salas.</red>
+      player-banned: <aqua>[name]</aqua><red>tika liegts atrasties uz tavas salas.</red>
+      owner-banned-you: <aqua>[name]</aqua><red>tev liedza atrasties uz viņa salas!</red>
+      you-are-banned: <aqua>Tev ir liegts atrasties uz šīs salas!</aqua>
+    unban:
+      description: noņemt liegumu spēlētājam būt uz tavas salas
+      parameters: <spēlētājs>
+      cannot-unban-yourself: <red>Tu nevari noņemt liegumu pats sev!</red>
+      player-not-banned: <red>Spēlētājam nav lieguma atrasties uz salas.</red>
+      player-unbanned: <aqua>[name]</aqua><green>ir noņemts liegums būt uz tavas salas.</green>
+      you-are-unbanned: <aqua>[name]</aqua><green>noņēma liegumu atrasties uz viņa
+        salas!</green>
+    banlist:
+      description: saraksts ar spēlētājiem, kam liegts atrasties uz salas
+      noone: <green>Saraksts ir tukšs.</green>
+      the-following: <aqua>Sekojošajiem spēlētājiem ir liegums atrasties uz salas:</aqua>
+      names: <red>[line]</red>
+      you-can-ban: <aqua>Tev vēl ir iespēja liegt </aqua><yellow>[number] </yellow><aqua>spēlētājiem
+        atrasties uz tavas</aqua> salas.
+    settings:
+      description: attaino salas iestatījumus
+    language:
+      description: valodu izvēle
+      parameters: '[valoda]'
+      not-available: <red>Šī valoda nav pieejama.</red>
+      already-selected: <red>Jūs jau izmantojat šo valodu.</red>
+    expel:
+      description: izraida spēlētāju no salas
+      parameters: <spēlētājs>
+      cannot-expel-yourself: <red>Tu nevari izraidīt pats sevi!</red>
+      cannot-expel: <red>Šis spēlētājs nevar tikt izraidīts.</red>
+      cannot-expel-member: <red>Tu nevari izraidīt komandas biedru!</red>
+      not-on-island: <red>Šis spēlētājs nav uz tavas salas!</red>
+      player-expelled-you: <aqua>[name]</aqua><red>izraidīja tevi no salas!</red>
+      success: <green>Tu izmeti spēlētāju </green><aqua>[name] </aqua><green>no savas
+        salas.</green>
+    lock:
+      description: bloķēt vai atbloķēt savu [prefix_island]
+      locked: <green>Tavs [prefix_island] tagad ir bloķēts.</green>
+      unlocked: <green>Tavs [prefix_island] tagad ir atbloķēts.</green>
+      you-are-locked-out: <red>Šis [prefix_island] tagad ir bloķēts. Tu tiki izraidīts/a.</red>
+ranks:
+  owner: Īpašnieks
+  sub-owner: Apakšīpašnieks
+  member: Biedrs
+  trusted: Uzticams
+  coop: Sabiedrotais
+  visitor: Apmeklētājs
+  banned: Aizliegtais
+  admin: Administrators
+  mod: Moderators
+protection:
+  command-is-banned: Komanda nav atļauta apmeklētājiem
+  flags:
+    ALLAY:
+      name: Allay un Copper Golem mijiedarbība
+      description: Atļaut dot un ņemt priekšmetus no/uz Allay un Copper Golem
+      hint: Interakcija ar Allay un Copper Golem atslēgta
+    ANIMAL_NATURAL_SPAWN:
+      description: Pārslēgt dabisko dzīvnieku parādīšanos
+      name: Dzīvnieku dabiskā parādīšanās
+    ANIMAL_SPAWNERS_SPAWN:
+      description: Pārslēdziet dzīvnieku radīšanu ar spawneriem
+      name: Dzīvnieku spawneri
+    ANVIL:
+      description: Pārslēdz izmantošanu
+      name: Laktas
+      hint: Laktas lietošana atslēgta
+    ARMOR_STAND:
+      description: Pārslēdz izmantošanu
+      name: Bruņu statīvi
+      hint: Bruņu statīva lietošana atslēgta
+    AXOLOTL_SCOOPING:
+      name: Axolotl izsmelšana
+      description: Atļaut axolotlu izņemšanu ar spaini
+      hint: Axolotl izsmelšana atspējota
+    BEACON:
+      description: Pārslēdz izmantošanu
+      name: Signāluguņi
+      hint: Signāluguņa lietošana atslēgta
+    BELL_RINGING:
+      description: Pārslēgt mijiedarbību
+      name: Atļaut zvanu skanēšanu
+      hint: Zvanu zvanīšana atslēgta
+    BED:
+      description: Pārslēdz izmantošanu
+      name: Gultas
+      hint: Gultas lietošana atslēgta
+    BED_ANCHOR_RESPAWN:
+      name: Atdzimšana pie gultas/enkura
+      description: |-
+        <green>Spēlētāji atdzimst pie derīgas gultas</green>
+        <green>vai atdzimšanas enkura, ja tas atrodas uz salas,</green>
+        <green>kuras dalībnieki viņi ir.</green>
+    BOAT:
+      name: Laivas
+      description: Pārslēdz laivas izmantošanu
+      hint: Laivu lietošana atslēgta
+    BOOKSHELF:
+      name: Grāmatu plaukti
+      description: |-
+        <green>Atļaut grāmatu novietošanu</green>
+        <green>vai grāmatu ņemšanu.</green>
+      hint: nevar ievietot grāmatu vai paņemt grāmatu.
+    BREAK_BLOCKS:
+      description: Pārslēdz plēšanu
+      name: Bloku plēšana
+      hint: Bloku plēšana atslēgta
+    BREAK_SPAWNERS:
+      description: "Pārslēgt spawneru iznīcināšanu.  \nPārsniedz Bloķēt Blokus karodziņ\
+        u."
+      name: Salauzt spawnerus
+      hint: Spawner laušana atslēgta
+    BREAK_HOPPERS:
+      description: "Ieslēgt lejkannas iznīcināšanu.  \nAizstāj Break Blocks karogu."
+      name: Sagrauj hoperus
+      hint: Hopperu laušana ir atslēgta
+    BREEDING:
+      description: Pārslēdz vairošanu
+      name: Dzīvnieku vairošana
+      hint: Dzīvnieku vairošana ir aizsargāta
+    BREWING:
+      description: Pārslēdz izmantošanu
+      name: Brūvēšanas satīvi
+      hint: Brūvēšana nav atļauta
+    BUCKET:
+      description: Pārslēdz izmantošanu
+      name: Spaiņi
+      hint: Spaiņu lietošana nav atļauta
+    BUTTON:
+      description: Pārslēdz pogu izmantošanu
+      name: Pogas
+      hint: Pogu spiešana nav atļauta
+    CANDLES:
+      description: Pārslēgt sveču mijiedarbību
+      name: Svecītes
+      hint: Sveču mijiedarbība atslēgta
+    CAKE:
+      description: Pārslēdz iespēju ēst kūkas
+      name: Kūkas
+      hint: Kūku ēšana nav atļauta
+    CARTOGRAPHY:
+      name: Kartogrāfijas galdi
+      description: Pārslēgt lietošanu
+      hint: Kartogrāfijas galda piekļuve atspējota
+    CONTAINER:
+      name: Kontaineri
+      description: |-
+        <green>Pārslēdz lādes, šulkera kastes,</green>
+        <green>puķupodu atvēršanu.</green>
+
+        <gray>Citi konteineri tiek apstrādāti</gray>
+        <gray>ar citiem karogiem.</gray>
+      hint: Konteineru atvēršana nav atļauta
+    CHEST:
+      name: Lādes un vagona lādes
+      description: |-
+        <green>Pārslēgt mijiedarbību ar lādzēm</green>
+        <green>un lādes vilcieniem.</green>
+        <green>(neskaitot slaktētās lādes)</green>
+      hint: Krātuves piekļuve atslēgta
+    BARREL:
+      name: Tvertnes
+      description: Pārslēgt mucas mijiedarbību
+      hint: Muca piekļuve atspējota
+    CRAFTER:
+      name: Amatnieks
+      description: Pārslēgt lietošanu
+      hint: Amatnieka lietošana atspējota
+    BLOCK_EXPLODE_DAMAGE:
+      description: |-
+        <green>Atļaut gultām & atkārtotas atdzimšanas enkuriem</green>
+        <green>sagraut blokos un nodarīt bojājumus</green>
+        <green>entītijām.</green>
+      name: Bloku sprādziena bojājumi
+    COMPOSTER:
+      name: Komposteri
+      description: Pārslēgt kompostera mijiedarbību
+      hint: Kompostiera mijiedarbība atspējota
+    LOOM:
+      name: Stelles
+      description: Pārslēgt lietošanu
+      hint: Stellu piekļuve atspējota
+    FLOWER_POT:
+      name: Ziedu podi
+      description: Pārslēgt puķu poda mijiedarbību
+      hint: Zieda poda mijiedarbība atspējota
+    GRINDSTONE:
+      name: Galantiņš
+      description: Pārslēgt lietošanu
+      hint: Galantiņa piekļuve atslēgta
+    SHULKER_BOX:
+      name: Shulker kastes
+      description: Pārslēgt shulker kastes mijiedarbību
+      hint: Shulker kastes piekļuve atslēgta
+    SHULKER_TELEPORT:
+      description: |-
+        <green>Šulkeri var teleportēties</green>
+        <green>ja ir aktīvs.</green>
+      name: Šulkeru teleportācija
+    SMITHING:
+      name: Kalšana
+      description: Pārslēgt lietošanu
+      hint: Kalšanas piekļuve atslēgta
+    STONECUTTING:
+      name: Akmens griešana
+      description: Pārslēgt lietošanu
+      hint: Akmensgriezuma piekļuve ir atspējota
+    TRAPPED_CHEST:
+      name: Slazdotās lādes
+      description: Pārslēgt slazdoto lāžu mijiedarbību
+      hint: Slazdoto lāžu piekļuve atslēgta
+    DISPENSER:
+      name: Izšāvēji
+      description: Pārslēdz izšāvēju izmantošanu
+      hint: Izšāvēju lietošana nav atļauta
+    DROPPER:
+      name: Izmetēji
+      description: Pārslēdz izmetēju izmantošanu
+      hint: Izmetēju lietošana nav atļauta
+    ELYTRA:
+      name: Deltaplāns
+      description: Pārslēdz deltaplāna lietošanu
+      hint: Deltaplāna lietošana nav atļauta
+    HOPPER:
+      name: Piltuves
+      description: Pārslēdz piltuvju izmantošanu
+      hint: Piltuvju lietošana nav atļauta
+    CHEST_DAMAGE:
+      description: Pārslēdz lāžu bojāšanu no sprādzieniem
+      name: Lāžu bojāšana
+    CHORUS_FRUIT:
+      description: Pārslēdz teleportāciju
+      name: Kora augļi
+      hint: Teleportācija nav atļauta
+    CLEAN_SUPER_FLAT:
+      description: |-
+        <green>Ieslēdz, lai notīrītu</green>
+        <green>super-plakanos gabalus</green>
+        <green>salu pasaulēs</green>
+      name: Notīrīt plakanos gabalus
+    COARSE_DIRT_TILLING:
+      description: |-
+        <green>Pārslēdz rupjās zemes</green>
+        <green>apstrādāšanu un podzola</green>
+        <green>saplēšanu, lai iegūtu</green>
+        <green>melnzemi</green>
+      name: Rupjās zemes apstrādāšana
+      hint: Rupjās zemes apstrādāšana nav atļauta
+    COLLECT_LAVA:
+      description: |-
+        <green>Pārslēdz lavas savākšanu</green>
+        <green>(pārraksta Spaiņu lietošanu)</green>
+      name: Savākt lavu
+      hint: Lavas savākšana nav atļauta
+    COLLECT_WATER:
+      description: |-
+        <green>Pārslēdz ūdens savākšanu</green>
+        <green>(pārraksta Spaiņu lietošanu)</green>
+      name: Ūdens savākšana
+      hint: Ūdens savākšana nav atļauta
+    COLLECT_POWDERED_SNOW:
+      description: |-
+        <green>Pārslēgt pulverveida sniega vākšanu</green>
+        <green>(pārspēt spaiņus)</green>
+      name: Savāc pūderzemi.
+      hint: Pulverveida sniega spaiņi atslēgti
+    COMMAND_RANKS:
+      name: <yellow>Komandas Rangi</yellow>
+      description: <green>Konfigurēt komandas rangus</green>
+    CRAFTING:
+      description: Pārslēdz izmantošanu
+      name: Darbagaldi
+      hint: Darbagaldu lietošana nav atļauta
+    CREEPER_DAMAGE:
+      description: Pārslēdz krīpera bojājumus
+      name: Krīpera bojājumi
+    CREEPER_GRIEFING:
+      description: Pārslēdz krīpera postījumus
+      name: Krīpera postījumi
+      hint: Krīpera postījumi ir atslēgti
+    CROP_PLANTING:
+      description: <green>Iestatiet, kas var stādīt sēklas.</green>
+      name: Kultūru stādīšana
+      hint: Kultūraugu stādīšana atspējota
+    CROP_TRAMPLE:
+      description: Pārslēdz augu nomīdīšanu
+      name: Augu nomīdīšana
+      hint: Augu nomīdīšana ir atslēgta
+    DOOR:
+      description: Pārslēdz durvju izmantošanu
+      name: Durvju izmantošana
+      hint: Durvju lietošana nav atļauta
+    DRAGON_EGG:
+      name: Pūķa ola
+      description: |-
+        <green>Neatļauj aiztikt pūķa olas.</green>
+
+        <red>Šis liedz tās nolikt vai</red>
+        <red>saplēst.</red>
+      hint: Pūķa olu lietošana nav atļauta
+    DYE:
+      description: Pārslēdz iespēju izmantot krāsas
+      name: Krāsu lietošana
+      hint: Krāsu lietošana šeit nav atļauta
+    EGGS:
+      description: Pārslēdz olu mētāšanu
+      name: Olu mētāšana
+      hint: Olu mētāšana nav atļauta
+    ENCHANTING:
+      description: Pārslēdz burvestību galda lietošanu
+      name: Burvestību galds
+      hint: Burvestību galda lietošana nav atļauta
+    ENDER_CHEST:
+      description: Pārslēdz Ender lāžu veidošanu/lietošanu
+      name: Ender lādes
+      hint: Ender lādes ir izslēgtas šaja pasaulē
+    ENDERMAN_DEATH_DROP:
+      description: |-
+        <green>Endermeni nometīs jebkuru</green>
+        <green>bloku, kuru viņi tur, kad</green>
+        <green>tiek nogalināti</green>
+      name: Endermena nāves nomešana
+    ENDERMAN_GRIEFING:
+      description: |-
+        <green>Endermeni var paņemt</green>
+        <green>jebkuru bloku uz salas</green>
+      name: Endermena bloku celšana
+    ENDERMAN_TELEPORT:
+      description: |-
+        <green>Endermeni var telepāties</green>
+        <green>ja ir aktīvi.</green>
+      name: Enderman teleportācija
+    ENDER_PEARL:
+      description: Pārslēdz Ender pērļu lietošanu
+      name: Ender Pērles
+      hint: Ender pērļu lietošana nav atļauta
+    ENTER_EXIT_MESSAGES:
+      description: Attaino ieejas/izejas ziņu
+      island: '[name] sala'
+      name: Ieejas/Izejas ziņa
+      now-entering: <aqua>Tu ieej [name] salā</aqua>
+      now-entering-your-island: '<green>Tu ieej savā salā: </green><aqua>[name]</aqua>'
+      now-leaving: <aqua>Tu pamet [name] salu</aqua>
+      now-leaving-your-island: '<green>Tu pamet savu salu: </green><aqua>[name]</aqua>'
+    EXPERIENCE_BOTTLE_THROWING:
+      name: Pieredzes pudeļu mešana
+      description: Pārslēdz pieredzes pudeļu mešanu
+      hint: Pieredžu pudeļu mešana nav atļauta
+    FIRE_BURNING:
+      name: Bloku degšana
+      description: |-
+        <green>Pārslēdz vai uguns var</green>
+        <green>nodedzināt blokus.</green>
+    FIRE_EXTINGUISH:
+      description: Pārslēdz uguns nodzēšanu
+      name: Uguns nodzēšana
+      hint: Uguns nodzēšana nav atļauta
+    FIRE_IGNITE:
+      name: Uguns aizdegšanās
+      description: |-
+        <green>Pārslēdz vai uguns var tikt</green>
+        <green>aizdedzināta no briesmoņiem,</green>
+        <green>lavas vai zibens.</green>
+    FIRE_SPREAD:
+      name: Uguns izplatīšanās
+      description: |-
+        <green>Pārslēdz vai uguns var</green>
+        <green>izplatīties uz blakusesošajiem</green>
+        <green>blokiem.</green>
+    FISHING:
+      name: Makšķerēšana
+      description: Atļauj makšķerēšanu ar makšķeri
+      hint: Makšķerēšana nav atļauta
+    FISH_SCOOPING:
+      name: Zivju iesmelšana
+      description: Pārslēdz iespēju zivis iesmelt spaiņos
+      hint: Zivju iesmelšana nav atļauta
+    FLINT_AND_STEEL:
+      name: Šķiltavas un tērauds
+      description: |-
+        <green>Ļauj spēlētājiem aizdedzināt</green>
+        <green>uguni izmantojot šķiltavas un</green>
+        <green>tēraudu vai ugunsbumbas.</green>
+      hint: Šķiltavu un tērauda un ugunsbumbu lietošana nav atļauta
+    FURNACE:
+      description: Pārslēdz iespēju lietot krāsnis
+      name: Krāsns
+      hint: Krāsns lietošana nav atļauta
+    GATE:
+      description: Pārslēdz iespēju lietot vārtus
+      name: Vārti
+      hint: Vārtu lietošana nav atļauta
+    GEO_LIMIT_MOBS:
+      description: |-
+        <green>Noņemt visas būtnes, kas</green>
+        <green>pamet salas aizsardzības</green>
+        <green>laukumu</green>
+      name: <yellow>Ierobežot būtnes iekš salas</yellow>
+    HARVEST:
+      description: |-
+        <green>Iestatiet, kurš var novākt ražu.</green>
+        <green>Neaizmirstiet atļaut arī priekšmetu</green>
+        <green>savākšanu!</green>
+      name: Ražas novākšana
+      hint: Rūpniecības ražas novākšana atslēgta
+    HIVE:
+      description: <green>Pārslēgt bišu stropu novākšanu.</green>
+      name: Hives novākšana
+      hint: Ražas novākšana atspējota
+    HURT_TAMED_ANIMALS:
+      description: Pārslēgt sāpju radīšanu. Ieslēgts nozīmē, ka pieradināti dzīvnieki
+        var gūt bojājumus. Izslēgts nozīmē, ka tie ir neaizskarami.
+      name: Sist pieradinātos dzīvniekus
+      hint: Pieradināto dzīvnieku ievainošana nav atļauta
+    HURT_ANIMALS:
+      description: Pārslēdz iespēju ievainot dzīvniekus
+      name: Ievainot dzīvniekus
+      hint: Dzīvnieku ievainošana nav atļauta
+    HURT_MONSTERS:
+      description: Pārslēdz iespēju ievainot briesmoņus
+      name: Ievainot briesmoņus
+      hint: Briesmoņu ievainošana nav atļauta
+    HURT_VILLAGERS:
+      description: |-
+        <green>Pārslēdz iespēju ievainot</green>
+        <green>ciemata iedzīvotājus</green>
+      name: Ievainot ciematniekus
+      hint: Ciematnieku ievainošana nav atļauta
+    ITEM_FRAME:
+      name: Priekšmetu rāmis
+      description: |-
+        <green>Pārslēdz iespēju izmantot</green>
+        <green>priekšmeta rāmjus</green>
+      hint: Priekšmeta rāmju lietošana nav atļauta
+    ITEM_FRAME_DAMAGE:
+      description: |-
+        <green>Pārslēdz iespēju briesmoņiem</green>
+        <green>bojāt priekšmeta rāmjus.</green>
+      name: Priekšmetu rāmju bojāšana
+    INVINCIBLE_VISITORS:
+      description: |-
+        <green>Pārslēdz neuzveicamos</green>
+        <green>apmeklētājus</green>
+      name: <yellow>Neuzveicamie apmeklētāji</yellow>
+      hint: <red>Apmeklētāji ir aizsargāti</red>
+    ISLAND_RESPAWN:
+      description: |-
+        <green>Spēlētāji parādīsies uz salas</green>
+        <green>pēc nāves</green>
+      name: Parādīšanās uz salas
+    ITEM_DROP:
+      description: Pārslēdz priekšmetu nomešanu
+      name: Priekšmetu nomešana
+      hint: Priekšmeti nevar tikt nomesti
+    ITEM_PICKUP:
+      description: Pārslēdz priekšmetu pacelšanu
+      name: Priekšmetu pacelšana
+      hint: Priekšmeti nevar tikt pacelti
+    JUKEBOX:
+      description: Pārslēdz plašu atskaņotāja lietošanu
+      name: Plašu atskaņotājs
+      hint: Plašu atskaņotājus lietot nav atļauts
+    LEAF_DECAY:
+      name: Lapu pūšana
+      description: Pārslēdz dabīgo lapu pūšanu
+    LEASH:
+      description: Pārslēdz pavadu lietošanu
+      name: Pavadi
+      hint: Jūgu lietošana atspējota
+    LECTERN:
+      name: Lektors
+      description: |-
+        <green>Ļauj novietot grāmatas uz lektora</green>
+        <green>vai arī tās noņemt</green>
+
+        <red>Neaizsargā grāmatas no lasīšanas,</red>
+        <red>kamēr tās ir uz lektora</red>
+      hint: nav ļauts novietot vai paņemt grāmatas no lektora.
+    LEVER:
+      description: Pārslēdz sviras lietošanu
+      name: Sviras
+      hint: Sviras lietošana nav atļauta
+    LIMIT_MOBS:
+      description: |-
+        <green>Ierobežot subjektus no</green>
+        <green>radīšanas šajā spēles</green>
+        <green>režīmā.</green>
+      name: <yellow>Ierobežot entitāšu veidu parādīšanos</yellow>
+      can: <green>Var parādīties</green>
+      cannot: <red>Nevar izsaukt</red>
+    LIQUIDS_FLOWING_OUT:
+      name: Šķīdumu plūšana ārpus salas
+      description: |-
+        <green>Pārslēdz iespēju šķīdumiem plūst ārpus</green>
+        <green>salas aizsardzības laukumam.</green>
+        <green>Izslēdzot šo palīdz izvairīties no tā,</green>
+        <green>ka ūdenim saskaroties ar lavu starp</green>
+        <green>salām tiek izveidots mūrakmens.</green>
+
+        <red>Ņem vērā, ka šķidrumi vēl jo projām</red>
+        <red>varēs tecēt vertikāli, taču tie</red>
+        <red>neizplatīsies horizontālā virzienā,</red>
+        <red>ja novietoti ārpus aizsardzības laukuma.</red>
+    LOCK:
+      description: Pārslēdz salas aizslēgšanu
+      name: Aizslēgt salu
+    CHANGE_SETTINGS:
+      name: Mainīt iestatījumus
+      description: |-
+        <green>Atļaut mainīt, kurš loceklis</green>
+        <green>var mainīt [prefix_island] iestatījumus.</green>
+    MILKING:
+      description: Pārslēdz iespēju slaukt govis
+      name: Slaukšana
+      hint: Govju slaukšana nav atļauta
+    MINECART:
+      name: Vagoni
+      description: Pārslēdz iespēju lietot vagonus
+      hint: Vagonu lietošana nav atļauta
+    MONSTER_NATURAL_SPAWN:
+      description: Pārslēgt dabisko monstru spawnu
+      name: Monstru dabiska parādīšanās
+    MONSTER_SPAWNERS_SPAWN:
+      description: Pārslēdziet monstru radīšanu ar spawners [spawners]
+      name: Monstru radītāji
+    MOUNT_INVENTORY:
+      description: |-
+        <green>Pārslēdz iespēju lietot</green>
+        <green>atvērt uzliekamos</green>
+        <green>konteinerus uz dzīvniekiem</green>
+      name: Uzliekamie konteineri
+      hint: Pieeja uzliekamajiem konteineriem nav atļauta
+    NAME_TAG:
+      name: Birka
+      description: Pārslēdz birku lietošanu
+      hint: Birkas lietošana nav atļauta
+    NATURAL_SPAWNING_OUTSIDE_RANGE:
+      name: Dabīgā radību rašanās ārpus salas
+      description: |-
+        <green>Pārslēdz iespēju radībām (dzīvniekiem</green>
+        <green>un briesmoņiem) dabīgi rasties ārpus</green>
+        <green>salas robežas.</green>
+
+        <red>Ņem vērā, ka tas neapturēs radību</red>
+        <red>rašanos no radību izsacuējiem vai</red>
+        <red>radīšanas olām.</red>
+    NOTE_BLOCK:
+      description: Pārslēdz iespēju lietot nošu blokus
+      name: Nošu bloks
+      hint: Nošu blokus lietot nav atļauts
+    OBSIDIAN_SCOOPING:
+      name: Obsidiāna smelšana
+      description: |
+        <green>Pārslēdz iespēju ar tukšu spaini</green>
+        <green>iesmelt obsidiānu, pārvēršot to</green>
+        <green>atpakaļ par lavu.</green>
+        <green>Aizsargā iesācējus.</green>
+        <green>Samazina sākšanas no jauna.</green>
+      scooping: <green>Pārvēršot obsidianu atpakaļ lavā. Nākamreiz esi uzmanīgs!</green>
+      cooldown: <red>Jums jāgaida, pirms varat uzsūkt vēl vienu obsidiāna bloku.</red>
+      obsidian-nearby: <red>Netālu ir obsidiāna bloki, tu nevar uzsūkt šo bloku lavā.
+        ([radius])</red>
+      lavaTip: |-
+        <gold>Uzņem to ar spaini</gold>
+        <gold>kā lavu atkal, ja tas tev ir vajadzīgs!</gold>
+    OFFLINE_GROWTH:
+      description: |-
+        <green>Kad ir izslēgts, augi neaugs uz</green>
+        <green>salas, ja neviens no tās</green>
+        <green>iemītniekiem nav tiešsaitē.</green>
+        <green>Var samazināt servera noslodzi.</green>
+      name: Bezsaistes augšana
+    OFFLINE_REDSTONE:
+      description: |-
+        <green>Kad ir izslēgts, sarkanakmens</green>
+        <green>komponentes nestrādās uz</green>
+        <green>salas, ja neviens no tās</green>
+        <green>iemītniekiem nav tiešsaitē.</green>
+        <green>Var samazināt servera noslodzi.</green>
+      name: Bezsaistes Sarkanakmens
+    PETS_STAY_AT_HOME:
+      description: |-
+        <green>Aktīvā stāvoklī, mājdzīvnieki</green>
+        <green>var doties tikai uz un</green>
+        <green>nevar pamest saimnieka</green>
+        <green>māju [prefix_island].</green>
+      name: Mājdzīvnieki paliek mājās
+    PISTON_PUSH:
+      description: |-
+        <green>Iespējojiet šo opciju,</green>
+        <green>lai novērstu virzuļu</green>
+        <green>pārvietošanos no blokiem no salas.</green>
+      name: Virzuļa Spiešanas Aizsardzība
+    PLACE_BLOCKS:
+      description: |-
+        <green>Pārslēdz iespēju novietot blokus</green>
+        <green>uz salas.</green>
+      name: Bloku nolikšana
+      hint: Bloku likšana nav atļauta
+    PODZOL:
+      name: Koku podzola ražošana
+      description: |-
+        <green>Ja atspējots, tas novērsīs</green>
+        <green>koku podzola ražošanu, kad</green>
+        <green>aug lieli koki</green>
+    POTION_THROWING:
+      name: Dziru mešana
+      description: |-
+        <green>Pārslēdz iespēju mest dziras.</green>
+        <green>Tas ieskaita gan šļakstu,</green>
+        <green>gan ilgstošās dziras.</green>
+      hint: Bloku mešana nav atļauta
+    NETHER_PORTAL:
+      description: |-
+        <green>Pārslēdz iespēju izmantot</green>
+        <green>elles protālu</green>
+      name: Elles Portāls
+      hint: Elles portālu lietošana nav atļauta
+    END_PORTAL:
+      description: |-
+        <green>Pārslēdz iespēju izmantot</green>
+        <green>Beigu protālu</green>
+      name: Beigu Portāls
+      hint: Beigu portālu lietošana nav atļauta
+    PAUSE_MOB_GROWTH:
+      name: Apturēt mobu augšanu
+      description: |-
+        <green>Pārslēdz zelta pienenes izmantošanu</green>
+        <green>lai apturētu vai atsāktu</green>
+        <green>mazuļu mobu augšanu</green>
+      hint: Mobu augšanas apturēšana atspējota
+    PRESSURE_PLATE:
+      description: |-
+        <green>Pārslēdz iespēju izmantot</green>
+        <green>spiedienu plāksnes</green>
+      name: Spiediena plāksne
+      hint: Spiedienu plāksnes lietošana nav atļauta
+    PVP_END:
+      description: |-
+        <red>Ieslēgt/Izslēgt spēlētājs</red>
+        <red>pret spēlētāja režīmu (PVP)</red>
+        <red>Beigu pasaulē.</red>
+      name: Beigu pasaules PVP
+      hint: <red>Spēlētājs nevar izdarīt bojājumus citam spēlētājam Beigu pasaulē</red>
+      enabled: <red>PVP Endā ir ieslēgts.</red>
+      disabled: <green>PVP Beigās ir atspējots.</green>
+    PVP_NETHER:
+      description: |-
+        <red>Ieslēgt/Izslēgt spēlētājs</red>
+        <red>pret spēlētāja režīmu (PVP)</red>
+        <red>Ellē.</red>
+      name: Elles PVP
+      hint: <red>Spēlētājs nevar izdarīt bojājumus citam spēlētājam Ellē</red>
+      enabled: <red>PVP Ellē ir iespējots.</red>
+      disabled: <green>PVP Ellē ir atspējots.</green>
+    PVP_OVERWORLD:
+      description: |-
+        <red>Ieslēgt/Izslēgt spēlētājs</red>
+        <red>pret spēlētāja režīmu (PVP)</red>
+        <red>Virszemē.</red>
+      name: Virszemes PVP
+      hint: <red>Spēlētājs nevar izdarīt bojājumus citam spēlētājam Virszemē</red>
+      enabled: <red>PVP Virszemē ir ieslēgts.</red>
+      disabled: <green>PVP Pasaulē ir atspējots.</green>
+    REDSTONE:
+      description: |-
+        <green>Pārslēdz iespēju izmantot</green>
+        <green>sarkanakmens lietas</green>
+      name: Sarkanakmens lietas
+      hint: Sarkanakmens lietas nav atļauts lietot
+    REMOVE_END_EXIT_ISLAND:
+      description: |-
+        <green>Aptur Beigu portāla ģenerēšanu</green>
+        <green>uz salas, kas atrodas 0,0</green>
+        <green>koordinātēs</green>
+      name: Beigu izejas protāls
+    REMOVE_MOBS:
+      description: |-
+        <green>Noņemt briesmoņus, kad</green>
+        <green>spēlētājs teleportējas</green>
+        <green>uz salas.</green>
+      name: Noņemt briesmoņus
+    RIDING:
+      description: |-
+        <green>Pārslēdz iespēju spēlētājiem</green>
+        <green>jāt uz dzīviekiem.</green>
+      name: Jāšana uz dzīvniekiem
+      hint: Jāšana uz dzīvniekiem nav atļauta
+    SHEARING:
+      description: |-
+        <green>Pārslēdz iespēju spēlētājiem</green>
+        <green>cirpt aitas vai Mušmires.</green>
+      name: Cirpšana
+      hint: Cirpšana nav atļauta
+    SPAWN_EGGS:
+      description: |-
+        <green>Pārslēdz iespēju mest</green>
+        <green>radīšanas olas.</green>
+      name: Radīšanas olas
+      hint: Radīšanas olu mešana nav atļauta
+    SPAWNER_SPAWN_EGGS:
+      description: |-
+        <green>Atļauj mainīt radību iekš radīšanas</green>
+        <green>blokiem lietojot radīšanas olas.</green>
+      name: Radīšanas olas uz radīšanas blokiem
+      hint: |
+        mainīt radību radīšanas bloka radību izmantojot radīšanas olu nav atļauta
+    SCULK_SENSOR:
+      description: |-
+        <green>Pārslēdz sculk sensora</green>
+        <green>aktivāciju.</green>
+      name: Sculk Sensors
+      hint: sculk sensors aktivācija ir atslēgta
+    SCULK_SHRIEKER:
+      description: |-
+        <green>Pārslēdz sculk shrieker</green>
+        <green>aktivizāciju.</green>
+      name: Sculk Ņirdētājs
+      hint: sculk shrieker aktivācija ir atspējota
+    SIGN_EDITING:
+      description: |-
+        <green>Ļauj teksta rediģēšanu</green>
+        <green>uz zīmēm</green>
+      name: Zīmes rediģēšana
+      hint: zīmes rediģēšana ir atspējota
+    TNT_DAMAGE:
+      description: |-
+        <green>Ļauj Dinamītam un Vagonam</green>
+        <green>ar dinamītu saplēst blokus</green>
+        <green>un bojāt radības un objektus.</green>
+      name: Dinamīta bojājumi
+    TNT_PRIMING:
+      description: |-
+        <green>Neļauj aizdedzināt dinamītu.</green>
+        <green>Šī opcija nepārraksta Karma</green>
+        <green>un Dzelzs lietošanas opcijas.</green>
+      name: Dinamīta aizdedzināšana
+      hint: Aizdedzināt dinamītu nav atļauts
+    TRADING:
+      description: |-
+        <green>Pārslēdz iespēju tirgoties</green>
+        <green>ar ciemata iedzīvotājiem.</green>
+      name: Tirgošanās
+      hint: Tirgošanās ar ciemata iedzīvotājiem nav atļauta
+    TRAPDOOR:
+      description: |-
+        <green>Pārslēdz iespēju izmantot</green>
+        <green>lūkas.</green>
+      name: Lūka
+      hint: Lūku lietošana nav atļauta
+    TREES_GROWING_OUTSIDE_RANGE:
+      name: Koku augšana ārpus salas
+      description: |-
+        <green>Pārslēdz iespēju kokiem izaugt pāri salas</green>
+        <green>aizsardzības robežai.</green>
+        <green>Šis ne tikai aizsargās koku izaudzēšanu</green>
+        <green>aiz salas robežas, bet arī lapu un</green>
+        <green>stumbru augšanu ārpus salas.</green>
+    TURTLE_EGGS:
+      description: |-
+        <green>Pārslēdz iespēju saplēst</green>
+        <green>bruņurupuča olas.</green>
+      name: Bruņurupuča olas
+      hint: Bruņurupuča olas nevar tikt saplēstas!
+    FROST_WALKER:
+      description: |-
+        <green>Pārslēdz iespēju izmantot</green>
+        <green>sals staigātāja maģiju.</green>
+      name: Sals staigātājs
+      hint: Sals staigātājs šeit nav atļauts
+    EXPERIENCE_PICKUP:
+      name: Pieredzes savākšana
+      description: |-
+        <green>Pārslēdz iespēju savākt</green>
+        <green>pieredzes lodītes.</green>
+      hint: Tu nevari savākt pieredzes lodītes
+    PREVENT_TELEPORT_WHEN_FALLING:
+      name: Liegt teleportus kritienos
+      description: |-
+        <green>Neļauj spēlētājam izmantot teleporta</green>
+        <green>funkcionalitāti, kamēr viņš krīt.</green>
+      hint: <red>Tu nevari teleportēties, kamēr krīti.</red>
+    VISITOR_KEEP_INVENTORY:
+      name: Apmeklētāji saglabā inventāru nāves gadījumā
+      description: |-
+        <green>Novērst spēlētājiem zaudēt savus</green>
+        <green>priekšmetus un pieredzi, ja viņi mirst</green>
+        <green>[prefix_an-island], kur viņi ir viesi.</green>
+        <green></green>
+        <green>[prefix_Island] dalībnieki joprojām zaudē savus priekšmetus</green>
+        <green>, ja viņi mirst savā [prefix_island]!</green>
+    SPAWN_PROTECTION:
+      name: Sākuma salas tukšuma aizsardzība
+      description: |-
+        <green>Kad iespējots, spēlētāji, kas iekrīt</green>
+        <green>tukšumā sākuma salā, tiks</green>
+        <green>teleportēti atpakaļ uz sākuma</green>
+        <green>punktu, nevis mirs.</green>
+    RAID_TRIGGER:
+      name: Iebrukuma aktivizēšana
+      description: Iestata minimālo salas rangu, kas nepieciešams iebrukuma aktivizēšanai
+      hint: Iebrukuma aktivizēšana nav atļauta
+    ENTITY_PORTAL_TELEPORT:
+      name: Entitātes portāla izmantošana
+      description: |-
+        <green>Pārslēdz, vai entitātes (ne-spēlētāji) var</green>
+        <green>izmantot portalus, lai teleportētos starp</green>
+        <green>dimencijām</green>
+    WIND_CHARGE:
+      name: Vēja lādiņš
+      description: |-
+        <green>Pārslēdz vēja lādiņu izmantošanu.</green>
+        <green>Ja atspējots, apmeklētāji nevar</green>
+        <green>izmantot vēja lādiņus šajā salā.</green>
+      hint: Vēja lādiņu izmantošana atspējota
+    WITHER_DAMAGE:
+      name: Wither bojājumi
+      description: |-
+        <green>Ļauj Wither saplēst blokus</green>
+        <green>un bojāt radības.</green>
+    WORLD_BLOCK_EXPLODE_DAMAGE:
+      description: |-
+        <green>Atļaut gultas & respawn enkuriem</green>
+        <green>iznīcināt blokus un nodarīt</green>
+        <green>bojājumus entitātēm ārpus [prefix_island] robežām.</green>
+      name: Pasaules bloka sprādziena bojājumi
+    WORLD_TNT_DAMAGE:
+      description: |-
+        <green>Atļaut TNT un TNT raktuvju</green>
+        <green>lauzt blokus un nodarīt</green>
+        <green>ievainojumus ārpus [prefix_island] robežām.</green>
+      name: Pasaule TNT kaitējums
+  locked: <red>Šī sala ir slēgta!</red>
+  locked-island-bypass: <gold>Šī [prefix_island] ir slēgta, bet jums ir atļauja to
+    apiet.</gold>
+  deletable-island-admin: <red>[Admin] Šī [prefix_island] ir atzīmēta dzēšanai un
+    gaida reģiona notīrīšanu.</red>
+  protected: '<red>Sala ir aizsargāta: [description]</red>'
+  world-protected: '<red>Pasaule aizsargāta: [description]</red>'
+  spawn-protected: '<red>Sākuma sala ir aizsargāta: [description]</red>'
+  panel:
+    next: Nākošā Lapa
+    previous: Iepriekšējā Lapa
+    mode:
+      advanced:
+        name: <gold>Advancētie iestatījumi</gold>
+        description: <green>Satur saprātīga daudzuma iestatījumus.</green>
+      basic:
+        name: <green>Bāzes iestatījumi</green>
+        description: <green>Satur biežāk lietotos iestatījumus.</green>
+      expert:
+        name: <red>Eksperta iestatījumi</red>
+        description: <green>Satur visus iestatījumus.</green>
+      click-to-switch: <yellow>Uzspied</yellow><green>, lai pārslēgtos uz </green>[next]<green>.</green>
+    reset-to-default:
+      name: <red>Atjaunot uz sākotnējām vērtībām</red>
+      description: |-
+        <green>Atjaunot </green><red><bold>VISUS </bold></red><green>iestatījumus</green>
+        <green>uz sākotnējām vērtībām</green>
+      confirm: apstiprināt
+      instructions: <green>Vai tu esi pārliecināts? Ieraksti </green><red>"apstiprināt"
+        </red><green>, lai visu</green> atiestatītu.
+    PROTECTION:
+      title: <gold>Aizsardzība</gold>
+      description: |-
+        <green>Aizsardzības iestatījumi</green>
+        <green>priekš šis salas</green>
+    SETTING:
+      title: <gold>Iestatījumi</gold>
+      description: |-
+        <green>Ģenerālie iestatījumi</green>
+        <green>priekš šīs salas</green>
+    WORLD_SETTING:
+      title: <aqua>[world_name] </aqua><gold>Iestatījumi</gold>
+      description: <green>Spēles režīma iestatījumi</green>
+    WORLD_DEFAULTS:
+      title: <aqua>[world_name] </aqua><gold>Pasaules aizsardzība</gold>
+      description: |
+        <green>Aizsardzības iestatījumi kuri ir</green>
+        <green>aktīvi, ja spēlētājs ir ārpus</green>
+        <green>savas salas</green>
+    ISLAND_DEFAULTS:
+      title: <aqua>[world_name] </aqua><gold>Salas noklusējuma iestatījumi</gold>
+      description: |
+        <green>Noklusējuma aizsardzības iestatījumi</green>
+        <green>jaunajām [prefix_island]s</green>
+    flag-item:
+      name-layout: <green>[name]</green>
+      command-instructions:
+        setname: |-
+          <green>Izvēlieties rangu, kas var</green>
+          <green>iestatīt vārdu</green>
+        ban: |-
+          <green>Izvēlieties rangu, kas var</green>
+          <green>aizliegt spēlētājus</green>
+        unban: |-
+          <green>Izvēlies rangu, kas var</green>
+          <green>atlaiž spēlētājus</green>
+        expel: |-
+          <green>Izvēlieties rangu, kas var</green>
+          <green>izraidīt apmeklētājus</green>
+        team-invite: |-
+          <green>Izvēlieties rangu, kas var</green>
+          <green>aicināt</green>
+        team-kick: |-
+          <green>Izvēlieties rangu, kas var</green>
+          <green>izsist</green>
+        team-coop: |-
+          <green>Izvēlies rangu, kas var</green>
+          <green>sadarboties</green>
+        team-trust: |-
+          <green>Izvēlieties rangu, kuram var</green>
+          <green>uzticēties</green>
+        team-uncoop: |-
+          <green>Izvēlies rangu, kas var</green>
+          <green>atbrīvot no komandas</green>
+        team-untrust: |-
+          <green>Izvēlieties rangu, kas var</green>
+          <green>atcelt uzticību</green>
+        team-promote: |-
+          <green>Izvēlieties rangu, kas var</green>
+          <green>paaugstināt spēlētāja rangu</green>
+        team-demote: |-
+          <green>Izvēlieties rangu, kas var</green>
+          <green>pazemināt spēlētāja rangu</green>
+        sethome: |-
+          <green>Izvēlies rangu, kas var</green>
+          <green>noteikt mājas</green>
+        deletehome: |-
+          <green>Izvēlies rangu, kurš var</green>
+          <green>dzēst mājas</green>
+        renamehome: |-
+          <green>Izvēlieties rangi, kas var</green>
+          <green>pārdēvēt mājas</green>
+        setcount: |-
+          <green>Izvēlieties rangu, kas var</green>
+          <green>mainīt fāzi</green>
+        border: |-
+          <green>Izvēlies rangu, kas var</green>
+          <green>izmantot robežas komandu</green>
+      description-layout: |
+        [description]
+
+        <gray>Atļauts priekš:</gray>
+      allowed-rank: <dark_aqua>- </dark_aqua><green>[rank]</green>
+      blocked-rank: <dark_aqua>- </dark_aqua><red>[rank]</red>
+      minimal-rank: <dark_aqua>- </dark_aqua><dark_green>[rank]</dark_green>
+      menu-layout: '[description]'
+      setting-cooldown: <red>Iestatījumu maiņa ir ierobežota.</red>
+      setting-layout: |
+        [description]
+
+        <gray>Šībrīža iestatījumi: [setting]</gray>
+      setting-active: <green>Aktīvs</green>
+      setting-disabled: <red>Izslēgts</red>
+management:
+  panel:
+    title: BentoBox Pārvaldīšana
+    views:
+      gamemodes:
+        name: <gold>Spēles režīmi</gold>
+        description: <yellow>Uzspied</yellow><green>, lai redzētu uzstādītos spēles
+          režīmus.</green>
+        blueprints:
+          name: <gold>Shēmas</gold>
+          description: <green>Atver administratora shēmu izvēlni.</green>
+        gamemode:
+          name: <white>[name]</white>
+          description: |
+            <green>Salas: </green><aqua>[islands]</aqua>
+      addons:
+        name: <gold>Papildinājumi</gold>
+        description: <yellow>Uzspied</yellow><green>, lai redzētu uzstādītos spēles
+          papildinājumus.</green>
+      hooks:
+        name: <gold>Iestapinājumi</gold>
+        description: <yellow>Uzspied</yellow><green>, lai redzētu uzstādītos iestapinājumus.</green>
+    actions:
+      reload:
+        name: <red>Pārlādēt</red>
+        description: <yellow>Uzspied </yellow><red><bold>divreiz</bold></red><green>,
+          lai pārlādētu BentoBox</green>
+    buttons:
+      catalog:
+        name: <gold>Papildinājumu katalogs</gold>
+        description: <green>Atvērt papildinājumu katalogu</green>
+      credits:
+        name: <gold>Pateicība</gold>
+        description: <green>Atvērt  patecības sarakstu priekš BentoBox</green>
+      empty-here:
+        name: <aqua>Šis izskatās tukšs...</aqua>
+        description: <green>Kā būtu, ja tu apskatītu katalogu?</green>
+    information:
+      state:
+        name: <gold>Saderība</gold>
+        description:
+          COMPATIBLE: |
+            <green>Palaista </green><yellow>[name] [version]</yellow><green>.</green>
+
+            <green>BentoBox šobrīd strādā ar</green>
+            <green><bold>SADERĪGU </bold></green><green>servera</green>
+            <green>programmatūru un versiju.</green>
+
+            <green>Visas funkcionalitātes tika radītas</green>
+            <green>tieši šai videi.</green>
+          SUPPORTED: |
+            <green>Palaista </green><yellow>[name] [version]</yellow><green>.</green>
+
+            <green>BentoBox šobrīd strādā ar</green>
+            <green><bold>ATBALSTĪTU </bold></green><green>servera</green>
+            <green>programmatūru un versiju.</green>
+
+
+            <green>Lielākā daļa funkcionalitātes strādās</green>
+            <green>bez problēmām šajā vidē.</green>
+          NOT_SUPPORTED: |
+            <green>Palaista </green><yellow>[name] [version]</yellow><green>.</green>
+
+            <green>BentoBox šobrīd strādā ar</green>
+            <gold><bold>NEATBALSTĪTU </bold></gold><green>servera</green>
+            <green>programmatūru vai versiju.</green>
+
+            <green>Kamēr lielākā daļa funkcionalitātes strādās</green>
+            <green>bez problēmām, platformas specifiskas</green>
+            <green>problēmas var rasties.</green>
+          INCOMPATIBLE: |
+            <green>Palaista </green><yellow>[name] [version]</yellow><green>.</green>
+
+            <green>BentoBox šobrīd strādā ar</green>
+            <red><bold>NESADERĪGU </bold></red><green>servera</green>
+            <green>programmatūru vai versiju.</green>
+
+            <red>Dīvaina uzvedība un kļūdas ir sagaidāmas un</red>
+            <red>lielākā daļa funkcionalitātes ir nestabilas.</red>
+catalog:
+  panel:
+    GAMEMODES:
+      title: Spēles Režīmu Katalogs
+    ADDONS:
+      title: Papildinājumu Katalogs
+    views:
+      gamemodes:
+        name: <gold>Spēles režīmi</gold>
+        description: |
+          <yellow>Uzspied</yellow><green>, lai pārskatītu</green>
+          <green>pieejamos officiālos spēles</green>
+          <green>režīmus.</green>
+      addons:
+        name: <gold>Papildinājumi</gold>
+        description: |
+          <yellow>Uzspied</yellow><green>, lai pārskatītu</green>
+          <green>pieejamos officiālos spēles</green>
+          <green>papildinājumus.</green>
+    icon:
+      description-template: |
+        <dark_gray>[topic]</dark_gray>
+        <green>[install]</green>
+
+        <gray><italic>[description]</italic></gray>
+
+        <yellow>Uzspied</yellow><green>, lai iegūtu saiti</green>
+        <green>uz jaunāko versiju.</green>
+      already-installed: Jau uzstādīts!
+      install-now: Uzstādīt tagad!
+    empty-here:
+      name: <aqua>Šis izskatās tukšs...</aqua>
+      description: |
+        <red>BentoBox nevarēja sazināties ar GitHub.</red>
+
+        <green>Atļauj BentoBox savienoties ar GitHub</green>
+        <green>uzstādījumos vai arī mēģini vēlāk.</green>
+enums:
+  DamageCause:
+    CONTACT: Saskare
+    ENTITY_ATTACK: Radības uzbrukums
+    ENTITY_SWEEP_ATTACK: Vēziena uzbrukums
+    PROJECTILE: Šāviņš
+    SUFFOCATION: Nosmakšana
+    FALL: Kritiens
+    FIRE: Uguns
+    FIRE_TICK: Degšana
+    MELTING: Kušana
+    LAVA: Lava
+    DROWNING: Noslīkšana
+    BLOCK_EXPLOSION: Bloka sprādziens
+    ENTITY_EXPLOSION: Radības sprādziens
+    VOID: Tukšums
+    LIGHTNING: Zibens
+    SUICIDE: Pašnāvība
+    STARVATION: Izsalkums
+    POISON: Saindēšanās
+    MAGIC: Maģija
+    WITHER: Wither
+    FALLING_BLOCK: Krītošs bloks
+    THORNS: Ērkšķi
+    DRAGON_BREATH: Pūķa elpa
+    CUSTOM: Pielāgots
+    FLY_INTO_WALL: Ietriekšanās sienā
+    HOT_FLOOR: Karstā grīda
+    CRAMMING: Saspiešana
+    DRYOUT: Izžūšana
+    FREEZE: Apsalšana
+    KILL: Nogalināšana
+    SONIC_BOOM: Skaņas vilnis
+    WORLD_BORDER: Pasaules robeža
+panel:
+  credits:
+    title: <dark_gray>[name] </dark_gray><dark_green>Pateicība</dark_green>
+    contributor:
+      name: <green>[name]</green>
+      description: '<green>Labojumi: </green><aqua>[commits]</aqua>'
+    empty-here:
+      name: <red>Šis izskatās tukšs...</red>
+      description: |-
+        <red>BentoBox nevarēja iegūt Izstrādātājus</red>
+        <red>šim papildinājumam.</red>
+
+        <green>Ļauj BentoBox savienoties ar GitHub</green>
+        <green>konfigurācijā vai mēģini vēlāk.</green>
+panels:
+  island_homes:
+    title: <dark_green><bold>Jūsu [prefix_island] mājas</bold></dark_green>
+    buttons:
+      name: <bold>[name]</bold>
+  island_creation:
+    title: <dark_green><bold>Izvēlieties [prefix_an-island]</bold></dark_green>
+    buttons:
+      bundle:
+        name: <bold>[name]</bold>
+        description: '[description]'
+        uses: <green>Izmantots [number]/[max]</green>
+        unlimited: <green>Neierobeotas izmantošanas atļautas</green>
+        cost: '<yellow>Izmaksas: [cost]</yellow>'
+  language:
+    title: <dark_green><bold>Izvēlieties savu valodu</bold></dark_green>
+    edited: <red>Mainīts uz [lang]</red>
+    buttons:
+      language:
+        name: <white><bold>[name]</bold></white>
+        description: |-
+          [authors]
+          |[selected]
+        authors: <gray>Autori:</gray>
+        author: <gray>- </gray><aqua>[name]</aqua>
+        selected: <green>Pašlaik izvēlēts.</green>
+  placeholder:
+    title: <dark_aqua><bold>Placeholder Browser</bold></dark_aqua>
+    buttons:
+      bentobox:
+        name: <white><bold>BentoBox</bold></white>
+        description: <gray>[number] vietturžu</gray>
+      addon:
+        name: <white><bold>[name]</bold></white>
+        description: <gray>[number] vietturžu</gray>
+  placeholder-list:
+    title: <dark_aqua><bold>[name]</bold></dark_aqua>
+    buttons:
+      leaf:
+        name: <aqua>[placeholder]</aqua>
+        description: <gray>[description]</gray>
+        disabled: <red><italic>(atspējots)</italic></red>
+        hint: <yellow>Noklikšķiniet </yellow><gray>lai pārslēgtu.</gray>
+      folder:
+        name: <white><bold>[label]</bold></white>
+        description: <gray>[count] vietturžu</gray>
+        hint: <yellow>Noklikšķiniet </yellow><gray>lai izpētītu.</gray>
+      leaf-folder:
+        hint: <yellow>Kreisais klikšķis </yellow><gray>lai pārslēgtu. · </gray><yellow>Labais
+          klikšķis </yellow><gray>lai izpētītu.</gray>
+      series:
+        name: <aqua>[placeholder]</aqua>
+        description: <gray>[description]</gray>
+        range: '<dark_gray>#[min] – #[max] · [count] vienumi</dark_gray>'
+        disabled: <red><italic>(daži atspējoti)</italic></red>
+        hint: <yellow>Noklikšķiniet </yellow><gray>lai pārslēgtu visus.</gray>
+        sample: <dark_gray>#[index] → </dark_gray><white>[value]</white>
+        sample-empty: <dark_gray>#[index] → </dark_gray><dark_gray>(tukšs)</dark_gray>
+      leaf-series:
+        hint: <yellow>Kreisais klikšķis </yellow><gray>lai pārslēgtu. · </gray><yellow>Labais
+          klikšķis </yellow><gray>lai pārslēgtu visus.</gray>
+      value: <dark_gray>→ </dark_gray><white>[value]</white>
+      value-empty: <dark_gray>→ </dark_gray><dark_gray>(tukšs)</dark_gray>
+      back:
+        name: <white><bold>Atpakaļ</bold></white>
+        description: <gray>Atgriezties pie papildinājumu saraksta</gray>
+  buttons:
+    previous:
+      name: <white><bold>Iepriekšējā Lapa</bold></white>
+      description: <gray>Pāriet uz [number] lapu</gray>
+    next:
+      name: <white><bold>Nākamā Lapa</bold></white>
+      description: <gray>Pāriet uz [number] lapu</gray>
+  tips:
+    click-to-next: <yellow>Noklikšķini </yellow><gray>, lai turpinātu.</gray>
+    click-to-previous: <yellow>Klikšķini </yellow><gray>, lai atgrieztos iepriekš.</gray>
+    click-to-choose: <yellow>Noklikšķiniet </yellow><gray>, lai izvēlētos.</gray>
+    click-to-toggle: <yellow>Klikšķiniet </yellow><gray>, lai pārslēgtu.</gray>
+    left-click-to-cycle-down: <yellow>Noklikšķiniet pa kreisi </yellow><gray>, lai
+      pārvietotos uz leju.</gray>
+    right-click-to-cycle-up: <yellow>Labais klikšķis </yellow><gray>, lai pārvietotos
+      uz augšu.</gray>
+successfully-loaded: |2
+
+  <gold> ____             _        ____</gold>
+  <gold>|  _ \           | |      |  _ \             </gold><gray>veidoja </gray><green>tastybento </green><gray>un</gray> <green>Poslovitch</green>
+  <gold>| |_) | ___ _ __ | |_ ___ | |_) | _____  __  </gold><gray>2017 - 2022</gray>
+  <gold>|  _ < / _ \ '_ \| __/ _ \|  _ < / _ \ \/ /</gold>
+  <gold>| |_) |  __/ | | | || (_) | |_) | (_) >  <   </gold><aqua>v</aqua><yellow>[version]</yellow>
+  <gold>|____/ \___|_| |_|\__\___/|____/ \___/_/\_\  </gold><dark_gray>Ielādēts </dark_gray><yellow>[time]</yellow><dark_gray>ms.</dark_gray>
+  <gold>                                             </gold><gray>Tulkoja </gray><green>BONNe1704</green>

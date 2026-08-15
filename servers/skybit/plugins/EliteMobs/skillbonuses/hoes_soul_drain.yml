@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&5Soul Drain'
+description:
+- '&7Chance to drain health'
+- '&7from enemies on hit.'
+skillType: HOES
+bonusType: PROC
+unlockTier: 1
+baseValue: 1.0
+scalingPerLevel: 0.02
+procChance: 0.2
+displayMaterial: SOUL_SAND
+loreTemplates:
+- '&7Chance: &f$procChance%'
+- '&7Drain: &f$drainPercent% of damage'
+- '&7Heals you for damage dealt'
+formattedBonusTemplate: $drainPercent% Life Drain

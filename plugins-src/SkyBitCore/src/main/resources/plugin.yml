@@ -1,0 +1,63 @@
+name: SkyBitCore
+version: '${version}'
+main: sk.skybit.core.SkyBitCore
+api-version: '1.21'
+authors: [SkyBit]
+description: SkyBit progression, quests, active playtime, events and SkyCoins.
+depend: [Vault]
+softdepend: [PlaceholderAPI, PlayerPoints, JobsPlus, EvenMoreFish, EliteMobs, LuckPerms]
+commands:
+  level:
+    description: Zobrazí serverový level.
+    aliases: [lvl]
+  quests:
+    description: Zobrazí denné a týždenné questy.
+  daily:
+    description: Vyzdvihne dennú streak odmenu.
+  coinshop:
+    description: Otvorí obchod za SkyCoins.
+  ranks:
+    description: Otvorí obchod s VIP hodnosťami za SkyCoins.
+    aliases: [vip, vipshop, rankshop]
+  buykey:
+    description: Kúpi crate kľúč za SkyCoins.
+  skycoins:
+    description: Zobrazí stav SkyCoins.
+    aliases: [coins]
+  tag:
+    description: Nastaví odomknutý kozmetický tag.
+  vote:
+    description: Zobrazí hlasovacie odkazy a odmeny.
+  voteparty:
+    description: Zobrazí spoločný Vote Party progres.
+    aliases: [vp]
+  minerush:
+    description: Zobrazí 12-hodinovú ťažobnú výzvu.
+    aliases: [minechallenge, mining]
+  serverpass:
+    description: Otvorí bezplatný 50-tierový SkyBit ServerPass.
+    aliases: [pass, battlepass, bp]
+  events:
+    description: Zobrazí aktívny alebo najbližší RandomEvent.
+    aliases: [event, randomevents]
+  weblink:
+    description: Vytvorí bezpečný jednorazový kód pre SkyBit web.
+    aliases: [web, website, ucet]
+  skybitvote:
+    description: Zapíše platný hlas a vydá odmeny.
+    permission: skybit.vote.admin
+  skybitadmin:
+    description: Administrácia SkyBitCore.
+    aliases: [sbadmin]
+    permission: skybit.admin
+permissions:
+  skybit.admin:
+    default: op
+  skybit.vote.admin:
+    default: op
+  skybit.daily:
+    default: true
+  skybit.coinshop:
+    default: true
+  skybit.serverpass:
+    default: true

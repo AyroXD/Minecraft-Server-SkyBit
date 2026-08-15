@@ -1,0 +1,15 @@
+isEnabled: true
+name: '&4Executioner'
+description:
+- '&7Deal massive bonus damage to'
+- '&7enemies below 40% health.'
+skillType: AXES
+bonusType: CONDITIONAL
+unlockTier: 2
+baseValue: 0.75
+scalingPerLevel: 0.015
+displayMaterial: DIAMOND_AXE
+loreTemplates:
+- '&7Execute Bonus: &f+$executeBonus%'
+- '&7Threshold: &fBelow 40% HP'
+formattedBonusTemplate: +$executeBonus% Execute Damage

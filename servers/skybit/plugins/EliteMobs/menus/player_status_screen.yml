@@ -1,0 +1,517 @@
+isEnabled: true
+doStatsPage: true
+doGearPage: true
+doTeleportsPage: true
+doCommandsPage: true
+doQuestTrackingPage: true
+doBossTrackingPage: true
+# Compact player overview shown on the /em dialog and inventory header.
+# Available placeholders: $money, $combatLevel, $activeQuests and $score.
+# $threat remains available as a legacy alias for $combatLevel.
+landingOverviewLines:
+- '<g:#B8860B:#F0C040>Coins</g>: &f$money &8• <g:#A63D2F:#E97932>Combat Level</g>:
+  &f$combatLevel'
+- '<g:#2E7D4F:#69C56F>Active Quests</g>: &f$activeQuests &8• <g:#355CA8:#5FA9E8>Score</g>:
+  &f$score'
+indexTexts0: '&0&m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯'
+indexHovers0: ''
+indexCommands0: ''
+indexTexts1: '&5&l/ag &7- &6EliteMobs Hub'
+indexHovers1: |-
+  CLICK TO USE
+  The place where you can find
+  NPCs that give quests, buy and
+  sell items, give advice and more!
+indexCommands1: /ag
+indexTexts2: '&0&m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯'
+indexHovers2: ''
+indexCommands2: ''
+indexTexts3: ''
+indexHovers3: ''
+indexCommands3: ''
+indexTexts4: '&6&lIndex'
+indexHovers4: ''
+indexCommands4: ''
+indexTexts5: ''
+indexHovers5: ''
+indexCommands5: ''
+indexTexts6: '&bp. $statsPage &8- <g:#B8860B:#F0C040>★ Adventure Record</g>'
+indexHovers6: Click to go!
+indexCommands6: $statsPage
+indexTexts7: '&bp. $gearPage &8- <g:#A63D2F:#E97932>⚔ Combat Gear</g>'
+indexHovers7: Click to go!
+indexCommands7: $gearPage
+indexTexts8: '&bp. $teleportsPage &8- <g:#355CA8:#5FA9E8>↔ Teleports</g>'
+indexHovers8: Click to go!
+indexCommands8: $teleportsPage
+indexTexts9: '&bp. $commandsPage &8- <g:#267A78:#58B8A9>⚡ Quick Actions</g>'
+indexHovers9: Open useful EliteMobs actions
+indexCommands9: $commandsPage
+indexTexts10: '&bp. $questsPage &8- <g:#2E7D4F:#69C56F>✉ Quests</g>'
+indexHovers10: Click to go!
+indexCommands10: $questsPage
+indexTexts11: '&bp. $bossTrackingPage &8- <g:#7A1F2B:#C2414A>☠ Boss Tracker</g>'
+indexHovers11: Click to go!
+indexCommands11: $bossTrackingPage
+indexTexts12: '&bp. $skillsPage &8- <g:#6D3AA8:#A855F7>⚗ Skills</g>'
+indexHovers12: Click to go!
+indexCommands12: $skillsPage
+indexTexts13: <g:#A04468:#E07A9A>♥ Party</g>
+indexHovers13: Create, invite, or leave a party
+indexCommands13: /em party menu
+statsText0: '&6&m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯'
+statsHover0: ''
+statsCommand0: ''
+statsText1: <g:#B8860B:#F0C040>★ Adventure Record</g>
+statsHover1: ''
+statsCommand1: ''
+statsText2: '&6&m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯'
+statsHover2: ''
+statsCommand2: ''
+statsText3: ''
+statsHover3: ''
+statsCommand3: ''
+statsText4: '<g:#B8860B:#F0C040>★ Server Rank</g>: &f$rank &8/ &7$ranktotal'
+statsHover4: Your server-wide position based on Adventure Score.
+statsCommand4: ''
+statsText5: '<g:#355CA8:#5FA9E8>Adventure Score</g>: &f$score'
+statsHover5: Higher-level Elite kills award more score. Elite deaths reduce it.
+statsCommand5: ''
+statsText6: '<g:#6D3AA8:#A855F7>Dungeons Cleared</g>: &f$dungeons'
+statsHover6: Successful dungeon clears. Entering or abandoning a run does not count.
+statsCommand6: ''
+statsText7: '<g:#A63D2F:#E97932>Combat Level</g>: &f$combat'
+statsHover7: Your overall level from armor and your two strongest weapon skills.
+statsCommand7: ''
+statsText8: ''
+statsHover8: ''
+statsCommand8: ''
+statsText9: '<g:#2E7D4F:#69C56F>Elite Kills</g>: &f$kills'
+statsHover9: Confirmed non-exploit Elite Mob kills.
+statsCommand9: ''
+statsText10: '<g:#267A78:#58B8A9>Highest Elite Level</g>: &f$highestkill'
+statsHover10: The highest-level Elite Mob you have defeated legitimately.
+statsCommand10: ''
+statsText11: '<g:#B8860B:#F0C040>Quests Completed</g>: &f$quests'
+statsHover11: EliteMobs quests you have fully completed.
+statsCommand11: ''
+statsText12: ''
+statsHover12: ''
+statsCommand12: ''
+gearText0: '&m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯'
+gearHover0: ''
+gearText1: '&7&lArmor & Weapons:'
+gearHover1: ''
+gearText2: '&m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯'
+gearHover2: ''
+gearText3: '&8&lGear Tiers:'
+gearHover3: ''
+gearText4: '          ☠ - $helmettier'
+gearHover4: $helmet
+gearText5: '          ▼ - $chestplatetier'
+gearHover5: $chestplate
+gearText6: '          Π - $leggingstier'
+gearHover6: $leggings
+gearText7: '          ╯╰ - $bootstier'
+gearHover7: $boots
+gearText8: '{⚔ - $mainhandtier}    {⛨ - $offhandtier}'
+gearHover8: '{$mainhand}{$offhand}'
+gearText9: ''
+gearHover9: ''
+gearText10: Combat Lv. $combatLevel | Crit $critChance%
+gearHover10: |-
+  Weapon: $weaponSkill Lv. $weaponSkillLevel
+  Gear Lv. $weaponLevel vs Elite Lv. $referenceLevel
+gearText11: Weapon ×$weaponFactor | Melee armor $defenseMatch%
+gearHover11: |-
+  Melee armor rating: $armorLevel
+  Armor skill: Lv. $armorSkillLevel
+  Equipment damage bonus: +$enchantmentBonus%
+gearText12: Threat ×$threatMultiplier | HP $health/$maxHealth
+gearHover12: |-
+  Selected weapon perks: $weaponPerks
+  Selected armor perks: $armorPerks
+teleportTextV20: '&m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯'
+teleportHoverV20: ''
+teleportCommandV20: ''
+teleportTextV21: '&2&lTeleports'
+teleportHoverV21: ''
+teleportCommandV21: ''
+teleportTextV22: '&m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯'
+teleportHoverV22: ''
+teleportCommandV22: ''
+teleportTextV23: '&r&0Spawn'
+teleportHoverV23: Teleport to spawn!
+teleportCommandV23: /em spawntp
+teleportTextV24: '&r§0§lAdventurer''s Hub'
+teleportHoverV24: Teleport to the Adventurer's Guild Hub!
+teleportCommandV24: /ag
+onTeleportsHover: Click to teleport!
+commandsText0: '&m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯'
+commandsHover0: ''
+commandsCommand0: ''
+commandsText1: '&3&lQuick Actions:'
+commandsHover1: ''
+commandsCommand1: ''
+commandsText2: '&m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯'
+commandsHover2: ''
+commandsCommand2: ''
+commandsText3: ''
+commandsHover3: ''
+commandsCommand3: ''
+commandsText4: '&5/ag &7- EliteMobs Hub'
+commandsHover4: |-
+  CLICK TO USE
+  The place where you can find
+  NPCs that give quests, buy and
+  sell items, give advice and more!
+commandsCommand4: /ag
+commandsText5: '&5/em spawntp &7- Spawn'
+commandsHover5: |-
+  CLICK TO USE
+  Teleport to the server spawn!
+commandsCommand5: /em spawntp
+commandsText6: '&5/em shareitem &7- Share Item'
+commandsHover6: |-
+  CLICK TO USE
+  Shares the item you're holding
+  on chat!
+commandsCommand6: /em shareitem
+commandsText7: ''
+commandsHover7: ''
+commandsCommand7: ''
+commandsText8: ''
+commandsHover8: ''
+commandsCommand8: ''
+commandsText9: ''
+commandsHover9: ''
+commandsCommand9: ''
+commandsText10: ''
+commandsHover10: ''
+commandsCommand10: ''
+commandsText11: ''
+commandsHover11: ''
+commandsCommand11: ''
+commandsText12: ''
+commandsHover12: ''
+commandsCommand12: ''
+bossTrackerText0: '&m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯'
+bossTrackerHover0: ''
+bossTrackerCommand0: ''
+bossTrackerText1: '&4&lBoss Tracker:'
+bossTrackerHover1: Big bosses get displayed here!
+bossTrackerCommand1: ''
+bossTrackerText2: '&m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯'
+bossTrackerHover2: ''
+bossTrackerCommand2: ''
+onBossTrackHover: Click to track/untrack!
+teleportChestMenuName: <g:#355CA8:#5FA9E8>↔ Teleports</g>
+teleportSpawnItem:
+  material: COMPASS
+  name: §6§lSpawn
+  lore:
+  - §7Teleport to the server spawn.
+  - ''
+  - §aClick to teleport!
+teleportSpawnSlot: 45
+teleportGuildItem:
+  material: END_PORTAL_FRAME
+  name: §6§lEliteMobs Hub
+  lore:
+  - §7Visit the Adventurer's Guild.
+  - ''
+  - §aClick to teleport!
+teleportGuildSlot: 49
+bossTrackerChestMenuName: <g:#7A1F2B:#C2414A>☠ Boss Tracker</g>
+indexChestMenuName: <g:#8B0000:#CC4400:#DAA520>EliteMobs</g> &7Menu
+indexHeaderItem:
+  material: PAPER
+  name: §5§l/ag §7- §6EliteMobs Hub
+  lore:
+  - CLICK TO USE
+  - The place where you can find
+  - NPCs that give quests, buy and
+  - sell items, give advice and more!
+indexHeaderSlot: 4
+indexStatsItem:
+  material: MAP
+  name: §x§B§8§8§6§0§B★§x§B§B§8§9§0§E §x§B§F§8§D§1§1A§x§C§2§9§0§1§4d§x§C§5§9§4§1§7v§x§C§8§9§7§1§Be§x§C§C§9§A§1§En§x§C§F§9§E§2§1t§x§D§2§A§1§2§4u§x§D§6§A§5§2§7r§x§D§9§A§8§2§Ae§x§D§C§A§C§2§D
+    §x§E§0§A§F§3§0R§x§E§3§B§2§3§4e§x§E§6§B§6§3§7c§x§E§9§B§9§3§Ao§x§E§D§B§D§3§Dr§x§F§0§C§0§4§0d
+  lore:
+  - Click to go!
+indexStatsSlot: 10
+indexGearItem:
+  material: DIAMOND_SWORD
+  name: §x§A§6§3§D§2§F⚔§x§A§C§4§2§2§F §x§B§1§4§7§3§0C§x§B§7§4§C§3§0o§x§B§C§5§1§3§0m§x§C§2§5§6§3§0b§x§C§8§5§B§3§1a§x§C§D§6§0§3§1t§x§D§3§6§5§3§1
+    §x§D§8§6§A§3§1G§x§D§E§6§F§3§2e§x§E§3§7§4§3§2a§x§E§9§7§9§3§2r
+  lore:
+  - Click to go!
+indexGearSlot: 12
+indexTeleportsItem:
+  material: END_PORTAL_FRAME
+  name: §x§3§5§5§C§A§8↔§x§3§9§6§4§A§E §x§3§D§6§B§B§5T§x§4§2§7§3§B§Be§x§4§6§7§B§C§2l§x§4§A§8§3§C§8e§x§4§E§8§A§C§Ep§x§5§2§9§2§D§5o§x§5§7§9§A§D§Br§x§5§B§A§1§E§2t§x§5§F§A§9§E§8s
+  lore:
+  - Click to go!
+indexTeleportsSlot: 14
+indexCommandsItem:
+  material: JUKEBOX
+  name: §x§2§6§7§A§7§8⚡§x§2§A§7§E§7§C §x§2§D§8§3§7§FQ§x§3§1§8§7§8§3u§x§3§4§8§C§8§6i§x§3§8§9§0§8§Ac§x§3§B§9§5§8§Dk§x§3§F§9§9§9§1
+    §x§4§3§9§D§9§4A§x§4§6§A§2§9§8c§x§4§A§A§6§9§Bt§x§4§D§A§B§9§Fi§x§5§1§A§F§A§2o§x§5§4§B§4§A§6n§x§5§8§B§8§A§9s
+  lore:
+  - §7Open the Hub, teleport to spawn
+  - §7or share your held Elite item.
+  - ''
+  - §aClick to view!
+indexCommandsSlot: 16
+indexQuestTrackingItem:
+  material: WRITABLE_BOOK
+  name: §x§2§E§7§D§4§F✉§x§3§6§8§7§5§4 §x§3§F§9§2§5§8Q§x§4§7§9§C§5§Du§x§5§0§A§6§6§1e§x§5§8§B§0§6§6s§x§6§1§B§B§6§At§x§6§9§C§5§6§Fs
+  lore:
+  - Click to go!
+indexQuestTrackingSlot: 20
+indexBossTrackingItem:
+  material: TARGET
+  name: §x§7§A§1§F§2§B☠§x§8§0§2§2§2§D §x§8§5§2§4§3§0B§x§8§B§2§7§3§2o§x§9§0§2§9§3§5s§x§9§6§2§C§3§7s§x§9§B§2§F§3§9
+    §x§A§1§3§1§3§CT§x§A§6§3§4§3§Er§x§A§C§3§7§4§0a§x§B§1§3§9§4§3c§x§B§7§3§C§4§5k§x§B§C§3§E§4§8e§x§C§2§4§1§4§Ar
+  lore:
+  - Click to go!
+indexBossTrackingSlot: 24
+indexSkillsItem:
+  material: EXPERIENCE_BOTTLE
+  name: §x§6§D§3§A§A§8⚗§x§7§5§3§E§B§3 §x§7§E§4§2§B§FS§x§8§6§4§6§C§Ak§x§8§F§4§9§D§5i§x§9§7§4§D§E§0l§x§A§0§5§1§E§Cl§x§A§8§5§5§F§7s
+  lore:
+  - §7View your skill levels
+  - §7and XP progress.
+  - ''
+  - §aClick to view!
+indexSkillsSlot: 22
+indexPartyItem:
+  material: PLAYER_HEAD
+  name: §x§A§0§4§4§6§8♥§x§A§B§4§D§7§0 §x§B§5§5§6§7§9P§x§C§0§5§F§8§1a§x§C§B§6§8§8§9r§x§D§5§7§1§9§2t§x§E§0§7§A§9§Ay
+  lore:
+  - §7Create or manage a party
+  - §7and enter dungeons together.
+  - ''
+  - §aClick for party controls!
+indexPartySlot: 26
+backItem:
+  material: BARRIER
+  name: §cBack
+gearChestMenuName: <g:#A63D2F:#E97932>⚔ Combat Gear</g>
+gearDamageItem:
+  material: DIAMOND_SWORD
+  name: '§x§A§6§3§D§2§F⚔§x§A§C§4§2§2§F §x§B§1§4§7§3§0H§x§B§7§4§C§3§0e§x§B§C§5§1§3§0l§x§C§2§5§6§3§0d§x§C§8§5§B§3§1
+    §x§C§D§6§0§3§1W§x§D§3§6§5§3§1e§x§D§8§6§A§3§1a§x§D§E§6§F§3§2p§x§E§3§7§4§3§2o§x§E§9§7§9§3§2n§f:
+    §fLv. $weaponLevel'
+  lore:
+  - '§7$weaponSkill skill: §fLv. $weaponSkillLevel'
+  - '§7Weapon factor vs Lv. $referenceLevel: §f×$weaponFactor'
+  - '§7Critical chance: §f$critChance%'
+  - '§7Equipment damage bonus: §f+$enchantmentBonus%'
+  - ''
+  - '§7Selected weapon perks:'
+  - §f$weaponPerks
+gearDamageSlot: 23
+gearArmorItem:
+  material: SHIELD
+  name: '§x§3§5§5§C§A§8⛨§x§3§8§6§2§A§D §x§3§B§6§8§B§2A§x§3§F§6§E§B§7r§x§4§2§7§4§B§Cm§x§4§5§7§A§C§1o§x§4§8§8§0§C§6r§x§4§C§8§5§C§A
+    §x§4§F§8§B§C§FR§x§5§2§9§1§D§4a§x§5§5§9§7§D§9t§x§5§9§9§D§D§Ei§x§5§C§A§3§E§3n§x§5§F§A§9§E§8g§f:
+    §f$armorLevel'
+  lore:
+  - '§7Armor skill: §fLv. $armorSkillLevel'
+  - '§7Melee reduction vs Lv. $referenceLevel: §f$defenseMatch%'
+  - '§7Health: §f$health§7/§f$maxHealth'
+  - ''
+  - '§7Selected armor perks:'
+  - §f$armorPerks
+gearArmorSlot: 24
+gearThreatItem:
+  material: TARGET
+  name: '§x§B§8§8§6§0§B★§x§B§C§8§A§0§F §x§C§1§8§F§1§3C§x§C§5§9§3§1§7o§x§C§9§9§8§1§Bm§x§C§E§9§C§1§Fb§x§D§2§A§1§2§3a§x§D§6§A§5§2§8t§x§D§A§A§A§2§C
+    §x§D§F§A§E§3§0L§x§E§3§B§3§3§4e§x§E§7§B§7§3§8v§x§E§C§B§C§3§Ce§x§F§0§C§0§4§0l§f:
+    §f$combatLevel'
+  lore:
+  - '§7Progression baseline: §fLv. $combatLevel'
+  - '§7Threat generated: §f×$threatMultiplier'
+  - ''
+  - §8Natural scaling may also use distance,
+  - §8nearby players, party size and randomness.
+gearThreatSlot: 25
+statsChestMenuName: <g:#B8860B:#F0C040>★ Adventure Record</g>
+# Text used for $rank while the persisted score ranking cache is still loading.
+statsRankUnavailableText: Calculating...
+# Text used for $ranktotal while the persisted score ranking cache is still loading.
+statsRankTotalUnavailableText: '?'
+statsRankItem:
+  material: NETHER_STAR
+  name: §x§B§8§8§6§0§B★§x§B§D§8§B§0§F §x§C§1§9§0§1§4S§x§C§6§9§5§1§8e§x§C§B§9§9§1§Dr§x§C§F§9§E§2§1v§x§D§4§A§3§2§6e§x§D§9§A§8§2§Ar§x§D§D§A§D§2§E
+    §x§E§2§B§2§3§3R§x§E§7§B§6§3§7a§x§E§B§B§B§3§Cn§x§F§0§C§0§4§0k§f §8• §f$rank §7/
+    $ranktotal
+  lore:
+  - §7Competition rank by Adventure Score.
+  - §7Equal scores share the same rank.
+statsRankSlot: 10
+statsDungeonsCompletedItem:
+  material: ENDER_EYE
+  name: §x§6§D§3§A§A§8D§x§7§1§3§C§A§Du§x§7§5§3§E§B§3n§x§7§9§3§F§B§8g§x§7§D§4§1§B§De§x§8§1§4§3§C§2o§x§8§5§4§5§C§8n§x§8§9§4§7§C§Ds§x§8§C§4§8§D§2
+    §x§9§0§4§A§D§7C§x§9§4§4§C§D§Dl§x§9§8§4§E§E§2e§x§9§C§5§0§E§7a§x§A§0§5§1§E§Cr§x§A§4§5§3§F§2e§x§A§8§5§5§F§7d§f
+    §8• §f$dungeons
+  lore:
+  - §7Counts successful clears only.
+  - §7Entering or abandoning does not count.
+statsDungeonsCompletedSlot: 12
+statsCombatLevelItem:
+  material: TARGET
+  name: §x§A§6§3§D§2§FC§x§A§C§4§2§2§Fo§x§B§2§4§8§3§0m§x§B§8§4§D§3§0b§x§B§E§5§3§3§0a§x§C§4§5§8§3§0t§x§C§B§5§E§3§1
+    §x§D§1§6§3§3§1L§x§D§7§6§9§3§1e§x§D§D§6§E§3§1v§x§E§3§7§4§3§2e§x§E§9§7§9§3§2l§f
+    §8• §f$combat
+  lore:
+  - §7Calculated from armor and your two
+  - §7strongest weapon skills.
+statsCombatLevelSlot: 13
+statsEliteKillsItem:
+  material: DIAMOND_SWORD
+  name: §x§2§E§7§D§4§FE§x§3§4§8§4§5§2l§x§3§A§8§B§5§5i§x§4§0§9§3§5§9t§x§4§6§9§A§5§Ce§x§4§C§A§1§5§F
+    §x§5§1§A§8§6§2K§x§5§7§A§F§6§5i§x§5§D§B§7§6§9l§x§6§3§B§E§6§Cl§x§6§9§C§5§6§Fs§f
+    §8• §f$kills
+  lore:
+  - §7Confirmed non-exploit Elite Mob kills.
+statsEliteKillsSlot: 14
+statsMaxEliteLevelKilledItem:
+  material: BEACON
+  name: §x§2§6§7§A§7§8P§x§2§9§7§E§7§Be§x§2§D§8§2§7§Fa§x§3§0§8§6§8§2k§x§3§3§8§B§8§5
+    §x§3§7§8§F§8§8E§x§3§A§9§3§8§Cl§x§3§D§9§7§8§Fi§x§4§1§9§B§9§2t§x§4§4§9§F§9§5e§x§4§7§A§3§9§9
+    §x§4§B§A§7§9§CL§x§4§E§A§C§9§Fe§x§5§1§B§0§A§2v§x§5§5§B§4§A§6e§x§5§8§B§8§A§9l§f
+    §8• §f$maxKill
+  lore:
+  - §7Your highest legitimate Elite Mob kill.
+statsMaxEliteLevelKilledSlot: 15
+statsQuestsCompletedItem:
+  material: WRITABLE_BOOK
+  name: §x§B§8§8§6§0§BQ§x§B§C§8§A§0§Fu§x§B§F§8§E§1§2e§x§C§3§9§2§1§6s§x§C§7§9§5§1§9t§x§C§B§9§9§1§Ds§x§C§E§9§D§2§0
+    §x§D§2§A§1§2§4C§x§D§6§A§5§2§7o§x§D§A§A§9§2§Bm§x§D§D§A§D§2§Ep§x§E§1§B§1§3§2l§x§E§5§B§4§3§5e§x§E§9§B§8§3§9t§x§E§C§B§C§3§Ce§x§F§0§C§0§4§0d§f
+    §8• §f$questsCompleted
+  lore:
+  - §7EliteMobs quests fully completed.
+statsQuestsCompletedSlot: 16
+statsScoreItem:
+  material: EXPERIENCE_BOTTLE
+  name: §x§3§5§5§C§A§8A§x§3§8§6§2§A§Dd§x§3§B§6§7§B§1v§x§3§E§6§D§B§6e§x§4§1§7§2§B§An§x§4§4§7§8§B§Ft§x§4§7§7§D§C§3u§x§4§A§8§3§C§8r§x§4§D§8§8§C§De§x§5§0§8§E§D§1
+    §x§5§3§9§3§D§6S§x§5§6§9§9§D§Ac§x§5§9§9§E§D§Fo§x§5§C§A§4§E§3r§x§5§F§A§9§E§8e§f
+    §8• §f$score
+  lore:
+  - §7Higher-level Elite kills award more score.
+  - §7Elite deaths reduce it.
+statsScoreSlot: 11
+commandsChestMenuName: <g:#267A78:#58B8A9>⚡ Quick Actions</g>
+commandsAGItem:
+  material: END_PORTAL_FRAME
+  name: §5/ag
+  lore:
+  - §fClick to use!
+  - §fThe place where you can find
+  - §fNPCs that give quests, buy and
+  - §fsell items, give advice and more!
+commandsAGSlot: 11
+commandsSpawnItem:
+  material: COMPASS
+  name: §5/em spawntp
+  lore:
+  - §fClick to use!
+  - §fTeleports you to the server spawn.
+commandsSpawnSlot: 13
+commandsShareItemItem:
+  material: PAPER
+  name: §5/em shareitem
+  lore:
+  - §fClick to use!
+  - §fShares the Elite Item you're holding
+  - §fon chat!
+commandsShareItemSlot: 15
+skillsItemDisplayName: <g:#6D3AA8:#A855F7>⚗ Skills</g>
+skillsItemLore1: '&7View your skill levels'
+skillsItemLore2: '&7and XP progress.'
+skillsItemClickLore: '&eClick to view!'
+skillsPageHeader: <g:#6D3AA8:#A855F7>⚗ Your Skills</g>
+skillsPageLevelFormat: '&6$skillName &7Lv.&e$level'
+skillsPageXpFormat: '&8$progressBar &7$currentXp/$nextXp'
+skillItemDisplayNameFormat: '&6&lLevel $level $skillName'
+skillItemSelectLore1: '&eClick to select passive skills'
+skillItemSelectLore2: '&eand see more details!'
+dialog:
+  # Modern combat summary shown in the Gear dialog.
+  # Placeholders: $combatLevel, $referenceLevel, $weaponLevel, $weaponSkill,
+  # $weaponSkillLevel, $weaponFactor, $critChance, $enchantmentBonus, $weaponPerks,
+  # $armorLevel, $armorSkillLevel, $defenseMatch, $health, $maxHealth, $armorPerks
+  # and $threatMultiplier.
+  gearSummaryLines:
+  - <g:#A63D2F:#E97932>⚔ Equipment Matchup</g>
+  - '<g:#B8860B:#F0C040>Combat Level</g>: &f$combatLevel'
+  - '<g:#A63D2F:#E97932>Held Weapon</g>: &fLv. $weaponLevel &8• &7$weaponSkill: &fLv.
+    $weaponSkillLevel'
+  - '<g:#A63D2F:#E97932>Weapon factor vs Lv.</g> &f$referenceLevel: &f×$weaponFactor'
+  - '<g:#A04468:#E07A9A>Critical chance</g>: &f$critChance% &8• &7Equipment bonus:
+    &f+$enchantmentBonus%'
+  - '&7Selected weapon perks: &f$weaponPerks'
+  - '<g:#355CA8:#5FA9E8>Melee armor</g>: &f$armorLevel &8• &7Armor Skill: &fLv. $armorSkillLevel'
+  - '<g:#355CA8:#5FA9E8>Melee reduction vs Lv.</g> &f$referenceLevel: &f$defenseMatch%'
+  - '<g:#2E7D4F:#69C56F>Health</g>: &f$health&7/&f$maxHealth'
+  - '&7Selected armor perks: &f$armorPerks'
+  - '<g:#B8860B:#F0C040>Threat generated</g>: &f×$threatMultiplier'
+  - '&8Equipment matchup only; skills and temporary effects apply in combat.'
+  # Weapon skill label shown when no recognized weapon is held.
+  gearUnarmedLabel: Unarmed
+  # Text shown in the Combat Gear profile when no applicable perks are selected.
+  gearNoSelectedPerksLabel: None selected
+  gearHelmetLabel: Helmet
+  gearChestplateLabel: Chestplate
+  gearLeggingsLabel: Leggings
+  gearBootsLabel: Boots
+  gearMainHandLabel: Main Hand
+  gearOffHandLabel: Off Hand
+  # Fallback quest label used when a quest has no configured display name.
+  # Available placeholder: $id.
+  questFallbackFormat: Quest $id
+  # Title for the main player status dialog menu.
+  titlePlayerStatus: <g:#8B0000:#CC4400:#DAA520>EliteMobs</g> &7Menu
+  # Title for the Stats dialog section.
+  titleStats: <g:#B8860B:#F0C040>★ Adventure Record</g>
+  # Title for the Gear dialog section.
+  titleGear: <g:#A63D2F:#E97932>⚔ Combat Gear</g>
+  # Title for the Teleports dialog section.
+  titleTeleports: <g:#355CA8:#5FA9E8>↔ Teleports</g>
+  # Title for the Quick Actions dialog section.
+  titleCommands: <g:#267A78:#58B8A9>⚡ Quick Actions</g>
+  # Title for the Quests dialog section.
+  titleQuests: <g:#2E7D4F:#69C56F>✉ Quests</g>
+  # Title for the Boss Tracking dialog section.
+  titleBossTracking: <g:#7A1F2B:#C2414A>☠ Boss Tracker</g>
+  # Title for the Skills dialog section.
+  titleSkills: <g:#6D3AA8:#A855F7>⚗ Skills</g>
+  # Title for the Party dialog section.
+  titleParty: <g:#A04468:#E07A9A>♥ Party</g>
+  # Description shown on the Party dialog section.
+  partyDescription: '&7Team up with as many as four other players. Parties share nearby
+    quest progress, vote on loot, and enter dungeons together.'
+  # Button used to create a party.
+  partyCreateButton: <g:#2E7D4F:#69C56F>+ Create a Party</g>
+  # Button used to prepare the party invite command.
+  partyInviteButton: <g:#267A78:#58B8A9>✉ Invite a Player</g>
+  # Button used to leave a party.
+  partyLeaveButton: <g:#7A1F2B:#C2414A>✘ Leave Party</g>
+  # Title for the dialog that lists players available for a party invitation.
+  partyInviteTitle: <g:#A04468:#E07A9A>✉ Invite a Player</g>
+  # Button for an available party invite target. Use $player for their name.
+  partyInvitePlayerButton: <g:#267A78:#58B8A9>✉ Invite</g> &f$player
+  # Tooltip for a party invite target. Use $player for their name.
+  partyInvitePlayerTooltip: '&7Invite $player to your party.'
+  # Message shown when nobody online can currently be invited.
+  partyInviteNoPlayers: '&7No available players are online right now.'
+  # Message shown when the player has no active quests.
+  noActiveQuests: No active quests
+  # Message shown when there are no bosses available to track.
+  noTrackableBosses: '&7No trackable bosses are currently active.'
+  # Message showing the number of active quests. Use $amount for the quest count.
+  activeQuestsFormat: You have $amount active quest(s).
+  # Text for the back button in dialog sections.
+  backButton: ← Back to Menu

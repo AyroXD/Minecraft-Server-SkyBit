@@ -1,0 +1,45 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+flymode: false
+muted: false
+jailed: false
+ip-address: 127.0.0.1
+afk: true
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1786735265274
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1786786345865
+  login: 1786786388716
+  kits:
+    daily: 1786735281198
+    starter: 1786735284892
+    vip: 1786735298163
+    emperor: 1786739692429
+    king: 1786739708181
+money: '28960.0'
+last-account-name: Ayro
+lastlocation:
+  world: 62958e2a-2325-450b-a005-5883a0e5ff79
+  world-name: world
+  x: -2313.289244855728
+  y: 65.0
+  z: -1369.3290573958232
+  yaw: 76.95021057128906
+  pitch: -3.600062847137451
+logoutlocation:
+  world: 62958e2a-2325-450b-a005-5883a0e5ff79
+  world-name: world
+  x: 32.496565329969094
+  y: 150.0
+  z: 13.30566894284838
+  yaw: -4.8923115730285645
+  pitch: 5.401327610015869

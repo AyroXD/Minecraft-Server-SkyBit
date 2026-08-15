@@ -1,0 +1,191 @@
+# SF4 Addon Manager - Cloud Configuration
+# ---------------------------------------
+# Multi-version URLs: fill in the URL for each SF4 build tag.
+# Leave blank ("") for versions not yet packaged.
+# The plugin auto-detects the running server version and uses the matching URL.
+
+cloud-sync:
+  enabled: true
+  url: "https://raw.githubusercontent.com/rutwok-labs/SF4-Addons/main/Addons/java/core/api/config/addonmanager.yml"
+  version-urls:
+    "26.2": "https://raw.githubusercontent.com/rutwok-labs/SF4-Addons/main/Addons/java/core/api/config/addonmanager.yml"
+    "26.1.2": "https://raw.githubusercontent.com/rutwok-labs/SF4-Addons/main/Addons/java/core/api/config/addonmanager.yml"
+    "26.1.1": "https://raw.githubusercontent.com/rutwok-labs/SF4-Addons/main/Addons/java/core/api/config/addonmanager.yml"
+    "26.1": "https://raw.githubusercontent.com/rutwok-labs/SF4-Addons/main/Addons/java/core/api/config/addonmanager.yml"
+    "1.21.11": "https://raw.githubusercontent.com/rutwok-labs/SF4-Addons/main/Addons/java/core/api/config/addonmanager.yml"
+    "1.20.4": ""
+    "1.19.4": ""
+  interval-minutes: 3
+  fallback-to-local-on-empty: true
+  fallback-to-local-on-failure: true
+
+addons:
+  exoticgarden:
+    name: "ExoticGarden"
+    enabled: false
+    download: false
+    auto-update: false
+    sha256: ""
+    checksum-url: ""
+    api-url: ""
+    versions:
+      "26.2": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/ExoticGarden/26.2/releases"
+      "26.1.2": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/ExoticGarden/26.1.2/releases"
+      "26.1.1": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/ExoticGarden/26.1.1/releases"
+      "26.1": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/ExoticGarden/26.1/releases"
+      "1.21.11": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/ExoticGarden/1.21.11/releases"
+      "1.20.4": ""
+      "1.19.4": ""
+
+  electricspawners:
+    name: "ElectricSpawners"
+    enabled: false
+    download: false
+    auto-update: false
+    sha256: ""
+    checksum-url: ""
+    api-url: ""
+    versions:
+      "26.2": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/ElectricSpawners/26.2/releases"
+      "26.1.2": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/ElectricSpawners/26.1.2/releases"
+      "26.1.1": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/ElectricSpawners/26.1.1/releases"
+      "26.1": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/ElectricSpawners/26.1/releases"
+      "1.21.11": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/ElectricSpawners/1.21.11/releases"
+      "1.20.4": ""
+      "1.19.4": ""
+
+  fluffymachines:
+    name: "FluffyMachines"
+    enabled: false
+    download: false
+    auto-update: false
+    sha256: ""
+    checksum-url: ""
+    api-url: ""
+    versions:
+      "26.2": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/FluffyMachines/26.2/releases"
+      "26.1.2": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/FluffyMachines/26.1.2/releases"
+      "26.1.1": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/FluffyMachines/26.1.1/releases"
+      "26.1": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/FluffyMachines/26.1/releases"
+      "1.21.11": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/FluffyMachines/1.21.11/releases"
+      "1.20.4": ""
+      "1.19.4": ""
+
+  infinityexpansion:
+    name: "InfinityExpansion"
+    enabled: false
+    download: false
+    auto-update: false
+    sha256: ""
+    checksum-url: ""
+    api-url: ""
+    versions:
+      "26.2": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/InfinityExpansion/26.2/releases"
+      "26.1.2": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/InfinityExpansion/26.1.2/releases"
+      "26.1.1": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/InfinityExpansion/26.1.1/releases"
+      "26.1": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/InfinityExpansion/26.1/releases"
+      "1.21.11": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/InfinityExpansion/1.21.11/releases"
+      "1.20.4": ""
+      "1.19.4": ""
+
+  foxymachines:
+    name: "FoxyMachines"
+    enabled: false
+    download: false
+    auto-update: false
+    sha256: ""
+    checksum-url: ""
+    api-url: ""
+    versions:
+      "26.2": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/FoxyMachines/26.2/releases"
+      "26.1.2": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/FoxyMachines/26.1.2/releases"
+      "26.1.1": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/FoxyMachines/26.1.1/releases"
+      "26.1": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/FoxyMachines/26.1/releases"
+      "1.21.11": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/FoxyMachines/1.21.11/releases"
+      "1.20.4": ""
+      "1.19.4": ""
+
+  advancedtech:
+    name: "AdvancedTech"
+    enabled: false
+    download: false
+    auto-update: false
+    sha256: ""
+    checksum-url: ""
+    api-url: ""
+    versions:
+      "26.2": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/AdvancedTech/26.2/releases"
+      "26.1.2": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/AdvancedTech/26.1.2/releases"
+      "26.1.1": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/AdvancedTech/26.1.1/releases"
+      "26.1": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/AdvancedTech/26.1/releases"
+      "1.21.11": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/AdvancedTech/1.21.11/releases"
+      "1.20.4": ""
+      "1.19.4": ""
+
+  ecopower:
+    name: "EcoPower"
+    enabled: false
+    download: false
+    auto-update: false
+    sha256: ""
+    checksum-url: ""
+    api-url: ""
+    versions:
+      "26.2": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/EcoPower/26.2/releases"
+      "26.1.2": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/EcoPower/26.1.2/releases"
+      "26.1.1": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/EcoPower/26.1.1/releases"
+      "26.1": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/EcoPower/26.1/releases"
+      "1.21.11": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/EcoPower/1.21.11/releases"
+      "1.20.4": ""
+      "1.19.4": ""
+
+  supreme:
+    name: "Supreme"
+    enabled: false
+    download: false
+    auto-update: false
+    sha256: ""
+    checksum-url: ""
+    api-url: ""
+    versions:
+      "26.2": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/Supreme/26.2/releases"
+      "26.1.2": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/Supreme/26.1.2/releases"
+      "26.1.1": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/Supreme/26.1.1/releases"
+      "26.1": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/Supreme/26.1/releases"
+      "1.21.11": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/Supreme/1.21.11/releases"
+      "1.20.4": ""
+      "1.19.4": ""
+
+  ExtraGear:
+    name: "ExtraGear"
+    enabled: false
+    download: false
+    auto-update: false
+    sha256: ""
+    checksum-url: ""
+    api-url: ""
+    versions:
+      "26.2": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/ExtraGear/26.2/releases"
+      "26.1.2": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/ExtraGear/26.1.2/releases"
+      "26.1.1": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/ExtraGear/26.1.1/releases"
+      "26.1": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/ExtraGear/26.1/releases"
+      "1.21.11": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/ExtraGear/1.21.11/releases"
+      "1.20.4": ""
+      "1.19.4": ""
+
+  ExtraTools:
+    name: "ExtraTools"
+    enabled: false
+    download: false
+    auto-update: false
+    sha256: ""
+    checksum-url: ""
+    api-url: ""
+    versions:
+      "26.2": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/ExtraTools/26.2/releases"
+      "26.1.2": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/ExtraTools/26.1.2/releases"
+      "26.1.1": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/ExtraTools/26.1.1/releases"
+      "26.1": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/ExtraTools/26.1/releases"
+      "1.21.11": "https://github.com/rutwok-labs/SF4-Addons/tree/main/Addons/ExtraTools/1.21.11/releases"
+      "1.20.4": ""
+      "1.19.4": ""   

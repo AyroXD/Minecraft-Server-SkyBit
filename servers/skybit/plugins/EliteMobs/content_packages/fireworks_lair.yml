@@ -1,0 +1,36 @@
+isEnabled: true
+name: '&2[Dynamic] &aThe Fireworks'
+customInfo:
+- '&fThe 2021 4th of July map!'
+- '&6Credits: MagmaGuy'
+dungeonSizeCategory: LAIR
+worldName: em_fireworks
+environment: NORMAL
+protect: true
+playerInfo: |-
+  Difficulty: &cHard
+  $bossCount level $lowestTier Big Boss!
+  &6An encounter full of explosions!
+regionEnterMessage: '&8[EM] &eWelcome to the fireworks show!'
+regionLeaveMessage: '&8[EM] &eYou''ve left the party!'
+startLocation: em_fireworks,24.5,65.2,-28.5,45,0
+teleportLocation: em_fireworks,30.5,65.2,-32.5,45,0
+dungeonObjectives:
+- filename=fireworks_level_50_boss_phase_1.yml
+contentType: DYNAMIC_DUNGEON
+dungeonConfigFolderName: the_fireworks
+contentLevel: -1
+difficulties:
+- name: normal
+  id: 0
+  levelSync: '+5'
+- name: hard
+  id: 1
+  levelSync: '+0'
+- name: mythic
+  id: 2
+  levelSync: '-5'
+allowExplosionBlockDamage: true
+setupMenuDescription:
+- '&2A dynamic Lair!'
+dungeonLockoutMinutes: 4320

@@ -1,0 +1,16 @@
+isEnabled: true
+entityType: HUSK
+name: $reinforcementLevel <g:#808080:#D3D3D3>The Living Dead</g>
+level: dynamic
+powers:
+- attack_fire.lua
+- corpse.lua
+- ground_pound.yml
+followDistance: 100
+helmet: CHAINMAIL_HELMET
+chestplate: CHAINMAIL_CHESTPLATE
+leggings: CHAINMAIL_LEGGINGS
+boots: CHAINMAIL_BOOTS
+onSpawnBlockStates: []
+onRemoveBlockStates: []
+bossType: NORMAL

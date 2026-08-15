@@ -1,0 +1,2259 @@
+# ##########################################################################################
+# This is a YML file. Be careful when editing. Check your edits in a YAML checker like    #
+# the one at http://yaml-online-parser.appspot.com                                        #
+# ##########################################################################################
+
+# This locale is always current with the latest version
+
+meta:
+  authors:
+  - GIGABAIT93
+  banner: YELLOW_BANNER:1:HALF_HORIZONTAL:BLUE
+
+prefixes:
+  bentobox: <gold>BentoBox </gold><gray><bold>> </bold></gray>
+  island: острів
+  Island: Острів
+  Islands: Острови
+  an-island: острів
+  islands: острови
+general:
+  dialogs:
+    game-mode-selection:
+      title: <green>Виберіть свою гру</green>
+  did-you-mean:
+    suggestion: '<gray>Можливо, ви мали на увазі </gray><yellow>[command]</yellow><gray>?
+      Натисніть тут або введіть </gray><green>yes</green><gray>, щоб виконати.</gray>[run_command:
+      [command]][hover: Натисніть, щоб виконати [command]]'
+    header: <gray>Можливо, ви мали на увазі одну з цих команд? Натисніть, щоб виконати:</gray>
+    option: '<yellow>  [command]</yellow>[run_command: [command]][hover: Натисніть,
+      щоб виконати [command]]'
+  success: <green>Успішно!</green>
+  invalid: Невірно
+  beta: <light_purple><bold>Ця команда в бета-версії. Переконайтеся, що маєте резервні
+    копії!</bold></light_purple>
+  errors:
+    command-cancelled: <red>Команду скасовано.</red>
+    no-permission: <red>У вас немає дозволу на виконання цієї команди (</red><gray>[permission]</gray><red>).</red>
+    insufficient-rank: <red>Ваш ранг недостатньо високий для цієї дії! (</red><gray>[rank]</gray><red>)</red>
+    use-in-game: <red>Ця команда доступна лише в грі.</red>
+    use-in-console: <red>Цю команду можна виконати тільки в консолі.</red>
+    no-team: <red>У вас немає команди!</red>
+    no-island: <red>У вас немає [prefix_an-island]!</red>
+    player-has-island: <red>Гравець уже має [prefix_an-island]!</red>
+    player-has-no-island: <red>Цей гравець не має [prefix_island]!</red>
+    already-have-island: <red>Ви вже маєте [prefix_an-island]!</red>
+    no-safe-location-found: <red>Не вдалося знайти безпечну точку для телепорту на
+      [prefix_island].</red>
+    not-owner: <red>Ви не власник [prefix_island]!</red>
+    player-is-not-owner: <aqua>[name] </aqua><red>не є власником [prefix_an-island]!</red>
+    not-in-team: <red>Цей гравець не у вашій команді!</red>
+    offline-player: <red>Цей гравець офлайн або не існує.</red>
+    unknown-player: <red>[name] — невідомий гравець!</red>
+    general: <red>Ця команда ще не готова — зверніться до адміністратора</red>
+    unknown-command: <red>Невідома команда. Виконайте </red><aqua>/[label] help </aqua><red>для
+      довідки.</red>
+    wrong-world: <red>Ви не в тому світі, щоб зробити це!</red>
+    you-must-wait: <red>Потрібно зачекати [number]с перед повторним виконанням цієї
+      команди.</red>
+    must-be-positive-number: <red>[number] — це не коректне додатне число.</red>
+    not-on-island: <red>Ви не на [prefix_island]!</red>
+    slow-down: <red>Повільніше. Клацайте рідше.</red>
+  worlds:
+    overworld: Звичайний світ
+    nether: Нижній світ
+    the-end: Край
+
+commands:
+  # Parameters in <> are required, parameters in [] are optional
+  help:
+    header: <gray>=========== </gray><red>[label] help </red><gray>===========</gray>
+    syntax: '<aqua>[usage] </aqua><green>[parameters]</green><gray>: </gray><yellow>[description]</yellow>'
+    syntax-no-parameters: '<aqua>[usage]</aqua><gray>: </gray><yellow>[description]</yellow>'
+    end: <gray>=================================</gray>
+    page: <gray>Сторінка </gray><yellow>[page]</yellow><gray> з </gray><yellow>[total]</yellow>
+    parameters: '[command]'
+    description: команда довідки
+    console: Консоль
+  admin:
+    help:
+      description: адмін-команда
+    maxhomes:
+      description: змінити кількість дозволених домівок на цьому [prefix_island] або
+        на [prefix_island] гравця
+      parameters: <number / player> <number> [[prefix_island] name]
+      max-homes-set: <green>[name] - Максимум домівок [prefix_island] встановлено
+        на [number]</green>
+      errors:
+        unknown-island: Невідомий [prefix_island]! [name]
+    resethome:
+      description: Скинути дім гравця за замовчуванням
+      parameters: <гравець> [[prefix_island] name]
+      cleared: <aqua>Дім скинуто. [name]</aqua>
+    resets:
+      description: редагувати лічильник перезапусків гравця
+      set:
+        description: встановлює, скільки разів гравець перезапускав свій [prefix_island]
+        parameters: <гравець> <resets>
+        success: <aqua>[name]</aqua><green>— лічильник перезапусків [prefix_island]
+          тепер </green><aqua>[number]</aqua><green>.</green>
+      reset:
+        description: встановлює лічильник перезапусків [prefix_island] гравця в 0
+        parameters: <гравець>
+        success-everyone: <green>Успішно скинуто лічильник перезапусків </green><aqua>всім</aqua><green>до
+          </green><aqua>0</aqua><green>.</green>
+        success: <green>Успішно скинуто лічильник перезапусків </green><aqua>[name]</aqua><green>до
+          </green><aqua>0</aqua><green>.</green>
+      add:
+        description: додає перезапуски до лічильника [prefix_island] цього гравця
+        parameters: <гравець> <resets>
+        success: <green>Успішно додано </green><aqua>[number] </aqua><green>перезапуск(и/ів)
+          для </green><aqua>[name], збільшуючи загалом до </aqua><aqua>[total]</aqua><green>.</green>
+      remove:
+        description: зменшує лічильник перезапусків [prefix_island] гравця
+        parameters: <гравець> <resets>
+        success: <green>Успішно видалено </green><aqua>[number] </aqua><green>перезапуск(и/ів)
+          із [prefix_island] </green><aqua>[name]</aqua><green>, зменшивши загалом
+          до </green><aqua>[total]</aqua><green>.</green>
+    purge:
+      parameters: '[days]'
+      description: очищення [prefix_Islands], занедбаних понад [days]
+      days-one-or-more: <red>Має бути як мінімум 1 день</red>
+      purgable-islands: <green>Знайдено </green><aqua>[number] </aqua><green>[prefix_Islands],
+        що можна очистити.</green>
+      too-many: |
+        <aqua>Це багато і видалення може зайняти дуже довго.</aqua>
+        <aqua>Розгляньте плагін Regionerator для видалення чанків світу</aqua>
+        <aqua>та встановіть keep-previous-island-on-reset: true у config.yml BentoBox.</aqua>
+        <aqua>Потім запустіть очистку.</aqua>
+      purge-in-progress: <red>Триває очищення. Використайте </red><aqua>/[label] purge
+        stop </aqua><red>щоб скасувати.</red>
+      scanning: <green>Сканування [prefix_Islands] у базі даних. Це може зайняти певний
+        час...</green>
+      scanning-in-progress: <red>Виконується сканування, зачекайте</red>
+      none-found: <red>Не знайдено [prefix_Islands] для очищення.</red>
+      total-islands: <green>У ваших базах усіх світів </green><aqua>[number] </aqua><green>[prefix_Islands].</green>
+      number-error: <red>Аргумент має бути числом днів</red>
+      confirm: <light_purple>Введіть </light_purple><aqua>/[label] purge confirm </aqua><light_purple>щоб
+        почати очищення</light_purple>
+      completed: <green>Очищення зупинено.</green>
+      see-console-for-status: <green>Очищення розпочато. Дивіться статус у консолі
+        або використайте </green><aqua>/[label] purge status</aqua><green>.</green>
+      no-purge-in-progress: <red>Наразі очищення не виконується.</red>
+      regions:
+        parameters: '[days]'
+        description: очищення островів шляхом видалення старих файлів регіонів
+        confirm: <light_purple>Введіть </light_purple><aqua>/[label] purge regions
+          confirm </aqua><light_purple>щоб почати очищення</light_purple>
+      failed: <red>Очищення завершено з помилками. Деякі файли регіонів не вдалося
+        видалити. Перевірте журнал сервера для отримання деталей.</red>
+      age-regions:
+        parameters: '[days]'
+        description: 'налагодження/тест: перезапис часових міток файлів регіонів,
+          щоб зробити їх доступними для очищення'
+        done: <green>Застаріло </green><aqua>[number]</aqua><green> файл(ів) регіонів
+          у поточному світі.</green>
+      deleted:
+        parameters: ''
+        description: очистити файли регіонів для будь-якого [prefix_island], вже позначеного
+          як видаленого
+        confirm: <light_purple>Введіть </light_purple><aqua>/[label] purge deleted
+          confirm </aqua><light_purple>щоб видалити файли регіонів</light_purple>
+        deferred: <green>Файли регіонів видалено. Записи бази даних островів будуть
+          видалені при наступному перезапуску сервера.</green>
+      protect:
+        description: перемикання захисту [prefix_island] від очищення
+        move-to-island: <red>Спершу перейдіть на [prefix_an-island]!</red>
+        protecting: <green>[prefix_island] захищено від очищення.</green>
+        unprotecting: <green>Захист від очищення знято.</green>
+      stop:
+        description: зупинити поточне очищення
+        stopping: Зупиняю очищення
+      unowned:
+        description: очистити острови без власників
+        unowned-islands: <green>Знайдено </green><aqua>[number] </aqua><green>островів
+          без власників.</green>
+        parameters: ''
+        flagged: <green>Позначено </green><aqua>[number] </aqua><green>[prefix_island](s)
+          як видаляльні. Запустіть </green><aqua>/[label] purge deleted</aqua><green>,
+          щоб видалити файли регіонів.</green>
+      status:
+        description: показати статус очищення
+        status: <aqua>[purged] </aqua><green>островів очищено з </green><aqua>[purgeable]
+          </aqua><gray>(</gray><aqua>[percentage] %</aqua><gray>)</gray><green>.</green>
+    team:
+      description: керування командами
+      add:
+        parameters: <owner> <гравець>
+        description: додати гравця до команди власника
+        name-not-owner: <red>[name] не є власником.</red>
+        name-has-island: <red>[name] має [prefix_an-island]. Спершу зніміть реєстрацію
+          або видаліть!</red>
+        success: <aqua>[name]</aqua><green>додано до [prefix_island] гравця </green><aqua>[owner]</aqua><green>.</green>
+      disband:
+        parameters: <owner>
+        description: розформувати команду власника
+        use-disband-owner: <red>Ви не власник! Використайте disband [owner].</red>
+        disbanded: <red>Адмін розпустив вашу команду!</red>
+        success: <green>Команду </green><aqua>[name]</aqua><green>розформовано.</green>
+      disbandall:
+        description: видаляє всіх учасників та співвласників з кожного [prefix_island]
+          у цьому світі
+        confirmation: <red>Це видалить усіх учасників та співвласників з кожного [prefix_island]
+          у цьому світі. Гравці з trust та coop не будуть зачеплені. Введіть команду
+          підтвердження, щоб продовжити.</red>
+        success: <green>Видалено </green><aqua>[number]</aqua><green> учасників з
+          </green><aqua>[islands]</aqua><green> [prefix_islands].</green>
+      fix:
+        description: сканує і виправляє перехресне членство у [prefix_island] у БД
+        scanning: Сканую базу даних...
+        duplicate-owner: '<red>Гравець володіє більше ніж одним [prefix_island] у
+          БД: [name]</red>'
+        player-has: '<red>У гравця [name] островів: [number]</red>'
+        duplicate-member: <red>Гравець [name] є учасником більш ніж одного [prefix_island]
+          у БД</red>
+        rank-on-island: <red>[rank] на [prefix_island] за координатами [xyz]</red>
+        fixed: <green>Виправлено</green>
+        done: <green>Сканування завершено</green>
+      kick:
+        parameters: <team player>
+        description: вигнати гравця з команди
+        cannot-kick-owner: <red>Не можна вигнати власника. Використовуйте </red><yellow>setowner</yellow><red>,
+          щоб передати володіння, або </red><yellow>disband</yellow><red>, щоб розпустити
+          команду.</red>
+        not-in-team: <red>Цей гравець не в команді.</red>
+        admin-kicked: <red>Адміністратор вигнав вас із команди.</red>
+        success: <aqua>[name] </aqua><green>вигнано з [prefix_island] гравця </green><aqua>[owner]</aqua><green>.</green>
+      setowner:
+        specify-island: '<red>Станьте на [prefix_island] і виконайте це в грі, або
+          вкажіть поточного власника острова: </red><yellow>setowner <player> <island
+          owner></yellow>'
+        parameters: <гравець>
+        description: передати право власності [prefix_island] гравцю
+        already-owner: <red>[name] уже власник цього [prefix_island]!</red>
+        must-be-on-island: <red>Ви маєте бути на цьому [prefix_island], щоб призначити
+          власника</red>
+        confirmation: <green>Ви певні, що хочете зробити [name] власником [prefix_island]
+          на [xyz]?</green>
+        success: <aqua>[name]</aqua><green>тепер власник цього [prefix_island].</green>
+        errors:
+          at-max: <red>[name] вже володіє [number] [prefix_islands] - максимум, дозволений
+            налаштуваннями або правами, дорівнює [max]. Змініть його дозвіл, щоб дозволити
+            більше.</red>
+        extra-islands: '<red>Увага: тепер цей гравець має [number] островів. Це більше
+          ніж дозволено налаштуваннями або пермами: [max].</red>'
+      maxsize:
+        parameters: <гравець> <size>
+        description: встановити максимальний розмір команди для [prefix_island] гравця
+          (0 для скидання до типового значення світу)
+        success: <green>Встановлено максимальний розмір команди [prefix_island] гравця
+          </green><aqua>[name]</aqua><green> на </green><aqua>[number]</aqua><green>.</green>
+        reset: <green>Скинуто максимальний розмір команди [prefix_island] гравця </green><aqua>[name]</aqua><green>
+          до типового значення світу (</green><aqua>[number]</aqua><green>).</green>
+    range:
+      description: адмін-команда діапазону [prefix_island]
+      invalid-value:
+        too-low: <red>Діапазон захисту має бути більший за </red><aqua>1</aqua><red>!</red>
+        too-high: <red>Діапазон захисту має бути не більший за </red><aqua>[number]</aqua><red>!</red>
+        same-as-before: <red>Діапазон захисту вже встановлено на </red><aqua>[number]</aqua><red>!</red>
+      display:
+        already-off: <red>Індикатори вже вимкнені</red>
+        already-on: <red>Індикатори вже увімкнені</red>
+        description: показати/сховати індикатори діапазону [prefix_island]
+        hiding: <dark_green>Приховую індикатори діапазону</dark_green>
+        hint: |-
+          <red>Червоні бар’єри </red><white>показують поточну межу захисту [prefix_island].</white>
+          <gray>Сірі частинки </gray><white>показують максимум [prefix_island].</white>
+          <green>Зелені частинки </green><white>показують типовий захист, якщо він відрізняється.</white>
+        showing: <dark_green>Показую індикатори діапазону</dark_green>
+      set:
+        parameters: <гравець> <range> [[prefix_island] location]
+        description: встановити діапазон захисту [prefix_island]
+        success: <green>Встановлено діапазон захисту [prefix_island] на </green><aqua>[number]</aqua><green>.</green>
+      reset:
+        parameters: <гравець>
+        description: скинути діапазон захисту [prefix_island] до значення світу за
+          замовчуванням
+        success: <green>Скинуто діапазон захисту [prefix_island] до </green><aqua>[number]</aqua><green>.</green>
+      add:
+        description: збільшити діапазон захисту [prefix_island]
+        parameters: <гравець> <range> [[prefix_island] location]
+        success: <green>Успішно збільшено діапазон захисту [prefix_island] </green><aqua>[name]</aqua><green>до
+          </green><aqua>[total] </aqua><gray>(</gray><aqua>+[number]</aqua><gray>)</gray><green>.</green>
+      remove:
+        description: зменшити діапазон захисту [prefix_island]
+        parameters: <гравець> <range> [[prefix_island] location]
+        success: <green>Успішно зменшено діапазон захисту [prefix_island] </green><aqua>[name]</aqua><green>до
+          </green><aqua>[total] </aqua><gray>(</gray><aqua>-[number]</aqua><gray>)</gray><green>.</green>
+      removebonus:
+        parameters: <гравець> [id]
+        description: видаляє бонусні радіуси з острова (усі або один за id)
+        no-bonus: <red>На цьому острові немає бонусних радіусів для видалення!</red>
+        unknown-bonus: <red>На цьому острові немає бонусного радіуса з id </red><aqua>[id]</aqua><red>!</red>
+        success: <green>Видалено </green><aqua>[number]</aqua><green> бонусного радіуса
+          з острова гравця </green><aqua>[name]</aqua><green>.</green>
+        success-id: <green>Бонусний радіус </green><aqua>[id]</aqua><green> (</green><aqua>[number]</aqua><green>)
+          видалено з острова гравця </green><aqua>[name]</aqua><green>.</green>
+      purgebonus:
+        parameters: <id>
+        description: видаляє бонусний радіус із вказаним id з усіх островів (наприклад,
+          після видалення аддона, що його додав)
+        none: <red>На жодному острові немає бонусного радіуса з id </red><aqua>[id]</aqua><red>!</red>
+        warning: <gold>Це видалить бонусний радіус </gold><aqua>[id]</aqua><gold>
+          з </gold><aqua>[number]</aqua><gold> острова(ів).</gold>
+        success: <green>Бонусний радіус </green><aqua>[id]</aqua><green> видалено
+          з </green><aqua>[number]</aqua><green> острова(ів).</green>
+        confirm: <gold>Запустіть команду знову з </gold><aqua>confirm</aqua><gold>,
+          щоб продовжити.</gold>
+        in-progress: <red>Очищення бонусних радіусів уже виконується. Будь ласка,
+          зачекайте.</red>
+        failed: <red>Не вдалося просканувати острови. Перевірте консоль.</red>
+    register:
+      parameters: <гравець>
+      description: зареєструвати гравця на безхазяйному [prefix_island], на якому
+        ви стоїте
+      registered-island: <green>Зареєстровано [name] на [prefix_island] за [xyz].</green>
+      reserved-island: <green>Зарезервовано [prefix_island] за [xyz] для [name].</green>
+      already-owned: <red>[prefix_island] уже належить іншому гравцю!</red>
+      no-island-here: <red>Тут немає [prefix_island]. Підтвердіть, щоб створити.</red>
+      in-deletion: <gold>Цей [prefix_island] очікує на видалення. Його реєстрація
+        скасує видалення. Введіть команду ще раз для підтвердження.</gold>
+      cannot-make-island: <red>[prefix_an-island] не може бути створено тут. Див.
+        консоль на помилки.</red>
+      island-is-spawn: <gold>[prefix_island] — це спавн. Ви впевнені? Виконайте команду
+        ще раз для підтвердження.</gold>
+    undelete:
+      description: знімає статус очікування видалення з [prefix_island] без власника,
+        на якому ви стоїте
+      not-in-deletion: <red>Цей [prefix_island] не очікує на видалення.</red>
+      undeleted-island: <green>Статус видалення знято з [prefix_island] на [xyz].
+        Тепер він без власника.</green>
+    unregister:
+      parameters: <owner> [x,y,z]
+      description: зняти реєстрацію власника з [prefix_island], але залишити блоки
+        [prefix_island]
+      unregistered-island: <green>Знято реєстрацію [name] з [prefix_island] за [xyz].</green>
+      errors:
+        unknown-island-location: <red>Невідома локація [prefix_island]</red>
+        specify-island-location: <red>Вкажіть локацію [prefix_island] у форматі x,y,z</red>
+        player-has-more-than-one-island: <red>У гравця більше ніж один [prefix_island].
+          Уточніть який.</red>
+    info:
+      parameters: <гравець>
+      description: отримати інформацію про місце розташування або [prefix_island]
+        гравця
+      no-island: <red>Зараз ви не на [prefix_an-island]...</red>
+      title: ========== Інфо про [prefix_Island] ============
+      island-uuid: 'UUID: [uuid]'
+      owner: 'Власник: [owner] ([uuid])'
+      last-login: 'Останній вхід: [date]'
+      last-login-date-time-format: EEE MMM dd HH:mm:ss zzz yyyy
+      deaths: 'Смертей: [number]'
+      resets-left: 'Перезапуски: [number] (Макс: [total])'
+      max-homes: 'Макс. домівок: [number]'
+      team-members-title: 'Учасники команди:'
+      team-owner-format: <green>[name] [rank]</green>
+      team-member-format: <aqua>[name] [rank]</aqua>
+      max-team-size: 'Максимальний розмір команди: [number]'
+      max-coop-size: 'Максимальний розмір кооперації: [number]'
+      max-trusted-size: 'Максимальний розмір довірених: [number]'
+      island-protection-center: 'Центр зони захисту: [xyz]'
+      island-center: 'Центр [prefix_Island]: [xyz]'
+      island-coords: 'Координати [prefix_Island]: [xz1] до [xz2]'
+      islands-in-trash: <light_purple>У гравця є острови в кошику.</light_purple>
+      protection-range: 'Діапазон захисту: [range]'
+      protection-range-bonus-title: <aqua>Включає ці бонуси:</aqua>
+      protection-range-bonus: 'Бонус: [number]'
+      purge-protected: '[prefix_Island] захищено від очищення'
+      deletable: <red>[prefix_Island] позначено для видалення та очікує очищення регіону.</red>
+      max-protection-range: 'Найбільший історичний діапазон захисту: [range]'
+      protection-coords: 'Координати захисту: [xz1] до [xz2]'
+      is-spawn: '[prefix_Island] є спавн-[prefix_island]'
+      banned-players: 'Заблоковані гравці:'
+      banned-format: <red>[name]</red>
+      unowned: <red>Без власника</red>
+      bundle: '<green>Пакет креслень, використаний для створення острова: </green><aqua>[name]</aqua>'
+    switch:
+      description: увімк./вимк. обхід захисту
+      op: <red>ОP завжди обходять захист. Зніміть OP, щоб використовувати команду.</red>
+      removing: <green>Вимикаю обхід захисту...</green>
+      adding: <green>Вмикаю обхід захисту...</green>
+    switchto:
+      parameters: <гравець> <number>
+      description: перемкнути [prefix_island] гравця на пронумерований у кошику
+      out-of-range: <red>Номер має бути від 1 до [number]. Використайте <bold>[label]
+        trash [player] </bold></red><red>щоб побачити номери [prefix_island]</red>
+      cannot-switch: <red>Не вдалося перемкнути. Див. лог консолі для помилок.</red>
+      success: <green>Успішно перемкнуто [prefix_island] гравця на вказаний.</green>
+    trash:
+      no-unowned-in-trash: <red>Немає безхазяйних островів у кошику</red>
+      no-islands-in-trash: <red>У гравця немає островів у кошику</red>
+      parameters: '[гравець]'
+      description: показати безхазяйні острови або острови гравця в кошику
+      title: <light_purple>=========== Острови в кошику ===========</light_purple>
+      count: <bold><light_purple>[prefix_Island] [number]:</light_purple></bold>
+      use-switch: <green>Використайте <bold>[label] switchto <player> <number></bold></green><green>щоб
+        перемкнути гравця на [prefix_island] з кошика</green>
+      use-emptytrash: <green>Використайте <bold>[label] emptytrash [player]</bold></green><green>щоб
+        остаточно видалити елементи з кошика</green>
+    emptytrash:
+      parameters: '[гравець]'
+      description: Очистити кошик для гравця або всі безхазяйні острови в кошику
+      success: <green>Кошик успішно очищено.</green>
+    version:
+      description: показати версії BentoBox та аддонів
+    setrange:
+      parameters: <гравець> <range>
+      description: встановити діапазон [prefix_island] гравця
+      range-updated: <green>Діапазон [prefix_Island] оновлено до </green><aqua>[number]</aqua><green>.</green>
+    placeholders:
+      description: відкрити браузер замінників
+    dump-placeholders:
+      description: експортувати всі зареєстровані замінники в markdown файл
+      dumped: <green>Список замінників записано в [file]</green>
+      error: '<red>Не вдалося записати список замінників: [message]</red>'
+    reload:
+      description: перезавантажити
+    tp:
+      parameters: <гравець> [острів гравця]
+      description: телепортуватися на [prefix_island] гравця
+      manual: <red>Безпечну точку варпу не знайдено! Ручний TP поблизу </red><aqua>[location]
+        </aqua><red>і перевірка</red>
+    tpuser:
+      parameters: <гравець що телепортується> <[prefix_island]'s player> [острів гравця]
+      description: телепортувати гравця на [prefix_island] іншого гравця
+    getrank:
+      parameters: <гравець> [[prefix_island] owner]
+      description: отримати ранг гравця на його [prefix_island] або на [prefix_island]
+        власника
+      rank-is: <green>Ранг </green><aqua>[rank] </aqua><green>на [prefix_island] гравця
+        </green><aqua>[name]</aqua><green>.</green>
+    setrank:
+      parameters: <гравець> <rank> [[prefix_island] owner]
+      description: встановити ранг гравцю на його [prefix_island] або на [prefix_island]
+        власника
+      unknown-rank: <red>Невідомий ранг!</red>
+      not-possible: <red>Ранг має бути вищий за «відвідувач».</red>
+      rank-set: <green>Ранг змінено з </green><aqua>[from] </aqua><green>на </green><aqua>[to]
+        </aqua><green>на [prefix_island] </green><aqua>[name]</aqua><green>.</green>
+    setprotectionlocation:
+      parameters: '[x y z coords]'
+      description: встановити поточну локацію або [x y z] центром зони захисту [prefix_island]
+      island: <red>Це вплине на [prefix_island] за [xyz], власник '[name]'.</red>
+      confirmation: <red>Ви впевнені, що хочете встановити [xyz] центром захисту?</red>
+      success: <green>Успішно встановлено [xyz] як центр захисту.</green>
+      fail: <red>Не вдалося встановити [xyz] як центр захисту.</red>
+      island-location-changed: <green>[user] змінив центр захисту [prefix_island]
+        на [xyz].</green>
+      xyz-error: '<red>Вкажіть три цілі координати: наприклад, 100 120 100</red>'
+    setspawn:
+      description: встановити цей [prefix_an-island] як спавн для цього режиму
+      already-spawn: <red>Цей [prefix_island] уже є спавном!</red>
+      no-island-here: <red>Тут немає [prefix_island].</red>
+      confirmation: <red>Ви впевнені, що хочете зробити цей [prefix_island] спавном
+        для цього світу?</red>
+      success: <green>Успішно встановлено цей [prefix_island] як спавн цього світу.</green>
+    setspawnpoint:
+      description: встановити поточну локацію як точку спавну для цього [prefix_island]
+      no-island-here: <red>Тут немає [prefix_island].</red>
+      confirmation: <red>Ви впевнені, що хочете встановити цю локацію точкою спавну
+        для цього острова?</red>
+      success: <green>Успішно встановлено цю локацію точкою спавну для цього [prefix_island].</green>
+      island-spawnpoint-changed: <green>[user] змінив точку спавну [prefix_island].</green>
+    settings:
+      parameters: '[гравець]/[world flag]/spawn-island [flag/active/disable] [rank/active/disable]'
+      description: відкрити GUI налаштувань або встановити налаштування
+      unknown-setting: <red>Невідоме налаштування</red>
+    blueprint:
+      parameters: <load/copy/paste/pos1/pos2/save>
+      description: керування кресленнями (blueprints)
+      bedrock-required: <red>У кресленні має бути щонайменше один блок бедроку!</red>
+      copy-first: <red>Спершу скопіюйте!</red>
+      file-exists: <red>Файл уже існує, перезаписати?</red>
+      no-such-file: <red>Немає такого файлу!</red>
+      could-not-load: <red>Не вдалося завантажити цей файл!</red>
+      could-not-save: '<red>Сталася помилка під час збереження: [message]</red>'
+      set-pos1: <green>Позицію 1 встановлено на [vector]</green>
+      set-pos2: <green>Позицію 2 встановлено на [vector]</green>
+      set-different-pos: <red>Встановіть інше місце — ця позиція вже задана!</red>
+      need-pos1-pos2: <red>Спершу задайте pos1 і pos2!</red>
+      copying: <aqua>Копіюю блоки...</aqua>
+      copied-blocks: <aqua>Скопійовано [number] блоків у буфер</aqua>
+      look-at-a-block: <red>Подивіться на блок в радіусі 20 блоків для встановлення</red>
+      mid-copy: <red>Триває копіювання. Дочекайтеся завершення.</red>
+      copied-percent: <gold>Скопійовано [number]%</gold>
+      copy:
+        parameters: '[air] [biome] [nowater]'
+        description: копіює виділену область pos1-pos2, за бажанням із повітрям, біомом
+          та водою
+      sink:
+        description: зробити, щоб це креслення «тонули» до дна океану під час вставки
+        status: <green>Креслення буде [status] </green><green>при вставці</green>
+        sink: <red>тонути</red>
+        not-sink: <aqua>не тонути</aqua>
+        no-clipboard: <red>У буфері немає креслення. Завантажте або скопіюйте щось.</red>
+      delete:
+        parameters: <name>
+        description: видалити креслення
+        no-blueprint: <aqua>[name] </aqua><red>не існує.</red>
+        confirmation: |
+          <red>Ви впевнені, що хочете видалити це креслення?</red>
+          <red>Після видалення його неможливо відновити.</red>
+        success: <green>Успішно видалено креслення </green><aqua>[name]</aqua><green>.</green>
+      load:
+        parameters: <name>
+        description: завантажити креслення в буфер
+      list:
+        description: перелік доступних креслень
+        no-blueprints: <red>У папці немає креслень!</red>
+        available-blueprints: <green>Доступні для завантаження креслення:</green>
+      origin:
+        description: встановити початок креслення на вашу позицію
+      paste:
+        description: вставити буфер у вашу локацію
+        pasting: <green>Вставляю...</green>
+      pos1:
+        description: встановити 1-й кут кубоїду буфера
+      pos2:
+        description: встановити 2-й кут кубоїду буфера
+      save:
+        parameters: <blueprint name>
+        description: зберегти скопійований буфер
+      rename:
+        parameters: <blueprint name> <new name>
+        description: перейменувати креслення
+        success: <green>Креслення </green><aqua>[old] </aqua><green>перейменовано
+          на </green><aqua>[display]</aqua><green>. Файл тепер </green><aqua>[name]</aqua><green>.</green>
+        pick-different-name: <red>Вкажіть ім’я, відмінне від поточного.</red>
+      management:
+        back: Назад
+        instruction: Клікніть по кресленню, потім натисніть тут
+        title: Менеджер пакетів креслень
+        edit: Натисніть, щоб редагувати
+        rename: ПКМ, щоб перейменувати
+        edit-description: Натисніть, щоб редагувати опис
+        world-name-syntax: світ [name]
+        world-instructions: |
+          Розмістіть креслення
+          праворуч для встановлення
+        trash: Кошик
+        no-trash: Не можна видалити
+        trash-instructions: ПКМ тут для видалення
+        no-trash-instructions: Не можна видаляти пакет за замовчуванням
+        permission: Дозвіл
+        no-permission: Немає дозволу
+        perm-required: Потрібен
+        no-perm-required: Не можна встановити дозвіл для пакета за замовчуванням
+        perm-not-required: Не потрібен
+        perm-format: <yellow></yellow>
+        remove: ПКМ для видалення
+        blueprint-instruction: |
+          Натисніть, щоб вибрати,
+          потім додайте до пакета.
+          ПКМ, щоб перейменувати.
+        select-first: Спершу виберіть креслення
+        new-bundle: Новий пакет
+        new-bundle-instructions: Натисніть, щоб створити новий пакет
+        name:
+          quit: вийти
+          prompt: Введіть ім’я або 'quit' для виходу
+          too-long: <red>Надто довге ім’я. Дозволено лише 32 символи.</red>
+          pick-a-unique-name: Оберіть унікальніше ім’я
+          stripped-char-in-unique-name: '<red>Деякі символи видалено як заборонені.
+            </red><green>Новий ID: </green><aqua>[name]</aqua><green>.</green>'
+          success: Успіх!
+          conversation-prefix: '>'
+        description:
+          quit: вийти
+          instructions: |
+            Введіть багаторядковий опис для [name]
+            та 'quit' окремим рядком для завершення.
+          default-color: ''
+          success: Успіх!
+          cancelling: Скасування
+        slot: <white>Бажаний слот [number]</white>
+        slot-instructions: |
+          <green>ЛКМ — збільшити</green>
+          <green>ПКМ — зменшити</green>
+        times: |
+          <green>Макс. одночасних використань гравцем</green>
+          <green>ЛКМ — збільшити</green>
+          <green>ПКМ — зменшити</green>
+        unlimited-times: Без обмежень
+        maximum-times: Макс [number] разів
+        cost: |
+          <green>Вартість [prefix_Island]</green>
+          <green>ЛКМ +1</green>
+          <green>ПКМ -1</green>
+          <green>Shift для +/-100</green>
+        no-cost: Безкоштовно
+        cost-amount: 'Вартість: [cost]'
+        next-page: <white>Наступна сторінка</white>
+        previous-page: <white>Попередня сторінка</white>
+        edit-commands: Натисніть для редагування команд
+        no-commands: Команди не встановлені
+        commands:
+          quit: вихід
+          clear: очистити
+          instructions: |
+            <white>Введіть команди для виконання при вставці креслення [name].</white>
+            <white>Підтримує замінники <green>[player]</green> та <green>[owner]</green>.</white>
+            <white>Додайте <green>[SUDO]</green> для виконання від імені гравця.</white>
+            <white>Введіть 'очистити' для видалення всіх команд у цій сесії.</white>
+            <white>Введіть 'вихід' в окремому рядку для завершення.</white>
+          default-color: ''
+          success: Успіх!
+          cancelling: Скасування
+    resetflags:
+      parameters: '[прапорець]'
+      description: Скинути всі [prefix_Islands] до типових прапорів у config.yml
+      confirm: <dark_red>Це скине прапори до типових для всіх [prefix_Islands]!</dark_red>
+      success: <green>Успішно скинуто прапори всіх [prefix_Islands] до типових налаштувань.</green>
+      success-one: <green>Прапор [name] встановлено типовим для всіх [prefix_Islands].</green>
+    world:
+      description: Керування налаштуваннями світу
+    delete:
+      parameters: '[гравець]'
+      description: видалити [prefix_island] гравця або [prefix_island], на якому ви
+        стоїте, якщо гравця не вказано
+      cannot-delete-owner: <red>Усі учасники [prefix_island] мають бути вигнані до
+        видалення.</red>
+      deleted-island: <green>[prefix_Island] за </green><yellow>[xyz] </yellow><green>успішно
+        видалено.</green>
+    deletehomes:
+      parameters: <гравець>
+      description: видалити всі названі домівки на [prefix_an-island]
+      warning: <red>Усі названі домівки будуть видалені з [prefix_island]!</red>
+    why:
+      parameters: <гравець>
+      description: увімк./вимк. налагоджувальні звіти захисту в консолі
+      turning-on: <green>Увімкнено консольний дебаг для </green><aqua>[name].</aqua>
+      turning-off: <green>Вимкнено консольний дебаг для </green><aqua>[name].</aqua>
+    deaths:
+      description: редагувати кількість смертей гравців
+      reset:
+        description: скинути смерті гравця
+        parameters: <гравець>
+        success: <green>Успішно скинуто смерті </green><aqua>[name]</aqua><green>до
+          </green><aqua>0</aqua><green>.</green>
+      set:
+        description: встановити кількість смертей гравця
+        parameters: <гравець> <deaths>
+        success: <green>Успішно встановлено смерті </green><aqua>[name]</aqua><green>на
+          </green><aqua>[number]</aqua><green>.</green>
+      add:
+        description: додати смерті гравцю
+        parameters: <гравець> <deaths>
+        success: <green>Успішно додано </green><aqua>[number] </aqua><green>смерт(і/ей)
+          для </green><aqua>[name], разом тепер </aqua><aqua>[total]</aqua><green>.</green>
+      remove:
+        description: забрати смерті у гравця
+        parameters: <гравець> <deaths>
+        success: <green>Успішно видалено </green><aqua>[number] </aqua><green>смерт(і/ей)
+          у </green><aqua>[name], разом тепер </aqua><aqua>[total]</aqua><green>.</green>
+    resetname:
+      description: скинути назву [prefix_island] гравця
+      success: <green>Успішно скинуто назву [prefix_island] гравця [name].</green>
+  bentobox:
+    description: Адмін-команда BentoBox
+    perms:
+      description: показує ефективні перміси для BentoBox і аддонів у форматі YAML
+    about:
+      description: показує інформацію про авторські права та ліцензії
+    placeholders:
+      description: відкрити браузер замінників
+    dump-placeholders:
+      description: експортувати всі зареєстровані замінники в markdown файл
+      dumped: <green>Список замінників записано в [file]</green>
+      error: '<red>Не вдалося записати список замінників: [message]</red>'
+    reload:
+      description: перезавантажує BentoBox і всі аддони, налаштування та локалі
+      locales-reloaded: '[prefix_bentobox]<dark_green>Мови перезавантажено.</dark_green>'
+      addons-reloaded: '[prefix_bentobox]<dark_green>Аддони перезавантажено.</dark_green>'
+      settings-reloaded: '[prefix_bentobox]<dark_green>Налаштування перезавантажено.</dark_green>'
+      addon: '[prefix_bentobox]<gold>Перезавантаження </gold><aqua>[name]</aqua><dark_green>.</dark_green>'
+      addon-reloaded: '[prefix_bentobox]<aqua>[name] </aqua><dark_green>перезавантажено.</dark_green>'
+      warning: '[prefix_bentobox]<red>Попередження: Перезавантаження може спричинити
+        нестабільність. Якщо побачите помилки, перезапустіть сервер.</red>'
+      unknown-addon: '[prefix_bentobox]<red>Невідомий аддон!</red>'
+      locales:
+        description: перезавантажує локалі
+    version:
+      plugin-version: '<dark_green>Версія BentoBox: </dark_green><dark_aqua>[version]</dark_aqua>'
+      description: показує версії BentoBox і аддонів
+      loaded-addons: 'Завантажені аддони:'
+      loaded-game-worlds: 'Завантажені ігрові світи:'
+      addon-syntax: <dark_green>[name] </dark_green><dark_aqua>[version] </dark_aqua><gray>(</gray><dark_aqua>[state]</dark_aqua><gray>)</gray>
+      game-world: '<dark_green>[name] </dark_green><gray>(</gray><dark_aqua>[addon]</dark_aqua><gray>):
+        </gray><dark_aqua>[worlds]</dark_aqua>'
+      server: <dark_green>Працює на </dark_green><dark_aqua>[name] [version]</dark_aqua><dark_green>.</dark_green>
+      database: '<dark_green>База даних: </dark_green><dark_aqua>[database]</dark_aqua>'
+    manage:
+      description: відкриває панель керування
+    catalog:
+      description: відкриває каталог
+    locale:
+      description: виконує аналіз файлів локалізації
+      see-console: |-
+        [prefix_bentobox]<green>Перевірте консоль, щоб побачити звіт.</green>
+        [prefix_bentobox]<green>Ця команда занадто «балакуча» для чату...</green>
+    migrate:
+      description: мігрує дані з однієї бази до іншої
+      players: '[prefix_bentobox]<gold>Мігрую гравців</gold>'
+      names: '[prefix_bentobox]<gold>Мігрую імена</gold>'
+      addons: '[prefix_bentobox]<gold>Мігрую аддони</gold>'
+      class: '[prefix_bentobox]<gold>Мігрую [description]</gold>'
+      migrated: '[prefix_bentobox]<green>Мігрувано</green>'
+      completed: '[prefix_bentobox]<green>Завершено</green>'
+    rank:
+      description: список, додавання або видалення рангів
+      parameters: <green>[list | add | remove] [rank reference] [rank value]</green>
+      add:
+        success: <green>Додано [rank] зі значенням [number]</green>
+        failure: <red>Не вдалося додати [rank] зі значенням [number]. Можливо, дублікат?</red>
+      remove:
+        success: <green>Видалено [rank]</green>
+        failure: <red>Не вдалося видалити [rank]. Невідомий ранг.</red>
+      list: <green>Зареєстровані ранги:</green>
+  confirmation:
+    confirm: <red>Повторіть команду протягом </red><aqua>[seconds]с</aqua><red>для
+      підтвердження.</red>
+    previous-request-cancelled: <gold>Попередній запит підтвердження скасовано.</gold>
+    request-cancelled: <red>Час підтвердження вийшов — </red><aqua>запит скасовано.</aqua>
+    title: <red>Ви впевнені?</red>
+    dialog-body: <gray>Підтвердьте, щоб продовжити, або скасуйте.</gray>
+    buttons:
+      confirm: <green>Підтвердити</green>
+      cancel: <red>Скасувати</red>
+  delay:
+    previous-command-cancelled: <red>Попередню команду скасовано</red>
+    stand-still: <gold>Не рухайтеся! Телепорт через [seconds] секунд</gold>
+    moved-so-command-cancelled: <red>Ви рухнулися. Телепорт скасовано!</red>
+  island:
+    about:
+      description: показати дані ліцензії
+    go:
+      parameters: '[назва дому]'
+      description: телепортуватися на ваш [prefix_island]
+      teleport: <green>Телепортую на ваш [prefix_island].</green>
+      in-progress: <green>Виконується телепорт, зачекайте...</green>
+      teleported: <green>Телепортовано до дому </green><yellow>[number].</yellow>
+      failure: <red>Не вдалося телепортуватися. Спробуйте пізніше.</red>
+      unknown-home: <red>Невідома назва дому!</red>
+      picker:
+        title: <green>Куди ви хочете піти?</green>
+    help:
+      description: головна команда [prefix_island]
+    spawn:
+      description: телепортуватися на спавн
+      teleporting: <green>Телепортую на спавн.</green>
+      no-spawn: <red>У цьому режимі немає спавну.</red>
+    create:
+      description: створити [prefix_an-island], використовуючи необов’язкове креслення
+        (потрібен дозвіл)
+      parameters: <blueprint>
+      too-many-islands: '<red>У цьому світі забагато [prefix_Islands]: недостатньо
+        місця для вашого.</red>'
+      cannot-create-island: <red>Не вдалося знайти місце вчасно, спробуйте ще раз...</red>
+      unable-create-island: <red>Ваш [prefix_island] не вдалося згенерувати, зверніться
+        до адміністратора.</red>
+      creating-island: <green>Пошук місця для вашого [prefix_island]...</green>
+      you-cannot-make: <red>Ви більше не можете створювати [prefix_Islands]!</red>
+      max-uses: <red>Ви більше не можете створювати [prefix_island] цього типу!</red>
+      you-cannot-make-team: <red>Учасники команди не можуть створювати [prefix_Islands]
+        у тому ж світі, що і їхній [prefix_island].</red>
+      pasting:
+        estimated-time: '<green>Орієнтовний час: </green><aqua>[number] </aqua><green>сек.</green>'
+        blocks: '<green>Будую блок за блоком: всього </green><aqua>[number] </aqua><green>блоків...</green>'
+        entities: '<green>Заповнюю сутностями: всього </green><aqua>[number] </aqua><green>сутностей...</green>'
+        dimension-done: <green>[prefix_Island] у [world] збудовано.</green>
+        done: <green>Готово! Ваш [prefix_island] чекає на вас!</green>
+      pick: <dark_green>Оберіть [prefix_an-island]</dark_green>
+      cannot-afford: '<red>Ви не можете собі це дозволити! Вартість: [cost]</red>'
+      unknown-blueprint: <red>Це креслення ще не завантажено.</red>
+      on-first-login: <green>Вітаємо! Ми почнемо готувати ваш [prefix_island] за кілька
+        секунд.</green>
+      you-can-teleport-to-your-island: <green>Ви зможете телепортуватися на свій [prefix_island],
+        коли забажаєте.</green>
+    deletehome:
+      description: видалити локацію дому
+      parameters: '[назва дому]'
+    homes:
+      description: показати список ваших домівок
+    info:
+      description: показати інформацію про ваш [prefix_island] або [prefix_island]
+        гравця
+      parameters: <гравець>
+    near:
+      description: показати назви сусідніх [prefix_islands] навколо вас
+      parameters: ''
+      the-following-islands: <green>Поруч знаходяться такі [prefix_islands]:</green>
+      syntax: '<gold>[direction]: </gold><green>[name]</green>'
+      north: Північ
+      south: Південь
+      east: Схід
+      west: Захід
+      no-neighbors: <red>У вас немає близьких сусідніх [prefix_islands]!</red>
+    reset:
+      description: перезапустити ваш [prefix_island] і видалити старий
+      parameters: <blueprint>
+      none-left: <red>У вас більше не лишилося перезапусків!</red>
+      resets-left: <red>У вас лишилось </red><aqua>[number] </aqua><red>перезапуск(ів)</red>
+      confirmation: |-
+        <red>Ви впевнені?</red>
+        <red>Усі учасники [prefix_island] будуть вигнані, потім доведеться запрошувати знову.</red>
+        <red>Назад дороги не буде: після видалення поточного [prefix_island] <bold>неможливо </bold></red><red>відновити його.</red>
+      kicked-from-island: <red>Вас вигнано з вашого [prefix_island] у [gamemode],
+        бо власник робить перезапуск.</red>
+    sethome:
+      description: встановити точку дому для телепорту
+      must-be-on-your-island: <red>Ви маєте бути на своєму [prefix_island], щоб встановити
+        дім!</red>
+      too-many-homes: <red>Не можна встановити — ваш [prefix_island] уже має максимум
+        [number] домівок.</red>
+      home-set: <gold>Дім на вашому [prefix_island] встановлено на поточну локацію.</gold>
+      homes-are: <gold>Домівки [prefix_Island]:</gold>
+      home-list-syntax: <gold>[name]</gold>
+      click-to-teleport: <green>Натисніть для телепортації!</green>
+      nether:
+        not-allowed: <red>Не можна встановлювати дім у Нижньому світі.</red>
+        confirmation: <red>Ви впевнені, що хочете встановити дім у Нижньому світі?</red>
+      the-end:
+        not-allowed: <red>Не можна встановлювати дім у Краю.</red>
+        confirmation: <red>Ви впевнені, що хочете встановити дім у Краю?</red>
+      parameters: '[назва дому]'
+    setname:
+      description: встановити назву для вашого [prefix_island]
+      name-too-short: <red>Надто коротко. Мінімум [number] символів.</red>
+      name-too-long: <red>Надто довго. Максимум [number] символів.</red>
+      name-already-exists: <red>У цьому режимі вже є [prefix_an-island] з такою назвою.</red>
+      parameters: <name>
+      success: <green>Успішно встановлено назву вашого [prefix_island] на </green><aqua>[name]</aqua><green>.</green>
+    renamehome:
+      description: перейменувати локацію дому
+      parameters: '[назва дому]'
+      enter-new-name: <gold>Введіть нову назву</gold>
+      already-exists: <red>Така назва вже існує, спробуйте іншу.</red>
+    resetname:
+      description: скинути назву вашого [prefix_island]
+      success: <green>Успішно скинуто назву вашого [prefix_island].</green>
+    team:
+      description: керування вашою командою
+      errors:
+        teams-disabled: <red>Команди вимкнені в цьому світі. Використовуйте натомість
+          trust або coop.</red>
+      gui:
+        titles:
+          team-panel: Керування командою
+        buttons:
+          status:
+            name: Статус
+            description: Статус команди
+          rank-filter:
+            name: Фільтр за рангом
+            description: <green>Натисніть, щоб прокручувати ранги</green>
+          invitation: Запрошення
+          invite:
+            name: Запросити гравця
+            description: |
+              <green>Гравці мають бути</green>
+              <green>в тому ж світі, що і ви,</green>
+              <green>щоб з’явитися в списку.</green>
+          member:
+            # Name shown on a member's head in the team panel. Placeholders: [name], [display_name], [last_seen].
+            name: '[display_name][last_seen]'
+            # First line of a member's description (their rank). Placeholder: [rank].
+            description: '[rank]'
+            # Suffix appended to an offline member's name. Placeholder: [last_seen]. Blank for online members.
+            last-seen: ' <gray>([last_seen])</gray>'
+        tips:
+          LEFT:
+            name: <aqua>ЛКМ</aqua>
+            invite: <green>щоб запросити гравця</green>
+          RIGHT:
+            name: <aqua>ПКМ</aqua>
+          SHIFT_RIGHT:
+            name: <aqua>Shift + ПКМ</aqua>
+            reject: <green>щоб відхилити</green>
+            kick: <green>щоб вигнати гравця</green>
+            leave: <green>щоб покинути команду</green>
+          SHIFT_LEFT:
+            name: <aqua>Shift + ЛКМ</aqua>
+            accept: <green>щоб прийняти</green>
+            setowner: |
+              <green>щоб призначити</green>
+              <green>цього гравця власником</green>
+      info:
+        description: показати детальну інформацію про команду
+        member-layout:
+          online: <green><bold> o </bold></green><white>[name]</white>
+          offline: <red><bold> o </bold></red><white>[name] </white><gray>([last_seen])</gray>
+          offline-not-last-seen: <red><bold> o </bold></red><white>[name]</white>
+        last-seen:
+          layout: <aqua>[number] </aqua><gray>[unit] тому</gray>
+          days: дн.
+          hours: год.
+          minutes: хв.
+        header: |
+          <white>--- </white><green>Подробиці команди </green><white>---</white>
+          <green>Учасників: </green><aqua>[total]</aqua><gray>/</gray><aqua>[max]</aqua>
+          <green>Онлайн: </green><aqua>[online]</aqua>
+        rank-layout:
+          owner: <gold>[rank]:</gold>
+          generic: <gold>[rank] </gold><gray>(</gray><aqua>[number]</aqua><gray>)</gray><gold>:</gold>
+      coop:
+        description: надати гравцю ранг «співпраця» на вашому [prefix_island]
+        parameters: <гравець>
+        cannot-coop-yourself: <red>Не можна коопити самого себе!</red>
+        already-has-rank: <red>У гравця вже є ранг!</red>
+        you-are-a-coop-member: <dark_green>Вас коопнув </dark_green><aqua>[name]</aqua><green>.</green>
+        success: <green>Ви коопнули </green><aqua>[name]</aqua><green>.</green>
+        name-has-invited-you: |
+          <green>[name] запросив(ла) вас</green>
+          <green>приєднатися як співучасник</green>
+          <green>до свого [prefix_island].</green>
+      uncoop:
+        description: забрати в гравця ранг «співпраця»
+        parameters: <гравець>
+        cannot-uncoop-yourself: <red>Не можна зняти кооп із себе!</red>
+        cannot-uncoop-member: <red>Не можна зняти кооп з учасника команди!</red>
+        player-not-cooped: <red>Гравець не у статусі кооп!</red>
+        you-are-no-longer-a-coop-member: <red>Ви більше не співучасник [prefix_island]
+          гравця [name].</red>
+        all-members-logged-off: <red>Усі учасники [prefix_island] вийшли, тож ви більше
+          не співучасник [prefix_island] [name].</red>
+        success: <aqua>[name] </aqua><green>більше не співучасник вашого [prefix_island].</green>
+        is-full: <red>Ви не можете коопити більше нікого.</red>
+      trust:
+        description: надати гравцю ранг «довірений» на вашому [prefix_island]
+        parameters: <гравець>
+        trust-in-yourself: <red>Довіряйте собі!</red>
+        name-has-invited-you: |
+          <green>[name] запросив(ла) вас</green>
+          <green>приєднатися як довірений</green>
+          <green>до свого [prefix_island].</green>
+        player-already-trusted: <red>Гравець уже довірений!</red>
+        you-are-trusted: <dark_green>Ви довірена особа для </dark_green><aqua>[name]</aqua><green>!</green>
+        success: <green>Ви довірили </green><aqua>[name]</aqua><green>.</green>
+        is-full: <red>Ви більше нікого не можете зробити довіреним. Будьте пильні!</red>
+      untrust:
+        description: зняти статус «довірений» з гравця
+        parameters: <гравець>
+        cannot-untrust-yourself: <red>Не можна зняти довіру з себе!</red>
+        cannot-untrust-member: <red>Не можна знімати довіру з учасника команди!</red>
+        player-not-trusted: <red>Гравець не є довіреним!</red>
+        you-are-no-longer-trusted: <red>Ви більше не довірена особа для </red><aqua>[name]</aqua><green>!</green>
+        success: <aqua>[name] </aqua><green>більше не довірений на вашому [prefix_island].</green>
+      invite:
+        description: запросити гравця приєднатися до вашого [prefix_island]
+        invitation-sent: <green>Запрошення надіслано для </green><aqua>[name]</aqua><green>.</green>
+        dialog:
+          title: <green>Запрошення в команду від [name]</green>
+          body: <gray>[name] запросив вас приєднатися до свого острова. Прийняти?</gray>
+          accept: <green>Прийняти</green>
+          decline: <red>Відхилити</red>
+        removing-invite: <red>Видаляю запрошення.</red>
+        name-has-invited-you: |
+          <green>[name] запросив(ла) вас</green>
+          <green>приєднатися до свого [prefix_island].</green>
+        to-accept-or-reject: <green>Виконайте /[label] team accept, щоб прийняти,
+          або /[label] team reject, щоб відхилити</green>
+        you-will-lose-your-island: |
+          <red>УВАГА! Ви втратите всі</red>
+          <red>свої [prefix_islands], якщо приймете!</red>
+        gui:
+          titles:
+            team-invite-panel: Запросити гравців
+          button:
+            already-invited: <red>Уже запрошено</red>
+            search: <green>Шукати гравця</green>
+            searching: |
+              <aqua>Пошук</aqua>
+              <red>[name]</red>
+          enter-name: <green>Введіть ім’я:</green>
+          tips:
+            LEFT:
+              name: <aqua>ЛКМ</aqua>
+              search: <green>Введіть ім’я гравця</green>
+              back: <green>Назад</green>
+              invite: |
+                <green>щоб запросити гравця</green>
+                <green>до вашої команди</green>
+            RIGHT:
+              name: <aqua>ПКМ</aqua>
+              coop: <green>щоб коопнути гравця</green>
+            SHIFT_LEFT:
+              name: <aqua>Shift + ЛКМ</aqua>
+              trust: <green>щоб зробити гравця довіреним</green>
+          buttons:
+            member:
+              # Name shown on a prospect's head in the invite panel. Placeholders: [name], [display_name].
+              name: '[display_name]'
+              # Optional description line shown above the click tips. Placeholders: [name], [display_name].
+              description: ''
+        errors:
+          cannot-invite-self: <red>Не можна запросити самого себе!</red>
+          cooldown: <red>Ви не можете запрошувати цю людину ще [number] секунд.</red>
+          island-is-full: <red>Ваш [prefix_island] заповнений, не можна запрошувати
+            більше.</red>
+          none-invited-you: <red>Ніхто вас не запрошував :c.</red>
+          you-already-are-in-team: <red>Ви вже в команді!</red>
+          already-on-team: <red>Цей гравець уже в команді!</red>
+          invalid-invite: <red>Це запрошення вже недійсне, вибачте.</red>
+          you-have-already-invited: <red>Ви вже запросили цього гравця!</red>
+        parameters: <гравець>
+        you-can-invite: <green>Ви можете запросити ще [number] гравців.</green>
+        accept:
+          description: прийняти запрошення
+          you-joined-island: <green>Ви приєдналися до [prefix_an-island]! Використайте
+            </green><aqua>/[label] team </aqua><green>щоб побачити учасників.</green>
+          name-joined-your-island: <green>[name] приєднався(лася) до вашого [prefix_island]!</green>
+          confirmation: |
+            <red>Ви впевнені, що</red>
+            <red>хочете прийняти</red>
+            <red>це запрошення?</red>
+        reject:
+          description: відхилити запрошення
+          you-rejected-invite: <green>Ви відхилили запрошення приєднатися до [prefix_an-island].</green>
+          name-rejected-your-invite: <red>[name] відхилив(ла) ваше запрошення до [prefix_island]!</red>
+        cancel:
+          description: скасувати очікуюче запрошення приєднатися до вашого [prefix_island]
+      leave:
+        cannot-leave: <red>Власники не можуть покинути! Спершу станьте учасником або
+          виженіть усіх.</red>
+        description: покинути ваш [prefix_island]
+        left-your-island: <red>[name] </red><red>покинув(ла) ваш [prefix_island]</red>
+        success: <green>Ви покинули цей [prefix_island].</green>
+      kick:
+        description: видалити учасника з вашого [prefix_island]
+        parameters: <гравець>
+        player-kicked: <red>[name] вигнав(ла) вас із [prefix_island] у [gamemode]!</red>
+        cannot-kick: <red>Не можна вигнати самого себе!</red>
+        cannot-kick-rank: <red>Ваш ранг не дозволяє вигнати [name]!</red>
+        success: <aqua>[name] </aqua><green>вигнано з вашого [prefix_island].</green>
+      demote:
+        description: знизити ранг гравця на вашому [prefix_island]
+        parameters: <гравець>
+        errors:
+          cant-demote-yourself: <red>Не можна знизити ранг самому собі!</red>
+          cant-demote: <red>Не можна знижувати ранги, вищі за ваш!</red>
+          must-be-member: <red>Гравець має бути учасником [prefix_an-island]!</red>
+        failure: <red>Далі знижувати не можна!</red>
+        success: <green>Знижено [name] до [rank]</green>
+      promote:
+        description: підвищити ранг гравця на вашому [prefix_island]
+        parameters: <гравець>
+        errors:
+          cant-promote-yourself: <red>Не можна підвищити самого себе!</red>
+          cant-promote: <red>Не можна підвищувати вище вашого рангу!</red>
+          must-be-member: <red>Гравець має бути учасником [prefix_an-island]!</red>
+        failure: <red>Далі підвищувати не можна!</red>
+        success: <green>Підвищено [name] до [rank]</green>
+      setowner:
+        description: передати право власності на ваш [prefix_island] учаснику
+        errors:
+          cant-transfer-to-yourself: <red>Не можна передати власність самому собі!
+            </red><gray>(<italic>Теоретично можна, але ми не дамо — це безглуздо.</italic></gray><gray>)</gray>
+          target-is-not-member: <red>Цей гравець не є частиною вашої команди [prefix_island]!</red>
+          at-max: <red>У цього гравця вже максимум дозволених [prefix_islands]!</red>
+        name-is-the-owner: <green>[name] тепер власник [prefix_island]!</green>
+        parameters: <гравець>
+        you-are-the-owner: <green>Тепер ви — власник [prefix_island]!</green>
+    ban:
+      description: заблокувати гравця на вашому [prefix_island]
+      parameters: <гравець>
+      cannot-ban-yourself: <red>Не можна заблокувати самого себе!</red>
+      cannot-ban: <red>Цього гравця не можна заблокувати.</red>
+      cannot-ban-member: <red>Спершу виженіть учасника команди, потім блокуйте.</red>
+      cannot-ban-more-players: <red>Ви досягли ліміту блокувань для вашого [prefix_island].</red>
+      player-already-banned: <red>Гравець уже заблокований.</red>
+      player-banned: <aqua>[name]</aqua><red>тепер заблокований на вашому [prefix_island].</red>
+      owner-banned-you: <aqua>[name]</aqua><red>заблокував(ла) вас на своєму [prefix_island]!</red>
+      you-are-banned: <aqua>Ви заблоковані на цьому [prefix_island]!</aqua>
+    unban:
+      description: розблокувати гравця на вашому [prefix_island]
+      parameters: <гравець>
+      cannot-unban-yourself: <red>Не можна розблокувати самого себе!</red>
+      player-not-banned: <red>Гравець не заблокований.</red>
+      player-unbanned: <aqua>[name]</aqua><green>тепер розблокований на вашому [prefix_island].</green>
+      you-are-unbanned: <aqua>[name]</aqua><green>розблокував(ла) вас на своєму [prefix_island]!</green>
+    banlist:
+      description: список заблокованих
+      noone: <green>Нікого не заблоковано на цьому [prefix_island].</green>
+      the-following: <aqua>Заблоковані такі гравці:</aqua>
+      names: <red>[line]</red>
+      you-can-ban: <aqua>Ви можете заблокувати ще </aqua><yellow>[number] </yellow><aqua>гравців.</aqua>
+    settings:
+      description: показати налаштування [prefix_island]
+    language:
+      description: обрати мову
+      parameters: '[мова]'
+      not-available: <red>Ця мова недоступна.</red>
+      already-selected: <red>Ви вже використовуєте цю мову.</red>
+    expel:
+      description: вигнати гравця з вашого [prefix_island]
+      parameters: <гравець>
+      cannot-expel-yourself: <red>Не можна вигнати самого себе!</red>
+      cannot-expel: <red>Цього гравця не можна вигнати.</red>
+      cannot-expel-member: <red>Не можна виганяти учасника команди!</red>
+      not-on-island: <red>Цього гравця немає на вашому [prefix_island]!</red>
+      player-expelled-you: <aqua>[name]</aqua><red>вигнав(ла) вас із [prefix_island]!</red>
+      success: <green>Ви вигнали </green><aqua>[name] </aqua><green>з [prefix_island].</green>
+    lock:
+      description: заблокувати або розблокувати ваш [prefix_island]
+      locked: <green>Ваш [prefix_island] тепер заблокований.</green>
+      unlocked: <green>Ваш [prefix_island] тепер розблокований.</green>
+      you-are-locked-out: <red>Цей [prefix_island] тепер заблокований. Вас вигнали.</red>
+
+ranks:
+  owner: Власник
+  sub-owner: Співвласник
+  member: Учасник
+  trusted: Довірений
+  coop: Співучасник
+  visitor: Відвідувач
+  banned: Заблокований
+  admin: Адмін
+  mod: Модератор
+
+protection:
+  command-is-banned: Команда заборонена для відвідувачів
+  flags:
+    ALLAY:
+      name: Взаємодія з алаєм і Copper Golem
+      description: Дозволити давати/забирати предмети алаю і Copper Golem
+      hint: Взаємодію з алаєм і Copper Golem вимкнено
+    ANIMAL_NATURAL_SPAWN:
+      description: Перемикає природний спавн тварин
+      name: Природний спавн тварин
+    ANIMAL_SPAWNERS_SPAWN:
+      description: Перемикає спавн тварин зі спавнерів
+      name: Спавнери тварин
+    ANVIL:
+      description: Перемикає взаємодію
+      name: Ковадла
+      hint: Використання ковадла вимкнено
+    ARMOR_STAND:
+      description: Перемикає взаємодію
+      name: Стенди для броні
+      hint: Використання стендів для броні вимкнено
+    AXOLOTL_SCOOPING:
+      name: Вилов аксолотлів
+      description: Дозволити вилов аксолотля відром
+      hint: Вилов аксолотлів вимкнено
+    BEACON:
+      description: Перемикає взаємодію
+      name: Маяки
+      hint: Використання маяка вимкнено
+    BELL_RINGING:
+      description: Перемикає взаємодію
+      name: Дзвонити в дзвін
+      hint: Дзвін вимкнено
+    BED:
+      description: Перемикає взаємодію
+      name: Ліжка
+      hint: Використання ліжка вимкнено
+    BED_ANCHOR_RESPAWN:
+      name: Відродження біля ліжка/якоря
+      description: |-
+        <green>Гравці відроджуються біля дійсного ліжка</green>
+        <green>або якоря відродження, якщо він на острові,</green>
+        <green>членами якого вони є.</green>
+    BOAT:
+      name: Човни
+      description: |-
+        <green>Перемикає розміщення, ламання</green>
+        <green>та сідання в човни.</green>
+      hint: Взаємодію з човнами заборонено
+    BOOKSHELF:
+      name: Полиці
+      description: |-
+        <green>Дозволити класти предмет</green>
+        <green>або забирати предмет.</green>
+      hint: не можна класти або забирати предмет з полиці.
+    BREAK_BLOCKS:
+      description: Перемикає ламання
+      name: Ламати блоки
+      hint: Ламання блоків заборонено
+    BREAK_SPAWNERS:
+      description: |-
+        <green>Перемикає ламання спавнерів.</green>
+        <green>Має пріоритет над прапором «Ламати блоки».</green>
+      name: Ламати спавнери
+      hint: Ламання спавнерів заборонено
+    BREAK_HOPPERS:
+      description: |-
+        <green>Перемикає ламання лійок.</green>
+        <green>Має пріоритет над прапором «Ламати блоки».</green>
+      name: Ламати лійки
+      hint: Ламання лійок заборонено
+    BREEDING:
+      description: Перемикає розведення
+      name: Розводити тварин
+      hint: Розведення тварин захищено
+    BREWING:
+      description: Перемикає взаємодію
+      name: Варильні стенди
+      hint: Варіння зілля вимкнено
+    BUCKET:
+      description: Перемикає взаємодію
+      name: Відра
+      hint: Використання відер вимкнено
+    BUTTON:
+      description: Перемикає використання кнопок
+      name: Кнопки
+      hint: Використання кнопок вимкнено
+    CANDLES:
+      description: Перемикає взаємодію зі свічками
+      name: Свічки
+      hint: Взаємодію зі свічками вимкнено
+    CAKE:
+      description: Перемикає взаємодію з тортами
+      name: Торти
+      hint: Їсти торт заборонено
+    CARTOGRAPHY:
+      name: Картографічні столи
+      description: Перемикає використання
+      hint: Доступ до картографічного столу вимкнено
+    CONTAINER:
+      name: Усі контейнери
+      description: |-
+        <green>Перемикає взаємодію з усіма контейнерами.</green>
+        <green>Включає: бочку, вулик, варильний стенд,</green>
+        <green>скриню, компостер, роздавач, викидач,</green>
+        <green>квітковий горщик, піч, лійку, рамку,</green>
+        <green>джукбокс, вагонетку-скриню, шалкер-бокс,</green>
+        <green>пастку-скриню.</green>
+
+        <gray>Зміна окремих налаштувань перекриває</gray>
+        <gray>цей прапор.</gray>
+      hint: Доступ до контейнерів вимкнено
+    CHEST:
+      name: Скрині та вагонетки-скрині
+      description: |-
+        <green>Перемикає взаємодію зі скринями</green>
+        <green>та вагонетками-скринями.</green>
+        <green>(не включає пастки-скрині)</green>
+      hint: Доступ до скринь вимкнено
+    BARREL:
+      name: Бочки
+      description: Перемикає взаємодію з бочками
+      hint: Доступ до бочок вимкнено
+    CRAFTER:
+      name: Крафтер
+      description: Перемикає використання
+      hint: Доступ до крафтера вимкнено
+    BLOCK_EXPLODE_DAMAGE:
+      description: |-
+        <green>Дозволити ліжкам і якірним точкам</green>
+        <green>відродження руйнувати блоки та</green>
+        <green>завдавати шкоди сутностям.</green>
+      name: Шкода від вибуху блоків
+    COMPOSTER:
+      name: Компостери
+      description: Перемикає взаємодію з компостером
+      hint: Взаємодію з компостером вимкнено
+    LOOM:
+      name: Верстат (ткацький)
+      description: Перемикає використання
+      hint: Доступ до верстата вимкнено
+    FLOWER_POT:
+      name: Квіткові горщики
+      description: Перемикає взаємодію з горщиком
+      hint: Взаємодію з горщиком вимкнено
+    GRINDSTONE:
+      name: Точильний камінь
+      description: Перемикає використання
+      hint: Доступ до точильного каменю вимкнено
+    SHULKER_BOX:
+      name: Шалкер-бокси
+      description: Перемикає взаємодію з шалкер-боксами
+      hint: Доступ до шалкер-боксів вимкнено
+    SHULKER_TELEPORT:
+      description: |-
+        <green>Шалкери можуть телепортуватися,</green>
+        <green>якщо ввімкнено.</green>
+      name: Телепорт шалкерів
+    SMITHING:
+      name: Ковальський стіл
+      description: Перемикає використання
+      hint: Доступ до ковальського столу вимкнено
+    STONECUTTING:
+      name: Каменеріз
+      description: Перемикає використання
+      hint: Доступ до каменерізу вимкнено
+    TRAPPED_CHEST:
+      name: Пастки-скрині
+      description: Перемикає взаємодію з пасткою-скринею
+      hint: Доступ до пастки-скрині вимкнено
+    DISPENSER:
+      name: Роздавачі
+      description: Перемикає взаємодію з роздавачем
+      hint: Взаємодію з роздавачем вимкнено
+    DROPPER:
+      name: Викидачі
+      description: Перемикає взаємодію з викидачем
+      hint: Взаємодію з викидачем вимкнено
+    ELYTRA:
+      name: Елітра
+      description: Перемикає, чи дозволена елітра
+      hint: '<red>УВАГА: Елітру тут використовувати не можна!</red>'
+    HOPPER:
+      name: Лійки
+      description: Перемикає взаємодію з лійкою
+      hint: Взаємодію з лійкою вимкнено
+    CHEST_DAMAGE:
+      description: Перемикає отримання шкоди скринями від вибухів
+      name: Пошкодження скринь
+    CHORUS_FRUIT:
+      description: Перемикає телепортацію
+      name: Хорус-плоди
+      hint: Телепортацію хорус-плодом вимкнено
+    CLEAN_SUPER_FLAT:
+      description: |-
+        <green>Очищує будь-які суперплоскі</green>
+        <green>чанки в світах [prefix_island]</green>
+      name: Очищення суперплоских
+    COARSE_DIRT_TILLING:
+      description: |-
+        <green>Перемикає розпушення грубої</green>
+        <green>землі та зламаного підзолу</green>
+        <green>для отримання землі</green>
+      name: Розпушення грубої землі
+      hint: Розпушення грубої землі заборонено
+    COLLECT_LAVA:
+      description: |-
+        <green>Перемикає збирання лави</green>
+        <green>(перекриває «Відра»)</green>
+      name: Збирати лаву
+      hint: Збирання лави заборонено
+    COLLECT_WATER:
+      description: |-
+        <green>Перемикає збирання води</green>
+        <green>(перекриває «Відра»)</green>
+      name: Збирати воду
+      hint: Водні відра вимкнено
+    COLLECT_POWDERED_SNOW:
+      description: |-
+        <green>Перемикає збирання пухкого снігу</green>
+        <green>(перекриває «Відра»)</green>
+      name: Збирати пухкий сніг
+      hint: Відра з пухким снігом вимкнено
+    COMMAND_RANKS:
+      name: <yellow>Ранги команд</yellow>
+      description: <green>Налаштувати ранги команд</green>
+    CRAFTING:
+      description: Перемикає використання
+      name: Верстаки
+      hint: Доступ до верстака вимкнено
+    CREEPER_DAMAGE:
+      description: |
+        <green>Перемикає</green>
+        <green>шкоду від кріперів.</green>
+      name: Шкода від кріперів
+    CREEPER_GRIEFING:
+      description: |
+        <green>Перемикає захист від гриферства кріпером,</green>
+        <green>коли його підпалює відвідувач [prefix_island].</green>
+      name: Захист від гриферства кріпером
+      hint: Гриферство кріпера вимкнено
+    CROP_PLANTING:
+      description: <green>Хто може садити насіння.</green>
+      name: Посадка культур
+      hint: Посадку культур вимкнено
+    CROP_TRAMPLE:
+      description: Перемикає витоптування культур
+      name: Витоптування культур
+      hint: Витоптування культур вимкнено
+    DOOR:
+      description: Перемикає використання дверей
+      name: Використання дверей
+      hint: Взаємодію з дверима вимкнено
+    DRAGON_EGG:
+      name: Яйце дракона
+      description: |-
+        <green>Запобігає взаємодії з яйцем дракона.</green>
+
+        <red>Це не захищає від розміщення</red>
+        <red>або ламання.</red>
+      hint: Взаємодію з яйцем дракона вимкнено
+    DYE:
+      description: Заборонити використання барвників
+      name: Використання барвників
+      hint: Фарбування вимкнено
+    EGGS:
+      description: Перемикає кидання яєць
+      name: Кидання яєць
+      hint: Кидання яєць вимкнено
+    ENCHANTING:
+      description: Перемикає використання
+      name: Чарівний стіл
+      hint: Чарівні столи вимкнено
+    ENDER_CHEST:
+      description: Перемикає використання/крафт
+      name: Ендер-скрині
+      hint: Ендер-скрині вимкнено в цьому світі
+    ENDERMAN_DEATH_DROP:
+      description: |-
+        <green>Ендермени при смерті</green>
+        <green>кидають блок, який тримають.</green>
+      name: Дроп ендермена при смерті
+    ENDERMAN_GRIEFING:
+      description: |-
+        <green>Ендермени можуть знімати</green>
+        <green>блоки з [prefix_islands]</green>
+      name: Гриферство ендерменів
+    ENDERMAN_TELEPORT:
+      description: |-
+        <green>Ендермени можуть телепортуватися,</green>
+        <green>якщо ввімкнено.</green>
+      name: Телепорт ендерменів
+    ENDER_PEARL:
+      description: Перемикає використання
+      name: Ендер-перлини
+      hint: Використання ендер-перлин вимкнено
+    ENTER_EXIT_MESSAGES:
+      description: Показувати повідомлення входу/виходу
+      island: '[prefix_island] гравця [name]'
+      name: Повідомлення входу/виходу
+      now-entering: <green>Ви входите на </green><aqua>[name]</aqua><green>.</green>
+      now-entering-your-island: '<green>Ви входите на ваш [prefix_island]: </green><aqua>[name]</aqua>'
+      now-leaving: <green>Ви залишаєте </green><aqua>[name]</aqua><green>.</green>
+      now-leaving-your-island: '<green>Ви залишаєте ваш [prefix_island]: </green><aqua>[name]</aqua>'
+    EXPERIENCE_BOTTLE_THROWING:
+      name: Кидання пляшок досвіду
+      description: Перемикає кидання пляшок досвіду.
+      hint: Пляшки досвіду вимкнено
+    FIRE_BURNING:
+      name: Горіння вогню
+      description: |-
+        <green>Перемикає, чи може вогонь</green>
+        <green>підпалювати блоки.</green>
+    FIRE_EXTINGUISH:
+      description: Перемикає гасіння вогню
+      name: Гасіння вогню
+      hint: Гасіння вогню вимкнено
+    FIRE_IGNITE:
+      name: Займання вогню
+      description: |-
+        <green>Перемикає, чи може вогонь спалахувати</green>
+        <green>неігровими засобами.</green>
+    FIRE_SPREAD:
+      name: Поширення вогню
+      description: |-
+        <green>Перемикає, чи може вогонь</green>
+        <green>поширюватися на сусідні блоки.</green>
+    FISHING:
+      name: Риболовля
+      description: Дозволити риболовлю вудкою
+      hint: Риболовлю вимкнено
+    FISH_SCOOPING:
+      name: Вилов риб
+      description: Дозволити вилов риб відром
+      hint: Вилов риб вимкнено
+    FLINT_AND_STEEL:
+      name: Кресало та сталь
+      description: |-
+        <green>Дозволити запалювати вогонь або</green>
+        <green>вогнища кресалом і сталлю</green>
+        <green>або вогняними зарядами.</green>
+      hint: Кресало/сталь і вогняні заряди вимкнено
+    FURNACE:
+      description: Перемикає використання
+      name: Піч
+      hint: Використання печі вимкнено
+    GATE:
+      description: Перемикає використання
+      name: Хвіртки
+      hint: Використання хвірток вимкнено
+    GEO_LIMIT_MOBS:
+      description: |-
+        <green>Видаляти мобів, які</green>
+        <green>виходять за межі захищеного</green>
+        <green>простору [prefix_island]</green>
+      name: <yellow>Обмежити мобів межами [prefix_island]</yellow>
+    HARVEST:
+      description: |-
+        <green>Хто може збирати культури.</green>
+        <green>Не забудьте дозволити також</green>
+        <green>підбір предметів!</green>
+      name: Збір врожаю
+      hint: Збір врожаю вимкнено
+    HIVE:
+      description: <green>Перемикає збирання з вуликів.</green>
+      name: Збір з вулика
+      hint: Збір вимкнено
+    HURT_TAMED_ANIMALS:
+      description: |-
+        <green>Перемикає можливість завдати шкоди. Увімкнено —</green>
+        <green>приручені тварини отримують шкоду.</green>
+        <green>Вимкнено — вони невразливі.</green>
+      name: Шкодити прирученим тваринам
+      hint: Завдання шкоди прирученим тваринам вимкнено
+    HURT_ANIMALS:
+      description: Перемикає завдання шкоди
+      name: Шкодити тваринам
+      hint: Завдання шкоди тваринам вимкнено
+    HURT_MONSTERS:
+      description: Перемикає завдання шкоди
+      name: Шкодити монстрам
+      hint: Завдання шкоди монстрам вимкнено
+    HURT_VILLAGERS:
+      description: Перемикає завдання шкоди
+      name: Шкодити селянам
+      hint: Завдання шкоди селянам вимкнено
+    ITEM_FRAME:
+      name: Рамки
+      description: |-
+        <green>Перемикає взаємодію.</green>
+        <green>Перекриває розміщення або ламання блоків</green>
+      hint: Використання рамок вимкнено
+    ITEM_FRAME_DAMAGE:
+      description: |-
+        <green>Моби можуть завдавати</green>
+        <green>шкоди рамкам</green>
+      name: Шкода рамкам
+    INVINCIBLE_VISITORS:
+      description: |-
+        <green>Налаштувати параметри</green>
+        <green>невразливих відвідувачів.</green>
+      name: <yellow>Невразливі відвідувачі</yellow>
+      hint: <red>Відвідувачі захищені</red>
+    ISLAND_RESPAWN:
+      description: |-
+        <green>Гравці відроджуються</green>
+        <green>на [prefix_island]</green>
+      name: Відродження на [prefix_Island]
+    ITEM_DROP:
+      description: Перемикає викидання
+      name: Викидання предметів
+      hint: Викидання предметів вимкнено
+    ITEM_PICKUP:
+      description: Перемикає підбір
+      name: Підбір предметів
+      hint: Підбір предметів вимкнено
+    JUKEBOX:
+      description: Перемикає використання
+      name: Діджейський програвач
+      hint: Використання діджейського програвача вимкнено
+    LEAF_DECAY:
+      name: Опадання листя
+      description: Дозволити природне розкладання листя
+    LEASH:
+      description: Перемикає використання
+      name: Повідок
+      hint: Використання повідка вимкнено
+    LECTERN:
+      name: Аналой
+      description: |-
+        <green>Дозволити ставити книги на аналой</green>
+        <green>або забирати з нього.</green>
+
+        <red>Не запобігає читанню книг.</red>
+      hint: не можна ставити або забирати книгу з аналоя.
+    LEVER:
+      description: Перемикає використання
+      name: Використання важелів
+      hint: Використання важелів вимкнено
+    LIMIT_MOBS:
+      description: |-
+        <green>Обмежити появу сутностей</green>
+        <green>у цьому ігровому режимі.</green>
+      name: <yellow>Обмежити спавн типів сутностей</yellow>
+      can: <green>Можна спавнитися</green>
+      cannot: <red>Не можна спавнитися</red>
+    LIQUIDS_FLOWING_OUT:
+      name: Течія рідин за межі [prefix_islands]
+      description: |-
+        <green>Перемикає, чи можуть рідини витікати за межі</green>
+        <green>діапазону захисту [prefix_island].</green>
+        <green>Вимкнення допомагає уникнути утворення</green>
+        <green>бруківки між двома [prefix_islands].</green>
+
+        <red>Примітка: рідини все ще течуть вертикально.</red>
+        <red>Також вони не поширюються горизонтально,</red>
+        <red>якщо розміщені поза межами захисту [prefix_an-island].</red>
+    LOCK:
+      description: Перемикає блокування
+      name: Заблокувати [prefix_island]
+    CHANGE_SETTINGS:
+      name: Змінювати налаштування
+      description: |-
+        <green>Дозволити вибрати, який</green>
+        <green>ранг може змінювати налаштування [prefix_island].</green>
+    MILKING:
+      description: Перемикає доїння корів
+      name: Доїння
+      hint: Доїння корів вимкнено
+    MINECART:
+      name: Вагонетки
+      description: |-
+        Перемикає розміщення, ламання і
+        сідання у вагонетки.
+      hint: Взаємодію з вагонетками вимкнено
+    MONSTER_NATURAL_SPAWN:
+      description: Перемикає природний спавн монстрів
+      name: Природний спавн монстрів
+    MONSTER_SPAWNERS_SPAWN:
+      description: Перемикає спавн монстрів зі спавнерів
+      name: Спавнери монстрів
+    MOUNT_INVENTORY:
+      description: |-
+        <green>Перемикає доступ</green>
+        <green>до інвентарю їздових тварин</green>
+      name: Інвентар їздових тварин
+      hint: Доступ до інвентарів їздових тварин вимкнено
+    NAME_TAG:
+      name: Бірки
+      description: Перемикає використання
+      hint: Взаємодію з бірками вимкнено
+    NATURAL_SPAWNING_OUTSIDE_RANGE:
+      name: Природний спавн істот за межами діапазону
+      description: |-
+        <green>Перемикає, чи можуть істоти (тварини та</green>
+        <green>монстри) спавнитися природно за межами</green>
+        <green>захисту [prefix_an-island].</green>
+
+        <red>Не блокує спавн через спавнери</red>
+        <red>або яйця.</red>
+    NOTE_BLOCK:
+      description: Перемикає використання
+      name: Нотний блок
+      hint: Взаємодію з нотним блоком вимкнено
+    OBSIDIAN_SCOOPING:
+      name: Зачерпування обсидіану
+      description: |-
+        <green>Дозволити гравцям зачерпнути обсидіан</green>
+        <green>порожнім відром назад у лаву.</green>
+
+        <green>Допомагає новачкам, які зіпсували</green>
+        <green>генератор бруківки.</green>
+
+        <green>Примітка: не можна зачерпнути, якщо поруч</green>
+        <green>в радіусі 2 блоків є інші обсидіани.</green>
+      scooping: <green>Перетворюю обсидіан назад у лаву. Будьте уважні наступного
+        разу!</green>
+      cooldown: <red>Потрібно зачекати, перш ніж зачерпнути ще один блок обсидіану.</red>
+      obsidian-nearby: <red>Поруч є блоки обсидіану — не можна зачерпнути цей блок.
+        ([radius])</red>
+      lavaTip: |-
+        <gold>Підбери це відром</gold>
+        <gold>знову як лаву, якщо вона тобі потрібна!</gold>
+    OFFLINE_GROWTH:
+      description: |-
+        <green>Якщо вимкнено, рослини</green>
+        <green>не ростуть на [prefix_islands],</green>
+        <green>де всі учасники офлайн.</green>
+        <green>Може зменшити лаги.</green>
+      name: Ріст офлайн
+    OFFLINE_REDSTONE:
+      description: |-
+        <green>Якщо вимкнено, редстоун</green>
+        <green>не працює на [prefix_islands],</green>
+        <green>де всі учасники офлайн.</green>
+        <green>Може зменшити лаги.</green>
+        <green>Не впливає на спавн-[prefix_island].</green>
+      name: Редстоун офлайн
+    PETS_STAY_AT_HOME:
+      description: |-
+        <green>Якщо ввімкнено, приручені</green>
+        <green>улюбленці можуть лише переходити до</green>
+        <green>та не можуть залишати домівку</green>
+        <green>власника на [prefix_island].</green>
+      name: Домосіди-улюбленці
+    PISTON_PUSH:
+      description: |-
+        <green>Запобігає виштовхуванню</green>
+        <green>поршнями блоків за межі [prefix_island]</green>
+      name: Захист від поштовху поршнів
+    PLACE_BLOCKS:
+      description: Перемикає розміщення
+      name: Розміщувати блоки
+      hint: Розміщення блоків заборонено
+    PODZOL:
+      name: Утворення підзолу від дерев
+      description: |-
+        <green>Якщо вимкнено, запобігає</green>
+        <green>утворенню підзолу під час росту</green>
+        <green>великих дерев</green>
+    POTION_THROWING:
+      name: Кидання зілля
+      description: |-
+        <green>Перемикає кидання зілля.</green>
+        <green>Включає розривні та туманні зілля.</green>
+      hint: Кидання зілля вимкнено
+    NETHER_PORTAL:
+      description: Перемикає використання
+      name: Портал у Незер
+      hint: Використання порталу вимкнено
+    END_PORTAL:
+      description: Перемикає використання
+      name: Портал у Край
+      hint: Використання порталу вимкнено
+    PAUSE_MOB_GROWTH:
+      name: Призупинення росту мобів
+      description: |-
+        <green>Перемикання використання золотої</green>
+        <green>кульбаби для призупинення або</green>
+        <green>відновлення росту дитинчат мобів</green>
+      hint: Призупинення росту мобів вимкнено
+    PRESSURE_PLATE:
+      description: Перемикає використання
+      name: Натискні плити
+      hint: Використання натискних плит вимкнено
+    PVP_END:
+      description: |-
+        <red>Увімк./вимк. PVP</red>
+        <red>у Краю.</red>
+      name: PVP у Краю
+      hint: PVP у Краю вимкнено
+      enabled: <red>PVP у Краю увімкнено.</red>
+      disabled: <green>PVP у Краю вимкнено.</green>
+    PVP_NETHER:
+      description: |-
+        <red>Увімк./вимк. PVP</red>
+        <red>у Нижньому світі.</red>
+      name: PVP у Незері
+      hint: PVP у Незері вимкнено
+      enabled: <red>PVP у Незері увімкнено.</red>
+      disabled: <green>PVP у Незері вимкнено.</green>
+    PVP_OVERWORLD:
+      description: |-
+        <red>Увімк./вимк. PVP</red>
+        <red>на [prefix_island].</red>
+      name: PVP у Звичайному світі
+      hint: <red>PVP у Звичайному світі вимкнено</red>
+      enabled: <red>PVP у Звичайному світі увімкнено.</red>
+      disabled: <green>PVP у Звичайному світі вимкнено.</green>
+    REDSTONE:
+      description: Перемикає використання
+      name: Редстоун-предмети
+      hint: Взаємодію з редстоуном вимкнено
+    REMOVE_END_EXIT_ISLAND:
+      description: |-
+        <green>Запобігає створенню вихідного</green>
+        <green>[prefix_island] у Краю за координатами 0,0</green>
+      name: Прибрати вихідний [prefix_island] у Краю
+    REMOVE_MOBS:
+      description: |-
+        <green>Видаляти монстрів під час</green>
+        <green>телепорту на [prefix_island]</green>
+      name: Видаляти монстрів
+    RIDING:
+      description: Перемикає катання верхи
+      name: Катання на тваринах
+      hint: Катання на тваринах вимкнено
+    SHEARING:
+      description: Перемикає стрижку
+      name: Стрижка
+      hint: Стрижку вимкнено
+    SPAWN_EGGS:
+      description: Перемикає використання
+      name: Яйця спавну
+      hint: Яйця спавну вимкнено
+    SPAWNER_SPAWN_EGGS:
+      description: |-
+        <green>Дозволяє змінювати тип сутності спавнера</green>
+        <green>за допомогою яйця спавну.</green>
+      name: Яйця спавну на спавнерах
+      hint: змінювати тип спавнера яйцями спавну заборонено
+    SCULK_SENSOR:
+      description: |-
+        <green>Перемикає активацію</green>
+        <green>скалк-сенсора.</green>
+      name: Скалк-сенсор
+      hint: активацію скалк-сенсора вимкнено
+    SCULK_SHRIEKER:
+      description: |-
+        <green>Перемикає активацію</green>
+        <green>скалк-крикуна.</green>
+      name: Скалк-крикун
+      hint: активацію скалк-крикуна вимкнено
+    SIGN_EDITING:
+      description: |-
+        <green>Дозволяє редагувати</green>
+        <green>текст на табличках</green>
+      name: Редагування табличок
+      hint: редагування табличок вимкнено
+    TNT_DAMAGE:
+      description: |-
+        <green>Дозволити ТНТ і вагонеткам з ТНТ</green>
+        <green>руйнувати блоки та завдавати шкоди</green>
+        <green>сутностям.</green>
+      name: Шкода від ТНТ
+    TNT_PRIMING:
+      description: |-
+        <green>Забороняє підпал ТНТ.</green>
+        <green>Не перекриває захист</green>
+        <green>«Кресало та сталь».</green>
+      name: Підпал ТНТ
+      hint: Підпал ТНТ вимкнено
+    TRADING:
+      description: Перемикає торгівлю
+      name: Торгівля з селянами
+      hint: Торгівлю з селянами вимкнено
+    TRAPDOOR:
+      description: Перемикає доступ
+      name: Лази
+      hint: Використання лазів (люків) вимкнено
+    TREES_GROWING_OUTSIDE_RANGE:
+      name: Ріст дерев за межами діапазону
+      description: |-
+        <green>Перемикає, чи можуть дерева рости за межами</green>
+        <green>діапазону захисту [prefix_island].</green>
+        <green>Запобігає росту саджанців, розміщених</green>
+        <green>поза захистом [prefix_an-island], а також блокує</green>
+        <green>генерацію листя/колод за межами [prefix_island],</green>
+        <green>«обрізаючи» дерево.</green>
+    TURTLE_EGGS:
+      description: Перемикає роздавлювання
+      name: Яйця черепах
+      hint: Роздавлювання яєць черепах вимкнено
+    FROST_WALKER:
+      description: Перемикає енчант «Крижохід»
+      name: Крижохід
+      hint: Крижохід вимкнено
+    EXPERIENCE_PICKUP:
+      name: Підбір досвіду
+      description: Перемикає підбір сфер досвіду
+      hint: Підбір досвіду вимкнено
+    PREVENT_TELEPORT_WHEN_FALLING:
+      name: Заборонити телепорт під час падіння
+      description: |-
+        <green>Запобігає телепортуванню</green>
+        <green>назад на [prefix_island] командами,</green>
+        <green>якщо гравець падає.</green>
+      hint: <red>Не можна робити це під час падіння.</red>
+    VISITOR_KEEP_INVENTORY:
+      name: Відвідувачі зберігають інвентар після смерті
+      description: |-
+        <green>Запобігає втраті предметів та досвіду,</green>
+        <green>якщо відвідувач вмирає на [prefix_an-island].</green>
+        <green></green>
+        <green>Учасники [prefix_Island] все одно втрачають</green>
+        <green>свої предмети на власному [prefix_island]!</green>
+    SPAWN_PROTECTION:
+      name: Захист від порожнечі на спавн-острові
+      description: |-
+        <green>Якщо ввімкнено, гравці, які впадуть</green>
+        <green>у порожнечу на спавн-острові,</green>
+        <green>будуть телепортовані назад на точку</green>
+        <green>спавну замість смерті.</green>
+    RAID_TRIGGER:
+      name: Запуск рейду
+      description: Встановлює мінімальний ранг острова для запуску рейду
+      hint: Запуск рейду не дозволено
+    ENTITY_PORTAL_TELEPORT:
+      name: Використання порталів сутностями
+      description: |-
+        <green>Перемикає, чи можуть не-гравці</green>
+        <green>користуватися порталами для</green>
+        <green>переміщення між вимірами</green>
+    WIND_CHARGE:
+      name: Вітровий заряд
+      description: |-
+        <green>Перемикає використання вітрових зарядів.</green>
+        <green>Якщо вимкнено, відвідувачі не можуть</green>
+        <green>використовувати вітрові заряди на цьому острові.</green>
+      hint: Використання вітрових зарядів вимкнено
+    WITHER_DAMAGE:
+      name: Шкода від візера
+      description: |-
+        <green>Якщо ввімкнено, візери можуть</green>
+        <green>пошкоджувати блоки й гравців</green>
+    WORLD_BLOCK_EXPLODE_DAMAGE:
+      description: |-
+        <green>Дозволити ліжкам і якорям відродження</green>
+        <green>руйнувати блоки та завдавати шкоди</green>
+        <green>за межами [prefix_island].</green>
+      name: Світова шкода від вибуху блоків
+    WORLD_TNT_DAMAGE:
+      description: |-
+        <green>Дозволити ТНТ і вагонеткам з ТНТ</green>
+        <green>руйнувати блоки та завдавати шкоди</green>
+        <green>за межами [prefix_island].</green>
+      name: Світова шкода від ТНТ
+  locked: <red>Цей [prefix_island] заблоковано!</red>
+  locked-island-bypass: <gold>Цей [prefix_island] заблоковано, але у вас є дозвіл
+    на вхід.</gold>
+  deletable-island-admin: <red>[Admin] Цей [prefix_island] позначено для видалення
+    та очікує очищення регіону.</red>
+  protected: '<red>[prefix_Island] захищено: [description].</red>'
+  world-protected: '<red>Світ захищено: [description].</red>'
+  spawn-protected: '<red>Спавн захищено: [description].</red>'
+  
+  panel:
+    next: <white>Наступна сторінка</white>
+    previous: <white>Попередня сторінка</white>
+    mode:
+      advanced:
+        name: <gold>Розширені налаштування</gold>
+        description: <green>Показує розумний обсяг налаштувань.</green>
+      basic:
+        name: <green>Базові налаштування</green>
+        description: <green>Показує найкорисніші налаштування.</green>
+      expert:
+        name: <red>Експертні налаштування</red>
+        description: <green>Показує всі доступні налаштування.</green>
+      click-to-switch: <yellow>Натисніть </yellow><gray>щоб перемкнутися на </gray>[next]<gray>.</gray>
+    reset-to-default:
+      name: <red>Скинути до типових</red>
+      description: |
+        <green>Скидає </green><red><bold>УСІ </bold></red><green>налаштування</green>
+        <green>до типових значень.</green>
+      confirm: confirm
+      instructions: <green>Ви впевнені? Введіть </green><red>"confirm" </red><green>для
+        скидання всього.</green>
+    PROTECTION:
+      title: <gold>Захист</gold>
+      description: |-
+        <green>Налаштування захисту</green>
+        <green>для цього [prefix_island]</green>
+    SETTING:
+      title: <gold>Налаштування</gold>
+      description: |-
+        <green>Загальні налаштування</green>
+        <green>для цього [prefix_island]</green>
+    WORLD_SETTING:
+      title: <aqua>[world_name] </aqua><gold>Налаштування</gold>
+      description: <green>Налаштування для цього ігрового світу</green>
+    WORLD_DEFAULTS:
+      title: <aqua>[world_name] </aqua><gold>Світові захисти</gold>
+      description: |
+        <green>Налаштування захисту, коли</green>
+        <green>гравець поза межами свого [prefix_island]</green>
+    ISLAND_DEFAULTS:
+      title: <aqua>[world_name] </aqua><gold>Налаштування острова за замовчуванням</gold>
+      description: |
+        <green>Налаштування захисту за замовчуванням</green>
+        <green>для нових [prefix_island]s</green>
+    flag-item:
+      name-layout: <green>[name]</green>
+      # Add commands to this list as required
+      command-instructions:
+        setname: |
+          <green>Оберіть ранг, який може</green>
+          <green>змінювати назву</green>
+        ban: |
+          <green>Оберіть ранг, який може</green>
+          банити гравців
+        unban: "<green>Оберіть ранг, який може \n</green><green>розбанювати гравці\
+          в\n</green>"
+        expel: "<green>Оберіть ранг, який може \n</green><green>виганяти відвідува\
+          чів\n</green>"
+        team-invite: "<green>Оберіть ранг, який може \n</green><green>запрошувати\n\
+          </green>"
+        team-kick: |
+          <green>Оберіть ранг, який може</green>
+          <green>виганяти</green>
+        team-coop: "<green>Оберіть ранг, який може \n</green><green>коопити\n</green>"
+        team-trust: "<green>Оберіть ранг, який може \n</green><green>довіряти\n</green>"
+        team-uncoop: "<green>Оберіть ранг, який може \n</green><green>знімати кооп\
+          \n</green>"
+        team-untrust: "<green>Оберіть ранг, який може \n</green><green>знімати дов\
+          іру\n</green>"
+        team-promote: |
+          <green>Оберіть ранг, який може</green>
+          <green>підвищувати ранг гравця</green>
+        team-demote: |
+          <green>Оберіть ранг, який може</green>
+          <green>знижувати ранг гравця</green>
+        sethome: |
+          <green>Оберіть ранг, який може</green>
+          <green>встановлювати доми</green>
+        deletehome: |
+          <green>Оберіть ранг, який може</green>
+          <green>видаляти доми</green>
+        renamehome: |
+          <green>Оберіть ранг, який може</green>
+          <green>перейменовувати доми</green>
+        setcount: |
+          <green>Оберіть ранг, який може</green>
+          <green>змінювати фазу</green>
+        border: |
+          <green>Оберіть ранг, який може</green>
+          <green>використовувати команду межі</green>
+      description-layout: |
+        [description]
+
+        <yellow>ЛКМ </yellow><gray>— перегортати вниз.</gray>
+        <yellow>ПКМ </yellow><gray>— перегортати вгору.</gray>
+
+        <gray>Дозволено для:</gray>
+      allowed-rank: <dark_aqua>- </dark_aqua><green>[rank]</green>
+      blocked-rank: <dark_aqua>- </dark_aqua><red>[rank]</red>
+      minimal-rank: <dark_aqua>- </dark_aqua><dark_green>[rank]</dark_green>
+      menu-layout: |
+        [description]
+
+        <yellow>Клік </yellow><gray>для відкриття.</gray>
+      setting-cooldown: <red>Налаштування на кулдау́ні</red>
+      setting-layout: |
+        [description]
+
+        <yellow>Клік </yellow><gray>для перемикання.</gray>
+
+        <gray>Поточне значення: [setting]</gray>
+      setting-active: <green>Активно</green>
+      setting-disabled: <red>Вимкнено</red>
+
+management:
+  panel:
+    title: Керування BentoBox
+    views:
+      gamemodes:
+        name: <gold>Режими</gold>
+        description: <yellow>Клік </yellow><green>щоб показати завантажені режими</green>
+        blueprints:
+          name: <gold>Креслення</gold>
+          description: <green>Відкрити адмін-меню креслень.</green>
+        gamemode:
+          name: <white>[name]</white>
+          description: |
+            <green>[prefix_Islands]: </green><aqua>[islands]</aqua>
+      addons:
+        name: <gold>Аддони</gold>
+        description: <yellow>Клік </yellow><green>щоб показати завантажені аддони</green>
+      hooks:
+        name: <gold>Хуки</gold>
+        description: <yellow>Клік </yellow><green>щоб показати завантажені хуки</green>
+    actions:
+      reload:
+        name: <red>Перезавантажити</red>
+        description: <yellow>Клікніть </yellow><red><bold>двічі </bold></red><green>щоб
+          перезавантажити BentoBox</green>
+    buttons:
+      catalog:
+        name: <gold>Каталог аддонів</gold>
+        description: <green>Відкрити каталог аддонів</green>
+      credits:
+        name: <gold>Подяки</gold>
+        description: <green>Відкрити авторів BentoBox</green>
+      empty-here:
+        name: <aqua>Тут порожньо...</aqua>
+        description: <green>Можливо, зазирнете до нашого каталогу?</green>
+    information:
+      state:
+        name: <gold>Сумісність</gold>
+        description:
+          COMPATIBLE: |
+            <green>Працює </green><yellow>[name] [version]</yellow><green>.</green>
+
+            <green>BentoBox працює на</green>
+            <green><bold>СУМІСНОМУ </bold></green><green>серверному ПЗ</green>
+            <green>та версії.</green>
+
+            <green>Усі функції повністю розраховані</green>
+            <green>на це середовище.</green>
+          SUPPORTED: |
+            <green>Працює </green><yellow>[name] [version]</yellow><green>.</green>
+
+            <green>BentoBox працює на</green>
+            <green><bold>ПІДТРИМУВАНОМУ </bold></green><green>серверному ПЗ</green>
+            <green>та версії.</green>
+
+            <green>Більшість функцій працюватиме</green>
+            <green>стабільно.</green>
+          NOT_SUPPORTED: |
+            <green>Працює </green><yellow>[name] [version]</yellow><green>.</green>
+
+            <green>BentoBox працює на</green>
+            <gold><bold>НЕПІДТРИМУВАНОМУ </bold></gold><green>серверному ПЗ</green>
+            <green>або версії.</green>
+
+            <green>Хоча більшість функцій будуть</green>
+            <green>працездатними, </green><gold>можливі специфічні</gold>
+            <gold>проблеми платформи</gold><green>.</green>
+          INCOMPATIBLE: |
+            <green>Працює </green><yellow>[name] [version]</yellow><green>.</green>
+
+            <green>BentoBox працює на</green>
+            <red><bold>НЕСУМІСНОМУ </bold></red><green>серверному ПЗ</green>
+            <green>або версії.</green>
+
+            <red>Можлива дивна поведінка і баги,</red>
+            <red>більшість функцій буде нестабільною.</red>
+catalog:
+  panel:
+    GAMEMODES:
+      title: Каталог режимів
+    ADDONS:
+      title: Каталог аддонів
+    views:
+      gamemodes:
+        name: <gold>Режими</gold>
+        description: |
+          <yellow>Клік </yellow><green>щоб переглянути</green>
+          <green>доступні офіційні режими.</green>
+      addons:
+        name: <gold>Аддони</gold>
+        description: |
+          <yellow>Клік </yellow><green>щоб переглянути</green>
+          <green>доступні офіційні аддони.</green>
+    icon:
+      description-template: |
+        <dark_gray>[topic]</dark_gray>
+        <green>[install]</green>
+
+        <gray><italic>[description]</italic></gray>
+
+        <yellow>Клік </yellow><green>щоб отримати посилання на</green>
+        <green>останній реліз.</green>
+      already-installed: Вже встановлено!
+      install-now: Встановити зараз!
+    
+    empty-here:
+      name: <aqua>Тут порожньо...</aqua>
+      description: |
+        <red>BentoBox не зміг під’єднатися до GitHub.</red>
+
+        <green>Дозвольте BentoBox під’єднуватися до GitHub</green>
+        <green>у конфігурації або спробуйте пізніше.</green>
+enums:
+  DamageCause:
+    CONTACT: Дотик
+    ENTITY_ATTACK: Атака моба
+    ENTITY_SWEEP_ATTACK: Розмашиста атака
+    PROJECTILE: Снаряд
+    SUFFOCATION: Задуха
+    FALL: Падіння
+    FIRE: Вогонь
+    FIRE_TICK: Горіння
+    MELTING: Танення
+    LAVA: Лава
+    DROWNING: Утоплення
+    BLOCK_EXPLOSION: Вибух блоку
+    ENTITY_EXPLOSION: Вибух сутності
+    VOID: Порожнеча
+    LIGHTNING: Блискавка
+    SUICIDE: Самогубство
+    STARVATION: Голод
+    POISON: Отрута
+    MAGIC: Магія
+    WITHER: Візер
+    FALLING_BLOCK: Падаючий блок
+    THORNS: Терни
+    DRAGON_BREATH: Подих дракона
+    CUSTOM: Користувацьке
+    FLY_INTO_WALL: Удар об стіну
+    HOT_FLOOR: Гаряча підлога
+    CRAMMING: Затиснення
+    DRYOUT: Пересихання
+    FREEZE: Замерзання
+    KILL: Вбивство
+    SONIC_BOOM: Звуковий удар
+    WORLD_BORDER: Межа світу
+
+panel:
+  credits:
+    title: <dark_gray>[name] </dark_gray><dark_green>Подяки</dark_green>
+    contributor:
+      name: <green>[name]</green>
+      description: |
+        <green>Комітів: </green><aqua>[commits]</aqua>
+    empty-here:
+      name: <red>Тут порожньо...</red>
+      description: |
+        <red>BentoBox не зміг зібрати список контриб’юторів</red>
+        <red>для цього аддона.</red>
+
+        <green>Дозвольте BentoBox під’єднуватися до GitHub</green>
+        <green>у конфігурації або спробуйте пізніше.</green>
+# This section contains values for BentoBox panels.
+panels:
+  # The section of translations used in [prefix_Island] Homes Panel
+  island_homes:
+    title: <dark_green><bold>Ваші домівки [prefix_island]</bold></dark_green>
+    buttons:
+      # This button is used for displaying islands to teleport to
+      name: <bold>[name]</bold>
+  # The section of translations used in [prefix_Island] Creation Panel
+  island_creation:
+    title: <dark_green><bold>Оберіть [prefix_an-island]</bold></dark_green>
+    buttons:
+      # This button is used for displaying blueprint bundle in the island creation panel.
+      bundle:
+        name: <bold>[name]</bold>
+        description: '[description]'
+        uses: <green>Використано [number]/[max]</green>
+        unlimited: <green>Необмежені використання дозволені</green>
+        cost: '<yellow>Вартість: [cost]</yellow>'
+  # The section of translations used in Language Panel
+  language:
+    title: <dark_green><bold>Оберіть мову</bold></dark_green>
+    edited: <red>Змінено на [lang]</red>
+    buttons:
+      # This button is used for displaying different locales that are available in language selection panel.
+      language:
+        name: <white><bold>[name]</bold></white>
+        description: |-
+          [authors]
+          |[selected]
+        authors: '<gray>Автори: </gray>'
+        author: <gray>- </gray><aqua>[name]</aqua>
+        selected: <green>Наразі обрано.</green>
+  placeholder:
+    title: <dark_aqua><bold>Браузер замінників</bold></dark_aqua>
+    buttons:
+      bentobox:
+        name: <white><bold>BentoBox</bold></white>
+        description: <gray>[number] замінників</gray>
+      addon:
+        name: <white><bold>[name]</bold></white>
+        description: <gray>[number] замінників</gray>
+  placeholder-list:
+    title: <dark_aqua><bold>[name]</bold></dark_aqua>
+    buttons:
+      leaf:
+        name: <aqua>[placeholder]</aqua>
+        description: <gray>[description]</gray>
+        disabled: <red><italic>(вимкнено)</italic></red>
+        hint: <yellow>Натисніть </yellow><gray>для перемикання.</gray>
+      folder:
+        name: <white><bold>[label]</bold></white>
+        description: <gray>[count] замінників</gray>
+        hint: <yellow>Натисніть </yellow><gray>для перегляду.</gray>
+      leaf-folder:
+        hint: <yellow>ЛКМ </yellow><gray>для перемикання. · </gray><yellow>ПКМ </yellow><gray>для
+          перегляду.</gray>
+      series:
+        name: <aqua>[placeholder]</aqua>
+        description: <gray>[description]</gray>
+        range: '<dark_gray>#[min] – #[max] · [count] елементів</dark_gray>'
+        disabled: <red><italic>(деякі вимкнено)</italic></red>
+        hint: <yellow>Натисніть </yellow><gray>для перемикання всіх.</gray>
+        sample: <dark_gray>#[index] → </dark_gray><white>[value]</white>
+        sample-empty: <dark_gray>#[index] → </dark_gray><dark_gray>(порожньо)</dark_gray>
+      leaf-series:
+        hint: <yellow>ЛКМ </yellow><gray>для перемикання. · </gray><yellow>ПКМ </yellow><gray>для
+          перемикання всіх.</gray>
+      value: <dark_gray>→ </dark_gray><white>[value]</white>
+      value-empty: <dark_gray>→ </dark_gray><dark_gray>(порожньо)</dark_gray>
+      back:
+        name: <white><bold>Назад</bold></white>
+        description: <gray>Повернутися до списку аддонів</gray>
+  # The set of common buttons used in multiple panels.
+  buttons:
+    # Button that is used in multi-page GUIs which allows to return to previous page.
+    previous:
+      name: <white><bold>Попередня сторінка</bold></white>
+      description: <gray>Перейти на сторінку [number] # Button that is used in multi-page GUIs which allows to go to next page.</gray>'
+    next:
+      name: <white><bold>Наступна сторінка</bold></white>
+      description: <gray>Перейти на сторінку [number]</gray>
+  tips:
+    click-to-next: <yellow>Клік </yellow><gray>для наступної.</gray>
+    click-to-previous: <yellow>Клік </yellow><gray>для попередньої.</gray>
+    click-to-choose: <yellow>Клік </yellow><gray>щоб обрати.</gray>
+    click-to-toggle: <yellow>Клік </yellow><gray>щоб перемкнути.</gray>
+    left-click-to-cycle-down: <yellow>ЛКМ </yellow><gray>— прогортати вниз.</gray>
+    right-click-to-cycle-up: <yellow>ПКМ </yellow><gray>— прогортати вгору.</gray>
+
+successfully-loaded: |2
+
+  <gold>  ____             _        ____</gold>
+  <gold> |  _ \           | |      |  _ \             </gold><gray>by </gray><green>tastybento </green><gray>and </gray><green>Poslovitch</green>
+  <gold> | |_) | ___ _ __ | |_ ___ | |_) | _____  __  </gold><gray>2017 - 2023</gray>
+  <gold> |  _ < / _ \ '_ \| __/ _ \|  _ < / _ \ \/ /</gold>
+  <gold> | |_) |  __/ | | | || (_) | |_) | (_) >  <   </gold><aqua>v</aqua><yellow>[version]</yellow>
+  <gold> |____/ \___|_| |_|\__\___/|____/ \___/_/\_\  </gold><dark_gray>Завантажено за </dark_gray><yellow>[time]</yellow><dark_gray>мс.</dark_gray>

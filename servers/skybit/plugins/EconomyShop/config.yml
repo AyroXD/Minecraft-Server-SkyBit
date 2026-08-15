@@ -1,0 +1,304 @@
+# ============================================================================
+# EconomyShop Configuration
+# ============================================================================
+# A modern, GUI-driven economy shop plugin with dynamic pricing.
+# All settings are documented inline. Reload with /shop admin reload.
+# ============================================================================
+
+# --------------------------------------------------------------------------
+# General
+# --------------------------------------------------------------------------
+
+# Language file to load from lang/ folder (without .yml extension).
+# Bundled: en_US. Drop custom files into plugins/EconomyShop/lang/
+language: en_US
+
+# Prefix prepended to all plugin messages. Supports MiniMessage format.
+message-prefix: '<gold>[Shop]</gold> '
+
+# Enable verbose debug logging to console. Useful for troubleshooting.
+debug: false
+
+# Anonymous usage statistics (bStats).
+# Sends only server count, player count, Minecraft version, Java version,
+# server software, core count, and country. No personal or server-identifying
+# data. Set to false to disable. Also respects the global opt-out at
+# plugins/bStats/config.yml.
+metrics: true
+
+# --------------------------------------------------------------------------
+# Storage
+# --------------------------------------------------------------------------
+# Supported types: sqlite, mysql
+# SQLite stores data in plugins/EconomyShop/data.db
+# MySQL requires the connection details below.
+storage:
+  type: sqlite
+  
+  # Prefix for all database tables (e.g. es_transactions, es_player_shops)
+  table-prefix: es_
+  
+  # MySQL connection settings (ignored when type is sqlite)
+  mysql:
+    host: localhost
+    port: 3306
+    database: economyshop
+    username: root
+    password: ''
+    
+    # HikariCP connection pool tuning
+    pool:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+
+# --------------------------------------------------------------------------
+# Economy
+# --------------------------------------------------------------------------
+# How the plugin interacts with the server economy.
+economy:
+  # Economy provider. Currently only "vault" is supported.
+  provider: vault
+  
+  # Currency display format. Use {amount} as the placeholder for the number.
+  # Examples: "${amount}" for "$1.50", "{amount}G" for "1.50G", "{amount} coins" for "1.50 coins"
+  currency-format: ${amount}
+
+# --------------------------------------------------------------------------
+# Modules
+# --------------------------------------------------------------------------
+# Toggle major features on or off. Disabling a module prevents it from
+# loading any listeners, commands, or scheduled tasks for that feature.
+modules:
+  # Server-run admin shop GUI (/shop). Disable if you only want chest shops.
+  admin-shop: true
+  dynamic-pricing: true
+  sell-to-shop: true
+  transaction-log: true
+  sales-tax: true
+  auctionhouse-integration: false
+  # Enable /sell and /sell all commands (quick sell without GUI)
+  sell-commands: true
+  # Enable price history charts
+  price-history: true
+
+# --------------------------------------------------------------------------
+# Shop (core buy/sell settings)
+# --------------------------------------------------------------------------
+shop:
+  # Percentage tax applied to all shop purchases (0.0 = disabled).
+  # Example: 5.0 means a 5% tax is added on top of the item price.
+  sales-tax: 2.0
+  # Reserved for future use. Static items use the sell price set in the item editor.
+  # Dynamic-priced items use the buy-sell-spread setting instead.
+  sell-price-multiplier: 0.5
+  
+  # Minimum price any shop item can be set to.
+  min-price: 0.01
+  
+  # Maximum price any shop item can be set to.
+  max-price: 1.0E7
+  
+  # Seed the shop with ~190 sensibly-priced default items on first install.
+  # Set to false BEFORE first run to start with an empty shop and configure
+  # everything yourself. Has no effect on existing servers (categories already exist).
+  # The default seed deliberately omits end-game items (totems, beacons, elytra,
+  # netherite, dragon eggs, etc.) since those vary too much per server economy.
+  seed-default-shop: true
+  
+  # Materials that cannot be bought or sold through the shop.
+  # Uses Bukkit Material enum names (e.g. BEDROCK, COMMAND_BLOCK).
+  blacklisted-materials:
+  - AIR
+  - CAVE_AIR
+  - VOID_AIR
+  - BEDROCK
+  - BARRIER
+  - COMMAND_BLOCK
+  - CHAIN_COMMAND_BLOCK
+  - REPEATING_COMMAND_BLOCK
+  - STRUCTURE_BLOCK
+  - STRUCTURE_VOID
+  - JIGSAW
+  - LIGHT
+  - DEBUG_STICK
+  - BUNDLE
+
+# --------------------------------------------------------------------------
+# Dynamic Pricing
+# --------------------------------------------------------------------------
+# When enabled, item prices fluctuate based on supply and demand.
+# Two models available: "stock-based" (organic, recommended) or "multiplier" (legacy).
+dynamic-pricing:
+  # Pricing model: "stock-based" or "multiplier"
+  # stock-based: Price = (medianStock / currentStock) Ă— basePrice â€” organic supply/demand
+  # multiplier: Legacy system using sensitivity + exponential decay
+  model: stock-based
+  
+  # â”€â”€â”€ Stock-Based Settings (used when model = stock-based) â”€â”€â”€
+  # Starting/equilibrium stock level for each material.
+  default-median-stock: 500
+  # Minimum stock â€” prevents prices from going infinitely high.
+  # Lower = higher max price. At min 10 with median 500, max price = 50x base.
+  default-min-stock: 10
+  # Maximum stock â€” prevents prices from going to zero.
+  default-max-stock: 5000
+  # Buy/sell spread â€” sell price = buy price Ă— this value (prevents arbitrage).
+  # 0.85 = 15% spread. Set to 1.0 to disable spread.
+  buy-sell-spread: 0.3
+  # How often stock rebalances toward median (in minutes).
+  rebalance-interval-minutes: 30
+  # Rate of rebalance per interval (0.05 = 5% drift toward median).
+  rebalance-rate: 0.05
+  # Price multiplier bounds for finite stock + dynamic pricing.
+  # Prevents extreme prices when stock is very low or very high.
+  finite-min-multiplier: 0.6
+  finite-max-multiplier: 1.6
+  # Prevent buying the last item in finite stock shops (DynamicShop 3 rule).
+  protect-last-item: true
+  
+  # â”€â”€â”€ Legacy Multiplier Settings (used when model = multiplier) â”€â”€â”€
+  sensitivity: 0.3
+  decay-window-hours: 24
+  min-multiplier: 0.5
+  max-multiplier: 2.0
+  update-interval-minutes: 5
+
+# ==============================
+# Chest Shop Settings
+# ==============================
+chest-shops:
+  enabled: false
+  creation-cost: 250.0
+  max-shops-per-player: 3
+  transaction-tax-percent: 3.0
+  max-price: 1000000.0
+  min-price: 0.01
+  allow-free-items: false
+  stock-alert-default-threshold: 5
+  allow-double-chests: true
+  # Floating rotating item above each shop chest. Purely cosmetic â€” helps
+  # players spot shops from a distance. Disable on servers with 2000+ chest
+  # shops for better TPS (rotation task scales with shop count).
+  display-entity:
+    enabled: true
+    rotation-speed-ticks: 40 # Ticks per half-rotation (40 = 2 seconds)
+    height-offset: 1.2 # Blocks above the chest
+
+# --------------------------------------------------------------------------
+# Stock
+# --------------------------------------------------------------------------
+# Controls how server shop item stock works.
+stock:
+  # Default stock mode for new items: "infinite" or "limited"
+  # infinite = unlimited stock, limited = restocking on a timer.
+  default-mode: infinite
+  
+  # Default amount restocked per interval (only for limited stock mode).
+  default-restock-amount: 64
+  
+  # Default restock interval in seconds (3600 = 1 hour).
+  default-restock-interval: 3600
+  
+  # How often (in seconds) the plugin checks for items that need restocking.
+  restock-check-interval-seconds: 60
+  
+  # Default maximum stock capacity for limited-stock items.
+  default-max-stock: 640
+
+# --------------------------------------------------------------------------
+# AuctionHouse Integration
+# --------------------------------------------------------------------------
+# Requires AuctionHouse plugin to be installed and the module enabled above.
+auctionhouse:
+  # Master toggle for all AH integration features.
+  enabled: false
+  
+  # Merge AuctionHouse transaction history and price data with EconomyShop.
+  shared-history: true
+
+# --------------------------------------------------------------------------
+# GUI Defaults
+# --------------------------------------------------------------------------
+# Default filler used in small config GUIs (category settings, shop creation, etc.)
+gui:
+  default-filler:
+    material: BLACK_STAINED_GLASS_PANE
+
+# --------------------------------------------------------------------------
+# Security
+# --------------------------------------------------------------------------
+# Anti-exploit and rate-limiting settings.
+security:
+  # Prevent players in creative mode from using the shop.
+  block-creative: true
+  
+  # Minimum milliseconds between GUI click actions (prevents click spam).
+  click-cooldown-ms: 200
+  
+  # Minimum milliseconds between command executions per player.
+  command-cooldown-ms: 500
+  
+  # Maximum seconds a transaction lock can be held before auto-release.
+  # Prevents deadlocks if the server hangs during a transaction.
+  max-lock-hold-time: 10
+
+# --------------------------------------------------------------------------
+# Hooks
+# --------------------------------------------------------------------------
+# External plugin integrations. Set to false to skip hooking even if the
+# plugin is present on the server.
+hooks:
+  # LuckPerms: permission-based shop access, per-group pricing tiers.
+  luckperms: true
+  
+  # PlaceholderAPI: register EconomyShop placeholders for use in other plugins.
+  placeholderapi: true
+  
+  # WorldGuard: restrict shop access or player-shop creation to certain regions.
+  worldguard: true
+
+# â”€â”€â”€ Dashboard Sounds â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# Sounds played in the Admin Dashboard GUI. Set to "" to disable a sound.
+# Uses Minecraft sound names: https://minecraft.wiki/w/Sounds.json
+dashboard-sounds:
+  enabled: true
+  open: UI_BUTTON_CLICK # Opening the dashboard
+  tab-switch: UI_BUTTON_CLICK # Switching tabs
+  setting-adjust: BLOCK_NOTE_BLOCK_HAT # Adjusting a setting (left/right click)
+  toggle: UI_BUTTON_CLICK # Toggling a feature on/off
+  action-execute: ENTITY_PLAYER_LEVELUP # Executing an action (reload, purge)
+  close: UI_BUTTON_CLICK # Closing the dashboard
+  volume: 0.5 # Volume (0.0 - 1.0)
+  pitch: 1.0 # Pitch (0.5 - 2.0)
+
+# â”€â”€â”€ Price History â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# Tracks item prices over time for visual charts. Merges with AuctionHouse data if present.
+price-history:
+  days: 7 # Default view: 7, 14, or 30 days
+  auto-purge-days: 90 # Delete entries older than this (0 = never)
+
+# â”€â”€â”€ Webhooks â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+# External webhook integrations for server monitoring.
+webhooks:
+  # Discord webhook for alerts
+  discord:
+    enabled: false
+    # Paste your Discord webhook URL here (right-click channel > Integrations > Webhooks)
+    url: ''
+  
+  # Alert when a player performs many transactions of the same item rapidly.
+  # Can indicate bot usage, exploits, or macro abuse.
+  repeated-transactions:
+    enabled: false
+    # Number of transactions within the time window to trigger an alert
+    threshold: 10
+    # Sliding window in seconds (300 = 5 minutes)
+    time-window-seconds: 300
+
+
+
+
+

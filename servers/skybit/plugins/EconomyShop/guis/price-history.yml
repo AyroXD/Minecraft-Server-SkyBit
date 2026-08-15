@@ -1,0 +1,60 @@
+# ============================================================
+#  EconomyShop — Price History GUI
+#  Shows a bar chart of price trends over 7/14/30 days.
+#  Matches AuctionHouse visual design for seamless integration.
+# ============================================================
+
+size: 54
+title: "&6%item_name% Prices"
+
+# Chart area uses rows 0-3 (programmatic, not configurable)
+# Date labels on row 4 (programmatic)
+# Navigation on row 5
+
+filler:
+  enabled: true
+  material: BLACK_STAINED_GLASS_PANE
+  name: " "
+
+items:
+  back:
+    slot: 45
+    material: SPECTRAL_ARROW
+    name: "&eBack"
+    lore:
+      - "&7Return to the shop"
+
+  range-7d:
+    slot: 46
+    material: LIME_CONCRETE
+    name: "&a7 Days"
+    lore:
+      - "&7Show last 7 days"
+
+  range-14d:
+    slot: 47
+    material: GRAY_CONCRETE
+    name: "&714 Days"
+    lore:
+      - "&7Show last 14 days"
+
+  range-30d:
+    slot: 48
+    material: GRAY_CONCRETE
+    name: "&730 Days"
+    lore:
+      - "&7Show last 30 days"
+
+  item-info:
+    slot: 49
+    material: NETHER_STAR
+    name: "&6Item Info"
+    lore:
+      - "&7ATH, ATL, and average"
+
+  close:
+    slot: 53
+    material: BARRIER
+    name: "&cClose"
+    lore:
+      - "&7Close this menu"

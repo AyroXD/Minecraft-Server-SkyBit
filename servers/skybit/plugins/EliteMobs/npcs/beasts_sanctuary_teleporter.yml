@@ -1,0 +1,22 @@
+isEnabled: true
+name: <g:#7A5A40:#8A6A50>Beast Warden</g>
+role: <g:#6A4A30:#7A5A40><Beast's Sanctuary></g>
+profession: CraftProfession{holder=Reference{ResourceKey[minecraft:villager_profession
+  / minecraft:armorer]=VillagerProfession[name=translation{key='entity.minecraft.villager.armorer',
+  args=[]}, heldJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x0000000029b60248@7ce28cfc,
+  acquirableJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x0000000029b604a8@71f5387e,
+  requestedItems=[], secondaryPoi=[], workSound=SoundEvent[location=minecraft:entity.villager.work_armorer,
+  fixedRange=Optional.empty]]}}
+spawnLocation: em_adventurers_guild,291.5,92,304.5,-90,0
+spawnLocations: []
+greetings:
+- ''
+dialog: []
+farewell: []
+canTalk: true
+activationRadius: 1.0
+interactionType: COMMAND
+customModel: em_ag_beastwarden
+command: em dungeontp beasts_sanctuary_lair.yml
+syncMovement: false
+scripts: []

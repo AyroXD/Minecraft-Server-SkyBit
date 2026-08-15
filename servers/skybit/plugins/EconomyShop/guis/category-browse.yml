@@ -1,0 +1,32 @@
+# Category Browse GUI Configuration
+size: 54
+title: "&6%category%"
+listing-slots: "0-44"
+
+filler:
+  enabled: true
+  material: BLACK_STAINED_GLASS_PANE
+  name: " "
+  slots: "45-53"
+
+items:
+  back:
+    slot: 49
+    material: SPECTRAL_ARROW
+    name: "&eBack"
+    lore:
+      - "&7Return to the main shop."
+
+  prev-page:
+    slot: 45
+    material: ARROW
+    name: "&ePrevious Page"
+    lore:
+      - "&7Go to the previous page."
+
+  next-page:
+    slot: 53
+    material: ARROW
+    name: "&eNext Page"
+    lore:
+      - "&7Go to the next page."

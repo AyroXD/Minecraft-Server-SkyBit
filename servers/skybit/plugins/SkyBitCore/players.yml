@@ -1,0 +1,63 @@
+players:
+  f3d28cb0-7225-3cb1-baeb-2dadd2be89ae:
+    name: Tester
+    level: 1
+    xp: 47
+    coins: 5500
+    active-seconds: 420
+    stats:
+      blocks-mined: 0
+      mobs-killed: 0
+      fish-caught: 0
+      distance-travelled: 631
+    mine-rush:
+      period: 41359
+      blocks: 0
+      claims: []
+    daily:
+      last-epoch: -1
+      streak: 0
+    cosmetics:
+      tag: ''
+      trail: ''
+    quest-progress:
+      W2026-33: 0
+    quest-claims: []
+    achievements: []
+    playtime-claims: []
+    unlocks:
+    - rank:emperor
+  20b73e5b-82d8-3540-b1e0-81d387d5b812:
+    name: Ayro
+    level: 6
+    xp: 303
+    coins: 20616
+    active-seconds: 12960
+    stats:
+      blocks-mined: 12
+      mobs-killed: 0
+      fish-caught: 0
+      distance-travelled: 31807
+    mine-rush:
+      period: 41360
+      blocks: 0
+      claims: []
+    daily:
+      last-epoch: 20680
+      streak: 2
+    cosmetics:
+      tag: ⛏ MINER
+      trail: ''
+    quest-progress:
+      W2026-33:
+        playtime: 30
+      D20679: 0
+    quest-claims:
+    - D20679.travel
+    achievements: []
+    playtime-claims:
+    - 180
+    - 60
+    - 30
+    unlocks:
+    - miner_tag

@@ -1,0 +1,27 @@
+# Main Shop GUI Configuration
+size: 54
+title: "&6&lShop"
+listing-slots: "0-44"
+
+filler:
+  enabled: true
+  material: BLACK_STAINED_GLASS_PANE
+  name: " "
+  slots: "0-53"
+
+items:
+  sell-items:
+    slot: 47
+    material: GOLD_INGOT
+    name: "&eSell Items"
+    lore:
+      - "&7Click to sell items from"
+      - "&7your inventory to the shop."
+
+  transaction-history:
+    slot: 51
+    material: BOOK
+    name: "&6Transaction History"
+    lore:
+      - "&7View your recent purchases"
+      - "&7and sales."

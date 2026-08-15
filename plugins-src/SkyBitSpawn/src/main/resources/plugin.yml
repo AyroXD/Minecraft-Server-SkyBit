@@ -1,0 +1,44 @@
+name: SkyBitSpawn
+version: '${version}'
+main: sk.skybit.spawn.SkyBitSpawn
+api-version: '1.21'
+authors: [SkyBit]
+description: Protected Trading Post hub and polished join experience for SkyBit.
+depend: [Citizens]
+softdepend: [PlaceholderAPI, ExcellentCrates]
+commands:
+  menu:
+    description: Opens the SkyBit gameplay menu.
+    aliases: [skybitmenu]
+  servers:
+    description: Opens the SkyBit network server menu.
+    aliases: [servermenu, network]
+  lobby:
+    description: Sends the player to the main SkyBit lobby.
+    aliases: [hub]
+  islandmenu:
+    description: Opens the SkyBlock island menu.
+    aliases: [sbmenu]
+  tutorial:
+    description: Opens the SkyBit beginner tutorial.
+  crates:
+    description: Opens the SkyBit crates menu.
+    aliases: [crate]
+  keyshop:
+    description: Opens the SkyBit Key Shop for SkyCoins.
+  rtp:
+    description: Randomly teleports Survival players.
+    aliases: [wild, randomteleport]
+  pwarp:
+    description: Manages public player warps.
+    aliases: [pw, playerwarp, playerwarps]
+  res:
+    description: Jednoduchá hráčska ochrana pozemkov.
+    aliases: [residence, claimmenu]
+  skybitkey:
+    description: Gives SkyBit crate keys.
+    permission: skybitspawn.build
+permissions:
+  skybitspawn.build:
+    description: Allows building inside the protected Trading Post.
+    default: op

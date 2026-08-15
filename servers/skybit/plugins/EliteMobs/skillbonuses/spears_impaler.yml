@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&b&lImpaler'
+description:
+- '&7Pin an enemy in place,'
+- '&7dealing massive damage. 45s CD.'
+skillType: SPEARS
+bonusType: COOLDOWN
+unlockTier: 4
+baseValue: 4.0
+scalingPerLevel: 0.05
+cooldownSeconds: 45.0
+displayMaterial: END_ROD
+loreTemplates:
+- '&7Damage: &f$damage%'
+- '&7Pin Duration: &f3 seconds'
+- '&7Cooldown: &f$cooldowns'
+formattedBonusTemplate: '$damage% + Pin (CD: $cooldowns)'

@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&eHunter''s Mark'
+description:
+- '&7Mark enemies with your arrows.'
+- '&7Marked targets take bonus damage.'
+skillType: BOWS
+bonusType: PROC
+unlockTier: 2
+baseValue: 0.2
+scalingPerLevel: 0.004
+procChance: 0.25
+displayMaterial: GLOW_INK_SAC
+loreTemplates:
+- '&7Proc Chance: &f$procChance%'
+- '&7Mark Bonus: &f$markBonus% damage'
+- '&7Duration: &f10 seconds'
+formattedBonusTemplate: +$markBonus% to marked targets

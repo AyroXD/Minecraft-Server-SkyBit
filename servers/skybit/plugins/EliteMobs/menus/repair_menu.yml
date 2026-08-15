@@ -1,0 +1,27 @@
+isEnabled: true
+shopName: '[EM] Repair menu!'
+infoButton:
+  material: PLAYER_HEAD
+infoButtonSlot: 4
+eliteItemInputInformationSlot: 20
+eliteItemInputSlot: 29
+eliteItemInputInformationButton:
+  material: GREEN_BANNER
+  customModelID: 31173
+eliteScrapInputInformationSlot: 22
+eliteScrapInputSlot: 31
+eliteScrapInputInformationButton:
+  material: GREEN_BANNER
+  customModelID: 31173
+informationOutputButtonSlot: 24
+outputSlot: 33
+cancelButton:
+  material: BARRIER
+  customModelID: 31173
+outputInformationButton:
+  material: RED_BANNER
+  customModelID: 31173
+cancelButtonSlot: 27
+confirmButton:
+  material: EMERALD
+confirmRepairSlot: 35

@@ -1,0 +1,1346 @@
+meta:
+  authors:
+  - BONNe
+challenges:
+  commands:
+    admin:
+      main:
+        description: Główna komenda Administratora. Otwiera GUI.
+        parameters: ''
+      reload:
+        description: Odświeżenie zadań z bazy danych
+        parameters: ''
+      show:
+        description: Wyświetla wszystkie wyzwania na czacie, które istnieją na tym
+          świecie.
+        parameters: ''
+      complete:
+        description: Ukończ wyzwanie dla gracza.
+        parameters: <player> <challenge_id>
+      reset:
+        description: Zresetuj wyzwanie dla gracza. Jeśli „id_zadania” jest ustawione
+          na „all”, to zresetuje wszystkie wyzwania.
+        parameters: <player> <challenge_id>
+      migrate:
+        description: Migruj aktualne wyzwania świata gry do formatu pamięci 0.8.0.
+        parameters: ''
+    user:
+      main:
+        description: Otwórz GUI wyzwań.
+        parameters: ''
+      complete:
+        description: Ukończ wyzwanie.
+        parameters: <challenge_id> [ilość]
+  gui:
+    titles:
+      player-gui: <black><bold>Menu wyzwań
+      gamemode-gui: <black><bold>Wybierz tryb gry
+      multiple-gui: <black><bold>Ile razy?
+      admin-gui: <black><bold>Wyzwania - Menu administratora
+      edit-challenge: <black><bold>Edytuj [challenge]
+      edit-level: <black><bold>Edytuj [level]
+      settings: <black><bold>Ustawienia
+      choose-challenge: <black><bold>Wybierz wyzwanie
+      choose-level: <black><bold>Wybierz poziom
+      choose-player: <black><bold>Wybierz gracza
+      library: <black><bold>Biblioteka
+      manage-blocks: <black>Zarządzaj blokami
+      manage-entities: <black><bold>Zarządzaj bytami
+      type-selector: <black><bold>Selektor typu wyzwania
+      item-selector: <black><bold>Selektor przedmiotu
+      block-selector: <black><bold>Selektor bloku
+      entity-selector: <black><bold>Selektor bytów
+      challenge-selector: <black><bold>Selektor wyzwań
+      statistic-selector: <black><bold>Selektor statystyk
+      environment-selector: <black><bold>Selektor środowiska
+      manage-block-groups: <black><bold>Zarządzaj Grupami Bloków
+      manage-entity-groups: <black><bold>Zarządzaj Grupami Jednostek
+      manage-statistics: <black><bold>Zarządzaj Statystykami
+      manage-advancements: <black><bold>Zarządzaj Osiągnięciami
+      advancement-selector: <black><bold>Selektor Osiągnięć
+      biome-selector: <black><bold>Selektor biomów
+    buttons:
+      free-challenges:
+        name: <white><bold>Wyzwania bez kategorii
+        description: |-
+          <gray>Wyświetla listę
+          <gray>wyzwań, które nie
+          <gray>mają kategorii
+      return:
+        name: <white><bold>Powrót
+        description: |-
+          <gray>Powrót do poprzedniego menu
+          <gray>lub wyjście z GUI
+      previous:
+        name: <white><bold>Poprzednia strona
+        description: <gray>Przełącz na <yellow>[number] <gray>stronę
+      next:
+        name: <white><bold>Następna strona
+        description: <gray>Przełącz na <yellow>[number] <gray>stronę
+      reduce:
+        name: <white><bold>Zmniejsz
+        description: <gray>Zmniejsz o <yellow>[number]
+      increase:
+        name: <white><bold>Zwiększ
+        description: <gray>Zwiększenie o <yellow>[number]
+      accept:
+        name: <white><bold>Ukończono
+        description: |-
+          <gray>Ukończ wyzwanie <yellow>[number]
+          <gray>razy(-y)
+      quit:
+        name: <white><bold>Wyjdź
+        description: <gray>Wyjdź z GUI.
+      complete_user_challenges:
+        name: <white><bold>Ukończ wyzwanie użytkownika
+        description: "<gray>Pozwala wybrać użytkownika i\n<gray>zakończyć wyzwanie(-a)\
+          \ \n<gray> za niego"
+      reset_user_challenges:
+        name: <white><bold>Resetuj wyzwania użytkownika
+        description: |-
+          <gray>Pozwala wybrać użytkownika i
+          <gray>zresetować jego wyzwania
+      add_challenge:
+        name: <white><bold>Utwórz wyzwanie
+        description: |-
+          <gray>Rozpoczyna proces dla
+          <gray>tworzenie nowego wyzwania.
+      add_level:
+        name: <white><bold>Utwórz poziom
+        description: |-
+          <gray>Rozpoczyna proces
+          <gray>tworzenia nowego poziomu.
+      edit_challenge:
+        name: <white><bold>Edytuj wyzwanie
+        description: |-
+          <gray>Pozwala wybrać i
+          <gray>edytować wyzwanie.
+      edit_level:
+        name: <white><bold>Edytuj poziom
+        description: |-
+          <gray>Pozwala wybrać i
+          <gray>edytować poziom.
+      delete_challenge:
+        name: <white><bold>Usuń wyzwanie
+        description: |-
+          <gray>Pozwala wybrać i
+          <gray>usunąć wyzwanie.
+      delete_level:
+        name: <white><bold>Usuń poziom
+        description: |-
+          <gray>Pozwala wybrać i
+          <gray>usunąć poziom.
+      edit_settings:
+        name: <white><bold>Ustawienia
+        description: |-
+          <gray>Pozwala przeglądać i edytować
+          <gray>ustawienia dodatków.
+      complete_wipe:
+        name: <white><bold>Całkowite czyszczenie
+        description: |-
+          <gray>Całkowicie usuwa bazę
+          <gray>zadań, w tym
+          <gray>dane użytkownika.
+      challenge_wipe:
+        name: <white><bold>Wyczyść wyzwanie
+        description: |-
+          <gray>Całkowicie usuwa wyzwania
+          <gray>i poziomy z bazy danych.
+      user_wipe:
+        name: <white><bold>Wyczyść użytkownika
+        description: |-
+          <gray>Całkowicie czyści dane
+          <gray>użytkownika z bazy danych.
+      library:
+        name: <white><bold>Biblioteka
+        description: |-
+          <gray>Otwiera publiczną
+          <gray>bibliotekę wyzwań.
+        downloading: |-
+          <gray>Pobieranie biblioteki
+          <gray>żądane...
+      import_database:
+        name: <white><bold>Importuj bazę danych
+        description: |-
+          <gray>Pozwala na import i eksport
+          <gray>bazy wyzwań.
+      import_template:
+        name: <white><bold>Importuj szablon
+        description: "<gray>Pozwala zaimportować \n<gray>szablon z wyzwaniami."
+      export_challenges:
+        name: <white><bold>Eksport wyzwań
+        description: |-
+          <gray>Pozwala na eksport bazy danych
+          <gray>do pliku lokalnego.
+      properties:
+        name: <white><bold>Właściwości
+        description: <gray>Wyświetl wszystkie główne właściwości.
+      requirements:
+        name: <white><bold>Wymagania
+        description: <gray>Wyświetla wymagania.
+      rewards:
+        name: <white><bold>Nagrody
+        description: <gray>Wyświetl właściwości nagród.
+      deployed:
+        name: <white><bold>Wdrożenie
+        description: |-
+          <gray>Przełącz, jeśli wyzwanie jest
+          <gray>skończone i użytkownicy
+          <gray>mogą je wykonywać.
+        enabled: <dark_green>Włączone
+        disabled: <red>Wyłączone
+      name:
+        name: <white><bold>Nazwa
+        description: |-
+          <gray>Pozwala na zmianę
+          <gray>wyświetlanej nazwy.
+        value: '<gray>Obecnie: <reset>[name]'
+      remove_on_complete:
+        name: <white><bold>Ukryj po zakończeniu
+        description: |-
+          <gray>Przełącz, jeśli wyzwanie
+          <gray>powinno być ukryte przed
+          <gray>graczem po zakończeniu.
+        enabled: <dark_green>Włączone
+        disabled: <red>Wyłączone
+      description:
+        name: <white><bold>Opis
+        description: |-
+          <gray>Szczegółowy opis
+          <gray>wyzwania. Można użyć
+          <gray>kolorów.
+        value: '<gray>Aktualny opis:'
+      environment:
+        name: <white><bold>Świat
+        description: "<gray>Pozwala ograniczyć, w \n<gray>których światach wyzwanie\n\
+          <gray> można ukończyć."
+        enabled: <dark_green>
+        disabled: <red>
+      order:
+        name: <white><bold>Kolejność
+        description: |-
+          <gray>Pozwala zmienić kolejność
+          <gray>obiektów.
+          <gray>Obiekty o równych numerach
+          <gray>zostaną ułożone zgodnie
+          <gray>z ich systemowym ID
+        value: '<gray>Bieżąca kolejność: <yellow>[number]'
+      icon:
+        name: <white><bold>Ikona
+        description: |-
+          <gray>Pozwala zmienić ikonę
+          <gray>dla tego wyzwania.
+      locked_icon:
+        name: <white><bold>Zablokowana ikona
+        description: |-
+          <gray>Pozwala zmienić ikonę
+          <gray>zablokowanego poziomu.
+      required_permissions:
+        name: <white><bold>Wymagane uprawnienia
+        description: |-
+          <gray>Pozwala na zmianę
+          <gray>wymaganej permisji
+          <gray>do tego wyzwania.
+          <gray>(aby zostało zakończone)
+        title: '<gray>Uprawnienia:'
+        permission: ' <dark_gray>- [permission]'
+        none: <gray>Permisje nie są ustawione.
+      remove_entities:
+        name: <white><bold>Usuń elementy
+        description: |-
+          <gray>Pozwala na przełączanie:
+          <gray>Wymagany byt zostanie
+          <gray>usunięty ze świata po
+          <gray>ukończeniu wyzwania.
+        enabled: <dark_green>Włączone
+        disabled: <red>Wyłączone
+      required_entities:
+        name: <white><bold>Wymagane byty
+        description: |-
+          <gray>Pozwala na zmianę
+          <gray>wymaganych bytów,
+          <gray>aby zakończyć wyzwanie.
+        title: '<gray>Byty:'
+        list: ' <dark_gray>- [number] x [entity]'
+        none: <gray>Byty nie są dodawane.
+      remove_blocks:
+        name: <white><bold>Usuń bloki
+        description: |-
+          <gray>Pozwala na przełączanie:
+          <gray>Wymagane bloki zostaną
+          <gray>usunięte z wyspy po
+          <gray>zakończeniu wyzwania.
+        enabled: <dark_green>Włączone
+        disabled: <red>Wyłączone
+      required_blocks:
+        name: <white><bold>Wymagane bloki
+        description: "<gray>Pozwala na zmianę \n<gray>wymaganych bloków\n<gray>do\
+          \ tego wyzwania."
+        title: '<gray>Bloki:'
+        list: ' <dark_gray>- [number] x [block]'
+        none: <gray>Bloki nie są dodane.
+      search_radius:
+        name: <white><bold>Promień wyszukiwania
+        description: |-
+          <gray>Pozwala zmienić promień
+          <gray>wokół gracza, gdzie bloki
+          <gray>oraz byty zostaną wykryte.
+        value: '<gray>Aktualna odległość: <yellow>[number]'
+      remove_items:
+        name: <white><bold>Usuń przedmioty
+        description: |-
+          <gray>Pozwala na przełączanie:
+          <gray>Wymagane przedmioty
+          <gray>zostaną usunięte z
+          <gray>ekwipunku po zakończeniu
+          <gray>wyzwania.
+        enabled: <dark_green>Włączone
+        disabled: <red>Wyłączone
+      required_items:
+        name: <white><bold>Wymagane przedmioty
+        description: "<gray>Pozwala na zmianę \n<gray>wymaganych przedmiotów \n<gray>do\
+          \ tego wyzwania."
+        title: '<gray>Przedmioty:'
+        list: ' <dark_gray>- [number] x [item]'
+        none: <gray>Przedmioty nie są dodane.
+      add_ignored_meta:
+        name: <white><bold>Dodaj ignorowane metadane
+        description: "<gray>Pozwala dodać, w których\n<gray>przedmiotach należy \n\
+          <gray>zignorować wszelkie\n<gray>metadane, które zostały\n<gray>do nich\
+          \ przypisane."
+        title: '<gray>Przedmioty:'
+        list: ' <dark_gray>- [number] x [item]'
+        none: <gray>Przedmioty nie są dodane.
+      remove_ignored_meta:
+        name: <white><bold>Usuń ignorowanie metadanych
+        description: |-
+          <gray>Pozwala usunąć na której
+          <gray>pozycji należy zignorować
+          <gray>wszelkie metadane, które
+          <gray>są do nich przypisany.
+      remove_experience:
+        name: <white><bold>Usuń doświadczenie
+        description: |-
+          <gray>Pozwala na przełączanie czy
+          <gray>wymagane doświadczenie
+          <gray>zostanie usunięte po oddaniu
+          <gray>tego zadania
+        enabled: <dark_green>Włączone
+        disabled: <red>Wyłączone
+      required_experience:
+        name: <white><bold>Wymagane doświadczenie
+        description: |-
+          <gray>Pozwala na zmianę
+          <gray>wymaganego doświadczenie dla
+          <gray>gracza.
+        value: '<gray>Aktualne doświadczenie: <yellow>[number]'
+      required_level:
+        name: <white><bold>Wymagany poziom wyspy
+        description: |-
+          <gray>Pozwala na zmianę
+          <gray>wymaganego poziomu wyspy
+          <gray>do zadania.
+        value: '<gray>Bieżący poziom: <yellow>[number]'
+      remove_money:
+        name: <white><bold>Usuń pieniądze
+        description: |-
+          <gray>Pozwala na przełączanie czy
+          <gray>wymagane pieniądze
+          <gray>zostaną usunięte z konta
+          <gray>gracza za to zadanie
+        enabled: <dark_green>Włączone
+        disabled: <red>Wyłączone
+      required_money:
+        name: <white><bold>Wymagane pieniądze
+        description: |-
+          <gray>Pozwala na zmianę czy zadania
+          <gray>wymaga pieniędzy na koncie gracza
+        value: '<gray>Aktualna wartość: <yellow>[number]'
+      statistic:
+        name: <white><bold>Statystyka
+        description: |-
+          <gray>Pozwala na zmianę
+          <gray>typ statystyki, który jest
+          <gray>sprawdził się w tym wyzwaniu.
+        value: '<gray>Aktualna wartość: <yellow>[statistic]'
+      statistic_amount:
+        name: <white><bold>Wartość docelowa
+        description: |-
+          <gray>Pozwala na zmianę
+          <gray>wartości ze statystyk
+          <gray>która musi zostać spełniona
+        value: '<gray>Aktualna wartość: <yellow>[number]'
+      remove_statistic:
+        name: <white><bold>Zmniejsz statystykę
+        description: |-
+          <gray>Pozwala na przełączanie czy po wykonaniu
+          <gray>zadania statystyki zostaną usunięte
+        enabled: <dark_green>Włączone
+        disabled: <red>Wyłączone
+      statistic_blocks:
+        name: <white><bold>Blok celu
+        description: |-
+          <gray>Pozwala na zmianę
+          <gray>statystyk bloku docelowego.
+        value: '<gray>Bieżący blok: <yellow>[block]'
+      statistic_items:
+        name: <white><bold>Element docelowy
+        description: |-
+          <gray>Pozwala na zmianę
+          <gray>statystyczny przedmiot docelowy.
+        value: '<gray>Bieżąca pozycja: <yellow>[item]'
+      statistic_entities:
+        name: <white><bold>Jednostka docelowa
+        description: |-
+          <gray>Pozwala na zmianę
+          <gray>statystyczna jednostka docelowa.
+        value: '<gray>Bieżąca jednostka: <yellow>[entity]'
+      reward_text:
+        name: <white><bold>Tekst nagrody
+        description: |-
+          <gray>Konkretny tekst nagrody.
+          <gray>Kody kolorów muszą być
+          <gray> ustawione
+        value: '<gray>Aktualny tekst:'
+      repeat_reward_text:
+        name: <white><bold>Powtórz tekst nagrody
+        description: |-
+          <gray>Konkretny tekst nagrody powtórnej
+          <gray>na wyzwanie. Kolor
+          Należy do niego zastosować kody <gray>.
+        value: '<gray>Aktualny tekst:'
+      reward_items:
+        name: <white><bold>przedmioty nagrody
+        description: |-
+          <gray>Pozwala zmienić nagrodę
+          <gray>pozycji.
+        title: '<gray>Przedmioty:'
+        list: ' <dark_gray>- [number] x [item]'
+        none: <gray>Pozycje nie są dodawane.
+      repeat_reward_items:
+        name: <white><bold>Powtórz przedmioty z nagrodami
+        description: |-
+          <gray>Pozwala na zmianę powtarzania
+          <gray>nagród za to
+          <gray>wyzwanie.
+        title: '<gray>Przedmioty:'
+        list: ' <dark_gray>- [number] x [item]'
+        none: <gray>Pozycje nie są dodawane.
+      reward_experience:
+        name: <white><bold>Nagroda za doświadczenie
+        description: |-
+          <gray>Pozwala na zmianę
+          <gray>nagrody doświadczenia za
+          <gray>gracza.
+        value: '<gray>Doświadczenie w postaci nagrody: <yellow>[number]'
+      repeat_reward_experience:
+        name: <white><bold>Powtarzanie nagrody doświadczenie
+        description: "<gray>Pozwala na zmianę nagrody \n<gray>z doświadczeniem\n<gray>po\
+          \ ponownym wykonaniu zadania"
+        value: '<gray>Doświadczenie w postaci nagrody: <yellow>[number]'
+      reward_money:
+        name: <white><bold>Nagroda za pieniądze
+        description: |-
+          <gray>Pozwala na zmianę
+          <gray>nagrody pieniężne.
+        value: '<gray>Aktualna wartość: <yellow>[number]'
+      repeat_reward_money:
+        name: <white><bold>Powtarzaj nagrody pieniężne
+        description: "<gray>Pozwala na zmianę nagrody \n<gray>pieniężnej\n<gray>po\
+          \ ponownym wykonaniu zadania"
+        value: '<gray>Aktualna wartość: <yellow>[number]'
+      reward_chance:
+        name: <white><bold>Szansa na nagrodę
+        description: |-
+          <gray>Procentowa szansa (1-100), że nagrody
+          <gray>materialne zostaną przyznane po ukończeniu.
+          <dark_gray>Przedmioty, pieniądze i doświadczenie używają jednego losowania.
+          <dark_gray>Komendy są wykonywane zawsze.
+        value: '<gray>Szansa: <yellow>[number]%'
+      reward_commands:
+        name: <white><bold>Polecenia nagrody
+        description: "<gray>Konkretne polecenie nagrody:\n<dark_gray>Podpowiedź:\n\
+          <dark_gray>Komenda nie wymaga '/'\n<dark_gray>jest on dodawany automatycznie.\n\
+          <dark_gray>Domyślnie polecenie wykonuje serwer\n<dark_gray>jeżeli chcesz\
+          \ by polecenie zostało \n<dark_gray>wykonane przez gracza przed\n<dark_gray>nim\
+          \ wpisz <yellow>[SELF] <dark_gray>\n<dark_gray>Wartość <yellow>[player]\
+          \ <dark_gray>użyta w poleceniu\n<dark_gray>będzie zamieniona na nick gracza\n\
+          <dark_gray>który wykonał zadanie"
+        value: '<gray>Bieżące polecenia:'
+      repeat_reward_commands:
+        name: <white><bold>Powtarzaj polecenia nagrody
+        description: "<gray>Konkretne polecenia wykonania\n<gray>nagrody za wyzwanie.\n\
+          <dark_gray> Wskazówka:\n<dark_gray>Polecenie nie wymaga pisania najpierw\
+          \ `/`, \n<dark_gray>ponieważ zostanie zastosowane automatycznie. \n<dark_gray>Domyś\
+          lnie polecenia będą wykonywane \n<dark_gray>przez serwer, jednak dodanie\
+          \ `[SELF]` na początku\n<dark_gray>pozwoli na wykonanie polecenia przez\
+          \ gracza. \n<dark_gray>Obsługuje również jeden symbol zastępczy \n<dark_gray>\
+          \ „[player]”, który zostanie zastąpiony nazwą \n<dark_gray>gracza, który\
+          \ ukończył wyzwanie."
+        value: '<gray>Bieżące polecenia:'
+      repeatable:
+        name: <white><bold>Powtarzalne
+        description: |-
+          <gray>Pozwala na przełączanie, czy
+          <gray>wyzwaniem jest
+          <gray>powtarzalne.
+        enabled: <dark_green>Włączone
+        disabled: <red>Wyłączone
+      repeat_count:
+        name: <white><bold>Liczba powtórzeń
+        description: |-
+          <gray>Pozwala na zmianę
+          <gray>liczby powtórzeń
+          <gray>dla zadania.
+          <gray>Ustaw 0 dla nieograniczonych powtórzeń.
+        value: '<gray>Aktualna wartość: <yellow>[number]'
+        value-infinite: '<gray>Aktualna wartość: <yellow>[number] <gray>(nieograniczone)'
+      cool_down:
+        name: <white><bold>Opóźnienie
+        description: |-
+          <gray>Ustaw cooldown pomiędzy
+          <gray>wykonywaniem zadań
+        value: '<gray>Aktualna wartość: <yellow>[time]'
+      challenges:
+        name: <white><bold>Zadania
+        description: |-
+          <gray>Wyświetl przypisane wyzwania
+          <gray>do poziomu.
+      waiver_amount:
+        name: <white><bold>Kwota zwolnienia
+        description: |-
+          <gray>Pozwala ustawić numery
+          <gray>zadań, które mogą
+          <gray>pozostaw niedokończone dla
+          <gray>odblokowanie następnego poziomu.
+        value: '<gray>Aktualna wartość: <yellow>[number]'
+      add_challenges:
+        name: <white><bold>Dodaj wyzwanie(-a)
+        description: |-
+          <gray>Pozwala wybrać i
+          <gray>dodaje wyzwania do
+          Poziom <gray>.
+      remove_challenges:
+        name: <white><bold>Usuń wyzwanie(-a)
+        description: |-
+          <gray>Pozwala wybrać i
+          <gray>usunąć wyzwania z
+          <gray>poziomu
+      reset_on_new:
+        name: <white><bold>Resetuj przy nowym
+        description: |-
+          <gray>Pozwala na przełączanie, czy
+          <gray>zadanie powinno być
+          <gray>resetowane, gdy użytkownik odchodzi
+          <gray>od wyspy lub tworzy nową
+          <gray>wyspe.
+        enabled: <dark_green>Włączone
+        disabled: <red>Wyłączone
+      broadcast:
+        name: |
+          <white><bold>Ogłoszenie
+        description: |-
+          <gray>Ogłasza jakie zadania zostały
+          <gray>wykonane, bądź jaki poziom
+          <gray>został osiągnięty
+          <gray>(wiadomość do wszystkich)
+        enabled: <dark_green>Włączone
+        disabled: <red>Wyłączone
+      remove_completed:
+        name: <white><bold>Ukryj ukończone
+        description: |-
+          <gray>Ukrywa ukończone zadania
+          <gray>z menu.
+        enabled: <dark_green>Włączone
+        disabled: <red>Wyłączone
+      glow_completed:
+        name: <white><bold>Blask zakończony
+        description: |-
+          <gray>Dodaje blask zaklęcia
+          <gray>do ukończonych wyzwań.
+        enabled: <dark_green>Włączone
+        disabled: <red>Wyłączone
+      store_history:
+        name: <white><bold>Historia zadań
+        description: |-
+          <gray>Przechowuje historię wewnętrzną
+          <gray>kiedy każde zakończone jest
+          <gray>zakończone.
+          <gray>Tylko obecnie widoczne
+          <gray>w bazie danych.
+        enabled: <dark_green>Włączone
+        disabled: <red>Wyłączone
+      data_per_island:
+        name: <white><bold>Przypisz do wyspy
+        description: "<gray>Przypisuje wykonanie zadania \n<gray>do wyspy.\n<gray>Status\
+          \ zostanie udostępniony\n<gray>innym graczom w zespole"
+        enabled: <dark_green>Włączone
+        disabled: <red>Wyłączone
+      show_title:
+        name: <white><bold>Pokaż tytuł
+        description: |-
+          <gray>Pokazuje tytuł, gdy
+          <gray>wyzwanie lub poziom
+          <gray>jest zakończony.
+        enabled: <dark_green>Włączone
+        disabled: <red>Wyłączone
+      gamemode_gui:
+        name: <white><bold>GUI wyboru trybu gry
+        description: |-
+          <gray>Włącza pojedynczy GUI, który
+          <gray>jest dostępny przez /challenges
+          Polecenie <gray>.
+          <red>Wymaga ponownego uruchomienia serwera.
+        enabled: <dark_green>Włączone
+        disabled: <red>Wyłączone
+      locked_level_icon:
+        name: <white><bold>Ikona domyślnego zablokowanego poziomu
+        description: |-
+          <gray>Domyślna ikona dla wszystkich zablokowanych
+          <gray>poziomów. Każdy poziom może się zmienić
+          <gray>tę ikonę.
+      purge_history:
+        name: <white><bold>Czas życia historii
+        description: |-
+          <gray>Liczba dni jak długo
+          <gray>dane historii są przechowywane
+          <gray>w danych użytkownika.
+          <gray>0 oznacza, że dane będą
+          <gray>zapisane zawsze
+        value: '<gray>Aktualna wartość: <yellow>[number]'
+      title_showtime:
+        name: <white><bold>Czas ukazania tytułu
+        description: "<gray>Czas w tickach ( 20 = 1 sekunda ) \n<gray>przez który\
+          \ będzie wyświetlany czas"
+        value: '<gray>Aktualna wartość: <yellow>[number]'
+      active_world_list:
+        name: <white><bold>Pokaż tylko aktywny świat
+        description: |-
+          <gray>If GameMode Selection GUI
+          <gray>is enabled, this can switch
+          <gray>if GUI shows GameMode selection
+          <gray>or challenges for current world.
+          <red>Wymaga ponownego uruchomienia serwera
+        enabled: <dark_green>Włączone
+        disabled: <red>Wyłączone
+      visibility_mode:
+        name: <white><bold>Tryb widoczności
+        description: |-
+          <gray>Tryb widoczności dla
+          <gray>zadań, które są
+          <gray>ukryte.
+        enabled: <dark_green>
+        disabled: <red>
+        visible: Pokaż widoczne zadania
+        hidden: Pokaż wszystkie zadania
+        toggleable: Zezwalaj na przełączanie
+      download:
+        name: <white><bold>Pobierz biblioteki
+        description: |-
+          <gray>Dostępna jest ręczna aktualizacja
+          <gray>biblioteki zadań
+        enabled: <dark_green>Przy wyczyszczeniu pamięci podręcznej
+        disabled: <red>Bez czyszczenia pamięci podręcznej
+      player:
+        name: <white><bold>[name]
+        description: '<gray>Właściciel wyspy: [owner]'
+        members: '<gray>Członkowie wyspy:'
+        member: <dark_gray>- [name]
+        no-island: <red>Gracz nie posiada wyspy
+      player_list:
+        name: <white><bold>Wybierz listę użytkowników
+        description: |-
+          <gray>Wybierz listę użytkowników
+          Należy pokazać <gray>.
+        enabled: <dark_green>
+        disabled: <red>
+        online: Gracze online
+        with_island: Gracze z wyspami
+        in_world: Gracze na świecie
+      add_block:
+        name: <white><bold>Dodaj blok
+        description: |-
+          <gray>Pozwala dodać nowy
+          <gray>blok do listy.
+      remove_block:
+        name: <white><bold>Usuń blok
+        description: |-
+          <gray>Pozwala na usunięcie
+          <gray>wybranych bloków
+          <gray>z list.
+        title: '<gray>Wybrane materiały:'
+        material: <dark_gray>- [material]
+      material:
+        name: <white><bold>[material]
+        description: '<gray>Identyfikator materiału: [id]'
+        selected: <dark_green>Wybrane
+      add_entity:
+        name: <white><bold>Dodaj jednostkę
+        description: |-
+          <gray>Pozwala dodać nowy
+          <gray>podmiot do listy.
+      switch_entity:
+        name: <white><bold>Zmień jajka
+        description: |-
+          <gray>Pozwala na przełączenie z
+          <gray>jajek do głów potworów.
+      remove_entity:
+        name: <white><bold>Usuń jednostkę
+        description: |-
+          <gray>Pozwala na usunięcie
+          <gray>wybranych podmiotów
+          <gray>z listy.
+        title: '<gray>Wybrane jednostki:'
+        entity: <dark_gray>- [entity]
+      entity:
+        name: <white><bold>[entity]
+        description: '<gray>Identyfikator jednostki: [id]'
+        selected: <dark_green>wybrane
+      inventory_type:
+        name: <white><bold>Typ ekwipunku
+        description: |-
+          <gray>Zadania sprawdza przedmioty
+          <gray>w ekwipunku gracza
+      island_type:
+        name: <white><bold>Typ wyspy
+        description: |-
+          <gray>Zadanie sprawdza dostępność
+          <gray>bloków w okolicy gracza
+      other_type:
+        name: <white><bold>Inny typ
+        description: |-
+          <gray>Wyzwanie, które używa
+          <gray>wtyczek lub dodatków,
+          <gray>jak poziom i pieniądze.
+      statistic_type:
+        name: <white><bold>Typ statystyki
+        description: |-
+          <gray>Wyzwanie sprawdzania
+          <gray>dane statystyczne graczy.
+      save:
+        name: <white><bold>Zapisz
+        description: |-
+          <gray>Zapisuje zmiany i
+          <gray>zwraca.
+      cancel:
+        name: <white><bold>Anuluj
+        description: |-
+          <gray>Odrzuca zmiany i
+          <gray>zwraca.
+      accept_selected:
+        name: <white><bold>Akceptuj zaznaczone
+        description: |-
+          <gray>Zwraca wybrane elementy
+          <gray>i otwiera poprzedni GUI.
+        title: '<gray>Wybrane:'
+        element: <dark_gray>- [element]
+      statistic_element:
+        name: <white><bold>[statistic]
+        description: "[description]\t\n"
+        amount: '<gray>Wartość Docelowa: <yellow>[number]'
+        remove:
+          name: '<gray>Zmniejsz Statystykę: [value]'
+          value:
+            enabled: <red>Włączone
+            disabled: <dark_green>Wyłączone
+        block: '<gray>Blok Docelowy: <yellow>[block]'
+        item: '<gray>Przedmiot Docelowy: <yellow>[item]'
+        entity: '<gray>Jednostka Docelowa: <yellow>[entity]'
+        selected: <dark_green>Wybrane
+      environment_element:
+        name: <white><bold>[environment]
+        description: '[description]'
+      search:
+        name: <white><bold>Szukaj
+        description: |-
+          <gray>Umożliwia wyszukiwanie i
+          <gray>element z wejściem
+          <gray>wartość tekstowa.
+        search: '<aqua>Wartość: [value]'
+      hide_reward_items:
+        name: <white><bold>Ukryj Przedmioty Nagrody
+        description: |-
+          <gray>Przełączaj czy przedmioty nagrody
+          <gray>są pokazane w GUI czy nie.
+        hide: <dark_green>Ukryj
+        show: <red>Pokaż
+      team_challenge:
+        name: <white><bold>Wyzwanie Drużyny
+        description: |-
+          <gray>Przełączaj czy jest to wyzwanie drużyny.
+          <gray>Wyzwania drużyny wymagają drużyny i dzielą
+          <gray>ukończenie i czas odnowienia na wyspę.
+        enabled: <dark_green>Włączone
+        disabled: <red>Wyłączone
+      team_presence:
+        name: <white><bold>Obecność Drużyny
+        description: |-
+          <gray>Procent drużyny, który musi być
+          <gray>online aby ukończyć to wyzwanie.
+          <gray>0 wyłącza bramę obecności.
+        value: '<gray>Aktualnie: <yellow>[number]%'
+      aggregate_team:
+        name: <white><bold>Agreguj Przez Drużynę
+        description: |-
+          <gray>Sumuj wymagane przedmioty / statystyki
+          <gray>wszystkich członków online (Zbiorowy Hołd,
+          <gray>Połączony Wysiłek).
+        enabled: <dark_green>Włączone
+        disabled: <red>Wyłączone
+      per_member:
+        name: <white><bold>Każdy Członek Płaci
+        description: |-
+          <gray>Każdy członek online musi wnieść swoją
+          <gray>część (wymagana ilość to RAZEM DRUŻYNA,
+          <gray>podzielona między obecnych członków).
+        enabled: <dark_green>Włączone
+        disabled: <red>Wyłączone
+      hide_if_no_team:
+        name: <white><bold>Ukryj Jeśli Brak Drużyny
+        description: |-
+          <gray>Jeśli włączone, to wyzwanie jest ukryte
+          <gray>całkowicie dla graczy bez drużyny.
+          <gray>Jeśli wyłączone, jest pokazane ale wyłączone.
+        enabled: <dark_green>Włączone
+        disabled: <red>Wyłączone
+      required_statistics:
+        name: <white><bold>Wymagane Statystyki
+        description: |-
+          <gray>Pozwala zmienić wymagane
+          <gray>statystyki dla tego wyzwania aby
+          <gray>być ukończonym.
+        title: '<gray>Statystyki: '
+        list: ' <dark_gray>- [name]'
+        none: <gray>Nie dodano żadnych statystyk.
+      required_advancements:
+        name: <white><bold>Wymagane Osiągnięcia
+        description: |-
+          <gray>Pozwala zmienić wymagane
+          <gray>osiągnięcia dla tego wyzwania aby
+          <gray>być ukończonym.
+        title: '<gray>Osiągnięcia: '
+        list: ' <dark_gray>- [name]'
+        none: <gray>Nie dodano żadnych osiągnięć.
+      required_materialtags:
+        name: <white><bold>Wymagane Grupy Bloków
+        description: |-
+          <gray>Pozwala zmienić wymagane
+          <gray>grupy bloków dla tego wyzwania aby
+          <gray>być ukończonym.
+        title: '<gray>Grupa bloków: '
+        list: ' <dark_gray>- [number] x [tag]'
+        none: <gray>Nie dodano żadnych grup bloków.
+      required_entitytags:
+        name: <white><bold>Wymagane Grupy Jednostek
+        description: |-
+          <gray>Pozwala zmienić wymagane
+          <gray>grupy jednostek dla tego wyzwania aby
+          <gray>być ukończonym.
+        title: '<gray>Grupa jednostek: '
+        list: ' <dark_gray>- [number] x [tag]'
+        none: <gray>Nie dodano żadnych grup jednostek.
+      required_papi:
+        name: <white><bold>Wymagane PAPI
+        description: |-
+          <gray>Sprawdza formułę, która może
+          <gray>zawierać symbole zastępcze PAPI
+          <gray>i elementy matematyczne i logiczne.
+        value: '<gray>Formuła: <yellow>[formula]'
+      add_statistic:
+        name: <white><bold>Dodaj Statystykę
+        description: |-
+          <gray>Pozwala dodać nową
+          <gray>statystykę do listy.
+      advancement:
+        name: <white><bold>[name]
+        description: '[description]'
+      add_advancement:
+        name: <white><bold>Dodaj Osiągnięcie
+        description: |-
+          <gray>Pozwala dodać nowe
+          <gray>osiągnięcie do listy.
+      remove_advancement:
+        name: <white><bold>Usuń Osiągnięcie
+        description: |-
+          <gray>Pozwala usunąć
+          <gray>wybrane osiągnięcia
+          <gray>z listy.
+        enabled: <dark_green>Włączone
+        disabled: <red>Wyłączone
+      glow_completed_levels:
+        name: <white><bold>Świecenie Ukończonych Poziomów
+        description: |-
+          <gray>Stosuje połysk zaklęcia
+          <gray>do ukończonych poziomów.
+        enabled: <dark_green>Włączone
+        disabled: <red>Wyłączone
+      include_undeployed:
+        name: <white><bold>Dołącz Niewdrożone Wyzwania
+        description: |-
+          <gray>Wskazuje czy niewdrożone wyzwania
+          <gray>powinny być liczyć się do ukończenia poziomu.
+        enabled: <dark_green>Włączone
+        disabled: <red>Wyłączone
+      language:
+        name: <white><bold>Język
+        description: |-
+          <gray>Filtruj biblioteki wyzwań
+          <gray>według języka.
+        current: '<gray>Pokazywanie: <yellow>[lang]'
+        all: Wszystko
+      add_block_group:
+        name: <white><bold>Dodaj Grupę Bloków
+        description: |-
+          <gray>Pozwala dodać nową
+          <gray>grupę bloków do listy.
+      remove_block_group:
+        name: <white><bold>Usuń Grupę Bloków
+        description: |-
+          <gray>Pozwala usunąć
+          <gray>wybrane grupy bloków
+          <gray>z listy.
+        title: '<gray>Wybrane Grupy Bloków:'
+        material: <dark_gray>- [material]
+      block-group:
+        name: <white><bold>[id]
+        description: ''
+        selected: <dark_green>Wybrane
+      add_entity_group:
+        name: <white><bold>Dodaj Grupę Jednostek
+        description: |-
+          <gray>Pozwala dodać nową
+          <gray>grupę jednostek do listy.
+      remove_entity_group:
+        name: <white><bold>Usuń Grupę Jednostek
+        description: |-
+          <gray>Pozwala usunąć
+          <gray>wybrane grupy jednostek
+          <gray>z listy.
+        title: '<gray>Wybrane Grupy Jednostek:'
+        entity: <dark_gray>- [tag]
+      entity-group:
+        name: <white><bold>[id]
+        description: ''
+        selected: <dark_green>Wybrane
+      advancement_element:
+        name: <white><bold>[name]
+        description: '[description]'
+        selected: <dark_green>Wybrane
+      toggle-undeployed:
+        name: <white><bold>Niewdrożone zadania
+        shown: |-
+          <gray>Niewdrożone zadania są
+          <gray>obecnie <green>widoczne<gray>.
+        hidden: |-
+          <gray>Niewdrożone zadania są
+          <gray>obecnie <red>ukryte<gray>.
+      required_biomes:
+        name: <white><bold>Wymagane biomy
+        description: |-
+          <gray>Gracz musi stać w jednym
+          <gray>z tych biomów, aby ukończyć to
+          <gray>zadanie wyspy.
+        title: '<gray>Biomy: '
+        list: ' <dark_gray>- <yellow>[biome]'
+        none: <gray>Żadne biomy nie są wymagane (dowolny biom).
+      reward_island_level:
+        name: <white><bold>Poziom wyspy jako nagroda
+        description: |-
+          <gray>Pozwala na zmianę nagrody poziomu wyspy.
+          <gray>Wymaga dodatku Level.
+        value: '<gray>Aktualna wartość: <yellow>[number]'
+      repeat_reward_island_level:
+        name: <white><bold>Poziom wyspy za powtórzenie
+        description: |-
+          <gray>Pozwala na zmianę nagrody poziomu
+          <gray>wyspy za powtórzenie zadania.
+          <gray>Wymaga dodatku Level.
+        value: '<gray>Aktualna wartość: <yellow>[number]'
+      open_anywhere:
+        name: <white><bold>Otwieraj GUI wszędzie
+        description: |-
+          <gray>Pozwala graczom otwierać GUI zadań
+          <gray>z dowolnego miejsca. Ukończenie nadal wymaga
+          <gray>przebywania na wyspie, gdy jest chroniona.
+        enabled: <dark_green>Włączone
+        disabled: <red>Wyłączone
+      biome:
+        name: <white><bold>[biome]
+        description: '<gray>ID biomu: [id]'
+        selected: <dark_green>wybrane
+    tips:
+      click-to-select: <yellow>Kliknij <gray>, aby wybrać.
+      click-to-choose: <yellow>Kliknij <gray>, aby wybrać.
+      click-to-complete: <yellow>Kliknij <gray>, aby zakończyć.
+      right-click-multiple-open: <yellow>Kliknij prawym przyciskiem myszy <gray>,
+        aby wybrać liczbę ukończeń.
+      shift-left-click-to-complete-all: <yellow>Kliknij Shift <gray>, aby zakończyć
+        wszystko.
+      left-click-to-accept: <yellow>Kliknij lewym przyciskiem <gray>, aby zakończyć.
+      right-click-to-write: <yellow>Kliknij prawym przyciskiem myszy <gray>, aby pisać.
+      click-to-reduce: <yellow>Kliknij <gray>, aby zmniejszyć.
+      click-to-increase: <yellow>Kliknij <gray>, aby zwiększyć.
+      click-to-return: <yellow>Kliknij <gray>, aby powrócić.
+      click-to-quit: <yellow>Kliknij <gray>, aby zakończyć.
+      click-to-wipe: <yellow>Kliknij <gray>, aby wyczyścić.
+      left-click-to-wipe: <yellow>Kliknij lewym przyciskiem <gray>, aby wyczyścić.
+      right-click-to-switch: <yellow>Kliknij prawym przyciskiem <gray>, aby przełączyć.
+      click-to-open: <yellow>Kliknij <gray>, aby otworzyć.
+      click-to-export: <yellow>Kliknij <gray>, aby wyeksportować.
+      click-to-create: <yellow>Kliknij <gray>, aby utworzyć.
+      left-click-to-open: <yellow>Kliknij lewym przyciskiem <gray>, aby otworzyć.
+      right-click-to-reset-all: <yellow>Kliknij prawym przyciskiem myszy <gray>, aby
+        wyczyścić wszystko.
+      click-to-toggle: <yellow>Kliknij <gray>, aby przełączyć.
+      click-to-change: <yellow>Kliknij <gray>, aby zmienić.
+      shift-click-to-reset: <yellow>Shift Kliknij <gray>, aby zresetować.
+      click-to-add: <yellow>Kliknij <gray>, aby dodać.
+      click-to-remove: <yellow>Kliknij <gray>, aby usunąć.
+      left-click-to-cycle: <yellow>Kliknij lewym przyciskiem <gray>, aby przejść w
+        dół.
+      right-click-to-cycle: <yellow>Kliknij prawym przyciskiem myszy <gray>, aby przejść
+        w górę.
+      click-to-edit: <yellow>Kliknij <gray>, aby edytować.
+      left-click-to-download: <yellow>Kliknij lewym przyciskiem <gray>, aby pobrać.
+      right-click-to-toggle: <yellow>Kliknij prawym przyciskiem <gray>, aby przełączyć.
+      click-to-install: <yellow>Kliknij <gray>, aby zainstalować.
+      click-to-reset-all: <yellow>Kliknij <gray>, aby zresetować wszystko.
+      right-click-to-select: <yellow>Kliknij prawym przyciskiem <gray>, aby wybrać.
+      right-click-to-deselect: <yellow>Kliknij prawym przyciskiem myszy <gray>, aby
+        odznaczyć.
+      left-click-to-choose: <yellow>Kliknij lewym przyciskiem <gray>, aby wybrać.
+      click-to-cancel: <yellow>Kliknij <gray>, aby anulować.
+      click-to-save: <yellow>Kliknij <gray>, aby zapisać.
+      click-to-deselect: <yellow>Kliknij <gray>, aby odznaczyć.
+      click-on-item: |-
+        <yellow>Kliknij <gray>na elemencie w
+        <gray>twój ekwipunek.
+      left-click-to-edit: <yellow>Kliknij lewym przyciskiem <gray>, aby edytować.
+      right-click-to-clear: <yellow>Kliknij prawym przyciskiem <gray>, aby wyczyścić.
+      click-to-previous: <yellow>Kliknij <gray>, aby wyświetlić poprzednią stronę.
+      click-to-next: <yellow>Kliknij <gray>, aby wyświetlić następną stronę.
+      right-click-to-reset: <yellow>Prawy Klik <gray>aby zresetować.
+    descriptions:
+      challenge:
+        lore: |-
+          [description]
+          [status]
+          [cooldown]
+          [requirements]
+          [rewards]
+        status:
+          completed: <dark_green><bold>Zakończono
+          completed-times: <dark_green>Ukończono <gray><bold>[number] <reset><dark_green>raz(-y)
+          completed-times-of: <dark_green>Zakończono <gray><bold>[number] <reset><dark_green>z
+            <gray><bold>[max] <reset><dark_green> razy
+          completed-times-reached: <dark_green><bold>Ukończono wszystkie <gray>[max]
+            <dark_green>razy
+        cooldown:
+          lore: |-
+            [timeout]
+            [wait-time]
+          timeout: '<gray><bold>Ochłodzenie: <reset><gray>[time]'
+          wait-time: '<red><bold>Dostępne po: <reset><red>[time]'
+          in-days: '[number] dni'
+          in-hours: '[number] h'
+          in-minutes: '[number] min'
+          in-seconds: '[number]'
+        requirements:
+          lore: |-
+            [environment]
+            [type-requirement]
+            [permissions]
+          environment-single: <gray>Ograniczone do [environment]
+          environment-title: '<gray>Ograniczone do:'
+          environment-list: "<gray>- <yellow>[environment]\t\n"
+          permission-single: <red>Wymaga uprawnień [permission]
+          permissions-title: '<red>Wymaga uprawnień:'
+          permissions-list: '  <red>- [permission]'
+          island:
+            lore: |-
+              [blocks]
+              [entities]
+              [search-radius]
+              [warning-block]
+              [warning-entity]
+            blocks-title: '<gray><bold>Wymagane bloki:'
+            block-value: '  <gray>- <yellow>[material]'
+            blocks-value: '  <gray>- <yellow>[number] x [material]'
+            entities-title: '<gray><bold>Wymagane jednostki:'
+            entity-value: '  <gray>- <yellow>[entity]'
+            entities-value: '  <gray>- <yellow>[number] x [entity]'
+            search-radius: <gray>Nie dalej niż <yellow>[number] <gray>metrów
+            warning-block: <yellow>Bloki zostaną <red>usunięte
+            warning-entity: <yellow>Jednostki zostaną <red>usunięte
+            biomes-title: '<gray><bold>Wymagane biomy:'
+            biome-value: '  <gray>- <yellow>[biome]'
+          inventory:
+            lore: |-
+              [items]
+              [warning]
+            item-title: '<gray><bold>Wymagane pozycje:'
+            item-value: '  <gray>- <yellow>[item]'
+            items-value: '  <gray>- <yellow>[number] x [item]'
+            warning: <yellow>Przedmiot(y) zostaną <red>usunięte
+          other:
+            lore: |-
+              [experience]
+              [experience-warning]
+              [money]
+              [money-warning]
+              [level]
+            experience: '<gray><bold>Wymagane doświadczenie: <reset><yellow>[number]'
+            experience-warning: <yellow>Doświadczenie zostanie <red>usunięte
+            money: '<gray><bold>Wymagane pieniądze: <reset><yellow>[number]'
+            money-warning: <yellow>Pieniądze zostaną <red>usunięte
+            level: '<gray><bold>Wymagany poziom wyspy: <reset><yellow>[number]'
+          statistic:
+            lore: |-
+              [statistic]
+              [warning]
+            multiple-target: '<gray><bold>[statistic]: <reset><yellow>[number] x [target]'
+            single-target: '<gray><bold>[statistic]: <reset><yellow>[target]'
+            statistic: <gray><bold>[statistic] <reset><yellow>[number]
+            warning: <yellow>Dane statystyczne zostaną <red>zredukowane
+        rewards:
+          lore: |-
+            <gray><bold>Nagrody:
+            [text]
+            [items]
+            [experience]
+            [money]
+            [commands]
+          item-title: '<gray>Przedmioty:'
+          item-value: '  <gray>- <yellow>[item]'
+          items-value: '  <gray>- <yellow>[number] x [item]'
+          experience: '<gray>Doświadczenie: <reset><yellow>[number]'
+          money: '<gray>Pieniądze: <reset><yellow>[number]'
+          commands-title: '<gray>Polecenia:'
+          command: '  <gray>- <yellow>[command]'
+        team-requirement: '<gold>Drużyna: <yellow>[online] <gold>online (<yellow>[number]
+          <gold>wymagane)'
+        team-required: <red>Drużyna wymagana do ukończenia
+      level:
+        lore: |-
+          [text]
+          [status]
+          [waiver]
+          [rewards]
+        status:
+          completed: <dark_green><bold>Zakończono
+          completed-challenges-of: |-
+            <dark_green>Ukończono<gray><bold>[number] <reset><dark_green>z
+            <gray><bold>[max] <reset><dark_green>zadań.
+          locked: <red><bold>Zablokowane
+          missing-challenges: |-
+            <gray>[number] musi być więcej wyzwań
+            <gray>ukończone, aby odblokować ten poziom.
+        waiver: |-
+          <gray><bold>[number] wyzwanie(-a) <reset><gray>może być
+          <gray>pominięto, aby odblokować następny poziom.
+        rewards:
+          lore: |-
+            <gray><bold>Nagrody:
+            [text]
+            [items]
+            [experience]
+            [money]
+            [commands]
+          item-title: '<gray>Przedmioty:'
+          item-value: '  <gray>- <yellow>[item]'
+          items-value: '  <gray>- <yellow>[number] x [item]'
+          experience: '<gray>Doświadczenie: <reset><yellow>[number]'
+          money: '<gray>Pieniądze: <reset><yellow>[number]'
+          commands-title: '<gray>Polecenia:'
+          command: '  <gray>- <yellow>[command]'
+      library:
+        author: '<gray>autor: <yellow>[author]'
+        version: <gray>Wykonane z wyzwaniami <yellow>[version]
+        lang: '<gray>Język: <yellow>[lang]'
+        gamemode: <gray>Główny dla <yellow>[gamemode]
+  conversations:
+    prefix: '<bold><gold>[BentoBox]: <reset>'
+    confirm-string: true, on, yes, confirm, y, valid, correct, prawda, wł., tak, potwierdź,
+      y, poprawny, poprawny
+    deny-string: fałszywe, wyłączone, nie, zaprzeczyć, n, nieprawidłowe, niepoprawne,
+      false, off, no, deny, n, invalid, incorrect
+    cancel-string: anuluj
+    exit-string: anuluj, wyjdz, wyjdź, cancel, exit, quit
+    cancelled: <red>Rozmowa została anulowana!
+    input-number: <yellow>Proszę podać numer na czacie.
+    input-seconds: <yellow>Wprowadź sekundy na czacie.
+    numeric-only: <red>Podana [value] nie jest liczbą!
+    not-valid-value: <red>Podana liczba [value] jest nieprawidłowa. Musi być w zakresie
+      od [min] do [max] włącznie.
+    user-data-removed: <green>Wszystkie dane użytkownika dla trybu [gamemode] są usuwane
+      z bazy danych.
+    confirm-user-data-deletion: <yellow>Potwierdź, że chcesz wyczyścić bazę danych
+      użytkowników dla [gamemode].
+    challenge-data-removed: <green>Wszystkie dane wyzwań dla trybu [gamemode] zostaną
+      usunięte z bazy danych.
+    confirm-challenge-data-deletion: <yellow>Potwierdź, że chcesz wyczyścić bazę danych
+      wyzwań dla [gamemode].
+    all-data-removed: <green>Wszystkie dane dodatków dla [gamemode] są usuwane z bazy
+      danych.
+    confirm-all-data-deletion: <yellow>Potwierdź, że chcesz wyczyścić dane dodatków
+      dla [gamemode].
+    write-name: <yellow>Proszę wpisać imię na czacie.
+    new-object-created: <green>Nowy obiekt dla [gamemode] został utworzony.
+    object-already-exists: <red>Obiekt <gray>[id] <red>już istnieje. Wybierz inną
+      nazwę.
+    invalid-challenge: <red>Wyzwanie [challenge] zawiera nieprawidłowe dane. Nie można
+      go wdrożyć!
+    name-changed: <green>Sukces, nazwa została zaktualizowana.
+    write-description: <yellow>Wprowadź nowy opis na czacie i 'wyjdź' w linii, aby
+      zakończyć.
+    description-changed: <green>Sukces, opis został zaktualizowany.
+    write-permissions: <yellow>Wprowadź wymagane uprawnienia, po jednym dla każdej
+      linii na czacie i 'wyjdź' w samej linii, aby zakończyć.
+    permissions-changed: <green>Udało się, zaktualizowano uprawnienia do wyzwań.
+    write-reward-text: <yellow>Aby zakończyć, wprowadź nowy tekst nagrody na czacie
+      i 'wyjdź' w osobnej wiadomości.
+    reward-text-changed: <green>Sukces, tekst nagrody został zaktualizowany.
+    write-repeat-reward-text: <yellow>Proszę wprowadzić nowy tekst powtórnej nagrody
+      na czacie i „wyjdź” w osobnym wierszu, aby zakończyć.
+    repeat-reward-text-changed: <green>Sukces, tekst powtórnej nagrody został zaktualizowany.
+    write-reward-commands: <yellow>Proszę wprowadzić nową komendę nagrody w każdej
+      linii na czacie i 'quit' w samej linii, aby zakończyć.
+    reward-commands-changed: <green>Sukces, komendy nagrody zostały zaktualizowane.
+    write-repeat-reward-commands: <yellow>Proszę wpisać nowe polecenie powtórzenia
+      nagrody w każdej linii na czacie i „wyjdź” w samej linii, aby zakończyć.
+    repeat-reward-commands-changed: <green>Sukces, zaktualizowano polecenia powtórzenia
+      nagrody.
+    challenge-removed: <green>Zadanie [challenge] dla [gamemode] zostało usunięte
+      z bazy danych.
+    confirm-challenge-deletion: <yellow>Potwierdź, że chcesz usunąć [challenge] dla
+      [gamemode] z bazy danych.
+    level-removed: <green>Rozdział [level] dla [gamemode] został usunięty z bazy danych.
+    confirm-level-deletion: <yellow>Proszę potwierdzić, że chcesz usunąć [level] dla
+      [gamemode] z bazy danych.
+    start-downloading: <green>Rozpoczęcie pobierania i importowania biblioteki wyzwań.
+    written-text: '& Tekst wejściowy:'
+    confirm-data-replacement: <yellow>Potwierdź, że chcesz zastąpić obecne wyzwania
+      nowym.
+    new-challenges-imported: <green>Sukces, zaimportowano nowe wyzwania dla trybu
+      [gamemode].
+    exported-file-name: <yellow>Proszę podać nazwę pliku dla eksportowanego pliku
+      bazy danych. (napisz „anuluj”, aby wyjść)
+    database-export-completed: <green>Sukces, eksport bazy danych dla [world] został
+      zakończony. Wygenerowano plik [file].
+    file-name-exist: <red>Plik o nazwie „[id]” istnieje. Nie można nadpisać.
+    write-search: <yellow>Proszę wpisać wartość wyszukiwania. (napisz „anuluj”, aby
+      wyjść)
+    search-updated: <green>Zaktualizowano wartość wyszukiwania.
+    enter-formula: |-
+      <green>Wpisz formułę, która używa symboli zastępczych PAPI i symboli =,<>,<+,>=, ==, !=, AND, OR tylko.
+      <green>Przykład: <gray>%my_lifetime_count% >= 1000 AND %island_level% >= 100
+    confirm-instruction: <gray>Wpisz '<green>confirm<gray>' na czacie, aby kontynuować,
+      lub '<red>cancel<gray>', aby anulować.
+    input-repeat-count: <yellow>Proszę podać liczbę powtórzeń na czacie. Wpisz 0 dla
+      nieograniczonych powtórzeń.
+  titles:
+    challenge-title: Zakończone sukcesem
+    challenge-subtitle: '[friendlyName]'
+    level-title: Zakończone sukcesem
+    level-subtitle: '[friendlyName]'
+  messages:
+    completed: <dark_green>Ukończyłeś wyzwanie [name] dla [player]!
+    already-completed: <dark_green>To wyzwanie zostało już ukończone!
+    reset: <dark_green>Zresetowałeś wyzwanie [name] dla [player]!
+    reset-all: <dark_green>Wszystkie wyzwania [player] zostały zresetowane!
+    not-completed: <dark_green>To wyzwanie nie zostało jeszcze ukończone!
+    migrate-start: <dark_green>Rozpocznij migrację danych dodatkowych wyzwań.
+    migrate-end: <dark_green>Zaktualizowano dane dodatku Challenges do nowego formatu.
+    migrate-not: <dark_green>Wszystkie dane są prawidłowe.
+    start-downloading: <dark_purple>Rozpoczęcie pobierania i importowania Biblioteki
+      wyzwań.
+    you-completed-challenge: <dark_green>Ukończono [value] <reset><dark_green>wyzwanie!
+    you-repeated-challenge: <dark_green>Powtórzyłeś [value] <reset><dark_green>wyzwanie!
+    you-repeated-challenge-multiple: <dark_green> Powtórzyłeś [value] <reset><dark_green>challenge
+      [count] razy!
+    no-reward-this-time: <gray>Szczęście ci nie dopisało — tym razem bez nagrody!
+    you-completed-level: <dark_green>Ukończono [value] <reset><dark_green> poziom!
+    name-has-completed-challenge: <dark_purple> [name] zakończyła [value] <reset><dark_purple>wyzwanie!
+    name-has-completed-level: <dark_purple> [name] uzupełniła [value] <reset><dark_purple>poziom!
+    load-skipping: '"[value]" Istnieje - pominięto'
+    load-overwriting: Nadpisywanie „[value]”
+    load-add: 'Dodanie nowego obiektu: [value]'
+  errors:
+    no-name: <red>Nieprawidłowa nazwa wyzwania
+    unknown-challenge: <red>Nieznane wyzwanie
+    not-valid-integer: |-
+      <red>Podana liczba całkowita "[value]" jest nieprawidłowa!
+      Wartość powinna mieścić się w zakresie od [min] do [max].
+    not-deployed: <red>Challenge nie został wdrożony!
+    not-on-island: <red>Musisz być na swojej wyspie by to zrobic!
+    challenge-level-not-available: <red> Nie odblokowałeś wymaganego poziomu, aby
+      ukończyć to wyzwanie.
+    not-repeatable: <red>To wyzwanie możesz wykonać tylko raz!
+    wrong-environment: <red>Jesteś w złym środowisku!
+    not-enough-items: <red>Nie posiadasz wystarczająco [items] do zakończenia tego
+      wyzwania!
+    not-close-enough: <red>Musisz stać [number] kratek od wymaganych bloków
+    you-still-need: <red>Potrzebujesz nadal [amount] x [item]
+    missing-addon: '<red>Nie można ukończyć wyzwania: brakuje wymaganego dodatku lub
+      wtyczki.'
+    incorrect: '<red>Nie można ukończyć wyzwania: Wymagania są niepoprawne.'
+    not-enough-money: <red>Aby ukończyć wyzwanie, musisz mieć [value] na swoim koncie.
+    not-enough-experience: <red> Konieczne jest posiadanie [value] EXP, aby ukończyć
+      to wyzwanie.
+    island-level: <red>Ta wyspa musi mieć poziom [count] lub wyższy, aby ukończyć
+      to wyzwanie!
+    no-load: '<red>Błąd: Nie można załadować challenges.yml. Błąd: [message]'
+    load-error: '<red>Error: Nie można załadować [value].'
+    no-rank: <red> Nie masz wystarczająco wysokiej rangi, aby to zrobić.
+    cannot-remove-items: <red> Niektórych przedmiotów nie można usunąć z ekwipunku!
+    exist-challenges-or-levels: <red>Zadania już istnieją w twoim świecie. Nie można
+      kontynuować!
+    no-challenges: <red>Zadania nie są jeszcze zaimplementowane na tym świecie!
+    no-challenges-admin: <red>Zadania nie są jeszcze zaimplementowane na tym świecie!
+      Użyj <dark_purple>/[command] i <red>, aby je dodać!
+    missing-arguments: <red>Poleceniu brakuje argumentów.
+    no-multiple-permission: <red> Nie masz uprawnień do wielokrotnego wykonania tego
+      zadania
+    invalid-level: <red>Poziom [level] zawiera nieprawidłowe dane. Nie zostanie załadowany
+      z bazy danych!
+    invalid-challenge: <red>Wyzwanie [challenge] zawiera nieprawidłowe dane. Nie zostanie
+      załadowany z bazy danych!
+    no-library-entries: <red>Nie można znaleźć żadnych wpisów biblioteki. Nic do pokazania.
+    not-hooked: <red>Dodatek z zadaniami nie mógł znaleźć żadnego trybu gry.
+    timeout: <red>To zadanie wymaga odczekania [timeout] między ukończeniami. Musisz
+      poczekać [wait-time], aż ukończysz go ponownie.
+    import-failed: '<red>Nie można zaimportować wyzwań: [message]. Sprawdź konsolę
+      serwera aby uzyskać szczegóły.'
+    requirement-not-met: <red>To wyzwanie wymaga [statistic] z [number]. Masz tylko
+      [value].
+    requirement-not-met-entity: <red>To wyzwanie wymaga [statistic] dla [entity] aby
+      być [number]. Masz tylko [value].
+    requirement-not-met-material: <red>To wyzwanie wymaga [statistic] dla [material]
+      aby być [number]. Masz tylko [value].
+    no-team: <red>To jest wyzwanie drużyny. Musisz mieć drużynę aby je ukończyć!
+    insufficient-team: <red>To wyzwanie drużyny wymaga [number] członków drużyny online.
+      Tylko [online] są online.
+    member-missing-share: <red>[name] nie ma swojego udziału ([amount] x [item]) dla
+      tego wyzwania drużyny.
+    wrong-biome: <red>Musisz stać w biomie [biome], aby ukończyć to zadanie!
+  materials:
+    any: 'Dowolny '
+    all_hanging_signs:
+      name: Dowolny Wiszący Znak
+    all_signs:
+      name: Dowolny Znak
+protection:
+  flags:
+    CHALLENGES_ISLAND_PROTECTION:
+      description: |-
+        <dark_purple><italic>Przełącz kto może
+        <dark_purple><italic>wykonywać wyzwania
+      name: Ochrona wyzwań
+    CHALLENGES_WORLD_PROTECTION:
+      description: |-
+        <dark_purple><italic>Przełącz wymaganie
+        <dark_purple><italic>bycia na swojej wyspie
+        <dark_purple><italic>by ukończyć zadanie
+      name: Wyzwania ograniczają wyspe
+      hint: Nie można wykonywać wyzwań poza wyspą
+version: 12

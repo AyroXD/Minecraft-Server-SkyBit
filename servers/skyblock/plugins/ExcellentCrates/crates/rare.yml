@@ -1,0 +1,186 @@
+_dataver: 600
+Name: <dark_aqua><b>RARE SKYBLOCK CRATE</b></dark_aqua>
+Description:
+- <gray>Profesionálne SkyBit odmeny pre SKYBLOCK.</gray>
+- <gray>Obsahuje peniaze, predmety, SkyCoiny a custom enchanty.</gray>
+ItemStackable: true
+Permission_Required: false
+Preview:
+  Enabled: true
+  Id: default
+Animation:
+  Enabled: true
+  Id: roulette
+OpeningCooldown:
+  Enabled: true
+  Value: 2
+OpeningLimits:
+  Amount: 0
+Block:
+  Positions:
+  - 28,151,18,world
+  Pushback:
+    Enabled: true
+  Hologram:
+    Enabled: true
+    Template: default
+    Y_Offset: 1.35
+  Effect:
+    Enabled: false
+    Model: none
+Post-Open:
+  Commands: []
+Milestones:
+  Repeatable: false
+  List: {}
+Rewards:
+  List:
+    cash_2500:
+      Type: COMMAND
+      Name: <green><b>$2 500</b></green>
+      Description:
+      - <gray>Finančná odmena</gray>
+      Commands:
+      - eco give %player_name% 2500
+      Weight: 40.0
+      Rarity: common
+      Broadcast: false
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    hoppers:
+      Type: COMMAND
+      Name: <gray><b>12× Hopper</b></gray>
+      Description:
+      - <gray>Automatizácia ostrova</gray>
+      Commands:
+      - give %player_name% minecraft:hopper 12
+      Weight: 35.0
+      Rarity: common
+      Broadcast: false
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    xp_1000:
+      Type: COMMAND
+      Name: <yellow><b>1 000 XP</b></yellow>
+      Description:
+      - <gray>Veľký balík skúseností</gray>
+      Commands:
+      - experience add %player_name% 1000 points
+      Weight: 25.0
+      Rarity: common
+      Broadcast: false
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    obsidian:
+      Type: COMMAND
+      Name: <dark_purple><b>32× Obsidian</b></dark_purple>
+      Description:
+      - <gray>Odolný stavebný materiál</gray>
+      Commands:
+      - give %player_name% minecraft:obsidian 32
+      Weight: 55.0
+      Rarity: rare
+      Broadcast: false
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    custom_books:
+      Type: COMMAND
+      Name: <light_purple><b>2× Custom Enchant Book</b></light_purple>
+      Description:
+      - <gray>Dva náhodné ExcellentEnchanty</gray>
+      Commands:
+      - eenchants randombook %player_name% -custom
+      - eenchants randombook %player_name% -custom
+      Weight: 45.0
+      Rarity: rare
+      Broadcast: false
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    epic_key:
+      Type: COMMAND
+      Name: <light_purple><b>Epic Key</b></light_purple>
+      Description:
+      - <gray>Kľúč vyššej úrovne</gray>
+      Commands:
+      - excellentcrates:crates key give %player_name% epic 1 -sf
+      Weight: 70.0
+      Rarity: mythic
+      Broadcast: true
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    rare_jackpot:
+      Type: COMMAND
+      Name: <gold><b>Rare Jackpot</b></gold>
+      Description:
+      - <gray>$7 500 a 50 SkyCoinov</gray>
+      Commands:
+      - eco give %player_name% 7500
+      - skybitadmin coins %player_name% 50
+      Weight: 30.0
+      Rarity: mythic
+      Broadcast: true
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+CostOptions:
+  key_rare:
+    Enabled: true
+    Name: rare Key
+    Icon:
+      Provider: vanilla
+      Data:
+        Value: '{count:1,id:"minecraft:trial_key"}'
+        DataVersion: 4671
+    Entries:
+      '0':
+        Type: key
+        Key: rare
+        Amount: 1

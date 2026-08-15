@@ -1,0 +1,13 @@
+{
+  "uniqueId": "BentoBox-Ranks",
+  "rankReference": {
+    "ranks.banned": -1,
+    "ranks.visitor": 0,
+    "ranks.coop": 200,
+    "ranks.trusted": 400,
+    "ranks.member": 500,
+    "ranks.sub-owner": 900,
+    "ranks.owner": 1000,
+    "ranks.mod": 5000
+  }
+}

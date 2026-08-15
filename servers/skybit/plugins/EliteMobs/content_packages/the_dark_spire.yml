@@ -1,0 +1,39 @@
+isEnabled: true
+name: '&2[Dynamic] &6The Dark Spire'
+customInfo:
+- '&fDescend into the depths of the Dark Spire'
+- '&7Choose your challenge level before entering!'
+- '&6Credits: 69OzCanOfBepis'
+dungeonSizeCategory: MINIDUNGEON
+worldName: em_dark_spire
+environment: NETHER
+protect: true
+dungeonVersion: 1
+playerInfo: |-
+  &aDynamic Minidungeon
+  $bossCount boss encounters
+  &7Descend into the depths
+  &7of the Dark Spire!
+regionEnterMessage: '&8[EM] &1An invasion is in progress. &9Stop the insurrection!'
+regionLeaveMessage: '&8[EM] &1You managed to hold them back. &9For now...'
+startLocation: em_dark_spire,47.5,94.5,94.5,110,0
+teleportLocation: em_dark_spire,60,97.5,97,110,0
+dungeonObjectives:
+- filename=darkspire_level_130_miniboss_phase_brute.yml
+contentType: DYNAMIC_DUNGEON
+dungeonConfigFolderName: the_dark_spire
+contentLevel: -1
+difficulties:
+- name: normal
+  id: 0
+  levelSync: '+5'
+- name: hard
+  id: 1
+  levelSync: '+0'
+- name: mythic
+  id: 2
+  levelSync: '-5'
+setupMenuDescription:
+- '&2A Dynamic Minidungeon where you choose the level!'
+- '&2Select from levels based on your guild rank!'
+dungeonLockoutMinutes: 4320

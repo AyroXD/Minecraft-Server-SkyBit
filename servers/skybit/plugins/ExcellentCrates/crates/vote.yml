@@ -1,0 +1,185 @@
+_dataver: 600
+Name: <green><b>VOTE SURVIVAL CRATE</b></green>
+Description:
+- <gray>Profesionálne SkyBit odmeny pre SURVIVAL.</gray>
+- <gray>Obsahuje peniaze, predmety, SkyCoiny a custom enchanty.</gray>
+ItemStackable: true
+Permission_Required: false
+Preview:
+  Enabled: true
+  Id: default
+Animation:
+  Enabled: true
+  Id: csgo
+OpeningCooldown:
+  Enabled: true
+  Value: 2
+OpeningLimits:
+  Amount: 0
+Block:
+  Positions:
+  - 23,151,16,world
+  Pushback:
+    Enabled: true
+  Hologram:
+    Enabled: true
+    Template: default
+    Y_Offset: 1.35
+  Effect:
+    Enabled: false
+    Model: none
+Post-Open:
+  Commands: []
+Milestones:
+  Repeatable: false
+  List: {}
+Rewards:
+  List:
+    cash_1200:
+      Type: COMMAND
+      Name: <green><b>$1 200</b></green>
+      Description:
+      - <gray>Odmena za podporu servera</gray>
+      Commands:
+      - eco give %player_name% 1200
+      Weight: 40.0
+      Rarity: common
+      Broadcast: false
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    emeralds:
+      Type: COMMAND
+      Name: <green><b>12× Emerald</b></green>
+      Description:
+      - <gray>Obchodné suroviny</gray>
+      Commands:
+      - give %player_name% minecraft:emerald 12
+      Weight: 35.0
+      Rarity: common
+      Broadcast: false
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    xp_500:
+      Type: COMMAND
+      Name: <yellow><b>500 XP</b></yellow>
+      Description:
+      - <gray>Skúsenosti za hlasovanie</gray>
+      Commands:
+      - experience add %player_name% 500 points
+      Weight: 25.0
+      Rarity: common
+      Broadcast: false
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    diamonds:
+      Type: COMMAND
+      Name: <aqua><b>8× Diamond</b></aqua>
+      Description:
+      - <gray>Vzácne suroviny</gray>
+      Commands:
+      - give %player_name% minecraft:diamond 8
+      Weight: 60.0
+      Rarity: rare
+      Broadcast: false
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    custom_book:
+      Type: COMMAND
+      Name: <light_purple><b>Custom Enchant Book</b></light_purple>
+      Description:
+      - <gray>Náhodný ExcellentEnchant</gray>
+      Commands:
+      - eenchants randombook %player_name% -custom
+      Weight: 40.0
+      Rarity: rare
+      Broadcast: false
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    rare_key:
+      Type: COMMAND
+      Name: <dark_aqua><b>Rare Key</b></dark_aqua>
+      Description:
+      - <gray>Kľúč vyššej úrovne</gray>
+      Commands:
+      - excellentcrates:crates key give %player_name% rare 1 -sf
+      Weight: 70.0
+      Rarity: mythic
+      Broadcast: true
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    vote_jackpot:
+      Type: COMMAND
+      Name: <gold><b>Vote Jackpot</b></gold>
+      Description:
+      - <gray>$4 000 a 25 SkyCoinov</gray>
+      Commands:
+      - eco give %player_name% 4000
+      - skybitadmin coins %player_name% 25
+      Weight: 30.0
+      Rarity: mythic
+      Broadcast: true
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+CostOptions:
+  key_vote:
+    Enabled: true
+    Name: vote Key
+    Icon:
+      Provider: vanilla
+      Data:
+        Value: '{count:1,id:"minecraft:trial_key"}'
+        DataVersion: 4671
+    Entries:
+      '0':
+        Type: key
+        Key: vote
+        Amount: 1

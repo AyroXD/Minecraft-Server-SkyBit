@@ -1,0 +1,39 @@
+category,item,buy,sell,notes
+Farming,WHEAT_SEEDS,8,1,low sell prevents bone meal loops
+Farming,WHEAT,16,4,
+Farming,CARROT,18,4,
+Farming,POTATO,18,4,
+Farming,SUGAR_CANE,24,5,
+Farming,CACTUS,20,4,
+Blocks,STONE,3,0.4,
+Blocks,COBBLESTONE,2,0.25,
+Blocks,DIRT,4,0.25,
+Blocks,SAND,8,1,
+Blocks,GLASS,12,1.5,
+Mining,COAL,35,7,
+Mining,RAW_IRON,90,20,
+Mining,RAW_COPPER,24,4,
+Mining,RAW_GOLD,150,32,
+Mining,REDSTONE,18,3,
+Mining,LAPIS_LAZULI,24,4,
+Mining,DIAMOND,1200,0,no server sell; player market only
+Mining,EMERALD,700,0,no server sell; prevents villager loops
+Wood,OAK_LOG,18,4,
+Wood,SPRUCE_LOG,18,4,
+Wood,BIRCH_LOG,18,4,
+Wood,DARK_OAK_LOG,22,5,
+Food,BREAD,35,5,
+Food,COOKED_BEEF,60,10,
+Food,GOLDEN_CARROT,180,20,
+Mob Drops,ROTTEN_FLESH,8,1,
+Mob Drops,BONE,25,4,
+Mob Drops,STRING,25,4,
+Mob Drops,GUNPOWDER,65,10,
+Mob Drops,ENDER_PEARL,160,25,
+Utility,ENDER_CHEST,2500,350,
+Utility,HOPPER,1800,200,watch iron farm supply
+Utility,EXPERIENCE_BOTTLE,180,0,buy only
+Decoration,FLOWER_POT,60,5,
+Decoration,PAINTING,90,8,
+Decoration,ARMOR_STAND,250,25,
+

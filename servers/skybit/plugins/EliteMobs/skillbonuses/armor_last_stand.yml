@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&4Last Stand'
+description:
+- '&7Survive fatal damage with'
+- '&71 heart. 120s cooldown.'
+skillType: ARMOR
+bonusType: COOLDOWN
+unlockTier: 4
+baseValue: 1.0
+scalingPerLevel: 0.02
+cooldownSeconds: 120.0
+displayMaterial: TOTEM_OF_UNDYING
+loreTemplates:
+- '&7Survive a fatal blow once per cooldown'
+- '&7Prevents death and restores you to 1 HP'
+- '&7Cooldown: $cooldown'
+formattedBonusTemplate: 'Prevent death (CD: $cooldown)'

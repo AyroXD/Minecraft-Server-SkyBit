@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&cLacerate'
+description:
+- '&7Attacks have a chance to cause'
+- '&7bleeding, dealing damage over time.'
+skillType: SWORDS
+bonusType: PROC
+unlockTier: 1
+baseValue: 2.0
+scalingPerLevel: 0.1
+displayMaterial: REDSTONE
+loreTemplates:
+- '&7Chance: &f$procChance%'
+- '&7Bleed: &f$bleedPercent% of hit/tick'
+- '&7Total DoT: &f$totalPercent% over 5s'
+formattedBonusTemplate: $totalPercent% bleed over 5s

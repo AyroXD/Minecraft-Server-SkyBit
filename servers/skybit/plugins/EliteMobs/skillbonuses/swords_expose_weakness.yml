@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&dExpose Weakness'
+description:
+- '&7Attacks have a chance to reduce'
+- '&7the target''s defense.'
+skillType: SWORDS
+bonusType: PROC
+unlockTier: 2
+baseValue: 0.1
+scalingPerLevel: 0.002
+procChance: 0.2
+displayMaterial: BONE
+loreTemplates:
+- '&7Proc Chance: &f$procChance%'
+- '&7Defense Reduction: &f$reduction%'
+- '&7Duration: &f5 seconds'
+formattedBonusTemplate: -$reduction% Target Defense

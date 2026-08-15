@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&bSpectral Scythe'
+description:
+- '&7Launch a spectral scythe'
+- '&7projectile. 25s CD.'
+skillType: HOES
+bonusType: COOLDOWN
+unlockTier: 4
+baseValue: 1.5
+scalingPerLevel: 0.03
+cooldownSeconds: 25.0
+displayMaterial: PHANTOM_MEMBRANE
+loreTemplates:
+- '&7Damage: &f$damagePercent% weapon damage'
+- '&7Range: &f$range blocks'
+- '&7Cooldown: &f$cooldown seconds'
+- '&7Pierces through enemies'
+formattedBonusTemplate: $damagePercent% Projectile Damage

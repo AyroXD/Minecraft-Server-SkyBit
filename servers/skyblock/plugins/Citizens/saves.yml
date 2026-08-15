@@ -1,0 +1,315 @@
+# Citizens NPC Storage
+last-created-npc-id: 63
+npc:
+  '60':
+    metadata:
+      skybit_action: minerush
+      protected: true
+      always-use-name-hologram: true
+      minecraft-ai: false
+    traits:
+      scoreboardtrait:
+        tags:
+        - CITIZENS_NPC
+      lookclose:
+        perplayer: true
+        randomYawRange:
+        - 0.0
+        - 360.0
+        realisticlooking: true
+        linkedbody: true
+        range: 12.0
+        randomPitchRange:
+        - 0.0
+        - 0.0
+        enabled: true
+      location:
+        world: world
+        worldid: b6b0d869-7fac-4ceb-8320-20a1b41f9666
+        x: 20.5
+        y: 150.0
+        z: -22.5
+        pitch: 0.0
+        bodyYaw: -180.0
+        yaw: -180.0
+      type: PLAYER
+    traitnames: scoreboardtrait,spawned,rotationtrait,hologramtrait,skintrait,leashedtrait,lookclose,location,type,inventory,chunktickettrait
+    name: §b§lBANSKÝ MAJSTER
+    navigator:
+      usedefaultstuckaction: false
+      speedmodifier: 1.0
+      avoidwater: false
+    uuid: 16244ea8-8a65-4e21-96b0-b37442b53ed4
+  '58':
+    metadata:
+      skybit_action: warps
+      protected: true
+      always-use-name-hologram: true
+      minecraft-ai: false
+    traits:
+      scoreboardtrait:
+        tags:
+        - CITIZENS_NPC
+      lookclose:
+        perplayer: true
+        randomYawRange:
+        - 0.0
+        - 360.0
+        realisticlooking: true
+        linkedbody: true
+        range: 12.0
+        randomPitchRange:
+        - 0.0
+        - 0.0
+        enabled: true
+      location:
+        world: world
+        worldid: b6b0d869-7fac-4ceb-8320-20a1b41f9666
+        x: 24.5
+        y: 150.0
+        z: -32.5
+        pitch: 0.0
+        bodyYaw: -180.0
+        yaw: -180.0
+      type: PLAYER
+    traitnames: scoreboardtrait,spawned,rotationtrait,hologramtrait,skintrait,leashedtrait,lookclose,location,type,inventory,chunktickettrait
+    name: §d§lWARP MASTER
+    navigator:
+      usedefaultstuckaction: false
+      speedmodifier: 1.0
+      avoidwater: false
+    uuid: 25963ce2-9478-4b52-aba9-068d20ebc4b7
+  '56':
+    metadata:
+      skybit_action: tutorial
+      protected: true
+      always-use-name-hologram: true
+      minecraft-ai: false
+    traits:
+      scoreboardtrait:
+        tags:
+        - CITIZENS_NPC
+      lookclose:
+        perplayer: true
+        randomYawRange:
+        - 0.0
+        - 360.0
+        realisticlooking: true
+        linkedbody: true
+        range: 12.0
+        randomPitchRange:
+        - 0.0
+        - 0.0
+        enabled: true
+      location:
+        world: world
+        worldid: b6b0d869-7fac-4ceb-8320-20a1b41f9666
+        x: 24.5
+        y: 150.0
+        z: -26.5
+        pitch: 0.0
+        bodyYaw: -180.0
+        yaw: -180.0
+      type: PLAYER
+    traitnames: scoreboardtrait,spawned,rotationtrait,hologramtrait,skintrait,leashedtrait,lookclose,location,type,inventory,chunktickettrait
+    name: §b§lSPRIEVODCA
+    navigator:
+      usedefaultstuckaction: false
+      speedmodifier: 1.0
+      avoidwater: false
+    uuid: d5ed96fe-959a-40d5-b979-1e71822dd4d1
+  '61':
+    metadata:
+      skybit_action: story
+      protected: true
+      always-use-name-hologram: true
+      minecraft-ai: false
+    traits:
+      scoreboardtrait:
+        tags:
+        - CITIZENS_NPC
+      lookclose:
+        perplayer: true
+        randomYawRange:
+        - 0.0
+        - 360.0
+        realisticlooking: true
+        linkedbody: true
+        range: 12.0
+        randomPitchRange:
+        - 0.0
+        - 0.0
+        enabled: true
+      location:
+        world: world
+        worldid: b6b0d869-7fac-4ceb-8320-20a1b41f9666
+        x: 36.5
+        y: 150.0
+        z: -22.5
+        pitch: 0.0
+        bodyYaw: -180.0
+        yaw: -180.0
+      type: PLAYER
+    traitnames: scoreboardtrait,spawned,rotationtrait,hologramtrait,skintrait,leashedtrait,lookclose,location,type,inventory,chunktickettrait
+    name: §5§lKRONIKÁR
+    navigator:
+      usedefaultstuckaction: false
+      speedmodifier: 1.0
+      avoidwater: false
+    uuid: 78abdf01-4482-4c24-acab-9369902f580a
+  '57':
+    metadata:
+      skybit_action: crates
+      protected: true
+      always-use-name-hologram: true
+      minecraft-ai: false
+    traits:
+      scoreboardtrait:
+        tags:
+        - CITIZENS_NPC
+      lookclose:
+        perplayer: true
+        randomYawRange:
+        - 0.0
+        - 360.0
+        realisticlooking: true
+        linkedbody: true
+        range: 12.0
+        randomPitchRange:
+        - 0.0
+        - 0.0
+        enabled: true
+      location:
+        world: world
+        worldid: b6b0d869-7fac-4ceb-8320-20a1b41f9666
+        x: 32.5
+        y: 150.0
+        z: -26.5
+        pitch: 0.0
+        bodyYaw: -180.0
+        yaw: -180.0
+      type: PLAYER
+    traitnames: scoreboardtrait,spawned,rotationtrait,hologramtrait,skintrait,leashedtrait,lookclose,location,type,inventory,chunktickettrait
+    name: §6§lCRATE MASTER
+    navigator:
+      usedefaultstuckaction: false
+      speedmodifier: 1.0
+      avoidwater: false
+    uuid: 3eb4b2eb-dfdb-485f-b41a-ea4fef6b18f5
+  '59':
+    metadata:
+      skybit_action: player_menu
+      protected: true
+      always-use-name-hologram: true
+      minecraft-ai: false
+    traits:
+      scoreboardtrait:
+        tags:
+        - CITIZENS_NPC
+      lookclose:
+        perplayer: true
+        randomYawRange:
+        - 0.0
+        - 360.0
+        realisticlooking: true
+        linkedbody: true
+        range: 12.0
+        randomPitchRange:
+        - 0.0
+        - 0.0
+        enabled: true
+      location:
+        world: world
+        worldid: b6b0d869-7fac-4ceb-8320-20a1b41f9666
+        x: 32.5
+        y: 150.0
+        z: -32.5
+        pitch: 0.0
+        bodyYaw: -180.0
+        yaw: -180.0
+      type: PLAYER
+    traitnames: scoreboardtrait,spawned,rotationtrait,hologramtrait,skintrait,leashedtrait,lookclose,location,type,inventory,chunktickettrait
+    name: §a§lISLAND MASTER
+    navigator:
+      usedefaultstuckaction: false
+      speedmodifier: 1.0
+      avoidwater: false
+    uuid: 6a363ac8-ab9c-4eaf-a820-4f051d8ec766
+  '63':
+    metadata:
+      skybit_action: residence
+      protected: true
+      always-use-name-hologram: true
+      minecraft-ai: false
+    traits:
+      scoreboardtrait:
+        tags:
+        - CITIZENS_NPC
+      lookclose:
+        perplayer: true
+        randomYawRange:
+        - 0.0
+        - 360.0
+        realisticlooking: true
+        linkedbody: true
+        range: 12.0
+        randomPitchRange:
+        - 0.0
+        - 0.0
+        enabled: true
+      location:
+        world: world
+        worldid: b6b0d869-7fac-4ceb-8320-20a1b41f9666
+        x: 36.5
+        y: 150.0
+        z: -36.5
+        pitch: 0.0
+        bodyYaw: -180.0
+        yaw: -180.0
+      type: PLAYER
+    traitnames: scoreboardtrait,spawned,rotationtrait,hologramtrait,skintrait,leashedtrait,lookclose,location,type,inventory,chunktickettrait
+    name: §a§lSPRÁVCA POZEMKOV
+    navigator:
+      usedefaultstuckaction: false
+      speedmodifier: 1.0
+      avoidwater: false
+    uuid: 3817eb4b-7928-46f1-8ac6-6b17638b91ca
+  '62':
+    metadata:
+      skybit_action: vote
+      protected: true
+      always-use-name-hologram: true
+      minecraft-ai: false
+    traits:
+      scoreboardtrait:
+        tags:
+        - CITIZENS_NPC
+      lookclose:
+        perplayer: true
+        randomYawRange:
+        - 0.0
+        - 360.0
+        realisticlooking: true
+        linkedbody: true
+        range: 12.0
+        randomPitchRange:
+        - 0.0
+        - 0.0
+        enabled: true
+      location:
+        world: world
+        worldid: b6b0d869-7fac-4ceb-8320-20a1b41f9666
+        x: 20.5
+        y: 150.0
+        z: -36.5
+        pitch: 0.0
+        bodyYaw: -180.0
+        yaw: -180.0
+      type: PLAYER
+    traitnames: scoreboardtrait,spawned,rotationtrait,hologramtrait,skintrait,leashedtrait,lookclose,location,type,inventory,chunktickettrait
+    name: §d§lHLASATEĽ
+    navigator:
+      usedefaultstuckaction: false
+      speedmodifier: 1.0
+      avoidwater: false
+    uuid: a883d2a4-9c18-4958-b4e5-7908785950e6

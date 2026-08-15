@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&9Tidal Surge'
+description:
+- '&7Create a wave that knocks'
+- '&7back nearby enemies. 20s CD.'
+skillType: TRIDENTS
+bonusType: COOLDOWN
+unlockTier: 2
+baseValue: 1.0
+scalingPerLevel: 0.02
+cooldownSeconds: 20.0
+displayMaterial: WATER_BUCKET
+loreTemplates:
+- '&7Cooldown: &f$cooldowns'
+- '&7Knockback: &f$knockback'
+- '&7Radius: &f$radius blocks'
+formattedBonusTemplate: $knockback Knockback

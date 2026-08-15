@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&aParry'
+description:
+- '&7Block attacks with your sword to'
+- '&7reduce damage even further.'
+skillType: SWORDS
+bonusType: CONDITIONAL
+unlockTier: 3
+baseValue: 0.3
+scalingPerLevel: 0.005
+displayMaterial: IRON_SWORD
+loreTemplates:
+- '&7Damage Reduction: &f$value%'
+- '&7Condition: Blocking with sword'
+- '&7Stacks with normal blocking'
+formattedBonusTemplate: -$value% Damage when Parrying

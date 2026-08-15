@@ -1,0 +1,15 @@
+{
+    "parent": "item/handheld",
+    "textures": {
+        "layer0": "item/diamond_axe"
+    },
+    
+    "overrides": [
+        {"predicate": {"custom_model_data":1}, "model": "elitemobs:gear/bronze_axe"},
+        {"predicate": {"custom_model_data":2}, "model": "elitemobs:gear/palladium_axe"},
+        {"predicate": {"custom_model_data":3}, "model": "elitemobs:gear/corrupted_axe"},
+        {"predicate": {"custom_model_data":4}, "model": "elitemobs:gear/living_axe"},
+        {"predicate": {"custom_model_data":5}, "model": "elitemobs:gear/ultimatium_axe"}
+
+    ]
+}

@@ -1,0 +1,51 @@
+lp creategroup vip
+lp creategroup vipplus
+lp creategroup mvp
+lp creategroup helper
+lp creategroup moderator
+lp creategroup admin
+lp creategroup owner
+lp group vip parent add default
+lp group vipplus parent add vip
+lp group mvp parent add vipplus
+lp group helper parent add default
+lp group moderator parent add helper
+lp group admin parent add moderator
+lp group owner parent add admin
+lp group default meta setprefix 100 "&7"
+lp group vip meta setprefix 90 "&aVIP &8| &f"
+lp group vipplus meta setprefix 80 "&bVIP+ &8| &f"
+lp group mvp meta setprefix 70 "&dMVP &8| &f"
+lp group helper meta setprefix 60 "&2HELPER &8| &f"
+lp group moderator meta setprefix 50 "&9MOD &8| &f"
+lp group admin meta setprefix 40 "&cADMIN &8| &f"
+lp group owner meta setprefix 10 "&4OWNER &8| &f"
+lp group default permission set essentials.balance true
+lp group default permission set essentials.pay true
+lp group default permission set essentials.balancetop true
+lp group default permission set essentials.home true
+lp group default permission set essentials.sethome true
+lp group default permission set essentials.delhome true
+lp group default permission set economyshop.use true
+lp group default permission set economyshop.sell true
+lp group default permission set economyshop.chestshop.create true
+lp group default permission set economyshop.chestshop.use true
+lp group default permission set jobsplus.use true
+lp group default permission set jobsplus.join.* true
+lp group default permission set emf.shop true
+lp group default permission set emf.top true
+lp group default permission set emf.toggle true
+lp group vip permission set essentials.nick true
+lp group vip permission set essentials.sethome.multiple.vip true
+lp group vipplus permission set essentials.sethome.multiple.vipplus true
+lp group mvp permission set essentials.sethome.multiple.mvp true
+lp group helper permission set coreprotect.inspect true
+lp group helper permission set essentials.kick true
+lp group moderator permission set essentials.ban true
+lp group moderator permission set essentials.tempban true
+lp group moderator permission set coreprotect.lookup true
+lp group admin permission set worldedit.* true
+lp group admin permission set worldguard.* true
+lp group admin permission set coreprotect.rollback true
+lp group owner permission set * true
+

@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&bVortex Thrust'
+description:
+- '&7Pull nearby enemies toward'
+- '&7your target. 18s CD.'
+skillType: SPEARS
+bonusType: COOLDOWN
+unlockTier: 2
+baseValue: 0.8
+scalingPerLevel: 0.005
+cooldownSeconds: 18.0
+displayMaterial: ENDER_PEARL
+loreTemplates:
+- '&7Pulls enemies within &f$radius blocks &7toward target'
+- '&7Applies Slowness II for 2s'
+- '&7Cooldown: &f$cooldowns'
+formattedBonusTemplate: 'Pull + Slow (CD: $cooldowns)'

@@ -1,0 +1,73 @@
+# Admin Item Editor GUI Configuration
+size: 27
+title: "&6&lEdit Item"
+
+filler:
+  enabled: true
+  material: BLACK_STAINED_GLASS_PANE
+  name: " "
+  slots: "0-9,17-21,23-26"
+
+items:
+  buy-price:
+    slot: 10
+    material: GOLD_INGOT
+    name: "&eBuy Price"
+    lore:
+      - "&7Current: &a%buy_price%"
+      - "&7Click to change."
+
+  sell-price:
+    slot: 11
+    material: GOLD_NUGGET
+    name: "&eSell Price"
+    lore:
+      - "&7Current: &a%sell_price%"
+      - "&7Click to change."
+
+  stock-mode:
+    slot: 12
+    material: CHEST
+    name: "&6Stock Mode"
+    lore:
+      - "&7Current: &f%stock_mode%"
+      - "&7Click to toggle."
+
+  max-stock:
+    slot: 13
+    material: BARREL
+    name: "&6Max Stock"
+    lore:
+      - "&7Current: &f%max_stock%"
+      - "&7Click to change."
+
+  restock-amount:
+    slot: 14
+    material: HOPPER
+    name: "&6Restock Amount"
+    lore:
+      - "&7Current: &f%restock_amount%"
+      - "&7Click to change."
+
+  restock-interval:
+    slot: 15
+    material: CLOCK
+    name: "&6Restock Interval"
+    lore:
+      - "&7Current: &f%restock_interval%s"
+      - "&7Click to change."
+
+  dynamic-pricing:
+    slot: 16
+    material: REDSTONE_TORCH
+    name: "&eDynamic Pricing"
+    lore:
+      - "&7Status: %dynamic_status%"
+      - "&7Click to toggle."
+
+  back:
+    slot: 22
+    material: SPECTRAL_ARROW
+    name: "&eBack"
+    lore:
+      - "&7Return to the category editor."

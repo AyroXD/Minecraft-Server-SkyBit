@@ -1,0 +1,40 @@
+# Player Shop View GUI Configuration
+size: 54
+title: "&6%shop%"
+listing-slots: "0-44"
+
+filler:
+  enabled: true
+  material: BLACK_STAINED_GLASS_PANE
+  name: " "
+  slots: "45-53"
+
+items:
+  back:
+    slot: 48
+    material: SPECTRAL_ARROW
+    name: "&eBack"
+    lore:
+      - "&7Return to the shop listing."
+
+  prev-page:
+    slot: 45
+    material: ARROW
+    name: "&ePrevious Page"
+    lore:
+      - "&7Go to the previous page."
+
+  next-page:
+    slot: 53
+    material: ARROW
+    name: "&eNext Page"
+    lore:
+      - "&7Go to the next page."
+
+  shop-info:
+    slot: 49
+    material: OAK_SIGN
+    name: "&6%shop%"
+    lore:
+      - "&7Owner: &f%owner%"
+      - "&7Items: &f%item_count%"

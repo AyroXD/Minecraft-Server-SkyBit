@@ -1,0 +1,1 @@
+# SkyBit používa vlastné čisté uvítanie cez lobby plugin.

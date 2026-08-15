@@ -1,0 +1,36 @@
+isEnabled: true
+name: '&2[Dynamic] &3The Bridge Sanctum'
+customInfo:
+- '&fThe perfect intermediate instanced sanctum!'
+- '&6Credits: Dali_, MagmaGuy, Frostcone'
+dungeonSizeCategory: SANCTUM
+worldName: em_id_the_bridge
+environment: NORMAL
+protect: true
+playerInfo: |-
+  &aDynamic Sanctum
+  $bossCount boss encounters
+  &bCross the bridge and face
+  &bits ancient guardian!
+regionEnterMessage: '&bBefore being able to enter the city you must deal with the
+  guardian on the bridge!'
+regionLeaveMessage: '&bYou have left The Bridge!'
+startLocation: em_id_the_bridge,-216.5,103,-14.5,-90.0,0.0
+teleportLocation: em_id_the_bridge,-255.5,100,-14.5,-90.0,0.0
+dungeonObjectives:
+- filename=the_bridge_ancient_guardian_p1.yml
+contentType: DYNAMIC_DUNGEON
+dungeonConfigFolderName: em_id_the_bridge
+contentLevel: -1
+difficulties:
+- name: normal
+  id: 0
+  levelSync: '+5'
+- name: hard
+  id: 1
+  levelSync: '+0'
+- name: mythic
+  id: 2
+  levelSync: '-5'
+setupMenuDescription: []
+dungeonLockoutMinutes: 4320

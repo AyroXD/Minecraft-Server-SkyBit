@@ -1,0 +1,796 @@
+# ============================================================================
+# EconomyShop Language File — en_US
+# ============================================================================
+# All messages use MiniMessage format.
+# See https://docs.advntr.dev/minimessage/format.html for syntax reference.
+# ============================================================================
+
+# Prefix applied to most messages (referenced by {prefix} in messages)
+prefix: "<dark_gray>[<gold>Shop<dark_gray>]</dark_gray> "
+
+# --------------------------------------------------------------------------
+# General
+# --------------------------------------------------------------------------
+no-permission: "<red>You do not have permission to do that."
+pro-required: "<red>This feature requires <green>EconomyShop Pro</green>."
+player-only: "<red>This command can only be used by players."
+invalid-command: "<red>Unknown command. Try <green>/shop help</green> for a list of commands."
+reload-success: "<green>Configuration reloaded successfully."
+admin-config-saved: "<green>Configuration saved."
+invalid-number: "<red>That is not a valid number."
+invalid-amount: "<red>Please enter a valid amount greater than zero."
+
+# --------------------------------------------------------------------------
+# Shop (Buy / Sell)
+# --------------------------------------------------------------------------
+shop-buy-success: "<green>Purchased <white>{qty}x {item}</white> for <white>{price}</white>."
+shop-buy-fail-money: "<red>You need <green>{price}</green> to buy <green>{qty}x {item}</green>."
+shop-buy-fail-stock: "<red>Not enough stock. Only <green>{stock}</green> available."
+shop-buy-fail-inventory: "<red>Your inventory is full. Make some space and try again."
+shop-buy-fail-not-buyable: "<red>That item is not for sale."
+shop-buy-last-item: "<red>This item is too scarce to purchase right now."
+shop-sell-success: "<green>Sold <white>{qty}x {item}</white> for <white>{price}</white>."
+shop-sell-fail-no-items: "<red>You don't have any of that item to sell."
+shop-sell-shop-full: "<red>The shop is full and cannot accept more of this item."
+shop-sell-fail-not-sellable: "<red>That item cannot be sold to the shop."
+shop-sell-all-success: "<green>Sold <white>{qty}</white> items for <white>{price}</white>."
+shop-sell-all-nothing: "<red>You have nothing that can be sold to the shop."
+# shop-sell-tax-info removed — sales tax module disabled by default
+
+# --------------------------------------------------------------------------
+# Categories
+# --------------------------------------------------------------------------
+category-created: "<green>Category <white>{name}</white> created."
+category-deleted: "<green>Category <white>{name}</white> and all its items deleted."
+category-delete-confirm: "<red>This will delete <white>{name}</white> AND all items inside it. <yellow>Shift-click again within 10s to confirm."
+category-not-found: "<red>Category <green>{name}</green> not found."
+
+# --------------------------------------------------------------------------
+# Admin
+# --------------------------------------------------------------------------
+admin-item-added: "<green>Added <white>{item}</white> to <white>{category}</white>."
+admin-item-restored: "<green>Restored <white>{item}</white> in <white>{category}</white> <gray>(previous settings preserved)</gray>"
+admin-item-removed: "<gray>Soft-removed <white>{item}</white> from <white>{category}</white> <dark_gray>(re-add to restore settings)</dark_gray>"
+admin-item-updated: "<green>Updated <white>{item}</white> in <white>{category}</white>."
+admin-price-set: "<green>Set price of <white>{item}</white> to <white>{price}</white>."
+admin-stock-updated: "<green>Updated stock of <white>{item}</white> to <white>{stock}</white>."
+admin-hold-item: "<red>You must be holding an item in your main hand."
+admin-invalid-material: "<red>Invalid material name. Check spelling."
+admin-prices-usage: "<red>Usage: <white>/shop admin prices <increase|decrease> <buy|sell> <percent>"
+admin-prices-invalid-percent: "<red>Percent must be 1-1000 for increase, 1-99 for decrease."
+admin-prices-success: "<green>Bulk price adjustment: <white>{direction}</white> {type} prices by <white>{percent}%</white> across <white>{count}</white> items."
+
+# --------------------------------------------------------------------------
+# Dynamic Pricing
+# --------------------------------------------------------------------------
+# dynamic-price-info removed — not displayed in current version
+
+# --------------------------------------------------------------------------
+# AuctionHouse Integration
+# --------------------------------------------------------------------------
+# ah-cross-listed and ah-not-available removed — cross-list feature not active
+
+# --------------------------------------------------------------------------
+# GUI Titles
+# --------------------------------------------------------------------------
+gui-main-shop: "<gold><bold>Shop</bold></gold>"
+gui-category-browse: "<gold><bold>{category}</bold></gold>"
+gui-buy-confirmation: "<gold><bold>Confirm Purchase</bold></gold>"
+gui-sell-to-shop: "<gold><bold>Sell Items</bold></gold>"
+gui-transaction-history: "<gold><bold>Transaction History</bold></gold>"
+gui-admin-shop-editor: "<gold><bold>Shop Editor</bold></gold>"
+gui-admin-category-editor: "<gold><bold>Category Editor</bold></gold>"
+gui-admin-item-editor: "<gold><bold>Item Editor</bold></gold>"
+
+# --------------------------------------------------------------------------
+# GUI Dynamic Text (used in item lore across all GUIs)
+# --------------------------------------------------------------------------
+# Category browsing
+gui-lore-item-count: "<gray>{count} items"
+gui-lore-divider: "<dark_gray><strikethrough>                              "
+gui-lore-click-browse: "<yellow>Left-click to browse"
+gui-lore-buy-price: "<gray>Buy: <green>{price}"
+gui-lore-sell-price: "<gray>Sell: <yellow>{price}"
+gui-lore-stock: "<gray>Stock: <aqua>{stock}"
+gui-lore-stock-unlimited: "<gray>Stock: <aqua>Unlimited"
+gui-lore-dynamic-pricing: "<gold>Dynamic Pricing"
+gui-lore-click-buy: "<yellow>Left-click to buy"
+gui-lore-click-sell-right: "<yellow>Right-click to sell"
+gui-lore-not-sellable: "<red>Cannot be sold"
+gui-lore-not-buyable: "<red>Cannot be bought"
+gui-lore-out-of-stock: "<red>Out of stock"
+
+# Sell GUI
+gui-lore-you-have: "<gray>You have: <white>{count}"
+gui-lore-sell-unit-price: "<gray>Sell price: <green>{price}"
+gui-lore-sell-total: "<gray>Total value: <green>{total}"
+gui-lore-click-sell-all: "<yellow>Click to sell all"
+gui-lore-click-sell: "<yellow>Left-click to sell all"
+gui-lore-click-sell-amount: "<yellow>Shift+Left-click to choose amount"
+gui-lore-click-exclude: "<gray>Right-click to exclude from Sell All"
+gui-lore-excluded: "<red>✘ Excluded from Sell All (right-click to include)"
+
+# Transaction History
+gui-lore-tx-type: "<gray>Type: <white>{type}"
+gui-lore-tx-quantity: "<gray>Quantity: <white>{quantity}"
+gui-lore-tx-unit-price: "<gray>Unit Price: <white>{price}"
+gui-lore-tx-total: "<gray>Total: <green>{total}"
+gui-lore-tx-tax: "<gray>Tax: <red>{tax}"
+gui-lore-tx-time: "<dark_gray>{time}"
+
+# Navigation
+gui-lore-page-info: "<gray>Page {page}/{pages}"
+
+# --------------------------------------------------------------------------
+# Admin GUI (Category Editor & Shop Editor)
+# --------------------------------------------------------------------------
+# Item lore in category editor
+admin-gui-item-name: "<white>{name}"
+admin-gui-buy-price: "<green>Buy: {price}"
+admin-gui-sell-price: "<yellow>Sell: {price}"
+admin-gui-stock-finite: "<aqua>Stock: {current}/{max}"
+admin-gui-stock-infinite: "<aqua>Stock: Infinite"
+admin-gui-dynamic-pricing-on: "<light_purple>Dynamic Pricing: ON (x{multiplier})"
+admin-gui-item-id: "<dark_gray>ID: {id}"
+
+# Category lore in shop editor
+admin-gui-item-count: "<gray>Items: {count}"
+admin-gui-status-enabled: "<green>Status: Enabled"
+admin-gui-status-disabled: "<red>Status: Disabled"
+admin-gui-category-id: "<dark_gray>ID: {id}"
+
+# Click instructions
+admin-gui-click-edit: "<yellow>Left-click to edit"
+admin-gui-click-toggle: "<yellow>Right-click to toggle on/off"
+admin-gui-click-swap: "<aqua>Shift+Left-click to reorder"
+admin-gui-click-remove: "<red>Shift+Right-click to remove"
+admin-item-swap-selected: "<aqua>Selected <white>{item}<aqua> — Shift+Left-click another item to swap"
+admin-item-swapped: "<green>Swapped <white>{item1}<green> with <white>{item2}"
+admin-gui-click-edit-items: "<yellow>Left-click to edit items"
+admin-gui-click-configure: "<yellow>Right-click to configure"
+admin-gui-click-delete: "<red>Shift-click twice to delete (incl. items)"
+
+# Navigation & action buttons
+admin-gui-add-item: "<green>Add Item"
+admin-gui-add-item-lore: "<gray>Click to add a new item"
+admin-gui-create-category: "<green>Create Category"
+admin-gui-create-category-lore: "<gray>Click to create a new category"
+admin-gui-back: "<red>Back"
+admin-gui-previous-page: "<yellow>Previous Page"
+admin-gui-next-page: "<yellow>Next Page"
+
+# --- Admin Item Editor ---
+admin-item-display-name: "<white>{name}"
+admin-item-category-id: "<gray>Category ID: {id}"
+admin-item-item-id: "<dark_gray>Item ID: {id}"
+admin-item-buy-price: "<gold>Buy Price"
+admin-item-sell-price: "<white>Sell Price"
+admin-item-stock-mode: "<aqua>Stock Mode"
+admin-item-stock-settings: "<aqua>Stock Settings"
+admin-item-restock-amount: "<aqua>Restock Amount"
+admin-item-restock-interval: "<aqua>Restock Interval"
+admin-item-dynamic-pricing: "<light_purple>Dynamic Pricing"
+admin-item-permission: "<yellow>Permission"
+admin-item-current-buy: "<green>Current: {value}"
+admin-item-current-sell: "<red>Current: {value}"
+admin-item-effective-price: "<light_purple>Effective: {value}"
+admin-item-current-gray: "<gray>Current: {value}"
+admin-item-dynamic-on: "<green>Current: ON"
+admin-item-dynamic-off: "<red>Current: OFF"
+admin-item-multiplier: "<gray>Multiplier: x{value}"
+admin-item-max-stock: "<gray>Max Stock: {value}"
+admin-item-current-stock-lore: "<gray>Current Stock: {value}"
+admin-item-click-change: "<yellow>Click to type a price"
+admin-item-click-toggle: "<yellow>Click to toggle"
+admin-item-click-set-max: "<yellow>Left-click: set max stock"
+admin-item-click-set-current: "<yellow>Right-click: set current stock"
+admin-item-current-perm: "<gray>Current: {value}"
+admin-item-restock-left: "<yellow>Left-click: <white>+1 hour"
+admin-item-restock-right: "<yellow>Right-click: <white>-1 hour"
+admin-item-restock-shift-left: "<yellow>Shift+Left: <white>+1 minute"
+admin-item-restock-shift-right: "<yellow>Shift+Right: <white>-1 minute"
+admin-item-restock-zero-hint: "<gray>0 = use server default"
+
+# --- Category Config ---
+gui-category-config: "<gold><bold>Category Settings"
+catconfig-rename: "<gold><bold>Rename"
+catconfig-change-icon: "<gold><bold>Change Icon"
+catconfig-permission: "<gold><bold>Permission"
+catconfig-sort-order: "<gold><bold>Sort Order"
+catconfig-enabled: "<green><bold>Enabled"
+catconfig-disabled: "<red><bold>Disabled"
+catconfig-current: "<gray>Current: {value}"
+catconfig-click-rename: "<yellow>Left-click to rename"
+catconfig-click-pick-icon: "<yellow>Left-click to pick icon"
+catconfig-click-set: "<yellow>Left-click to set"
+catconfig-click-change: "<yellow>Left-click to change"
+catconfig-click-toggle: "<yellow>Left-click to toggle"
+
+# --- Material Browser ---
+gui-material-browser-categories: "<gold><bold>Browse Categories"
+gui-material-browser-items: "<gold><bold>{category}"
+
+# Category names and descriptions
+matbrowser-cat-blocks-name: "&6&lBlocks"
+matbrowser-cat-blocks-desc: "&7Building blocks, ores, stone, wood"
+matbrowser-cat-tools-name: "&6&lTools"
+matbrowser-cat-tools-desc: "&7Pickaxes, shovels, buckets, maps"
+matbrowser-cat-weapons-name: "&6&lWeapons"
+matbrowser-cat-weapons-desc: "&7Swords, bows, arrows, explosives"
+matbrowser-cat-armor-name: "&6&lArmor"
+matbrowser-cat-armor-desc: "&7Helmets, chestplates, shields, elytra"
+matbrowser-cat-food-name: "&6&lFood"
+matbrowser-cat-food-desc: "&7Edible items, crops, cooking ingredients"
+matbrowser-cat-potions-name: "&6&lPotions"
+matbrowser-cat-potions-desc: "&7Potions, brewing ingredients, cauldrons"
+matbrowser-cat-redstone-name: "&6&lRedstone"
+matbrowser-cat-redstone-desc: "&7Redstone components, pistons, rails"
+matbrowser-cat-decoration-name: "&6&lDecoration"
+matbrowser-cat-decoration-desc: "&7Banners, signs, torches, flowers"
+matbrowser-cat-mobdrops-name: "&6&lMob Drops"
+matbrowser-cat-mobdrops-desc: "&7Bones, string, ender pearls, skulls"
+matbrowser-cat-misc-name: "&6&lMiscellaneous"
+matbrowser-cat-misc-desc: "&7Ingots, gems, dyes, music discs"
+matbrowser-cat-custom-name: "&d&lCustom Items"
+matbrowser-cat-custom-desc: "&7Admin/unobtainable items, spawn eggs"
+
+# Category selection lore
+matbrowser-cat-count: "&7Items: &f{count}"
+matbrowser-cat-blacklisted: "&c{count} blacklisted"
+matbrowser-cat-click: "&eClick to browse"
+
+# Material item lore
+matbrowser-item-name: "&f{name}"
+matbrowser-click-add: "&eLeft-click to add"
+matbrowser-already-added: "&aAlready added &7(Right-click to remove)"
+
+# Navigation
+matbrowser-prev-page: "&ePrevious Page"
+matbrowser-next-page: "&eNext Page"
+matbrowser-page-info: "&6Page {page}/{pages}"
+matbrowser-materials-total: "&7{count} materials total"
+matbrowser-page-lore: "&7Page {page}/{pages}"
+matbrowser-back: "&eBack"
+matbrowser-back-dashboard: "&7Return to dashboard"
+matbrowser-back-categories: "&7Return to categories"
+
+# --- Admin Dashboard ---
+# GUI title (only key still used from messages — all item lore is built in Java)
+gui-admin-dashboard: "<gold><bold>Admin Dashboard"
+
+# --- Dashboard Chat Messages (sent via Messages.sendRaw/sendMessage) ---
+dashboard-stats-header: "<gold><bold>--- Market Stats ---"
+dashboard-stats-shops: "<gray>Active Chest Shops: <white>{count}"
+dashboard-stats-transactions: "<gray>Transactions Today: <white>{count}"
+dashboard-stats-revenue: "<green>Revenue Today: <white>{amount}"
+dashboard-stats-top-sellers: "<gold>Top Sellers:"
+dashboard-stats-seller-entry: "<gray>  {name}: <white>{count} sales"
+dashboard-purge-tx-done: "<green>Purged <white>{count}</white> old transactions and <white>{items}</white> soft-deleted items."
+dashboard-purge-ph-done: "<green>Price history purged (>90 days)."
+
+# --- Sign Input Prompts ---
+sign-buy-price: "Buy Price"
+sign-buy-price-hint: "Current: {value}"
+sign-buy-price-default: "0.00"
+sign-sell-price: "Sell Price"
+sign-sell-price-hint: "Current: {value}"
+sign-sell-price-optional: "Optional"
+sign-quantity: "Quantity"
+sign-quantity-hint: "1 - 2304"
+sign-stock-alert: "Stock Alert"
+sign-stock-alert-hint: "Current: {value}"
+sign-category-name: "Category Name"
+sign-category-name-hint: "Enter name"
+sign-current-stock: "Current Stock"
+sign-current-stock-hint: "Current: {value}"
+sign-max-stock: "Max Stock"
+sign-max-stock-hint: "Current: {value}"
+sign-restock-amount: "Restock Amount"
+sign-restock-amount-hint: "Current: {value}"
+sign-restock-interval: "Interval (sec)"
+sign-restock-interval-hint: "Current: {value}"
+sign-permission: "Permission"
+sign-permission-hint: "e.g. shop.vip"
+sign-search: "Search"
+sign-search-hint: "Item name"
+sign-material: "Material"
+sign-material-hint: "e.g. DIAMOND"
+sign-sort-order: "Sort Order"
+sign-sort-order-hint: "Enter number"
+
+# --- Chest Shop Sign ---
+chestshop-sign-header: "<gray>[<gold>Shop<gray>]"
+chestshop-sign-buy: "<green>Buy: {price}"
+chestshop-sign-sell: "<yellow>Sell: {price}"
+chestshop-sign-buy-only: "<gray>Buy Only"
+
+# --------------------------------------------------------------------------
+# Errors
+# --------------------------------------------------------------------------
+error-creative-mode: "<red>You cannot use the shop in creative mode."
+error-cooldown: "<red>Please wait before doing that again."
+error-hold-item: "<red>You must be holding an item in your main hand."
+module-disabled: "<red>That feature is disabled on this server."
+error-blacklisted: "<red>That item is blacklisted and cannot be traded."
+gui-error-item-not-found: "<red>Item not found."
+gui-error-economy-failed: "<red>Transaction failed. Please try again."
+
+# --------------------------------------------------------------------------
+# Help
+# --------------------------------------------------------------------------
+help-header: "<gold><bold>--- EconomyShop Help ---"
+help-shop: "<gold>/shop<gray> - Open the shop"
+help-sell: "<gold>/shop sell<gray> - Open sell GUI"
+help-sell-hand: "<gold>/sell [amount]<gray> - Sell held item"
+help-sell-all: "<gold>/sell all<gray> - Sell everything sellable"
+help-history: "<gold>/shop history<gray> - View transaction history"
+help-list: "<gold>/shop list<gray> - List your chest shops"
+help-edit: "<gold>/shop edit<gray> - Edit a chest shop (look at it)"
+help-remove: "<gold>/shop remove<gray> - Remove a chest shop (look at it)"
+help-stats: "<gold>/shop stats <id><gray> - View chest shop statistics"
+help-admin: "<gold>/shop admin<gray> - Admin commands"
+help-help: "<gold>/shop help<gray> - Show this help menu"
+
+# ==============================
+# Chest Shop Messages
+# ==============================
+
+# --- Creation / Removal ---
+chestshop-created: "<green>Shop created! Selling <white>{item}</white> — Buy: <white>{buy_price}</white>, Sell: <white>{sell_price}</white>."
+chestshop-create-failed: "<red>Failed to create shop. Please try again."
+chestshop-removed: "<red>Shop removed. Items returned to your inventory."
+
+# --- Sign Placement Validation ---
+chestshop-must-be-wall-sign: "<red>Shop signs must be wall signs, not standing signs."
+chestshop-must-attach-to-chest: "<red>The sign must be placed on a chest."
+chestshop-no-create-permission: "<red>You don't have permission to create chest shops."
+chestshop-creative-blocked: "<red>You cannot use shops in creative mode."
+chestshop-chest-already-has-shop: "<red>A shop already exists on this chest."
+chestshop-sign-already-has-shop: "<red>A shop already exists at this sign."
+chestshop-limit-reached: "<red>You have reached the shop limit (<green>{max}</green>)."
+chestshop-cannot-afford-creation: "<red>You need <green>{cost}</green> to create a shop."
+chestshop-disabled: "<red>Chest shops are not enabled on this server."
+
+# --- Transaction Errors ---
+chestshop-self-trade: "<red>You cannot buy from or sell to your own shop."
+chestshop-shop-disabled: "<red>This shop is currently disabled."
+chestshop-busy: "<red>This shop is busy. Please try again."
+chestshop-not-found: "<red>Shop not found."
+chestshop-no-buy-price: "<red>This shop does not sell items."
+chestshop-no-sell-price: "<red>This shop does not buy items."
+chestshop-world-not-loaded: "<red>The shop's world is not loaded."
+chestshop-chunk-not-loaded: "<red>The shop's chunk is not loaded. Please try again."
+chestshop-chest-missing: "<red>The shop's chest is missing. Shop disabled."
+chestshop-item-corrupted: "<red>This shop's item data is corrupted. Shop disabled."
+chestshop-item-mismatch: "<red>Shop contents have been tampered with. Shop disabled."
+chestshop-insufficient-stock: "<red>Not enough stock. Only <green>{stock}</green> available."
+chestshop-insufficient-funds: "<red>You don't have enough money. Need: <green>{amount}</green>."
+chestshop-insufficient-items: "<red>You don't have enough items. Need: <green>{qty}</green>."
+chestshop-owner-insufficient-funds: "<red>The shop owner doesn't have enough money."
+chestshop-withdraw-failed: "<red>Failed to withdraw funds. Please try again."
+chestshop-owner-withdraw-failed: "<red>Failed to withdraw from shop owner's account."
+chestshop-deposit-failed: "<red>Transaction error. Please contact an admin."
+chestshop-transaction-cancelled: "<red>Transaction was cancelled."
+chestshop-transaction-failed: "<red>Transaction failed. Items have been returned."
+chestshop-chest-full: "<red>The shop chest is full."
+
+# --- Transaction Success ---
+chestshop-bought: "<green>You bought <white>{qty}x {item}</white> for <white>{total}</white>."
+chestshop-sold: "<green>You sold <white>{qty}x {item}</white> for <white>{total}</white>."
+
+# --- Owner Notifications ---
+chestshop-sold-notify: "<white>{buyer} <gray>bought <white>{qty}x {item} <gray>for <green>{total}"
+chestshop-purchase-notify: "<white>{seller} <gray>sold <white>{qty}x {item} <gray>to your shop for <green>{total}"
+chestshop-stock-alert: "<yellow>Stock Alert: <gray>Your shop at <white>{location} <gray>is low on stock! (<aqua>{stock} <gray>remaining)"
+
+# --- Price / Input Validation ---
+chestshop-invalid-price: "<red>Invalid price. Use numbers only (e.g., 10.50)."
+chestshop-invalid-quantity: "<red>Invalid quantity. Enter a whole number."
+chestshop-price-out-of-range: "<red>Price must be between <green>{min}</green> and <green>{max}</green>."
+
+# --- Commands ---
+chestshop-no-shops: "<gray>You don't own any chest shops."
+chestshop-list-header: "<gold>Your Shops <gray>({count}):"
+chestshop-list-entry: "<yellow>#{id} <gray>- <white>{item} <gray>at <white>{location} <gray>[B: <green>{buy_price} <gray>| S: <yellow>{sell_price}<gray>]"
+chestshop-not-looking-at-shop: "<red>Look at a shop sign or chest to use this command."
+chestshop-not-owner: "<red>You don't own this shop."
+chestshop-invalid-id: "<red>Invalid shop ID."
+chestshop-stats-usage: "<red>Usage: /shop stats <shopId>"
+chestshop-stats-header: "<gold>Shop #{id} Statistics:"
+chestshop-stats-revenue: "<gray>Total Revenue: <green>{amount}"
+chestshop-stats-sold: "<gray>Items Sold: <white>{count}"
+chestshop-stats-transactions: "<gray>Total Transactions: <white>{count}"
+
+# ==============================
+# Chest Shop GUI Text
+# ==============================
+
+# --- Setup GUI ---
+chestshop-gui-setup-title: "<dark_green>Create Chest Shop"
+chestshop-gui-setup-item-selected: "<green>Item selected!"
+chestshop-gui-setup-item-change: "<gray>Click to change"
+chestshop-gui-setup-place-item: "<yellow>Place Item Here"
+chestshop-gui-setup-place-item-lore1: "<gray>Place the item you want to sell"
+chestshop-gui-setup-place-item-lore2: "<yellow>Click with item in hand"
+chestshop-gui-setup-buy-price: "<green>Set Buy Price"
+chestshop-gui-setup-buy-price-current: "<green>Current: {price}"
+chestshop-gui-setup-buy-price-not-set: "<red>Not set"
+chestshop-gui-setup-buy-price-desc1: "<gray>Price buyers will pay per item"
+chestshop-gui-setup-buy-price-desc2: "<yellow>Click to set"
+chestshop-gui-setup-sell-price: "<white>Set Sell Price (Optional)"
+chestshop-gui-setup-sell-price-current: "<green>Current: {price}"
+chestshop-gui-setup-sell-price-not-set: "<gray>Not set (buy-only shop)"
+chestshop-gui-setup-sell-price-desc1: "<gray>Price you'll pay per item bought"
+chestshop-gui-setup-sell-price-desc2: "<yellow>Click to set (optional)"
+chestshop-gui-setup-confirm: "<green><bold>Confirm"
+chestshop-gui-setup-confirm-lore: "<gray>Click to create the shop"
+chestshop-gui-setup-confirm-disabled: "<gray>Confirm"
+chestshop-gui-setup-need-item: "<red>- Select an item"
+chestshop-gui-setup-need-price: "<red>- Set a buy price"
+chestshop-gui-setup-cancel: "<red><bold>Cancel"
+chestshop-gui-setup-cancel-lore: "<gray>Click to cancel creation"
+
+# --- Transaction GUI ---
+chestshop-gui-transaction-title: "<dark_aqua>{owner}'s Shop"
+chestshop-gui-quantity: "<white>Quantity: {qty}"
+chestshop-gui-custom-amount: "<aqua>Custom Amount"
+chestshop-gui-custom-amount-lore: "<gray>Click to enter a custom quantity"
+chestshop-gui-buy: "<green><bold>BUY"
+chestshop-gui-buy-price: "<green>Price: {price}"
+chestshop-gui-buy-qty: "<gray>Quantity: {qty}"
+chestshop-gui-buy-click: "<yellow>Click to purchase"
+chestshop-gui-sell: "<red><bold>SELL"
+chestshop-gui-sell-receive: "<yellow>You receive: {price}"
+chestshop-gui-sell-qty: "<gray>Quantity: {qty}"
+chestshop-gui-sell-click: "<yellow>Click to sell"
+chestshop-gui-stock: "<aqua>Stock"
+chestshop-gui-stock-available: "<aqua>Available: {stock}"
+chestshop-gui-stock-empty: "<red>Available: 0"
+chestshop-gui-cancel: "<red><bold>Cancel"
+
+# --- Edit GUI ---
+chestshop-gui-edit-title: "<dark_green>Edit Shop"
+chestshop-gui-edit-item-label: "<dark_gray>Shop Item (display only)"
+chestshop-gui-edit-buy-price: "<green>Buy Price: {price}"
+chestshop-gui-edit-buy-price-desc: "<gray>The price customers pay to buy"
+chestshop-gui-edit-sell-price: "<yellow>Sell Price: {price}"
+chestshop-gui-edit-sell-price-desc: "<gray>The price customers receive for selling"
+chestshop-gui-edit-sell-price-blank: "<dark_gray>Leave blank to disable selling"
+chestshop-gui-edit-stock-alert: "<yellow>Stock Alert: {threshold}"
+chestshop-gui-edit-stock-alert-desc1: "<gray>Get notified when stock is low"
+chestshop-gui-edit-stock-alert-desc2: "<gray>Click to set threshold"
+chestshop-gui-edit-restock: "<aqua>Restock"
+chestshop-gui-edit-restock-lore1: "<gray>Amount to restock each cycle"
+chestshop-gui-edit-restock-lore2: "<gray>Click to change"
+chestshop-gui-edit-close: "<red>Close"
+chestshop-gui-click-to-change: "<yellow>Click to change"
+
+# --- Transaction Lock ---
+shop-busy: "<red>This shop is busy, please try again in a moment."
+
+# --------------------------------------------------------------------------
+# Price History GUI
+# --------------------------------------------------------------------------
+price-history-title: "&6{item} Prices"
+price-history-high-label: "&7High: &f{price}"
+price-history-avg-label: "&7Avg: &f{price}"
+price-history-low-label: "&7Low: &f{price}"
+price-history-highest-desc: "&7Highest price in range"
+price-history-average-desc: "&7Average price in range"
+price-history-lowest-desc: "&7Lowest price in range"
+price-history-date: "&7Date: &f{date}"
+price-history-avg-price: "&6Avg: &f{price}"
+price-history-sales: "&7Sales: &f{sales}"
+price-history-no-sales: "&7No sales recorded"
+price-history-no-data: "&7No data for {date}"
+price-history-trend-up: "&a\u2191 +{percent}%"
+price-history-trend-down: "&c\u2193 -{percent}%"
+price-history-trend-stable: "&6Stable"
+price-history-trend-none: "&7No price data"
+price-history-overview-title: "&6&lMarket Overview: &f{item}"
+price-history-ath: "&7All-Time High: &a{price}"
+price-history-atl: "&7All-Time Low: &a{price}"
+price-history-no-ath: "&7All-Time High: &7No data"
+price-history-no-atl: "&7All-Time Low: &7No data"
+price-history-day-avg: "&7{days}-Day Avg: &a{price}"
+price-history-back: "&eBack"
+price-history-back-desc: "&7Return to the shop"
+price-history-close: "&cClose"
+price-history-7d: "&e7 Days"
+price-history-14d: "&e14 Days"
+price-history-30d: "&e30 Days"
+price-history-range-active: "&aCurrently viewing"
+price-history-range-inactive: "&7Click to view"
+price-history-col-name: "&f{date}&7 (&a{price}&7)"
+
+# --------------------------------------------------------------------------
+# Transaction History GUI
+# --------------------------------------------------------------------------
+transaction-history-bought: "Bought"
+transaction-history-sold: "Sold"
+
+# --------------------------------------------------------------------------
+# Admin Dashboard GUI
+# --------------------------------------------------------------------------
+
+# Helper / structural keys
+dashboard-setting-current: "&7Current: &f{value}"
+dashboard-setting-adjust: "&eLeft: &f+{small} &8| &eRight: &f-{small}"
+dashboard-setting-adjust-shift: "&eShift+Left: &f+{large} &8| &eShift+Right: &f-{large}"
+dashboard-toggle-enabled: "&7Status: &aEnabled"
+dashboard-toggle-disabled: "&7Status: &cDisabled"
+dashboard-toggle-click: "&eClick to toggle"
+dashboard-cycle-click: "&eClick to cycle"
+dashboard-action-click: "&eClick to execute"
+
+# Header
+dashboard-header-title: "&6&lEconomyShop"
+dashboard-header-desc1: "&7Manage your shop settings"
+dashboard-header-desc2: "&7and modules."
+dashboard-header-version: "&fVersion: &e{version}"
+dashboard-header-items: "&fShop Items: &e{count}"
+dashboard-header-shops: "&fChest Shops: &e{count}"
+
+# Tab bar — navigation
+dashboard-tab-prev: "&e&lPrevious Page"
+dashboard-tab-prev-desc: "&7Click to see previous tabs"
+dashboard-tab-next: "&e&lMore Tabs"
+dashboard-tab-next-desc: "&7Click to see more tabs"
+dashboard-tab-close: "&c&lClose"
+dashboard-tab-close-desc: "&7Close the admin panel"
+dashboard-tab-active: "&aCurrently viewing"
+dashboard-tab-inactive: "&eClick to view"
+
+# Tab bar — tab names and descriptions
+dashboard-tab-general-name: "&6&lGeneral"
+dashboard-tab-general-desc: "&7Core shop settings"
+dashboard-tab-modules-name: "&c&lModules"
+dashboard-tab-modules-desc: "&7Toggle plugin modules"
+dashboard-tab-chestshops-name: "&a&lChest Shops"
+dashboard-tab-chestshops-desc: "&7Player shop configuration"
+dashboard-tab-security-name: "&9&lSecurity"
+dashboard-tab-security-desc: "&7Anti-exploit & rate limits"
+dashboard-tab-blacklist-name: "&4&lBlacklist"
+dashboard-tab-blacklist-desc: "&7Blocked materials"
+dashboard-tab-actions-name: "&6&lActions"
+dashboard-tab-actions-desc: "&7Maintenance & stats"
+dashboard-tab-stock-name: "&e&lStock"
+dashboard-tab-stock-desc: "&7Server shop stock defaults"
+dashboard-tab-dynprice-name: "&d&lDynamic Pricing"
+dashboard-tab-dynprice-desc: "&7Supply & demand settings"
+
+# Blacklist tab
+dashboard-bl-remove: "&7Click to remove from blacklist"
+dashboard-bl-add: "&a&l+ Add Item"
+dashboard-bl-add-desc: "&7Click to browse materials"
+
+# General tab
+dashboard-general-tax-name: "&6Sales Tax"
+dashboard-general-tax-desc1: "&7Percentage tax added on top of all"
+dashboard-general-tax-desc2: "&7shop purchases. The buyer pays the"
+dashboard-general-tax-desc3: "&7item price plus this tax."
+dashboard-general-tax-desc4: "&7Requires the Sales Tax module."
+dashboard-general-cost-name: "&6Creation Cost"
+dashboard-general-cost-desc1: "&7One-time fee charged when a player"
+dashboard-general-cost-desc2: "&7creates a new chest shop. Set to 0"
+dashboard-general-cost-desc3: "&7to allow free shop creation."
+dashboard-general-maxshops-name: "&6Max Shops/Player"
+dashboard-general-maxshops-desc1: "&7Maximum number of chest shops a"
+dashboard-general-maxshops-desc2: "&7single player can own at once."
+dashboard-general-maxshops-desc3: "&7Can be overridden per-player via"
+dashboard-general-maxshops-desc4: "&7LuckPerms meta."
+dashboard-general-sellmult-name: "&6Sell Multiplier"
+dashboard-general-sellmult-desc1: "&7Sell price = buy price x this value."
+dashboard-general-sellmult-desc2: "&71.0 = players sell at full price,"
+dashboard-general-sellmult-desc3: "&70.5 = they get half. Lower values"
+dashboard-general-sellmult-desc4: "&7act as a natural money sink."
+dashboard-general-minprice-name: "&6Min Price"
+dashboard-general-minprice-desc1: "&7The lowest price any admin or player"
+dashboard-general-minprice-desc2: "&7can set for a shop item. Prevents"
+dashboard-general-minprice-desc3: "&7items from being listed for free"
+dashboard-general-minprice-desc4: "&7or near-zero prices."
+dashboard-general-maxprice-name: "&6Max Price"
+dashboard-general-maxprice-desc1: "&7The highest price any shop item can"
+dashboard-general-maxprice-desc2: "&7be set to. Prevents absurdly high"
+dashboard-general-maxprice-desc3: "&7prices that could break the economy."
+dashboard-general-txtax-name: "&6Transaction Tax"
+dashboard-general-txtax-desc1: "&7Tax percentage deducted from chest"
+dashboard-general-txtax-desc2: "&7shop transactions. The seller receives"
+dashboard-general-txtax-desc3: "&7the sale price minus this tax."
+dashboard-general-txtax-desc4: "&7Acts as a money sink."
+dashboard-general-sensitivity-name: "&6Dynamic Sensitivity"
+dashboard-general-sensitivity-desc1: "&7Controls how strongly each trade"
+dashboard-general-sensitivity-desc2: "&7affects the dynamic price multiplier."
+dashboard-general-sensitivity-desc3: "&7Higher = prices swing faster."
+dashboard-general-sensitivity-desc4: "&7Only used with the Multiplier model."
+
+# Modules tab
+dashboard-module-adminshop-name: "&6Admin Shop"
+dashboard-module-adminshop-desc1: "&7The server-run GUI shop opened with"
+dashboard-module-adminshop-desc2: "&7/shop. Disable if you only want"
+dashboard-module-adminshop-desc3: "&7player chest shops. Chest shops,"
+dashboard-module-adminshop-desc4: "&7admin commands, and dashboard stay active."
+dashboard-module-dynprice-name: "&6Dynamic Pricing"
+dashboard-module-dynprice-desc1: "&7Prices fluctuate based on supply"
+dashboard-module-dynprice-desc2: "&7and demand. When players buy, prices"
+dashboard-module-dynprice-desc3: "&7rise. When they sell, prices drop."
+dashboard-module-dynprice-desc4: "&7Disabling locks prices to base values."
+dashboard-module-sell-name: "&6Sell to Shop"
+dashboard-module-sell-desc1: "&7Allows players to sell items back"
+dashboard-module-sell-desc2: "&7to the server shop. Disabling hides"
+dashboard-module-sell-desc3: "&7the sell button from the shop GUI."
+dashboard-module-txlog-name: "&6Transaction Log"
+dashboard-module-txlog-desc1: "&7Records every buy/sell transaction"
+dashboard-module-txlog-desc2: "&7to the database. Required for the"
+dashboard-module-txlog-desc3: "&7/shop history command. Disabling"
+dashboard-module-txlog-desc4: "&7saves storage but removes auditing."
+dashboard-module-salestax-name: "&6Sales Tax"
+dashboard-module-salestax-desc1: "&7Enables the sales tax on all shop"
+dashboard-module-salestax-desc2: "&7purchases. The tax percentage is"
+dashboard-module-salestax-desc3: "&7configured in the General tab."
+dashboard-module-salestax-desc4: "&7Disabling removes all purchase tax."
+dashboard-module-ahlink-name: "&6AuctionHouse Link"
+dashboard-module-ahlink-desc1: "&7Links EconomyShop price data with"
+dashboard-module-ahlink-desc2: "&7the AuctionHouse plugin. Shares"
+dashboard-module-ahlink-desc3: "&7transaction history and price charts"
+dashboard-module-ahlink-desc4: "&7between both systems."
+dashboard-module-pricehist-name: "&6Price History"
+dashboard-module-pricehist-desc1: "&7Tracks item prices over time and"
+dashboard-module-pricehist-desc2: "&7enables visual price charts in the"
+dashboard-module-pricehist-desc3: "&7shop GUI. Requires Transaction Log"
+dashboard-module-pricehist-desc4: "&7to be enabled for data collection."
+dashboard-module-sellcmd-name: "&6Sell Commands"
+dashboard-module-sellcmd-desc1: "&7Enables /sell and /sell all commands"
+dashboard-module-sellcmd-desc2: "&7for quick selling without opening"
+dashboard-module-sellcmd-desc3: "&7the GUI. Useful for fast gameplay."
+
+# Chest shops tab
+dashboard-cs-enabled-name: "&6Chest Shops"
+dashboard-cs-enabled-desc1: "&7Master toggle for the chest shop"
+dashboard-cs-enabled-desc2: "&7system. Disabling prevents creation"
+dashboard-cs-enabled-desc3: "&7of new shops and hides browse GUI."
+dashboard-cs-enabled-desc4: "&7Existing shops remain in database."
+dashboard-cs-display-name: "&6Display Entities"
+dashboard-cs-display-desc1: "&7Shows a floating, rotating item"
+dashboard-cs-display-desc2: "&7above each chest shop. Makes shops"
+dashboard-cs-display-desc3: "&7easier to spot in the world."
+dashboard-cs-display-desc4: "&7Toggling respawns/despawns all."
+dashboard-cs-rotation-name: "&6Rotation Speed"
+dashboard-cs-rotation-desc1: "&7Ticks per rotation step for the"
+dashboard-cs-rotation-desc2: "&7floating display item. Higher values"
+dashboard-cs-rotation-desc3: "&7make it spin slower. 40 is default."
+dashboard-cs-rotation-desc4: "&720 ticks = 1 second in Minecraft."
+dashboard-cs-freeitems-name: "&6Allow Free Items"
+dashboard-cs-freeitems-desc1: "&7Allows players to list items with"
+dashboard-cs-freeitems-desc2: "&7a price of $0 in their chest shop."
+dashboard-cs-freeitems-desc3: "&7Useful for giveaway shops."
+dashboard-cs-doublechest-name: "&6Allow Double Chests"
+dashboard-cs-doublechest-desc1: "&7Allows chest shops to be placed"
+dashboard-cs-doublechest-desc2: "&7on double chests, giving shop"
+dashboard-cs-doublechest-desc3: "&7owners more stock capacity."
+dashboard-cs-stockalert-name: "&6Stock Alert Threshold"
+dashboard-cs-stockalert-desc1: "&7Default threshold for low-stock"
+dashboard-cs-stockalert-desc2: "&7warnings. Shop owners are notified"
+dashboard-cs-stockalert-desc3: "&7when stock drops below this."
+dashboard-cs-height-name: "&6Display Height"
+dashboard-cs-height-desc1: "&7Height offset (in blocks) of the"
+dashboard-cs-height-desc2: "&7floating display entity above the"
+dashboard-cs-height-desc3: "&7chest. Adjust if items clip into"
+dashboard-cs-height-desc4: "&7blocks above the shop."
+
+# Security tab
+dashboard-sec-click-name: "&6Click Cooldown"
+dashboard-sec-click-desc1: "&7Minimum milliseconds between GUI"
+dashboard-sec-click-desc2: "&7click actions per player. Prevents"
+dashboard-sec-click-desc3: "&7rapid click-spam exploits."
+dashboard-sec-click-desc4: "&7200ms is a safe default."
+dashboard-sec-cmd-name: "&6Command Cooldown"
+dashboard-sec-cmd-desc1: "&7Minimum milliseconds between shop"
+dashboard-sec-cmd-desc2: "&7command executions per player."
+dashboard-sec-cmd-desc3: "&7Prevents command spam and automated"
+dashboard-sec-cmd-desc4: "&7abuse. 500ms is recommended."
+dashboard-sec-lock-name: "&6Lock Hold Time"
+dashboard-sec-lock-desc1: "&7Maximum seconds a transaction lock"
+dashboard-sec-lock-desc2: "&7can be held before auto-release."
+dashboard-sec-lock-desc3: "&7Prevents deadlocks if the server"
+dashboard-sec-lock-desc4: "&7hangs during a transaction."
+dashboard-sec-creative-name: "&6Block Creative"
+dashboard-sec-creative-desc1: "&7Prevents players in Creative mode"
+dashboard-sec-creative-desc2: "&7from using the shop. Stops admins"
+dashboard-sec-creative-desc3: "&7from accidentally buying/selling"
+dashboard-sec-creative-desc4: "&7while building."
+
+# Actions tab
+dashboard-act-reload-name: "&6&lReload Config"
+dashboard-act-reload-desc1: "&7Reloads config.yml, language files,"
+dashboard-act-reload-desc2: "&7and GUI configurations from disk."
+dashboard-act-reload-desc3: "&7Does not restart database connections."
+dashboard-act-stats-name: "&6&lView Stats"
+dashboard-act-stats-desc1: "&7Shows today's revenue, transaction"
+dashboard-act-stats-desc2: "&7count, active shops, and top sellers"
+dashboard-act-stats-desc3: "&7in chat."
+dashboard-act-purgetx-name: "&c&lPurge Transactions"
+dashboard-act-purgetx-desc1: "&7Deletes transaction log entries older"
+dashboard-act-purgetx-desc2: "&7than 90 days from the database."
+dashboard-act-purgetx-desc3: "&7Frees storage space."
+dashboard-act-purgeph-name: "&c&lPurge Price History"
+dashboard-act-purgeph-desc1: "&7Deletes price history entries older"
+dashboard-act-purgeph-desc2: "&7than 90 days. Auto-purge interval"
+dashboard-act-purgeph-desc3: "&7is set in config.yml."
+
+# Stock tab
+dashboard-stock-mode-name: "&6Default Stock Mode"
+dashboard-stock-mode-desc1: "&7Default stock behavior for newly"
+dashboard-stock-mode-desc2: "&7created shop items. Infinite means"
+dashboard-stock-mode-desc3: "&7unlimited stock; Limited means items"
+dashboard-stock-mode-desc4: "&7restock on a timer."
+dashboard-stock-amount-name: "&6Restock Amount"
+dashboard-stock-amount-desc1: "&7Number of items added back to stock"
+dashboard-stock-amount-desc2: "&7each restock cycle. Only applies to"
+dashboard-stock-amount-desc3: "&7items with Limited stock mode."
+dashboard-stock-max-name: "&6Max Stock"
+dashboard-stock-max-desc1: "&7Default maximum stock capacity for"
+dashboard-stock-max-desc2: "&7Limited stock items. Items will not"
+dashboard-stock-max-desc3: "&7restock above this amount."
+dashboard-stock-interval-name: "&6Restock Interval"
+dashboard-stock-interval-desc1: "&7Seconds between each restock cycle"
+dashboard-stock-interval-desc2: "&7for Limited stock items. 3600 = one"
+dashboard-stock-interval-desc3: "&7hour. Lower values keep items in"
+dashboard-stock-interval-desc4: "&7stock more consistently."
+dashboard-stock-check-name: "&6Check Interval"
+dashboard-stock-check-desc1: "&7How often (in seconds) the plugin"
+dashboard-stock-check-desc2: "&7checks which items need restocking."
+dashboard-stock-check-desc3: "&7Lower = more responsive but slightly"
+dashboard-stock-check-desc4: "&7more CPU usage. 60s is recommended."
+
+# Dynamic Pricing tab
+dashboard-dp-model-name: "&6Pricing Model"
+dashboard-dp-model-desc1: "&7Pricing algorithm to use."
+dashboard-dp-model-desc2: "&fStock-Based&7: price = median/current"
+dashboard-dp-model-desc3: "&7stock x base. &aRecommended."
+dashboard-dp-model-desc4: "&fMultiplier&7: legacy decay system."
+dashboard-dp-median-name: "&6Median Stock"
+dashboard-dp-median-desc1: "&7The equilibrium stock level. When"
+dashboard-dp-median-desc2: "&7current stock equals median, price"
+dashboard-dp-median-desc3: "&7equals base price. Below median ="
+dashboard-dp-median-desc4: "&7higher price, above = lower."
+dashboard-dp-spread-name: "&6Buy/Sell Spread"
+dashboard-dp-spread-desc1: "&7Buy/sell price spread. Sell price ="
+dashboard-dp-spread-desc2: "&7buy price x this value. 0.85 means"
+dashboard-dp-spread-desc3: "&7a 15% spread. Set to 1.0 to let"
+dashboard-dp-spread-desc4: "&7players sell at full buy price."
+dashboard-dp-minstock-name: "&6Min Stock"
+dashboard-dp-minstock-desc1: "&7Minimum stock level for price calc."
+dashboard-dp-minstock-desc2: "&7Prevents prices from going infinitely"
+dashboard-dp-minstock-desc3: "&7high. At min 10 with median 500,"
+dashboard-dp-minstock-desc4: "&7max price = 50x base."
+dashboard-dp-maxstock-name: "&6Max Stock"
+dashboard-dp-maxstock-desc1: "&7Maximum stock level for price calc."
+dashboard-dp-maxstock-desc2: "&7Prevents prices from dropping to"
+dashboard-dp-maxstock-desc3: "&7near-zero. Caps how cheap items"
+dashboard-dp-maxstock-desc4: "&7can become from oversupply."
+dashboard-dp-rebalance-name: "&6Rebalance Interval"
+dashboard-dp-rebalance-desc1: "&7Minutes between stock rebalancing."
+dashboard-dp-rebalance-desc2: "&7Stock slowly drifts back toward the"
+dashboard-dp-rebalance-desc3: "&7median over time. Lower intervals"
+dashboard-dp-rebalance-desc4: "&7mean faster price recovery."
+dashboard-dp-rate-name: "&6Rebalance Rate"
+dashboard-dp-rate-desc1: "&7Percentage of the gap between"
+dashboard-dp-rate-desc2: "&7current stock and median that is"
+dashboard-dp-rate-desc3: "&7closed each rebalance. 0.05 = 5%"
+dashboard-dp-rate-desc4: "&7drift per interval."
+dashboard-dp-minmult-name: "&6Min Multiplier"
+dashboard-dp-minmult-desc1: "&7Minimum price multiplier floor."
+dashboard-dp-minmult-desc2: "&7Prevents prices from dropping below"
+dashboard-dp-minmult-desc3: "&7this fraction of the base price."
+dashboard-dp-minmult-desc4: "&70.5 = prices can't go below 50%."
+dashboard-dp-maxmult-name: "&6Max Multiplier"
+dashboard-dp-maxmult-desc1: "&7Maximum price multiplier ceiling."
+dashboard-dp-maxmult-desc2: "&7Prevents prices from exceeding this"
+dashboard-dp-maxmult-desc3: "&7multiple of the base price."
+dashboard-dp-maxmult-desc4: "&73.0 = prices cap at 300%."
+dashboard-dp-protect-name: "&6Protect Last Item"
+dashboard-dp-protect-desc1: "&7Prevents buying the last item in"
+dashboard-dp-protect-desc2: "&7stock for Limited stock shops."
+dashboard-dp-protect-desc3: "&7Keeps at least 1 item so the price"
+dashboard-dp-protect-desc4: "&7curve doesn't go to infinity."

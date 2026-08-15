@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&cScythe Sweep'
+description:
+- '&7Chance to sweep attack'
+- '&7all nearby enemies.'
+skillType: HOES
+bonusType: PROC
+unlockTier: 3
+baseValue: 0.5
+scalingPerLevel: 0.01
+procChance: 0.3
+displayMaterial: DIAMOND_HOE
+loreTemplates:
+- '&7Chance: &f$procChance%'
+- '&7Sweep Damage: &f$sweepPercent% of hit'
+- '&7Radius: &f$radius blocks'
+- '&7AoE cleave attack'
+formattedBonusTemplate: $sweepPercent% AoE Sweep

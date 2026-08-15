@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&6Duelist'
+description:
+- '&7Deal bonus damage when fighting'
+- '&7a single enemy (no others nearby).'
+skillType: SWORDS
+bonusType: CONDITIONAL
+unlockTier: 3
+baseValue: 0.25
+scalingPerLevel: 0.005
+displayMaterial: GOLDEN_SWORD
+loreTemplates:
+- '&7Damage Bonus: &f+$value%'
+- '&7Condition: No other elites within 10 blocks'
+- '&7Active only in 1v1 situations'
+formattedBonusTemplate: +$value% 1v1 Damage

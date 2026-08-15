@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&7Suppressing Fire'
+description:
+- '&7Chance to weaken and slow'
+- '&7enemies with your bolts.'
+skillType: CROSSBOWS
+bonusType: PROC
+unlockTier: 3
+baseValue: 1.0
+scalingPerLevel: 0.02
+procChance: 0.2
+displayMaterial: COBWEB
+loreTemplates:
+- '&7Proc Chance: &f$procChance%'
+- '&7Applies: &8Weakness &7and &bSlowness'
+- '&7Duration: &f4 seconds'
+formattedBonusTemplate: $procChance% suppress chance

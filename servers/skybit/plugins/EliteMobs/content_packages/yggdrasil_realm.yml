@@ -1,0 +1,36 @@
+isEnabled: true
+name: '&2[Dynamic] &5Yggdrasil'
+customInfo:
+- '&5A mythic Norse dungeon at the roots of Yggdrasil!'
+- '&5Credits: MagmaGuy, Dali, Frost'
+dungeonSizeCategory: REALM
+worldName: em_yggdrasil
+environment: NORMAL
+protect: true
+playerInfo: |-
+  Difficulty: &6Hard
+  $bossCount bosses, from level $lowestTier to $highestTier
+  &5A mythic journey through Yggdrasil''s roots
+  &5for brave warriors seeking glory!
+regionEnterMessage: '&8[EM] &5Yggdrasil awaits!'
+regionLeaveMessage: '&8[EM] &5You have left Yggdrasil'
+startLocation: em_yggdrasil,-322.5,-22.0,101.5,141.5,0.0
+teleportLocation: em_yggdrasil,-321.5,-22.0,102.5,141.5,0.0
+dungeonObjectives:
+- filename=em_yggdrasil_final_boss_loki_p1.yml
+contentType: DYNAMIC_DUNGEON
+dungeonConfigFolderName: em_yggdrasil
+contentLevel: -1
+difficulties:
+- name: normal
+  id: 0
+  levelSync: '+5'
+- name: hard
+  id: 1
+  levelSync: '+0'
+- name: mythic
+  id: 2
+  levelSync: '-5'
+setupMenuDescription:
+- '&2A dynamic Realm!'
+dungeonLockoutMinutes: 4320

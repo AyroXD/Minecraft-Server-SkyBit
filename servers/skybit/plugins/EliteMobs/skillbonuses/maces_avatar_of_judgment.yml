@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&e&lAvatar of Judgment'
+description:
+- '&7Become an avatar of divine wrath.'
+- '&7Massive damage boost for 10s. 90s CD.'
+skillType: MACES
+bonusType: COOLDOWN
+unlockTier: 4
+baseValue: 2.0
+scalingPerLevel: 0.03
+cooldownSeconds: 90.0
+displayMaterial: NETHER_STAR
+loreTemplates:
+- '&7Damage Boost: &f+$damageBoost%'
+- '&7Duration: &f10 seconds'
+- '&7Cooldown: &f$cooldowns'
+formattedBonusTemplate: '+$damageBoost% for 10s (CD: $cooldowns)'

@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&cDeep Wound'
+description:
+- '&7Attacks cause heavy bleeding'
+- '&7that deals damage over time.'
+skillType: AXES
+bonusType: PROC
+unlockTier: 1
+baseValue: 3.0
+scalingPerLevel: 0.08
+procChance: 0.12
+displayMaterial: IRON_AXE
+loreTemplates:
+- '&7Proc Chance: &f$procChance%'
+- '&7Bleed: &f$bleedPercent% of hit/tick'
+- '&7Total DoT: &f$totalPercent% over 4s'
+formattedBonusTemplate: $totalPercent% bleed over 4s

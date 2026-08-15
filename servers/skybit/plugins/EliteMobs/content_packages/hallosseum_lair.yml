@@ -1,0 +1,35 @@
+isEnabled: true
+name: '&2[Dynamic] &cThe Hallosseum'
+customInfo:
+- '&fThe 2020 spooky halloween encounter!'
+- '&6Credits: MagmaGuy & 69OzCanOfBepis'
+dungeonSizeCategory: LAIR
+worldName: em_hallosseum
+environment: NETHER
+protect: true
+playerInfo: |-
+  Difficulty: &chard
+  $bossCount level $lowestTier Big Boss!
+  &6A fun Halloween challenge!
+regionEnterMessage: '&8[EM] &4Trick or treat! &8Your soul is mine!'
+regionLeaveMessage: '&8[EM] &4You''ve escaped with your soul intact.'
+startLocation: em_hallosseum,62.5,21.2,85.5,18,0
+teleportLocation: em_hallosseum,66.5,22.2,77.5,20,0
+dungeonObjectives:
+- filename=halloween_event_boss_p1.yml
+contentType: DYNAMIC_DUNGEON
+dungeonConfigFolderName: the_hallosseum
+contentLevel: -1
+difficulties:
+- name: normal
+  id: 0
+  levelSync: '+5'
+- name: hard
+  id: 1
+  levelSync: '+0'
+- name: mythic
+  id: 2
+  levelSync: '-5'
+setupMenuDescription:
+- '&2A dynamic Lair!'
+dungeonLockoutMinutes: 4320

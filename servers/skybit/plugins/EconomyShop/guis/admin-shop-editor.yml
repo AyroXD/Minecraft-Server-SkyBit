@@ -1,0 +1,41 @@
+# Admin Shop Editor GUI Configuration
+size: 54
+title: "&6&lShop Editor"
+listing-slots: "0-44"
+
+filler:
+  enabled: true
+  material: BLACK_STAINED_GLASS_PANE
+  name: " "
+  slots: "45-53"
+
+items:
+  prev-page:
+    slot: 45
+    material: ARROW
+    name: "&ePrevious Page"
+    lore:
+      - "&7Go to the previous page."
+
+  create-category:
+    slot: 49
+    material: EMERALD
+    name: "&aCreate Category"
+    lore:
+      - "&7Click to create a new"
+      - "&7shop category."
+
+  next-page:
+    slot: 53
+    material: ARROW
+    name: "&eNext Page"
+    lore:
+      - "&7Go to the next page."
+
+  info:
+    slot: 47
+    material: BOOK
+    name: "&6Help"
+    lore:
+      - "&7Left-click a category to edit."
+      - "&7Shift-click to delete."

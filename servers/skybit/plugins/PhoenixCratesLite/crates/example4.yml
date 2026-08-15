@@ -1,0 +1,129 @@
+internal-storage:
+  scope-id: f3053ded9de246a9a5c1d67fd5726bd9
+  items: {}
+enabled: true
+identifier: example4
+item:
+  material: CHEST
+  display-name: '&#CCFF00Example Crate'
+  lore:
+  - '&7This is an example crate, you can edit it as you wish!'
+  - ''
+  - '&eUse this crate to get awesome rewards!'
+  amount: 1
+display-name: '&#CCFF00Example #4'
+block-material: CHEST
+engine: VANILLA_BLOCK
+open-cost:
+  engine: VAULT
+  amount: 0.0
+  currency: ''
+open-cooldown: 0
+simultaneous-openings: true
+preview-item: false
+permission:
+  required: false
+  permission: phoenixcrates.crate.example4
+idle-effects:
+- SQUARE;{REDSTONE;#0000ff;0.0;3.0;0.0;0.0;0.1;2}
+- DEFAULT;{CRIT;#ffffff;0.0;0.0;0.0;1.0;0.1;2}
+- SQUARE;{DRIP_WATER;#ffffff;0.0;3.0;0.0;0.0;0.0;2}
+opening-animation:
+  pre-open: CRACK
+  open: BALL
+  display:
+    id: DEFAULT
+    properties:
+      color: '#404040'
+hologram:
+  type: BUILTIN
+  offset: 1.0
+  lines:
+  - '&e&l%name%'
+  - ''
+  - '&aʀɪɢʜᴛ &7ᴄʟɪᴄᴋ ᴛᴏ ᴏᴘᴇɴ'
+  - '&cʟᴇꜰᴛ &7ᴄʟɪᴄᴋ ᴛᴏ ᴘʀᴇᴠɪᴇᴡ'
+menus:
+  rewards: default_rewards_preview
+  select-reward: default_select_reward
+  rerolls: default_crate_reroll
+  preview-actions: []
+key-required: true
+linked-keys-ids:
+- example4
+allow-open-command: false
+broadcast:
+  message: '&ePlayer &a%player% &ejust got &6"%reward%" &ereward from the crate &6%crate%&e!'
+max-win-rewards: 0
+rewards-mode: RANDOM
+rewards:
+  '0':
+    enabled: true
+    identifier: reward_1786726197027
+    display-item:
+      material: DIRT
+      display-name: '&7Dirt'
+      amount: 1
+    win-items:
+      '0':
+        material: DIRT
+        amount: 1
+    win-commands: []
+    broadcast: false
+    weight: 100.0
+    win-limits: -1
+    global-win-limit: -1
+    cooldowns:
+      win-limit-cooldown: 0
+      global-win-limit-cooldown: 0
+      time-limited-cooldown: 0
+      time-limited-expiry: 0
+    guaranteed-win: -1
+    required-keys: 1
+    allow-win-message: false
+    notification-type: CHAT
+    share-players-online: false
+    restricted-permissions: []
+    required-permissions: []
+    max-win:
+      item-amount: -1
+      command-amount: -1
+    alternative-reward:
+      enabled: false
+      reward:
+        item:
+          material: DIAMOND_PICKAXE
+          display-name: '&aAlternative Item'
+          amount: 1
+        virtual: false
+        broadcast: false
+        allow-win-message: true
+        share-players-online: false
+        commands: []
+guaranteed-reward-type: DISABLED
+reroll:
+  enabled: false
+  free-rolls: 0
+  groups:
+    '0':
+      namespace: common
+      rerolls: 3
+    '1':
+      namespace: rare
+      rerolls: 5
+    '2':
+      namespace: legendary
+      rerolls: 10
+  replay-animation: false
+  skip-same-reward: false
+extra-settings:
+  animation:
+    display-item-position:
+      x: 0.0
+      y: 2.0
+      z: 0.0
+    display-item-name-position:
+      x: 0.0
+      y: 0.3
+      z: 0.0
+    skip-on-esc: false

@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&cRetaliation'
+description:
+- '&7Chance to reflect damage'
+- '&7back to attackers.'
+skillType: ARMOR
+bonusType: PROC
+unlockTier: 2
+baseValue: 1.0
+scalingPerLevel: 0.02
+procChance: 0.25
+displayMaterial: CACTUS
+loreTemplates:
+- '&7Chance to reflect damage back to attackers'
+- '&7Proc Chance: $procChance%'
+- '&7Reflect Damage: $reflectDamage%'
+formattedBonusTemplate: $procChance% chance to reflect $reflectDamage% damage

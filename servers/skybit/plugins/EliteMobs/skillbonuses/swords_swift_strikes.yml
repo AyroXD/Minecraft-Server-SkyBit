@@ -1,0 +1,14 @@
+isEnabled: true
+name: '&bSwift Strikes'
+description:
+- '&7Move faster while wielding a sword.'
+skillType: SWORDS
+bonusType: PASSIVE
+unlockTier: 1
+baseValue: 0.05
+scalingPerLevel: 0.001
+displayMaterial: FEATHER
+loreTemplates:
+- '&7Movement Speed: &f+$value%'
+- '&7Active while holding a sword'
+formattedBonusTemplate: +$value% Movement Speed

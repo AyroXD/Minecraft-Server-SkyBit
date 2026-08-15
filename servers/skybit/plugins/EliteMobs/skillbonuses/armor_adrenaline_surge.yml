@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&cAdrenaline Surge'
+description:
+- '&7Gain combat buffs when'
+- '&7health drops below 30%. 45s CD.'
+skillType: ARMOR
+bonusType: COOLDOWN
+unlockTier: 2
+baseValue: 1.0
+scalingPerLevel: 0.02
+cooldownSeconds: 45.0
+displayMaterial: BLAZE_POWDER
+loreTemplates:
+- '&7Gain buffs when health drops below 30%'
+- '&7Buffs: Speed, Strength, Resistance'
+- '&7Duration: $duration'
+- '&7Cooldown: $cooldown'
+formattedBonusTemplate: 'Buffs on low health (CD: $cooldown)'

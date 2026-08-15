@@ -1,0 +1,35 @@
+isEnabled: true
+name: '&2[Dynamic] &3The Nether Bell Sanctum'
+customInfo:
+- '&fVenture into the deepest part of the Nether!'
+- '&6Credits: Dali_, MagmaGuy, Frostcone'
+dungeonSizeCategory: SANCTUM
+worldName: em_id_the_nether_bell
+environment: NORMAL
+protect: true
+playerInfo: |-
+  &aDynamic Sanctum
+  $bossCount boss encounters
+  &cVenture into the deepest
+  &cpart of the Nether!
+regionEnterMessage: '&bNo being should be this deep in the Nether...'
+regionLeaveMessage: '&bYou have left The Nether Bell!'
+startLocation: em_id_the_nether_bell,184.5,69,-192.5,43,0
+teleportLocation: em_id_the_nether_bell,231.5,87,-219.5,44,0
+dungeonObjectives:
+- filename=em_id_the_nether_bell_boss_void_bell_p1.yml
+contentType: DYNAMIC_DUNGEON
+dungeonConfigFolderName: em_id_the_nether_bell
+contentLevel: -1
+difficulties:
+- name: normal
+  id: 0
+  levelSync: '+5'
+- name: hard
+  id: 1
+  levelSync: '+0'
+- name: mythic
+  id: 2
+  levelSync: '-5'
+setupMenuDescription: []
+dungeonLockoutMinutes: 4320

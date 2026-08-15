@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&4Devastating Blow'
+description:
+- '&7Chance to deal massive'
+- '&7bonus damage on hit.'
+skillType: AXES
+bonusType: PROC
+unlockTier: 1
+baseValue: 2.0
+scalingPerLevel: 0.05
+procChance: 0.08
+displayMaterial: NETHERITE_AXE
+loreTemplates:
+- '&7Proc Chance: &f$procChance%'
+- '&7Damage: &f$damageMultiplierx'
+formattedBonusTemplate: $damageMultiplierx Damage (proc)

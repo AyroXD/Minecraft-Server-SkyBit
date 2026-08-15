@@ -1,0 +1,277 @@
+displays:
+  highest_price:
+    '1':
+      glass: WHITE_STAINED_GLASS
+      base: CHISELED_TUFF # base: "RESPAWN_ANCHOR:4" #Supports any block with a data value
+      sign: DARK_OAK_WALL_SIGN
+    '2':
+      glass: WHITE_STAINED_GLASS
+      base: CHISELED_TUFF
+      sign: DARK_OAK_WALL_SIGN
+    default:
+      glass: WHITE_STAINED_GLASS
+      base: CHISELED_TUFF
+      sign: DARK_OAK_WALL_SIGN
+  ending_soon:
+    '1':
+      glass: WHITE_STAINED_GLASS
+      base: CHISELED_TUFF
+      sign: DARK_OAK_WALL_SIGN
+    '2':
+      glass: WHITE_STAINED_GLASS
+      base: CHISELED_TUFF
+      sign: DARK_OAK_WALL_SIGN
+    default:
+      glass: WHITE_STAINED_GLASS
+      base: CHISELED_TUFF
+      sign: DARK_OAK_WALL_SIGN
+ah-layout:
+- '# # # # # # # # #'
+- '# . . . . . . . #'
+- '# . . . . . . . #'
+- '# . . . . . . . #'
+- '# # # # # # # # #'
+- 's o # p r n # f m'
+my-ah-layout:
+- '# # # # # # # # #'
+- '# . . . . . . . #'
+- '# . . . . . . . #'
+- '# . . . . . . . #'
+- '# # # # # # # # #'
+- 'b o # p r n # d i'
+'#':
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:black_stained_glass_pane
+  count: 1
+  components:
+    minecraft:tooltip_display: '{hide_tooltip:1b}'
+  schema_version: 1
+s:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:oak_sign
+  count: 1
+  schema_version: 1
+active-search:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:spruce_sign
+  count: 1
+  schema_version: 1
+o:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:hopper
+  count: 1
+  schema_version: 1
+p:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:arrow
+  count: 1
+  schema_version: 1
+r:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:nether_star
+  count: 1
+  schema_version: 1
+n:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:arrow
+  count: 1
+  schema_version: 1
+m:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:ender_chest
+  count: 1
+  schema_version: 1
+b:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:arrow
+  count: 1
+  schema_version: 1
+i:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:paper
+  count: 1
+  schema_version: 1
+f:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:powered_rail
+  count: 1
+  schema_version: 1
+d:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:golden_carrot
+  count: 1
+  schema_version: 1
+bin-filter-bin:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:gold_ingot
+  count: 1
+  schema_version: 1
+bin-filter-auctions:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:gold_block
+  count: 1
+  schema_version: 1
+locked-slot:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:barrier
+  count: 1
+  schema_version: 1
+back-to-my-auctions:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:arrow
+  count: 1
+  schema_version: 1
+anvil-search-paper:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:paper
+  count: 1
+  schema_version: 1
+cancel:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:red_banner
+  count: 1
+  schema_version: 1
+collect-expired-item:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:red_dye
+  count: 1
+  schema_version: 1
+cancel-auction:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:red_concrete
+  count: 1
+  schema_version: 1
+command-block-info:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:structure_block
+  count: 1
+  schema_version: 1
+admin-cancel-auction:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:red_concrete
+  count: 1
+  schema_version: 1
+admin-expire-auction:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:red_dye
+  count: 1
+  schema_version: 1
+confirm:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:green_banner
+  count: 1
+  schema_version: 1
+choose-item-buy-amount:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:oak_hanging_sign
+  count: 1
+  schema_version: 1
+dirt:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:dirt
+  count: 1
+  schema_version: 1
+turtle-scute-confirm:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:turtle_scute
+  count: 1
+  schema_version: 1
+cannot-afford:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:armadillo_scute
+  count: 1
+  schema_version: 1
+collect-sold-item:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:diamond
+  count: 1
+  schema_version: 1
+bid-history:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:filled_map
+  count: 1
+  schema_version: 1
+bid-explanation:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:gold_ingot
+  count: 1
+  schema_version: 1
+submit-bid:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:gold_nugget
+  count: 1
+  schema_version: 1
+cannot-afford-bid:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:armadillo_scute
+  count: 1
+  schema_version: 1
+top-bid:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:gold_block
+  count: 1
+  schema_version: 1
+collect-auction:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:gold_block
+  count: 1
+  schema_version: 1
+collect-coins:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:gold_nugget
+  count: 1
+  schema_version: 1
+own-bid:
+  ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:poisonous_potato
+  count: 1
+  schema_version: 1
+sounds:
+  click: ui.stonecutter.select_recipe
+  open-enderchest: block.ender_chest.open
+  close-enderchest: block.ender_chest.close
+  break-wood: block.wood.break
+  experience: entity.experience_orb.pickup
+  villager-deny: entity.villager.no
+  open-shulker: block.shulker_box.open
+  close-shulker: block.shulker_box.close
+  npc-click: ui.stonecutter.select_recipe
+  open-bundle: item.bundle.drop_contents
+  close-bundle: item.bundle.remove_one

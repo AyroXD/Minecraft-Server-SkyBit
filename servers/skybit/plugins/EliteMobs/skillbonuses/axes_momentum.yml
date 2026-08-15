@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&6Momentum'
+description:
+- '&7Consecutive hits increase'
+- '&7damage. Stacks up to 5 times.'
+skillType: AXES
+bonusType: STACKING
+unlockTier: 3
+baseValue: 0.08
+scalingPerLevel: 0.002
+displayMaterial: RABBIT_FOOT
+loreTemplates:
+- '&7Max Stacks: &f$maxStacks'
+- '&7Damage per Stack: &f+$bonusPerStack%'
+- '&7Max Bonus: &f+$maxBonus%'
+formattedBonusTemplate: +$maxBonus% Max Damage

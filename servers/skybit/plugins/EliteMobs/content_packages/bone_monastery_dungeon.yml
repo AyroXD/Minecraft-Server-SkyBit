@@ -1,0 +1,36 @@
+isEnabled: true
+name: '&2[Dynamic] &cThe Bone Monastery'
+customInfo:
+- '&fSpooky skeletons await.'
+- '&6Credits: MagmaGuy, Matevagyok, Frostcone, 69OzCanOfBepis'
+dungeonSizeCategory: DUNGEON
+worldName: em_id_bone_monastery
+environment: NORMAL
+protect: true
+playerInfo: |-
+  &aDynamic Dungeon
+  $bossCount boss encounters
+  &cAn ancient monastery overrun
+  &cby the undead!
+regionEnterMessage: '&bWelcome to the bone monastery! Mind the skeletons.'
+regionLeaveMessage: '&bYou have left the bone monastery!'
+startLocation: em_id_bone_monastery,-171.5,5.0,54.5,-174.499999,18.499996
+teleportLocation: em_id_bone_monastery,-249.5,18.0,109.5,-174.499999,18.499996
+dungeonObjectives:
+- filename=bone_monastery_bone_saint_himiko_p1.yml
+contentType: DYNAMIC_DUNGEON
+dungeonConfigFolderName: the_bone_monastery
+contentLevel: -1
+difficulties:
+- name: normal
+  id: 0
+  levelSync: '+5'
+- name: hard
+  id: 1
+  levelSync: '+0'
+- name: mythic
+  id: 2
+  levelSync: '-5'
+setupMenuDescription:
+- '&2A dynamic Dungeon!'
+dungeonLockoutMinutes: 4320

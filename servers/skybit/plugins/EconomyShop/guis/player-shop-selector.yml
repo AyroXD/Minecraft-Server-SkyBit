@@ -1,0 +1,24 @@
+# Player Shop Selector GUI Configuration
+size: 27
+listing-slots: "0-17"
+
+filler:
+  enabled: true
+  material: BLACK_STAINED_GLASS_PANE
+  name: " "
+  slots: "18-26"
+
+items:
+  back:
+    slot: 18
+    material: SPECTRAL_ARROW
+    name: "&eBack"
+    lore:
+      - "&7Return to player shops."
+
+  create-shop:
+    slot: 22
+    material: EMERALD
+    name: "&aCreate New Shop"
+    lore:
+      - "&7Set up another player shop."

@@ -1,0 +1,69 @@
+# SkyBit Lobby server selector
+gui:
+  title: "&0☁ &b&lSKYBIT &8• &fVYBER SERVER"
+  size: 36
+
+selector:
+  material: RECOVERY_COMPASS
+  name: "&b&l☁ SKYBIT &f• &7Výber servera"
+  lore:
+    - "&8Rýchla navigácia"
+    - ""
+    - "&7Klikni a vyber si herný režim."
+  slot: 4
+
+give-on-every-join: true
+world-specific:
+  enabled: true
+  worlds:
+    - "world"
+lock-selector-item: true
+
+auto-refresh:
+  enabled: true
+  interval: 15
+
+decoration:
+  enabled: true
+  alternate-colors: true
+  use-pattern: true
+  pattern:
+    - "111111111"
+    - "122222221"
+    - "122222221"
+    - "111111111"
+  pattern-items:
+    "1":
+      material: CYAN_STAINED_GLASS_PANE
+      name: " "
+    "2":
+      material: PURPLE_STAINED_GLASS_PANE
+      name: " "
+
+items:
+  skybit:
+    slot: 12
+    material: RESPAWN_ANCHOR
+    name: "&b&l⚙ SKYBIT &fSURVIVAL"
+    lore:
+      - "&8Technologický survival"
+      - ""
+      - "&fSlimefun &8• &fEkonomika &8• &fJobs"
+      - "&fQuesty &8• &fClaimy &8• &fEventy"
+      - ""
+      - "&7Online  &a● &f%bungee_skybit%&8/100"
+      - "&b▶ Klikni pre pripojenie"
+    command: "server:skybit"
+  skyblock:
+    slot: 14
+    material: END_STONE
+    name: "&d&l☁ SKYBIT &fSKYBLOCK"
+    lore:
+      - "&8Ostrovný progres"
+      - ""
+      - "&fOstrovy &8• &fEkonomika &8• &fVýzvy"
+      - "&fTímy &8• &fRebríčky &8• &fTrading"
+      - ""
+      - "&7Online  &a● &f%bungee_skyblock%&8/100"
+      - "&d▶ Klikni pre pripojenie"
+    command: "server:skyblock"

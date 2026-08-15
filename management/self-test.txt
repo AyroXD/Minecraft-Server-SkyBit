@@ -1,0 +1,8 @@
+﻿SkyBit Management self-test
+Root: C:\Users\Swyzo\Desktop\Minecraft Server SkyBit
+Java: OK
+Config ZIP: OK
+lobby: directory=OK, jar=OK, port=25566, pid=10440
+skybit: directory=OK, jar=OK, port=25567, pid=23320
+skyblock: directory=OK, jar=OK, port=25568, pid=17812
+velocity: directory=OK, jar=OK, port=25565, pid=20736

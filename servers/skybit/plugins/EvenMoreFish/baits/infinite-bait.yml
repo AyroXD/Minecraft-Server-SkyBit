@@ -1,0 +1,16 @@
+id: infiniteBait
+disabled: false
+silent: false
+
+item:
+  material: ENDER_PEARL
+  displayname: <light_purple>Infinite Bait
+  glowing: true
+rarity-modifiers:
+  Legendary: "*2"
+catch-weight: 1
+application-weight: 1
+max-baits: 1
+infinite: true
+# This will disable the bait-use message to be send to the player, this is useful for baits that are infinite. This can be used for every bait
+disable-use-alert: true

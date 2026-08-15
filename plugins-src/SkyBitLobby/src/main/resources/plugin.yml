@@ -1,0 +1,11 @@
+name: SkyBitLobby
+version: '${version}'
+main: sk.skybit.lobby.SkyBitLobby
+api-version: '1.21'
+authors: [SkyBit]
+description: Protected professional lobby, welcome display and network navigation for SkyBit.
+depend: [Citizens]
+softdepend: [PlaceholderAPI, Vault, LuckPerms]
+permissions:
+  skybitlobby.build:
+    default: op

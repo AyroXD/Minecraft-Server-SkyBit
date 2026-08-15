@@ -1,0 +1,38 @@
+isEnabled: true
+name: '&2[Dynamic] &cThe Beast''s Sanctuary'
+customInfo:
+- '&fA dark sanctuary corrupted by'
+- '&fthe terrifying Beast.'
+dungeonSizeCategory: LAIR
+worldName: em_beasts_sanctuary
+environment: NORMAL
+protect: true
+dungeonVersion: 1
+playerInfo: |-
+  &aDynamic Lair
+  $bossCount boss encounters
+  &cA dark sanctuary corrupted
+  &cby the terrifying Beast.
+regionEnterMessage: '&8[EM] &aYou have entered the Beast Sanctuary! Beware of what
+  prowls here!'
+regionLeaveMessage: '&8[EM] &aYou''ve left the Beast Sanctuary! Did you take trophies?'
+startLocation: em_beasts_sanctuary,32.5,88.2,36.5,0,0
+teleportLocation: em_beasts_sanctuary,35.5,88.2,20.5,46,23
+dungeonObjectives:
+- filename=the_beasts_sanctuary_beast_human_p1.yml
+contentType: DYNAMIC_DUNGEON
+dungeonConfigFolderName: the_beasts_sanctuary
+contentLevel: -1
+difficulties:
+- name: normal
+  id: 0
+  levelSync: '+5'
+- name: hard
+  id: 1
+  levelSync: '+0'
+- name: mythic
+  id: 2
+  levelSync: '-5'
+setupMenuDescription:
+- '&2A Dynamic Lair where you choose the level!'
+dungeonLockoutMinutes: 4320

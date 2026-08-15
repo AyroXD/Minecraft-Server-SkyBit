@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&3Riptide Mastery'
+description:
+- '&7Bonus damage in water or rain.'
+- '&7Extra bonus when both!'
+skillType: TRIDENTS
+bonusType: CONDITIONAL
+unlockTier: 3
+baseValue: 0.35
+scalingPerLevel: 0.007
+displayMaterial: HEART_OF_THE_SEA
+loreTemplates:
+- '&7Active: &fIn water or rain'
+- '&7Damage Bonus: &f+$damageBonus%'
+- '&7Both conditions: &f+$doubleBonus%'
+formattedBonusTemplate: +$damageBonus% (Water/Rain)

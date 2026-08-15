@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&8Grit'
+description:
+- '&7Take less damage when'
+- '&7below 50% health.'
+skillType: ARMOR
+bonusType: CONDITIONAL
+unlockTier: 3
+baseValue: 0.5
+scalingPerLevel: 0.01
+displayMaterial: LEATHER_CHESTPLATE
+loreTemplates:
+- '&7Gain increased damage reduction when below 50% health'
+- '&7Lower health = more damage reduction'
+- '&7Max Reduction: $maxReduction%'
+- '&7Requires: Health below 50%'
+formattedBonusTemplate: Up to $maxReduction% damage reduction

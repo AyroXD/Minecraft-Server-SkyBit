@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&6Ranger''s Focus'
+description:
+- '&7Focus on one target for'
+- '&7stacking damage. Stacks up to 8x.'
+skillType: BOWS
+bonusType: STACKING
+unlockTier: 4
+baseValue: 0.04
+scalingPerLevel: 0.001
+displayMaterial: TARGET
+loreTemplates:
+- '&7Bonus per Stack: &f$bonusPerStack%'
+- '&7Max Stacks: &f$maxStacks'
+- '&7Stacks reset when switching targets'
+formattedBonusTemplate: +$bonusPerStack% per stack (max $maxStacks)

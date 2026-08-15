@@ -1,0 +1,362 @@
+# ============================================
+#      GRIEFPREVENTION ALIAS CONFIGURATION
+# ============================================
+# Customize command names, translations, and tab completion.
+# Full documentation: https://github.com/castledking/GriefPrevention3D/tree/master/src/main/resources/alias.yml
+# Reload changes with: /gpreload
+
+# Set to false to disable all alias customization (uses default command names)
+enabled: true
+# Set to false to disable standalone commands (/trust, /trapped, etc.); only /claim and /aclaim (or their translations) will be registered
+standalone: true
+
+commands:
+  claim:
+    enable: true
+    commands: [claim]
+    description: Command to manage your claim(s)
+    permission: griefprevention.claims
+    fallback: ''
+
+  aclaim:
+    enable: true
+    commands: [aclaim]
+    description: Command to manage administrative claims
+    permission: griefprevention.adminclaims
+    fallback: ''
+
+subcommands:
+  claim:
+    create:
+      enable: true
+      commands: [create]
+      standalone: [createclaim]
+      usage: "/claim create [radius]"
+      description: Create or expand a claim centered on you.
+      arguments:
+        radius:
+          type: integer
+
+    trust:
+      enable: true
+      commands: [trust]
+      standalone: [trust]
+      usage: "/claim trust <player> [type]"
+      description: Grant a player access to your claim.
+      arguments:
+        player:
+          type: player
+        type:
+          options:
+            access: [access]
+            container: [container]
+            manage: [manage, manager]
+            build: [build]
+
+    untrust:
+      enable: true
+      commands: [untrust]
+      standalone: [untrust]
+      usage: "/claim untrust <player|all>"
+      description: Revoke claim access from a player or everyone.
+      arguments:
+        options:
+          player: player
+          all: [all]
+          public: [public]
+
+    trustlist:
+      enable: true
+      commands: [trustlist]
+      standalone: [trustlist]
+      usage: "/claim trustlist"
+      description: Show players who have access to this claim.
+
+    list:
+      enable: true
+      commands: [list]
+      standalone: [claimslist]
+      usage: "/claim list [player]"
+      description: List claims owned by you or another player.
+      arguments:
+        player:
+          type: player
+
+    mode:
+      enable: true
+      commands: [mode]
+      standalone: [basicclaims, shapedclaims, shapedclaim]
+      usage: "/claim mode <basic|2d|3d|shaped|shapedsubdivide|merge>"
+      description: Change your golden shovel claim mode.
+      arguments:
+        mode:
+          options:
+            basic: [basic]
+            2d: [2d, subdivide]
+            3d: [3d]
+            shaped: [shaped]
+            shapedsubdivide: [shapedsubdivide, shapedsub]
+            merge: [merge]
+
+    restrictsubclaim:
+      enable: true
+      commands: [restrictsubclaim]
+      standalone: [restrictsubclaim]
+      usage: "/claim restrictsubclaim"
+      description: Toggle whether a subdivision inherits parent permissions.
+
+    explosions:
+      enable: true
+      commands: [explosions]
+      standalone: [claimexplosions]
+      usage: "/claim explosions [on|off]"
+      description: Toggle explosions inside your current claim.
+      arguments:
+        state:
+          options:
+            on: [on]
+            off: [off]
+
+    witherexplosions:
+      enable: true
+      commands: [witherexplosions]
+      standalone: [witherexplosions, witherexplosion]
+      usage: "/claim witherexplosions [on|off]"
+      description: Toggle wither explosions inside your current claim.
+      permission: griefprevention.witherexplosions
+      arguments:
+        state:
+          options:
+            on: [on]
+            off: [off]
+
+    pvp:
+      enable: true
+      commands: [pvp]
+      standalone: [claimpvp]
+      usage: "/claim pvp [true|false] [confirm]"
+      description: Toggle PvP in your current claim.
+      permission: griefprevention.claims
+      arguments:
+        state:
+          options:
+            "true": ["true", "on", "enable"]
+            "false": ["false", "off", "disable"]
+
+    buyblocks:
+      enable: true
+      commands: [buyblocks]
+      standalone: [buyclaimblocks]
+      usage: "/claim buyblocks"
+      description: Purchase additional claim blocks.
+
+    sellblocks:
+      enable: true
+      commands: [sellblocks]
+      standalone: [sellclaimblocks]
+      usage: "/claim sellblocks"
+      description: Sell excess claim blocks for currency.
+
+    abandon:
+      enable: true
+      commands: [abandon]
+      standalone: [abandonclaim]
+      usage: "/claim abandon [all|toplevel]"
+      description: Abandon the claim you are standing in, or use 'toplevel' to delete it and all subdivisions, or 'all' to abandon every claim you own.
+      arguments:
+        scope:
+          options:
+            all: [all]
+            toplevel: [toplevel]
+
+    siege:
+      enable: true
+      commands: [siege]
+      standalone: [siege]
+      usage: "/claim siege <player>"
+      description: Challenge another player to a siege (if enabled).
+      arguments:
+        player:
+          type: player
+
+    trapped:
+      enable: true
+      commands: [trapped]
+      standalone: [trapped]
+      usage: "/claim trapped"
+      description: Attempt to escape if you are stuck inside a claim.
+
+    expand:
+      enable: true
+      commands: [expand]
+      standalone: [expandclaim, extendclaim]
+      usage: "/claim expand <numberOfBlocks>"
+      description: Expand the claim you're standing in by pushing or pulling its boundary.
+      arguments:
+        numberOfBlocks:
+          type: integer-negative
+
+    help:
+      enable: true
+      commands: [help]
+      standalone: [claimhelp]
+      usage: "/claim help [page]"
+      description: View a list of all available claim subcommands.
+      arguments:
+        page:
+          type: integer
+
+  aclaim:
+    trust:
+      enable: true
+      commands: [trust]
+      standalone: [permissiontrust]
+      usage: "/aclaim trust permission <permission> <type>"
+      description: Grant a permission node access to a claim.
+      permission: griefprevention.permissiontrust
+      arguments:
+        target:
+          options:
+            permission: [permission]
+        permission:
+          type: string
+        type:
+          options:
+            access: [access]
+            container: [container, inventory]
+            build: [build]
+            manage: [manage, manager]
+
+    restore:
+      enable: true
+      commands: [restore]
+      standalone: [restorenature]
+      usage: "/aclaim restore [mode]"
+      description: Restore an area to nature using the specified mode.
+      arguments:
+        mode:
+          options:
+            default: [default]
+            aggressive: [aggressive]
+            fill: [fill]
+
+    restoreaggressive:
+      enable: true
+      commands: [restoreaggressive]
+      standalone: [restorenatureaggressive]
+      usage: "/aclaim restoreaggressive"
+      description: Switches the shovel tool to aggressive restoration mode.
+
+    restorefill:
+      enable: true
+      commands: [restorefill]
+      standalone: [restorenaturefill]
+      usage: "/aclaim restorefill [radius]"
+      description: Switches the shovel tool to fill mode.
+      arguments:
+        radius:
+          type: integer
+
+    ignore:
+      enable: true
+      commands: [ignore]
+      standalone: [ignoreclaims]
+      usage: "/aclaim ignore"
+      description: Toggle ignoring nearby claims.
+
+    mode:
+      enable: true
+      commands: [mode]
+      standalone: [adminclaims]
+      usage: "/aclaim mode <admin|admin3d>"
+      description: Switch your shovel to admin-claim mode.
+      arguments:
+        mode:
+          options:
+            admin: [admin]
+            admin3d: [admin3d]
+
+    adminlist:
+      enable: true
+      commands: [adminlist]
+      standalone: [adminclaimslist]
+      usage: "/aclaim adminlist"
+      description: List administrative claims on the current server.
+
+    checkexpiry:
+      enable: true
+      commands: [checkexpiry]
+      standalone: [claimcheckexpiry]
+      usage: "/aclaim checkexpiry <player>"
+      description: View claim expiration details for a player.
+      arguments:
+        player:
+          type: player
+
+    blocks:
+      enable: true
+      commands: [blocks]
+      standalone: []
+      usage: "/aclaim blocks <bonus|accrued> <player|all> <amount>"
+      description: Adjust a player's claim block balance.
+      arguments:
+        type:
+          options:
+            bonus: [bonus]
+            accrued: [accrued]
+        player:
+          type: player
+          options:
+            all: [all]
+        amount:
+          type: integer
+
+    delete:
+      enable: true
+      commands: [delete]
+      standalone: [deleteclaim]
+      usage: "/aclaim delete <player|world|all>"
+      description: Delete claims owned by a player or within a world.
+      arguments:
+        scope:
+          options:
+            player: [player]
+            world: [world]
+            all: [all]
+
+    transfer:
+      enable: true
+      commands: [transfer]
+      standalone: [transferclaim]
+      usage: "/aclaim transfer <player>"
+      description: Transfer the claim you are standing in to another player.
+      arguments:
+        player:
+          type: player
+
+    makeadmin:
+      enable: true
+      commands: [makeadmin]
+      standalone: [makeadmin]
+      usage: "/aclaim makeadmin"
+      description: Convert the current top-level claim to an administrative claim.
+      permission: griefprevention.adminclaims.convert
+
+    makebasic:
+      enable: true
+      commands: [makebasic]
+      standalone: [makebasic]
+      usage: "/aclaim makebasic"
+      description: Convert the current top-level administrative claim to a basic claim you own.
+      permission: griefprevention.adminclaims.convert
+
+    help:
+      enable: true
+      commands: [help]
+      standalone: [aclaimhelp]
+      usage: "/aclaim help [page]"
+      description: View a list of all available admin claim subcommands.
+      arguments:
+        page:
+          type: integer
+

@@ -1,0 +1,36 @@
+isEnabled: true
+name: '&2[Dynamic] &6The Under Grove'
+customInfo:
+- '&6Stop the dryad''s ritual!'
+dungeonSizeCategory: LAIR
+worldName: em_under_grove
+environment: NORMAL
+protect: true
+dungeonVersion: 1
+playerInfo: |-
+  &aDynamic Lair
+  $bossCount boss encounters
+  &6Stop the dryad's
+  &6sinister ritual!
+regionEnterMessage: '&8[EM] &aYou are now trespassing the sacred grove!'
+regionLeaveMessage: '&8[EM] &aYou have left the sacred grove!'
+startLocation: em_under_grove,-9.5,-38.8,35.5,90,0
+teleportLocation: em_under_grove,-2.5,-38.8,35.5,90,0
+dungeonObjectives:
+- filename=the_under_grove_rotroot_dryad_p1.yml
+contentType: DYNAMIC_DUNGEON
+dungeonConfigFolderName: the_under_grove
+contentLevel: -1
+difficulties:
+- name: normal
+  id: 0
+  levelSync: '+5'
+- name: hard
+  id: 1
+  levelSync: '+0'
+- name: mythic
+  id: 2
+  levelSync: '-5'
+setupMenuDescription:
+- '&2A Dynamic Lair where you choose the level!'
+dungeonLockoutMinutes: 4320

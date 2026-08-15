@@ -1,0 +1,8 @@
+isEnabled: true
+location1: em_adventurers_guild,302.5,93,283.5,54,0
+location1Text: <g:#FFD700:#F0E68C>『Oasis Adventure』</g> <g:#98FB98:#90EE90>Lvls 20-55</g>
+location2: oasis_adventure.yml
+style: ICOSAHEDRON
+particleColor: 16776960
+blindPlayer: true
+customModel1: em_oasis_portal

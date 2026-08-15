@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&eRighteous Fury'
+description:
+- '&7Build fury stacks on hit,'
+- '&7increasing your damage.'
+skillType: MACES
+bonusType: STACKING
+unlockTier: 1
+baseValue: 1.0
+scalingPerLevel: 0.01
+maxStacks: 5
+stackBonus: 0.05
+displayMaterial: BLAZE_POWDER
+loreTemplates:
+- '&7Max Stacks: &f$maxStacks'
+- '&7Damage/Stack: &f+$damagePerStack%'
+- '&7Decay: &f5 seconds'
+formattedBonusTemplate: +$maxDamage% Max Damage

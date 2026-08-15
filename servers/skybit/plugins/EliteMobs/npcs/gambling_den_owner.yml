@@ -1,0 +1,31 @@
+isEnabled: true
+name: <g:#9A7A40:#AA8A50>The Baron</g>
+role: <g:#8A6A30:#9A7A40><Gambling Den Owner></g>
+profession: CraftProfession{holder=Reference{ResourceKey[minecraft:villager_profession
+  / minecraft:weaponsmith]=VillagerProfession[name=translation{key='entity.minecraft.villager.weaponsmith',
+  args=[]}, heldJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x0000000029b60248@6d731a21,
+  acquirableJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x0000000029b604a8@5a847d33,
+  requestedItems=[], secondaryPoi=[], workSound=SoundEvent[location=minecraft:entity.villager.work_weaponsmith,
+  fixedRange=Optional.empty]]}}
+spawnLocation: em_adventurers_guild,286.5,81,231.5,-90,0
+spawnLocations: []
+greetings:
+- Welcome to my humble establishment!
+- The house always wins, they say...
+- Care to test your luck today?
+- Fortune favors the bold!
+dialog:
+- My dealers are the best in the realm!
+- Blackjack, slots, cards... take your pick!
+- Don't worry about debt, we're... flexible.
+- The odds are fair, I promise!
+farewell:
+- Come back soon, I enjoy your... patronage.
+- May luck be on your side! Or not...
+- The tables will be waiting!
+- 'Remember: you can''t win if you don''t play!'
+canTalk: true
+activationRadius: 3.0
+interactionType: CHAT
+syncMovement: true
+scripts: []

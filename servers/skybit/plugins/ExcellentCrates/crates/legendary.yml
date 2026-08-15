@@ -1,0 +1,188 @@
+_dataver: 600
+Name: <gold><b>LEGENDARY SURVIVAL CRATE</b></gold>
+Description:
+- <gray>Profesionálne SkyBit odmeny pre SURVIVAL.</gray>
+- <gray>Obsahuje peniaze, predmety, SkyCoiny a custom enchanty.</gray>
+ItemStackable: true
+Permission_Required: false
+Preview:
+  Enabled: true
+  Id: default
+Animation:
+  Enabled: true
+  Id: enclosing
+OpeningCooldown:
+  Enabled: true
+  Value: 2
+OpeningLimits:
+  Amount: 0
+Block:
+  Positions:
+  - 46,151,16,world
+  Pushback:
+    Enabled: true
+  Hologram:
+    Enabled: true
+    Template: default
+    Y_Offset: 1.35
+  Effect:
+    Enabled: false
+    Model: none
+Post-Open:
+  Commands: []
+Milestones:
+  Repeatable: false
+  List: {}
+Rewards:
+  List:
+    cash_10000:
+      Type: COMMAND
+      Name: <green><b>$10 000</b></green>
+      Description:
+      - <gray>Legendárna finančná odmena</gray>
+      Commands:
+      - eco give %player_name% 10000
+      Weight: 40.0
+      Rarity: common
+      Broadcast: false
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    netherite_block:
+      Type: COMMAND
+      Name: <dark_gray><b>Netherite Block</b></dark_gray>
+      Description:
+      - <gray>Blok netheritu</gray>
+      Commands:
+      - give %player_name% minecraft:netherite_block 1
+      Weight: 35.0
+      Rarity: common
+      Broadcast: false
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    xp_5000:
+      Type: COMMAND
+      Name: <yellow><b>5 000 XP</b></yellow>
+      Description:
+      - <gray>Legendárny balík skúseností</gray>
+      Commands:
+      - experience add %player_name% 5000 points
+      Weight: 25.0
+      Rarity: common
+      Broadcast: false
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    elytra:
+      Type: COMMAND
+      Name: <aqua><b>Elytra</b></aqua>
+      Description:
+      - <gray>Vzácne krídla</gray>
+      Commands:
+      - give %player_name% minecraft:elytra 1
+      Weight: 55.0
+      Rarity: rare
+      Broadcast: true
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    custom_books:
+      Type: COMMAND
+      Name: <light_purple><b>4× Custom Enchant Book</b></light_purple>
+      Description:
+      - <gray>Štyri náhodné ExcellentEnchanty</gray>
+      Commands:
+      - eenchants randombook %player_name% -custom
+      - eenchants randombook %player_name% -custom
+      - eenchants randombook %player_name% -custom
+      - eenchants randombook %player_name% -custom
+      Weight: 45.0
+      Rarity: rare
+      Broadcast: true
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    skycoins:
+      Type: COMMAND
+      Name: <gold><b>300 SkyCoinov</b></gold>
+      Description:
+      - <gray>Prémiová serverová mena</gray>
+      Commands:
+      - skybitadmin coins %player_name% 300
+      Weight: 70.0
+      Rarity: mythic
+      Broadcast: true
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+    legendary_jackpot:
+      Type: COMMAND
+      Name: <gradient:#FFD700:#FF4D4D><b>LEGENDARY JACKPOT</b></gradient>
+      Description:
+      - <gray>$25 000 a 500 SkyCoinov</gray>
+      Commands:
+      - eco give %player_name% 25000
+      - skybitadmin coins %player_name% 500
+      Weight: 30.0
+      Rarity: mythic
+      Broadcast: true
+      Ignored_For_Permissions: []
+      Required_Permissions: []
+      Limits:
+        Enabled: false
+        CooldownType: DAILY
+        GlobalAmount: -1
+        PlayerAmount: -1
+        GlobalCooldown: 0
+        PlayerCooldown: 0
+CostOptions:
+  key_legendary:
+    Enabled: true
+    Name: legendary Key
+    Icon:
+      Provider: vanilla
+      Data:
+        Value: '{count:1,id:"minecraft:trial_key"}'
+        DataVersion: 4671
+    Entries:
+      '0':
+        Type: key
+        Key: legendary
+        Amount: 1

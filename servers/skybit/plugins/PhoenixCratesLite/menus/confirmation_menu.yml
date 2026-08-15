@@ -1,0 +1,44 @@
+items:
+  filler:
+    slot: 0-26
+    material: BLACK_STAINED_GLASS_PANE
+    amount: 1
+    custom-model-data: 0
+    item-model: ''
+    glow: false
+    hide-attributes: false
+    display-name: '&r'
+    lore: []
+    actions: []
+    hide-tooltip: true
+settings:
+  type: CONFIRMATION
+  title: Are you sure?
+  rows: 3
+  refresh:
+    enabled: false
+    rate: 20
+  on-open-actions: []
+confirm:
+  slot: 10-11
+  material: GREEN_STAINED_GLASS_PANE
+  amount: 1
+  custom-model-data: 0
+  item-model: ''
+  glow: false
+  hide-attributes: false
+  display-name: '&aConfirm'
+  lore:
+  - '&7Click to confirm.'
+cancel:
+  slot: 15-16
+  material: RED_STAINED_GLASS_PANE
+  amount: 1
+  custom-model-data: 0
+  item-model: ''
+  glow: false
+  hide-attributes: false
+  display-name: '&cCancel'
+  lore:
+  - '&7Click to cancel.'
+item-slot: '13'

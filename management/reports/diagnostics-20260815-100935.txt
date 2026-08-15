@@ -1,0 +1,47 @@
+﻿SkyBit Management diagnostic report
+Generated: 2026-08-15 10:09:35 +02:00
+App: 0.0.0.0
+OS: Microsoft Windows NT 6.2.9200.0
+CPU cores: 12
+Java runtime: OK
+
+=== Lobby ===
+Port: 25566
+State: online; managed=False; pid=10440; players=0/69; cpu=0,7%; ram=1,12 GB; uptime=8h 32m
+Recent stderr:
+2026-08-14T23:36:48.167561300Z ServerMain WARN Advanced terminal features are not available in this environment
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.joml.MemUtil$MemUtilUnsafe (file:/C:/Users/Swyzo/Desktop/Minecraft%20Server%20SkyBit/servers/lobby/libraries/org/joml/joml/1.10.8/joml-1.10.8.jar)
+WARNING: Please consider reporting this to the maintainers of class org.joml.MemUtil$MemUtilUnsafe
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+
+=== Survival ===
+Port: 25567
+State: online; managed=False; pid=23320; players=0/100; cpu=1,0%; ram=2,11 GB; uptime=8h 32m
+Recent stderr:
+2026-08-14T23:36:46.860157Z ServerMain WARN Advanced terminal features are not available in this environment
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.joml.MemUtil$MemUtilUnsafe (file:/C:/Users/Swyzo/Desktop/Minecraft%20Server%20SkyBit/servers/skybit/libraries/org/joml/joml/1.10.8/joml-1.10.8.jar)
+WARNING: Please consider reporting this to the maintainers of class org.joml.MemUtil$MemUtilUnsafe
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+
+=== SkyBlock ===
+Port: 25568
+State: online; managed=False; pid=17812; players=0/100; cpu=0,5%; ram=1,99 GB; uptime=8h 32m
+Recent stderr:
+2026-08-14T23:36:47.982204600Z ServerMain WARN Advanced terminal features are not available in this environment
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by org.joml.MemUtil$MemUtilUnsafe (file:/C:/Users/Swyzo/Desktop/Minecraft%20Server%20SkyBit/servers/skyblock/libraries/org/joml/joml/1.10.8/joml-1.10.8.jar)
+WARNING: Please consider reporting this to the maintainers of class org.joml.MemUtil$MemUtilUnsafe
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+
+=== Velocity ===
+Port: 25565
+State: online; managed=False; pid=20736; players=0/100; cpu=0,1%; ram=0,33 GB; uptime=8h 32m
+Recent stderr:
+2026-08-14T23:36:45.501737200Z main WARN Advanced terminal features are not available in this environment
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::staticFieldBase has been called by com.google.inject.internal.aop.HiddenClassDefiner (file:/C:/Users/Swyzo/Desktop/Minecraft%20Server%20SkyBit/proxy/velocity.jar)
+WARNING: Please consider reporting this to the maintainers of class com.google.inject.internal.aop.HiddenClassDefiner
+WARNING: sun.misc.Unsafe::staticFieldBase will be removed in a future release
+

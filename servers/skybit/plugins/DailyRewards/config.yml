@@ -1,0 +1,266 @@
+# ============================================================
+# DailyRewards - Example Config (Public/Free Edition)
+# ============================================================
+# Quick notes:
+# - This file is intentionally simple and example-focused.
+# - You can copy item/message patterns and expand as needed.
+# - Reload safely with: /dailyreload
+# - Debug self-test (admin): /daily debug [player]
+# ============================================================
+
+debug: false
+
+database:
+  # sqlite or mysql
+  type: sqlite
+  sqlite:
+    file: "dailyrewards.db"
+  mysql:
+    host: "127.0.0.1"
+    port: 3306
+    database: "dailyrewards"
+    username: "root"
+    password: "change_me"
+
+messages:
+  prefix: "&b&lDaily&8 > &7"
+  reward_received: "&aYou received: &f%item%"
+  no_permission: "&cYou do not have permission."
+  reload_success: "&aDailyRewards reloaded."
+  already_claimed: "&cYou already claimed today. &7Time left: &f%time%"
+  reminder: "&eYour daily rewards are ready. &7Use &f/daily"
+  reset_success: "&aReset daily cooldown for &f%player%&a."
+  reset_notification: "&eAn admin reset your daily cooldown."
+  invalid_arguments: "&cInvalid arguments."
+  player_not_found: "&cPlayer not found."
+  help:
+    - "&8&m--------------------------------"
+    - "&b&lDailyRewards"
+    - "&f/daily &8- &7Open the daily menu"
+    - "&f/daily debug [player] &8- &7Run debug self-test (admin)"
+    - "&f/dailyreload &8- &7Reload config"
+    - "&f/dailyreset <player|uuid> &8- &7Reset cooldown"
+    - "&8&m--------------------------------"
+
+notification:
+  # seconds between reminder checks
+  interval: 3600
+
+gui:
+  daily:
+    title: "&8Daily Rewards"
+    size: 27
+    items:
+      daily_reward:
+        material: CHEST
+        name: "&b&lClaim Daily Rewards"
+        lore:
+          - "&7Claim your daily rewards."
+          - "&7You get &f3 rolls&7 each day."
+          - ""
+          - "&eClick to claim"
+        slot: 11
+
+      already_claimed:
+        material: BARRIER
+        name: "&c&lAlready Claimed"
+        lore:
+          - "&7You can claim again in:"
+          - "&f%time%"
+        slot: 11
+
+      streaks:
+        material: FIREWORK_ROCKET
+        name: "&a&lStreak Rewards"
+        lore:
+          - "&7Current streak: &f%streak_current%"
+          - "&7Best streak: &f%streak_best%"
+          - "&7Next milestone: &fDay %streak_next_milestone_day%"
+          - "&7Days remaining: &f%streak_days_to_next%"
+          - ""
+          - "&eClick to view"
+        slot: 13
+
+      preview:
+        material: ENCHANTED_BOOK
+        name: "&6&lReward Preview"
+        lore:
+          - "&7Browse possible rewards."
+          - "&7Weights are example values."
+          - ""
+          - "&eClick to open"
+        slot: 15
+
+  claim:
+    title: "&8Choose Your Rewards"
+    size: 27
+
+  preview:
+    title: "&8Reward Preview"
+    size: 36
+
+  streaks_preview:
+    title: "&8Streak Milestones"
+    size: 36
+
+    filler:
+      enabled: true
+      material: GRAY_STAINED_GLASS_PANE
+      name: " "
+      lore: []
+
+    grid:
+      slots: ["10","11","12","13","14","15","16"]
+
+    milestones:
+      "3":
+        slot: 10
+        claimed:
+          material: LIME_STAINED_GLASS_PANE
+          name: "&aDay 3 Complete"
+          lore:
+            - "&7Milestone already claimed."
+        unclaimed:
+          material: PAPER
+          name: "&fDay 3 Milestone"
+          lore:
+            - "&7Example reward set:"
+            - "&8- &a$5,000"
+            - "&8- &e1x Vote Key"
+
+      "7":
+        slot: 11
+        claimed:
+          material: LIME_STAINED_GLASS_PANE
+          name: "&aDay 7 Complete"
+          lore:
+            - "&7Milestone already claimed."
+        unclaimed:
+          material: GOLD_BLOCK
+          name: "&eDay 7 Milestone"
+          lore:
+            - "&7Example reward set:"
+            - "&8- &a$15,000"
+            - "&8- &b2h Flight"
+
+      "14":
+        slot: 12
+        claimed:
+          material: LIME_STAINED_GLASS_PANE
+          name: "&aDay 14 Complete"
+          lore:
+            - "&7Milestone already claimed."
+        unclaimed:
+          material: DIAMOND
+          name: "&bDay 14 Milestone"
+          lore:
+            - "&7Example reward set:"
+            - "&8- &61x Rare Key"
+            - "&8- &a$30,000"
+
+    items:
+      back:
+        material: ARROW
+        name: "&7Back"
+        lore: ["&8Return to daily menu"]
+        slot: 31
+        action: back_to_daily
+      close:
+        material: BARRIER
+        name: "&cClose"
+        lore: []
+        slot: 35
+        action: close
+
+streaks:
+  # if a player claims within this window since their last claim,
+  # the streak continues; otherwise streak resets to 1.
+  continue_window_hours: 48
+
+  milestones:
+    "3":
+      commands:
+        - "eco give %player_name% 5000"
+        - "crate key give %player_name% vote 1"
+      message: "&aMilestone reached: Day 3!"
+
+    "7":
+      commands:
+        - "eco give %player_name% 15000"
+        - "flight give %player_name% 2h"
+      message: "&aMilestone reached: Day 7!"
+
+    "14":
+      commands:
+        - "eco give %player_name% 30000"
+        - "crate key give %player_name% rare 1"
+      message: "&aMilestone reached: Day 14!"
+
+rewards:
+  # Example pool only. Add/remove items freely.
+  # Chance values are weighted and may be decimal.
+  items:
+    "1":
+      name: "&fIron Sword &8[Common]"
+      material: IRON_SWORD
+      lore: ["&7Sharpness I"]
+      chance: 30.00
+      commands:
+        - "give %player_name% iron_sword 1 0 sharpness:1"
+
+    "2":
+      name: "&fGolden Apples x2 &8[Common]"
+      material: GOLDEN_APPLE
+      lore: []
+      chance: 20.00
+      commands:
+        - "give %player_name% golden_apple 2"
+
+    "3":
+      name: "&a$2,500 &8[Uncommon]"
+      material: EMERALD
+      lore: []
+      chance: 15.00
+      commands:
+        - "eco give %player_name% 2500"
+
+    "4":
+      name: "&aVote Key x1 &8[Uncommon]"
+      material: LIME_DYE
+      lore: []
+      chance: 12.00
+      commands:
+        - "crate key give %player_name% vote 1"
+
+    "5":
+      name: "&bFlight 30m &8[Rare]"
+      material: FEATHER
+      lore: []
+      chance: 10.00
+      commands:
+        - "flight give %player_name% 30m"
+
+    "6":
+      name: "&6Rare Key x1 &8[Rare]"
+      material: YELLOW_DYE
+      lore: []
+      chance: 7.00
+      commands:
+        - "crate key give %player_name% rare 1"
+
+    "7":
+      name: "&dSpawner Wrench (Example) &8[Epic]"
+      material: DIAMOND_HOE
+      lore:
+        - "&7Example integration reward."
+      chance: 4.00
+      commands:
+        - "wrench give %player_name% 25"
+
+    "8":
+      name: "&5Legendary Key x1 &8[Mythic]"
+      material: PURPLE_DYE
+      lore: []
+      chance: 2.00
+      commands:
+        - "crate key give %player_name% legendary 1"

@@ -1,0 +1,39 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+flymode: false
+muted: false
+jailed: false
+ip-address: 127.0.0.1
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1786735874618
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1786746754168
+  login: 1786746480549
+money: '0'
+last-account-name: Ayro
+lastlocation:
+  world: dd53005a-8db9-4b1c-acb4-fc8198908e54
+  world-name: bskyblock_world
+  x: 1.9816351248667763
+  y: 85.0
+  z: 1.7911614584259938
+  yaw: -157.34994506835938
+  pitch: 17.55000114440918
+logoutlocation:
+  world: b6b0d869-7fac-4ceb-8320-20a1b41f9666
+  world-name: world
+  x: 32.85342242085219
+  y: 150.0
+  z: -13.76044197784648
+  yaw: 106.642822265625
+  pitch: 6.750021457672119

@@ -1,0 +1,1388 @@
+meta:
+  authors:
+  - BONNe
+challenges:
+  commands:
+    admin:
+      main:
+        description: Основна команда адміністратора. Відкриває GUI.
+        parameters: ''
+      reload:
+        description: Перезавантажте завдання з бази даних
+        parameters: ''
+      show:
+        description: Друкує всі виклики в чаті, які існують у цьому світі.
+        parameters: ''
+      complete:
+        description: Виконайте завдання для гравця.
+        parameters: <player> <challenge_id>
+      reset:
+        description: Скинути виклик для гравця. Якщо для «challenge_id» встановлено
+          значення «all», усі виклики буде скинуто.
+        parameters: <player> <challenge_id>
+      migrate:
+        description: Перенесіть поточні дані викликів ігрового світу у формат зберігання
+          0.8.0.
+        parameters: ''
+    user:
+      main:
+        description: Графічний інтерфейс Open Challenges.
+        parameters: ''
+      complete:
+        description: Повний виклик.
+        parameters: <challenge_id> [count]
+  gui:
+    titles:
+      player-gui: <black><bold>Меню викликів
+      gamemode-gui: <black><bold>Виберіть GameMode
+      multiple-gui: <black><bold>Скільки разів?
+      admin-gui: <black><bold>Меню адміністратора завдань
+      edit-challenge: <black><bold>Редагувати [challenge]
+      edit-level: <black><bold>Редагувати [level]
+      settings: <black><bold>Налаштування
+      choose-challenge: <black><bold>Виберіть завдання
+      choose-level: <black><bold>Виберіть рівень
+      choose-player: <black><bold>Виберіть програвач
+      library: Бібліотека <black><bold>
+      manage-blocks: <black><bold>Керувати блоками
+      manage-entities: <black><bold>Керувати сутностями
+      type-selector: <black><bold>Вибір типу завдання
+      item-selector: <black><bold>Вибір елементів
+      block-selector: <black><bold>Вибір блоку
+      entity-selector: <black><bold>Вибір сутності
+      challenge-selector: <black><bold>Вибір викликів
+      statistic-selector: <black><bold>Селектор статистики
+      environment-selector: <black><bold>Вибір середовища
+      manage-block-groups: <black><bold>Керування групами блоків
+      manage-entity-groups: <black><bold>Керування групами сутностей
+      manage-statistics: <black><bold>Керування статистикою
+      manage-advancements: <black><bold>Керування досягненнями
+      advancement-selector: <black><bold>Селектор досягнень
+      biome-selector: <black><bold>Вибір біому
+    buttons:
+      free-challenges:
+        name: <white><bold>Безкоштовні виклики
+        description: |-
+          <gray>Відображає список
+          <gray>безкоштовних завдань
+      return:
+        name: <white><bold>Повернути
+        description: |-
+          <gray>Повернення до попереднього меню
+          <gray>або вийти з GUI
+      previous:
+        name: <white><bold>Попередня сторінка
+        description: <gray>Перейти на сторінку <yellow>[number] <gray>
+      next:
+        name: <white><bold>Наступна сторінка
+        description: <gray>Перейти на сторінку <yellow>[number] <gray>
+      reduce:
+        name: <white><bold>Зменшити
+        description: <gray>Зменшити на <yellow>[number]
+      increase:
+        name: <white><bold>Збільшити
+        description: <gray>Зменшити на <yellow>[number]
+      accept:
+        name: <white><bold>Завершено
+        description: |-
+          <gray>Виконати завдання <yellow>[number]
+          <gray>раз(ів)
+      quit:
+        name: <white><bold>Вийти
+        description: <gray>Вийти з GUI.
+      complete_user_challenges:
+        name: <white><bold>Виконайте завдання користувача(-и)
+        description: |-
+          <gray>Дозволяє вибрати користувача та
+          <gray>завершити виклик(и) для
+          <gray>його
+      reset_user_challenges:
+        name: <white><bold>Скинути виклики користувача
+        description: |-
+          <gray>Дозволяє вибрати користувача та
+          <gray>скинути його виклики
+      add_challenge:
+        name: <white><bold>Створити виклик
+        description: |-
+          <gray>Запускає процес для
+          <gray>створення нового виклику.
+      add_level:
+        name: <white><bold>Створити рівень
+        description: |-
+          <gray>Запускає процес для
+          <gray>створення нового рівня.
+      edit_challenge:
+        name: <white><bold>Редагувати завдання
+        description: |-
+          <gray>Дозволяє вибирати та редагувати
+          <gray>виклик.
+      edit_level:
+        name: <white><bold>Редагувати рівень
+        description: |-
+          <gray>Дозволяє вибирати та редагувати
+          <gray>рівень.
+      delete_challenge:
+        name: <white><bold>Видалити завдання
+        description: |-
+          <gray>Дозволяє вибирати та видаляти
+          <gray>виклик.
+      delete_level:
+        name: <white><bold>Видалити рівень
+        description: |-
+          <gray>Дозволяє вибирати та видаляти
+          <gray>рівень.
+      edit_settings:
+        name: <white><bold>Налаштування
+        description: |-
+          <gray>Дозволяє переглядати та редагувати
+          <gray>налаштування аддона.
+      complete_wipe:
+        name: <white><bold>Повне очищення
+        description: |-
+          <gray>Повністю усуває проблеми
+          <gray>база даних аддонів, у тому числі
+          <gray>даних користувача.
+      challenge_wipe:
+        name: <white><bold>Витирання виклику
+        description: |-
+          <gray>Повністю усуває проблеми
+          <gray>та рівні з бази даних.
+      user_wipe:
+        name: <white><bold>Стирання користувача
+        description: |-
+          <gray>Повністю очищає користувача
+          <gray>дані з бази даних.
+      library:
+        name: <white><bold>Бібліотека
+        description: |-
+          <gray>Відкриває паблік
+          Бібліотека <gray>викликів.
+        downloading: |-
+          <gray>Завантаження бібліотеки
+          <gray>запроваджено...
+      import_database:
+        name: <white><bold>Імпорт бази даних
+        description: |-
+          <gray>Дозволяє імпортувати експортовані
+          База даних викликів <gray>.
+      import_template:
+        name: <white><bold>Імпортувати шаблон
+        description: |-
+          <gray>Дозволяє імпортувати шаблон
+          <gray>файл із викликами.
+      export_challenges:
+        name: <white><bold>Виклики експорту
+        description: |-
+          <gray>Дозволяє експортувати базу даних
+          <gray>до локального файлу.
+      properties:
+        name: <white><bold>властивості
+        description: <gray>Переглянути всі основні властивості.
+      requirements:
+        name: <white><bold>Вимоги
+        description: <gray>Переглянути властивості вимог.
+      rewards:
+        name: <white><bold>Нагороди
+        description: <gray>Переглянути властивості нагород.
+      deployed:
+        name: <white><bold>Розгортання
+        description: |-
+          <gray>Перемкнути, якщо виклик є
+          <gray>розгорнуто, і користувачі можуть
+          <gray>завершити його.
+        enabled: <dark_green>Увімкнено
+        disabled: <red>Вимкнено
+      name:
+        name: <white><bold>Ім'я
+        description: |-
+          <gray>Дозволяє змінювати
+          <gray>відображуване ім'я.
+        value: '<gray>Зараз: <reset>[nane]'
+      remove_on_complete:
+        name: <white><bold>Приховати після завершення
+        description: |-
+          <gray>Перемкнути, якщо виклик повинен
+          <gray>прихований від гравця після
+          <gray>це завершено.
+        enabled: <dark_green>Увімкнено
+        disabled: <red>Вимкнено
+      description:
+        name: <white><bold>Опис
+        description: |-
+          <gray>Конкретний опис
+          <gray>за виклик. Колір
+          До нього необхідно застосувати коди <gray>.
+        value: '<gray>Поточний опис:'
+      environment:
+        name: <white><bold>Розмір
+        description: |-
+          <gray>Дозволяє обмежити, у якому
+          <gray>оцініть завдання
+          <gray>можна завершити.
+        enabled: <dark_green>
+        disabled: і c
+      order:
+        name: <white><bold>Порядок
+        description: |-
+          <gray>Дозволяє змінювати порядок
+          <gray>об'єктів.
+          <gray>Об’єкти з рівними номерами
+          <gray>замовлять їх
+          <gray>унікальних імен ідентифікаторів.
+        value: '<gray>Поточне замовлення: <yellow>[number]'
+      icon:
+        name: <white><bold>Значок
+        description: |-
+          <gray>Дозволяє змінити значок
+          <gray>за цей виклик.
+      locked_icon:
+        name: <white><bold>Заблокований значок
+        description: |-
+          <gray>Дозволяє змінювати заблоковані
+          значок рівня <gray>.
+      required_permissions:
+        name: <white><bold>Необхідні дозволи
+        description: |-
+          <gray>Дозволяє змінювати потрібні
+          <gray>дозволів для цього
+          <gray>завдання, яке потрібно виконати.
+        title: '<gray>Дозволи:'
+        permission: ' <dark_gray>- [permission]'
+        none: <gray>Дозволи не встановлено.
+      remove_entities:
+        name: <white><bold>Видалити сутності
+        description: |-
+          <gray>Дозволяє перемикати якщо
+          <gray>необхідних сутностей будуть
+          <gray>бути видаленим зі світу
+          <gray>після завершення
+          <gray>завдання.
+        enabled: <dark_green>Увімкнено
+        disabled: <red>Вимкнено
+      required_entities:
+        name: <white><bold>Обов'язкові сутності
+        description: |-
+          <gray>Дозволяє змінювати потрібні
+          <gray>сутностей для цього
+          <gray>завдання, яке потрібно виконати.
+        title: '<gray>Сутності:'
+        list: ' <dark_gray>- [number] x [entity]'
+        none: <gray>Сутності не додано.
+      remove_blocks:
+        name: <white><bold>Видалити блоки
+        description: |-
+          <gray>Дозволяє перемикати якщо
+          <gray>необхідних блоків буде
+          <gray>буде видалено зі світу
+          <gray>після завершення
+          <gray>завдання.
+        enabled: <dark_green>Увімкнено
+        disabled: <red>Вимкнено
+      required_blocks:
+        name: <white><bold>Необхідні блоки
+        description: |-
+          <gray>Дозволяє змінювати потрібні
+          <gray>блоків для цього
+          <gray>завдання, яке потрібно виконати.
+        title: '<gray>блоків:'
+        list: <dark_gray>- [number] x [entity]
+        none: <gray>Блоки не додаються.
+      search_radius:
+        name: <white><bold>Радіус пошуку
+        description: |-
+          <gray>Дозволяє змінювати радіус
+          <gray>навколо гравця, з якого
+          <gray>блоків та/або сутностей
+          <gray>виявлено.
+        value: '<gray>Поточна відстань: <yellow>[number]'
+      remove_items:
+        name: <white><bold>Видалити елементи
+        description: |-
+          <gray>Дозволяє перемикати якщо
+          <gray>обов'язкових елементів будуть
+          <gray>буде видалено з інвентарю
+          <gray>після завершення
+          <gray>завдання.
+        enabled: <dark_green>Увімкнено
+        disabled: <red>Вимкнено
+      required_items:
+        name: <white><bold>Обов'язкові елементи
+        description: |-
+          <gray>Дозволяє змінювати потрібні
+          <gray>елементів для цього
+          <gray>завдання, яке потрібно виконати.
+        title: '<gray>елементів:'
+        list: ' <dark_gray>- [number] x [entity]'
+        none: <gray>Елементи не додано.
+      add_ignored_meta:
+        name: <white><bold>Додати ігнорувати метадані
+        description: |-
+          <gray>Дозволяє додати which
+          <gray>елементів слід ігнорувати
+          <gray>будь-які метадані, які
+          Їм призначається <gray>.
+        title: '<gray>елементів:'
+        list: ' <dark_gray>- [number] x [entity]'
+        none: <gray>Елементи не додано.
+      remove_ignored_meta:
+        name: <white><bold>Видалити ігнорувати метадані
+        description: |-
+          <gray>Дозволяє видалити які
+          <gray>елементів слід ігнорувати
+          <gray>будь-які метадані, які
+          Їм призначається <gray>.
+      remove_experience:
+        name: <white><bold>Видалити досвід
+        description: |-
+          <gray>Дозволяє перемикати якщо
+          <gray>необхідний досвід буде
+          <gray>буде видалено з гравця
+          <gray>після завершення
+          <gray>завдання.
+        enabled: <dark_green>Увімкнено
+        disabled: <red>Вимкнено
+      required_experience:
+        name: <white><bold>Необхідний досвід
+        description: |-
+          <gray>Дозволяє змінювати
+          <gray>необхідний досвід для
+          <gray>гравець.
+        value: '<gray>Поточний досвід: <yellow>[number]'
+      required_level:
+        name: <white><bold>Необхідний рівень острова
+        description: |-
+          <gray>Дозволяє змінювати
+          <gray>необхідний рівень острова
+          <gray>за виклик.
+        value: '<gray>Поточний рівень: <yellow>[number]'
+      remove_money:
+        name: <white><bold>Видалити гроші
+        description: |-
+          <gray>Дозволяє перемикати якщо
+          <gray>потрібні гроші будуть
+          <gray>буде видалено з гравця
+          <gray>обліковий запис після завершення
+          <gray>виклик.
+        enabled: <dark_green>Увімкнено
+        disabled: <red>Вимкнено
+      required_money:
+        name: <white><bold>Необхідні гроші
+        description: |-
+          <gray>Дозволяє змінювати
+          <gray>потрібні гроші для гравця
+          <gray>рахунок для виклику.
+        value: '<gray>Поточне значення: <yellow>[number]'
+      statistic:
+        name: <white><bold>Статистика
+        description: |-
+          <gray>Дозволяє змінювати
+          <gray>тип статистики
+          <gray>перевірив у цьому виклику.
+        value: '<gray>Поточне значення: <yellow>[statistic]'
+      statistic_amount:
+        name: <white><bold>Цільове значення
+        description: |-
+          <gray>Дозволяє змінювати
+          <gray>статистичне цільове значення
+          <gray>, які повинні бути виконані.
+        value: '<gray>Поточне значення: <yellow>[number]'
+      remove_statistic:
+        name: <white><bold>Зменшити статистику
+        description: |-
+          <gray>Дозволяє перемикати якщо
+          <gray>статистичне значення буде
+          <gray>буде зменшено після завершення
+          <gray>виклик.
+        enabled: <dark_green>Увімкнено
+        disabled: <red>Вимкнено
+      statistic_blocks:
+        name: <white><bold>Цільовий блок
+        description: |-
+          <gray>Дозволяє змінювати
+          <gray>статистичний цільовий блок.
+        value: '<gray>Поточний блок: <yellow>[block]'
+      statistic_items:
+        name: <white><bold>Цільовий елемент
+        description: |-
+          <gray>Дозволяє змінювати
+          <gray>статистичний цільовий елемент.
+        value: '<gray>Поточний елемент: <yellow>[item]'
+      statistic_entities:
+        name: <white><bold>Цільова сутність
+        description: |-
+          <gray>Дозволяє змінювати
+          <gray>статистична цільова сутність.
+        value: '<gray>Поточна сутність: <yellow>[entity]'
+      reward_text:
+        name: <white><bold>Текст винагороди
+        description: |-
+          <gray>Конкретний текст винагороди.
+          <gray>Кольорові коди мають бути
+          <gray>застосовано до нього.
+        value: '<gray>Поточний текст:'
+      repeat_reward_text:
+        name: <white><bold>Повторити текст винагороди
+        description: |-
+          <gray>Конкретний повторний текст винагороди
+          <gray>за виклик. Колір
+          До нього необхідно застосувати коди <gray>.
+        value: '<gray>Поточний текст:'
+      reward_items:
+        name: <white><bold>Нагородні предмети
+        description: |-
+          <gray>Дозволяє змінювати винагороду
+          <gray>предметів.
+        title: '<gray>елементів:'
+        list: ' <dark_gray>- [number] x [item]'
+        none: <gray>Елементи не додано.
+      repeat_reward_items:
+        name: <white><bold>Повторюйте елементи винагороди
+        description: |-
+          <gray>Дозволяє змінити повтор
+          <gray>предметів нагороди за це
+          <gray>завдання.
+        title: '<gray>елементів:'
+        list: ' <dark_gray>- [number] x [item]'
+        none: <gray>Елементи не додано.
+      reward_experience:
+        name: <white><bold>Досвід винагороди
+        description: |-
+          <gray>Дозволяє змінювати
+          <gray>винагорода за досвід
+          <gray>гравець.
+        value: '<gray>Поточний рівень: <yellow>[number]'
+      repeat_reward_experience:
+        name: <white><bold>Повторіть нагороду
+        description: |-
+          <gray>Дозволяє змінювати
+          <gray>повторний досвід винагороди
+          <gray>для гравця.
+        value: '<gray>Поточний рівень: <yellow>[number]'
+      reward_money:
+        name: <white><bold>Гроші винагороди
+        description: |-
+          <gray>Дозволяє змінювати
+          <gray>грошова винагорода.
+        value: '<gray>Поточне значення: <yellow>[number]'
+      repeat_reward_money:
+        name: <white><bold>Повторити винагороду
+        description: |-
+          <gray>Дозволяє змінювати
+          <gray>повторити грошову винагороду
+          <gray>за виклик.
+        value: '<gray>Поточне значення: <yellow>[number]'
+      reward_chance:
+        name: <white><bold>Шанс винагороди
+        description: |-
+          <gray>Шанс у відсотках (1-100), що за виконання
+          <gray>будуть видані матеріальні винагороди.
+          <dark_gray>Предмети, гроші та досвід використовують один кидок.
+          <dark_gray>Команди виконуються завжди.
+        value: '<gray>Шанс: <yellow>[number]%'
+      reward_commands:
+        name: <white><bold>Команди винагороди
+        description: |-
+          <gray>Конкретні команди винагороди.
+          <dark_gray>Порада:
+          <dark_gray>Команда не вимагає
+          <dark_gray>написання першого `/` як буде
+          <dark_gray>буде застосовано автоматично.
+          <dark_gray>За замовчуванням команди будуть
+          <dark_gray>виконується сервером. Проте
+          <dark_gray>додавання `[SELF]` на початку
+          <dark_gray>дозволить команді бути
+          <dark_gray>виконується гравцем. Він також
+          <dark_gray>підтримує один заповнювач
+          <dark_gray>`[player]` це буде
+          <dark_gray>замінено іменем гравця
+          <dark_gray>, який виконав завдання.
+        value: '<gray>Поточні команди:'
+      repeat_reward_commands:
+        name: <white><bold>Повторити команди винагороди
+        description: |-
+          <gray>Конкретна повторна винагорода
+          <gray>команд для завдання.
+          <dark_gray>Порада:
+          <dark_gray>Команда не вимагає
+          <dark_gray>написання першого `/` як буде
+          <dark_gray>буде застосовано автоматично.
+          <dark_gray>За замовчуванням команди будуть
+          <dark_gray>виконується сервером. Проте
+          <dark_gray>додавання `[SELF]` на початку
+          <dark_gray>дозволить команді бути
+          <dark_gray>виконується гравцем. Він також
+          <dark_gray>підтримує один заповнювач
+          <dark_gray>`[player]` це буде
+          <dark_gray>замінено іменем гравця
+          <dark_gray>, який виконав завдання.
+        value: '<gray>Поточні команди:'
+      repeatable:
+        name: <white><bold>Повторюється
+        description: |-
+          <gray>Дозволяє перемикати якщо
+          <gray>виклик полягає в тому
+          <gray>повторюється.
+        enabled: <dark_green>Увімкнено
+        disabled: <red>Вимкнено
+      repeat_count:
+        name: <white><bold>Підрахунок повторів
+        description: |-
+          <gray>Дозволяє змінювати
+          <gray>кількість повторень
+          <gray>за виклик.
+          <gray>Встановіть 0 для необмежених повторень.
+        value: '<gray>Поточне значення: <yellow>[number]'
+        value-infinite: '<gray>Поточне значення: <yellow>[number] <gray>(необмежено)'
+      cool_down:
+        name: <white><bold>Охолодження
+        description: |-
+          <gray>Дозволяє змінювати
+          <gray>охолонути секунд, що
+          <gray>потрібно почекати між
+          <gray>повторюване завдання
+          <gray>завершень.
+        value: '<gray>Поточне значення: <yellow>[time]'
+      challenges:
+        name: <white><bold>Виклики
+        description: |-
+          <gray>Перегляньте призначені завдання
+          <gray>до рівня.
+      waiver_amount:
+        name: <white><bold>Сума відмови
+        description: |-
+          <gray>Дозволяє встановити число
+          <gray>викликів, які можуть
+          <gray>залишити незавершеним для
+          <gray>розблокування наступного рівня.
+        value: '<gray>Поточне значення: <yellow>[number]'
+      add_challenges:
+        name: <white><bold>Додати виклик(и)
+        description: |-
+          <gray>Дозволяє вибрати та
+          <gray>додає виклики
+          <gray>рівень.
+      remove_challenges:
+        name: <white><bold>Видалити виклик(и)
+        description: |-
+          <gray>Дозволяє вибрати та
+          <gray>видалити виклики для
+          <gray>рівень.
+      reset_on_new:
+        name: <white><bold>Скинути на новий
+        description: |-
+          <gray>Дозволяє перемикати якщо
+          <gray>проблем має бути
+          <gray>скидання, коли користувач залишає
+          <gray>острів або створює новий
+          <gray>острів.
+        enabled: <dark_green>Увімкнено
+        disabled: <red>Вимкнено
+      broadcast:
+        name: <white><bold>Трансляція
+        description: |-
+          <gray>Трансляції виклик і
+          <gray>рівень перше завершення
+          <gray>кожному.
+        enabled: <dark_green>Увімкнено
+        disabled: <red>Вимкнено
+      remove_completed:
+        name: <white><bold>Приховати завершено
+        description: |-
+          <gray>Приховує виконані завдання
+          <gray>з меню.
+        enabled: <dark_green>Увімкнено
+        disabled: <red>Вимкнено
+      glow_completed:
+        name: <white><bold>Світіння завершено
+        description: |-
+          <gray>Додає чарівне сяйво
+          <gray>до виконаних завдань.
+        enabled: <dark_green>Увімкнено
+        disabled: <red>Вимкнено
+      store_history:
+        name: <white><bold>Історія магазину
+        description: |-
+          <gray>Зберігає внутрішню історію
+          <gray>, коли є кожне завдання
+          <gray>завершено.
+          <gray>Наразі лише для перегляду
+          <gray>у базі даних.
+        enabled: <dark_green>Увімкнено
+        disabled: <red>Вимкнено
+      data_per_island:
+        name: <white><bold>Магазин для кожного острова
+        description: |-
+          <gray>Зберігає виконане
+          <gray>викликів на острів.
+          <gray>Буде надано спільний доступ до прогресу
+          <gray>з усіма гравцями в команді.
+        enabled: <dark_green>Увімкнено
+        disabled: <red>Вимкнено
+      show_title:
+        name: <white><bold>Показати назву
+        description: |-
+          <gray>Показує назву, коли a
+          <gray>виклик або рівень
+          <gray>завершено.
+        enabled: <dark_green>Увімкнено
+        disabled: <red>Вимкнено
+      gamemode_gui:
+        name: <white><bold>Графічний інтерфейс вибору GameMode
+        description: |-
+          <gray>Вмикає один GUI, який
+          <gray>доступний через /challenges
+          <gray>команда.
+          <red>Вимагає перезавантаження сервера.
+        enabled: <dark_green>Увімкнено
+        disabled: <red>Вимкнено
+      locked_level_icon:
+        name: <white><bold>Значок заблокованого рівня за умовчанням
+        description: |-
+          <gray>Значок за умовчанням для всіх заблокованих
+          <gray>рівнів. Кожен рівень може змінюватися
+          <gray>цей значок.
+      purge_history:
+        name: <white><bold>Історія життя
+        description: |-
+          <gray>Кількість днів як довго
+          <gray>дані історії зберігаються
+          <gray>у даних користувача.
+          <gray>0 означає, що дані будуть
+          <gray>не видаляти.
+        value: '<gray>Поточне значення: <yellow>[number]'
+      title_showtime:
+        name: <white><bold>Час показу заголовка
+        description: |-
+          <gray>Кількість позначок цієї назви
+          <gray>буде показано гравцеві.
+        value: '<gray>Поточне значення: <yellow>[number]'
+      active_world_list:
+        name: <white><bold>Показати лише активний світ
+        description: |-
+          <gray>Якщо графічний інтерфейс вибору GameMode
+          <gray>увімкнено, це можна перемикати
+          <gray>, якщо GUI показує вибір GameMode
+          <gray>або виклики для сучасного світу.
+          <red>Вимагає перезавантаження сервера.
+        enabled: <dark_green>Увімкнено
+        disabled: <red>Вимкнено
+      visibility_mode:
+        name: <white><bold>Режим видимості
+        description: |-
+          <gray>Режим видимості для
+          <gray>проблем, які є
+          <gray>приховано.
+        enabled: <dark_green>
+        disabled: <red>
+        visible: Покажіть видимі виклики
+        hidden: Показати всі виклики
+        toggleable: Дозволити перемикання
+      include_undeployed:
+        name: <white><bold>Включити нерозгорнуті завдання
+        description: |-
+          <gray>Вказує, якщо не розгорнуто
+          <gray>проблем має бути
+          <gray>зараховується до рівня
+          <gray>завершення.
+        enabled: <dark_green>Увімкнено
+        disabled: <red>Вимкнено
+      download:
+        name: <white><bold>Бібліотеки завантажень
+        description: |-
+          <gray>Доступне оновлення вручну
+          <gray>викликів бібліотек.
+        enabled: <dark_green>З очищенням кешу
+        disabled: <red>Без очищення кешу
+      player:
+        name: <white><bold>[name]
+        description: 'Власник острова <gray>: [owner]'
+        members: '<gray>членів острова:'
+        member: <dark_gray>- [name]
+        no-island: |-
+          <red>Гравець не має
+          <red>острів.
+      player_list:
+        name: <white><bold>Виберіть список користувачів
+        description: |-
+          <gray>Виберіть список користувачів
+          Має бути показано <gray>.
+        enabled: <dark_green>
+        disabled: <red>
+        online: Онлайн гравці
+        with_island: Гравці з островами
+        in_world: Гравці у світі
+      add_block:
+        name: <white><bold>Додати блок
+        description: |-
+          <gray>Дозволяє додати новий
+          <gray>блок до списку.
+      remove_block:
+        name: <white><bold>Видалити блок
+        description: |-
+          <gray>Дозволяє видалити
+          <gray>вибраних блоків
+          <gray>зі списків.
+        title: '<gray>Вибрані матеріали:'
+        material: <dark_gray>- [material]
+      material:
+        name: <dark_gray>- [material]
+        description: '<gray>Ідентифікатор матеріалу: [id]'
+        selected: <dark_green>Вибрано
+      add_entity:
+        name: <white><bold>Додати сутність
+        description: |-
+          <gray>Дозволяє додати новий
+          <gray>сутність до списку.
+      switch_entity:
+        name: <white><bold>Зміна яєць
+        description: |-
+          <gray>Дозволяє перемикатися з
+          <gray>яєць головам натовпу.
+      remove_entity:
+        name: <white><bold>Видалити сутність
+        description: |-
+          <gray>Дозволяє видалити
+          <gray>вибраних сутностей
+          <gray>зі списків.
+        title: '<gray>Вибрані сутності:'
+        entity: <dark_gray>- [entity]
+      entity:
+        name: <white><bold>[entity]
+        description: '<gray>Ідентифікатор організації: [id]'
+        selected: <dark_green>Вибрано
+      inventory_type:
+        name: <white><bold>Тип запасів
+        description: |-
+          <gray>Виклик, який перевіряє
+          <gray>предметів в інвентарі гравця
+      island_type:
+        name: <white><bold>Тип острова
+        description: |-
+          <gray>Виклик, який перевіряє
+          <gray>блоків або сутностей навколо
+          <gray>гравець.
+      other_type:
+        name: <white><bold>Інший тип
+        description: |-
+          <gray>Виклик, який використовує
+          <gray>плагінів або додаткових речей,
+          <gray>як рівень і гроші.
+      statistic_type:
+        name: <white><bold>Тип статистики
+        description: |-
+          <gray>Виклик, який перевіряє
+          <gray>статистичні дані гравців.
+      save:
+        name: <white><bold>Зберегти
+        description: |-
+          <gray>Зберігає зміни та
+          <gray>повертає.
+      cancel:
+        name: <white><bold>Скасувати
+        description: |-
+          <gray>Скасування змін і
+          <gray>повертає.
+      accept_selected:
+        name: <white><bold>Прийняти вибране
+        description: |-
+          <gray>Повертає вибрані елементи
+          <gray>і відкриває попередній графічний інтерфейс.
+        title: '<gray>Вибрано:'
+        element: <dark_gray>- [element]
+      statistic_element:
+        name: <white><bold>[statistic]
+        description: '[description]'
+        amount: '<gray>Цільове значення: <yellow>[number]'
+        remove:
+          name: '<gray>Зменшити статистику: [value]'
+          value:
+            enabled: <red>Увімкнено
+            disabled: <dark_green>Вимкнено
+        block: '<gray>Цільовий блок: <yellow>[block]'
+        item: '<gray>Цільовий предмет: <yellow>[item]'
+        entity: '<gray>Цільова сутність: <yellow>[entity]'
+        selected: <dark_green>Вибрано
+      environment_element:
+        name: <white><bold>[environment]
+        description: '[description]'
+      search:
+        name: <white><bold>Пошук
+        description: |-
+          <gray>Дозволяє шукати
+          <gray>елемент із введенням
+          <gray>текстове значення.
+        search: '<aqua>Значення: [value]'
+      hide_reward_items:
+        name: <white><bold>Сховати награди
+        description: |-
+          <gray>Переключення, чи показуються предмети награди
+          <gray>в графічному інтерфейсі або ні.
+        hide: <dark_green>Сховати
+        show: <red>Показати
+      team_challenge:
+        name: <white><bold>Командний виклик
+        description: |-
+          <gray>Переключення, чи це командний виклик.
+          <gray>Командні вклики потребують команди і поділяють
+          <gray>завершення та перезарядку на острові.
+        enabled: <dark_green>Увімкнено
+        disabled: <red>Вимкнено
+      team_presence:
+        name: <white><bold>Присутність команди
+        description: |-
+          <gray>Відсоток команди, який має бути
+          <gray>в мережі для завершення цього виклику.
+          <gray>0 вимикає воріта присутності.
+        value: '<gray>Зараз: <yellow>[number]%'
+      aggregate_team:
+        name: <white><bold>Агрегування на весь гарнір команди
+        description: |-
+          <gray>Сума необхідних предметів / статистики на всі
+          <gray>члени в мережі (Об'єднаний внесок,
+          <gray>Спільні зусилля).
+        enabled: <dark_green>Увімкнено
+        disabled: <red>Вимкнено
+      per_member:
+        name: <white><bold>Кожен член платить
+        description: |-
+          <gray>Кожен член в мережі повинен внести свою
+          <gray>частину (необхідна сума - ВСЬОГО КОМАНДИ,
+          <gray>розділена між присутніми членами).
+        enabled: <dark_green>Увімкнено
+        disabled: <red>Вимкнено
+      hide_if_no_team:
+        name: <white><bold>Сховати, якщо немає команди
+        description: |-
+          <gray>Якщо ввімкнено, цей виклик повністю схований
+          <gray>від гравців без команди.
+          <gray>Якщо вимкнено, він показаний але вимкнено.
+        enabled: <dark_green>Увімкнено
+        disabled: <red>Вимкнено
+      required_statistics:
+        name: <white><bold>Необхідна статистика
+        description: |-
+          <gray>Дозволяє вам змінити необхідну
+          <gray>статистику для цього виклику
+          <gray>завершення.
+        title: '<gray>Статистика: '
+        list: ' <dark_gray>- [name]'
+        none: <gray>Статистика не додана.
+      required_advancements:
+        name: <white><bold>Необхідні досягнення
+        description: |-
+          <gray>Дозволяє вам змінити необхідні
+          <gray>досягнення для цього виклику
+          <gray>завершення.
+        title: '<gray>Досягнення: '
+        list: ' <dark_gray>- [name]'
+        none: <gray>Досягнення не додані.
+      required_materialtags:
+        name: <white><bold>Необхідні групи блоків
+        description: |-
+          <gray>Дозволяє вам змінити необхідні
+          <gray>групи блоків для цього виклику
+          <gray>завершення.
+        title: '<gray>Група блоків: '
+        list: ' <dark_gray>- [number] x [tag]'
+        none: <gray>Групи блоків не додані.
+      required_entitytags:
+        name: <white><bold>Необхідні групи сутностей
+        description: |-
+          <gray>Дозволяє вам змінити необхідні
+          <gray>групи сутностей для цього виклику
+          <gray>завершення.
+        title: '<gray>Група сутностей: '
+        list: ' <dark_gray>- [number] x [tag]'
+        none: <gray>Групи сутностей не додані.
+      required_papi:
+        name: <white><bold>Необхідний PAPI
+        description: |-
+          <gray>Перевіряє формулу, яка може
+          <gray>включати заповнювачі PAPI
+          <gray>та математичні та логічні елементи.
+        value: '<gray>Формула: <yellow>[formula]'
+      add_statistic:
+        name: <white><bold>Додати статистику
+        description: |-
+          <gray>Дозволяє вам додати нову
+          <gray>статистику до списку.
+      advancement:
+        name: <white><bold>[name]
+        description: '[description]'
+      add_advancement:
+        name: <white><bold>Додати досягнення
+        description: |-
+          <gray>Дозволяє вам додати нове
+          <gray>досягнення до списку.
+      remove_advancement:
+        name: <white><bold>Видалити досягнення
+        description: |-
+          <gray>Дозволяє видалити
+          <gray>вибрані досягнення
+          <gray>зі списку.
+        enabled: <dark_green>Увімкнено
+        disabled: <red>Вимкнено
+      glow_completed_levels:
+        name: <white><bold>Сяйво завершених рівнів
+        description: |-
+          <gray>Застосовує світіння чарування
+          <gray>до завершених рівнів.
+        enabled: <dark_green>Увімкнено
+        disabled: <red>Вимкнено
+      language:
+        name: <white><bold>Мова
+        description: |-
+          <gray>Фільтрувати бібліотеки викликів
+          <gray>за мовою.
+        current: '<gray>Показувати: <yellow>[lang]'
+        all: Усі
+      add_block_group:
+        name: <white><bold>Додати групу блоків
+        description: |-
+          <gray>Дозволяє вам додати нову
+          <gray>групу блоків до списку.
+      remove_block_group:
+        name: <white><bold>Видалити групу блоків
+        description: |-
+          <gray>Дозволяє видалити
+          <gray>вибрані групи блоків
+          <gray>зі списку.
+        title: '<gray>Вибрані групи блоків:'
+        material: <dark_gray>- [material]
+      block-group:
+        name: <white><bold>[id]
+        description: ''
+        selected: <dark_green>Вибрано
+      add_entity_group:
+        name: <white><bold>Додати групу сутностей
+        description: |-
+          <gray>Дозволяє вам додати нову
+          <gray>групу сутностей до списку.
+      remove_entity_group:
+        name: <white><bold>Видалити групу сутностей
+        description: |-
+          <gray>Дозволяє видалити
+          <gray>вибрані групи сутностей
+          <gray>зі списку.
+        title: '<gray>Вибрані групи сутностей:'
+        entity: <dark_gray>- [tag]
+      entity-group:
+        name: <white><bold>[id]
+        description: ''
+        selected: <dark_green>Вибрано
+      advancement_element:
+        name: <white><bold>[name]
+        description: '[description]'
+        selected: <dark_green>Вибрано
+      toggle-undeployed:
+        name: <white><bold>Неактивовані випробування
+        shown: |-
+          <gray>Неактивовані випробування зараз
+          <gray><green>показані<gray>.
+        hidden: |-
+          <gray>Неактивовані випробування зараз
+          <gray><red>приховані<gray>.
+      required_biomes:
+        name: <white><bold>Потрібні біоми
+        description: |-
+          <gray>Гравець має перебувати в одному
+          <gray>з цих біомів, щоб виконати це
+          <gray>острівне випробування.
+        title: '<gray>Біоми: '
+        list: ' <dark_gray>- <yellow>[biome]'
+        none: <gray>Біоми не потрібні (будь-який біом).
+      reward_island_level:
+        name: <white><bold>Рівень острова в нагороду
+        description: |-
+          <gray>Дозволяє змінити нагороду рівнем острова.
+          <gray>Потрібен аддон Level.
+        value: '<gray>Поточне значення: <yellow>[number]'
+      repeat_reward_island_level:
+        name: <white><bold>Рівень острова за повторення
+        description: |-
+          <gray>Дозволяє змінити нагороду рівнем
+          <gray>острова за повторення випробування.
+          <gray>Потрібен аддон Level.
+        value: '<gray>Поточне значення: <yellow>[number]'
+      open_anywhere:
+        name: <white><bold>Відкривати GUI будь-де
+        description: |-
+          <gray>Дозволяє гравцям відкривати GUI випробувань
+          <gray>звідусіль. Для виконання все одно потрібно
+          <gray>перебувати на острові, якщо він захищений.
+        enabled: <dark_green>Увімкнено
+        disabled: <red>Вимкнено
+      biome:
+        name: <white><bold>[biome]
+        description: '<gray>ID біому: [id]'
+        selected: <dark_green>Вибрано
+    tips:
+      click-to-select: <yellow>Натисніть <gray>, щоб вибрати.
+      click-to-choose: <yellow>Натисніть <gray>, щоб вибрати.
+      click-to-complete: <yellow>Натисніть <gray>, щоб завершити.
+      right-click-multiple-open: <yellow>Клацніть правою кнопкою миші <gray>, щоб
+        вибрати кількість завершень.
+      shift-left-click-to-complete-all: <yellow>Shift Натисніть <gray>, щоб завершити
+        все.
+      left-click-to-accept: <yellow>Клацніть лівою кнопкою миші <gray>, щоб завершити.
+      right-click-to-write: <yellow>Клацніть правою кнопкою миші <gray>, щоб написати.
+      click-to-reduce: <yellow>Натисніть <gray>, щоб зменшити.
+      click-to-increase: <yellow>Натисніть <gray>, щоб збільшити.
+      click-to-return: <yellow>Натисніть <gray>, щоб повернутися.
+      click-to-quit: <yellow>Натисніть <gray>, щоб вийти.
+      click-to-wipe: <yellow>Натисніть <gray>, щоб стерти.
+      left-click-to-wipe: <yellow>Клацніть лівою кнопкою миші <gray>, щоб стерти.
+      right-click-to-switch: <yellow>Клацніть правою кнопкою миші <gray>, щоб переключитися.
+      click-to-open: <yellow>Натисніть <gray>, щоб відкрити.
+      click-to-export: <yellow>Натисніть <gray>, щоб експортувати.
+      click-to-create: <yellow>Натисніть <gray>, щоб створити.
+      left-click-to-open: <yellow>Клацніть лівою кнопкою миші <gray>, щоб відкрити.
+      right-click-to-reset-all: <yellow>Клацніть правою кнопкою миші <gray>, щоб стерти
+        все.
+      click-to-toggle: <yellow>Натисніть <gray>, щоб перемкнути.
+      click-to-change: <yellow>Натисніть <gray>, щоб змінити.
+      shift-click-to-reset: <yellow>Shift Натисніть <gray>, щоб скинути.
+      click-to-add: <yellow>Натисніть <gray>, щоб додати.
+      click-to-remove: <yellow>Натисніть <gray>, щоб видалити.
+      left-click-to-cycle: <yellow>Клацніть лівою кнопкою миші <gray>, щоб перейти
+        вниз.
+      right-click-to-cycle: <yellow>Клацніть правою кнопкою миші <gray>, щоб перейти
+        вгору.
+      click-to-edit: <yellow>Натисніть <gray>, щоб редагувати.
+      left-click-to-download: <yellow>Клацніть лівою кнопкою миші <gray>, щоб завантажити.
+      right-click-to-toggle: <yellow>Клацніть правою кнопкою миші <gray>для перемикання.
+      click-to-install: <yellow>Натисніть <gray>, щоб установити.
+      click-to-reset-all: <yellow>Натисніть <gray>, щоб скинути все.
+      right-click-to-select: <yellow>Клацніть правою кнопкою миші <gray>, щоб вибрати.
+      right-click-to-deselect: <yellow>Клацніть правою кнопкою миші <gray>, щоб скасувати
+        вибір.
+      left-click-to-choose: <yellow>Клацніть лівою кнопкою миші <gray>, щоб вибрати.
+      click-to-cancel: <yellow>Натисніть <gray>, щоб скасувати.
+      click-to-save: <yellow>Натисніть <gray>, щоб зберегти.
+      click-to-deselect: <yellow>Натисніть <gray>, щоб скасувати вибір.
+      click-on-item: |-
+        <yellow>Клацніть <gray>на елементі в
+        <gray>ваш інвентар.
+      left-click-to-edit: <yellow>Клацніть лівою кнопкою миші <gray>для редагування.
+      right-click-to-clear: <yellow>Клацніть правою кнопкою миші <gray>, щоб очистити.
+      click-to-previous: <yellow>Натисніть <gray>, щоб переглянути попередню сторінку.
+      click-to-next: <yellow>Натисніть <gray>, щоб переглянути наступну сторінку.
+      right-click-to-reset: <yellow>Натисніть праву кнопку миші <gray>щоб скинути.
+    descriptions:
+      challenge:
+        lore: |-
+          [description]
+          [status]
+          [cooldown]
+          [requirements]
+          [rewards]
+        status:
+          completed: <dark_green><bold>Завершено
+          completed-times: <dark_green>Виконано <gray><bold>[number] <reset><dark_green>раз(ів)
+          completed-times-of: <dark_green>Виконано <gray><bold>[number] <reset><dark_green>із
+            <gray><bold>[max] <reset><dark_green>разів
+          completed-times-reached: <dark_green><bold>Виконано всі <gray>[max] <dark_green>рази
+        cooldown:
+          lore: |-
+            [timeout]
+            [wait-time]
+          timeout: '<gray><bold>Охолодження: <reset><gray>[time]'
+          wait-time: '<red><bold>Доступно після: <reset><red>[time]'
+          in-days: '[number] дн '
+          in-hours: '[number] год '
+          in-minutes: '[number] хв'
+          in-seconds: '[number] с'
+        requirements:
+          lore: |-
+            [environment]
+            [type-requirement]
+            [permissions]
+          environment-single: <gray>Обмежено [environment]
+          environment-title: '<gray>Обмежується:'
+          environment-list: '  <gray>- <yellow>[environment]'
+          permission-single: <red>Потрібен дозвіл [permissions].
+          permissions-title: '<red>Потрібні дозволи:'
+          permissions-list: '  <red>- [permission]'
+          island:
+            lore: |-
+              [blocks]
+              [entities]
+              [search-radius]
+              [warning-block]
+              [warning-entity]
+            blocks-title: '<gray><bold>Необхідні блоки:'
+            block-value: '  <gray>- <yellow>[material]'
+            blocks-value: '  <gray>- <yellow>[number] x [material]'
+            entities-title: '<gray><bold>Необхідні сутності:'
+            entity-value: '  <gray>- <yellow>[entity]'
+            entities-value: '  <gray>- <yellow>[number] x [entity]'
+            search-radius: <gray>Не далі <yellow>[number] <gray>метрів
+            warning-block: <yellow>Блоки будуть <red>видалені
+            warning-entity: <yellow>Сутності будуть <red>видалені
+            biomes-title: '<gray><bold>Потрібні біоми:'
+            biome-value: '  <gray>- <yellow>[biome]'
+          inventory:
+            lore: |-
+              [items]
+              [warning]
+            item-title: '<gray><bold>Необхідні елементи:'
+            item-value: '  <gray>- <yellow>[item]'
+            items-value: '  <gray>- <yellow>[number] x [item]'
+            warning: <yellow>Елемент(и) буде <red>видалено
+          other:
+            lore: |-
+              [experience]
+              [experience-warning]
+              [money]
+              [money-warning]
+              [level]
+            experience: '<gray><bold>Необхідний досвід: <reset><yellow>[number]'
+            experience-warning: <yellow>Досвід буде <red>видалено
+            money: '<gray><bold>Необхідні гроші: <reset><yellow>[number]'
+            money-warning: <yellow>Гроші будуть <red>видалені
+            level: '<gray><bold>Необхідний рівень острова: <reset><yellow>[number]'
+          statistic:
+            lore: |-
+              [statistic]
+              [warning]
+            multiple-target: '<gray><bold>[статистика]: <reset><yellow>[number] x
+              [target]'
+            single-target: '<gray><bold>[statistic]: <reset><yellow>[terget]'
+            statistic: <gray><bold>[statistic] <reset><yellow>[number]
+            warning: <yellow>Статистичні дані будуть <red>зменшені
+        rewards:
+          lore: |-
+            <gray><bold>Нагороди:
+            [text]
+            [items]
+            [experience]
+            [money]
+            [commands]
+          item-title: '<gray>елементів:'
+          item-value: '  <gray>- <yellow>[item]'
+          items-value: '  <gray>- <yellow>[number] x [item]'
+          experience: '<gray>Досвід: <reset><yellow>[номер]'
+          money: '<gray>Гроші: <reset><yellow>[number]'
+          commands-title: '<gray>Команди:'
+          command: '  <gray>- <yellow>[command]'
+        team-requirement: '<gold>Команда: <yellow>[online] <gold>в мережі (<yellow>[number]
+          <gold>потрібно)'
+        team-required: <red>Команда потрібна для завершення
+      level:
+        lore: |-
+          [text]
+          [status]
+          [waiver]
+          [rewards]
+        status:
+          completed: <dark_green><bold>Завершено
+          completed-challenges-of: |-
+            <dark_green>Завершено <gray><bold>[number] <reset><dark_green>з
+            <gray><bold>[max] <reset><dark_green>виклики.
+          locked: <red><bold>Заблоковано
+          missing-challenges: |-
+            <gray>[number] має бути більше викликів
+            <gray>завершено, щоб розблокувати цей рівень.
+        waiver: |-
+          <gray><bold>[number] завдання(-и) <reset><gray>може бути
+          <gray>пропущено, щоб розблокувати наступний рівень.
+        rewards:
+          lore: |-
+            <gray><bold>Нагороди:
+            [text]
+            [items]
+            [experience]
+            [money]
+            [commands]
+          item-title: '<gray>елементів:'
+          item-value: '  <gray>- <yellow>[item]'
+          items-value: '  <gray>- <yellow>[number] x [item]'
+          experience: '<gray>Досвід: <reset><yellow>[number]'
+          money: '<gray>Гроші: <reset><yellow>[number]'
+          commands-title: '<gray>Команди:'
+          command: '  <gray>- <yellow>[command]'
+      library:
+        author: <gray>від <yellow>[author]
+        version: <gray>Made with Challenges <yellow>[version]
+        lang: '<gray>Мова: <yellow>[lang]'
+        gamemode: <gray>Основний для <yellow>[gamemode]
+  conversations:
+    prefix: '<bold><gold>[BentoBox]: <reset>'
+    confirm-string: true, on, yes, confirm, y, valid, correct
+    deny-string: false, off, no, deny, n, invalid, incorrect
+    cancel-string: скасувати
+    exit-string: скасувати, вийти, вийти
+    cancelled: <red>Розмова скасована!
+    input-number: <yellow>Будь ласка, введіть номер у чаті.
+    input-seconds: <yellow>Будь ласка, введіть секунди в чаті.
+    numeric-only: <red>Дане [value] не є числом!
+    not-valid-value: <red>Введене число [value] неприпустиме. Воно має бути від [min]
+      до [max] включно.
+    user-data-removed: <green>Усі дані користувача для [gamemode] видалено з бази
+      даних.
+    confirm-user-data-deletion: <yellow>Підтвердьте, що ви бажаєте очистити базу даних
+      користувачів для [gamemode].
+    challenge-data-removed: <green>Усі дані викликів для [gamemode] видалено з бази
+      даних.
+    confirm-challenge-data-deletion: <yellow>Будь ласка, підтвердьте, що ви хочете
+      очистити базу даних викликів для [gamemode].
+    all-data-removed: <green>Усі дані аддонів для [gamemode] видалено з бази даних.
+    confirm-all-data-deletion: <yellow>Будь ласка, підтвердьте, що ви хочете очистити
+      дані аддонів для [gamemode].
+    write-name: <yellow>Будь ласка, напишіть ім'я в чаті.
+    new-object-created: '&Створено новий об’єкт для [gamemode].'
+    object-already-exists: <red>Об'єкт <gray>[id] <red>вже існує. Виберіть інше ім'я.
+    invalid-challenge: <red>Завдання [challenge] містить недійсні дані. Його не можна
+      розгортати!
+    name-changed: <green>Успіх, назву оновлено.
+    write-description: <yellow>Будь ласка, введіть новий опис у чаті та 'quit' у окремому
+      рядку, щоб завершити.
+    description-changed: <green>Успіх, опис оновлено.
+    write-permissions: <yellow>Будь ласка, введіть необхідні дозволи, по одному на
+      рядок у чаті, і 'quit' на окремому рядку, щоб завершити.
+    permissions-changed: <green>Успіх, дозволи на виклик оновлено.
+    write-reward-text: <yellow>Будь ласка, введіть новий текст винагороди в чаті та
+      'quit' в окремому рядку, щоб завершити.
+    reward-text-changed: <green>Успіх, текст нагороди оновлено.
+    write-repeat-reward-text: <yellow>Будь ласка, введіть новий повторний текст винагороди
+      в чаті та 'quit' в окремому рядку, щоб завершити.
+    repeat-reward-text-changed: <green>Успіх, текст повторної винагороди оновлено.
+    write-reward-commands: <yellow>Будь ласка, введіть нову команду винагороди для
+      кожного рядка в чаті та 'quit' в окремому рядку, щоб завершити.
+    reward-commands-changed: <green>Успіх, команди винагород оновлено.
+    write-repeat-reward-commands: <yellow>Будь ласка, введіть нову повторну команду
+      винагороди для кожного рядка в чаті та 'quit' в окремому рядку, щоб завершити.
+    repeat-reward-commands-changed: <green>Успіх, повторні команди винагороди оновлено.
+    challenge-removed: <green>Challenges [challenge] для [gamemode] видалено з бази
+      даних.
+    confirm-challenge-deletion: <yellow>Будь ласка, підтвердьте, що ви хочете видалити
+      [challenge] для [gamemode] з бази даних.
+    level-removed: <green>Рівень [level] для [gamemode] видалено з бази даних.
+    confirm-level-deletion: <yellow>Будь ласка, підтвердьте, що ви хочете видалити
+      [level] для [gamemode] з бази даних.
+    start-downloading: <green>Початок завантаження та імпорту бібліотеки завдань.
+    written-text: '<green>Текст введення:'
+    confirm-data-replacement: <yellow>Будь ласка, підтвердьте, що ви бажаєте замінити
+      свої поточні завдання новими.
+    new-challenges-imported: <green>Успіху, нові завдання для [gamemode] імпортовано.
+    exported-file-name: <yellow>Будь ласка, введіть назву файлу для експортованого
+      файлу бази даних. (напишіть 'cancel', щоб вийти)
+    database-export-completed: <green>Успіх, експорт бази даних для [world] завершено.
+      Файл [file] створено.
+    file-name-exist: <red>Файл із назвою '[id]' існує. Неможливо перезаписати.
+    write-search: <yellow>Введіть пошукове значення. (напишіть 'cancel', щоб вийти)
+    search-updated: <green>Значення пошуку оновлено.
+    enter-formula: |-
+      <green>Введіть формулу, яка використовує тільки заповнювачі PAPI та символи =,<>,<+,>=, ==, !=, AND, OR.
+      <green>Приклад: <gray>%my_lifetime_count% >= 1000 AND %island_level% >= 100
+    confirm-instruction: <gray>Введіть '<green>confirm<gray>' у чат, щоб продовжити,
+      або '<red>cancel<gray>', щоб скасувати.
+    input-repeat-count: <yellow>Будь ласка, введіть кількість повторень у чат. Введіть
+      0 для необмежених повторень.
+  titles:
+    challenge-title: Успішно завершено
+    challenge-subtitle: '[friendlyName]'
+    level-title: Успішно завершено
+    level-subtitle: '[friendlyName]'
+  messages:
+    completed: <dark_green>Ви виконали виклик [name] для [player]!
+    already-completed: <dark_green>Це завдання вже виконано!
+    reset: <dark_green>Ви скинули виклик [name] для [player]!
+    reset-all: <dark_green>Усі завдання [player] скинуто!
+    not-completed: <dark_green>Це завдання ще не завершено!
+    migrate-start: <dark_green>Розпочати міграцію даних аддонів викликів.
+    migrate-end: <dark_green>Дані надбудови Challenges оновлено до нового формату.
+    migrate-not: <dark_green>Усі дані дійсні.
+    start-downloading: <dark_purple>Початок завантаження та імпорту бібліотеки завдань.
+    you-completed-challenge: <dark_green>Ви завершили завдання [value] <reset><dark_green>!
+    you-repeated-challenge: <dark_green>Ви повторили завдання [value] <reset><dark_green>!
+    you-repeated-challenge-multiple: <dark_green>Ви повторили завдання [value] <reset><dark_green>[count]
+      разів!
+    no-reward-this-time: <gray>Удача не на вашому боці — цього разу без нагороди!
+    you-completed-level: <dark_green>Ви завершили рівень [value] <reset><dark_green>!
+    name-has-completed-challenge: <dark_purple>[name] виконав завдання [value] <reset><dark_purple>!
+    name-has-completed-level: <dark_purple>[name] завершив рівень [value] <reset><dark_purple>!
+    load-skipping: '"[value]" вже існує - пропуск'
+    load-overwriting: Перезапис "[value]"
+    load-add: 'Додавання нового об''єкта: [value]'
+  errors:
+    no-name: <red>Відсутня назва завдання
+    unknown-challenge: <red>Невідомий виклик
+    not-valid-integer: |-
+      <red>Дане ціле число "[value]" недійсне!
+      Значення має бути між [min] і [max].
+    not-deployed: <red>Challenge не розгорнуто!
+    not-on-island: <red>Для цього ви повинні бути на своєму острові!
+    challenge-level-not-available: <red>Ви не розблокували необхідний рівень для виконання
+      цього завдання.
+    not-repeatable: <red>Цей виклик неможливо повторити!
+    wrong-environment: <red>Ви перебуваєте в неправильному середовищі!
+    not-enough-items: <red>У вас недостатньо [items], щоб виконати це завдання!
+    not-close-enough: <red>Ви повинні знаходитися в межах [number] блоків від усіх
+      необхідних елементів.
+    you-still-need: <red>Вам все ще потрібно [amount] x [item]
+    missing-addon: '<red>Неможливо виконати завдання: відсутній необхідний аддон або
+      плагін.'
+    incorrect: '<red>Неможливо завершити завдання: вимоги неправильні.'
+    not-enough-money: <red>Щоб виконати завдання, у вашому обліковому записі необхідно
+      мати [value].
+    not-enough-experience: <red>Щоб виконати це завдання, необхідно мати [value] досвіду.
+    island-level: <red>Ваш острів має бути рівня [number] або вище, щоб виконати це
+      завдання!
+    no-load: '<red>Помилка: Не вдалося завантажити [file]. [message]'
+    load-error: '<red>Помилка: неможливо завантажити [value].'
+    no-rank: <red>Ви не маєте достатньо високого рангу, щоб це зробити.
+    cannot-remove-items: <red>Деякі предмети не можна видалити з вашого інвентарю!
+    exist-challenges-or-levels: <red>Проблеми вже існують у вашому світі. Неможливо
+      продовжити!
+    no-challenges: <red>Виклики ще не реалізовані в цьому світі!
+    no-challenges-admin: <red>Виклики ще не реалізовані в цьому світі! Використовуйте
+      <dark_purple>/[command] <red>, щоб додати їх!
+    missing-arguments: У команді <red>відсутні аргументи.
+    no-multiple-permission: <red>Ви не маєте дозволу виконувати це завдання кілька
+      разів одночасно.
+    invalid-level: <red>Рівень [level] містить недійсні дані. Він не буде завантажений
+      з бази даних!
+    invalid-challenge: <red>Завдання [challenge] містить недійсні дані. Він не буде
+      завантажений з бази даних!
+    no-library-entries: <red>Не вдається знайти жодного запису бібліотеки. Нічого
+      показати.
+    not-hooked: <red>Challenges Addon не вдалося знайти режим гри.
+    timeout: <red>Цей виклик вимагає очікування [timeout] між завершеннями. Ви повинні
+      зачекати [wait-time], поки завершите його знову.
+    requirement-not-met: <red>Цей виклик вимагає [statistic] мати [number]. У вас
+      є лише [value].
+    requirement-not-met-entity: <red>Цей виклик вимагає [statistic] [entity] мати
+      [number]. У вас є лише [value].
+    requirement-not-met-material: <red>Цей виклик вимагає, щоб [statistic] [material]
+      мала [number]. У вас є лише [value].
+    import-failed: '<red>Не вдалося імпортувати вклики: [message]. Перевірте консоль
+      сервера для деталей.'
+    no-team: <red>Це командний виклик. У вас повинна бути команда, щоб його завершити!
+    insufficient-team: <red>Цей командний виклик потребує [number] членів команди
+      в мережі. Лише [online] в мережі.
+    member-missing-share: <red>[name] не має свою частину ([amount] x [item]) для
+      цього командного виклику.
+    wrong-biome: <red>Ви повинні перебувати в біомі [biome], щоб виконати це випробування!
+  materials:
+    any: 'Будь-який '
+    all_hanging_signs:
+      name: Будь-який висячий знак
+    all_signs:
+      name: Будь-який знак
+protection:
+  flags:
+    CHALLENGES_ISLAND_PROTECTION:
+      description: |-
+        <dark_purple><italic>Перемкнути, хто може
+        <dark_purple><italic>завершення завдань
+      name: Захист викликів
+    CHALLENGES_WORLD_PROTECTION:
+      description: |-
+        <dark_purple><italic>Увімкнути/вимкнути
+        <dark_purple><italic>вимоги до гравців
+        <dark_purple><italic>бути на своєму острові, щоб
+        <dark_purple><italic>виконати завдання.
+      name: Обмеження острова викликів
+      hint: Жодних проблем за межами острова
+version: 12

@@ -1,0 +1,59 @@
+config-version = "2.8"
+bind = "0.0.0.0:25565"
+motd = """
+<gradient:#2DDCFF:#A54CFF><bold>SKYBIT NETWORK</bold></gradient> <dark_gray>•</dark_gray> <white>1.21.11</white>
+<aqua>»</aqua> <white>Slimefun</white> <dark_gray>•</dark_gray> <light_purple>SkyBlock</light_purple> <dark_gray>•</dark_gray> <gold>Economy</gold> <dark_gray>•</dark_gray> <yellow>Quests</yellow> <dark_gray>•</dark_gray> <green>Events</green> <aqua>«</aqua>"""
+show-max-players = 100
+online-mode = false
+force-key-authentication = false
+prevent-client-proxy-connections = false
+player-info-forwarding-mode = "modern"
+forwarding-secret-file = "forwarding.secret"
+announce-forge = false
+kick-existing-players = false
+ping-passthrough = "MODS"
+enable-player-address-logging = true
+
+[servers]
+	lobby = "127.0.0.1:25566"
+	skybit = "127.0.0.1:25567"
+	skyblock = "127.0.0.1:25568"
+	try = ["lobby"]
+
+[forced-hosts]
+	"survival.play.example.sk" = ["skybit"]
+	"skyblock.play.example.sk" = ["skyblock"]
+
+[advanced]
+	compression-threshold = 256
+	compression-level = -1
+	login-ratelimit = 3000
+	connection-timeout = 5000
+	read-timeout = 30000
+	haproxy-protocol = false
+	tcp-fast-open = false
+	bungee-plugin-message-channel = true
+	show-ping-requests = false
+	failover-on-unexpected-server-disconnect = true
+	announce-proxy-commands = true
+	log-command-executions = false
+	log-player-connections = true
+
+[query]
+	enabled = false
+	port = 25565
+	map = "SkyBit Network"
+	show-plugins = false
+
+[packet-limiter]
+	#Size of the moving time window in seconds used to calculate average rates.
+	#A larger window tolerates short bursts while still enforcing the configured limits over time.
+	interval = 7
+	#Maximum average number of packets per second a client may send. -1 disables this check.
+	packets-per-second = -1
+	#Maximum average number of compressed (on-wire) bytes per second a client may send. -1 disables this check.
+	bytes-per-second = -1
+	#Maximum average number of decompressed bytes per second a client may send.
+	#Protects against compression bomb attacks where small packets expand to excessive sizes after decompression.
+	#-1 disables this check.
+	decompressed-bytes-per-second = 5242880

@@ -1,0 +1,479 @@
+Categories:
+  helmet:
+    Name: Helmet
+    Slots:
+    - HEAD
+    Items:
+    - copper_helmet
+    - chainmail_helmet
+    - netherite_helmet
+    - golden_helmet
+    - diamond_helmet
+    - leather_helmet
+    - iron_helmet
+    - turtle_helmet
+  chestplate:
+    Name: Chestplate
+    Slots:
+    - CHEST
+    Items:
+    - netherite_chestplate
+    - copper_chestplate
+    - leather_chestplate
+    - iron_chestplate
+    - diamond_chestplate
+    - chainmail_chestplate
+    - golden_chestplate
+  leggings:
+    Name: Leggings
+    Slots:
+    - LEGS
+    Items:
+    - golden_leggings
+    - diamond_leggings
+    - leather_leggings
+    - copper_leggings
+    - chainmail_leggings
+    - iron_leggings
+    - netherite_leggings
+  boots:
+    Name: Boots
+    Slots:
+    - FEET
+    Items:
+    - leather_boots
+    - netherite_boots
+    - iron_boots
+    - golden_boots
+    - copper_boots
+    - chainmail_boots
+    - diamond_boots
+  elytra:
+    Name: Elytra
+    Slots:
+    - CHEST
+    Items:
+    - elytra
+  sword:
+    Name: Sword
+    Slots:
+    - HAND
+    Items:
+    - golden_sword
+    - copper_sword
+    - iron_sword
+    - netherite_sword
+    - wooden_sword
+    - stone_sword
+    - diamond_sword
+  axe:
+    Name: Axe
+    Slots:
+    - HAND
+    Items:
+    - wooden_axe
+    - iron_axe
+    - golden_axe
+    - copper_axe
+    - diamond_axe
+    - netherite_axe
+    - stone_axe
+  hoe:
+    Name: Hoe
+    Slots:
+    - HAND
+    Items:
+    - wooden_hoe
+    - iron_hoe
+    - golden_hoe
+    - copper_hoe
+    - diamond_hoe
+    - netherite_hoe
+    - stone_hoe
+  pickaxe:
+    Name: Pickaxe
+    Slots:
+    - HAND
+    Items:
+    - wooden_pickaxe
+    - diamond_pickaxe
+    - golden_pickaxe
+    - iron_pickaxe
+    - stone_pickaxe
+    - netherite_pickaxe
+    - copper_pickaxe
+  shovel:
+    Name: Shovel
+    Slots:
+    - HAND
+    Items:
+    - iron_shovel
+    - stone_shovel
+    - wooden_shovel
+    - netherite_shovel
+    - copper_shovel
+    - diamond_shovel
+    - golden_shovel
+  spear:
+    Name: Spear
+    Slots:
+    - HAND
+    - OFF_HAND
+    Items:
+    - golden_spear
+    - copper_spear
+    - diamond_spear
+    - stone_spear
+    - netherite_spear
+    - wooden_spear
+    - iron_spear
+  trident:
+    Name: Trident
+    Slots:
+    - HAND
+    - OFF_HAND
+    Items:
+    - trident
+  bow:
+    Name: Bow
+    Slots:
+    - HAND
+    - OFF_HAND
+    Items:
+    - bow
+  crossbow:
+    Name: Crossbow
+    Slots:
+    - HAND
+    - OFF_HAND
+    Items:
+    - crossbow
+  fishing_rod:
+    Name: Fishing Rod
+    Slots:
+    - HAND
+    - OFF_HAND
+    Items:
+    - fishing_rod
+  shield:
+    Name: Shield
+    Slots:
+    - OFF_HAND
+    Items:
+    - shield
+  breakable:
+    Name: Brekable
+    Slots:
+    - HAND
+    - OFF_HAND
+    - FEET
+    - LEGS
+    - CHEST
+    - HEAD
+    - BODY
+    - SADDLE
+    Items:
+    - leather_boots
+    - golden_sword
+    - copper_helmet
+    - chainmail_helmet
+    - netherite_helmet
+    - crossbow
+    - copper_hoe
+    - iron_chestplate
+    - copper_leggings
+    - diamond_shovel
+    - wooden_axe
+    - iron_axe
+    - shears
+    - stone_spear
+    - warped_fungus_on_a_stick
+    - iron_sword
+    - netherite_sword
+    - copper_boots
+    - chainmail_boots
+    - diamond_boots
+    - golden_leggings
+    - brush
+    - stone_shovel
+    - copper_sword
+    - wooden_sword
+    - diamond_hoe
+    - netherite_axe
+    - diamond_sword
+    - golden_hoe
+    - elytra
+    - leather_leggings
+    - golden_helmet
+    - netherite_shovel
+    - leather_helmet
+    - flint_and_steel
+    - stone_axe
+    - shield
+    - iron_hoe
+    - carrot_on_a_stick
+    - copper_spear
+    - mace
+    - leather_chestplate
+    - golden_pickaxe
+    - wooden_shovel
+    - netherite_spear
+    - wooden_spear
+    - copper_shovel
+    - bow
+    - stone_sword
+    - copper_pickaxe
+    - iron_boots
+    - diamond_leggings
+    - diamond_spear
+    - diamond_helmet
+    - golden_boots
+    - diamond_axe
+    - iron_pickaxe
+    - diamond_chestplate
+    - golden_chestplate
+    - iron_helmet
+    - turtle_helmet
+    - stone_pickaxe
+    - netherite_pickaxe
+    - netherite_leggings
+    - golden_shovel
+    - netherite_chestplate
+    - wooden_hoe
+    - fishing_rod
+    - golden_spear
+    - netherite_boots
+    - golden_axe
+    - trident
+    - wooden_pickaxe
+    - diamond_pickaxe
+    - chainmail_leggings
+    - iron_leggings
+    - chainmail_chestplate
+    - iron_spear
+    - stone_hoe
+    - iron_shovel
+    - copper_chestplate
+    - copper_axe
+    - netherite_hoe
+  armor:
+    Name: Armor
+    Slots:
+    - HEAD
+    - CHEST
+    - LEGS
+    - FEET
+    Items:
+    - leather_boots
+    - copper_helmet
+    - chainmail_helmet
+    - netherite_helmet
+    - leather_chestplate
+    - iron_chestplate
+    - copper_leggings
+    - diamond_leggings
+    - iron_boots
+    - diamond_helmet
+    - golden_boots
+    - diamond_chestplate
+    - copper_boots
+    - chainmail_boots
+    - diamond_boots
+    - iron_helmet
+    - turtle_helmet
+    - golden_chestplate
+    - netherite_leggings
+    - netherite_chestplate
+    - golden_leggings
+    - netherite_boots
+    - chainmail_leggings
+    - chainmail_chestplate
+    - iron_leggings
+    - copper_chestplate
+    - golden_helmet
+    - leather_leggings
+    - leather_helmet
+  tool:
+    Name: Tool
+    Slots:
+    - HAND
+    Items:
+    - iron_hoe
+    - copper_hoe
+    - golden_pickaxe
+    - wooden_shovel
+    - copper_shovel
+    - copper_pickaxe
+    - diamond_shovel
+    - wooden_axe
+    - iron_axe
+    - shears
+    - diamond_axe
+    - iron_pickaxe
+    - stone_pickaxe
+    - netherite_pickaxe
+    - golden_shovel
+    - wooden_hoe
+    - golden_axe
+    - stone_shovel
+    - wooden_pickaxe
+    - diamond_pickaxe
+    - diamond_hoe
+    - netherite_axe
+    - stone_hoe
+    - iron_shovel
+    - golden_hoe
+    - copper_axe
+    - netherite_shovel
+    - netherite_hoe
+    - stone_axe
+  swords_axes:
+    Name: Weapon
+    Slots:
+    - HAND
+    Items:
+    - golden_sword
+    - golden_axe
+    - copper_sword
+    - wooden_sword
+    - stone_sword
+    - netherite_axe
+    - diamond_sword
+    - wooden_axe
+    - iron_axe
+    - copper_axe
+    - iron_sword
+    - diamond_axe
+    - netherite_sword
+    - stone_axe
+  bow_crossbow:
+    Name: Bow / Crossbow
+    Slots:
+    - HAND
+    - OFF_HAND
+    Items:
+    - crossbow
+    - bow
+  chestplate_elytra:
+    Name: Chestplate / Elytra
+    Slots:
+    - CHEST
+    Items:
+    - netherite_chestplate
+    - copper_chestplate
+    - elytra
+    - leather_chestplate
+    - iron_chestplate
+    - diamond_chestplate
+    - chainmail_chestplate
+    - golden_chestplate
+  weapon:
+    Name: Weapon
+    Slots:
+    - HAND
+    - OFF_HAND
+    Items:
+    - golden_sword
+    - copper_spear
+    - crossbow
+    - mace
+    - netherite_spear
+    - wooden_spear
+    - bow
+    - stone_sword
+    - wooden_axe
+    - iron_axe
+    - diamond_spear
+    - stone_spear
+    - iron_sword
+    - diamond_axe
+    - netherite_sword
+    - golden_spear
+    - golden_axe
+    - trident
+    - copper_sword
+    - wooden_sword
+    - iron_spear
+    - netherite_axe
+    - diamond_sword
+    - copper_axe
+    - stone_axe
+  mining_tools:
+    Name: Mining Tool
+    Slots:
+    - HAND
+    Items:
+    - golden_axe
+    - stone_shovel
+    - wooden_pickaxe
+    - diamond_pickaxe
+    - golden_pickaxe
+    - wooden_shovel
+    - copper_shovel
+    - netherite_axe
+    - copper_pickaxe
+    - diamond_shovel
+    - wooden_axe
+    - iron_shovel
+    - iron_axe
+    - copper_axe
+    - diamond_axe
+    - iron_pickaxe
+    - netherite_shovel
+    - stone_pickaxe
+    - netherite_pickaxe
+    - stone_axe
+    - golden_shovel
+  tools_weapons:
+    Name: Tools & Weapons
+    Slots:
+    - HAND
+    - OFF_HAND
+    Items:
+    - golden_sword
+    - iron_hoe
+    - copper_spear
+    - crossbow
+    - copper_hoe
+    - mace
+    - golden_pickaxe
+    - wooden_shovel
+    - netherite_spear
+    - wooden_spear
+    - copper_shovel
+    - bow
+    - stone_sword
+    - copper_pickaxe
+    - diamond_shovel
+    - wooden_axe
+    - iron_axe
+    - shears
+    - diamond_spear
+    - stone_spear
+    - iron_sword
+    - diamond_axe
+    - iron_pickaxe
+    - netherite_sword
+    - stone_pickaxe
+    - netherite_pickaxe
+    - golden_shovel
+    - wooden_hoe
+    - golden_spear
+    - golden_axe
+    - stone_shovel
+    - trident
+    - copper_sword
+    - wooden_pickaxe
+    - diamond_pickaxe
+    - diamond_hoe
+    - wooden_sword
+    - iron_spear
+    - netherite_axe
+    - stone_hoe
+    - diamond_sword
+    - iron_shovel
+    - golden_hoe
+    - copper_axe
+    - netherite_shovel
+    - netherite_hoe
+    - stone_axe

@@ -1,0 +1,36 @@
+isEnabled: true
+name: '&2[Dynamic] &3The Cave Sanctum'
+customInfo:
+- '&fThe perfect starter instanced sanctum!'
+- '&6Credits: MagmaGuy, Frostcone, 69OzCanOfBepis, Realm of Lotheridon'
+dungeonSizeCategory: SANCTUM
+worldName: em_id_the_cave
+environment: NORMAL
+protect: true
+playerInfo: |-
+  &aDynamic Sanctum
+  $bossCount boss encounters
+  &7Explore the depths of
+  &7the cave!
+regionEnterMessage: '&bYou''ve been asked to clear the path to the underground. Deal
+  with the thing in the cave!'
+regionLeaveMessage: '&bYou have left The Cave!'
+startLocation: em_id_the_cave,-18.5,58,-17.5,90.0,30.0
+teleportLocation: em_id_the_cave,0.5,65,0.5,70,0
+dungeonObjectives:
+- filename=the_cave_boiler_p1.yml
+contentType: DYNAMIC_DUNGEON
+dungeonConfigFolderName: em_id_the_cave
+contentLevel: -1
+difficulties:
+- name: normal
+  id: 0
+  levelSync: '+5'
+- name: hard
+  id: 1
+  levelSync: '+0'
+- name: mythic
+  id: 2
+  levelSync: '-5'
+setupMenuDescription: []
+dungeonLockoutMinutes: 4320

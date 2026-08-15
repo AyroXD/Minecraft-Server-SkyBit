@@ -1,0 +1,129 @@
+Command:
+  ArgumentName:
+    Generic: value
+    Type: type
+    Number: number
+    Name: name
+    Amount: amount
+    Player: player
+    World: world
+    ItemType: itemType
+    BlockType: blockType
+    Enchantment: enchantment
+  Usage:
+    RequiredArgument: <c:#FF6B6B><shadow:#9C172B:1.0><%name%></shadow></c>
+    OptionalArgument: <c:#4ADE80><shadow:#15803D:1.0>[%name%]</shadow></c>
+    OptionalFlag: <c:#60A5FA><shadow:#1D4ED8:1.0>[%name%]</shadow></c>
+  Help:
+    Desc: List all sub-commands.
+  Reload:
+    Desc: Reload the plugin.
+  CheckPerm:
+    Desc: Print player permissions info.
+  DumpItem:
+    Desc: Print item NBT info.
+  EconomyBridge:
+    Name: Economy Bridge
+    Desc: Economy Bridge commands.
+    FromItem:
+      Desc: Create item currency.
+  Syntax:
+    GenericError: <gray><soft_red>%input%</soft_red> is not a valid <soft_red>%name%</soft_red> argument!</gray>
+    NumberNotDecimal: <gray><soft_red>%name%</soft_red> argument value must be decimal, but <soft_red>%input%</soft_red> was found.</gray>
+    NumberNotInteger: <gray><soft_red>%name%</soft_red> argument value must be integer, but <soft_red>%input%</soft_red> was found.</gray>
+    NumberAboveMax: <gray><soft_red>%name%</soft_red> argument value can not be greater than <soft_red>%value%</soft_red>, but <soft_red>%input%</soft_red> was found.</gray>
+    NumberBelowMin: <gray><soft_red>%name%</soft_red> argument value can not be smaller than <soft_red>%value%</soft_red>, but <soft_red>%input%</soft_red> was found.</gray>
+    InvalidWorld: <gray><soft_red>%input%</soft_red> is not a valid world!</gray>
+    InvalidItem: <gray><soft_red>%input%</soft_red> is not a valid item!</gray>
+    InvalidBlock: <gray><soft_red>%input%</soft_red> is not a valid block!</gray>
+    InvalidEnchantment: <gray><soft_red>%input%</soft_red> is not a valid enchantment!</gray>
+  Execution:
+    PlayerOnly: <soft_red>This command is for players only.</soft_red>
+    NotYourself: <soft_red>You can't use this command on yourself.</soft_red>
+    MissingArguments:
+    - '[prefix="false"]'
+    - ' '
+    - '<red>Error: </red><c:#D9D9D9><shadow:#5D5D5D:1.0>Missing required arguments!</shadow></c>'
+    - '<red>Usage: </red><c:#FCC549><shadow:#B45115:1.0>/%command%</shadow></c>'
+    - ' '
+HelpPage:
+  General:
+  - '[prefix="false"]'
+  - <c:#FCE491><shadow:#C5741A:1.0><st>                                                            </st></shadow></c>
+  - <c:#FCC549><shadow:#B45115:1.0>  <b>%name% Commands</b></shadow></c>
+  - ' '
+  - '  <sprite:"gui":"icon/info"><c:#D9D9D9><shadow:#5D5D5D:1.0>Hover over a command to see description.</shadow></c>'
+  - ' '
+  - '%entry%'
+  - <c:#FCE491><shadow:#C5741A:1.0><st>                                                            </st></shadow></c>
+  Entry: <hover:show_text:"<c:#D9D9D9><shadow:#5D5D5D:1.0>%description%</shadow></c>"><c:#FCC549><shadow:#B45115:1.0>  • /%command%</shadow></c></hover>
+Plugin:
+  Reloaded: <gray>Plugin <green>reloaded</green>!</gray>
+EconomyBridge:
+  FromItem:
+    Nothing: <red>You must hold an item in hand!</red>
+    Exists: <red>Currency with this name already exists!</red>
+    Created: <gray>Created <yellow>%currency_name%</yellow> currency as <yellow>%currency_id%</yellow>.</gray>
+Error:
+  NoPermission: <soft_red>You don't have permission to do that!</soft_red>
+  InvalidPlayer: <soft_red>Player not found!</soft_red>
+Time:
+  Label:
+    Day: '%sd.'
+    Hour: '%sh.'
+    Minute: '%smin.'
+    Second: '%ssec.'
+  Delimiter: ' '
+States:
+  EnabledDisabled:
+    onTrue: <green>Enabled</green>
+    onFalse: <red>Disabled</red>
+  YesNo:
+    onTrue: <green>Yes</green>
+    onFalse: <red>No</red>
+  OnOff:
+    onTrue: <green>ON</green>
+    onFalse: <red>OFF</red>
+Entry:
+  Valid: <green>✔</green> <gray>%s</gray>
+  Invalid: <red>✘</red> <gray>%s</gray>
+Other:
+  Any: Any
+  None: None
+  Never: Never
+  OneTimed: One-timed
+  Unlimited: Unlimited
+  Infinity: ∞
+MenuItem:
+  Exit:
+    Name: <red><b>Close</b></red>
+    Lore: []
+  Back:
+    Name: <soft_yellow><b>Back</b></soft_yellow>
+    Lore: []
+  NextPage:
+    Name: <white><b><u>Next Page</u> →</b></white>
+    Lore: []
+  PreviousPage:
+    Name: <white><b>← <u>Previous Page</u></b></white>
+    Lore: []
+Dialog:
+  Button:
+    OK:
+      Label: <green>✔</green> OK
+      Width: 150
+    Cancel:
+      Label: <red>✘</red> Cancel
+      Width: 150
+    Apply:
+      Label: <green>✔</green> Apply
+      Width: 150
+    Confirm:
+      Label: <green>✔</green> Confirm
+      Width: 150
+    Reset:
+      Label: <red>✘</red> Reset
+      Width: 150
+    Back:
+      Label: <soft_yellow>←</soft_yellow> Back
+      Width: 150

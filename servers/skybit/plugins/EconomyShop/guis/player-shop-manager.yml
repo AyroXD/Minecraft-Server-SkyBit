@@ -1,0 +1,42 @@
+# Player Shop Manager GUI Configuration
+size: 54
+title: "&6&lManage Shop"
+listing-slots: "0-44"
+
+filler:
+  enabled: true
+  material: BLACK_STAINED_GLASS_PANE
+  name: " "
+  slots: "45-53"
+
+items:
+  back:
+    slot: 48
+    material: SPECTRAL_ARROW
+    name: "&eBack"
+    lore:
+      - "&7Return to player shops."
+
+  add-item:
+    slot: 49
+    material: LIME_DYE
+    name: "&aAdd Item"
+    lore:
+      - "&7Hold an item and click"
+      - "&7to add it to your shop."
+
+  shop-settings:
+    slot: 50
+    material: COMPARATOR
+    name: "&6Shop Settings"
+    lore:
+      - "&7Toggle shop enabled/disabled,"
+      - "&7rename, or delete your shop."
+
+  shop-stats:
+    slot: 51
+    material: BOOK
+    name: "&bShop Statistics"
+    lore:
+      - "&7Total sales: &f%total_sales%"
+      - "&7Revenue: &a%revenue%"

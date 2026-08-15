@@ -1,0 +1,29 @@
+players:
+  20b73e5b-82d8-3540-b1e0-81d387d5b812:
+    name: Ayro
+    level: 1
+    xp: 50
+    coins: 0
+    active-seconds: 300
+    stats:
+      blocks-mined: 1
+      mobs-killed: 0
+      fish-caught: 0
+      distance-travelled: 1246
+    mine-rush:
+      period: 41359
+      blocks: 1
+      claims: []
+    daily:
+      last-epoch: -1
+      streak: 0
+    cosmetics:
+      tag: ''
+      trail: ''
+    quest-progress:
+      W2026-33: 0
+      D20679: 0
+    quest-claims: []
+    achievements: []
+    playtime-claims: []
+    unlocks: []

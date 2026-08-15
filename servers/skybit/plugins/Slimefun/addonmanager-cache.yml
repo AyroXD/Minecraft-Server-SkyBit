@@ -1,0 +1,5 @@
+remote-sync:
+  etag: '"d12a180cbc7ebb45082aca0c24dc07c0b6c19470eb55010489b67b38b1e18a37"'
+  source-url: https://raw.githubusercontent.com/rutwok-labs/SF4-Addons/main/Addons/java/core/api/config/addonmanager.yml
+  last-status: Not modified
+  last-synced: '2026-08-15T10:02:33.241768300Z'

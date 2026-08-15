@@ -1,0 +1,69 @@
+Charges:
+  # Enables the Charges feature: https://nightexpressdev.com/excellentenchants/features/charges
+  Enabled: false
+  Fuel:
+    # Controls if item meta (such as display name, lore, model data, etc.) should be ignored when checks if item is valid fuel.
+    # [Default is false]
+    Ignore_Meta: false
+    # Default item used to fuel enchantments on anvils.
+    # Enchantments can have their own custom fuel items.
+    # https://nightexpressdev.com/nightcore/configuration/item-formation/
+    Item:
+      Material: minecraft:lapis_lazuli
+      Lore: []
+Modules:
+  # When 'true', adds the enchantment description to item lore under enchantment names.
+  EnchantTooltip: true
+EnchantTooltip:
+  # Sets whether or not only enchanted books will have enchantment descriptions.
+  Books_Only: false
+  Format:
+    # Sets description format for enchantments without charges.
+    Default: <gray>• %description%</gray>
+    # Sets description format for enchantments with charges enabled.
+    WithCharges: <gray>• %description% %charges%</gray>
+    # Sets charges format based on percent of max. charges amount.
+    Charges-By-Percent:
+      zero:
+        Threshold: 0
+        Format: <soft_red>(%amount%⚡)</soft_red>
+      low:
+        Threshold: 25
+        Format: <soft_orange>(%amount%⚡)</soft_orange>
+      medium:
+        Threshold: 50
+        Format: <soft_yellow>(%amount%⚡)</soft_yellow>
+      high:
+        Threshold: 75
+        Format: <soft_green>(%amount%⚡)</soft_green>
+Arrow_Effects:
+  # Sets tick interval for arrow & trident particle effect trails added by enchantments.
+  # [Increase for performance; Decrease for better visuals]
+  # [20 ticks = 1 second]
+  # [Default is 1]
+  Tick_Interval: 1
+Passive_Enchants:
+  # Tick interval for passive enchantments (in seconds).
+  # Passive enchants depends on entity's 'ticksLived' value, changing this value may result in passive enchants not triggered correctly.
+  # [Default is 1]
+  Interval: 1
+  # Controls whether mobs are affected by effects of passive enchantments.
+  # [Disable for performance; Enable for better experience]
+  # [Default is true]
+  AllowForMobs: true
+Disabled:
+  # Put here CUSTOM enchantment names that you want to disable in specific worlds.
+  # To disable all enchantments for a world, use '*' instead of enchantment names.
+  # Enchantment names are equal to their config file names in the '/enchants/' directory.
+  # [*] This setting only disables enchantment effects, not the enchantment distribution there!
+  ByWorld:
+    another_world:
+    - ice_aspect
+    - another_enchantment
+    your_world_name:
+    - ice_aspect
+    - enchantment_name
+Anvil:
+  # Prevents item from being enchanted using anvil if it already contains specific amount of custom enchantments.
+  # [Default is 5]
+  Enchant_Limit: 5

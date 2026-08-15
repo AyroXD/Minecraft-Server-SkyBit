@@ -1,0 +1,16 @@
+isEnabled: true
+shopName: '[EM] Buy or Sell'
+informationButton:
+  material: PLAYER_HEAD
+informationButtonSlot: 4
+buyProcedurallyGeneratedItems:
+  material: EMERALD
+  customModelID: 31173
+buyCustomItems:
+  material: EMERALD
+  customModelID: 31173
+sellItems:
+  material: REDSTONE
+  customModelID: 31173
+buySlot: 11
+sellSlot: 15

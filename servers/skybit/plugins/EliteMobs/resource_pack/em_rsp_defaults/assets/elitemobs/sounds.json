@@ -1,0 +1,37 @@
+{
+  "treasure_chest.open": {
+    "sounds": [
+      "custom/treasure_chest_open"
+    ]
+ },
+  "guild.rankup": {
+    "sounds": [
+      "custom/guild_rank_up"
+    ]
+ },
+  "guild.prestige": {
+    "sounds": [
+      "custom/guild_rank_up"
+    ]
+ },
+   "quest.progression": {
+    "sounds": [
+      "custom/quest_accept"
+    ]
+ },
+   "quest.completion": {
+    "sounds": [
+      "custom/quest_completion"
+    ]
+ },
+   "quest.abandon": {
+    "sounds": [
+      "custom/quest_abandon"
+    ]
+ },
+    "quest.accept": {
+    "sounds": [
+      "custom/quest_accept"
+    ]
+ }
+}

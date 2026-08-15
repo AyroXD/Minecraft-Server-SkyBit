@@ -1,0 +1,1572 @@
+# ##########################################################################################
+# This is a YML file. Be careful when editing. Check your edits in a YAML checker like    #
+# the one at http://yaml-online-parser.appspot.com                                        #
+# ##########################################################################################
+
+meta:
+  authors:
+  - BONNe
+
+challenges:
+  commands:
+    admin:
+      main:
+        parameters: ''
+        description: Galvenā administratora komanda. Atver administratora izvēlni.
+      reload:
+        description: Atkārtoti ielādē uzdevumus no datubāzes.
+        parameters: ''
+      show:
+        description: Izdrukā visus uzdevumus sarakstē.
+        parameters: ''
+      complete:
+        description: Pabeidz uzdevumu priekš spēlētāja.
+        parameters: <spēlētājs> <uzdevums>
+      reset:
+        description: Atjauno uzdevumu priekš spēlētāja. Ja "uzdevums" parametrs ir
+          "all", tad tiks atjaunoti visi uzdevumi.
+        parameters: <spēlētājs> <uzdevums>
+      migrate:
+        description: Migrē datus uz jaunāko formātu.
+        parameters: ''
+    user:
+      main:
+        description: Atver Uzdevumu Izvēlni
+        parameters: ''
+      complete:
+        description: Pabeidz uzdevumu.
+        parameters: <uzdevums> <daudzums>
+  gui:
+    titles:
+      # The title for the Main GUI
+      player-gui: <black><bold>Uzdevumu Izvēlne
+      # The title for the Main GUI
+      gamemode-gui: <black><bold>Izvēlies Spēles Režīmu
+      # The title for the Multiple Completion GUI
+      multiple-gui: <black><bold>Cik daudz reižu?
+      # GUI titles below is visible just for Admins.
+      admin-gui: <black><bold>Administratora Izvēlne
+      edit-challenge: <black><bold>Mainīt [challenge]
+      edit-level: <black><bold>Mainīt [level]
+      settings: <black><bold>Iestatījumi
+      choose-challenge: <black><bold>Izvēlies Uzdevumu
+      choose-level: <black><bold>Izvēlies Līmeni
+      choose-player: <black><bold>Izvēlies Spēlētāju
+      library: <black><bold>Bibliotēka
+      manage-blocks: <black><bold>Pārvaldīt Blokus
+      manage-entities: <black><bold>Pārvaldīt Radības
+      type-selector: <black><bold>Uzdevumu Tipu Izvēlne
+      item-selector: <black><bold>Lietu Izvēlne
+      block-selector: <black><bold>Bloku Izvēlne
+      entity-selector: <black><bold>Radību Izvēlne
+      challenge-selector: <black><bold>Uzdevumu Izvēlne
+      statistic-selector: <black><bold>Statistikas Izvēlne
+      environment-selector: <black><bold>Vides Izvēlne
+      manage-block-groups: <black><bold>Pārvaldīt Bloku Grupas
+      manage-entity-groups: <black><bold>Pārvaldīt Objektu Grupas
+      manage-statistics: <black><bold>Pārvaldīt Statistiku
+      manage-advancements: <black><bold>Pārvaldīt Sasniegumus
+      advancement-selector: <black><bold>Sasniegumu Atlasītājs
+      biome-selector: <black><bold>Biomu Izvēlne
+    buttons:
+      # Button in the Challenges GUI that allows to select free challenges.
+      free-challenges:
+        name: <white><bold>Brīvie Uzdevumi
+        description: |-
+          <gray>Attainos visus brīvos
+          <gray>uzdevumus
+# Button that is used to return to previous GUI or exit it completely.
+      return:
+        name: <white><bold>Atgriezties
+        description: |-
+          <gray>Atgriežas uz iepriekšējo
+          <gray>izvēlni vai iziet no
+          <gray>izvēlnes.
+# Button that is used in multi-page GUIs which allows to return to previous page.
+      previous:
+        name: <white><bold>Iepriekšējā Lapa
+        description: <gray>Pārslēgties uz <yellow>[number] <gray>lapu # Button that is used in multi-page GUIs which allows to go to next page.
+      next:
+        name: <white><bold>Nākošā Lapa
+        description: <gray>Pārslēgties uz <yellow>[number] <gray>lapu # Button that allows to reduce number
+      reduce:
+        name: <white><bold>Samazināt
+        description: <gray>Samazināt par <yellow>[number] # Button that allows to increase number
+      increase:
+        name: <white><bold>Palielināt
+        description: <gray>Palielināt par <yellow>[number] # Button that displays and allows completing challenge
+      accept:
+        name: <white><bold>Pabeigt
+        description: |-
+          <gray>Pabeigt uzdevumu <yellow>[number]
+          <gray>reizi(-es)
+# Button that allows to quit the current gui.
+      quit:
+        name: <white><bold>Iziet
+        description: <gray>Iziet no izvēlnes. # All following buttons are mainly for Admin GUI.
+      complete_user_challenges:
+        name: <white><bold>Pabeigt Spēlētāja Uzdevumu(-s)
+        description: |-
+          <gray>Ļauj pabeigt uzdevumu(-s)
+          <gray>spēlētāja vietā.
+      reset_user_challenges:
+        name: <white><bold>Atjaunot Spēlētāja Uzdevumu(-s)
+        description: |-
+          <gray>Ļauj atjaunot uzdevumu(-s)
+          <gray>priekš spēlētāja.
+      add_challenge:
+        name: <white><bold>Izveidot Uzdevumu
+        description: |-
+          <gray>Sāk uzdevuma izveides
+          <gray>procesu.
+      add_level:
+        name: <white><bold>Izveidot Līmeni
+        description: |-
+          <gray>Sāk līmeņa izveides
+          <gray>procesu.
+      edit_challenge:
+        name: <white><bold>Labot Uzdevumu
+        description: |-
+          <gray>Ļauj izvēlēties un
+          <gray>labot uzdevumu.
+      edit_level:
+        name: <white><bold>Labot Līmeni
+        description: |-
+          <gray>Ļauj izvēlēties un
+          <gray>labot līmeni.
+      delete_challenge:
+        name: <white><bold>Dzēst Uzdevumu
+        description: |-
+          <gray>Ļauj izvēlēties un
+          <gray>dzēst uzdevumu.
+      delete_level:
+        name: <white><bold>Dzēst Līmeni
+        description: |-
+          <gray>Ļauj izvēlēties un
+          <gray>dzēst līmeni.
+      edit_settings:
+        name: <white><bold>Iestatījumi
+        description: |-
+          <gray>Ļauj skatīt un mainīt
+          <gray>papildinājuma iestatījumus.
+      complete_wipe:
+        name: <white><bold>Pilnīga Datu Dzēšana
+        description: |-
+          <gray>Pilnībā dzēš visus
+          <gray>datus no papildinājuma
+          <gray>datubāzes.
+      challenge_wipe:
+        name: <white><bold>Uzdevumu Dzēšana
+        description: |-
+          <gray>Pilnībā dzēš uzdevumu un
+          <gray>līmeņu datus no papildinājuma
+          <gray>datubāzes.
+      user_wipe:
+        name: <white><bold>Lietotāju Datu Dzēšana
+        description: |-
+          <gray>Pilnībā dzēš lietotāju
+          <gray>datus no papildinājuma
+          <gray>datubāzes.
+      library:
+        name: <white><bold>Bibliotēka
+        description: |-
+          <gray>Atver publisko
+          <gray>uzdevumu datubāzi.
+        downloading: |-
+          <gray>Bibliotēkas lejupielāde
+          <gray>pieprasīta...
+      import_database:
+        name: <white><bold>Ielādēt Datubāzi
+        description: |-
+          <gray>Ļauj ielādēt eksportētu
+          <gray>datubāzes failu.
+      import_template:
+        name: <white><bold>Ielādēt Paraugu
+        description: |-
+          <gray>Ļauj ielādēt parauga
+          <gray>failu.
+      export_challenges:
+        name: <white><bold>Eksportēt Uzdevumus
+        description: |-
+          <gray>Ļauj eksportēt datubāzi
+          <gray>uz failu.
+      properties:
+        name: <white><bold>Iestatījumi
+        description: <gray>Skatīt galvenos iestatījumus.
+      requirements:
+        name: <white><bold>Prasības
+        description: <gray>Skatīt prasības.
+      rewards:
+        name: <white><bold>Atlīdzības
+        description: <gray>Skatīt atlīdzības.
+      deployed:
+        name: <white><bold>Strādājošs
+        description: |-
+          <gray>Ļauj pārslēgt vai
+          <gray>uzdevums ir pieejams
+          <gray>priekš spēlētājiem.
+        enabled: <dark_green>Pieejams
+        disabled: <red>Nepieejams
+      name:
+        name: <white><bold>Nosaukums
+        description: |-
+          <gray>Ļauj mainīt uzdevuma
+          <gray>nosaukumu.
+        value: '<gray>Šobrīd: <reset>[name]'
+      remove_on_complete:
+        name: <white><bold>Slēpt pēc Pabeigšanas
+        description: |-
+          <gray>Ļauj pārslēgt uzdevumu
+          <gray>paslēpšanu pēc pilnīga
+          <gray>uzdevuma izpildes.
+        enabled: <dark_green>Ieslēgs
+        disabled: <red>Izslēgs
+      description:
+        name: <white><bold>Apraksts
+        description: |-
+          <gray>Ļauj uzstādīt un mainīt
+          <gray>uzdevumam specifisku
+          <gray>aprakstu.
+        value: '<gray>Esošais apraksts:'
+      environment:
+        name: <white><bold>Dimensija
+        description: |-
+          <gray>Ļauj limitēt uzdevuma
+          <gray>izpildes vidi.
+        enabled: <dark_green>
+        disabled: <red>
+      order:
+        name: <white><bold>Prioritāte
+        description: |-
+          <gray>Ļauj uzstādīt prioritātes
+          <gray>numuru.
+          <gray>Objekti tiks sakārtoti augošā
+          <gray>secībā. Ja prioritātes numuri
+          <gray>ir vienādi, tad objekti tiks
+          <gray>kārtoti pēc to `id` vārdiem..
+        value: '<gray>Esošais numurs: <yellow>[number]'
+      icon:
+        name: <white><bold>Ikona
+        description: <gray>Ļauj mainīt ikonu.
+      locked_icon:
+        name: <white><bold>Slēgtā Ikona
+        description: |-
+          <gray>Ļauj mainīt slēgta
+          <gray>līmeņa ikonu.
+      required_permissions:
+        name: <white><bold>Nepieciešamās Atļaujas
+        description: |-
+          <gray>Ļauj uzstādīt un mainīt
+          <gray>atļaujas, lai uzdevumu
+          <gray>varētu izpildīt.
+        title: '<gray>Atļaujas: '
+        permission: ' <dark_gray>- [permission]'
+        none: <gray>Atļaujas nav uzstādītas.
+      remove_entities:
+        name: <white><bold>Izņemt Radības
+        description: |-
+          <gray>Ļauj pārslēgt vai
+          <gray>radības tiks izņemtas
+          <gray>no pasaules pēc
+          <gray>uzdevuma izpildes.
+        enabled: <dark_green>Ieslēgts
+        disabled: <red>Izslēgts
+      required_entities:
+        name: <white><bold>Nepieciešamās Radības
+        description: |-
+          <gray>Ļauj mainīt uzdevuma
+          <gray>radības, kas nepieciešamas
+          <gray>uzdevuma izpildei.
+        title: '<gray>Radības: '
+        list: ' <dark_gray>- [number] x [entity]'
+        none: <gray>Radības nav uzstādītas.
+      remove_blocks:
+        name: <white><bold>Izņemt Blokus
+        description: |-
+          <gray>Ļauj pārslēgt vai
+          <gray>bloki tiks izņemti
+          <gray>no pasaules pēc
+          <gray>uzdevuma izpildes.
+        enabled: <dark_green>Ieslēgts
+        disabled: <red>Izslēgts
+      required_blocks:
+        name: <white><bold>Nepieciešamie Bloki
+        description: |-
+          <gray>Ļauj mainīt uzdevuma
+          <gray>blokus, kas nepieciešamas
+          <gray>uzdevuma izpildei.
+        title: '<gray>Bloki: '
+        list: ' <dark_gray>- [number] x [block]'
+        none: <gray>Bloki nav uzstādīti.
+      search_radius:
+        name: <white><bold>Meklēšanas Rādiuss
+        description: |-
+          <gray>Ļauj mainīt bloku un radību
+          <gray>meklēšanas rādiusu.
+        value: '<gray>Esošā distance: <yellow>[number]'
+      remove_items:
+        name: <white><bold>Izņemt Priekšmetus
+        description: |-
+          <gray>Ļauj pārslēgt vai
+          <gray>priekšmetus tiks izņemtas
+          <gray>no spēlētāja inventāra
+          <gray>pēc uzdevuma izpildes.
+        enabled: <dark_green>Ieslēgts
+        disabled: <red>Izslēgts
+      required_items:
+        name: <white><bold>Priekšmeti
+        description: |-
+          <gray>Ļauj mainīt uzdevuma
+          <gray>priekšmeti, kas nepieciešamas
+          <gray>uzdevuma izpildei.
+        title: '<gray>Priekšmeti: '
+        list: ' <dark_gray>- [number] x [item]'
+        none: <gray>Priekšmeti nav uzstādīti.
+      add_ignored_meta:
+        name: <white><bold>Pievienot Meta-datu Ignorēšanu
+        description: |-
+          <gray>Ļauj uzstādīt, kuriem
+          <gray>priekšmetiem drīkst
+          <gray>ignorēt meta-datus, kā
+          <gray>bojājumi, vārdi, uzlabojumi.
+        title: '<gray>Priekšmeti: '
+        list: ' <dark_gray>- [item]'
+        none: <gray>Priekšmeti nav uzstādīti.
+      remove_ignored_meta:
+        name: <white><bold>Noņemt Meta-datu Ignorēšanu
+        description: |-
+          <gray>Ļauj noņemt, kuriem
+          <gray>priekšmetiem drīkst
+          <gray>ignorēt meta-datus, kā
+          <gray>bojājumi, vārdi, uzlabojumi.
+      remove_experience:
+        name: <white><bold>Noņemt Pieredzi
+        description: |-
+          <gray>Ļauj pārslēgt vai pēc
+          <gray>uzdevuma izpildes
+          <gray>pieredzes punkti
+          <gray>spēlētājam tiks noņemti.
+        enabled: <dark_green>Ieslēgts
+        disabled: <red>Izslēgts
+      required_experience:
+        name: <white><bold>Nepieciešamā Pieredze
+        description: |-
+          <gray>Ļauj uzstādīt nepieciešamo
+          <gray>pieredzi uzdevuma izpildei.
+        value: '<gray>Pieredze: <yellow>[number]'
+      required_level:
+        name: <white><bold>Salas Līmenis
+        description: |-
+          <gray>Ļauj uzstādīt nepieciešamo
+          <gray>salas līmeni uzdevuma
+          77 izpildei.
+        value: '<gray>Līmenis: <yellow>[number]'
+      remove_money:
+        name: <white><bold>Noskaitīt Naudu
+        description: |-
+          <gray>Ļauj pārslēgt vai pēc
+          <gray>uzdevuma izpildes
+          <gray>nauda tiks noskaitīta
+          <gray>spēlētāja maka.
+        enabled: <dark_green>Ieslēgts
+        disabled: <red>Izslēgts
+      required_money:
+        name: <white><bold>Nepieciešamā Nauda
+        description: |-
+          <gray>Ļauj uzstādīt nepieciešamo
+          <gray>naudas daudzumu spēlētāja
+          <gray>makā.
+        value: '<gray>Naudas Daudzums: <yellow>[number]'
+      statistic:
+        name: <white><bold>Statistika
+        description: |-
+          <gray>Ļauj mainīt, kura
+          <gray>statistikas vērtība
+          <gray>tiks skatīta.
+        value: '<gray>Vērtība: <yellow>[statistic]'
+      statistic_amount:
+        name: <white><bold>Nepieciešamā Vērtība
+        description: |-
+          <gray>Ļauj uzstādīt kādu
+          <gray>vērtību statistikas
+          <gray>rādītājam ir jāsasniedz.
+        value: '<gray>Vērtība: <yellow>[number]'
+      remove_statistic:
+        name: <white><bold>Samazināt Statistiku
+        description: |-
+          <gray>Ļauj pārslēgt vai pēc
+          <gray>uzdevuma izpildes
+          <gray>no statistikas datiem
+          <gray>nepieciešamā vērtība
+          <gray>tiks noskaitīta.
+        enabled: <dark_green>Ieslēgts
+        disabled: <red>Izslēgts
+      statistic_blocks:
+        name: <white><bold>Bloks
+        description: |-
+          <gray>Ļauj uzstādīt bloku,
+          <gray>ko skatīs statistika.
+        value: '<gray>Bloks: <yellow>[block]'
+      statistic_items:
+        name: <white><bold>Priekšmets
+        description: |-
+          <gray>Ļauj uzstādīt priekšmetu,
+          <gray>ko skatīs statistika.
+        value: '<gray>Priekšmets: <yellow>[item]'
+      statistic_entities:
+        name: <white><bold>Radība
+        description: |-
+          <gray>Ļauj uzstādīt radību,
+          <gray>ko skatīs statistika.
+        value: '<gray>Radība: <yellow>[entity]'
+      reward_text:
+        name: <white><bold>Atlīdzības Teksts
+        description: |-
+          <gray>Ļauj uzrakstīt uzdevumam
+          <gray>specifisku atlīdzības
+          <gray>tekstu.
+        value: '<gray>Teksts:'
+      repeat_reward_text:
+        name: <white><bold>Atkārtotas Atlīdzības Teksts
+        description: |-
+          <gray>Ļauj uzrakstīt uzdevumam
+          <gray>specifisku atkārtotas
+          <gray>atlīdzības tekstu.
+        value: '<gray>Teksts:'
+      reward_items:
+        name: <white><bold>Atlīdzības Priekšmeti
+        description: |-
+          <gray>Ļauj uzstādīt atlīdzības
+          <gray>priekšmetus.
+        title: '<gray>Priekšmeti: '
+        list: ' <dark_gray>- [number] x [item]'
+        none: <gray>Priekšmeti nav uzstādīti.
+      repeat_reward_items:
+        name: <white><bold>Atkārtotas Atlīdzības Priekšmeti
+        description: |-
+          <gray>Ļauj uzstādīt atkārtotās
+          <gray>atlīdzības priekšmetus.
+        title: '<gray>Priekšmeti: '
+        list: ' <dark_gray>- [number] x [item]'
+        none: <gray>Priekšmeti nav uzstādīti.
+      reward_experience:
+        name: <white><bold>Atlīdzības Pieredze
+        description: |-
+          <gray>Ļauj uzstādīt atlīdzības
+          <gray>pieredzi spēlētājam.
+        value: '<gray>Pieredze: <yellow>[number]'
+      repeat_reward_experience:
+        name: <white><bold>Atkārtotas Atlīdzības Pieredze
+        description: |-
+          <gray>Ļauj uzstādīt atkārtotas
+          <gray>atlīdzības pieredzi
+          <gray>spēlētājam.
+        value: '<gray>Pieredze: <yellow>[number]'
+      reward_money:
+        name: <white><bold>Atlīdzības Nauda
+        description: |-
+          <gray>Ļauj uzstādīt atlīdzības
+          <gray>naudu spēlētājam.
+        value: '<gray>Vērtība: <yellow>[number]'
+      repeat_reward_money:
+        name: <white><bold>Atkārtotas Atlīdzības Nauda
+        description: |-
+          <gray>Ļauj uzstādīt atkārtotas
+          <gray>atlīdzības naudu spēlētājam.
+        value: '<gray>Vērtība: <yellow>[number]'
+      reward_chance:
+        name: <white><bold>Atlīdzības Iespēja
+        description: |-
+          <gray>Iespēja procentos (1-100), ka izpildot
+          <gray>izaicinājumu tiks piešķirtas atlīdzības.
+          <dark_gray>Priekšmeti, nauda un pieredze izmanto vienu izlozi.
+          <dark_gray>Komandas tiek izpildītas vienmēr.
+        value: '<gray>Iespēja: <yellow>[number]%'
+      reward_commands:
+        name: <white><bold>Atlīdzības Komandas
+        description: |-
+          <gray>Ļauj uzstādīt atlīdzības
+          <gray>komandas.
+          <dark_gray>Padomi:
+          <dark_gray>Komandām nav nepieciešams
+          <dark_gray>pirmais `/` to sākumā.
+          <dark_gray>Pēc noklusējuma komandas
+          <dark_gray>izpildīs serveris. Taču
+          <dark_gray>pievienojot `[SELF]` sākumā
+          <dark_gray>komanda tiks izpildīta no
+          <dark_gray>spēlētāja konta.
+          <dark_gray>Komanda atbalsta arī
+          <dark_gray>`[player]` aizvietotāju,
+          <dark_gray>kurš tiks pārvidots par
+          <dark_gray>spēlētāja vārdu.
+        value: '<gray>Komandas:'
+      repeat_reward_commands:
+        name: <white><bold>Atkārtotas Atlīdzības Komandas
+        description: |-
+          <gray>Ļauj uzstādīt atkārtotas
+          <gray>atlīdzības komandas.
+          <dark_gray>Padomi:
+          <dark_gray>Komandām nav nepieciešams
+          <dark_gray>pirmais `/` to sākumā.
+          <dark_gray>Pēc noklusējuma komandas
+          <dark_gray>izpildīs serveris. Taču
+          <dark_gray>pievienojot `[SELF]` sākumā
+          <dark_gray>komanda tiks izpildīta no
+          <dark_gray>spēlētāja konta.
+          <dark_gray>Komanda atbalsta arī
+          <dark_gray>`[player]` aizvietotāju,
+          <dark_gray>kurš tiks pārvidots par
+          <dark_gray>spēlētāja vārdu.
+        value: '<gray>Komandas:'
+      repeatable:
+        name: <white><bold>Atkārtojams
+        description: |-
+          <gray>Ļauj pārslēgt vai
+          <gray>uzdevums ir atkārtojams.
+        enabled: <dark_green>Ieslēgts
+        disabled: <red>Izslēgts
+      repeat_count:
+        name: <white><bold>Atkārtojumu Daudzums
+        description: |-
+          <gray>Ļauj uzstādīt cik
+          <gray>daudz reižu uzdevumu
+          <gray>varēs izpildīt.
+          <gray>Iestati 0, lai atkārtojumi būtu neierobežoti.
+        value: '<gray>Vērtība: <yellow>[number]'
+        value-infinite: '<gray>Vērtība: <yellow>[number] <gray>(neierobežoti)'
+      cool_down:
+        name: <white><bold>Taimouts
+        description: |-
+          <gray>Ļauj uzstādīt sekunžu
+          <gray>daudzumu, kas jānogaida
+          <gray>starp sekunžu izpildīšanu
+          <gray>starp atkārtojamajiem
+          <gray>uzdevumiem.
+        value: '<gray>Current value: <yellow>[time]'
+      challenges:
+        name: <white><bold>Uzdevumi
+        description: |-
+          <gray>Skatīt uzdevumus, kas
+          <gray>piesaistīti līmenim.
+      waiver_amount:
+        name: <white><bold>Atbrīvojuma Daudzums
+        description: |-
+          <gray>Ļauj uzstādīt cik daudz
+          <gray>uzdevumu var palikt
+          <gray>neizpildīti iekš līmeņa,
+          <gray>lai atvērtu nākošo līmeni.
+        value: '<gray>Vērtība: <yellow>[number]'
+      add_challenges:
+        name: <white><bold>Pievienot Uzdevumu(-us)
+        description: |-
+          <gray>Ļauj pievienot uzdevumus
+          <gray>līmenim.
+      remove_challenges:
+        name: <white><bold>Noņemt Uzdevumu(-us)
+        description: |-
+          <gray>Ļauj noņemt uzdevumus
+          <gray>no līmeņa.
+      reset_on_new:
+        name: <white><bold>Atjaunot pēc Iziešanas
+        description: |-
+          <gray>Ļauj ieslēgt uzdevumu
+          <gray>progresa atjaunošanu
+          <gray>pēc iziešanas no komandas
+          <gray>vai jaunas salas izveidi.
+        enabled: <dark_green>Ieslēgts
+        disabled: <red>Izslēgts
+      broadcast:
+        name: <white><bold>Izziņot
+        description: |-
+          <gray>Paziņot uzdevuma un līmeņa
+          <gray>pirmās reizes pabeigšanu
+          <gray>visiem spēlētājiem.
+        enabled: <dark_green>Ieslēgts
+        disabled: <red>Izslēgts
+      remove_completed:
+        name: <white><bold>Slēpt Izpildītos
+        description: |-
+          <gray>Ļauj slēpt izpildītos
+          <gray>uzdevumus no spēlētāju
+          <gray>izvēlnēm.
+        enabled: <dark_green>Ieslēgts
+        disabled: <red>Izslēgts
+      glow_completed:
+        name: <white><bold>Atzīmēt Izpildītos
+        description: |-
+          <gray>Pievienot uzlabojuma
+          <gray>mirdzēšanu izpildītajiem
+          <gray>uzdevumiem.
+        enabled: <dark_green>Ieslēgts
+        disabled: <red>Izslēgts
+      store_history:
+        name: <white><bold>Saglabāt Vēsturi
+        description: |-
+          <gray>Saglabā vēsturi par
+          <gray>uzdevumu izpildīšanu.
+          <gray>Šobrīd skatāms tikai
+          <gray>datubāzē.
+        enabled: <dark_green>Ieslēgts
+        disabled: <red>Izslēgts
+      data_per_island:
+        name: <white><bold>Kopīgot Salām
+        description: |-
+          <gray>Uzdevumi tiek kopīgoti
+          <gray>visiem salas biedriem,
+          <gray>ja ieslēgts, vai katram
+          <gray>atsevišķi, ja izslēgts.
+        enabled: <dark_green>Ieslēgts
+        disabled: <red>Izslēgts
+      show_title:
+        name: <white><bold>Rādīt Virsrakstu
+        description: |-
+          <gray>Rādīt virsrakstu par
+          <gray>uzdevuma izpildīšanu.
+        enabled: <dark_green>Ieslēgts
+        disabled: <red>Izslēgts
+      gamemode_gui:
+        name: <white><bold>Globālā Komanda
+        description: |-
+          <gray>Ļauj ieslēgt vienotu globālo
+          <gray>komandu priekš šī papildinājuma.
+          <gray>Pēc noklusējuma: /challenges
+          <red>Nepieciešams restarts.
+        enabled: <dark_green>Ieslēgts
+        disabled: <red>Izslēgts
+      locked_level_icon:
+        name: <white><bold>Noklusējuma Slēgta Līmeņa Ikona
+        description: |-
+          <gray>Noklusējuma ikona priekš visiem
+          <gray>slēgtajiem līmeņiem, kam nav
+          <gray>sava specificējuma.
+      purge_history:
+        name: <white><bold>Vēstures Ilgums
+        description: |-
+          <gray>Dienu skaits cik ilgi
+          <gray>vēsture tiks glabāta.
+        value: '<gray>Dienas: <yellow>[number]'
+      title_showtime:
+        name: <white><bold>Virsraksta Ilgums
+        description: <gray>Virsraksta rādīšanas ilgums.
+        value: '<gray>Vērtība: <yellow>[number]'
+      active_world_list:
+        name: <white><bold>Spēlētāja Pasaules Izvēlne
+        description: |-
+          <gray>Ļauj pārslēgt vai globālā
+          <gray>komanda atvērs spēles režīmu
+          <gray>izvēlni vai uzdevumu izvēlni
+          <gray>no spēlētāja pasaules.
+        enabled: <dark_green>Ieslēgts
+        disabled: <red>Izslēgts
+      visibility_mode:
+        name: <white><bold>Redzamība
+        description: |-
+          <gray>Redzamība priekš
+          <gray>uzdevumiem spēlētāju
+          <gray>izvēlnēs.
+        enabled: <dark_green>
+        disabled: <red>
+        visible: Rādīt Pieejamos Uzdevumus
+        hidden: Rādīt Visus Uzdevumus
+        toggleable: Pārslēdzams
+      download:
+        name: <white><bold>Lejupielādēt Bibliotēku
+        description: |-
+          <gray>Manuāli lejupielādēt
+          <gray>bibliotētku.
+        enabled: <dark_green>Notīrīt iekšējo atmiņu
+        disabled: <red>Netīrīt iekšējo atmiņu
+      player:
+        name: <white><bold>[name]
+        description: '<gray>Salas īpašnieks: [owner]'
+        members: '<gray>Salas biedri:'
+        member: <dark_gray>- [name]
+        no-island: <red>Spēlētājam nav salas.
+      player_list:
+        name: <white><bold>Filtrēt Spēlētājus
+        description: <gray>Ļauj filtrēt spēlētājus.
+        enabled: <dark_green>
+        disabled: <red>
+        online: Spēlētāji Tiešsaitē
+        with_island: Spēlētāji ar Salām
+        in_world: Spēlētāji šajā Pasaulē
+      add_block:
+        name: <white><bold>Pievienot Bloku
+        description: |-
+          <gray>Ļauj pievienot bloku
+          <gray>sarakstam.
+      remove_block:
+        name: <white><bold>Noņemt Bloku(-us)
+        description: |-
+          <gray>Ļauj noņemt iezīmētos
+          <gray>blokus no saraksta.
+        title: '<gray>Iezīmētie Bloki:'
+        material: <dark_gray>- [material]
+      material:
+        name: <white><bold>[material]
+        description: '<gray>Materiāla ID: [id]'
+        selected: <dark_green>Iezīmēts
+      add_entity:
+        name: <white><bold>Pievienot Radību
+        description: |-
+          <gray>Ļauj pievienot jaunu
+          <gray>radību sarakstam.
+      switch_entity:
+        name: <white><bold>Pārslēgt Ikonas
+        description: |-
+          <gray>Ļauj pārslēgt radību
+          <gray>olas uz radību galvām.
+      remove_entity:
+        name: <white><bold>Dzēst Radības
+        description: |-
+          <gray>Ļauj noņemt iezīmētās
+          <gray>radības no saraksta.
+        title: '<gray>Iezīmētās Radības:'
+        entity: <dark_gray>- [entity]
+      entity:
+        name: <white><bold>[entity]
+        description: '<gray>Radības ID: [id]'
+        selected: <dark_green>Iezīmēts
+      inventory_type:
+        name: <white><bold>Inventāra Tips
+        description: |-
+          <gray>Uzdevums, kas skatās
+          <gray>priekšmetus spēlētāja
+          <gray>inventārā.
+      island_type:
+        name: <white><bold>Salas Tips
+        description: |-
+          <gray>Uzdevums, kas skatās
+          <gray>lietas uz spēlētāja salas.
+      other_type:
+        name: <white><bold>Cits Tips
+        description: |-
+          <gray>Uzdevums, kas skatās
+          <gray>pieredzi, naudu un salas
+          <gray>līmeni.
+      statistic_type:
+        name: <white><bold>Statistikas Tips
+        description: |-
+          <gray>Uzdevums, kas skatās
+          <gray>spēlētāja statistiku.
+      save:
+        name: <white><bold>Saglabāt
+        description: |-
+          <gray>Saglabāt izmaiņas un
+          <gray>atgriezties.
+      cancel:
+        name: <white><bold>Atcelt
+        description: |-
+          <gray>Atcelt izmaiņas un
+          <gray>atgriezties iepriekšējā
+          <gray>izvēlnē.
+      accept_selected:
+        name: <white><bold>Akceptēt Atzīmētos
+        description: |-
+          <gray>Akceptēt atzīmētos un
+          <gray>atgriezties iepriekšējā
+          <gray>izvēlnē.
+        title: '<gray>Atzīmēti: '
+        element: <dark_gray>- [element]
+      statistic_element:
+        name: <white><bold>[statistic]
+        description: '[description]'
+        amount: '<gray>Mērķa Vērtība: <yellow>[number]'
+        remove:
+          name: '<gray>Samazināt Statistiku: [value]'
+          value:
+            enabled: <red>Iespējots
+            disabled: <dark_green>Atspējots
+        block: '<gray>Mērķa Bloks: <yellow>[block]'
+        item: '<gray>Mērķa Priekšmets: <yellow>[item]'
+        entity: '<gray>Mērķa Objekts: <yellow>[entity]'
+        selected: <dark_green>Atlasīts
+      environment_element:
+        name: <white><bold>[environment]
+        description: '[description]'
+      search:
+        name: <white><bold>Meklēt
+        description: |-
+          <gray>Ļauj ievadīt meklēšanas
+          <gray>tekstu.
+        search: '<aqua>Vērtība: [value]'
+      hide_reward_items:
+        name: <white><bold>Paslēpt Balvu Priekšmetus
+        description: |-
+          <gray>Pārslēgt, vai balvu priekšmeti
+          <gray>tiek rādīti vai nē GUI.
+        hide: <dark_green>Paslēpt
+        show: <red>Rādīt
+      team_challenge:
+        name: <white><bold>Komandas Izaicinājums
+        description: |-
+          <gray>Pārslēgt, vai tas ir komandas izaicinājums.
+          <gray>Komandas izaicinājumi pieprasa komandu un dala
+          <gray>pabeigšanu un droseles laiku pāri salai.
+        enabled: <dark_green>Iespējots
+        disabled: <red>Atspējots
+      team_presence:
+        name: <white><bold>Komandas Klātbūtne
+        description: |-
+          <gray>Komandas procentuālā daļa, kurai jābūt
+          <gray>tiešsaistei, lai pabeigtu šo izaicinājumu.
+          <gray>0 atspējo klātbūtnes vārti.
+        value: '<gray>Pašlaik: <yellow>[number]%'
+      aggregate_team:
+        name: <white><bold>Apkopot Pāri Komandai
+        description: |-
+          <gray>Apkopot nepieciešamos priekšmetus / statistiku
+          <gray>visiem tiešsaistes biedriem (Kopīgais Tribūts,
+          <gray>Kombinēts Pūlis).
+        enabled: <dark_green>Iespējots
+        disabled: <red>Atspējots
+      per_member:
+        name: <white><bold>Katrs Biedrs Maksā
+        description: |-
+          <gray>Katrs tiešsaistes biedrs jāsniedz savu
+          <gray>daļu (nepieciešamais daudzums ir KOMANDAS
+          <gray>KOPSUMMA, sadalīta pāri esošajiem biedriem).
+        enabled: <dark_green>Iespējots
+        disabled: <red>Atspējots
+      hide_if_no_team:
+        name: <white><bold>Paslēpt, Ja Nav Komandas
+        description: |-
+          <gray>Ja iespējots, šis izaicinājums tiek paslēpts
+          <gray>pilnīgi no spēlētājiem bez komandas.
+          <gray>Ja atspējots, tas tiek rādīts, bet atspējots.
+        enabled: <dark_green>Iespējots
+        disabled: <red>Atspējots
+      required_statistics:
+        name: <white><bold>Nepieciešamā Statistika
+        description: |-
+          <gray>Ļauj mainīt nepieciešamo
+          <gray>statistiku šim izaicinājumam, lai
+          <gray>tas tiktu pabeigts.
+        title: '<gray>Statistika: '
+        list: ' <dark_gray>- [name]'
+        none: <gray>Statistika nav pievienota.
+      required_advancements:
+        name: <white><bold>Nepieciešamie Sasniegumi
+        description: |-
+          <gray>Ļauj mainīt nepieciešamos
+          <gray>sasniegumus šim izaicinājumam,
+          <gray>lai tas tiktu pabeigts.
+        title: '<gray>Sasniegumi: '
+        list: ' <dark_gray>- [name]'
+        none: <gray>Sasniegumi nav pievienoti.
+      required_materialtags:
+        name: <white><bold>Nepieciešamās Bloku Grupas
+        description: |-
+          <gray>Ļauj mainīt nepieciešamās
+          <gray>bloku grupas šim izaicinājumam,
+          <gray>lai tas tiktu pabeigts.
+        title: '<gray>Bloku grupa: '
+        list: ' <dark_gray>- [number] x [tag]'
+        none: <gray>Bloku grupas nav pievienotas.
+      required_entitytags:
+        name: <white><bold>Nepieciešamās Objektu Grupas
+        description: |-
+          <gray>Ļauj mainīt nepieciešamās
+          <gray>objektu grupas šim izaicinājumam,
+          <gray>lai tas tiktu pabeigts.
+        title: '<gray>Objektu grupa: '
+        list: ' <dark_gray>- [number] x [tag]'
+        none: <gray>Objektu grupas nav pievienotas.
+      required_papi:
+        name: <white><bold>Nepieciešams PAPI
+        description: |-
+          <gray>Pārbauda formulu, kas var
+          <gray>iekļaut PAPI vietturus
+          <gray>un matemātiskos un loģiskos elementus.
+        value: '<gray>Formula: <yellow>[formula]'
+      add_statistic:
+        name: <white><bold>Pievienot Statistiku
+        description: |-
+          <gray>Ļauj pievienot jaunu
+          <gray>statistiku sarakstam.
+      advancement:
+        name: <white><bold>[name]
+        description: '[description]'
+      add_advancement:
+        name: <white><bold>Pievienot Sasniegumu
+        description: |-
+          <gray>Ļauj pievienot jaunu
+          <gray>sasniegumu sarakstam.
+      remove_advancement:
+        name: <white><bold>Noņemt Sasniegumu
+        description: |-
+          <gray>Ļauj noņemt
+          <gray>atlasītos sasniegumus
+          <gray>no saraksta.
+        enabled: <dark_green>Iespējots
+        disabled: <red>Atspējots
+      glow_completed_levels:
+        name: <white><bold>Gaismas Pabeigti Līmeņi
+        description: |-
+          <gray>Piemēro burvju mirdzumu
+          <gray>pabeigtiem līmeņiem.
+        enabled: <dark_green>Iespējots
+        disabled: <red>Atspējots
+      include_undeployed:
+        name: <white><bold>Iekļaut Neieviestos Izaicinājumus
+        description: |-
+          <gray>Norāda, vai neieviestu izaicinājumi
+          <gray>ir jāieskaitīta līmeņa pabeigšanai.
+        enabled: <dark_green>Iespējots
+        disabled: <red>Atspējots
+      language:
+        name: <white><bold>Valoda
+        description: |-
+          <gray>Filtrēt izaicinājuma bibliotēkas
+          <gray>pēc valodas.
+        current: '<gray>Rāda: <yellow>[lang]'
+        all: Viss
+      add_block_group:
+        name: <white><bold>Pievienot Bloku Grupu
+        description: |-
+          <gray>Ļauj pievienot jaunu
+          <gray>bloku grupu sarakstam.
+      remove_block_group:
+        name: <white><bold>Noņemt Bloku Grupu
+        description: |-
+          <gray>Ļauj noņemt
+          <gray>atlasītas bloku grupas
+          <gray>no saraksta.
+        title: '<gray>Atlasītas Bloku Grupas:'
+        material: <dark_gray>- [material]
+      block-group:
+        name: <white><bold>[id]
+        description: ''
+        selected: <dark_green>Atlasīts
+      add_entity_group:
+        name: <white><bold>Pievienot Objektu Grupu
+        description: |-
+          <gray>Ļauj pievienot jaunu
+          <gray>objektu grupu sarakstam.
+      remove_entity_group:
+        name: <white><bold>Noņemt Objektu Grupu
+        description: |-
+          <gray>Ļauj noņemt
+          <gray>atlasītās objektu grupas
+          <gray>no saraksta.
+        title: '<gray>Atlasītās Objektu Grupas:'
+        entity: <dark_gray>- [tag]
+      entity-group:
+        name: <white><bold>[id]
+        description: ''
+        selected: <dark_green>Atlasīts
+      advancement_element:
+        name: <white><bold>[name]
+        description: '[description]'
+        selected: <dark_green>Atlasīts
+      toggle-undeployed:
+        name: <white><bold>Neaktivizētie uzdevumi
+        shown: |-
+          <gray>Neaktivizētie uzdevumi pašlaik
+          <gray>ir <green>redzami<gray>.
+        hidden: |-
+          <gray>Neaktivizētie uzdevumi pašlaik
+          <gray>ir <red>paslēpti<gray>.
+      required_biomes:
+        name: <white><bold>Nepieciešamie biomi
+        description: |-
+          <gray>Spēlētājam jāstāv vienā
+          <gray>no šiem biomiem, lai izpildītu
+          <gray>šo salas uzdevumu.
+        title: '<gray>Biomi: '
+        list: ' <dark_gray>- <yellow>[biome]'
+        none: <gray>Biomi nav nepieciešami (jebkurš bioms).
+      reward_island_level:
+        name: <white><bold>Balvas salas līmenis
+        description: |-
+          <gray>Ļauj mainīt balvas salas līmeni.
+          <gray>Nepieciešams Level papildinājums.
+        value: '<gray>Vērtība: <yellow>[number]'
+      repeat_reward_island_level:
+        name: <white><bold>Atkārtojuma balvas salas līmenis
+        description: |-
+          <gray>Ļauj mainīt salas līmeņa balvu
+          <gray>par uzdevuma atkārtošanu.
+          <gray>Nepieciešams Level papildinājums.
+        value: '<gray>Vērtība: <yellow>[number]'
+      open_anywhere:
+        name: <white><bold>Atvērt GUI jebkur
+        description: |-
+          <gray>Ļauj spēlētājiem atvērt uzdevumu GUI
+          <gray>no jebkuras vietas. Izpildei joprojām
+          <gray>jāatrodas uz salas, ja tā ir aizsargāta.
+        enabled: <dark_green>Ieslēgts
+        disabled: <red>Izslēgts
+      biome:
+        name: <white><bold>[biome]
+        description: '<gray>Bioma ID: [id]'
+        selected: <dark_green>Iezīmēts
+    tips:
+      click-to-select: <yellow>Klikšķini, <gray>lai atlasītu.
+      click-to-choose: <yellow>Klikšķini, <gray>lai izvēlētos.
+      click-to-complete: <yellow>Klikšķini, <gray>lai pabeigtu.
+      right-click-multiple-open: |-
+        <yellow>Labais klikšķis,
+        <gray>lai izvēlētos daudzumu.
+      shift-left-click-to-complete-all: |-
+        <yellow>Shift un klikšķis,
+        <gray>lai pabeigtu visus.
+      left-click-to-accept: |-
+        <yellow>Kreisais klikšķis,
+        <gray>lai pabeigtu.
+      right-click-to-write: |-
+        <yellow>Labais klikšķis,
+        <gray>lai rakstītu.
+      click-to-reduce: <yellow>Klikšķini, <gray>lai samazinātu.
+      click-to-increase: <yellow>Klikšķini, <gray>lai palielinātu.
+      click-to-return: <yellow>Klikšķini, <gray>lai atgrieztos.
+      click-to-quit: <yellow>Klikšķini, <gray>lai izietu.
+      click-to-wipe: <yellow>Klikšķini, <gray>lai dzēstu.
+      left-click-to-wipe: |-
+        <yellow>Kreisais klikšķis,
+        <gray>lai dzēstu.
+      right-click-to-switch: |-
+        <yellow>Labais klikšķis,
+        <gray>lai mainītu.
+      click-to-open: <yellow>Klikšķini, <gray>lai atvērtu.
+      click-to-export: <yellow>Klikšķini, <gray>lai eksportētu.
+      click-to-create: <yellow>Klikšķini, <gray>lai izveidotu.
+      left-click-to-open: |-
+        <yellow>Kreisais klikšķis,
+        <gray>lai atvērtu.
+      right-click-to-reset-all: |-
+        <yellow>Labais klikšķis,
+        <gray>lai dzēstu visu.
+      click-to-toggle: <yellow>Klikšķini, <gray>lai pārslēgtu.
+      click-to-change: <yellow>Klikšķini, <gray>lai mainītu.
+      shift-click-to-reset: |-
+        <yellow>Shift un klikšķis,
+        <gray>lai dzēstu.
+      click-to-add: <yellow>Klikšķini, <gray>lai pievienotu.
+      click-to-remove: <yellow>Klikšķini, <gray>lai noņemtu.
+      left-click-to-cycle: |-
+        <yellow>Kreisais klikšķis,
+        <gray>pārslēgtu uz leju.
+      right-click-to-cycle: |-
+        <yellow>Labais klikšķis,
+        <gray>pārslēgtu uz augšu.
+      click-to-edit: <yellow>Klikšķini, <gray>lai labotu.
+      left-click-to-download: |-
+        <yellow>Kreisais klikšķis,
+        <gray>lai lejupielādētu
+      right-click-to-toggle: |-
+        <yellow>Labais klikšķis,
+        <gray>lai pārslēgtu.
+      click-to-install: <yellow>Klikšķini, <gray>lai instalētu.
+      click-to-reset-all: <yellow>Klikšķini, <gray>lai dzēstu visu.
+      right-click-to-select: |-
+        <yellow>Labais klikšķis,
+        <gray>lai atzīmētu.
+      right-click-to-deselect: |-
+        <yellow>Labais klikšķis,
+        <gray>lai atceltu atzīmi.
+      left-click-to-choose: |-
+        <yellow>Kreisais klikšķis,
+        <gray>lai izvēlētos.
+      click-to-cancel: <yellow>Klikšķini, <gray>lai atceltu.
+      click-to-save: <yellow>Klikšķini, <gray>lai saglabātu.
+      click-to-deselect: |-
+        <yellow>Klikšķini, <gray>lai
+        <gray>atceltu atzīmi.
+      click-on-item: |-
+        <yellow>Klikšķini, <gray>uz priekšmeta
+        <gray>tavā inventārā.
+      left-click-to-edit: |-
+        <yellow>Kreisais klikšķis,
+        <gray>lai labotu.
+      right-click-to-clear: |-
+        <yellow>Labais klikšķis,
+        <gray>lai notīrītu.
+      click-to-previous: |-
+        <yellow>Klikšķini, <gray>lai
+        <gray>skatītu iepriekšējo.
+      click-to-next: |-
+        <yellow>Klikšķini, <gray>lai
+        <gray>skatītu nākošo.
+      right-click-to-reset: <yellow>Labais Klikšķis <gray>lai atiestatītu.
+    descriptions:
+      # This part generates description text for challenges object in all GUI's.
+      challenge:
+        # The main part that generates description text.
+        # [description] comes from challenge.description
+        lore: |-
+          [description]
+          [status]
+          [cooldown]
+          [requirements]
+          [rewards]
+# Contains a text generated inside [status] lore
+        status:
+          # Status message for completed unrepeatable challenge
+          completed: <dark_green><bold>Izpildīts
+          # Status message that contains number of completions for unlimited repeatable challenge
+          completed-times: <dark_green>Izpildīts <gray><bold>[number] <reset><dark_green>reizi(-es)
+          # Status message that contains number of completions from max available for repeatable challenge
+          completed-times-of: <dark_green>Izpildīts <gray><bold>[number] <reset><dark_green>no
+            <gray><bold>[max] <reset><dark_green>reizēm
+          # Status message that indicates that max completion count reached for repeatable challenge
+          completed-times-reached: <dark_green><bold>Izpildīts visas <gray>[max] <dark_green>reizes
+        # Contains a text generated inside [cooldown] lore
+        cooldown:
+          lore: |-
+            [timeout]
+            [wait-time]
+# Text message that shows challenges timeout.
+          timeout: '<gray><bold>Taimauts: <reset><gray>[time]'
+          # Text message that shows challenges wait time if it is larger than 0.
+          wait-time: '<red><bold>Jānogaida: <reset><red>[time]'
+          # Text message that replaces days if number > 1
+          in-days: '[number] d '
+          # Text message that replaces hours if number > 1
+          in-hours: '[number] h '
+          # Text message that replaces minutes if number > 1
+          in-minutes: '[number] min '
+          # Text message that replaces seconds if number > 1
+          in-seconds: '[number] s'
+        # Contains a text generated inside [requirements] lore
+        requirements:
+          lore: |-
+            [environment]
+            [type-requirement]
+            [permissions]
+# Message that will replace [environment] placeholder if there is just a single environment.
+          environment-single: <gray>Limitēts iekš [environment]
+          # Message that will replace [environment] placeholder if there are multiple environments.
+          environment-title: '<gray>Limitēts iekš: '
+          # Message that will be added after environment-title-multiple.
+          environment-list: '  <gray>- <yellow>[environment]'
+          # Message that will replace [permissions] placeholder if there is just a single permission.
+          permission-single: <red>Nepieciešama [permissions] atļauja
+          # Message that will replace [permissions] placeholder if there are multiple permissions.
+          permissions-title: '<red>Nepieciešamās atļaujas: '
+          # Message that will be added after permissions-title-multiple.
+          permissions-list: '  <red>- [permission]'
+          # Message that will generate for island type requirements and replace [type-requirements]
+          island:
+            lore: |-
+              [blocks]
+              [entities]
+              [search-radius]
+              [warning-block]
+              [warning-entity]
+# Title that will be used if there are defined blocks in island challenge
+            blocks-title: '<gray><bold>Nepieciešamie bloki:'
+            # Listing of blocks that are required on the island.
+            block-value: '  <gray>- <yellow>[material]'
+            blocks-value: '  <gray>- <yellow>[number] x [material]'
+            # Title that will be used if there are defined entities in island challenge
+            entities-title: '<gray><bold>Nepieciešamās radības:'
+            # Listing of entities that are required on the island.
+            entity-value: '  <gray>- <yellow>[entity]'
+            entities-value: '  <gray>- <yellow>[number] x [entity]'
+            # Search radius for the blocks/entities
+            search-radius: |-
+              <gray>Ne tālāk kā <yellow>[number]
+              <gray>metru attālumā
+# Waning about block/entity removing
+            warning-block: <yellow>Bloks(-i) tiks <red>dzēsti
+            warning-entity: <yellow>Radība(-as) tiks <red>dzēstas
+            biomes-title: '<gray><bold>Nepieciešamie biomi:'
+            biome-value: '  <gray>- <yellow>[biome]'
+          # Message that will generate for inventory type requirements and replace [type-requirements]
+          inventory:
+            lore: |-
+              [items]
+              [warning]
+# Title that will be used if there are list of items for challenge
+            item-title: '<gray><bold>Nepieciešamie Priekšmeti:'
+            # Listing of an item that are required multiple times.
+            item-value: '  <gray>- <yellow>[item]'
+            items-value: '  <gray>- <yellow>[number] x [item]'
+            # Warning that items will be removed
+            warning: <yellow>Priekšmets(-i) tiks <red>dzēsti
+          # Message that will generate for other type requirements and replace [type-requirements]
+          other:
+            lore: |-
+              [experience]
+              [experience-warning]
+              [money]
+              [money-warning]
+              [level]
+# Text for required experience
+            experience: '<gray><bold>Nepieciešamā pieredze: <reset><yellow>[number]'
+            # Warning that experience will be reduced
+            experience-warning: <yellow>Pieredze tiks <red>noņemta
+            # Text for required money
+            money: '<gray><bold>Nepieciešamā nauda: <reset><yellow>[number]'
+            # Warning that money will be reduced
+            money-warning: <yellow>Nauda tiks <red>noskaitīta
+            # Text for required island level
+            level: '<gray><bold>Nepieciešamais salas līmenis: <reset><yellow>[number]'
+          # Message that will generate for statistic type requirements and replace [type-requirements]
+          statistic:
+            lore: |-
+              [statistic]
+              [warning]
+# Type of statistic for multiple target counter. Target may be entity or material/block
+            multiple-target: '<gray><bold>[statistic]: <reset><yellow>[number] x [target]'
+            # Type of statistic for single target. Target may be entity or material/block
+            single-target: '<gray><bold>[statistic]: <reset><yellow>[target]'
+            # Type of statistic without entity/block target
+            statistic: <gray><bold>[statistic] <reset><yellow>[number]
+            # Warning that statistic will be removed
+            warning: <yellow>Statistikas dati tiks <red>samazināti
+        # Contains a text generated inside [rewards] lore
+        rewards:
+          # [text] comes from challenge.rewardText and challenge.repeatRewardText
+          lore: |-
+            <gray><bold>Atlīdzības:
+            [text]
+            [items]
+            [experience]
+            [money]
+            [commands]
+# Title that will be used if there are list of items for rewards
+          item-title: '<gray>Priekšmeti:'
+          # Listing of an item that are rewards multiple times.
+          item-value: '  <gray>- <yellow>[item]'
+          items-value: '  <gray>- <yellow>[number] x [item]'
+          # Text for reward experience
+          experience: '<gray>Pieredze: <reset><yellow>[number]'
+          # Text for reward money
+          money: '<gray>Nauda: <reset><yellow>[number]'
+          # Title for commands listing:
+          commands-title: '<gray>Komandas:'
+          # Command listing element
+          command: '  <gray>- <yellow>[command]'
+        # This part generates description text for levels object in all GUI's.
+        team-requirement: '<gold>Komanda: <yellow>[online] <gold>tiešsaistē (<yellow>[number]
+          <gold>nepieciešams)'
+        team-required: <red>Komanda nepieciešama pabeigšanai
+      level:
+        lore: |-
+          [text]
+          [status]
+          [waiver]
+          [rewards]
+# Status is either challengeLevel.unlockMessage or current status of the level
+        status:
+          # Status message for completed unrepeatable challenge
+          completed: <dark_green><bold>Izpildīts
+          # Status message that contains number of completed challenges from all challenges
+          completed-challenges-of: |-
+            <dark_green>Izpildīti <gray><bold>[number] <reset><dark_green>no
+            <gray><bold>[max] <reset><dark_green>uzdevumiem.
+# Status message for locked level
+          locked: <red><bold>Slēgts
+          # Status message for locked level that will show missing challenge count.
+          missing-challenges: |-
+            <gray>Nepieciešams izpildīt vēl [number]
+            <gray>uzdevumus, lai atvērtu šo līmeni.
+# Contains a text for waiver amount to unlock next level
+        waiver: |-
+          <gray><bold>[number] uzdevums(-i) <reset><gray>var
+          <gray>palikt neizpildīti, lai atvērtu
+          <gray>nākošo līmeni.
+# Contains a text generated inside [rewards] lore
+        rewards:
+          # [text] comes from challengeLevel.rewardText
+          lore: |-
+            <gray><bold>Atlīdzības:
+            [text]
+            [items]
+            [experience]
+            [money]
+            [commands]
+# Title that will be used if there are list of items for rewards
+          item-title: '<gray>Priekšmeti:'
+          # Listing of an item that are rewards multiple times.
+          item-value: '  <gray>- <yellow>[item]'
+          items-value: '  <gray>- <yellow>[number] x [item]'
+          # Text for reward experience
+          experience: '<gray>Pieredze: <reset><yellow>[number]'
+          # Text for reward money
+          money: '<gray>Nauda: <reset><yellow>[number]'
+          # Title for commands listing:
+          commands-title: '<gray>Komandas:'
+          # Command listing element
+          command: '  <gray>- <yellow>[command]'
+      # This part generates description for the Library Entry
+      library:
+        author: <gray>veidoja <yellow>[author]
+        version: '<gray>Uzdevuma Versija: <yellow>[version]'
+        lang: '<gray>Valoda: <yellow>[lang]'
+        gamemode: <gray>Priekš <yellow>[gamemode]
+  conversations:
+    # Prefix for messages that are send from server.
+    prefix: '<bold><gold>[BentoBox]: <reset>'
+    # List of strings that are valid for confirming input. (separated with ,)
+    confirm-string: true, on, yes, confirm, y, valid, correct, jā, ja, apstiprinu,
+      pareizi
+    # List of strings that are valid for denying input. (separated with ,)
+    deny-string: false, off, no, deny, n, invalid, incorrect, nē, ne, neapstiprinu,
+      nepareizi
+    # String that allows to cancel conversation. (can be only one)
+    cancel-string: atcelt
+    # List of strings that allows to exit conversation. (separated with ,)
+    exit-string: cancel, exit, quit, atcelt, iziet
+    # Message that is send to user when conversation is cancelled.
+    cancelled: <red>Saruna pārtraukta!
+    # Message that appears when admin clicks on number editing button.
+    input-number: <yellow>Lūdzu ieraksti skaitli sarakstē!
+    # Message that appears when admin clicks on seconds editing button.
+    input-seconds: <yellow>Lūdzu ieraksti sekunžu skaitu sarakstē!
+    # Error message that is showed if user input a value that is not a number.
+    numeric-only: <red>Šis `[value]` nav skaitlis!
+    # Error message that is showed if user input a number that is smaller or larger that allowed.
+    not-valid-value: <red>Ierakstītais skaitlis [value] nav derīgs. Tam jābūt no [min]
+      līdz [max] (ieskaitot).
+    # Message that confirms user data removing.
+    user-data-removed: <green>Visi lietotāju dati priekš [gamemode] ir dzēsti.
+    # Message that asks confirmation for user data removing.
+    confirm-user-data-deletion: <yellow>Lūdzu apstiprini sarakstē (jā), ka vēlies
+      dzēst lietotāju datus par [gamemode].
+    # Message that confirms user data removing.
+    challenge-data-removed: <green>Visu uzdevumu dati priekš [gamemode] ir dzēsti.
+    # Message that asks confirmation for user data removing.
+    confirm-challenge-data-deletion: <yellow>Lūdzu apstiprini sarakstē (jā), ka vēlies
+      dzēst uzdevumu datus par [gamemode].
+    # Message that confirms user data removing.
+    all-data-removed: <green>Visi dati priekš [gamemode] ir dzēsti.
+    # Message that asks confirmation for user data removing.
+    confirm-all-data-deletion: <yellow>Lūdzu apstiprini sarakstē (jā), ka vēlies dzēst
+      visus datus par [gamemode].
+    # Message that asks user to write a name
+    write-name: <yellow>Lūdzu ieraksti sarakstē vārdu.
+    # Message that confirms new object creation.
+    new-object-created: <green>Jauns objekts priekš [gamemode] ir uztaisīts.
+    # Error message that sends that object cannot be created with a given name
+    object-already-exists: <red>Objekts ar <gray>[id] <red>jau eksistē. Izvēlies citu
+      vārdu.
+    # Error message that sends information that challenge cannot be deployed.
+    invalid-challenge: <red>Uzdevums [challenge] satur nekorektus datus. Tas nevar
+      tikt izlaists!
+    # Message that confirms name changing
+    name-changed: <green>Nosaukums veiksmīgi mainīts.
+    # Message that appears after clicking
+    write-description: <yellow>Lūdzu raksti jauno aprakstu sarakstē un 'iziet' jaunā
+      rindā, lai beigtu.
+    # Message that appears after successful description change.
+    description-changed: <green>Apraksts vaiksmīgi mainīts.
+    # Message that appears when admin clicks on permission editing button.
+    write-permissions: <yellow>Lūdzu ieraksti nepieciešamās atļaujas sarakstē, katru
+      savā rindā, and 'iziet' jaunā rindā, lai beigtu.
+    # Message that appears after successful permission updating.
+    permissions-changed: <green>Atļaujas veiksmīgi mainītas.
+    # Message that appears after clicking
+    write-reward-text: <yellow>Lūdzu ieraksti apbalvojuma tekstu un 'iziet' jaunā
+      rindā, lai beigtu.
+    # Message that appears after successful reward-text change.
+    reward-text-changed: <green>Apbalvojuma paraksts veiksmīgi mainīts.
+    # Message that appears after clicking
+    write-repeat-reward-text: <yellow>Lūdzu ieraksti atkārtotā apbalvojuma tekstu
+      un 'iziet' jaunā rindā, lai beigtu.
+    # Message that appears after successful repeat-reward-text change.
+    repeat-reward-text-changed: <green>Atkārtotā apbalvojuma paraksts veiksmīgi mainīts.
+    # Message that appears after clicking
+    write-reward-commands: <yellow>Lūdzu ieraksti apbalvojuma komandas katru savā
+      rindā, un 'iziet' jaunā rindā, lai beigtu.
+    # Message that appears after successful commands-text change.
+    reward-commands-changed: <green>Apbalvojuma komandas veiksmīgi mainīts.
+    # Message that appears after clicking
+    write-repeat-reward-commands: <yellow>Lūdzu ieraksti atkārtotā apbalvojuma komandas
+      katru savā rindā, un 'iziet' jaunā rindā, lai beigtu.
+    # Message that appears after successful repeat-commands-text change.
+    repeat-reward-commands-changed: <green>Atkārtotā apbalvojuma komandas veiksmīgi
+      mainīts.
+    # Message that confirms user data removing.
+    challenge-removed: <green>Uzdevums [challenge] priekš [gamemode] ir dzēsts no
+      datubāzes.
+    # Message that asks confirmation for user data removing.
+    confirm-challenge-deletion: <yellow>Lūdzu apstiprini (jā), ka vēlies dzēst [challenge]
+      priekš [gamemode] no datubāzes.
+    # Message that confirms user data removing.
+    level-removed: <green>Līmenis [level] priekš [gamemode] ir dzēsts no datubāzes.
+    # Message that asks confirmation for user data removing.
+    confirm-level-deletion: <yellow>Lūdzu apstiprini (jā), ka vēlies dzēst [level]
+      priekš [gamemode] no datubāzes.
+    # Message that appears when user clicks on library installation.
+    start-downloading: <green>Sāk lejupielādēt Uzdevumu Bibliotēku.
+    # Message that appears when writing multiline text.
+    written-text: '<green>Ievadītais teksts:'
+    # Message that appears after importing library data into database.
+    confirm-data-replacement: <yellow>Lūdzu apstiprini (jā), ka vēlies dzēst esošos
+      uzdevumus un aizstāt ar jauniem.
+    # Message that appears after successful data importing
+    new-challenges-imported: <green>Jaunie Uzdevumi ir veiksmīgi ielādēti priekš [gamemode].
+    # Message that appears after admin clicks on database exporting button.
+    exported-file-name: <yellow>Lūdzu ieraksti eksportētā faila nosaukumu. (ieraksti
+      'atcelt', lai izietu)
+    # Message that appears after successful database exporting to file.
+    database-export-completed: <green>Veiksmīgi eksportēti uzdevumi no [world]. Fails
+      [file] ir izveidots.
+    # Message that appears if input file name is already taken.
+    file-name-exist: <red>Faila nosaukums '[id]' jau eksistē. Nevar pārrakstīt.
+    # Message that asks for search value input.
+    write-search: <yellow>Lūdzu ievadi meklēšanas vērtību. (vai 'atcelt', lai izietu)
+    # Message that appears after updating search value.
+    search-updated: <green>Meklēšanas vērtība atjaunota.
+    
+    enter-formula: |-
+      <green>Ievadiet formulu, kas izmanto tikai PAPI vietturus un simbolus =,<>,<+,>=, ==, !=, AND, OR.
+      <green>Piemērs: <gray>%my_lifetime_count% >= 1000 AND %island_level% >= 100
+    confirm-instruction: <gray>Ieraksti čatā '<green>confirm<gray>', lai turpinātu,
+      vai '<red>cancel<gray>', lai atceltu.
+    input-repeat-count: <yellow>Lūdzu ieraksti čatā atkārtojumu skaitu. Ieraksti 0,
+      lai atkārtojumi būtu neierobežoti.
+  titles:
+    #       Title and subtitle may contain variables in [] that will be replaced with a proper message from the challenge object.
+    #       [friendlyName] will be replaced with challenge friendly name.
+    #       [level] will be replaced with level friendly name.
+    #       [rewardText] will be replaced with the challenge reward text.
+    challenge-title: Veiksmīgi Izpildīts
+    challenge-subtitle: '[friendlyName]'
+    #       Title and subtitle may contain variables in [] that will be replaced with a proper message from the level object.
+    #       [friendlyName] will be replaced with level friendly name.
+    #       [rewardText] will be replaced with the level reward text.
+    level-title: Veiksmīgi Izpildīts
+    level-subtitle: '[friendlyName]'
+  
+  messages:
+    completed: <dark_green>Tu izpildīji uzdevumu [name] priekš [player]!
+    already-completed: <dark_green>Šis uzdevums jau bija izpildīts!
+    reset: <dark_green>Tu atjaunoji uzdevumu [name] priekš [player]!
+    reset-all: <dark_green>Visi spēlētāja [player] uzdevumi ir atjaunoti!
+    not-completed: <dark_green>Šis uzdevums vēl nav izpildīts!
+    migrate-start: <dark_green>Sāk migrēt papildinājuma datus.
+    migrate-end: <dark_green>Papildinājuma dati ir migrēti.
+    migrate-not: <dark_green>Visi dati ir derīgi.
+    start-downloading: <dark_purple>Sāk lejupielādēt un importēt uzdevumus.
+    you-completed-challenge: <dark_green>Tu izpildīji [value] <reset><dark_green>uzdevumu!
+    you-repeated-challenge: <dark_green>Tu atkārtoti izpildīji [value] <reset><dark_green>uzdevumu!
+    you-repeated-challenge-multiple: <dark_green>Tu atkārtoji [value] <reset><dark_green>uzdevumu
+      [count] reizes!
+    no-reward-this-time: <gray>Veiksme nebija tavā pusē — šoreiz bez balvas!
+    you-completed-level: <dark_green>Tu pabeidzi [value] <reset><dark_green>līmeni!
+    name-has-completed-challenge: <dark_purple>[name] pabeidza [value] <reset><dark_purple>uzdevumu!
+    name-has-completed-level: <dark_purple>[name] pabeidza [value] <reset><dark_purple>līmeni!
+    load-skipping: '"[value]" jau eksistē - izlaiž'
+    load-overwriting: Pārraksta "[value]"
+    load-add: 'Pievieno jaunu objektu: [value]'
+  errors:
+    no-name: <red>Trūkst uzdevuma nosaukums
+    unknown-challenge: <red>Nezināms uzdevums
+    not-valid-integer: <red>Ievadītais skaitlis "[value]" nau darīgs! Vērtībai jābūt
+      no [min] līdz [max].
+    not-deployed: <red>Uzdevums nav pieejams!
+    not-on-island: <red>Tev jābūt uz salas, lai veiktu šo darbību!
+    challenge-level-not-available: <red>Tu neesi atvēriz nepieciešamo līmeni, lai
+      izpildītu šo uzdevumu.
+    not-repeatable: <red>Šis uzdevums nav atkārtojams!
+    wrong-environment: <red>Tu neesi pareizajā vidē!
+    not-enough-items: <red>Tev nav pietiekoši daudz [items], lai pabeigtu uzdevumu!
+    not-close-enough: <red>Tev tuvumā nav pietiekoši daudz nepieciešamie bloki vai
+      radības.
+    you-still-need: <red>Tev vēl nepieciešams [amount] x [item] lietas
+    missing-addon: '<red>Nav iespējams izpildīt šo uzdevumu: trūkst nepieciešamais
+      papildinājums vai plugins.'
+    incorrect: <red>Nav iespējams izpildīt uzdevumu. Prasības nav korektas.
+    not-enough-money: <red>Tev ir nepieciešama [value] nauda kontā, lai izpildītu
+      uzdevumu!
+    not-enough-experience: <red>Tev ir nepieciešama [value] pieredze, lai izpildītu
+      uzdevumu!
+    island-level: <red>Tavai salai jāsasniedz [number] līmeni, lai izpildītu uzdevumu!
+    no-load: '<red>Kļūda: Nevar ielādēt failu. [message]'
+    load-error: '<red>Kļūda: Nevar ielādēt [value].'
+    no-rank: <red>Tavs ranks nav pietiekoši augsts, lai veiktu šo darbību.
+    cannot-remove-items: <red>Dažus priekšmetus neizdevās izņemt no tava inventāra!
+    exist-challenges-or-levels: <red>Šajā pasaulē jau existē uzdevumi, nevar turpināt!
+    no-challenges: <red>Uzdevumi nav izveidoti šajā pasaulē!
+    no-challenges-admin: <red>Uzdevumi nav izveidoti šajā pasaulē! Izmanto <dark_purple>/[command],
+      <red>lai tos pievienotu!
+    missing-arguments: <red>Pietrūkst komandas parametri.
+    no-multiple-permission: <red>Tev nav atļaujas, lai pildītu uzdevumu vairākas reizes.
+    invalid-level: <red>Līmenis [level] satur nekorektus datus. Tas var tikt ielādēts
+      nekorekti!
+    invalid-challenge: <red>Uzdevums [challenge] satur nekorektus datus. Tas var tikt
+      ielādēts nekorekti!
+    no-library-entries: <red>Nevar atrast bibliotēkas ierakstus. Nav ko rādīt.
+    not-hooked: <red>Uzdevumu Papildinājumam neizdevās atrast Spēles Režīmu.
+    timeout: <red>Šim uzdevumam ir uzstādīts [timeout] taimauts starp izpildēm. Tev
+      vēl ir jāgaida [wait-time], lai varētu pildīt uzdevumu.
+    wrong-biome: <red>Lai izpildītu šo uzdevumu, tev jāstāv [biome] biomā!
+    #  # Showcase for manual material translation
+    #  materials:
+    #    # Names should be lowercase.
+    #    cobblestone: "Mūrakmens"
+    #    # Also supports descriptions.
+    #    stone:
+    #      name: "Akmens"
+    #      description: ""
+    #  item-stacks:
+    #    # Non-specific item meta translations.
+    #    # TYPE is the item type
+    #    # META is a content of item meta.
+    #    generic: "[type] [meta]"
+    #    # Non-specific meta translations. Will replace [meta]
+    #    meta:
+    #      upgraded: "Uzlabots"
+    #      extended: "Pagarināts"
+    #      potion-meta: "<yellow>[type] [upgraded] [extended]"
+    #      # Be aware, enchants are always listed below item in separate line.
+    #      enchant-meta: "    <gray>- <yellow>[type] [level]"
+    #      skull-meta: ": <yellow>[player-name]"
+    #      book-meta: "<yellow>[title] [author]"
+    #    # Custom Enchantment Translation.
+    #    enchant:
+    #      menting: "Lāpīšana"
+    #      unbreaking: "Nelūztošs"
+    #    # Custom Potion Translation.
+    #    potion-effect:
+    #      water_breathing: "Zemūdens Elpošanas"
+    #    # You can also create specific item translations
+    #    # Like translate all potions.
+    #    potion:
+    #      # This will overwrite generic translation.
+    #      name: "[type] [upgraded] [extended]"
+    #      # Type is either specific translation or potion effect.
+    #      water_breathing: "Zemūdens Elpošanas Dzira"
+    #    stone_shovel:
+    #      # This will mean that only stone shovels will not show
+    #      # meta information.
+    #      name: "[type]"
+    import-failed: '<red>Nevarēja importēt izaicinājumus: [message]. Detalizētu informāciju
+      skatiet servera konsolē.'
+    requirement-not-met: <red>Šis izaicinājums pieprasa [statistic] no [number]. Jums
+      ir tikai [value].
+    requirement-not-met-entity: <red>Šis izaicinājums pieprasa [statistic] par [entity],
+      lai būtu [number]. Jums ir tikai [value].
+    requirement-not-met-material: <red>Šis izaicinājums pieprasa [statistic] par [material],
+      lai būtu [number]. Jums ir tikai [value].
+    no-team: <red>Šis ir komandas izaicinājums. Lai to pabeigtu, jums jābūt komandai!
+    insufficient-team: <red>Šim komandas izaicinājumam nepieciešami [number] komandas
+      biedri tiešsaistē. Tiešsaistē ir tikai [online].
+    member-missing-share: <red>[name] nav saņēmis savu daļu ([amount] x [item]) šim
+      komandas izaicinājumam.
+  materials:
+    any: 'Jebkurš '
+    all_hanging_signs:
+      name: Jebkura Piekārtā Zīme
+    all_signs:
+      name: Jebkura Zīme
+protection:
+  flags:
+    CHALLENGES_ISLAND_PROTECTION:
+      description: |-
+        <dark_purple><italic>Pārslēdz kurš var
+        <dark_purple><italic>pildīt uzdevumus
+      name: Uzdevumu izpildes aizsardzība
+    CHALLENGES_WORLD_PROTECTION:
+      description: |-
+        <dark_purple><italic>Ļauj pārslēgt vai
+        <dark_purple><italic>spēlētājam ir nepieciešams
+        <dark_purple><italic>būt uz salais,
+        <dark_purple><italic>lai pildītu uzdevumus.
+      hint: Uzdevumus nevar pildīt ārpus salas
+      name: Uzdevumu salas ierobežosāna
+version: 12

@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&6Reap What You Sow'
+description:
+- '&7Deal more damage when'
+- '&7your health is low.'
+skillType: HOES
+bonusType: CONDITIONAL
+unlockTier: 3
+baseValue: 0.5
+scalingPerLevel: 0.01
+displayMaterial: GOLDEN_HOE
+loreTemplates:
+- '&7Base Bonus: &f+$bonusPercent%'
+- '&7Max Bonus: &f+$maxBonus% (at 0% HP)'
+- '&7Condition: Below 50% health'
+- '&7Risk equals reward'
+formattedBonusTemplate: +$bonusPercent% at Low HP

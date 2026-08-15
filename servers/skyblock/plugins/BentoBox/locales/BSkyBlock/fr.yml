@@ -1,0 +1,9 @@
+bskyblock:
+  sign:
+    line0: <red>BSkyBlock</red>
+    line1: Bienvenue!
+    line2: '[name]'
+    line3: Ne tombez pas ! <red><3</red>
+meta:
+  authors:
+  - x9nico

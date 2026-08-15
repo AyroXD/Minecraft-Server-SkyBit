@@ -1,0 +1,15 @@
+isEnabled: true
+name: '&aPoise'
+description:
+- '&7Reduces knockback taken while'
+- '&7wielding a sword.'
+skillType: SWORDS
+bonusType: PASSIVE
+unlockTier: 1
+baseValue: 0.2
+scalingPerLevel: 0.003
+displayMaterial: IRON_BOOTS
+loreTemplates:
+- '&7Knockback Reduction: &f$value%'
+- '&7Always active when selected'
+formattedBonusTemplate: -$value% Knockback

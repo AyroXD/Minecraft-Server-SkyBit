@@ -1,0 +1,16 @@
+isEnabled: true
+name: '&7Iron Stance'
+description:
+- '&7Take less damage while'
+- '&7standing still.'
+skillType: ARMOR
+bonusType: CONDITIONAL
+unlockTier: 1
+baseValue: 0.3
+scalingPerLevel: 0.006
+displayMaterial: IRON_CHESTPLATE
+loreTemplates:
+- '&7Gain damage reduction when standing still'
+- '&7Damage Reduction: $reduction%'
+- '&7Requires: Standing still for 1 second'
+formattedBonusTemplate: $reduction% Damage Reduction

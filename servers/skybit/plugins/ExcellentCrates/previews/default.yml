@@ -1,0 +1,98 @@
+# ==================== [SECTION] SETTINGS ====================
+# > [MenuType] : String | Represents the menu type. Allowed values: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/inventory/MenuType.html
+# > [Title] : String | Sets menu title.
+# > [Auto_Refresh] : Integer | Defines menu refresh rate in seconds. Set 0 to disable.
+# > [PlaceholderAPI -> Enabled] : Boolean | When enabled, applies PlaceholderAPI placeholders for all items in the menu per player.
+#  
+# ==================== [SECTION] CONTENT ====================
+# You can freely edit items in this section as you wish (add, remove, modify items).
+# > [Item] : Section | Item to display.
+#     [*] Navigate to https://nightexpressdev.com/nightcore/configuration/item-formation/ for a list of available options.
+# > [Priority] : Integer | Item priority. Higher values will override other item(s) in the same slot(s).
+# > [Slots] : Int Array | Item slots, starts from 0. Split with commas.
+#     Slots: '0,4,9,10'
+# > [Type] : String | Defines item click action.
+#     [*] Available types: ['close', 'user_skin', 'page_next', 'page_previous', 'open', 'milestones']
+# > [Click_Commands] : Section | Executes commands on click with PlaceholderAPI support.
+#     [*] Works only if [Type] is not set (null).
+#     [*] Available click types: [LEFT, RIGHT, SHIFT_LEFT, SHIFT_RIGHT, DROP_KEY, SWAP_KEY, DRAG_N_DROP]
+#     [*] Use prefix 'player:' to run command by a player.
+#     Click_Commands:
+#       LEFT:
+#       - say Hello
+#       - give %player_name% diamond 1
+#       - player: warp shop
+# ==================================================
+Settings:
+  MenuType: minecraft:generic_9x5
+  Title: <black>%crate_name%</black>
+  Auto_Refresh: -1
+  PlaceholderAPI:
+    Enabled: true
+Reward:
+  # When enabled, displays only rewards that can be rolled out for a player.
+  Hide_Unavailable: true
+  Slots: 10,11,12,13,14,15,16,19,20,21,22,23,24,25,28,29,30,31,32,33,34
+  Name: '%reward_name%'
+  Lore:
+    Default:
+    - '%no_permission%'
+    - '%empty-if-above%'
+    - '<dark_gray>»</dark_gray><gray> Rarity: <white>%reward_rarity_name%</white> → <green>%reward_roll_chance%%</green></gray>'
+    - '%limits%'
+    - '%empty-if-below%'
+    - '%reward_description%'
+    No_Permission:
+    - <gray><red>✘</red> You don't have access to this reward.</gray>
+    LimitInfo:
+    - '<dark_gray>»</dark_gray><gray> Rolls Available: </gray><yellow>%amount%</yellow>'
+Content:
+  black_stained_glass_pane:
+    Priority: 0
+    Item:
+      Material: minecraft:black_stained_glass_pane
+      Lore: []
+      Hide_Tooltip: true
+    Slots: 1,2,3,5,6,7,9,18,27,17,26,35,37,38,39,40,41,42,43
+    Type: 'null'
+  gray_stained_glass_pane:
+    Priority: 0
+    Item:
+      Material: minecraft:gray_stained_glass_pane
+      Lore: []
+      Hide_Tooltip: true
+    Slots: 0,4,8,36,44
+    Type: 'null'
+  milestones:
+    Priority: 10
+    Item:
+      Material: minecraft:player_head
+      Display_Name: <gold><b>Milestones</b></gold>
+      Lore: []
+      SkinURL: 1daf09284530ce92ed2df2a62e1b05a11f1871f85ae559042844206d66c0b5b0
+    Slots: '4'
+    Type: milestones
+  close:
+    Priority: 10
+    Item:
+      Material: minecraft:iron_door
+      Display_Name: <red><b>Close</b></red>
+      Lore: []
+    Slots: '40'
+    Type: close
+  page_next:
+    Priority: 10
+    Item:
+      Material: minecraft:arrow
+      Display_Name: <white><b><u>Next Page</u> →</b></white>
+      Lore: []
+    Slots: '26'
+    Type: page_next
+  page_previous:
+    Priority: 10
+    Item:
+      Material: minecraft:arrow
+      Display_Name: <white><b>← <u>Previous Page</u></b></white>
+      Lore: []
+    Slots: '18'
+    Type: page_previous

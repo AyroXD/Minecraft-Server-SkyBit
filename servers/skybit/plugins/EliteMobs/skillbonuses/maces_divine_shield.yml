@@ -1,0 +1,18 @@
+isEnabled: true
+name: '&eDivine Shield'
+description:
+- '&7When taking fatal damage,'
+- '&7become invulnerable briefly. 120s CD.'
+skillType: MACES
+bonusType: COOLDOWN
+unlockTier: 2
+baseValue: 2.0
+scalingPerLevel: 0.02
+cooldownSeconds: 120.0
+displayMaterial: GOLDEN_CHESTPLATE
+loreTemplates:
+- '&7Prevents death once'
+- '&7Invulnerable for 2 seconds'
+- '&7Cooldown: &f$cooldowns'
+formattedBonusTemplate: 'Prevent Death (CD: $cooldowns)'
+procMessage: '&6&lDivine Shield &esaved you from a fatal blow!'

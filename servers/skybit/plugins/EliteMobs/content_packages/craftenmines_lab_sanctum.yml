@@ -1,0 +1,37 @@
+isEnabled: true
+name: '&2[Dynamic] &aCraftenmines Sanctum'
+customInfo:
+- '&aFace the creator of the devious creations!'
+- '&6Credits: MagmaGuy, 69OzCanOfBepis'
+dungeonSizeCategory: SANCTUM
+worldName: em_id_craftenmines_lab
+environment: NORMAL
+protect: true
+playerInfo: |-
+  &aDynamic Sanctum
+  $bossCount boss encounters
+  &aFace the creator of the
+  &adevious creations!
+regionEnterMessage: '&8[EM] &5Someone must stop Dr. Craftenmine and his horrific creations!'
+regionLeaveMessage: '&8[EM] &5You have left Dr. Craftenmine''s laboratory!'
+startLocation: em_id_craftenmines_lab,-19,66,0,-90,0
+teleportLocation: em_id_craftenmines_lab,-26.5,68,0.5,-90.0,0.0
+dungeonObjectives:
+- filename=dr_craftenmine_p1.yml
+contentType: DYNAMIC_DUNGEON
+dungeonConfigFolderName: em_id_craftenmines_lab
+contentLevel: -1
+difficulties:
+- name: normal
+  id: 0
+  levelSync: '+5'
+- name: hard
+  id: 1
+  levelSync: '+0'
+- name: mythic
+  id: 2
+  levelSync: '-5'
+setupMenuDescription:
+- '&2A dynamic Sanctum!'
+- Includes custom models and a custom soundtrack!
+dungeonLockoutMinutes: 4320

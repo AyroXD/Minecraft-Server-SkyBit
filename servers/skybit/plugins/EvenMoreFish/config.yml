@@ -1,0 +1,308 @@
+# Is the plugin enabled?
+enabled: true
+
+# Should the plugin print debug information to the console?
+# WARNING: This will flood your console with messages!
+debug: false
+
+# The locale of the message file
+# Currently: en, cs, de, es, fr, ja, ko, nl, pl, pt-br, ru, tr, vn, zh_cn
+# Delete messages.yml before changing this
+locale: en
+
+fishing:
+  # Gives the fish directly to the player instead of creating an item entity.
+  # This only happens if the player has space in their inventory.
+  give-straight-to-inventory: false
+  
+  # Makes competitions resume after a server restart.
+  # This does not work if the server crashes. See competition-backup to handle those.
+  resume-competition-on-restart: false
+  
+  # Holds back any scheduled competitions if one is already active.
+  hold-competition-if-active: true
+  
+  # Should fish be caught from fishing rods?
+  catch-enabled: true
+  # Should EMF fish only be given during a competition?
+  catch-only-in-competition: false
+  # Should custom rods be required?
+  require-custom-rod: false
+  # Should the plugin only override fish, keeping treasure like enchanted books?
+  only-fish: false
+  
+  # Should fish be caught by killing fish entities?
+  hunt-enabled: false
+  # Should fish hunting only be enabled during a competition?
+  hunt-only-in-competition: false
+  # Allows spawner fish to be ignored for hunting
+  hunt-ignore-spawner-fish: true
+
+# Exploit Configs
+exploits:
+  # AFK Fishing - If mcMMO's Overfishing is enabled, this will have no functionality.
+  afk-fishing:
+    # Should AFK fishing be protected against? (Default: false)
+    enabled: false
+    # How many fish can be caught before needing to move the hook?
+    max-caught: 10
+    # How far should the player need to move their hook?
+    range: 3
+
+# Backs up active competitions to a file.
+# Useful for crashes and such.
+competition-backup:
+  # Should this be enabled?
+  enabled: false
+  # How frequently should backups be made? (in seconds)
+  interval: 5
+
+# Should competition player requirement respect vanished players?
+# Supports EssentialsX and CMI.
+respect-vanished: true
+
+# The plugin stores stats about fish caught by players, used in the fish log. Disabling this will disable functionality
+# of this feature.
+# ATTENTION: Toggling this requires a full server restart.
+database:
+  enabled: false
+  # Prevents verbose output when the plugin interacts with the database.
+  disable-verbose: true
+  # Available option are: mysql, sqlite
+  type: sqlite
+  # The address of the database
+  # (the port 3306 is automatically added in by default, if different: specify with address:port)
+  address: localhost
+  # The name of the database to store fish data in
+  database: evenmorefish
+  # The table prefix for the database.
+  # WARNING: Changing this will create new tables in the database.
+  # Only use this during first setup or before migrations.
+  # (Or after, but only if you know what you're doing).
+  table-prefix: emf_
+  # Login information
+  username: emf
+  password: secret
+  advanced:
+    disable-jooq-startup-comments: true
+    # Enable JOOQ query execution logging. Useful for debugging but can impact performance.
+    jooq-execute-logging: false
+    # Render SQL in a formatted (pretty-printed) style. Useful for debugging but adds overhead.
+    jooq-render-formatted: false
+    save-interval:
+      unit: SECONDS
+      user-fish-stats: 5
+      competition: 5
+
+# When dropping tool items (e.g. fishing rod) should they be dropped with a random durability
+# instead of always full durability?
+random-durability: true
+
+# Enable/Disable different economy types here.
+# Optionally choose a multiplier for each type you have enabled.
+economy:
+  # Allows fish to pay out with your Vault economy plugin
+  vault:
+    enabled: true
+    multiplier: 1.0
+  # Allows fish to pay out with PlayerPoints
+  playerpoints:
+    enabled: false
+    multiplier: 1.0
+    display: '{amount} Player Point(s)'
+  # Allows fish to pay out with claim blocks
+  griefprevention:
+    enabled: false
+    multiplier: 1.0
+    display: '{amount} Claim Block(s)'
+
+# Setting this to change the bossbar style
+# Valid options are listed here: https://jd.advntr.dev/api/4.26.1/net/kyori/adventure/bossbar/BossBar.Overlay.html
+barstyle: NOTCHED_10
+
+# Should the user require the emf.use_rod permission to catch custom fish?
+requires-fishing-permission: false
+
+# Various protections for EMF items.
+# These do not apply if raw-material is used.
+item-protection:
+  # Should the plugin prevent EMF items being crafted into other items?
+  # For example, when the player tries to craft the starfish into a beacon.
+  prevent-crafting: true
+  # Should the plugin prevent EMF items being consumed?
+  # For example, when the player tries to drink the epic elixir bait.
+  prevent-consume: true
+  # Should the plugin prevent EMF items being used in furnaces as fuel?
+  # For example, when the player places an NBT rod in a furnace's fuel slot.
+  prevent-furnace-burn: true
+  # Should the plugin prevent EMF items being cooked?
+  # For example, when the player tries to cook an atlantic cod.
+  prevent-cooking: true
+  # Should the plugin prevent EMF items being placed?
+  # For example, when the player tries to place a Spongebob.
+  prevent-placing: true
+
+# /emf shop configuration. If you wish to change the layout, please look at the guis.yml file.
+sell-gui:
+  # Should the items be dropped(false) or sold(true) when a player exits an inventory?
+  sell-over-drop: false
+
+# Determines which WorldGuard/RedProtect regions players can catch custom fish inside.
+# This is a list of region names, and is undefined by default.
+allowed-regions: []
+# Determines which worlds players can catch custom fish inside.
+# This is a list of world names, and is undefined by default.
+allowed-worlds: []
+
+# Defines specific WorldGuard/RedProtect regions which boost certain rarities.
+# This multiplies the catch weight of the configured rarities inside the specified regions.
+region-boosts:
+  # The region named "exampleFishingRegion"
+  exampleFishingRegion:
+    # Multiplies the weight of the "Common" rarity by 0.5. (Half)
+    Common: 0.5
+    # Multiplies the weight of the "Rare" rarity by 1.0. (No change)
+    Rare: 1.0
+    # Multiplies the weight of the "Legendary" rarity by 15.0. (15x)
+    Legendary: 15.0
+
+# Prevents mcMMO from overriding fishing loot, this means treasure won't appear when fish can.
+disable-mcmmo-loot: true
+
+# Prevents AuraSkills from overriding fishing loot, this means treasure won't appear when fish can.
+disable-auraskills-loot: true
+
+# Whether to protect baited fishing rods in an anvil.
+# Prevents effectively voiding the baits applied to the rod.
+protect-baited-rods: true
+
+# General bait configuration
+bait:
+  # This defines the multiplier for how frequently a rarity/fish appears.
+  # Setting to -1 will mean players are guaranteed to get a fish available from the bait.
+  boost: 1.5
+  
+  # Prevents players being able to use their baits during competitions, this is recommended if your rarer rarities are
+  # longer, as players could abuse these baits to get into the leaderboard
+  competition-disable: true
+  
+  # When baits are applied to rods, should they show at the bottom of the lore of a fishing rod?
+  # Setting this to false will not affect currently baited rods, and their lore will stop being modified by the plugin.
+  add-to-lore: true
+  
+  # As a percentage, how often should baits appear? (The bait will be more likely to be selected if it has a higher catch-weight. It will also
+  # replace any fish that might have been caught in its place.)
+  catch-percentage: 2.5
+  
+  # How many types of bait can be applied to each fishing rod.
+  # NOTE: THIS WILL BREAK RODS THAT ALREADY HAVE BAITS APPLIED.
+  baits-per-rod: 7
+  
+  # Should unused bait slots show a message in their place?
+  # NOTE: THIS WILL BREAK RODS THAT ALREADY HAVE BAITS APPLIED.
+  show-unused-slots: true
+
+# Defines behavior for the plugin's item factory.
+items:
+  addons:
+    # How should lore behave?
+    # NOTHING: Does nothing
+    # APPEND: Inserts the custom lore after the item's original lore
+    # PREPEND: Inserts the custom lore before the item's original lore
+    # REPLACE: Completely replaces the item's original lore
+    lore-behavior: REPLACE
+    
+    # How should the display name behave?
+    # NOTHING: Does nothing
+    # REPLACE: Replaces the item's original display name
+    display-behavior: REPLACE
+
+# Requirement configs
+requirements:
+  nearby-players:
+    # How far should the plugin check in blocks? Large values may cause lag.
+    range: 20
+
+# Customize the plugin's command. Requires a server restart to take effect.
+# NOTE: All names and aliases must use English letters only, as modern Minecraft commands do not support other characters.
+command:
+  # The /emf admin shortcut command
+  admin-shortcut:
+    enabled: true
+    name: emfa
+  # The plugin's main command
+  main: emf
+  # Aliases for the main command
+  aliases:
+  - evenmorefish
+  
+  # Change the name of the plugin's subcommands
+  subcommands:
+    # The /emf admin command
+    admin: admin
+    # The /emf next command
+    next: next
+    # The /emf toggle command
+    toggle: toggle
+    # The /emf gui command
+    gui: gui
+    # The /emf help command
+    help: help
+    # The /emf top command
+    top: top
+    # The /emf shop command
+    shop: shop
+    # The /emf sellall command
+    sellall: sellall
+    # The /emf applybaits command
+    applybaits: applybaits
+    # The /emf journal command
+    journal: journal
+  
+  # Should the base command show the help text instead of opening the GUI?
+  # This is always true if the player doesn't have the /emf gui permission.
+  old-base-command-behavior: false
+
+# Customizable sets of biomes for fish configuration
+biome-sets:
+  # oceans biome set. you can add more sets as you please.
+  oceans:
+  - COLD_OCEAN
+  - DEEP_COLD_OCEAN
+  - DEEP_LUKEWARM_OCEAN
+  - DEEP_OCEAN
+  - LUKEWARM_OCEAN
+  - OCEAN
+  - WARM_OCEAN
+
+# Fishing in lava and void. (1.21+)
+# A full explanation of these configs can be found on the wiki: https://evenmorefish.github.io/EvenMoreFish/docs/features/dimensionfishing/setup
+dimension-fishing:
+  # Configuration for lava fishing.
+  lava:
+    enabled: false
+    allowed-worlds: []
+    permission: null
+    requirements: []
+    swallow-sound: BLOCK_LAVA_EXTINGUISH
+    bite-sound: ENTITY_FISHING_BOBBER_SPLASH,0.25,0.5
+    lure-particles:
+    - particle: LAVA
+      amount: 3
+  # Configuration for void fishing.
+  void:
+    enabled: false
+    allowed-worlds: []
+    permission: null
+    requirements: []
+    swallow-sound: ENTITY_ENDERMAN_TELEPORT,0.25,0.1
+    bite-sound: ENTITY_FOX_BITE,0.25,0.1
+    lure-particles:
+    - particle: DUST
+      amount: 3
+      color: '#FF55FF'
+
+# ATTENTION ATTENTION ATTENTION
+# DO NOT EDIT THIS VALUE OR THINGS WILL BREAK!!!
+version: 10
+

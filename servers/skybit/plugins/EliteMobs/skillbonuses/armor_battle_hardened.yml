@@ -1,0 +1,15 @@
+isEnabled: true
+name: '&6Battle Hardened'
+description:
+- '&7Passive damage reduction'
+- '&7from all sources.'
+skillType: ARMOR
+bonusType: PASSIVE
+unlockTier: 1
+baseValue: 0.2
+scalingPerLevel: 0.004
+displayMaterial: NETHERITE_CHESTPLATE
+loreTemplates:
+- '&7Passive damage reduction from all sources'
+- '&7Damage Reduction: $value%'
+formattedBonusTemplate: $value% Damage Reduction

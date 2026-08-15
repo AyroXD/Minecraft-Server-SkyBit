@@ -1,0 +1,17 @@
+isEnabled: true
+name: '&bVanguard'
+description:
+- '&7Charge forward, damaging'
+- '&7enemies in your path. 20s CD.'
+skillType: SPEARS
+bonusType: COOLDOWN
+unlockTier: 3
+baseValue: 1.0
+scalingPerLevel: 0.02
+cooldownSeconds: 20.0
+displayMaterial: FEATHER
+loreTemplates:
+- '&7Damage: &f$damage%'
+- '&7Distance: &f$distance blocks'
+- '&7Cooldown: &f$cooldowns'
+formattedBonusTemplate: 'Charge $damage% (CD: $cooldowns)'

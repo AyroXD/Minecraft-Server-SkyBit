@@ -1,0 +1,22 @@
+isEnabled: true
+name: <g:#5A6A4A:#6A7A5A>Sewer Rat</g>
+role: <g:#4A5A3A:#5A6A4A><Sewers></g>
+profession: CraftProfession{holder=Reference{ResourceKey[minecraft:villager_profession
+  / minecraft:leatherworker]=VillagerProfession[name=translation{key='entity.minecraft.villager.leatherworker',
+  args=[]}, heldJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x0000000029b60248@105634fe,
+  acquirableJobSite=net.minecraft.world.entity.npc.villager.VillagerProfession$$Lambda/0x0000000029b604a8@6fc7ffcc,
+  requestedItems=[], secondaryPoi=[], workSound=SoundEvent[location=minecraft:entity.villager.work_leatherworker,
+  fixedRange=Optional.empty]]}}
+spawnLocation: em_adventurers_guild,297.5,92,259.5,0,0
+spawnLocations: []
+greetings:
+- ''
+dialog: []
+farewell: []
+canTalk: true
+activationRadius: 1.0
+interactionType: COMMAND
+customModel: em_ag_sewerrat
+command: em dungeontp sewers_minidungeon.yml
+syncMovement: false
+scripts: []

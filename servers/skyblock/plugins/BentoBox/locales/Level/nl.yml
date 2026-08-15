@@ -1,0 +1,237 @@
+admin:
+  level:
+    parameters: <speler>
+    description: bereken het eiland level voor een speler
+    sethandicap:
+      parameters: <speler> <handicap>
+      description: stel handicap in voor het eiland, normaal gesproken het level van
+        het starter eiland.
+      changed: <green> Initiële handicap is veranderd van [number] naar [new_number].
+      invalid-level: <red> Ongeldige handicap. Gebruik een getal.
+  levelstatus:
+    description: laat zien hoeveel eilanden er in de wachtrij staan voor het scannen
+    islands-in-queue: '<green> Aantal eilanden in de wachtrij: [number]'
+  top:
+    description: Laat de top tien zien
+    unknown-world: <red> Ongeldige wereld!
+    display: <white>[rank]. <green>[name] <gray>- <aqua>[level]
+    remove:
+      description: verwijder speler van de top tien
+      parameters: <speler>
+  stats:
+    description: toon statistieken van eilanden op deze server
+    title: Server Eiland Statistieken
+    world: <green> [name]
+    no-data: <red> Geen gegevens om te verwerken.
+    average-level: 'Gemiddeld eilandniveau: [number]'
+    median-level: 'Mediaan eilandniveau: [number]'
+    mode-level: 'Modus eilandniveau: [number]'
+    highest-level: 'Hoogste eilandniveau: [number]'
+    lowest-level: 'Laagste eilandniveau: [number]'
+    distribution: 'Verdeling eilandniveaus:'
+    islands: eilanden
+island:
+  level:
+    parameters: '[speler]'
+    description: bereken het eiland level voor [player]
+    calculating: <green> Level aan het berekenen...
+    estimated-wait: '<green> Verwachtte wachttijd: [number] seconde'
+    in-queue: <green> Jij staat op plek [number] in de wachtrij
+    island-level-is: <green> Eiland level is <aqua>[level]
+    required-points-to-next-level: '<green> Voortgang niveau: <gold> [progress]<aqua>
+      /<yellow> [levelcost] <green> punten'
+    deaths: <red>([number] doodgegaan)
+    cooldown: <red> Je moet nog <aqua>[time] <red> seconden wachten tot je dit weer
+      kan doen.
+    in-progress: <gold> Eiland level wordt berekend...
+    time-out: <red> De level berekening duurde te lang. Probeer het later opnieuw.
+  donate:
+    parameters: '[hand [amount]]'
+    description: donate blocks to permanently raise island level
+    must-be-on-island: <red>You must be on your island to donate blocks.
+    no-permission: <red>You do not have permission to donate blocks on this island.
+    no-value: <red>That block has no level value.
+    invalid-amount: <red>Invalid amount. Use a positive number.
+    invalid-item: <red>Alleen blokken met een geconfigureerde niveauwaarde kunnen
+      worden gedoneerd.
+    empty: <red>There are no valid blocks to donate.
+    cancelled: <yellow>Donation cancelled. Items returned.
+    success: <green>Donated [number] blocks for <aqua>[points]<green> points! These
+      points are permanent.
+    confirm: <red><bold>Confirm - Items will be DESTROYED!
+    cancel: <green><bold>Cancel - Return Items
+    gui-title: <black><bold>Donate Blocks
+    gui-info: '<gold>Donate blocks to your island|<gray>Currently donated: <gold>[points]<gray>
+      points|<red>Warning: donated items are|<red>destroyed and cannot be returned!'
+    preview: '<yellow>Points to add: <gold>[points]|<red>These items will be destroyed!'
+    limit-reached: <red>De donatielimiet voor [material] is bereikt.
+    limit-reached-all: <red>Al deze blokken hebben hun donatielimiet bereikt.
+    limit-notice: <gold>Sommige blokken zijn onderworpen aan limieten|<gold>en worden
+      niet gedoneerd
+    hand:
+      keyword: hand
+      success: <green>Donated [number] x [material] for <aqua>[points]<green> permanent
+        points!
+      not-block: <red>You must be holding a placeable block to donate.
+      confirm-prompt: <red>About to DESTROY <gold>[number] x [material]<red> for <aqua>[points]<red>
+        permanent points.
+    inv:
+      keyword: inv
+      confirm-header: '<red>Deze blokken worden VERNIETIGD uit je inventaris:'
+      confirm-line: <gold>[number] x [material] <gray>= <aqua>[points]<gray> punten
+      confirm-total: '<red>Totaal: <aqua>[points]<red> permanente punten.'
+  top:
+    description: Toon de Top tien
+    gui-title: <green> Top tien
+    gui-heading: '<gold>[name]: <aqua>[rank]'
+    island-level: <aqua> Level [level]
+    warp-to: <green> Teleporteren naar [name]'s eiland
+  detail:
+    description: toont details van de blokken op uw eiland
+  level-details:
+    above-sea-level-blocks: 'Blokken boven zeeniveau '
+    spawners: Monsterkooien
+    underwater-blocks: Blokken onder zeeniveau
+    all-blocks: Alle blokken
+    no-island: <red> Geen eiland!
+    names-island: '[name]''s eiland'
+    syntax: '[name] x [number]'
+    hint: <red> Gebruik level om het blokkenrapport te zien
+protection:
+  flags:
+    ISLAND_BLOCK_DONATION:
+      description: |-
+        <green>Toggle who can donate</green>
+        <green>blocks to raise island level.</green>
+      name: Block Donation
+      hint: Block donation not allowed
+
+level:
+  commands:
+    value:
+      parameters: '[hand|<type>]'
+      description: toont de waarde van blokken. Voeg 'hand' toe aan het einde om de
+        waarde te laten zien van het item in je hand.
+  gui:
+    titles:
+      top: <black><bold> Top eilanden
+      detail-panel: <black><bold> [name]'s eiland
+      value-panel: <black><bold> Blok waardes
+    buttons:
+      island:
+        empty: <white><bold> [name]. plaats
+        name: <white><bold> [name]
+        description: |-
+          [owner]
+          [members]
+          [place]
+          [level]
+        owners-island: '[player]''s Eiland'
+        owner: '<gray><bold> Eigenaar: <reset><aqua> [player]'
+        members-title: '<gray><bold> Leden:'
+        member: <aqua> - [player]
+        unknown: onbekend
+        place: <gray><italic> [number]. <reset><gray> plaats
+        level: '<gray> Level: <italic> [number]'
+      material:
+        name: <white><bold> [number] x [material]
+        description: |-
+          [description]
+          [count]
+          [value]
+          [calculated]
+          [limit]
+          [id]
+        id: '<gray> Blok id: <yellow> [id]'
+        value: '<gray> Block waarde: <yellow> [number]'
+        limit: '<gray> Block limiet: <yellow> [number]'
+        count: '<gray> Aantal blokken: <yellow> [number]'
+        calculated: '<gray> Berekende waarde: <yellow> [number]'
+      value_blocks:
+        name: <white><bold> Alle Blokken met Waarde
+        description: |-
+          <gray> Toon alle blokken
+          <gray> met waarde op het eiland.
+      all_blocks:
+        name: <white><bold> Alle Blokken
+        description: "<gray> Toon alle blokken \n<gray> op het eiland."
+      above_sea_level:
+        name: <white><bold> Blokken boven zeeniveau
+        description: |-
+          <gray> Toon alleen blokken
+          <gray> die boven zeeniveau zijn
+      underwater:
+        name: <white><bold> Blokken onder zeeniveau
+        description: |-
+          <gray> Toon alleen blokken
+          <gray> die onder zeeniveau zijn
+      spawner:
+        name: <white><bold> Monsterkooien
+        description: <gray> Toon alleen monsterkooien.
+        block-name: <aqua> Monsterkooien
+      donated:
+        name: <white><bold>Donated Blocks
+        description: |-
+          <gray>Display blocks permanently
+          <gray>donated to island level.
+      filters:
+        name:
+          name: <white><bold> Sorteer aan de hand van naam
+          description: <gray> Sorteer alle blokken aan de hand van naam.
+        value:
+          name: <white><bold> Sorteer aan de hand van waarde
+          description: <gray> Sorteer alle blokken aan de hand van waarde.
+        count:
+          name: <white><bold> Sorteer aan de hand van aantal
+          description: <gray> Sorteer alle blokken aan de hand van aantal.
+      value:
+        name: <white><bold> [material]
+        description: |-
+          [description]
+          [value]
+          [underwater]
+          [limit]
+          [id]
+        id: '<gray> Blok id: <yellow> [id]'
+        value: '<gray> Block waarrde: <yellow> [number]'
+        underwater: '<gray> Onder zeeniveau: <yellow> [number]'
+        limit: '<gray> Blok limiet: <yellow> [number]'
+      previous:
+        name: <white><bold> Vorige pagina
+        description: <gray> Ga naar pagina [number]
+      next:
+        name: <white><bold> Volgende pagina
+        description: <gray> Ga naar pagina [number]
+      search:
+        name: <white><bold> Zoek
+        description: "<gray> Zoek voor een \n<gray> specifieke waarde."
+        search: '<aqua> Waarde: [value]'
+    tips:
+      click-to-view: <yellow> Klik <gray> om te zien.
+      click-to-previous: <yellow> Klik <gray> om de vorige pagina te zien.
+      click-to-next: <yellow> Klik <gray> om de volgende pagina te zien.
+      click-to-select: <yellow> Klik <gray> om te selecteren.
+      left-click-to-cycle-up: <yellow> Linker Klik <gray> om door te lopen.
+      right-click-to-cycle-down: <yellow> Rechter Klik <gray> om terug door te lopen.
+      left-click-to-change: <yellow> Linker Klik <gray> om bij te werken.
+      right-click-to-clear: <yellow> Linker Klik <gray> om te verwijderen.
+      click-to-asc: <yellow> Klik <gray> om te toenemend te sorteren.
+      click-to-desc: <yellow> Klik <gray> om te afnemenend te sorteren.
+      click-to-warp: <yellow> Klik <gray> om te teleporteren.
+      click-to-visit: <yellow> Klik <gray> om te bezoeken.
+      right-click-to-visit: <yellow> Rechter Klik <gray> om te bezoeken.
+  conversations:
+    prefix: '<bold><gold> [BentoBox]: <reset>'
+    no-data: <red> Gebruik level om het blokkenrapport te zien.
+    cancel-string: stop
+    exit-string: stop
+    write-search: <yellow> Schrijf een zoekopdracht. (Schrijf 'stop' om te zoeken)
+    search-updated: <green> Zoekopdracht bijgewerkt.
+    cancelled: <red> Conversatie gestopt!
+    no-value: <red> Dit item heeft geen waarde.
+    unknown-item: <red> '[material]' bestaat niet in het spel.
+    value: '<gray> De waarde van ''[material]'' is: <yellow>[value]'
+    value-underwater: '<gray> The waarde van ''[material]'' onder zeeniveau: <yellow>[value]'
+    empty-hand: <red> Je hebt geen blok vast
+    you-have: <gray> Je hebt [number] bij de laatste telling.
+    you-can-place: <gray> Je kunt tot [number] plaatsen en ze laten meetellen

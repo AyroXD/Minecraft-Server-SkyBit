@@ -1,0 +1,37 @@
+isEnabled: true
+name: '&2[Dynamic] &9The North Pole'
+customInfo:
+- '&fThe Christmas minidungeon!'
+- '&6Credits: MagmaGuy & 69OzCanOfBepis'
+dungeonSizeCategory: MINIDUNGEON
+worldName: em_north_pole
+environment: NORMAL
+protect: true
+playerInfo: |-
+  Difficulty: &6Medium
+  $bossCount bosses, from level $lowestTier to $highestTier
+  &6Christmas in a snow globe!
+regionEnterMessage: '&8[EM] &7You have reached the North Pole! &fHave you been naughty
+  this year?'
+regionLeaveMessage: '&8[EM] &7Come back and visit. &fThere are plenty of sweets and
+  treats for next time!'
+startLocation: em_north_pole,-264.5,43.2,-503.5,47,0
+teleportLocation: em_north_pole,-258.5,41.2,-514.5,47,0
+dungeonObjectives:
+- filename=northpole_santa_claus.yml
+contentType: DYNAMIC_DUNGEON
+dungeonConfigFolderName: the_north_pole
+contentLevel: -1
+difficulties:
+- name: normal
+  id: 0
+  levelSync: '+5'
+- name: hard
+  id: 1
+  levelSync: '+0'
+- name: mythic
+  id: 2
+  levelSync: '-5'
+setupMenuDescription:
+- '&2A dynamic Christmas-themed Minidungeon!'
+dungeonLockoutMinutes: 4320
