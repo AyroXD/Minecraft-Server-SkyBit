@@ -155,7 +155,7 @@ namespace SkyBitAutoSync
             {
                 busy = false;
                 syncButton.Enabled = true;
-                await RefreshRepoInfoAsync();
+                RefreshRepoInfoAsync();
             }
         }
 
