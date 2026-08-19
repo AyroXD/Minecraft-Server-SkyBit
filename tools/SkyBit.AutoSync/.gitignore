@@ -1,0 +1,4 @@
+dist/
+build-errors.txt
+*.user
+*.suo
