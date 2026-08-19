@@ -1,0 +1,30 @@
+name: SkyBit AutoSync Build
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'tools/SkyBit.AutoSync/**'
+      - '.github/workflows/skybit-autosync-build.yml'
+  pull_request:
+    paths:
+      - 'tools/SkyBit.AutoSync/**'
+      - '.github/workflows/skybit-autosync-build.yml'
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build AutoSync
+        shell: cmd
+        run: tools\SkyBit.AutoSync\BUILD.bat CI
+
+      - name: Upload EXE artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SkyBit-AutoSync-windows-x64
+          path: tools/SkyBit.AutoSync/dist/SkyBit AutoSync.exe
+          if-no-files-found: error
